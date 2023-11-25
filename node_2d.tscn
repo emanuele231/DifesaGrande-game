@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dqpiteunitga1"]
+
+[node name="prova" type="Node2D"]
+position = Vector2(615, 419)
+
+[node name="qualcosa a caso" type="AnimationPlayer" parent="."]
