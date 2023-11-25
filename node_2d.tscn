@@ -4,3 +4,5 @@
 position = Vector2(615, 419)
 
 [node name="qualcosa a caso" type="AnimationPlayer" parent="."]
+
+[node name="cosa a caso 2" type="AudioStreamPlayer" parent="qualcosa a caso"]
