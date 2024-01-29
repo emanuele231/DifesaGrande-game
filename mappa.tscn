@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dqiw7bvjmib4d"]
+
+[node name="MAPPA GIOCO" type="Node2D"]
+position = Vector2(215, 296)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
