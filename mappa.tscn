@@ -1,10 +1,32 @@
-[gd_scene format=3 uid="uid://dqiw7bvjmib4d"]
+[gd_scene load_steps=4 format=3 uid="uid://dqiw7bvjmib4d"]
+
+[ext_resource type="Script" path="res://scripts/Player_prov_movements.gd" id="1_d4s2l"]
+[ext_resource type="Texture2D" uid="uid://jlc8ytuqft0o" path="res://World of Solaria Rural Village Update 05a/World of Solaria Rural Village Update 05a/16x16/Sprites/Villager 03.png" id="1_t53kj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bf2fi"]
+size = Vector2(38, 9)
 
 [node name="MAPPA GIOCO" type="Node2D"]
 position = Vector2(215, 296)
 
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Player_prov" type="CharacterBody2D" parent="."]
+script = ExtResource("1_d4s2l")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player_prov"]
+position = Vector2(-51, -103.5)
+scale = Vector2(4.71429, 3.6875)
+texture = ExtResource("1_t53kj")
+hframes = 9
+vframes = 16
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Player_prov"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player_prov"]
+texture_filter = 1
+position = Vector2(-47, -78.5)
+shape = SubResource("RectangleShape2D_bf2fi")
+one_way_collision_margin = 0.0
+debug_color = Color(0.603922, 0.431373, 0.854902, 0.419608)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(361, 30)
