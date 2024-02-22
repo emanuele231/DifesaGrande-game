@@ -1,30 +1,30 @@
 [gd_scene load_steps=57 format=3 uid="uid://dqiw7bvjmib4d"]
 
-[ext_resource type="Script" path="res://scripts/Player_prov_movements.gd" id="1_d4s2l"]
-[ext_resource type="Texture2D" uid="uid://jlc8ytuqft0o" path="res://World of Solaria Rural Village Update 05a/World of Solaria Rural Village Update 05a/16x16/Sprites/Villager 03.png" id="1_t53kj"]
-[ext_resource type="Texture2D" uid="uid://dh0bh5kpvdgov" path="res://World of Solaria Rural Village Update 05a/World of Solaria Rural Village Update 05a/16x16/Tilesets/Rural Village Farming.png" id="7_15hd3"]
-[ext_resource type="Texture2D" uid="uid://7e8q311i0fbj" path="res://World of Solaria Rural Village Update 05a/World of Solaria Rural Village Update 05a/16x16/Animated Tiles/Village Animated Smoke.png" id="12_mqlne"]
-[ext_resource type="Texture2D" uid="uid://vdxita3uu0wu" path="res://assets acquistati/assets acquistati 2/MEGA BUNDLE 12 ASSET PACKS/MEGA BUNDLE 12 ASSET PACKS/HARVEST TINY FARM/HOUSES/HOUSE 1.png" id="13_0kto7"]
-[ext_resource type="Texture2D" uid="uid://c6euac7tym1ft" path="res://easyTennis/easyTennis/tennisfield.jpg" id="13_4giqi"]
-[ext_resource type="Texture2D" uid="uid://v277i0k103fk" path="res://lpc_bazaar_rework-1.0-1/preview.png" id="13_36kd5"]
-[ext_resource type="Texture2D" uid="uid://con2c3m6inlxq" path="res://assets acquistati/assets acquistati 2/MEGA BUNDLE 12 ASSET PACKS/MEGA BUNDLE 12 ASSET PACKS/SENGOKU ADVENTURE TILESET/TILES SENGOKU ADVENTURE.png" id="13_wsmde"]
-[ext_resource type="Texture2D" uid="uid://eji2wp281v1i" path="res://assets acquistati/assets acquistati 2/MEGA BUNDLE 12 ASSET PACKS/MEGA BUNDLE 12 ASSET PACKS/HARVEST TINY FARM/HOUSES/HOUSE 2.png" id="14_1k4sy"]
-[ext_resource type="Texture2D" uid="uid://chubrd1ppjr5m" path="res://tileset_town_multi_v002.png" id="14_ajwcf"]
-[ext_resource type="Texture2D" uid="uid://cqdqmimman685" path="res://lpc_bazaar_rework-1.0-1/PNG/32x32/bazaar_table-ns-red.png" id="14_anr02"]
-[ext_resource type="Texture2D" uid="uid://dpv084nnn815y" path="res://easyTennis/easyTennis/ball/ball.00.png" id="14_c8kmp"]
-[ext_resource type="Texture2D" uid="uid://deehhwppbydv8" path="res://fence.png" id="15_4rqvo"]
-[ext_resource type="Texture2D" uid="uid://co17f5xgdgvyh" path="res://assets acquistati/assets acquistati 2/MEGA BUNDLE 12 ASSET PACKS/MEGA BUNDLE 12 ASSET PACKS/HARVEST TINY FARM/TREES/TREE 3.png" id="15_8udb5"]
-[ext_resource type="Texture2D" uid="uid://b203ijq1jem65" path="res://Modern_Exteriors_RPG_Maker_MV_v31.7/Modern_Exteriors_RPG_Maker_MV/Tileset_16_MV.png" id="16_t8err"]
-[ext_resource type="Texture2D" uid="uid://53wu7ggy1wm0" path="res://gdm-2d-top-down-180-pixel-art-vehicles/2D Top down 180 pixel vehicles/2D Top Down 180 Vehicles ( originale size ).png" id="17_ycf8i"]
-[ext_resource type="Texture2D" uid="uid://dwy8h1rj0k0cl" path="res://Modern_Exteriors_RPG_Maker_MV_v31.7/Modern_Exteriors_RPG_Maker_MV/Tileset_22_MV.png" id="18_3jkor"]
-[ext_resource type="Texture2D" uid="uid://dyip1y5i3fpdk" path="res://Modern_Exteriors_RPG_Maker_MV_v31.7/Modern_Exteriors_RPG_Maker_MV/Tileset_17_MV.png" id="18_eyc2d"]
-[ext_resource type="Texture2D" uid="uid://dfb1wsewioj0e" path="res://Modern_Exteriors_RPG_Maker_MV_v31.7/Modern_Exteriors_RPG_Maker_MV/Tileset_30_MV.png" id="19_qy7nx"]
+[ext_resource type="Script" path="res://scripts/Player_prov_movements.gd" id="1_qbu6o"]
+[ext_resource type="Texture2D" uid="uid://jlc8ytuqft0o" path="res://World of Solaria Rural Village Update 05a/World of Solaria Rural Village Update 05a/16x16/Sprites/Villager 03.png" id="2_hign1"]
+[ext_resource type="Texture2D" uid="uid://dh0bh5kpvdgov" path="res://World of Solaria Rural Village Update 05a/World of Solaria Rural Village Update 05a/16x16/Tilesets/Rural Village Farming.png" id="3_7wf1g"]
+[ext_resource type="Texture2D" uid="uid://7e8q311i0fbj" path="res://World of Solaria Rural Village Update 05a/World of Solaria Rural Village Update 05a/16x16/Animated Tiles/Village Animated Smoke.png" id="4_m35kx"]
+[ext_resource type="Texture2D" uid="uid://vdxita3uu0wu" path="res://assets acquistati/assets acquistati 2/MEGA BUNDLE 12 ASSET PACKS/MEGA BUNDLE 12 ASSET PACKS/HARVEST TINY FARM/HOUSES/HOUSE 1.png" id="5_w26o0"]
+[ext_resource type="Texture2D" uid="uid://eji2wp281v1i" path="res://assets acquistati/assets acquistati 2/MEGA BUNDLE 12 ASSET PACKS/MEGA BUNDLE 12 ASSET PACKS/HARVEST TINY FARM/HOUSES/HOUSE 2.png" id="6_gmw3r"]
+[ext_resource type="Texture2D" uid="uid://co17f5xgdgvyh" path="res://assets acquistati/assets acquistati 2/MEGA BUNDLE 12 ASSET PACKS/MEGA BUNDLE 12 ASSET PACKS/HARVEST TINY FARM/TREES/TREE 3.png" id="7_3av7p"]
+[ext_resource type="Texture2D" uid="uid://con2c3m6inlxq" path="res://assets acquistati/assets acquistati 2/MEGA BUNDLE 12 ASSET PACKS/MEGA BUNDLE 12 ASSET PACKS/SENGOKU ADVENTURE TILESET/TILES SENGOKU ADVENTURE.png" id="8_2d2wb"]
+[ext_resource type="Texture2D" uid="uid://chubrd1ppjr5m" path="res://tileset_town_multi_v002.png" id="9_7lesg"]
+[ext_resource type="Texture2D" uid="uid://v277i0k103fk" path="res://lpc_bazaar_rework-1.0-1/preview.png" id="10_jjxf4"]
+[ext_resource type="Texture2D" uid="uid://cqdqmimman685" path="res://lpc_bazaar_rework-1.0-1/PNG/32x32/bazaar_table-ns-red.png" id="11_uag7q"]
+[ext_resource type="Texture2D" uid="uid://c6euac7tym1ft" path="res://easyTennis/easyTennis/tennisfield.jpg" id="12_v0i1a"]
+[ext_resource type="Texture2D" uid="uid://dpv084nnn815y" path="res://easyTennis/easyTennis/ball/ball.00.png" id="13_41ewm"]
+[ext_resource type="Texture2D" uid="uid://deehhwppbydv8" path="res://fence.png" id="14_a8hm1"]
+[ext_resource type="Texture2D" uid="uid://b203ijq1jem65" path="res://Modern_Exteriors_RPG_Maker_MV_v31.7/Modern_Exteriors_RPG_Maker_MV/Tileset_16_MV.png" id="15_xdbom"]
+[ext_resource type="Texture2D" uid="uid://53wu7ggy1wm0" path="res://gdm-2d-top-down-180-pixel-art-vehicles/2D Top down 180 pixel vehicles/2D Top Down 180 Vehicles ( originale size ).png" id="16_r8hy7"]
+[ext_resource type="Texture2D" uid="uid://dyip1y5i3fpdk" path="res://Modern_Exteriors_RPG_Maker_MV_v31.7/Modern_Exteriors_RPG_Maker_MV/Tileset_17_MV.png" id="17_yfwqq"]
+[ext_resource type="Texture2D" uid="uid://dwy8h1rj0k0cl" path="res://Modern_Exteriors_RPG_Maker_MV_v31.7/Modern_Exteriors_RPG_Maker_MV/Tileset_22_MV.png" id="18_gxjww"]
+[ext_resource type="Texture2D" uid="uid://dfb1wsewioj0e" path="res://Modern_Exteriors_RPG_Maker_MV_v31.7/Modern_Exteriors_RPG_Maker_MV/Tileset_30_MV.png" id="19_hiev7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bf2fi"]
 size = Vector2(16, 14)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1lnck"]
-texture = ExtResource("7_15hd3")
+texture = ExtResource("3_7wf1g")
 5:0/0 = 0
 6:0/0 = 0
 7:0/0 = 0
@@ -118,7 +118,7 @@ texture = ExtResource("7_15hd3")
 sources/0 = SubResource("TileSetAtlasSource_1lnck")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dtnpy"]
-texture = ExtResource("12_mqlne")
+texture = ExtResource("4_m35kx")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -217,7 +217,7 @@ texture = ExtResource("12_mqlne")
 sources/0 = SubResource("TileSetAtlasSource_dtnpy")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_barj3"]
-texture = ExtResource("13_0kto7")
+texture = ExtResource("5_w26o0")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -258,7 +258,7 @@ texture = ExtResource("13_0kto7")
 sources/0 = SubResource("TileSetAtlasSource_barj3")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_df8ea"]
-texture = ExtResource("14_1k4sy")
+texture = ExtResource("6_gmw3r")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -289,7 +289,7 @@ texture = ExtResource("14_1k4sy")
 sources/0 = SubResource("TileSetAtlasSource_df8ea")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r8g4c"]
-texture = ExtResource("15_8udb5")
+texture = ExtResource("7_3av7p")
 0:0/0 = 0
 1:0/0 = 0
 
@@ -297,7 +297,7 @@ texture = ExtResource("15_8udb5")
 sources/0 = SubResource("TileSetAtlasSource_r8g4c")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p8b4b"]
-texture = ExtResource("13_wsmde")
+texture = ExtResource("8_2d2wb")
 32:4/0 = 0
 33:4/0 = 0
 34:4/0 = 0
@@ -4963,7 +4963,7 @@ texture = ExtResource("13_wsmde")
 sources/0 = SubResource("TileSetAtlasSource_p8b4b")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3m41u"]
-texture = ExtResource("14_ajwcf")
+texture = ExtResource("9_7lesg")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -11099,7 +11099,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_3m41u")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yju2g"]
-texture = ExtResource("14_ajwcf")
+texture = ExtResource("9_7lesg")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -17221,7 +17221,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_yju2g")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3t3xp"]
-texture = ExtResource("13_36kd5")
+texture = ExtResource("10_jjxf4")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -17376,7 +17376,7 @@ texture = ExtResource("13_36kd5")
 3:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nj3yg"]
-texture = ExtResource("14_anr02")
+texture = ExtResource("11_uag7q")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -17432,7 +17432,7 @@ sources/0 = SubResource("TileSetAtlasSource_3t3xp")
 sources/3 = SubResource("TileSetAtlasSource_nj3yg")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kncq2"]
-texture = ExtResource("13_wsmde")
+texture = ExtResource("8_2d2wb")
 32:4/0 = 0
 32:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 32:4/0/physics_layer_0/angular_velocity = 0.0
@@ -31471,7 +31471,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_kncq2")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dbboh"]
-texture = ExtResource("13_4giqi")
+texture = ExtResource("12_v0i1a")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -33205,10 +33205,10 @@ texture = ExtResource("13_4giqi")
 21:25/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sybj2"]
-texture = ExtResource("14_c8kmp")
+texture = ExtResource("13_41ewm")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_12fg6"]
-texture = ExtResource("15_4rqvo")
+texture = ExtResource("14_a8hm1")
 0:13/0 = 0
 0:13/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:13/0/physics_layer_0/angular_velocity = 0.0
@@ -36052,7 +36052,7 @@ sources/1 = SubResource("TileSetAtlasSource_sybj2")
 sources/2 = SubResource("TileSetAtlasSource_12fg6")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w16d8"]
-texture = ExtResource("15_4rqvo")
+texture = ExtResource("14_a8hm1")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -38768,7 +38768,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_w16d8")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bbyhe"]
-texture = ExtResource("16_t8err")
+texture = ExtResource("15_xdbom")
 3:0/0 = 0
 4:0/0 = 0
 5:0/0 = 0
@@ -40622,7 +40622,7 @@ texture = ExtResource("16_t8err")
 sources/0 = SubResource("TileSetAtlasSource_bbyhe")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rk7o7"]
-texture = ExtResource("17_ycf8i")
+texture = ExtResource("16_r8hy7")
 39:1/0 = 0
 39:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 39:1/0/physics_layer_0/angular_velocity = 0.0
@@ -44712,7 +44712,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_rk7o7")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_17ab5"]
-texture = ExtResource("18_eyc2d")
+texture = ExtResource("17_yfwqq")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -46685,7 +46685,7 @@ texture = ExtResource("18_eyc2d")
 sources/0 = SubResource("TileSetAtlasSource_17ab5")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vcax7"]
-texture = ExtResource("18_3jkor")
+texture = ExtResource("18_gxjww")
 3:0/0 = 0
 3:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:0/0/physics_layer_0/angular_velocity = 0.0
@@ -51866,7 +51866,7 @@ texture = ExtResource("18_3jkor")
 29:47/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kvflk"]
-texture = ExtResource("19_qy7nx")
+texture = ExtResource("19_hiev7")
 10:0/0 = 0
 10:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 10:0/0/physics_layer_0/angular_velocity = 0.0
@@ -55463,12 +55463,12 @@ position = Vector2(215, 296)
 [node name="Player_prov" type="CharacterBody2D" parent="."]
 position = Vector2(200, -464)
 platform_wall_layers = 1
-script = ExtResource("1_d4s2l")
+script = ExtResource("1_qbu6o")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player_prov"]
 position = Vector2(-239, -128)
 scale = Vector2(1.35714, 1.1875)
-texture = ExtResource("1_t53kj")
+texture = ExtResource("2_hign1")
 hframes = 9
 vframes = 16
 
