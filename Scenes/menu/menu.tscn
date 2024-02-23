@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://bcet6ddrgr57d"]
+[gd_scene load_steps=11 format=3 uid="uid://bcet6ddrgr57d"]
 
 [ext_resource type="Script" path="res://menu.gd" id="1_u67vg"]
+[ext_resource type="Texture2D" uid="uid://t0ndm23opp0n" path="res://ezgif-4-1aa1f1c588.webp" id="2_17uuo"]
 [ext_resource type="FontFile" uid="uid://c4klt508djmoq" path="res://burnstown-dam/burnstown dam.otf" id="2_45vwf"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_ulynj"]
+diffuse_texture = ExtResource("2_17uuo")
 specular_color = Color(0.403922, 0.607843, 0.152941, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_rk0s6"]
@@ -16,6 +18,16 @@ outline_size = 2
 outline_color = Color(1, 1, 0.0941176, 1)
 shadow_size = 5
 shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ImageTexture" id="ImageTexture_axdyo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6d5yu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nbtia"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_265el"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fswab"]
 
 [node name="menu" type="Control"]
 layout_mode = 3
@@ -33,7 +45,7 @@ offset_top = 1.0
 offset_right = 1153.0
 offset_bottom = 646.0
 texture = SubResource("CanvasTexture_ulynj")
-stretch_mode = 1
+expand_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0
@@ -70,9 +82,11 @@ localize_numeral_system = false
 [node name="Start" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 text = "INIZIA PARTITA"
+icon = SubResource("ImageTexture_axdyo")
 
 [node name="HSeparator" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_6d5yu")
 
 [node name="New_Game" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
@@ -80,6 +94,7 @@ text = "NUOVA PARTITA"
 
 [node name="HSeparator2" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_nbtia")
 
 [node name="Impostazioni" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
@@ -88,6 +103,7 @@ text = "IMPOSTAZIONI
 
 [node name="HSeparator3" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_265el")
 
 [node name="Crediti" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
@@ -96,6 +112,7 @@ text = "CREDITI
 
 [node name="HSeparator4" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_fswab")
 
 [node name="Esci" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
