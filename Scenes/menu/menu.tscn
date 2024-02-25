@@ -1,0 +1,123 @@
+[gd_scene load_steps=12 format=3 uid="uid://bcet6ddrgr57d"]
+
+[ext_resource type="Script" path="res://menu.gd" id="1_u67vg"]
+[ext_resource type="FontFile" uid="uid://c4klt508djmoq" path="res://burnstown-dam/burnstown dam.otf" id="2_45vwf"]
+[ext_resource type="Script" path="res://Scenes/menu/TextureRect.gd" id="3_jtg8g"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rk0s6"]
+resource_local_to_scene = true
+line_spacing = 50.0
+font = ExtResource("2_45vwf")
+font_size = 120
+font_color = Color(0.868778, 0.537436, 0.0782634, 1)
+outline_size = 15
+outline_color = Color(1, 0.733333, 0.0941176, 0.572549)
+shadow_size = 10
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(3, 3)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_5q8eh"]
+
+[sub_resource type="SystemFont" id="SystemFont_566jq"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_axdyo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6d5yu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nbtia"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_265el"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fswab"]
+
+[node name="menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_u67vg")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 1153.0
+offset_bottom = 646.0
+expand_mode = 2
+script = ExtResource("3_jtg8g")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 41.0
+offset_right = 1122.0
+offset_bottom = 557.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 60
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+modulate = Color(0.870588, 0.537255, 0.0784314, 1)
+self_modulate = Color(1, 1, 0.00784314, 1)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.964706, 0, 0, 1)
+theme_override_font_sizes/font_size = 51
+text = "QUERCUS"
+label_settings = SubResource("LabelSettings_rk0s6")
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 8
+size_flags_stretch_ratio = 0.0
+auto_translate = false
+localize_numeral_system = false
+
+[node name="Start" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+material = SubResource("CanvasItemMaterial_5q8eh")
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_566jq")
+text = "CARICA PARTITA"
+icon = SubResource("ImageTexture_axdyo")
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_6d5yu")
+
+[node name="New_Game" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "NUOVA PARTITA"
+
+[node name="HSeparator2" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_nbtia")
+
+[node name="Impostazioni" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "IMPOSTAZIONI
+"
+
+[node name="HSeparator3" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_265el")
+
+[node name="Crediti" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "CREDITI
+"
+
+[node name="HSeparator4" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_fswab")
+
+[node name="Esci" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "ESCI
+"
