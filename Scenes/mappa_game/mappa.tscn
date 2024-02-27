@@ -34,7 +34,7 @@
 [ext_resource type="Texture2D" uid="uid://cmbpin5ryk4f1" path="res://NPG/npg_z-quercus_09_universal.png" id="32_va04q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bf2fi"]
-size = Vector2(13, 21)
+size = Vector2(11.125, 20.5)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1lnck"]
 texture = ExtResource("3_7wf1g")
@@ -55503,7 +55503,7 @@ platform_wall_layers = 1
 script = ExtResource("1_qbu6o")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player_prov"]
-position = Vector2(-265, -158)
+position = Vector2(-105, 360)
 scale = Vector2(0.531773, 0.522321)
 texture = ExtResource("2_5jwpo")
 hframes = 15
@@ -55511,7 +55511,7 @@ vframes = 22
 frame = 285
 
 [node name="Camera2D" type="Camera2D" parent="Player_prov/Sprite2D"]
-position = Vector2(2.1307, -0.119629)
+position = Vector2(0, -7.65813)
 scale = Vector2(0.699999, 0.842105)
 ignore_rotation = false
 zoom = Vector2(2.5, 2.5)
@@ -55520,7 +55520,7 @@ zoom = Vector2(2.5, 2.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player_prov"]
 texture_filter = 1
-position = Vector2(-262.5, -158.5)
+position = Vector2(-103, 359.25)
 shape = SubResource("RectangleShape2D_bf2fi")
 one_way_collision_margin = 0.0
 debug_color = Color(0.603922, 0.431373, 0.854902, 0.419608)
