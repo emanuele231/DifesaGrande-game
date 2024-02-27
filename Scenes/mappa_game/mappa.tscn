@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=3 uid="uid://dqiw7bvjmib4d"]
+[gd_scene load_steps=82 format=3 uid="uid://dqiw7bvjmib4d"]
 
 [ext_resource type="Script" path="res://scripts/Player_prov_movements.gd" id="1_qbu6o"]
 [ext_resource type="Texture2D" uid="uid://mma4w2rnqnov" path="res://NPG/Personaggio_non_personalizzato_universal.png" id="2_5jwpo"]
@@ -32,6 +32,8 @@
 [ext_resource type="Texture2D" uid="uid://j4gkot2j5m4b" path="res://NPG/npg_z-quercus_07_universal.png" id="30_0rts0"]
 [ext_resource type="Texture2D" uid="uid://b3wkax4lfe45c" path="res://NPG/npg_z-quercus_08_universal.png" id="31_sgx8a"]
 [ext_resource type="Texture2D" uid="uid://cmbpin5ryk4f1" path="res://NPG/npg_z-quercus_09_universal.png" id="32_va04q"]
+[ext_resource type="Texture2D" uid="uid://ycyjfh6ps3je" path="res://personaggi/assessore.png" id="33_le488"]
+[ext_resource type="Script" path="res://Scenes/mappa_game/Assessore.gd" id="33_soxmn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bf2fi"]
 size = Vector2(11.125, 20.5)
@@ -55493,10 +55495,13 @@ size = Vector2(13, 23)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x2ic1"]
 size = Vector2(13, 23)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ex1i0"]
+size = Vector2(9, 20)
+
 [node name="MAPPA" type="Node2D"]
 position = Vector2(215, 296)
 
-[node name="Player_prov" type="CharacterBody2D" parent="."]
+[node name="Player_prov" type="CharacterBody2D" parent="." groups=["Player"]]
 position = Vector2(200, -464)
 floor_max_angle = 0.74351
 platform_wall_layers = 1
@@ -55745,3 +55750,18 @@ frame = 28
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPG_09_quercus"]
 position = Vector2(493.5, 205.5)
 shape = SubResource("RectangleShape2D_x2ic1")
+
+[node name="Assessore" type="CharacterBody2D" parent="."]
+script = ExtResource("33_soxmn")
+
+[node name="Sprite2D" type="Sprite2D" parent="Assessore"]
+position = Vector2(15.75, 16.25)
+scale = Vector2(0.466102, 0.514925)
+texture = ExtResource("33_le488")
+hframes = 14
+vframes = 20
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Assessore"]
+position = Vector2(16.5, 19)
+shape = SubResource("RectangleShape2D_ex1i0")
+debug_color = Color(0.654902, 0.517647, 0, 0.419608)
