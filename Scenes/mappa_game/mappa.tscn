@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://dqiw7bvjmib4d"]
+[gd_scene load_steps=79 format=3 uid="uid://dqiw7bvjmib4d"]
 
 [ext_resource type="Script" path="res://scripts/Player_prov_movements.gd" id="1_qbu6o"]
 [ext_resource type="Texture2D" uid="uid://mma4w2rnqnov" path="res://NPG/Personaggio_non_personalizzato_universal.png" id="2_5jwpo"]
@@ -24,9 +24,17 @@
 [ext_resource type="Texture2D" uid="uid://b45v0tsflkl1s" path="res://NPG/npg_z-quercus_02_universal.png" id="22_fmqq7"]
 [ext_resource type="Texture2D" uid="uid://c4w6sgjpnuvxe" path="res://NPG/npg_z-quercus_03_universal.png" id="23_vkirj"]
 [ext_resource type="Script" path="res://Scenes/mappa_game/NPG_3_quercus.gd" id="23_xlwtk"]
+[ext_resource type="Script" path="res://Scenes/mappa_game/NPG_4_quercus.gd" id="25_avvmm"]
+[ext_resource type="Texture2D" uid="uid://cav4picdvd1rx" path="res://NPG/npg_z-quercus_04_universal.png" id="26_852ln"]
+[ext_resource type="Texture2D" uid="uid://fvjrboolj5d5" path="res://NPG/npg_z-quercus_05_universal.png" id="27_45uce"]
+[ext_resource type="Script" path="res://Scenes/mappa_game/NPG_6_quercus.gd" id="28_vscn2"]
+[ext_resource type="Texture2D" uid="uid://dp8rlyxcdjbl6" path="res://NPG/npg_z-quercus_06_universal.png" id="29_i5wpc"]
+[ext_resource type="Texture2D" uid="uid://j4gkot2j5m4b" path="res://NPG/npg_z-quercus_07_universal.png" id="30_0rts0"]
+[ext_resource type="Texture2D" uid="uid://b3wkax4lfe45c" path="res://NPG/npg_z-quercus_08_universal.png" id="31_sgx8a"]
+[ext_resource type="Texture2D" uid="uid://cmbpin5ryk4f1" path="res://NPG/npg_z-quercus_09_universal.png" id="32_va04q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bf2fi"]
-size = Vector2(13, 22.5)
+size = Vector2(13, 21)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1lnck"]
 texture = ExtResource("3_7wf1g")
@@ -17244,19 +17252,15 @@ texture = ExtResource("10_jjxf4")
 4:0/0 = 0
 4:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:0/0/physics_layer_0/angular_velocity = 0.0
-4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 5:0/0 = 0
 5:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 5:0/0/physics_layer_0/angular_velocity = 0.0
-5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 6:0/0 = 0
 6:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 6:0/0/physics_layer_0/angular_velocity = 0.0
-6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 7:0/0 = 0
 7:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 7:0/0/physics_layer_0/angular_velocity = 0.0
-7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 0:1/0 = 0
 0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:1/0/physics_layer_0/angular_velocity = 0.0
@@ -55471,6 +55475,24 @@ size = Vector2(11, 22.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2m65c"]
 size = Vector2(12, 24)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2dx2n"]
+size = Vector2(10, 27)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2f7i0"]
+size = Vector2(12, 22)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_badbo"]
+size = Vector2(9, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lkmwh"]
+size = Vector2(13, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tills"]
+size = Vector2(13, 23)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x2ic1"]
+size = Vector2(13, 23)
+
 [node name="MAPPA" type="Node2D"]
 position = Vector2(215, 296)
 
@@ -55498,7 +55520,7 @@ zoom = Vector2(2.5, 2.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player_prov"]
 texture_filter = 1
-position = Vector2(-262.5, -158.75)
+position = Vector2(-262.5, -158.5)
 shape = SubResource("RectangleShape2D_bf2fi")
 one_way_collision_margin = 0.0
 debug_color = Color(0.603922, 0.431373, 0.854902, 0.419608)
@@ -55637,3 +55659,89 @@ frame = 45
 position = Vector2(-59, 142)
 shape = SubResource("RectangleShape2D_2m65c")
 debug_color = Color(0.956863, 0.505882, 0.388235, 0.419608)
+
+[node name="NPG_4_quercus" type="CharacterBody2D" parent="."]
+script = ExtResource("25_avvmm")
+
+[node name="Sprite2D" type="Sprite2D" parent="NPG_4_quercus"]
+position = Vector2(130.435, -304.033)
+scale = Vector2(0.557122, 0.625888)
+texture = ExtResource("26_852ln")
+hframes = 14
+vframes = 20
+frame = 14
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPG_4_quercus"]
+position = Vector2(132, -304.5)
+shape = SubResource("RectangleShape2D_2dx2n")
+debug_color = Color(0.631373, 0.356863, 0.972549, 0.596078)
+
+[node name="NPG_5_quercus" type="CharacterBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="NPG_5_quercus"]
+position = Vector2(373, -304)
+scale = Vector2(0.5, 0.544776)
+texture = ExtResource("27_45uce")
+hframes = 14
+vframes = 20
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPG_5_quercus"]
+position = Vector2(374, -302)
+shape = SubResource("RectangleShape2D_2f7i0")
+
+[node name="NPG_6_quercus" type="CharacterBody2D" parent="."]
+script = ExtResource("28_vscn2")
+
+[node name="Sprite2D" type="Sprite2D" parent="NPG_6_quercus"]
+position = Vector2(38, -21)
+scale = Vector2(0.555084, 0.578358)
+texture = ExtResource("29_i5wpc")
+hframes = 14
+vframes = 20
+frame = 14
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPG_6_quercus"]
+position = Vector2(39, -19)
+shape = SubResource("RectangleShape2D_badbo")
+
+[node name="NPG_7_quercus" type="CharacterBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="NPG_7_quercus"]
+position = Vector2(-298, 307)
+scale = Vector2(0.584746, 0.589552)
+texture = ExtResource("30_0rts0")
+hframes = 14
+vframes = 20
+frame = 28
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPG_7_quercus"]
+position = Vector2(-296.5, 306)
+shape = SubResource("RectangleShape2D_lkmwh")
+
+[node name="NPG_8_quercus" type="CharacterBody2D" parent="."]
+position = Vector2(-2, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="NPG_8_quercus"]
+position = Vector2(-296, 328)
+scale = Vector2(0.584746, 0.529851)
+texture = ExtResource("31_sgx8a")
+hframes = 14
+vframes = 20
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPG_8_quercus"]
+position = Vector2(-294.5, 329.5)
+shape = SubResource("RectangleShape2D_tills")
+
+[node name="NPG_09_quercus" type="CharacterBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="NPG_09_quercus"]
+position = Vector2(492, 206)
+scale = Vector2(0.567797, 0.589552)
+texture = ExtResource("32_va04q")
+hframes = 14
+vframes = 20
+frame = 28
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPG_09_quercus"]
+position = Vector2(493.5, 205.5)
+shape = SubResource("RectangleShape2D_x2ic1")
