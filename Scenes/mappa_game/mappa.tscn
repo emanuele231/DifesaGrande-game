@@ -1,9 +1,10 @@
-[gd_scene load_steps=82 format=3 uid="uid://dqiw7bvjmib4d"]
+[gd_scene load_steps=83 format=3 uid="uid://dqiw7bvjmib4d"]
 
 [ext_resource type="Script" path="res://scripts/Player_prov_movements.gd" id="1_qbu6o"]
 [ext_resource type="Texture2D" uid="uid://mma4w2rnqnov" path="res://NPG/Personaggio_non_personalizzato_universal.png" id="2_5jwpo"]
 [ext_resource type="Texture2D" uid="uid://dh0bh5kpvdgov" path="res://World of Solaria Rural Village Update 05a/World of Solaria Rural Village Update 05a/16x16/Tilesets/Rural Village Farming.png" id="3_7wf1g"]
 [ext_resource type="Texture2D" uid="uid://7e8q311i0fbj" path="res://World of Solaria Rural Village Update 05a/World of Solaria Rural Village Update 05a/16x16/Animated Tiles/Village Animated Smoke.png" id="4_m35kx"]
+[ext_resource type="Script" path="res://Scenes/mappa_game/Dialogo_1.gd" id="4_xoiks"]
 [ext_resource type="Texture2D" uid="uid://vdxita3uu0wu" path="res://assets acquistati/assets acquistati 2/MEGA BUNDLE 12 ASSET PACKS/MEGA BUNDLE 12 ASSET PACKS/HARVEST TINY FARM/HOUSES/HOUSE 1.png" id="5_w26o0"]
 [ext_resource type="Texture2D" uid="uid://eji2wp281v1i" path="res://assets acquistati/assets acquistati 2/MEGA BUNDLE 12 ASSET PACKS/MEGA BUNDLE 12 ASSET PACKS/HARVEST TINY FARM/HOUSES/HOUSE 2.png" id="6_gmw3r"]
 [ext_resource type="Texture2D" uid="uid://co17f5xgdgvyh" path="res://assets acquistati/assets acquistati 2/MEGA BUNDLE 12 ASSET PACKS/MEGA BUNDLE 12 ASSET PACKS/HARVEST TINY FARM/TREES/TREE 3.png" id="7_3av7p"]
@@ -33,7 +34,11 @@
 [ext_resource type="Texture2D" uid="uid://b3wkax4lfe45c" path="res://NPG/npg_z-quercus_08_universal.png" id="31_sgx8a"]
 [ext_resource type="Texture2D" uid="uid://cmbpin5ryk4f1" path="res://NPG/npg_z-quercus_09_universal.png" id="32_va04q"]
 [ext_resource type="Texture2D" uid="uid://ycyjfh6ps3je" path="res://personaggi/assessore.png" id="33_le488"]
-[ext_resource type="Script" path="res://Scenes/mappa_game/Assessore.gd" id="33_soxmn"]
+
+[sub_resource type="GDScript" id="GDScript_xvjy4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ulwkn"]
+size = Vector2(10, 26)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bf2fi"]
 size = Vector2(11.125, 20.5)
@@ -55495,19 +55500,57 @@ size = Vector2(13, 23)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x2ic1"]
 size = Vector2(13, 23)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ex1i0"]
-size = Vector2(9, 20)
-
 [node name="MAPPA" type="Node2D"]
 position = Vector2(215, 296)
 
-[node name="Player_prov" type="CharacterBody2D" parent="." groups=["Player"]]
-position = Vector2(200, -464)
+[node name="Assessore" type="CharacterBody2D" parent="."]
+position = Vector2(75, -74)
+script = SubResource("GDScript_xvjy4")
+
+[node name="Sprite2D" type="Sprite2D" parent="Assessore"]
+position = Vector2(-6, -28)
+scale = Vector2(0.542373, 0.619403)
+texture = ExtResource("33_le488")
+hframes = 14
+vframes = 20
+frame = 42
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Assessore"]
+position = Vector2(-5, -31)
+shape = SubResource("RectangleShape2D_ulwkn")
+
+[node name="Dialogo_1" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 0.0786591
+offset_top = -6.83472
+offset_right = 473.079
+offset_bottom = 49.1653
+script = ExtResource("4_xoiks")
+
+[node name="Label" type="Label" parent="Dialogo_1"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -203.579
+offset_top = -61.1653
+offset_right = -77.5787
+offset_bottom = -35.1653
+grow_horizontal = 2
+grow_vertical = 0
+horizontal_alignment = 1
+max_lines_visible = 1
+
+[node name="Player_prov" type="CharacterBody2D" parent="Dialogo_1"]
+position = Vector2(199.921, -457.165)
 floor_max_angle = 0.74351
 platform_wall_layers = 1
 script = ExtResource("1_qbu6o")
 
-[node name="Sprite2D" type="Sprite2D" parent="Player_prov"]
+[node name="Sprite2D" type="Sprite2D" parent="Dialogo_1/Player_prov"]
 position = Vector2(-105, 360)
 scale = Vector2(0.531773, 0.522321)
 texture = ExtResource("2_5jwpo")
@@ -55515,15 +55558,15 @@ hframes = 15
 vframes = 22
 frame = 285
 
-[node name="Camera2D" type="Camera2D" parent="Player_prov/Sprite2D"]
+[node name="Camera2D" type="Camera2D" parent="Dialogo_1/Player_prov/Sprite2D"]
 position = Vector2(0, -7.65813)
 scale = Vector2(0.699999, 0.842105)
 ignore_rotation = false
 zoom = Vector2(2.5, 2.5)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Player_prov"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Dialogo_1/Player_prov"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player_prov"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dialogo_1/Player_prov"]
 texture_filter = 1
 position = Vector2(-103, 359.25)
 shape = SubResource("RectangleShape2D_bf2fi")
@@ -55623,14 +55666,14 @@ layer_0/tile_data = PackedInt32Array(-2097168, 1966080, 0, -2031632, 1966080, 1,
 script = ExtResource("20_d1s8c")
 
 [node name="Sprite2D" type="Sprite2D" parent="NPG_1_quercus"]
-position = Vector2(121, 1)
+position = Vector2(124, 3)
 scale = Vector2(0.613636, 0.593284)
 texture = ExtResource("20_mbwrk")
 hframes = 15
 vframes = 20
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPG_1_quercus"]
-position = Vector2(123.5, 3.5)
+position = Vector2(127, 7)
 shape = SubResource("RectangleShape2D_v086e")
 debug_color = Color(0.709804, 0.45098, 0.494118, 0.419608)
 
@@ -55750,18 +55793,3 @@ frame = 28
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPG_09_quercus"]
 position = Vector2(493.5, 205.5)
 shape = SubResource("RectangleShape2D_x2ic1")
-
-[node name="Assessore" type="CharacterBody2D" parent="."]
-script = ExtResource("33_soxmn")
-
-[node name="Sprite2D" type="Sprite2D" parent="Assessore"]
-position = Vector2(15.75, 16.25)
-scale = Vector2(0.466102, 0.514925)
-texture = ExtResource("33_le488")
-hframes = 14
-vframes = 20
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Assessore"]
-position = Vector2(16.5, 19)
-shape = SubResource("RectangleShape2D_ex1i0")
-debug_color = Color(0.654902, 0.517647, 0, 0.419608)
