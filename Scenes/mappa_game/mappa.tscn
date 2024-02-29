@@ -55467,31 +55467,31 @@ sources/0 = SubResource("TileSetAtlasSource_vcax7")
 sources/2 = SubResource("TileSetAtlasSource_kvflk")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v086e"]
-size = Vector2(15, 26)
+size = Vector2(13, 23)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w8wdk"]
 size = Vector2(11, 22.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2m65c"]
-size = Vector2(12, 26)
+size = Vector2(12, 24)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2dx2n"]
-size = Vector2(12, 31)
+size = Vector2(10, 27)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2f7i0"]
-size = Vector2(14, 25)
+size = Vector2(12, 22)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_badbo"]
-size = Vector2(13, 26)
+size = Vector2(9, 25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lkmwh"]
-size = Vector2(15, 24)
+size = Vector2(13, 24)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tills"]
-size = Vector2(16, 24)
+size = Vector2(13, 23)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x2ic1"]
-size = Vector2(17, 26)
+size = Vector2(13, 23)
 
 [node name="MAPPA" type="Node2D"]
 position = Vector2(215, 296)
@@ -55625,15 +55625,11 @@ hframes = 15
 vframes = 20
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPG_1_quercus"]
-light_mask = 1023
-visibility_layer = 1023
-position = Vector2(124.5, 5)
+position = Vector2(123.5, 3.5)
 shape = SubResource("RectangleShape2D_v086e")
-one_way_collision = true
 debug_color = Color(0.709804, 0.45098, 0.494118, 0.419608)
 
 [node name="NPG_2_quercus" type="CharacterBody2D" parent="."]
-script = ExtResource("28_vscn2")
 
 [node name="Sprite2D" type="Sprite2D" parent="NPG_2_quercus"]
 position = Vector2(335, 38)
@@ -55660,7 +55656,7 @@ vframes = 20
 frame = 45
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPG_3_quercus"]
-position = Vector2(-59, 141)
+position = Vector2(-59, 142)
 shape = SubResource("RectangleShape2D_2m65c")
 debug_color = Color(0.956863, 0.505882, 0.388235, 0.419608)
 
@@ -55668,7 +55664,7 @@ debug_color = Color(0.956863, 0.505882, 0.388235, 0.419608)
 script = ExtResource("25_avvmm")
 
 [node name="Sprite2D" type="Sprite2D" parent="NPG_4_quercus"]
-position = Vector2(230, -401)
+position = Vector2(130.435, -304.033)
 scale = Vector2(0.557122, 0.625888)
 texture = ExtResource("26_852ln")
 hframes = 14
@@ -55676,12 +55672,11 @@ vframes = 20
 frame = 14
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPG_4_quercus"]
-position = Vector2(232, -401.5)
+position = Vector2(132, -304.5)
 shape = SubResource("RectangleShape2D_2dx2n")
 debug_color = Color(0.631373, 0.356863, 0.972549, 0.596078)
 
 [node name="NPG_5_quercus" type="CharacterBody2D" parent="."]
-script = ExtResource("20_d1s8c")
 
 [node name="Sprite2D" type="Sprite2D" parent="NPG_5_quercus"]
 position = Vector2(373, -304)
@@ -55691,7 +55686,7 @@ hframes = 14
 vframes = 20
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPG_5_quercus"]
-position = Vector2(374, -301.5)
+position = Vector2(374, -302)
 shape = SubResource("RectangleShape2D_2f7i0")
 
 [node name="NPG_6_quercus" type="CharacterBody2D" parent="."]
@@ -55706,11 +55701,10 @@ vframes = 20
 frame = 14
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPG_6_quercus"]
-position = Vector2(39.5, -21)
+position = Vector2(39, -19)
 shape = SubResource("RectangleShape2D_badbo")
 
 [node name="NPG_7_quercus" type="CharacterBody2D" parent="."]
-script = ExtResource("20_d1s8c")
 
 [node name="Sprite2D" type="Sprite2D" parent="NPG_7_quercus"]
 position = Vector2(-298, 307)
@@ -55726,7 +55720,6 @@ shape = SubResource("RectangleShape2D_lkmwh")
 
 [node name="NPG_8_quercus" type="CharacterBody2D" parent="."]
 position = Vector2(-2, 0)
-script = ExtResource("25_avvmm")
 
 [node name="Sprite2D" type="Sprite2D" parent="NPG_8_quercus"]
 position = Vector2(-296, 328)
@@ -55736,11 +55729,10 @@ hframes = 14
 vframes = 20
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPG_8_quercus"]
-position = Vector2(-295, 330)
+position = Vector2(-294.5, 329.5)
 shape = SubResource("RectangleShape2D_tills")
 
 [node name="NPG_09_quercus" type="CharacterBody2D" parent="."]
-script = ExtResource("20_d1s8c")
 
 [node name="Sprite2D" type="Sprite2D" parent="NPG_09_quercus"]
 position = Vector2(492, 206)
@@ -55751,5 +55743,5 @@ vframes = 20
 frame = 28
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPG_09_quercus"]
-position = Vector2(493.5, 205)
+position = Vector2(493.5, 205.5)
 shape = SubResource("RectangleShape2D_x2ic1")
