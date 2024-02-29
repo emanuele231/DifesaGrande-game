@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=3 uid="uid://dqiw7bvjmib4d"]
+[gd_scene load_steps=84 format=3 uid="uid://dqiw7bvjmib4d"]
 
 [ext_resource type="Script" path="res://scripts/Player_prov_movements.gd" id="1_qbu6o"]
 [ext_resource type="Texture2D" uid="uid://mma4w2rnqnov" path="res://NPG/Personaggio_non_personalizzato_universal.png" id="2_5jwpo"]
@@ -40,8 +40,10 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ulwkn"]
 size = Vector2(10, 26)
 
+[sub_resource type="GDScript" id="GDScript_x2n7i"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bf2fi"]
-size = Vector2(11.125, 20.5)
+size = Vector2(10.5625, 20.5)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1lnck"]
 texture = ExtResource("3_7wf1g")
@@ -55528,10 +55530,10 @@ script = ExtResource("1_qbu6o")
 [node name="Dialogo_1" type="Control" parent="Assessore/Player_prov"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = -199.921
-offset_top = 457.165
-offset_right = 273.079
-offset_bottom = 513.165
+offset_left = -138.0
+offset_top = 409.0
+offset_right = 144.0
+offset_bottom = 475.0
 script = ExtResource("4_xoiks")
 
 [node name="Label" type="Label" parent="Assessore/Player_prov/Dialogo_1"]
@@ -55559,16 +55561,24 @@ vframes = 22
 frame = 285
 
 [node name="Camera2D" type="Camera2D" parent="Assessore/Player_prov/Sprite2D"]
-position = Vector2(0, -7.65813)
+position = Vector2(5.6416, 5.74358)
 scale = Vector2(0.699999, 0.842105)
 ignore_rotation = false
 zoom = Vector2(2.5, 2.5)
+limit_left = -312
+limit_top = -423
+limit_right = 1005
+limit_bottom = 1095
+limit_smoothed = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+script = SubResource("GDScript_x2n7i")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Assessore/Player_prov"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Assessore/Player_prov"]
 texture_filter = 1
-position = Vector2(-103, 359.25)
+position = Vector2(-102, 360)
 shape = SubResource("RectangleShape2D_bf2fi")
 one_way_collision_margin = 0.0
 debug_color = Color(0.603922, 0.431373, 0.854902, 0.419608)
@@ -55791,5 +55801,8 @@ vframes = 20
 frame = 28
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPG_09_quercus"]
-position = Vector2(493.5, 205.5)
+position = Vector2(494, 206)
 shape = SubResource("RectangleShape2D_x2ic1")
+
+[node name="camera_misuratrice" type="Camera2D" parent="."]
+position = Vector2(50, -395)
