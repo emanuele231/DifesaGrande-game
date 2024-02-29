@@ -7,15 +7,18 @@ var can_move: bool = true
 
 
 
-func _physics_process(delta):
-	
-	move()
 
+
+func disable_movement():
+	can_move = false
 	
+
+func _physics_process(_delta):
+	can_move = true
+	move()
 
 
 func move():
-	if can_move:
 		input_movement = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	
 		if input_movement != Vector2.ZERO:
@@ -23,7 +26,9 @@ func move():
 
 		if input_movement == Vector2.ZERO:
 			velocity = Vector2.ZERO
-	
 		move_and_slide()
+
+
+
 
 

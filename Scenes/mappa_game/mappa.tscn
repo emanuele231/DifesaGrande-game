@@ -55519,16 +55519,22 @@ frame = 42
 position = Vector2(-5, -31)
 shape = SubResource("RectangleShape2D_ulwkn")
 
-[node name="Dialogo_1" type="Control" parent="."]
+[node name="Player_prov" type="CharacterBody2D" parent="Assessore"]
+position = Vector2(125, -390)
+floor_max_angle = 0.74351
+platform_wall_layers = 1
+script = ExtResource("1_qbu6o")
+
+[node name="Dialogo_1" type="Control" parent="Assessore/Player_prov"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 0.0786591
-offset_top = -6.83472
-offset_right = 473.079
-offset_bottom = 49.1653
+offset_left = -199.921
+offset_top = 457.165
+offset_right = 273.079
+offset_bottom = 513.165
 script = ExtResource("4_xoiks")
 
-[node name="Label" type="Label" parent="Dialogo_1"]
+[node name="Label" type="Label" parent="Assessore/Player_prov/Dialogo_1"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -55544,13 +55550,7 @@ grow_vertical = 0
 horizontal_alignment = 1
 max_lines_visible = 1
 
-[node name="Player_prov" type="CharacterBody2D" parent="Dialogo_1"]
-position = Vector2(199.921, -457.165)
-floor_max_angle = 0.74351
-platform_wall_layers = 1
-script = ExtResource("1_qbu6o")
-
-[node name="Sprite2D" type="Sprite2D" parent="Dialogo_1/Player_prov"]
+[node name="Sprite2D" type="Sprite2D" parent="Assessore/Player_prov"]
 position = Vector2(-105, 360)
 scale = Vector2(0.531773, 0.522321)
 texture = ExtResource("2_5jwpo")
@@ -55558,15 +55558,15 @@ hframes = 15
 vframes = 22
 frame = 285
 
-[node name="Camera2D" type="Camera2D" parent="Dialogo_1/Player_prov/Sprite2D"]
+[node name="Camera2D" type="Camera2D" parent="Assessore/Player_prov/Sprite2D"]
 position = Vector2(0, -7.65813)
 scale = Vector2(0.699999, 0.842105)
 ignore_rotation = false
 zoom = Vector2(2.5, 2.5)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Dialogo_1/Player_prov"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Assessore/Player_prov"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Dialogo_1/Player_prov"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Assessore/Player_prov"]
 texture_filter = 1
 position = Vector2(-103, 359.25)
 shape = SubResource("RectangleShape2D_bf2fi")
