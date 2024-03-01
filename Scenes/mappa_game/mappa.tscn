@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=3 uid="uid://dqiw7bvjmib4d"]
+[gd_scene load_steps=80 format=3 uid="uid://dqiw7bvjmib4d"]
 
 [ext_resource type="Script" path="res://scripts/Player_prov_movements.gd" id="1_qbu6o"]
 [ext_resource type="Texture2D" uid="uid://mma4w2rnqnov" path="res://NPG/Personaggio_non_personalizzato_universal.png" id="2_5jwpo"]
@@ -32,17 +32,11 @@
 [ext_resource type="Texture2D" uid="uid://j4gkot2j5m4b" path="res://NPG/npg_z-quercus_07_universal.png" id="30_0rts0"]
 [ext_resource type="Texture2D" uid="uid://b3wkax4lfe45c" path="res://NPG/npg_z-quercus_08_universal.png" id="31_sgx8a"]
 [ext_resource type="Texture2D" uid="uid://cmbpin5ryk4f1" path="res://NPG/npg_z-quercus_09_universal.png" id="32_va04q"]
-[ext_resource type="Texture2D" uid="uid://ycyjfh6ps3je" path="res://personaggi/assessore.png" id="33_le488"]
-
-[sub_resource type="GDScript" id="GDScript_xvjy4"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ulwkn"]
-size = Vector2(10, 26)
 
 [sub_resource type="GDScript" id="GDScript_x2n7i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bf2fi"]
-size = Vector2(10.5625, 20.5)
+size = Vector2(10.5625, 6.625)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1lnck"]
 texture = ExtResource("3_7wf1g")
@@ -55504,29 +55498,13 @@ size = Vector2(13, 23)
 [node name="MAPPA" type="Node2D"]
 position = Vector2(215, 296)
 
-[node name="Assessore" type="CharacterBody2D" parent="."]
-position = Vector2(75, -74)
-script = SubResource("GDScript_xvjy4")
-
-[node name="Sprite2D" type="Sprite2D" parent="Assessore"]
-position = Vector2(-6, -28)
-scale = Vector2(0.542373, 0.619403)
-texture = ExtResource("33_le488")
-hframes = 14
-vframes = 20
-frame = 42
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Assessore"]
-position = Vector2(-5, -31)
-shape = SubResource("RectangleShape2D_ulwkn")
-
-[node name="Player_prov" type="CharacterBody2D" parent="Assessore"]
-position = Vector2(125, -390)
+[node name="Player_prov" type="CharacterBody2D" parent="."]
+position = Vector2(200, -464)
 floor_max_angle = 0.74351
 platform_wall_layers = 1
 script = ExtResource("1_qbu6o")
 
-[node name="Sprite2D" type="Sprite2D" parent="Assessore/Player_prov"]
+[node name="Sprite2D" type="Sprite2D" parent="Player_prov"]
 position = Vector2(-105, 360)
 scale = Vector2(0.531773, 0.522321)
 texture = ExtResource("2_5jwpo")
@@ -55534,7 +55512,7 @@ hframes = 15
 vframes = 22
 frame = 285
 
-[node name="Camera2D" type="Camera2D" parent="Assessore/Player_prov/Sprite2D"]
+[node name="Camera2D" type="Camera2D" parent="Player_prov/Sprite2D"]
 position = Vector2(11.283, 9.57266)
 scale = Vector2(0.699999, 0.842105)
 ignore_rotation = false
@@ -55549,11 +55527,11 @@ drag_horizontal_enabled = true
 drag_vertical_enabled = true
 script = SubResource("GDScript_x2n7i")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Assessore/Player_prov"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Player_prov"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Assessore/Player_prov"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player_prov"]
 texture_filter = 1
-position = Vector2(-102, 360)
+position = Vector2(-103, 367.313)
 shape = SubResource("RectangleShape2D_bf2fi")
 one_way_collision_margin = 0.0
 debug_color = Color(0.603922, 0.431373, 0.854902, 0.419608)
