@@ -55500,8 +55500,6 @@ position = Vector2(215, 296)
 
 [node name="Player_prov" type="CharacterBody2D" parent="."]
 position = Vector2(200, -464)
-collision_layer = 3
-collision_mask = 3
 floor_max_angle = 0.74351
 platform_wall_layers = 1
 script = ExtResource("1_qbu6o")
