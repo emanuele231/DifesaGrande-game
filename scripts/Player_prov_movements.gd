@@ -3,18 +3,22 @@ extends CharacterBody2D
 
 var SPEED = 150
 var input_movement = Vector2.ZERO
-var can_move: bool = true
+
+func _process(delta):
+	var player_position = position
+	var min_limit = Vector2(-400, -300)  # Imposta i limiti minimi della mappa
+	var max_limit = Vector2(4000, 3000) 
+
+	player_position.x = clamp(player_position.x, min_limit.x, max_limit.x)
+	player_position.y = clamp(player_position.y, min_limit.y, max_limit.y)
+	position = player_position
 
 
 
 
-
-func disable_movement():
-	can_move = false
-	
 
 func _physics_process(_delta):
-	can_move = true
+	
 	move()
 
 

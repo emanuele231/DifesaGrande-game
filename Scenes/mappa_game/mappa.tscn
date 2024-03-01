@@ -1,10 +1,9 @@
-[gd_scene load_steps=84 format=3 uid="uid://dqiw7bvjmib4d"]
+[gd_scene load_steps=83 format=3 uid="uid://dqiw7bvjmib4d"]
 
 [ext_resource type="Script" path="res://scripts/Player_prov_movements.gd" id="1_qbu6o"]
 [ext_resource type="Texture2D" uid="uid://mma4w2rnqnov" path="res://NPG/Personaggio_non_personalizzato_universal.png" id="2_5jwpo"]
 [ext_resource type="Texture2D" uid="uid://dh0bh5kpvdgov" path="res://World of Solaria Rural Village Update 05a/World of Solaria Rural Village Update 05a/16x16/Tilesets/Rural Village Farming.png" id="3_7wf1g"]
 [ext_resource type="Texture2D" uid="uid://7e8q311i0fbj" path="res://World of Solaria Rural Village Update 05a/World of Solaria Rural Village Update 05a/16x16/Animated Tiles/Village Animated Smoke.png" id="4_m35kx"]
-[ext_resource type="Script" path="res://Scenes/mappa_game/Dialogo_1.gd" id="4_xoiks"]
 [ext_resource type="Texture2D" uid="uid://vdxita3uu0wu" path="res://assets acquistati/assets acquistati 2/MEGA BUNDLE 12 ASSET PACKS/MEGA BUNDLE 12 ASSET PACKS/HARVEST TINY FARM/HOUSES/HOUSE 1.png" id="5_w26o0"]
 [ext_resource type="Texture2D" uid="uid://eji2wp281v1i" path="res://assets acquistati/assets acquistati 2/MEGA BUNDLE 12 ASSET PACKS/MEGA BUNDLE 12 ASSET PACKS/HARVEST TINY FARM/HOUSES/HOUSE 2.png" id="6_gmw3r"]
 [ext_resource type="Texture2D" uid="uid://co17f5xgdgvyh" path="res://assets acquistati/assets acquistati 2/MEGA BUNDLE 12 ASSET PACKS/MEGA BUNDLE 12 ASSET PACKS/HARVEST TINY FARM/TREES/TREE 3.png" id="7_3av7p"]
@@ -55527,31 +55526,6 @@ floor_max_angle = 0.74351
 platform_wall_layers = 1
 script = ExtResource("1_qbu6o")
 
-[node name="Dialogo_1" type="Control" parent="Assessore/Player_prov"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = -138.0
-offset_top = 409.0
-offset_right = 144.0
-offset_bottom = 475.0
-script = ExtResource("4_xoiks")
-
-[node name="Label" type="Label" parent="Assessore/Player_prov/Dialogo_1"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -203.579
-offset_top = -61.1653
-offset_right = -77.5787
-offset_bottom = -35.1653
-grow_horizontal = 2
-grow_vertical = 0
-horizontal_alignment = 1
-max_lines_visible = 1
-
 [node name="Sprite2D" type="Sprite2D" parent="Assessore/Player_prov"]
 position = Vector2(-105, 360)
 scale = Vector2(0.531773, 0.522321)
@@ -55561,7 +55535,7 @@ vframes = 22
 frame = 285
 
 [node name="Camera2D" type="Camera2D" parent="Assessore/Player_prov/Sprite2D"]
-position = Vector2(5.6416, 5.74358)
+position = Vector2(11.283, 9.57266)
 scale = Vector2(0.699999, 0.842105)
 ignore_rotation = false
 zoom = Vector2(2.5, 2.5)
@@ -55569,7 +55543,8 @@ limit_left = -312
 limit_top = -423
 limit_right = 1005
 limit_bottom = 1095
-limit_smoothed = true
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 script = SubResource("GDScript_x2n7i")
@@ -55803,6 +55778,3 @@ frame = 28
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPG_09_quercus"]
 position = Vector2(494, 206)
 shape = SubResource("RectangleShape2D_x2ic1")
-
-[node name="camera_misuratrice" type="Camera2D" parent="."]
-position = Vector2(50, -395)
