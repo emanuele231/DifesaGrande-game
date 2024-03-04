@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://mma4w2rnqnov" path="res://NPG/Personaggio_non_personalizzato_universal.png" id="2_5jwpo"]
 [ext_resource type="Texture2D" uid="uid://dh0bh5kpvdgov" path="res://World of Solaria Rural Village Update 05a/World of Solaria Rural Village Update 05a/16x16/Tilesets/Rural Village Farming.png" id="3_7wf1g"]
 [ext_resource type="Script" path="res://Scenes/mappa_game/Dialogo_01.gd" id="3_x5t71"]
+[ext_resource type="Texture2D" uid="uid://bw2k82fmu64wt" path="res://personaggi/assessore (2).png" id="4_e14v3"]
 [ext_resource type="Texture2D" uid="uid://7e8q311i0fbj" path="res://World of Solaria Rural Village Update 05a/World of Solaria Rural Village Update 05a/16x16/Animated Tiles/Village Animated Smoke.png" id="4_m35kx"]
-[ext_resource type="Texture2D" uid="uid://ycyjfh6ps3je" path="res://personaggi/assessore.png" id="4_n5xq2"]
 [ext_resource type="Texture2D" uid="uid://vdxita3uu0wu" path="res://assets acquistati/assets acquistati 2/MEGA BUNDLE 12 ASSET PACKS/MEGA BUNDLE 12 ASSET PACKS/HARVEST TINY FARM/HOUSES/HOUSE 1.png" id="5_w26o0"]
 [ext_resource type="Texture2D" uid="uid://eji2wp281v1i" path="res://assets acquistati/assets acquistati 2/MEGA BUNDLE 12 ASSET PACKS/MEGA BUNDLE 12 ASSET PACKS/HARVEST TINY FARM/HOUSES/HOUSE 2.png" id="6_gmw3r"]
 [ext_resource type="Texture2D" uid="uid://co17f5xgdgvyh" path="res://assets acquistati/assets acquistati 2/MEGA BUNDLE 12 ASSET PACKS/MEGA BUNDLE 12 ASSET PACKS/HARVEST TINY FARM/TREES/TREE 3.png" id="7_3av7p"]
@@ -55574,7 +55574,7 @@ debug_color = Color(0.603922, 0.431373, 0.854902, 0.419608)
 [node name="Sprite2D" type="Sprite2D" parent="Assessore"]
 position = Vector2(77, -101)
 scale = Vector2(0.550847, 0.544776)
-texture = ExtResource("4_n5xq2")
+texture = ExtResource("4_e14v3")
 hframes = 14
 vframes = 20
 frame = 42
