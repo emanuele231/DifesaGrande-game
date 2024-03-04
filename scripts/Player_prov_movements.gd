@@ -3,6 +3,7 @@ extends CharacterBody2D
 
 var SPEED = 150
 var input_movement = Vector2.ZERO
+var can_move : bool = true
 
 func _process(delta):
 	var player_position = position
@@ -18,8 +19,8 @@ func _process(delta):
 
 
 func _physics_process(_delta):
-	
-	move()
+	if can_move:
+		move()
 
 
 func move():

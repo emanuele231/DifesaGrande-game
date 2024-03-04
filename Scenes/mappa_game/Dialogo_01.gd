@@ -48,5 +48,3 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.is_pressed() and is_dialog_active:
 		if current_dialog_index < dialog_sequence.size():
 			show_next_dialog()
-
-

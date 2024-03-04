@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://2jpr0aapww8g"]
+
+[node name="Dialogo_01" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1156.0
+offset_bottom = 652.0
+
+[node name="Label" type="Label" parent="."]
+top_level = true
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -153.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "BENVENUTI NEL BOSCO DIFESA GRANDE!"
+horizontal_alignment = 1
+vertical_alignment = 1
