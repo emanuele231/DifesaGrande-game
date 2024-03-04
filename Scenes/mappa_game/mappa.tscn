@@ -1,9 +1,11 @@
-[gd_scene load_steps=80 format=3 uid="uid://dqiw7bvjmib4d"]
+[gd_scene load_steps=82 format=3 uid="uid://dqiw7bvjmib4d"]
 
 [ext_resource type="Script" path="res://scripts/Player_prov_movements.gd" id="1_qbu6o"]
 [ext_resource type="Texture2D" uid="uid://mma4w2rnqnov" path="res://NPG/Personaggio_non_personalizzato_universal.png" id="2_5jwpo"]
 [ext_resource type="Texture2D" uid="uid://dh0bh5kpvdgov" path="res://World of Solaria Rural Village Update 05a/World of Solaria Rural Village Update 05a/16x16/Tilesets/Rural Village Farming.png" id="3_7wf1g"]
+[ext_resource type="Script" path="res://Scenes/mappa_game/Dialogo_01.gd" id="3_x5t71"]
 [ext_resource type="Texture2D" uid="uid://7e8q311i0fbj" path="res://World of Solaria Rural Village Update 05a/World of Solaria Rural Village Update 05a/16x16/Animated Tiles/Village Animated Smoke.png" id="4_m35kx"]
+[ext_resource type="Texture2D" uid="uid://ycyjfh6ps3je" path="res://personaggi/assessore.png" id="4_n5xq2"]
 [ext_resource type="Texture2D" uid="uid://vdxita3uu0wu" path="res://assets acquistati/assets acquistati 2/MEGA BUNDLE 12 ASSET PACKS/MEGA BUNDLE 12 ASSET PACKS/HARVEST TINY FARM/HOUSES/HOUSE 1.png" id="5_w26o0"]
 [ext_resource type="Texture2D" uid="uid://eji2wp281v1i" path="res://assets acquistati/assets acquistati 2/MEGA BUNDLE 12 ASSET PACKS/MEGA BUNDLE 12 ASSET PACKS/HARVEST TINY FARM/HOUSES/HOUSE 2.png" id="6_gmw3r"]
 [ext_resource type="Texture2D" uid="uid://co17f5xgdgvyh" path="res://assets acquistati/assets acquistati 2/MEGA BUNDLE 12 ASSET PACKS/MEGA BUNDLE 12 ASSET PACKS/HARVEST TINY FARM/TREES/TREE 3.png" id="7_3av7p"]
@@ -55527,6 +55529,37 @@ drag_horizontal_enabled = true
 drag_vertical_enabled = true
 script = SubResource("GDScript_x2n7i")
 
+[node name="Dialogo_01" type="Control" parent="Player_prov/Sprite2D"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -325.0
+offset_top = 142.0
+offset_right = 203.0
+offset_bottom = 190.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+script = ExtResource("3_x5t71")
+
+[node name="Label" type="Label" parent="Player_prov/Sprite2D/Dialogo_01"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 52.3272
+offset_top = -178.248
+offset_right = 52.3273
+offset_bottom = -68.2478
+grow_horizontal = 2
+grow_vertical = 0
+text = "BENVENUTI NEL BOSCO DIFESA GRANDE!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Player_prov"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player_prov"]
@@ -55535,6 +55568,16 @@ position = Vector2(-103, 367.313)
 shape = SubResource("RectangleShape2D_bf2fi")
 one_way_collision_margin = 0.0
 debug_color = Color(0.603922, 0.431373, 0.854902, 0.419608)
+
+[node name="Assessore" type="CharacterBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Assessore"]
+position = Vector2(77, -101)
+scale = Vector2(0.550847, 0.544776)
+texture = ExtResource("4_n5xq2")
+hframes = 14
+vframes = 20
+frame = 42
 
 [node name="Coltivazioni" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_rbv4n")
@@ -55744,6 +55787,7 @@ position = Vector2(-294.5, 329.5)
 shape = SubResource("RectangleShape2D_tills")
 
 [node name="NPG_09_quercus" type="CharacterBody2D" parent="."]
+position = Vector2(2, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="NPG_09_quercus"]
 position = Vector2(492, 206)
