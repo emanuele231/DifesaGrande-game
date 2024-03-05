@@ -10,27 +10,30 @@ var dialog_sequence := [
 	"in bocca al lupo"
 ]  
 
-var is_dialog_active: bool = true
 var current_dialog_index: int = -1
 var player_script = preload("res://scripts/Player_prov_movements.gd")
 var player = player_script.new()
+var _on_dialog_complete_callback = null
+signal dialogo_completato
 
 
 func _ready():
 	show_next_dialog()
-	disable_player_movement()
+	enable_player_movement()
 	
 	
-	
+'''	
 func disable_player_movement():
 	player.can_move = false
+	'''
 	
 	
 func enable_player_movement():
-	player._physics_process(0)
-
+	emit_signal("dialogo_completato")
+	if _on_dialog_complete_callback != null:
+		_on_dialog_complete_callback._on_dialog_complete()
+		
 func show_next_dialog() -> void:
-	is_dialog_active = true
 	
 	if current_dialog_index >= -1:
 		current_dialog_index += 1
@@ -38,13 +41,13 @@ func show_next_dialog() -> void:
 		if current_dialog_index < dialog_sequence.size():
 			$Label.text = dialog_sequence[current_dialog_index]
 			$Label.show()
-			disable_player_movement()
+			player.can_move = false
 		else:
-			enable_player_movement()
 			$Label.free()
+			enable_player_movement()
 			
 
 func _input(event: InputEvent) -> void:
-	if event is InputEventMouseButton and event.is_pressed() and is_dialog_active:
+	if event is InputEventMouseButton and event.is_pressed():
 		if current_dialog_index < dialog_sequence.size():
 			show_next_dialog()

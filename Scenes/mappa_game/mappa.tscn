@@ -55514,21 +55514,6 @@ hframes = 15
 vframes = 22
 frame = 285
 
-[node name="Camera2D" type="Camera2D" parent="Player_prov/Sprite2D"]
-position = Vector2(11.283, 9.57266)
-scale = Vector2(0.699999, 0.842105)
-ignore_rotation = false
-zoom = Vector2(2.5, 2.5)
-limit_left = -312
-limit_top = -423
-limit_right = 1005
-limit_bottom = 1095
-position_smoothing_enabled = true
-rotation_smoothing_enabled = true
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
-script = SubResource("GDScript_x2n7i")
-
 [node name="Dialogo_01" type="Control" parent="Player_prov/Sprite2D"]
 layout_mode = 3
 anchors_preset = 15
@@ -55559,6 +55544,21 @@ grow_vertical = 0
 text = "BENVENUTI NEL BOSCO DIFESA GRANDE!"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Camera2D" type="Camera2D" parent="Player_prov/Sprite2D"]
+position = Vector2(11.283, 9.57266)
+scale = Vector2(0.699999, 0.842105)
+ignore_rotation = false
+zoom = Vector2(2.5, 2.5)
+limit_left = -312
+limit_top = -423
+limit_right = 1005
+limit_bottom = 1095
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+script = SubResource("GDScript_x2n7i")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Player_prov"]
 

@@ -1,9 +1,15 @@
 extends CharacterBody2D
 
 
-var SPEED = 150
+var SPEED = 120
 var input_movement = Vector2.ZERO
-var can_move : bool = true
+var can_move: bool = false
+
+func _ready():
+	get_node("Sprite2D/Dialogo_01")._on_dialog_complete_callback = self
+	
+func _on_dialog_complete():
+	can_move = true
 
 func _process(delta):
 	var player_position = position
@@ -19,11 +25,11 @@ func _process(delta):
 
 
 func _physics_process(_delta):
-	if can_move:
 		move()
 
 
 func move():
+	if can_move:
 		input_movement = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	
 		if input_movement != Vector2.ZERO:
