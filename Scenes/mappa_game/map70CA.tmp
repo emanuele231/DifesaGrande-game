@@ -55506,6 +55506,7 @@ position = Vector2(215, 296)
 
 [node name="Assessore" type="CharacterBody2D" parent="."]
 position = Vector2(-3.05176e-05, -3.05176e-05)
+scale = Vector2(1, 1)
 script = ExtResource("4_iw720")
 
 [node name="Sprite2D" type="Sprite2D" parent="Assessore"]
@@ -55564,10 +55565,6 @@ grow_vertical = 0
 text = "BENVENUTI NEL BOSCO DIFESA GRANDE!"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="Timer" type="Timer" parent="Player_prov/Sprite2D/Dialogo_01"]
-wait_time = 4.0
-one_shot = true
 
 [node name="Camera2D" type="Camera2D" parent="Player_prov/Sprite2D"]
 position = Vector2(11.283, 9.57266)
