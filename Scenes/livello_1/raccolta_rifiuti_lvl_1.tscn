@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://di1ohafwclejt"]
+[gd_scene load_steps=36 format=3 uid="uid://di1ohafwclejt"]
 
 [ext_resource type="Texture2D" uid="uid://chubrd1ppjr5m" path="res://tileset_town_multi_v002.png" id="1_wdhc7"]
 [ext_resource type="Texture2D" uid="uid://con2c3m6inlxq" path="res://assets acquistati/assets acquistati 2/MEGA BUNDLE 12 ASSET PACKS/MEGA BUNDLE 12 ASSET PACKS/SENGOKU ADVENTURE TILESET/TILES SENGOKU ADVENTURE.png" id="2_vg74g"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dyip1y5i3fpdk" path="res://Modern_Exteriors_RPG_Maker_MV_v31.7/Modern_Exteriors_RPG_Maker_MV/Tileset_17_MV.png" id="7_2vcol"]
 [ext_resource type="Texture2D" uid="uid://b203ijq1jem65" path="res://Modern_Exteriors_RPG_Maker_MV_v31.7/Modern_Exteriors_RPG_Maker_MV/Tileset_16_MV.png" id="8_m45h5"]
 [ext_resource type="Texture2D" uid="uid://53wu7ggy1wm0" path="res://gdm-2d-top-down-180-pixel-art-vehicles/2D Top down 180 pixel vehicles/2D Top Down 180 Vehicles ( originale size ).png" id="9_r7qwi"]
+[ext_resource type="Script" path="res://Scenes/livello_1/giocatore-lvl-1.gd" id="10_mjga4"]
 [ext_resource type="Texture2D" uid="uid://mma4w2rnqnov" path="res://NPG/Personaggio_non_personalizzato_universal.png" id="10_n7k24"]
 [ext_resource type="Script" path="res://Scenes/livello_1/player-lvl-1-minigame.gd" id="11_4hn15"]
 
@@ -21758,6 +21759,9 @@ texture = ExtResource("9_r7qwi")
 [sub_resource type="TileSet" id="TileSet_caqaw"]
 sources/0 = SubResource("TileSetAtlasSource_pk0j5")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8n1xp"]
+size = Vector2(10, 17)
+
 [node name="RACCOLTA-RIFIUTI-LVL-1" type="Node2D"]
 
 [node name="piastrelle" type="TileMap" parent="."]
@@ -21822,8 +21826,9 @@ format = 2
 layer_0/tile_data = PackedInt32Array(3670019, 393216, 12, 3735555, 393216, 13, 3801091, 393216, 14, 3670020, 458752, 12, 3735556, 458752, 13, 3801092, 458752, 14, 3670022, 262144, 12, 3735558, 262144, 13, 3801094, 262144, 14, 3670023, 327680, 12, 3735559, 327680, 13, 3801095, 327680, 14, 3670025, 131072, 12, 3735561, 131072, 13, 3801097, 131072, 14, 3670026, 196608, 12, 3735562, 196608, 13, 3801098, 196608, 14, 3670028, 131072, 9, 3735564, 131072, 10, 3801100, 131072, 11, 3670029, 196608, 9, 3735565, 196608, 10, 3801101, 196608, 11, 2686975, 393216, 9, 2752511, 393216, 10, 2818047, 393216, 11, 2621440, 458752, 9, 2686976, 458752, 10, 2752512, 458752, 11)
 
 [node name="player" type="CharacterBody2D" parent="."]
+script = ExtResource("10_mjga4")
 
-[node name="player-lvl-1-minigame" type="Sprite2D" parent="player"]
+[node name="Sprite2D" type="Sprite2D" parent="player"]
 position = Vector2(170, 318)
 scale = Vector2(0.432203, 0.41791)
 texture = ExtResource("10_n7k24")
@@ -21833,3 +21838,14 @@ frame = 28
 script = ExtResource("11_4hn15")
 
 [node name="Camera2D" type="Camera2D" parent="player"]
+position = Vector2(172, 321)
+ignore_rotation = false
+zoom = Vector2(2.5, 2.5)
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
+position = Vector2(171, 317.5)
+shape = SubResource("RectangleShape2D_8n1xp")
