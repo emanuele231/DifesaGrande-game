@@ -22,7 +22,3 @@ func move(delta):
 
 
 
-
-
-	
-
