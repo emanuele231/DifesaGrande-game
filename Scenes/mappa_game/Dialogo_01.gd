@@ -15,6 +15,7 @@ var _on_dialog_complete_callback = null
 var assessore_script = preload("res://Scenes/mappa_game/Assessore.gd")
 var assessore = assessore_script.new()
 var _assessore_callback = null
+var _label_01_callback = null
 signal dialogo_completato
 
 
@@ -31,9 +32,11 @@ func _ready():
 	
 func enable_player_movement():
 	emit_signal("dialogo_completato")
-	if _on_dialog_complete_callback != null and _assessore_callback != null:
+	if _on_dialog_complete_callback != null and _assessore_callback != null and _label_01_callback != null:
 		_on_dialog_complete_callback._on_dialog_complete()
 		_assessore_callback._on_dialogo_completato()
+		_label_01_callback._on_dialogo_completo()
+		
 
 
 		
