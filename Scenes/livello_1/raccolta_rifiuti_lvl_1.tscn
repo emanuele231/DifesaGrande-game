@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://di1ohafwclejt"]
+[gd_scene load_steps=42 format=3 uid="uid://di1ohafwclejt"]
 
 [ext_resource type="Texture2D" uid="uid://chubrd1ppjr5m" path="res://tileset_town_multi_v002.png" id="1_wdhc7"]
 [ext_resource type="Texture2D" uid="uid://con2c3m6inlxq" path="res://assets acquistati/assets acquistati 2/MEGA BUNDLE 12 ASSET PACKS/MEGA BUNDLE 12 ASSET PACKS/SENGOKU ADVENTURE TILESET/TILES SENGOKU ADVENTURE.png" id="2_vg74g"]
@@ -14,6 +14,7 @@
 [ext_resource type="Script" path="res://Scenes/livello_1/player-lvl-1-minigame.gd" id="11_4hn15"]
 [ext_resource type="Script" path="res://Scenes/livello_1/assessore_1_1.gd" id="13_12u5c"]
 [ext_resource type="Texture2D" uid="uid://bw2k82fmu64wt" path="res://personaggi/assessore (2).png" id="13_n2jvd"]
+[ext_resource type="Script" path="res://Scenes/livello_1/spiegazione_1_1.gd" id="13_ofw2f"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tsr0r"]
 texture = ExtResource("1_wdhc7")
@@ -57929,6 +57930,9 @@ physics_layer_0/collision_layer = 1
 physics_layer_0/physics_material = SubResource("PhysicsMaterial_xv7e7")
 sources/0 = SubResource("TileSetAtlasSource_pk0j5")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1alvf"]
+bg_color = Color(0.2, 0.721569, 0, 0.431373)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8n1xp"]
 size = Vector2(11, 18.5)
 
@@ -58012,6 +58016,28 @@ hframes = 14
 vframes = 20
 frame = 28
 script = ExtResource("11_4hn15")
+
+[node name="spiegazione_1_1" type="Control" parent="player/Sprite2D"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -489.0
+offset_top = -281.0
+offset_right = 491.0
+offset_bottom = 295.0
+script = ExtResource("13_ofw2f")
+
+[node name="Label" type="Label" parent="player/Sprite2D/spiegazione_1_1"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 480.0
+offset_right = 980.0
+offset_bottom = 583.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 27
+theme_override_styles/normal = SubResource("StyleBoxFlat_1alvf")
+text = "Bene, eccoci qui!"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 position = Vector2(172, 321)
