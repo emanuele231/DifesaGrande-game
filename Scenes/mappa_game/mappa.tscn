@@ -1,4 +1,4 @@
-[gd_scene load_steps=87 format=3 uid="uid://dqiw7bvjmib4d"]
+[gd_scene load_steps=89 format=3 uid="uid://dqiw7bvjmib4d"]
 
 [ext_resource type="Script" path="res://scripts/Player_prov_movements.gd" id="1_qbu6o"]
 [ext_resource type="Texture2D" uid="uid://mma4w2rnqnov" path="res://NPG/Personaggio_non_personalizzato_universal.png" id="2_5jwpo"]
@@ -36,6 +36,7 @@
 [ext_resource type="Texture2D" uid="uid://b3wkax4lfe45c" path="res://NPG/npg_z-quercus_08_universal.png" id="31_sgx8a"]
 [ext_resource type="Texture2D" uid="uid://cmbpin5ryk4f1" path="res://NPG/npg_z-quercus_09_universal.png" id="32_va04q"]
 [ext_resource type="Script" path="res://Scenes/mappa_game/Label.gd" id="36_0syno"]
+[ext_resource type="Script" path="res://Scenes/mappa_game/Area2D.gd" id="37_4exyn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1vaym"]
 size = Vector2(11, 23)
@@ -55509,6 +55510,9 @@ font_names = PackedStringArray("HoloLens MDL2 Assets")
 font_weight = 425
 fallbacks = Array[Font]([null])
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_bckrd"]
+radius = 25.318
+
 [node name="MAPPA" type="Node2D"]
 position = Vector2(215, 296)
 
@@ -55838,3 +55842,11 @@ theme_override_font_sizes/font_size = 37
 text = "!
 "
 script = ExtResource("36_0syno")
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("37_4exyn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-77, 26)
+shape = SubResource("CircleShape2D_bckrd")
+debug_color = Color(0.976471, 0, 0.4, 0.419608)

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Difesa Grande-game"
-run/main_scene="res://Scenes/livello_1/raccolta_rifiuti_lvl_1.tscn"
+run/main_scene="res://Scenes/menu/menu.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
 
