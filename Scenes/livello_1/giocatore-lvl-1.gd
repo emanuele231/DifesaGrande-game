@@ -9,7 +9,7 @@ func _ready():
 	get_node("Sprite2D/spiegazione_1_1")._on_player_1_callback = self
 
 func _on_player_1():
-	can_move = true	
+	can_move = true
 
 
 
@@ -31,7 +31,7 @@ func _physics_process(_delta):
 
 
 func move():
-	if can_move:
+	if can_move == true:
 		input_movement = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	
 		if input_movement != Vector2.ZERO:
