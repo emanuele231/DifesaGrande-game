@@ -1,9 +1,9 @@
 extends Area2D
 
-var entered: bool = true
+var entered: bool = false
 @onready var Raccolta_rifiuti = preload("res://Scenes/livello_1/raccolta_rifiuti_lvl_1.tscn") as PackedScene
 
-func _on_body_entered(body: PhysicsBody2D):
+func _on_body_entered(body: CharacterBody2D):
 	entered = true
 
 
