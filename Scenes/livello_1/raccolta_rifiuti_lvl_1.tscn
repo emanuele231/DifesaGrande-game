@@ -68974,8 +68974,56 @@ position = Vector2(278, 119)
 shape = SubResource("CircleShape2D_ouupl")
 debug_color = Color(0.223529, 0.639216, 0, 0.419608)
 
+[node name="carta-09" type="Area2D" parent="."]
+position = Vector2(-264, 541)
+script = ExtResource("17_3al3l")
+
+[node name="TileMap" type="TileMap" parent="carta-09"]
+position = Vector2(137, 63)
+scale = Vector2(0.476125, 0.457314)
+tile_set = SubResource("TileSet_hjdmt")
+format = 2
+layer_0/tile_data = PackedInt32Array(393233, 2752512, 15, 458769, 2752512, 16, 524305, 2752512, 17, 393234, 2818048, 15, 458770, 2818048, 16, 524306, 2818048, 17, 393235, 2883584, 15, 458771, 2883584, 16, 524307, 2883584, 17)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="carta-09"]
+position = Vector2(278, 119)
+shape = SubResource("CircleShape2D_ouupl")
+debug_color = Color(0.223529, 0.639216, 0, 0.419608)
+
+[node name="carta-08" type="Area2D" parent="."]
+position = Vector2(458, 766)
+script = ExtResource("17_3al3l")
+
+[node name="TileMap" type="TileMap" parent="carta-08"]
+position = Vector2(137, 63)
+scale = Vector2(0.476125, 0.457314)
+tile_set = SubResource("TileSet_hjdmt")
+format = 2
+layer_0/tile_data = PackedInt32Array(393233, 2752512, 15, 458769, 2752512, 16, 524305, 2752512, 17, 393234, 2818048, 15, 458770, 2818048, 16, 524306, 2818048, 17, 393235, 2883584, 15, 458771, 2883584, 16, 524307, 2883584, 17)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="carta-08"]
+position = Vector2(278, 119)
+shape = SubResource("CircleShape2D_ouupl")
+debug_color = Color(0.223529, 0.639216, 0, 0.419608)
+
+[node name="carta-07" type="Area2D" parent="."]
+position = Vector2(-130, -86)
+script = ExtResource("17_3al3l")
+
+[node name="TileMap" type="TileMap" parent="carta-07"]
+position = Vector2(137, 63)
+scale = Vector2(0.476125, 0.457314)
+tile_set = SubResource("TileSet_hjdmt")
+format = 2
+layer_0/tile_data = PackedInt32Array(393233, 2752512, 15, 458769, 2752512, 16, 524305, 2752512, 17, 393234, 2818048, 15, 458770, 2818048, 16, 524306, 2818048, 17, 393235, 2883584, 15, 458771, 2883584, 16, 524307, 2883584, 17)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="carta-07"]
+position = Vector2(278, 119)
+shape = SubResource("CircleShape2D_ouupl")
+debug_color = Color(0.223529, 0.639216, 0, 0.419608)
+
 [node name="carta-02" type="Area2D" parent="."]
-position = Vector2(-129, -63)
+position = Vector2(630, -135)
 script = ExtResource("17_3al3l")
 
 [node name="TileMap" type="TileMap" parent="carta-02"]
@@ -68990,7 +69038,85 @@ position = Vector2(278, 119)
 shape = SubResource("CircleShape2D_ouupl")
 debug_color = Color(0.223529, 0.639216, 0, 0.419608)
 
+[node name="carta-06" type="Area2D" parent="."]
+position = Vector2(-457, -418)
+script = ExtResource("17_3al3l")
+
+[node name="TileMap" type="TileMap" parent="carta-06"]
+position = Vector2(137, 63)
+scale = Vector2(0.476125, 0.457314)
+tile_set = SubResource("TileSet_hjdmt")
+format = 2
+layer_0/tile_data = PackedInt32Array(393233, 2752512, 15, 458769, 2752512, 16, 524305, 2752512, 17, 393234, 2818048, 15, 458770, 2818048, 16, 524306, 2818048, 17, 393235, 2883584, 15, 458771, 2883584, 16, 524307, 2883584, 17)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="carta-06"]
+position = Vector2(278, 119)
+shape = SubResource("CircleShape2D_ouupl")
+debug_color = Color(0.223529, 0.639216, 0, 0.419608)
+
+[node name="carta-05" type="Area2D" parent="."]
+position = Vector2(-474, 233)
+script = ExtResource("17_3al3l")
+
+[node name="TileMap" type="TileMap" parent="carta-05"]
+position = Vector2(137, 63)
+scale = Vector2(0.476125, 0.457314)
+tile_set = SubResource("TileSet_hjdmt")
+format = 2
+layer_0/tile_data = PackedInt32Array(393233, 2752512, 15, 458769, 2752512, 16, 524305, 2752512, 17, 393234, 2818048, 15, 458770, 2818048, 16, 524306, 2818048, 17, 393235, 2883584, 15, 458771, 2883584, 16, 524307, 2883584, 17)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="carta-05"]
+position = Vector2(278, 119)
+shape = SubResource("CircleShape2D_ouupl")
+debug_color = Color(0.223529, 0.639216, 0, 0.419608)
+
+[node name="carta-04" type="Area2D" parent="."]
+position = Vector2(692, 554)
+script = ExtResource("17_3al3l")
+
+[node name="TileMap" type="TileMap" parent="carta-04"]
+position = Vector2(137, 63)
+scale = Vector2(0.476125, 0.457314)
+tile_set = SubResource("TileSet_hjdmt")
+format = 2
+layer_0/tile_data = PackedInt32Array(393233, 2752512, 15, 458769, 2752512, 16, 524305, 2752512, 17, 393234, 2818048, 15, 458770, 2818048, 16, 524306, 2818048, 17, 393235, 2883584, 15, 458771, 2883584, 16, 524307, 2883584, 17)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="carta-04"]
+position = Vector2(278, 119)
+shape = SubResource("CircleShape2D_ouupl")
+debug_color = Color(0.223529, 0.639216, 0, 0.419608)
+
+[node name="carta-03" type="Area2D" parent="."]
+position = Vector2(-279, -230)
+script = ExtResource("17_3al3l")
+
+[node name="TileMap" type="TileMap" parent="carta-03"]
+position = Vector2(137, 63)
+scale = Vector2(0.476125, 0.457314)
+tile_set = SubResource("TileSet_hjdmt")
+format = 2
+layer_0/tile_data = PackedInt32Array(393233, 2752512, 15, 458769, 2752512, 16, 524305, 2752512, 17, 393234, 2818048, 15, 458770, 2818048, 16, 524306, 2818048, 17, 393235, 2883584, 15, 458771, 2883584, 16, 524307, 2883584, 17)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="carta-03"]
+position = Vector2(278, 119)
+shape = SubResource("CircleShape2D_ouupl")
+debug_color = Color(0.223529, 0.639216, 0, 0.419608)
+
 [connection signal="body_entered" from="carta-01" to="carta-01" method="_on_body_entered"]
 [connection signal="body_exited" from="carta-01" to="carta-01" method="_on_body_exited"]
+[connection signal="body_entered" from="carta-09" to="carta-09" method="_on_body_entered"]
+[connection signal="body_exited" from="carta-09" to="carta-09" method="_on_body_exited"]
+[connection signal="body_entered" from="carta-08" to="carta-08" method="_on_body_entered"]
+[connection signal="body_exited" from="carta-08" to="carta-08" method="_on_body_exited"]
+[connection signal="body_entered" from="carta-07" to="carta-07" method="_on_body_entered"]
+[connection signal="body_exited" from="carta-07" to="carta-07" method="_on_body_exited"]
 [connection signal="body_entered" from="carta-02" to="carta-02" method="_on_body_entered"]
 [connection signal="body_exited" from="carta-02" to="carta-02" method="_on_body_exited"]
+[connection signal="body_entered" from="carta-06" to="carta-06" method="_on_body_entered"]
+[connection signal="body_exited" from="carta-06" to="carta-06" method="_on_body_exited"]
+[connection signal="body_entered" from="carta-05" to="carta-05" method="_on_body_entered"]
+[connection signal="body_exited" from="carta-05" to="carta-05" method="_on_body_exited"]
+[connection signal="body_entered" from="carta-04" to="carta-04" method="_on_body_entered"]
+[connection signal="body_exited" from="carta-04" to="carta-04" method="_on_body_exited"]
+[connection signal="body_entered" from="carta-03" to="carta-03" method="_on_body_entered"]
+[connection signal="body_exited" from="carta-03" to="carta-03" method="_on_body_exited"]
