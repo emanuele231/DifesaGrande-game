@@ -33,11 +33,12 @@ func _ready():
 
 	
 func enable_player_movement():
-	emit_signal("spiegazione chiusa")
-	if _on_player_1_callback != null and _assessore_1_callback != null and _label_02_callback != null:
-		_on_player_1_callback._on_dialog_complete()
-		_assessore_1_callback._on_dialogo_completato()
-		_label_02_callback._on_dialogo_completo()
+	emit_signal("spiegazione_chiusa")
+	print(emit_signal("spiegazione_chiusa"))
+	if _on_player_1_callback != null and _assessore_1_callback != null: #and _label_02_callback != null:
+		_on_player_1_callback._on_player_1()
+		_assessore_1_callback._assessore_1()
+		#_label_02_callback._on_dialogo_completo()
 		
 
 

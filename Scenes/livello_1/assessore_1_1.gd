@@ -12,10 +12,10 @@ func _ready():
 func _assessore_1():
 	can_move = true
 
-func _physics_process(delta):
-	move(delta)
+func _physics_process(_delta):
+	move(_delta)
 	
-func move(delta):
+func move(_delta):
 	if can_move == true:
-		var new_position = position + Vector2.DOWN * SPEED * delta
+		var new_position = position + Vector2.DOWN * SPEED * _delta
 		position = new_position
