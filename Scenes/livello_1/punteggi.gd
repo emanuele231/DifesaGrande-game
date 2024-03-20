@@ -1,11 +1,19 @@
 extends Control
 
+var count = 0
+var capienza_sacco
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	capienza_sacco = $capienza_sacco
+	$capienza_sacco.z_index = 3
+	$carta_rimasta.z_index = 3
+	$plastica_rimasta.z_index = 3
+	$organico_rimasto.z_index = 3
+	$indifferenziato_rimasto.z_index = 3
+	if capienza_sacco != null:
+		update_label()
+	else:
+		print("problemi con il label")
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func update_label():
+	
