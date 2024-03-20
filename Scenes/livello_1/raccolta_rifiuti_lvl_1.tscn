@@ -90617,12 +90617,18 @@ frame = 28
 script = ExtResource("11_4hn15")
 
 [node name="spiegazione_1_1" type="Control" parent="player/Sprite2D"]
+layout_direction = 1
 layout_mode = 3
-anchors_preset = 0
-offset_left = -489.275
-offset_top = -283.634
-offset_right = 490.725
-offset_bottom = 292.366
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -483.0
+offset_top = -277.0
+offset_right = 422.0
+offset_bottom = 232.0
+grow_horizontal = 2
+grow_vertical = 2
+auto_translate = false
 script = ExtResource("13_ofw2f")
 
 [node name="Label" type="Label" parent="player/Sprite2D/spiegazione_1_1"]
@@ -90646,8 +90652,59 @@ limit_left = -352
 limit_top = -464
 limit_right = 1040
 limit_bottom = 1232
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
+
+[node name="punteggi" type="Control" parent="player/Camera2D"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -227.0
+offset_top = -125.0
+offset_right = 230.0
+offset_bottom = 126.0
+auto_translate = false
+localize_numeral_system = false
+
+[node name="capienza_sacco" type="Label" parent="player/Camera2D/punteggi"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 23.0
+offset_right = 51.0
+offset_bottom = 50.0
+text = "0/10
+"
+
+[node name="carta_rimasta" type="Label" parent="player/Camera2D/punteggi"]
+layout_mode = 0
+offset_left = 435.0
+offset_top = 54.0
+offset_right = 459.0
+offset_bottom = 80.0
+text = "15"
+
+[node name="plastica_rimasta" type="Label" parent="player/Camera2D/punteggi"]
+layout_mode = 0
+offset_left = 436.0
+offset_top = 83.0
+offset_right = 465.0
+offset_bottom = 109.0
+text = "20"
+
+[node name="organico_rimasto" type="Label" parent="player/Camera2D/punteggi"]
+layout_mode = 0
+offset_left = 434.0
+offset_top = 112.0
+offset_right = 457.0
+offset_bottom = 138.0
+text = "15
+"
+
+[node name="indifferenziato_rimasto" type="Label" parent="player/Camera2D/punteggi"]
+layout_mode = 0
+offset_left = 435.0
+offset_top = 143.0
+offset_right = 457.0
+offset_bottom = 169.0
+text = "10
+"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
 position = Vector2(172.5, 316.25)
