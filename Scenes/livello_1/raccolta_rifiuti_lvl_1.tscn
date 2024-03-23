@@ -90680,7 +90680,7 @@ offset_left = 435.0
 offset_top = 54.0
 offset_right = 459.0
 offset_bottom = 80.0
-text = "15"
+text = "0"
 
 [node name="plastica_rimasta" type="Label" parent="player/Camera2D/punteggi"]
 layout_mode = 0
@@ -90688,7 +90688,7 @@ offset_left = 436.0
 offset_top = 83.0
 offset_right = 465.0
 offset_bottom = 109.0
-text = "20"
+text = "0"
 
 [node name="organico_rimasto" type="Label" parent="player/Camera2D/punteggi"]
 layout_mode = 0
@@ -90696,7 +90696,7 @@ offset_left = 434.0
 offset_top = 112.0
 offset_right = 457.0
 offset_bottom = 138.0
-text = "15
+text = "0
 "
 
 [node name="indifferenziato_rimasto" type="Label" parent="player/Camera2D/punteggi"]
@@ -90705,7 +90705,7 @@ offset_left = 435.0
 offset_top = 143.0
 offset_right = 457.0
 offset_bottom = 169.0
-text = "10
+text = "0
 "
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
@@ -90766,7 +90766,7 @@ offset_bottom = 301.307
 theme_override_colors/font_color = Color(0.882353, 0.34902, 0, 1)
 text = "[ O ]"
 
-[node name="carta-01" type="Area2D" parent="."]
+[node name="carta-01" type="Area2D" parent="." groups=["carta"]]
 script = ExtResource("17_3al3l")
 
 [node name="TileMap" type="TileMap" parent="carta-01"]

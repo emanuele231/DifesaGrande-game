@@ -34,7 +34,6 @@ func _ready():
 	
 func enable_player_movement():
 	emit_signal("spiegazione_chiusa")
-	print(emit_signal("spiegazione_chiusa"))
 	if _on_player_1_callback != null and _assessore_1_callback != null: #and _label_02_callback != null:
 		_on_player_1_callback._on_player_1()
 		_assessore_1_callback._assessore_1()
@@ -45,19 +44,21 @@ func enable_player_movement():
 		
 
 func show_next_dialog() -> void:
-	
-	if current_dialog_index >= -1:
-		current_dialog_index += 1
+	if $Label != null:
+		if current_dialog_index >= -1:
+			current_dialog_index += 1
 		
-		if current_dialog_index < dialog_sequence.size():
-			$Label.text = dialog_sequence[current_dialog_index]
-			$Label.show()
-			$Label.z_index = 2
-			player_1.can_move = false
-			assessore_1.can_move = false
-		else:
-			$Label.free()
-			enable_player_movement()
+			if current_dialog_index < dialog_sequence.size():
+				$Label.text = dialog_sequence[current_dialog_index]
+				$Label.show()
+				$Label.z_index = 2
+				player_1.can_move = false
+				assessore_1.can_move = false
+			else:
+				$Label.free()
+				enable_player_movement()
+	else:
+		print("label vuoto")
 
 
 func _input(event: InputEvent) -> void:
