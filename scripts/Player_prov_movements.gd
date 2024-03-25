@@ -1,7 +1,9 @@
 extends CharacterBody2D
 
+@onready var anim_tree = $AnimationTree
+@onready var animazione = anim_tree.get("parameters/playback")
 
-var SPEED = 120
+var SPEED = 70
 var input_movement = Vector2.ZERO
 var can_move: bool = false
 
@@ -33,6 +35,8 @@ func move():
 		input_movement = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	
 		if input_movement != Vector2.ZERO:
+			anim_tree.set("parameters/walk/blend_position", input_movement)
+			animazione.travel("walk")
 			velocity = input_movement * SPEED
 
 		if input_movement == Vector2.ZERO:

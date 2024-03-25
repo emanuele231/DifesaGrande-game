@@ -1,4 +1,4 @@
-[gd_scene load_steps=89 format=3 uid="uid://dqiw7bvjmib4d"]
+[gd_scene load_steps=104 format=3 uid="uid://dqiw7bvjmib4d"]
 
 [ext_resource type="Script" path="res://scripts/Player_prov_movements.gd" id="1_qbu6o"]
 [ext_resource type="Texture2D" uid="uid://mma4w2rnqnov" path="res://NPG/Personaggio_non_personalizzato_universal.png" id="2_5jwpo"]
@@ -45,8 +45,141 @@ size = Vector2(11, 23)
 
 [sub_resource type="GDScript" id="GDScript_x2n7i"]
 
+[sub_resource type="Animation" id="Animation_rgjwy"]
+resource_name = "walk_up"
+length = 2.22
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [105, 106, 107, 109, 110, 111, 112]
+}
+
+[sub_resource type="Animation" id="Animation_xgidf"]
+resource_name = "walk_down"
+length = 2.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8, 2.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [131, 132, 133, 134, 135, 136, 137, 138]
+}
+
+[sub_resource type="Animation" id="Animation_61j77"]
+resource_name = "walk_right"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8, 2.1, 2.4, 2.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [143, 144, 145, 146, 147, 148, 149, 150, 151, 152]
+}
+
+[sub_resource type="Animation" id="Animation_qt5b4"]
+resource_name = "walk_left"
+length = 3.25
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8, 2.1, 2.4, 2.7, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [117, 118, 119, 120, 121, 122, 122, 123, 124, 125, 126]
+}
+
+[sub_resource type="Animation" id="Animation_q21md"]
+resource_name = "stay"
+
+[sub_resource type="Animation" id="Animation_7rhlx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [105]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fdinn"]
+_data = {
+"RESET": SubResource("Animation_7rhlx"),
+"stay": SubResource("Animation_q21md"),
+"walk_down": SubResource("Animation_xgidf"),
+"walk_left": SubResource("Animation_qt5b4"),
+"walk_right": SubResource("Animation_61j77"),
+"walk_up": SubResource("Animation_rgjwy")
+}
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bf2fi"]
 size = Vector2(12, 22.6255)
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_enwb7"]
+animation = &"walk_left"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hax57"]
+animation = &"walk_up"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_p4y76"]
+animation = &"walk_right"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_uruqj"]
+animation = &"walk_down"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tnhsx"]
+animation = &"stay"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_vm7ne"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_enwb7")
+blend_point_0/pos = Vector2(-1, 0)
+blend_point_1/node = SubResource("AnimationNodeAnimation_hax57")
+blend_point_1/pos = Vector2(0, 1)
+blend_point_2/node = SubResource("AnimationNodeAnimation_p4y76")
+blend_point_2/pos = Vector2(1, 0)
+blend_point_3/node = SubResource("AnimationNodeAnimation_uruqj")
+blend_point_3/pos = Vector2(0, -1)
+blend_point_4/node = SubResource("AnimationNodeAnimation_tnhsx")
+blend_point_4/pos = Vector2(0, 0)
+blend_mode = 1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_omb8y"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_axr2l"]
+states/Start/position = Vector2(180, 104)
+states/walk/node = SubResource("AnimationNodeBlendSpace2D_vm7ne")
+states/walk/position = Vector2(476, 100)
+transitions = ["Start", "walk", SubResource("AnimationNodeStateMachineTransition_omb8y")]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1lnck"]
 texture = ExtResource("3_7wf1g")
@@ -55533,18 +55666,18 @@ position = Vector2(77.5, -104.5)
 shape = SubResource("RectangleShape2D_1vaym")
 
 [node name="Player_prov" type="CharacterBody2D" parent="."]
-position = Vector2(200, -464)
+position = Vector2(209, -459)
 floor_max_angle = 0.74351
 platform_wall_layers = 1
 script = ExtResource("1_qbu6o")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player_prov"]
-position = Vector2(-105, 360)
-scale = Vector2(0.531773, 0.522321)
+position = Vector2(-110, 352)
+scale = Vector2(0.538614, 0.507062)
 texture = ExtResource("2_5jwpo")
-hframes = 15
-vframes = 22
-frame = 285
+hframes = 13
+vframes = 21
+frame = 105
 
 [node name="Dialogo_01" type="Control" parent="Player_prov/Sprite2D"]
 layout_mode = 3
@@ -55602,13 +55735,22 @@ drag_vertical_enabled = true
 script = SubResource("GDScript_x2n7i")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Player_prov"]
+libraries = {
+"": SubResource("AnimationLibrary_fdinn")
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player_prov"]
 texture_filter = 1
-position = Vector2(-103, 359.313)
+position = Vector2(-108, 357)
 shape = SubResource("RectangleShape2D_bf2fi")
 one_way_collision_margin = 0.0
 debug_color = Color(0.603922, 0.431373, 0.854902, 0.419608)
+
+[node name="AnimationTree" type="AnimationTree" parent="Player_prov"]
+tree_root = SubResource("AnimationNodeStateMachine_axr2l")
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/walk/blend_position = Vector2(0.00155759, -0.0131004)
 
 [node name="Coltivazioni" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_rbv4n")
