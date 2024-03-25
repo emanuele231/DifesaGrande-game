@@ -35,11 +35,13 @@ func move():
 		input_movement = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	
 		if input_movement != Vector2.ZERO:
+			anim_tree.set("parameters/idle/blend_position", input_movement)
 			anim_tree.set("parameters/walk/blend_position", input_movement)
 			animazione.travel("walk")
 			velocity = input_movement * SPEED
 
 		if input_movement == Vector2.ZERO:
+			animazione.travel("idle")
 			velocity = Vector2.ZERO
 		move_and_slide()
 
