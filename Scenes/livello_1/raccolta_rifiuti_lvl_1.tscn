@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=3 uid="uid://di1ohafwclejt"]
+[gd_scene load_steps=85 format=3 uid="uid://di1ohafwclejt"]
 
 [ext_resource type="Texture2D" uid="uid://chubrd1ppjr5m" path="res://tileset_town_multi_v002.png" id="1_wdhc7"]
 [ext_resource type="Texture2D" uid="uid://con2c3m6inlxq" path="res://assets acquistati/assets acquistati 2/MEGA BUNDLE 12 ASSET PACKS/MEGA BUNDLE 12 ASSET PACKS/SENGOKU ADVENTURE TILESET/TILES SENGOKU ADVENTURE.png" id="2_vg74g"]
@@ -57942,10 +57942,8 @@ bg_color = Color(0.2, 0.721569, 0, 0.431373)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8n1xp"]
 size = Vector2(11, 18.5)
 
-[sub_resource type="Animation" id="Animation_k7sm7"]
-resource_name = "idle_up"
-length = 1.5
-loop_mode = 1
+[sub_resource type="Animation" id="Animation_gbsoa"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -57953,10 +57951,10 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.2, 0.9),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [113, 114]
+"values": [105]
 }
 
 [sub_resource type="Animation" id="Animation_4di30"]
@@ -57976,23 +57974,6 @@ tracks/0/keys = {
 "values": [139, 140]
 }
 
-[sub_resource type="Animation" id="Animation_15nis"]
-resource_name = "idle_right"
-length = 2.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.2, 1.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [152, 153]
-}
-
 [sub_resource type="Animation" id="Animation_j5qm0"]
 resource_name = "idle_left"
 length = 1.5
@@ -58010,6 +57991,40 @@ tracks/0/keys = {
 "values": [126, 127]
 }
 
+[sub_resource type="Animation" id="Animation_15nis"]
+resource_name = "idle_right"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.2, 1.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [152, 153]
+}
+
+[sub_resource type="Animation" id="Animation_k7sm7"]
+resource_name = "idle_up"
+length = 1.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.2, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [113, 114]
+}
+
 [sub_resource type="Animation" id="Animation_87stg"]
 resource_name = "walk_down"
 length = 3.0
@@ -58025,23 +58040,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [131, 132, 133, 134, 135, 136, 137, 138]
-}
-
-[sub_resource type="Animation" id="Animation_82kgm"]
-resource_name = "walk_up"
-length = 1.78
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [105, 106, 107, 108, 109, 110, 111, 112]
 }
 
 [sub_resource type="Animation" id="Animation_5m81q"]
@@ -58078,8 +58076,10 @@ tracks/0/keys = {
 "values": [143, 144, 145, 146, 147, 148, 149, 150, 151]
 }
 
-[sub_resource type="Animation" id="Animation_gbsoa"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_82kgm"]
+resource_name = "walk_up"
+length = 1.78
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -58087,10 +58087,10 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [105]
+"values": [105, 106, 107, 108, 109, 110, 111, 112]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_y03vp"]
@@ -58164,6 +58164,14 @@ transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vf5i1"]
 size = Vector2(8, 17)
+
+[sub_resource type="Animation" id="Animation_abatq"]
+resource_name = "ass_down"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xhqd2"]
+_data = {
+"ass_down": SubResource("Animation_abatq")
+}
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8cexs"]
 texture = ExtResource("19_n6y3s")
@@ -90952,13 +90960,18 @@ script = ExtResource("13_12u5c")
 position = Vector2(197.063, 315.438)
 scale = Vector2(0.472457, 0.430971)
 texture = ExtResource("13_n2jvd")
-hframes = 14
-vframes = 20
-frame = 14
+hframes = 13
+vframes = 21
+frame = 130
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="assessore_1_1"]
 position = Vector2(198, 315.5)
 shape = SubResource("RectangleShape2D_vf5i1")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="assessore_1_1"]
+libraries = {
+"": SubResource("AnimationLibrary_xhqd2")
+}
 
 [node name="Cassonetti" type="TileMap" parent="."]
 position = Vector2(372, 257)
