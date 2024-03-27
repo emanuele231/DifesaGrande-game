@@ -1,4 +1,4 @@
-[gd_scene load_steps=169 format=3 uid="uid://dqiw7bvjmib4d"]
+[gd_scene load_steps=170 format=3 uid="uid://dqiw7bvjmib4d"]
 
 [ext_resource type="Script" path="res://scripts/Player_prov_movements.gd" id="1_qbu6o"]
 [ext_resource type="Texture2D" uid="uid://mma4w2rnqnov" path="res://NPG/Personaggio_non_personalizzato_universal.png" id="2_5jwpo"]
@@ -41,7 +41,10 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1vaym"]
 size = Vector2(11, 23)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ph8sv"]
+[sub_resource type="SystemFont" id="SystemFont_kudhw"]
+font_names = PackedStringArray("MS UI Gothic")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yn27a"]
 
 [sub_resource type="GDScript" id="GDScript_x2n7i"]
 
@@ -56302,7 +56305,7 @@ size_flags_horizontal = 3
 script = ExtResource("3_x5t71")
 
 [node name="Label" type="Label" parent="Player_prov/Sprite2D/Dialogo_01"]
-modulate = Color(0.94902, 0.384314, 0.0784314, 0.556863)
+modulate = Color(1, 1, 1, 0.694118)
 light_mask = 3
 visibility_layer = 3
 layout_mode = 1
@@ -56317,8 +56320,9 @@ offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_kudhw")
 theme_override_font_sizes/font_size = 19
-theme_override_styles/normal = SubResource("StyleBoxFlat_ph8sv")
+theme_override_styles/normal = SubResource("StyleBoxFlat_yn27a")
 text = "BENVENUTI NEL BOSCO DIFESA GRANDE!"
 horizontal_alignment = 1
 vertical_alignment = 1

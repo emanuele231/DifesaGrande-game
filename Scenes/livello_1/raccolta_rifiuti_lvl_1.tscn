@@ -1,4 +1,4 @@
-[gd_scene load_steps=84 format=3 uid="uid://di1ohafwclejt"]
+[gd_scene load_steps=85 format=3 uid="uid://di1ohafwclejt"]
 
 [ext_resource type="Texture2D" uid="uid://chubrd1ppjr5m" path="res://tileset_town_multi_v002.png" id="1_wdhc7"]
 [ext_resource type="Texture2D" uid="uid://con2c3m6inlxq" path="res://assets acquistati/assets acquistati 2/MEGA BUNDLE 12 ASSET PACKS/MEGA BUNDLE 12 ASSET PACKS/SENGOKU ADVENTURE TILESET/TILES SENGOKU ADVENTURE.png" id="2_vg74g"]
@@ -57936,8 +57936,11 @@ physics_layer_0/collision_layer = 1
 physics_layer_0/physics_material = SubResource("PhysicsMaterial_xv7e7")
 sources/0 = SubResource("TileSetAtlasSource_pk0j5")
 
+[sub_resource type="SystemFont" id="SystemFont_1j06k"]
+font_names = PackedStringArray("MS Gothic")
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1alvf"]
-bg_color = Color(0.2, 0.721569, 0, 0.431373)
+bg_color = Color(1, 1, 1, 0.654902)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8n1xp"]
 size = Vector2(11, 18.5)
@@ -90864,7 +90867,8 @@ offset_top = 480.0
 offset_right = 980.0
 offset_bottom = 583.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 27
+theme_override_fonts/font = SubResource("SystemFont_1j06k")
+theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_1alvf")
 text = "Bene, eccoci qui!"
 horizontal_alignment = 1
