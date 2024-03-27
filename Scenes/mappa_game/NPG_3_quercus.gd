@@ -21,10 +21,10 @@ func _ready():
 func _process(delta):
 	if is_moving:
 		var new_position = position + direction * speed * delta
-		npg_3_anim_tree.set("parameters/idle/blend_position", new_position)
-		npg_3_anim_tree.set("parameters/walk/blend_position", new_position)
+		npg_3_anim_tree.set("parameters/idle/blend_position", direction)
+		npg_3_anim_tree.set("parameters/walk/blend_position", direction)
 		animazione.travel("walk")
-		if (new_position - initial_position).length() >= distance:
+		if (new_position).length() >= distance:
 			direction *= -1
 			new_position = position + direction * speed * delta
 			is_moving = false
