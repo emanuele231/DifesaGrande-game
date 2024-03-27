@@ -56508,7 +56508,7 @@ scale = Vector2(0.586364, 0.570895)
 texture = ExtResource("23_vkirj")
 hframes = 13
 vframes = 21
-frame = 117
+frame = 127
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPG_3_quercus"]
 position = Vector2(-61, 147)
