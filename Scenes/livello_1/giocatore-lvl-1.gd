@@ -1,9 +1,11 @@
 extends CharacterBody2D
 
 
-var SPEED = 120
+var SPEED = 70
 var input_movement = Vector2.ZERO
 var can_move: bool = false
+@onready var anim_tree = $AnimationTree
+@onready var animazioni = anim_tree.get("parameters/playback")
 
 func _ready():
 	get_node("Sprite2D/spiegazione_1_1")._on_player_1_callback = self
@@ -35,9 +37,13 @@ func move():
 		input_movement = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	
 		if input_movement != Vector2.ZERO:
+			anim_tree.set("parameters/idle/blend_position", input_movement)
+			anim_tree.set("parameters/walk/blend_position", input_movement)
+			animazioni.travel("walk")
 			velocity = input_movement * SPEED
 
 		if input_movement == Vector2.ZERO:
+			animazioni.travel("idle")
 			velocity = Vector2.ZERO
 		move_and_slide()
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://di1ohafwclejt"]
+[gd_scene load_steps=84 format=3 uid="uid://di1ohafwclejt"]
 
 [ext_resource type="Texture2D" uid="uid://chubrd1ppjr5m" path="res://tileset_town_multi_v002.png" id="1_wdhc7"]
 [ext_resource type="Texture2D" uid="uid://con2c3m6inlxq" path="res://assets acquistati/assets acquistati 2/MEGA BUNDLE 12 ASSET PACKS/MEGA BUNDLE 12 ASSET PACKS/SENGOKU ADVENTURE TILESET/TILES SENGOKU ADVENTURE.png" id="2_vg74g"]
@@ -57942,8 +57942,232 @@ bg_color = Color(0.2, 0.721569, 0, 0.431373)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8n1xp"]
 size = Vector2(11, 18.5)
 
+[sub_resource type="Animation" id="Animation_gbsoa"]
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [143]
+}
+
+[sub_resource type="Animation" id="Animation_4di30"]
+resource_name = "idle_down"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.2, 1.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [139, 140]
+}
+
+[sub_resource type="Animation" id="Animation_j5qm0"]
+resource_name = "idle_left"
+length = 1.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.2, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [126, 127]
+}
+
+[sub_resource type="Animation" id="Animation_15nis"]
+resource_name = "idle_right"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.2, 1.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [152, 153]
+}
+
+[sub_resource type="Animation" id="Animation_k7sm7"]
+resource_name = "idle_up"
+length = 1.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.2, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [113, 114]
+}
+
+[sub_resource type="Animation" id="Animation_87stg"]
+resource_name = "walk_down"
+length = 0.76
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [131, 132, 133, 134, 135, 136, 137, 138]
+}
+
+[sub_resource type="Animation" id="Animation_5m81q"]
+resource_name = "walk_left"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [117, 118, 119, 120, 126, 121, 122, 123, 124, 125, 126]
+}
+
+[sub_resource type="Animation" id="Animation_62ifb"]
+resource_name = "walk_right"
+length = 0.76
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [143, 144, 145, 146, 147, 148, 149, 150, 151]
+}
+
+[sub_resource type="Animation" id="Animation_82kgm"]
+resource_name = "walk_up"
+length = 0.76
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [105, 106, 107, 108, 109, 110, 111, 112]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y03vp"]
+_data = {
+"RESET": SubResource("Animation_gbsoa"),
+"idle_down": SubResource("Animation_4di30"),
+"idle_left": SubResource("Animation_j5qm0"),
+"idle_right": SubResource("Animation_15nis"),
+"idle_up": SubResource("Animation_k7sm7"),
+"walk_down": SubResource("Animation_87stg"),
+"walk_left": SubResource("Animation_5m81q"),
+"walk_right": SubResource("Animation_62ifb"),
+"walk_up": SubResource("Animation_82kgm")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_76xn1"]
+animation = &"idle_down"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_x1rce"]
+animation = &"idle_left"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tpw7m"]
+animation = &"idle_up"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6en78"]
+animation = &"idle_right"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_acmim"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_76xn1")
+blend_point_0/pos = Vector2(0, 1)
+blend_point_1/node = SubResource("AnimationNodeAnimation_x1rce")
+blend_point_1/pos = Vector2(-1, 0)
+blend_point_2/node = SubResource("AnimationNodeAnimation_tpw7m")
+blend_point_2/pos = Vector2(0, -0.9)
+blend_point_3/node = SubResource("AnimationNodeAnimation_6en78")
+blend_point_3/pos = Vector2(1, 0)
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_f2pjj"]
+animation = &"walk_down"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_h3y8k"]
+animation = &"walk_left"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3fchd"]
+animation = &"walk_up"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_aaivd"]
+animation = &"walk_right"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_s1ijq"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_f2pjj")
+blend_point_0/pos = Vector2(0, 1)
+blend_point_1/node = SubResource("AnimationNodeAnimation_h3y8k")
+blend_point_1/pos = Vector2(-1, 0)
+blend_point_2/node = SubResource("AnimationNodeAnimation_3fchd")
+blend_point_2/pos = Vector2(0, -0.9)
+blend_point_3/node = SubResource("AnimationNodeAnimation_aaivd")
+blend_point_3/pos = Vector2(1, 0)
+blend_mode = 1
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_ulyy5"]
+states/idle/node = SubResource("AnimationNodeBlendSpace2D_acmim")
+states/idle/position = Vector2(348, 47)
+states/walk/node = SubResource("AnimationNodeBlendSpace2D_s1ijq")
+states/walk/position = Vector2(616, 108)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vf5i1"]
 size = Vector2(8, 17)
+
+[sub_resource type="Animation" id="Animation_abatq"]
+resource_name = "ass_down"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xhqd2"]
+_data = {
+"ass_down": SubResource("Animation_abatq")
+}
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8cexs"]
 texture = ExtResource("19_n6y3s")
@@ -90606,15 +90830,16 @@ layer_0/z_index = 1
 layer_0/tile_data = PackedInt32Array(3670019, 393216, 12, 3735555, 393216, 13, 3801091, 393216, 14, 3670020, 458752, 12, 3735556, 458752, 13, 3801092, 458752, 14, 3670022, 262144, 12, 3735558, 262144, 13, 3801094, 262144, 14, 3670023, 327680, 12, 3735559, 327680, 13, 3801095, 327680, 14, 3670025, 131072, 12, 3735561, 131072, 13, 3801097, 131072, 14, 3670026, 196608, 12, 3735562, 196608, 13, 3801098, 196608, 14, 3670028, 131072, 9, 3735564, 131072, 10, 3801100, 131072, 11, 3670029, 196608, 9, 3735565, 196608, 10, 3801101, 196608, 11, 2686975, 393216, 9, 2752511, 393216, 10, 2818047, 393216, 11, 2621440, 458752, 9, 2686976, 458752, 10, 2752512, 458752, 11)
 
 [node name="player" type="CharacterBody2D" parent="."]
+position = Vector2(2, -3)
 script = ExtResource("10_mjga4")
 
 [node name="Sprite2D" type="Sprite2D" parent="player"]
 position = Vector2(171.125, 317)
 scale = Vector2(0.470339, 0.447761)
 texture = ExtResource("10_n7k24")
-hframes = 14
-vframes = 20
-frame = 28
+hframes = 13
+vframes = 21
+frame = 143
 script = ExtResource("11_4hn15")
 
 [node name="spiegazione_1_1" type="Control" parent="player/Sprite2D"]
@@ -90657,10 +90882,10 @@ limit_bottom = 1232
 [node name="punteggi" type="Control" parent="player/Camera2D"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = -227.0
-offset_top = -125.0
-offset_right = 230.0
-offset_bottom = 126.0
+offset_left = -226.0
+offset_top = -128.0
+offset_right = 231.0
+offset_bottom = 123.0
 auto_translate = false
 localize_numeral_system = false
 script = ExtResource("14_d4ow7")
@@ -90709,8 +90934,20 @@ text = "0
 "
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
-position = Vector2(172.5, 316.25)
+position = Vector2(171, 320)
 shape = SubResource("RectangleShape2D_8n1xp")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="player"]
+libraries = {
+"": SubResource("AnimationLibrary_y03vp")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="player"]
+tree_root = SubResource("AnimationNodeStateMachine_ulyy5")
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/idle/blend_position = Vector2(0, 0)
+parameters/walk/blend_position = Vector2(0, 0)
 
 [node name="assessore_1_1" type="CharacterBody2D" parent="."]
 script = ExtResource("13_12u5c")
@@ -90719,13 +90956,18 @@ script = ExtResource("13_12u5c")
 position = Vector2(197.063, 315.438)
 scale = Vector2(0.472457, 0.430971)
 texture = ExtResource("13_n2jvd")
-hframes = 14
-vframes = 20
-frame = 14
+hframes = 13
+vframes = 21
+frame = 117
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="assessore_1_1"]
 position = Vector2(198, 315.5)
 shape = SubResource("RectangleShape2D_vf5i1")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="assessore_1_1"]
+libraries = {
+"": SubResource("AnimationLibrary_xhqd2")
+}
 
 [node name="Cassonetti" type="TileMap" parent="."]
 position = Vector2(372, 257)
