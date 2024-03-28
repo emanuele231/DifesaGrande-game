@@ -1,10 +1,10 @@
-[gd_scene load_steps=170 format=3 uid="uid://dqiw7bvjmib4d"]
+[gd_scene load_steps=180 format=3 uid="uid://dqiw7bvjmib4d"]
 
 [ext_resource type="Script" path="res://scripts/Player_prov_movements.gd" id="1_qbu6o"]
 [ext_resource type="Texture2D" uid="uid://mma4w2rnqnov" path="res://NPG/Personaggio_non_personalizzato_universal.png" id="2_5jwpo"]
+[ext_resource type="Texture2D" uid="uid://dw1xgygvvs0nx" path="res://personaggi/Assessore chara.png" id="2_elxb5"]
 [ext_resource type="Texture2D" uid="uid://dh0bh5kpvdgov" path="res://World of Solaria Rural Village Update 05a/World of Solaria Rural Village Update 05a/16x16/Tilesets/Rural Village Farming.png" id="3_7wf1g"]
 [ext_resource type="Script" path="res://Scenes/mappa_game/Dialogo_01.gd" id="3_x5t71"]
-[ext_resource type="Texture2D" uid="uid://bw2k82fmu64wt" path="res://personaggi/assessore (2).png" id="4_e14v3"]
 [ext_resource type="Script" path="res://Scenes/mappa_game/Assessore.gd" id="4_iw720"]
 [ext_resource type="Texture2D" uid="uid://7e8q311i0fbj" path="res://World of Solaria Rural Village Update 05a/World of Solaria Rural Village Update 05a/16x16/Animated Tiles/Village Animated Smoke.png" id="4_m35kx"]
 [ext_resource type="Texture2D" uid="uid://vdxita3uu0wu" path="res://assets acquistati/assets acquistati 2/MEGA BUNDLE 12 ASSET PACKS/MEGA BUNDLE 12 ASSET PACKS/HARVEST TINY FARM/HOUSES/HOUSE 1.png" id="5_w26o0"]
@@ -40,6 +40,87 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1vaym"]
 size = Vector2(11, 23)
+
+[sub_resource type="Animation" id="Animation_dbkwg"]
+resource_name = "idle_right"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [143]
+}
+
+[sub_resource type="Animation" id="Animation_dw6tx"]
+resource_name = "walk_down"
+length = 0.73
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [131, 132, 133, 134, 135, 136, 137, 138]
+}
+
+[sub_resource type="Animation" id="Animation_x2ccu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [131]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xua6f"]
+_data = {
+"RESET": SubResource("Animation_x2ccu"),
+"idle_right": SubResource("Animation_dbkwg"),
+"walk_down": SubResource("Animation_dw6tx")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qteh7"]
+animation = &"idle_right"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_4ov8i"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_qteh7")
+blend_point_0/pos = Vector2(1, 0)
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_appty"]
+animation = &"walk_down"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_qmnr8"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_appty")
+blend_point_0/pos = Vector2(0, 1)
+blend_mode = 1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_n5qet"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_q8sy2"]
+states/idle/node = SubResource("AnimationNodeBlendSpace2D_4ov8i")
+states/idle/position = Vector2(413, 84)
+states/walk/node = SubResource("AnimationNodeBlendSpace2D_qmnr8")
+states/walk/position = Vector2(551, 94)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_n5qet")]
 
 [sub_resource type="SystemFont" id="SystemFont_kudhw"]
 font_names = PackedStringArray("Cascadia Code")
@@ -56271,16 +56352,28 @@ position = Vector2(-3.05176e-05, -3.05176e-05)
 script = ExtResource("4_iw720")
 
 [node name="Sprite2D" type="Sprite2D" parent="Assessore"]
-position = Vector2(77, -101)
+position = Vector2(77, -107)
 scale = Vector2(0.550847, 0.544776)
-texture = ExtResource("4_e14v3")
-hframes = 14
-vframes = 20
-frame = 42
+texture = ExtResource("2_elxb5")
+hframes = 13
+vframes = 21
+frame = 131
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Assessore"]
 position = Vector2(77.5, -104.5)
 shape = SubResource("RectangleShape2D_1vaym")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Assessore"]
+libraries = {
+"": SubResource("AnimationLibrary_xua6f")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="Assessore"]
+tree_root = SubResource("AnimationNodeStateMachine_q8sy2")
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/idle/blend_position = Vector2(0, 0)
+parameters/walk/blend_position = Vector2(-0.00467288, 0.988024)
 
 [node name="Player_prov" type="CharacterBody2D" parent="."]
 position = Vector2(209, -459)

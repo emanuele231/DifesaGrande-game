@@ -1,4 +1,4 @@
-[gd_scene load_steps=95 format=3 uid="uid://di1ohafwclejt"]
+[gd_scene load_steps=103 format=3 uid="uid://di1ohafwclejt"]
 
 [ext_resource type="Texture2D" uid="uid://chubrd1ppjr5m" path="res://tileset_town_multi_v002.png" id="1_wdhc7"]
 [ext_resource type="Texture2D" uid="uid://con2c3m6inlxq" path="res://assets acquistati/assets acquistati 2/MEGA BUNDLE 12 ASSET PACKS/MEGA BUNDLE 12 ASSET PACKS/SENGOKU ADVENTURE TILESET/TILES SENGOKU ADVENTURE.png" id="2_vg74g"]
@@ -58226,11 +58226,84 @@ size = Vector2(8, 17)
 
 [sub_resource type="Animation" id="Animation_abatq"]
 resource_name = "ass_down"
+length = 0.73
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [131, 132, 133, 134, 135, 136, 137, 138]
+}
+
+[sub_resource type="Animation" id="Animation_mvmcm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [131]
+}
+
+[sub_resource type="Animation" id="Animation_mide1"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [117]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xhqd2"]
 _data = {
-"ass_down": SubResource("Animation_abatq")
+"RESET": SubResource("Animation_mvmcm"),
+"ass_down": SubResource("Animation_abatq"),
+"idle": SubResource("Animation_mide1")
 }
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1sotu"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_uifob"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_1sotu")
+blend_point_0/pos = Vector2(-1, 0)
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_e3cgt"]
+animation = &"ass_down"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_5wg7p"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_e3cgt")
+blend_point_0/pos = Vector2(0, 1)
+blend_mode = 1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_iky1a"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_e4hdh"]
+states/idle/node = SubResource("AnimationNodeBlendSpace2D_uifob")
+states/idle/position = Vector2(332, 69)
+states/walk/node = SubResource("AnimationNodeBlendSpace2D_5wg7p")
+states/walk/position = Vector2(589, 140)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_iky1a")]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8cexs"]
 texture = ExtResource("19_n6y3s")
@@ -91043,12 +91116,12 @@ parameters/walk/blend_position = Vector2(0, 0)
 script = ExtResource("13_12u5c")
 
 [node name="Sprite2D" type="Sprite2D" parent="assessore_1_1"]
-position = Vector2(197.063, 315.438)
-scale = Vector2(0.472457, 0.430971)
+position = Vector2(197.063, 314.615)
+scale = Vector2(0.472457, 0.456704)
 texture = ExtResource("16_f5xh1")
 hframes = 13
 vframes = 21
-frame = 117
+frame = 131
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="assessore_1_1"]
 position = Vector2(198, 315.5)
@@ -91058,6 +91131,13 @@ shape = SubResource("RectangleShape2D_vf5i1")
 libraries = {
 "": SubResource("AnimationLibrary_xhqd2")
 }
+
+[node name="AnimationTree" type="AnimationTree" parent="assessore_1_1"]
+tree_root = SubResource("AnimationNodeStateMachine_e4hdh")
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/idle/blend_position = Vector2(0, 0)
+parameters/walk/blend_position = Vector2(0, 0)
 
 [node name="Cassonetti" type="TileMap" parent="."]
 position = Vector2(372, 257)
