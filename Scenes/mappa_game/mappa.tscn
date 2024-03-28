@@ -42,9 +42,15 @@
 size = Vector2(11, 23)
 
 [sub_resource type="SystemFont" id="SystemFont_kudhw"]
-font_names = PackedStringArray("MS UI Gothic")
+font_names = PackedStringArray("Cascadia Code")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yn27a"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.529412, 0.309804, 0.0352941, 1)
 
 [sub_resource type="GDScript" id="GDScript_x2n7i"]
 
@@ -56313,10 +56319,10 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -102.0
+offset_left = -91.0
 offset_top = -115.0
-offset_right = 187.0
-offset_bottom = 8.0
+offset_right = 173.0
+offset_bottom = 10.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -56512,7 +56518,7 @@ scale = Vector2(0.586364, 0.570895)
 texture = ExtResource("23_vkirj")
 hframes = 13
 vframes = 21
-frame = 127
+frame = 117
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPG_3_quercus"]
 position = Vector2(-61, 147)

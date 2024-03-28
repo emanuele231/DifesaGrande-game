@@ -1,4 +1,4 @@
-[gd_scene load_steps=85 format=3 uid="uid://di1ohafwclejt"]
+[gd_scene load_steps=95 format=3 uid="uid://di1ohafwclejt"]
 
 [ext_resource type="Texture2D" uid="uid://chubrd1ppjr5m" path="res://tileset_town_multi_v002.png" id="1_wdhc7"]
 [ext_resource type="Texture2D" uid="uid://con2c3m6inlxq" path="res://assets acquistati/assets acquistati 2/MEGA BUNDLE 12 ASSET PACKS/MEGA BUNDLE 12 ASSET PACKS/SENGOKU ADVENTURE TILESET/TILES SENGOKU ADVENTURE.png" id="2_vg74g"]
@@ -13,9 +13,9 @@
 [ext_resource type="Texture2D" uid="uid://mma4w2rnqnov" path="res://NPG/Personaggio_non_personalizzato_universal.png" id="10_n7k24"]
 [ext_resource type="Script" path="res://Scenes/livello_1/player-lvl-1-minigame.gd" id="11_4hn15"]
 [ext_resource type="Script" path="res://Scenes/livello_1/assessore_1_1.gd" id="13_12u5c"]
-[ext_resource type="Texture2D" uid="uid://bw2k82fmu64wt" path="res://personaggi/assessore (2).png" id="13_n2jvd"]
 [ext_resource type="Script" path="res://Scenes/livello_1/spiegazione_1_1.gd" id="13_ofw2f"]
 [ext_resource type="Script" path="res://Scenes/livello_1/punteggi.gd" id="14_d4ow7"]
+[ext_resource type="Texture2D" uid="uid://dw1xgygvvs0nx" path="res://personaggi/Assessore chara.png" id="16_f5xh1"]
 [ext_resource type="Script" path="res://Scenes/livello_1/carta_1.gd" id="17_3al3l"]
 [ext_resource type="Texture2D" uid="uid://q8kixgb2jruv" path="res://Modern_Exteriors_RPG_Maker_MV_v31.7/Modern_Exteriors_RPG_Maker_MV/Tileset_57_MV.png" id="18_hrrvu"]
 [ext_resource type="Texture2D" uid="uid://ddkvnn2r8rvoc" path="res://Modern_Exteriors_RPG_Maker_MV_v31.7/Modern_Exteriors_RPG_Maker_MV/Tileset_56_MV.png" id="19_llg21"]
@@ -57937,10 +57937,70 @@ physics_layer_0/physics_material = SubResource("PhysicsMaterial_xv7e7")
 sources/0 = SubResource("TileSetAtlasSource_pk0j5")
 
 [sub_resource type="SystemFont" id="SystemFont_1j06k"]
-font_names = PackedStringArray("MS Gothic")
+font_names = PackedStringArray("Cascadia Code")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1alvf"]
-bg_color = Color(1, 1, 1, 0.654902)
+bg_color = Color(1, 1, 1, 0.733333)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.603922, 0.34902, 0.0313726, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_0pbko"]
+font_names = PackedStringArray("Cascadia Code")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_42qjj"]
+bg_color = Color(1, 1, 1, 0.721569)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.576471, 0.27451, 0.0117647, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_rtplf"]
+font_names = PackedStringArray("Cascadia Code")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cngx1"]
+bg_color = Color(1, 1, 1, 0.596078)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.643137, 0.290196, 0, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_pw4nd"]
+font_names = PackedStringArray("Cascadia Code")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gorej"]
+bg_color = Color(0.8, 0.709804, 0.215686, 0.741176)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.517647, 0.282353, 0.0156863, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_07ses"]
+font_names = PackedStringArray("Cascadia Code")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_glcpc"]
+bg_color = Color(0.6, 0.309804, 0.0196078, 0.776471)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.482353, 0.270588, 0.0117647, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_e12e3"]
+font_names = PackedStringArray("Cascadia Code")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vvce7"]
+bg_color = Color(0.333333, 0.701961, 0, 0.745098)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.576471, 0.333333, 0.0352941, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8n1xp"]
 size = Vector2(11, 18.5)
@@ -90862,10 +90922,10 @@ script = ExtResource("13_ofw2f")
 
 [node name="Label" type="Label" parent="player/Sprite2D/spiegazione_1_1"]
 layout_mode = 0
-offset_left = 4.0
-offset_top = 480.0
-offset_right = 980.0
-offset_bottom = 583.0
+offset_left = -6.0
+offset_top = 476.0
+offset_right = 974.0
+offset_bottom = 576.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("SystemFont_1j06k")
 theme_override_font_sizes/font_size = 24
@@ -90898,44 +90958,70 @@ script = ExtResource("14_d4ow7")
 layout_mode = 0
 offset_left = 8.0
 offset_top = 13.0
-offset_right = 50.0
+offset_right = 49.0
 offset_bottom = 40.0
+theme_override_colors/font_color = Color(0, 0.768627, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_0pbko")
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxFlat_42qjj")
 text = "0/10
 "
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="carta_rimasta" type="Label" parent="player/Camera2D/punteggi"]
 layout_mode = 0
 offset_left = 435.0
-offset_top = 54.0
-offset_right = 459.0
-offset_bottom = 80.0
+offset_top = 59.0
+offset_right = 454.0
+offset_bottom = 81.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_rtplf")
+theme_override_styles/normal = SubResource("StyleBoxFlat_cngx1")
 text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="plastica_rimasta" type="Label" parent="player/Camera2D/punteggi"]
 layout_mode = 0
-offset_left = 436.0
+offset_left = 435.0
 offset_top = 83.0
-offset_right = 465.0
-offset_bottom = 109.0
+offset_right = 454.0
+offset_bottom = 105.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_pw4nd")
+theme_override_styles/normal = SubResource("StyleBoxFlat_gorej")
 text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="organico_rimasto" type="Label" parent="player/Camera2D/punteggi"]
 layout_mode = 0
-offset_left = 434.0
-offset_top = 112.0
-offset_right = 457.0
-offset_bottom = 138.0
+offset_left = 435.0
+offset_top = 107.0
+offset_right = 454.0
+offset_bottom = 129.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_07ses")
+theme_override_styles/normal = SubResource("StyleBoxFlat_glcpc")
 text = "0
 "
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="indifferenziato_rimasto" type="Label" parent="player/Camera2D/punteggi"]
 layout_mode = 0
 offset_left = 435.0
-offset_top = 143.0
-offset_right = 457.0
-offset_bottom = 169.0
+offset_top = 131.0
+offset_right = 454.0
+offset_bottom = 153.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_e12e3")
+theme_override_styles/normal = SubResource("StyleBoxFlat_vvce7")
 text = "0
 "
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
 position = Vector2(171, 320)
@@ -90959,7 +91045,7 @@ script = ExtResource("13_12u5c")
 [node name="Sprite2D" type="Sprite2D" parent="assessore_1_1"]
 position = Vector2(197.063, 315.438)
 scale = Vector2(0.472457, 0.430971)
-texture = ExtResource("13_n2jvd")
+texture = ExtResource("16_f5xh1")
 hframes = 13
 vframes = 21
 frame = 117
@@ -91484,7 +91570,7 @@ position = Vector2(386, 146)
 script = ExtResource("17_3al3l")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="plastica-16"]
-position = Vector2(4, 100)
+position = Vector2(6, 103)
 shape = SubResource("CircleShape2D_ouupl")
 debug_color = Color(0.223529, 0.639216, 0, 0.419608)
 
