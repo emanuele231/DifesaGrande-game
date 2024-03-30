@@ -10,8 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://b203ijq1jem65" path="res://Modern_Exteriors_RPG_Maker_MV_v31.7/Modern_Exteriors_RPG_Maker_MV/Tileset_16_MV.png" id="8_m45h5"]
 [ext_resource type="Texture2D" uid="uid://53wu7ggy1wm0" path="res://gdm-2d-top-down-180-pixel-art-vehicles/2D Top down 180 pixel vehicles/2D Top Down 180 Vehicles ( originale size ).png" id="9_r7qwi"]
 [ext_resource type="Script" path="res://Scenes/livello_1/giocatore-lvl-1.gd" id="10_mjga4"]
-[ext_resource type="Texture2D" uid="uid://mma4w2rnqnov" path="res://NPG/Personaggio_non_personalizzato_universal.png" id="10_n7k24"]
 [ext_resource type="Script" path="res://Scenes/livello_1/player-lvl-1-minigame.gd" id="11_4hn15"]
+[ext_resource type="Texture2D" uid="uid://u8pfmfx4neoj" path="res://personaggi/personaggio_provvisorio.png" id="11_26dys"]
 [ext_resource type="Script" path="res://Scenes/livello_1/assessore_1_1.gd" id="13_12u5c"]
 [ext_resource type="Script" path="res://Scenes/livello_1/spiegazione_1_1.gd" id="13_ofw2f"]
 [ext_resource type="Script" path="res://Scenes/livello_1/punteggi.gd" id="14_d4ow7"]
@@ -58035,7 +58035,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0.2, 1.1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [139, 140]
+"values": [130, 130]
 }
 
 [sub_resource type="Animation" id="Animation_j5qm0"]
@@ -58052,7 +58052,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0.2, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [126, 127]
+"values": [117, 117]
 }
 
 [sub_resource type="Animation" id="Animation_15nis"]
@@ -58069,7 +58069,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0.2, 1.1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [152, 153]
+"values": [143, 143]
 }
 
 [sub_resource type="Animation" id="Animation_k7sm7"]
@@ -58086,7 +58086,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0.2, 0.9),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [113, 114]
+"values": [105, 105]
 }
 
 [sub_resource type="Animation" id="Animation_87stg"]
@@ -58224,6 +58224,21 @@ states/walk/position = Vector2(616, 108)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vf5i1"]
 size = Vector2(8, 17)
 
+[sub_resource type="Animation" id="Animation_mvmcm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [131]
+}
+
 [sub_resource type="Animation" id="Animation_abatq"]
 resource_name = "ass_down"
 length = 0.73
@@ -58239,21 +58254,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [131, 132, 133, 134, 135, 136, 137, 138]
-}
-
-[sub_resource type="Animation" id="Animation_mvmcm"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [131]
 }
 
 [sub_resource type="Animation" id="Animation_mide1"]
@@ -90972,7 +90972,7 @@ script = ExtResource("10_mjga4")
 [node name="Sprite2D" type="Sprite2D" parent="player"]
 position = Vector2(171.125, 317)
 scale = Vector2(0.470339, 0.447761)
-texture = ExtResource("10_n7k24")
+texture = ExtResource("11_26dys")
 hframes = 13
 vframes = 21
 frame = 143

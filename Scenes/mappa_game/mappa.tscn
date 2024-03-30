@@ -1,10 +1,10 @@
 [gd_scene load_steps=180 format=3 uid="uid://dqiw7bvjmib4d"]
 
 [ext_resource type="Script" path="res://scripts/Player_prov_movements.gd" id="1_qbu6o"]
-[ext_resource type="Texture2D" uid="uid://mma4w2rnqnov" path="res://NPG/Personaggio_non_personalizzato_universal.png" id="2_5jwpo"]
 [ext_resource type="Texture2D" uid="uid://dw1xgygvvs0nx" path="res://personaggi/Assessore chara.png" id="2_elxb5"]
 [ext_resource type="Texture2D" uid="uid://dh0bh5kpvdgov" path="res://World of Solaria Rural Village Update 05a/World of Solaria Rural Village Update 05a/16x16/Tilesets/Rural Village Farming.png" id="3_7wf1g"]
 [ext_resource type="Script" path="res://Scenes/mappa_game/Dialogo_01.gd" id="3_x5t71"]
+[ext_resource type="Texture2D" uid="uid://u8pfmfx4neoj" path="res://personaggi/personaggio_provvisorio.png" id="4_65ac3"]
 [ext_resource type="Script" path="res://Scenes/mappa_game/Assessore.gd" id="4_iw720"]
 [ext_resource type="Texture2D" uid="uid://7e8q311i0fbj" path="res://World of Solaria Rural Village Update 05a/World of Solaria Rural Village Update 05a/16x16/Animated Tiles/Village Animated Smoke.png" id="4_m35kx"]
 [ext_resource type="Texture2D" uid="uid://vdxita3uu0wu" path="res://assets acquistati/assets acquistati 2/MEGA BUNDLE 12 ASSET PACKS/MEGA BUNDLE 12 ASSET PACKS/HARVEST TINY FARM/HOUSES/HOUSE 1.png" id="5_w26o0"]
@@ -41,6 +41,21 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1vaym"]
 size = Vector2(11, 23)
 
+[sub_resource type="Animation" id="Animation_x2ccu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [131]
+}
+
 [sub_resource type="Animation" id="Animation_dbkwg"]
 resource_name = "idle_right"
 loop_mode = 1
@@ -72,21 +87,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [131, 132, 133, 134, 135, 136, 137, 138]
-}
-
-[sub_resource type="Animation" id="Animation_x2ccu"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [131]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xua6f"]
@@ -164,7 +164,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0.2, 0.9),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [139, 140]
+"values": [130, 130]
 }
 
 [sub_resource type="Animation" id="Animation_doef7"]
@@ -181,7 +181,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0.2, 0.9),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [152, 153]
+"values": [143, 143]
 }
 
 [sub_resource type="Animation" id="Animation_usag4"]
@@ -198,7 +198,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0.2, 0.9),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [126, 127]
+"values": [117, 117]
 }
 
 [sub_resource type="Animation" id="Animation_r4t86"]
@@ -215,7 +215,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0.1, 0.9),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [113, 114]
+"values": [104, 104]
 }
 
 [sub_resource type="Animation" id="Animation_q21md"]
@@ -56384,7 +56384,7 @@ script = ExtResource("1_qbu6o")
 [node name="Sprite2D" type="Sprite2D" parent="Player_prov"]
 position = Vector2(-110, 352)
 scale = Vector2(0.538614, 0.507062)
-texture = ExtResource("2_5jwpo")
+texture = ExtResource("4_65ac3")
 hframes = 13
 vframes = 21
 frame = 105
