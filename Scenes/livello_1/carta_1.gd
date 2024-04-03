@@ -15,33 +15,50 @@ var capienza_sequence := [
 	"10/10"
 ]
 var current_capienza_index: int = 0
+var index: int = 0
 var carta = 0
 var indifferenziato = 0
 var organico = 0
 var plastica = 0
 
-	
+var punteggi_script = preload("res://Scenes/livello_1/punteggi.gd")
+var punteggi = punteggi_script.new()
+
+
+
+
 func _on_body_entered(body: CharacterBody2D):
 	entered = true
 
-
 func _on_body_exited(body):
 	entered = false
-
-
+	
 func _process(delta):
-	if entered == true and Input.is_key_label_pressed(KEY_C):
-		capienza_massima()
-		rifiuti()
-		free()
+	if entered == true:
+		if Input.is_key_label_pressed(KEY_C):
+			free()
 
-func capienza_massima():
-	if current_capienza_index >= -1:
-		current_capienza_index += 1
-		print(current_capienza_index)
-		if current_capienza_index < capienza_sequence.size():
-			$"../player/Camera2D/punteggi/capienza_sacco".text = capienza_sequence[current_capienza_index]
+
+'''
+func update():
+	if index < capienza_sequence.size():
+		index += punteggi.update_label()
+		print(index)
+		if index < capienza_sequence.size():
+			#$"../player/Camera2D/punteggi/capienza_sacco".text = capienza_sequence[index]
+			#$"../player/Camera2D/punteggi/capienza_sacco".show()
+
+
+
+
+func stampa():
+	if index >= -1:
+		index += 1
+		print(index)
+		if index < capienza_sequence.size():
+			$"../player/Camera2D/punteggi/capienza_sacco".text = capienza_sequence[index]
 			$"../player/Camera2D/punteggi/capienza_sacco".show()
+
 
 func rifiuti():
 	if $TileMap.is_in_group("carta"):
@@ -75,7 +92,7 @@ func rifiuti():
 						
 		
 
-
+'''
 
 
 
