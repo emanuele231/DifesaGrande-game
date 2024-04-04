@@ -18,14 +18,12 @@ var capienza_sequence := [
 var index: int = 0
 
 
+
 func _on_body_entered(body: CharacterBody2D):
 	entered = true
 
 func _on_body_exited(body):
 	entered = false
-	
-	print(index)
-
 
 func _process(delta):
 	if entered == true:
@@ -37,11 +35,5 @@ func _process(delta):
 func set_catch():
 	index += 1
 	if index < capienza_sequence.size():
-		var singleton = get_node("/root/Singleton")
-		singleton.set_index(index)
-		print(index)
 		$"../player/Camera2D/punteggi/capienza_sacco".text = capienza_sequence[index]
 		$"../player/Camera2D/punteggi/capienza_sacco".show()
-		singleton.get_index()
-
-

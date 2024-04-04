@@ -1,4 +1,4 @@
-[gd_scene load_steps=103 format=3 uid="uid://di1ohafwclejt"]
+[gd_scene load_steps=104 format=3 uid="uid://di1ohafwclejt"]
 
 [ext_resource type="Texture2D" uid="uid://chubrd1ppjr5m" path="res://tileset_town_multi_v002.png" id="1_wdhc7"]
 [ext_resource type="Texture2D" uid="uid://con2c3m6inlxq" path="res://assets acquistati/assets acquistati 2/MEGA BUNDLE 12 ASSET PACKS/MEGA BUNDLE 12 ASSET PACKS/SENGOKU ADVENTURE TILESET/TILES SENGOKU ADVENTURE.png" id="2_vg74g"]
@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://ddkvnn2r8rvoc" path="res://Modern_Exteriors_RPG_Maker_MV_v31.7/Modern_Exteriors_RPG_Maker_MV/Tileset_56_MV.png" id="19_llg21"]
 [ext_resource type="Texture2D" uid="uid://tcyr7w6dvdr" path="res://Modern_Exteriors_RPG_Maker_MV_v31.7/Modern_Exteriors_RPG_Maker_MV/Tileset_1_MV.png" id="19_n6y3s"]
 [ext_resource type="Texture2D" uid="uid://cgv2p3yta53vf" path="res://Modern_Exteriors_RPG_Maker_MV_v31.7/Modern_Exteriors_RPG_Maker_MV/Tileset_18_MV.png" id="20_knukf"]
+[ext_resource type="Script" path="res://Scenes/livello_1/carta/carta-10.gd" id="20_r5io3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tsr0r"]
 texture = ExtResource("1_wdhc7")
@@ -91195,7 +91196,7 @@ debug_color = Color(0.223529, 0.639216, 0, 0.419608)
 
 [node name="carta-10" type="Area2D" parent="."]
 position = Vector2(621, 377)
-script = ExtResource("17_3al3l")
+script = ExtResource("20_r5io3")
 
 [node name="TileMap" type="TileMap" parent="carta-10"]
 position = Vector2(137, 63)
