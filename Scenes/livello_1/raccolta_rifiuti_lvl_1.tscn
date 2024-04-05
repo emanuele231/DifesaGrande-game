@@ -1,4 +1,4 @@
-[gd_scene load_steps=104 format=3 uid="uid://di1ohafwclejt"]
+[gd_scene load_steps=106 format=3 uid="uid://di1ohafwclejt"]
 
 [ext_resource type="Texture2D" uid="uid://chubrd1ppjr5m" path="res://tileset_town_multi_v002.png" id="1_wdhc7"]
 [ext_resource type="Texture2D" uid="uid://con2c3m6inlxq" path="res://assets acquistati/assets acquistati 2/MEGA BUNDLE 12 ASSET PACKS/MEGA BUNDLE 12 ASSET PACKS/SENGOKU ADVENTURE TILESET/TILES SENGOKU ADVENTURE.png" id="2_vg74g"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://q8kixgb2jruv" path="res://Modern_Exteriors_RPG_Maker_MV_v31.7/Modern_Exteriors_RPG_Maker_MV/Tileset_57_MV.png" id="18_hrrvu"]
 [ext_resource type="Texture2D" uid="uid://ddkvnn2r8rvoc" path="res://Modern_Exteriors_RPG_Maker_MV_v31.7/Modern_Exteriors_RPG_Maker_MV/Tileset_56_MV.png" id="19_llg21"]
 [ext_resource type="Texture2D" uid="uid://tcyr7w6dvdr" path="res://Modern_Exteriors_RPG_Maker_MV_v31.7/Modern_Exteriors_RPG_Maker_MV/Tileset_1_MV.png" id="19_n6y3s"]
+[ext_resource type="Script" path="res://Scenes/livello_1/diff_carta.gd" id="20_ako5k"]
 [ext_resource type="Texture2D" uid="uid://cgv2p3yta53vf" path="res://Modern_Exteriors_RPG_Maker_MV_v31.7/Modern_Exteriors_RPG_Maker_MV/Tileset_18_MV.png" id="20_knukf"]
 [ext_resource type="Script" path="res://Scenes/livello_1/carta/carta-10.gd" id="20_r5io3"]
 
@@ -63906,6 +63907,9 @@ texture = ExtResource("19_n6y3s")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_8cexs")
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_02e3m"]
+radius = 14.0
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6tb2d"]
 texture = ExtResource("18_hrrvu")
 1:0/0 = 0
@@ -91179,6 +91183,30 @@ offset_bottom = 301.307
 theme_override_colors/font_color = Color(0.882353, 0.34902, 0, 1)
 text = "[ O ]"
 
+[node name="C-01" type="Area2D" parent="."]
+position = Vector2(278, 119)
+script = ExtResource("20_ako5k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="C-01"]
+shape = SubResource("CircleShape2D_02e3m")
+debug_color = Color(0.976471, 0, 0.411765, 0.419608)
+
+[node name="C-02" type="Area2D" parent="."]
+position = Vector2(-1, -111)
+script = ExtResource("20_ako5k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="C-02"]
+shape = SubResource("CircleShape2D_02e3m")
+debug_color = Color(0.976471, 0, 0.411765, 0.419608)
+
+[node name="C-03" type="Area2D" parent="."]
+position = Vector2(148, 33)
+script = ExtResource("20_ako5k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="C-03"]
+shape = SubResource("CircleShape2D_02e3m")
+debug_color = Color(0.976471, 0, 0.411765, 0.419608)
+
 [node name="carta-01" type="Area2D" parent="." groups=["carta"]]
 script = ExtResource("17_3al3l")
 
@@ -92101,6 +92129,12 @@ position = Vector2(-36, 49)
 shape = SubResource("CircleShape2D_ouupl")
 debug_color = Color(0.223529, 0.639216, 0, 0.419608)
 
+[connection signal="body_entered" from="C-01" to="C-01" method="_on_body_entered"]
+[connection signal="body_exited" from="C-01" to="C-01" method="_on_body_exited"]
+[connection signal="body_entered" from="C-02" to="C-02" method="_on_body_entered"]
+[connection signal="body_exited" from="C-02" to="C-02" method="_on_body_exited"]
+[connection signal="body_entered" from="C-03" to="C-03" method="_on_body_entered"]
+[connection signal="body_exited" from="C-03" to="C-03" method="_on_body_exited"]
 [connection signal="body_entered" from="carta-01" to="carta-01" method="_on_body_entered"]
 [connection signal="body_exited" from="carta-01" to="carta-01" method="_on_body_exited"]
 [connection signal="body_entered" from="carta-10" to="carta-10" method="_on_body_entered"]
