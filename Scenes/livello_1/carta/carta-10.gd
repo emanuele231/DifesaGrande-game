@@ -1,7 +1,7 @@
 extends Area2D
 
 var entered: bool = false
-var stop: bool = true
+var catch: bool = false
 var capienza_sequence := [
 	"0/10",
 	"1/10",
@@ -15,46 +15,25 @@ var capienza_sequence := [
 	"9/10",
 	"10/10"
 ]
-var carta: int = 0
+var index: int = 0
+
 
 
 func _on_body_entered(body: CharacterBody2D):
 	entered = true
-	if body.is_in_group("carta"):
-		carta += 1
-	
 
 func _on_body_exited(body):
 	entered = false
-
 
 func _process(delta):
 	if entered == true:
 		if Input.is_key_label_pressed(KEY_C):
 			set_catch()
-			differenziata()
-			if stop == true:
-				free()
+			free()
 
 
 func set_catch():
-	var singleton = get_node("/root/Singleton")
-	var index = singleton.get_custom_index()
 	index += 1
 	if index < capienza_sequence.size():
-		singleton.set_index(index)
-		print(index)
 		$"../player/Camera2D/punteggi/capienza_sacco".text = capienza_sequence[index]
 		$"../player/Camera2D/punteggi/capienza_sacco".show()
-		if index == 10:
-			$"../player/Camera2D/punteggi/capienza_sacco".modulate = Color(1, 0, 0) 
-	else:
-		stop = false
-
-func differenziata():
-	$"../player/Camera2D/punteggi/carta_rimasta".text = str(carta)
-	print(carta)
-
-
-
-
