@@ -15,10 +15,14 @@ var capienza_sequence := [
 	"9/10",
 	"10/10"
 ]
+var carta: int = 0
 
 
 func _on_body_entered(body: CharacterBody2D):
 	entered = true
+	if body.is_in_group("carta"):
+		carta += 1
+	
 
 func _on_body_exited(body):
 	entered = false
@@ -28,6 +32,7 @@ func _process(delta):
 	if entered == true:
 		if Input.is_key_label_pressed(KEY_C):
 			set_catch()
+			differenziata()
 			if stop == true:
 				free()
 
@@ -45,6 +50,10 @@ func set_catch():
 			$"../player/Camera2D/punteggi/capienza_sacco".modulate = Color(1, 0, 0) 
 	else:
 		stop = false
+
+func differenziata():
+	$"../player/Camera2D/punteggi/carta_rimasta".text = str(carta)
+	print(carta)
 
 
 
