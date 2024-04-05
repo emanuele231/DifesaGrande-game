@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://53wu7ggy1wm0" path="res://gdm-2d-top-down-180-pixel-art-vehicles/2D Top down 180 pixel vehicles/2D Top Down 180 Vehicles ( originale size ).png" id="9_r7qwi"]
 [ext_resource type="Script" path="res://Scenes/livello_1/giocatore-lvl-1.gd" id="10_mjga4"]
 [ext_resource type="Script" path="res://Scenes/livello_1/player-lvl-1-minigame.gd" id="11_4hn15"]
-[ext_resource type="Texture2D" uid="uid://u8pfmfx4neoj" path="res://personaggi/personaggio_provvisorio.png" id="11_26dys"]
+[ext_resource type="Texture2D" uid="uid://cut4ol3djhuwx" path="res://personaggi/player.png" id="11_cb3pf"]
 [ext_resource type="Script" path="res://Scenes/livello_1/assessore_1_1.gd" id="13_12u5c"]
 [ext_resource type="Script" path="res://Scenes/livello_1/spiegazione_1_1.gd" id="13_ofw2f"]
 [ext_resource type="Script" path="res://Scenes/livello_1/punteggi.gd" id="14_d4ow7"]
@@ -58005,7 +58005,7 @@ border_width_bottom = 1
 border_color = Color(0.576471, 0.333333, 0.0352941, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8n1xp"]
-size = Vector2(11, 18.5)
+size = Vector2(12.75, 22.25)
 
 [sub_resource type="Animation" id="Animation_gbsoa"]
 length = 0.1
@@ -58110,6 +58110,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_5m81q"]
 resource_name = "walk_left"
+length = 0.83
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -58118,15 +58119,15 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [117, 118, 119, 120, 126, 121, 122, 123, 124, 125, 126]
+"values": [117, 118, 119, 120, 121, 122, 123, 124, 125]
 }
 
 [sub_resource type="Animation" id="Animation_62ifb"]
 resource_name = "walk_right"
-length = 0.76
+length = 0.73
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -58143,7 +58144,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_82kgm"]
 resource_name = "walk_up"
-length = 0.76
+length = 0.73
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -58224,7 +58225,7 @@ states/walk/node = SubResource("AnimationNodeBlendSpace2D_s1ijq")
 states/walk/position = Vector2(616, 108)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vf5i1"]
-size = Vector2(8, 17)
+size = Vector2(11, 21.5)
 
 [sub_resource type="Animation" id="Animation_mvmcm"]
 length = 0.001
@@ -90975,9 +90976,9 @@ position = Vector2(2, -3)
 script = ExtResource("10_mjga4")
 
 [node name="Sprite2D" type="Sprite2D" parent="player"]
-position = Vector2(171.125, 317)
-scale = Vector2(0.470339, 0.447761)
-texture = ExtResource("11_26dys")
+position = Vector2(172.537, 315.164)
+scale = Vector2(0.514466, 0.50513)
+texture = ExtResource("11_cb3pf")
 hframes = 13
 vframes = 21
 frame = 143
@@ -91000,13 +91001,13 @@ script = ExtResource("13_ofw2f")
 
 [node name="Label" type="Label" parent="player/Sprite2D/spiegazione_1_1"]
 layout_mode = 0
-offset_left = -6.0
-offset_top = 476.0
-offset_right = 974.0
-offset_bottom = 576.0
+offset_left = 33.0
+offset_top = 457.0
+offset_right = 927.0
+offset_bottom = 544.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("SystemFont_1j06k")
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 17
 theme_override_styles/normal = SubResource("StyleBoxFlat_1alvf")
 text = "Bene, eccoci qui!"
 horizontal_alignment = 1
@@ -91102,7 +91103,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
-position = Vector2(171, 320)
+position = Vector2(173, 318)
 shape = SubResource("RectangleShape2D_8n1xp")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="player"]
@@ -91121,15 +91122,15 @@ parameters/walk/blend_position = Vector2(0, 0)
 script = ExtResource("13_12u5c")
 
 [node name="Sprite2D" type="Sprite2D" parent="assessore_1_1"]
-position = Vector2(197.063, 314.615)
-scale = Vector2(0.472457, 0.456704)
+position = Vector2(198, 313)
+scale = Vector2(0.500869, 0.519211)
 texture = ExtResource("16_f5xh1")
 hframes = 13
 vframes = 21
 frame = 131
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="assessore_1_1"]
-position = Vector2(198, 315.5)
+position = Vector2(198, 316)
 shape = SubResource("RectangleShape2D_vf5i1")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="assessore_1_1"]

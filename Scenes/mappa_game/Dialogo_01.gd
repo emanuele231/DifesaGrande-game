@@ -3,13 +3,13 @@ extends Control
 var dialog_sequence := [
 	"Benvenuto nel bosco Difesa Grande!",
 	"Da qui, inizia la tua avventura!",
-	"Come puoi vedere dalla mappa, il bosco è diviso in varie zone",
-	"in ogni zona ci sono dei problemi da risolvere",
-	"La tua mappa segnalerà i punti esatti dove poter risolvere il problema",
-	"Basterà recarti in quel punto, premere invio e potrai iniziare a lavorare",
-	"Se hai bisogno di aiuto, non esitare a chiamarci",
-	"In bocca a lupo guardiano del bosco",
-	"Rendi questo bosco rigoglioso come un tempo!"
+	"Ci troviamo, adesso, nel bar Quercus",
+	"Qui svolgerai il tuo primo compito",
+	"Per muoverti puoi utilizzare le frecce direzionali",
+	"Recati al punto segnalato per iniziare il minigioco",
+	"Ma se vuoi studiare meglio la zona",
+	"Puoi farti un giro del luogo, prima di giocare",
+	"In bocca al lupo guardiano!"
 ]  
 
 var current_dialog_index: int = -1
