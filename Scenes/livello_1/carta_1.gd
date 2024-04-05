@@ -41,8 +41,11 @@ func set_catch():
 		print(index)
 		$"../player/Camera2D/punteggi/capienza_sacco".text = capienza_sequence[index]
 		$"../player/Camera2D/punteggi/capienza_sacco".show()
+		if index == 10:
+			$"../player/Camera2D/punteggi/capienza_sacco".modulate = Color(1, 0, 0) 
 	else:
 		stop = false
+
 
 
 
