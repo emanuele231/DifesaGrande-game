@@ -1,4 +1,4 @@
-[gd_scene load_steps=106 format=3 uid="uid://di1ohafwclejt"]
+[gd_scene load_steps=111 format=3 uid="uid://di1ohafwclejt"]
 
 [ext_resource type="Texture2D" uid="uid://chubrd1ppjr5m" path="res://tileset_town_multi_v002.png" id="1_wdhc7"]
 [ext_resource type="Texture2D" uid="uid://con2c3m6inlxq" path="res://assets acquistati/assets acquistati 2/MEGA BUNDLE 12 ASSET PACKS/MEGA BUNDLE 12 ASSET PACKS/SENGOKU ADVENTURE TILESET/TILES SENGOKU ADVENTURE.png" id="2_vg74g"]
@@ -22,7 +22,9 @@
 [ext_resource type="Texture2D" uid="uid://tcyr7w6dvdr" path="res://Modern_Exteriors_RPG_Maker_MV_v31.7/Modern_Exteriors_RPG_Maker_MV/Tileset_1_MV.png" id="19_n6y3s"]
 [ext_resource type="Script" path="res://Scenes/livello_1/diff_carta.gd" id="20_ako5k"]
 [ext_resource type="Texture2D" uid="uid://cgv2p3yta53vf" path="res://Modern_Exteriors_RPG_Maker_MV_v31.7/Modern_Exteriors_RPG_Maker_MV/Tileset_18_MV.png" id="20_knukf"]
-[ext_resource type="Script" path="res://Scenes/livello_1/carta/carta-10.gd" id="20_r5io3"]
+[ext_resource type="Script" path="res://Scenes/livello_1/diff_plastica.gd" id="23_1qodk"]
+[ext_resource type="Script" path="res://Scenes/livello_1/diff_organico.gd" id="23_x6i8x"]
+[ext_resource type="Script" path="res://Scenes/livello_1/diff-indiff.gd" id="25_sxli1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tsr0r"]
 texture = ExtResource("1_wdhc7")
@@ -69165,6 +69167,9 @@ sources/0 = SubResource("TileSetAtlasSource_6tb2d")
 [sub_resource type="CircleShape2D" id="CircleShape2D_ouupl"]
 radius = 14.0357
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_5tqt5"]
+radius = 14.0
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rbuhp"]
 texture = ExtResource("19_llg21")
 4:0/0 = 0
@@ -80030,6 +80035,9 @@ texture = ExtResource("5_o7yl3")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_pps34")
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_v7fy7"]
+radius = 14.0
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gsbnk"]
 texture = ExtResource("20_knukf")
 5:0/0 = 0
@@ -85336,6 +85344,9 @@ texture = ExtResource("20_knukf")
 [sub_resource type="TileSet" id="TileSet_m8fs3"]
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_gsbnk")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ri27l"]
+radius = 14.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xsc4w"]
 texture = ExtResource("19_n6y3s")
@@ -91025,10 +91036,10 @@ limit_bottom = 1232
 [node name="punteggi" type="Control" parent="player/Camera2D"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = -226.0
-offset_top = -128.0
-offset_right = 231.0
-offset_bottom = 123.0
+offset_left = -235.0
+offset_top = -132.0
+offset_right = 222.0
+offset_bottom = 119.0
 auto_translate = false
 localize_numeral_system = false
 script = ExtResource("14_d4ow7")
@@ -91066,7 +91077,7 @@ layout_mode = 0
 offset_left = 435.0
 offset_top = 83.0
 offset_right = 454.0
-offset_bottom = 105.0
+offset_bottom = 107.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("SystemFont_pw4nd")
 theme_override_styles/normal = SubResource("StyleBoxFlat_gorej")
@@ -91315,13 +91326,13 @@ format = 2
 layer_0/tile_data = PackedInt32Array(393233, 2752512, 15, 458769, 2752512, 16, 524305, 2752512, 17, 393234, 2818048, 15, 458770, 2818048, 16, 524306, 2818048, 17, 393235, 2883584, 15, 458771, 2883584, 16, 524307, 2883584, 17)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="carta-01"]
-position = Vector2(278, 119)
+position = Vector2(278, 120)
 shape = SubResource("CircleShape2D_ouupl")
 debug_color = Color(0.223529, 0.639216, 0, 0.419608)
 
 [node name="carta-10" type="Area2D" parent="."]
 position = Vector2(621, 377)
-script = ExtResource("20_r5io3")
+script = ExtResource("17_3al3l")
 
 [node name="TileMap" type="TileMap" parent="carta-10"]
 position = Vector2(137, 63)
@@ -91542,6 +91553,186 @@ layer_0/tile_data = PackedInt32Array(393233, 2752512, 15, 458769, 2752512, 16, 5
 position = Vector2(278, 119)
 shape = SubResource("CircleShape2D_ouupl")
 debug_color = Color(0.223529, 0.639216, 0, 0.419608)
+
+[node name="P-01" type="Area2D" parent="."]
+position = Vector2(-112, -80)
+script = ExtResource("23_1qodk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="P-01"]
+position = Vector2(-2, 2)
+shape = SubResource("CircleShape2D_5tqt5")
+debug_color = Color(0.498039, 0.380392, 1, 0.419608)
+
+[node name="P-02" type="Area2D" parent="."]
+position = Vector2(418, -402)
+script = ExtResource("23_1qodk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="P-02"]
+position = Vector2(-2, 2)
+shape = SubResource("CircleShape2D_5tqt5")
+debug_color = Color(0.498039, 0.380392, 1, 0.419608)
+
+[node name="P-03" type="Area2D" parent="."]
+position = Vector2(-56, -410)
+script = ExtResource("23_1qodk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="P-03"]
+position = Vector2(-2, 2)
+shape = SubResource("CircleShape2D_5tqt5")
+debug_color = Color(0.498039, 0.380392, 1, 0.419608)
+
+[node name="P-04" type="Area2D" parent="."]
+position = Vector2(385, 525)
+script = ExtResource("23_1qodk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="P-04"]
+position = Vector2(-2, 2)
+shape = SubResource("CircleShape2D_5tqt5")
+debug_color = Color(0.498039, 0.380392, 1, 0.419608)
+
+[node name="P-05" type="Area2D" parent="."]
+position = Vector2(340, 1136)
+script = ExtResource("23_1qodk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="P-05"]
+position = Vector2(-2, 2)
+shape = SubResource("CircleShape2D_5tqt5")
+debug_color = Color(0.498039, 0.380392, 1, 0.419608)
+
+[node name="P-06" type="Area2D" parent="."]
+position = Vector2(930, 927)
+script = ExtResource("23_1qodk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="P-06"]
+position = Vector2(-2, 2)
+shape = SubResource("CircleShape2D_5tqt5")
+debug_color = Color(0.498039, 0.380392, 1, 0.419608)
+
+[node name="P-07" type="Area2D" parent="."]
+position = Vector2(607, 925)
+script = ExtResource("23_1qodk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="P-07"]
+position = Vector2(-2, 2)
+shape = SubResource("CircleShape2D_5tqt5")
+debug_color = Color(0.498039, 0.380392, 1, 0.419608)
+
+[node name="P-08" type="Area2D" parent="."]
+position = Vector2(-168, 384)
+script = ExtResource("23_1qodk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="P-08"]
+position = Vector2(-2, 2)
+shape = SubResource("CircleShape2D_5tqt5")
+debug_color = Color(0.498039, 0.380392, 1, 0.419608)
+
+[node name="P-09" type="Area2D" parent="."]
+position = Vector2(-274, 979)
+script = ExtResource("23_1qodk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="P-09"]
+position = Vector2(-2, 2)
+shape = SubResource("CircleShape2D_5tqt5")
+debug_color = Color(0.498039, 0.380392, 1, 0.419608)
+
+[node name="P-10" type="Area2D" parent="."]
+position = Vector2(-113, 1031)
+script = ExtResource("23_1qodk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="P-10"]
+position = Vector2(-2, 2)
+shape = SubResource("CircleShape2D_5tqt5")
+debug_color = Color(0.498039, 0.380392, 1, 0.419608)
+
+[node name="P-11" type="Area2D" parent="."]
+position = Vector2(39, 936)
+script = ExtResource("23_1qodk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="P-11"]
+position = Vector2(-2, 2)
+shape = SubResource("CircleShape2D_5tqt5")
+debug_color = Color(0.498039, 0.380392, 1, 0.419608)
+
+[node name="P-12" type="Area2D" parent="."]
+position = Vector2(616, 540)
+script = ExtResource("23_1qodk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="P-12"]
+position = Vector2(-2, 2)
+shape = SubResource("CircleShape2D_5tqt5")
+debug_color = Color(0.498039, 0.380392, 1, 0.419608)
+
+[node name="P-13" type="Area2D" parent="."]
+position = Vector2(654, 1190)
+script = ExtResource("23_1qodk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="P-13"]
+position = Vector2(-2, 2)
+shape = SubResource("CircleShape2D_5tqt5")
+debug_color = Color(0.498039, 0.380392, 1, 0.419608)
+
+[node name="P-14" type="Area2D" parent="."]
+position = Vector2(-86, 711)
+script = ExtResource("23_1qodk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="P-14"]
+position = Vector2(-2, 2)
+shape = SubResource("CircleShape2D_5tqt5")
+debug_color = Color(0.498039, 0.380392, 1, 0.419608)
+
+[node name="P-15" type="Area2D" parent="."]
+position = Vector2(130, 789)
+script = ExtResource("23_1qodk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="P-15"]
+position = Vector2(-2, 2)
+shape = SubResource("CircleShape2D_5tqt5")
+debug_color = Color(0.498039, 0.380392, 1, 0.419608)
+
+[node name="P-16" type="Area2D" parent="."]
+position = Vector2(-325, 545)
+script = ExtResource("23_1qodk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="P-16"]
+position = Vector2(-2, 2)
+shape = SubResource("CircleShape2D_5tqt5")
+debug_color = Color(0.498039, 0.380392, 1, 0.419608)
+
+[node name="P-17" type="Area2D" parent="."]
+position = Vector2(659, 726)
+script = ExtResource("23_1qodk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="P-17"]
+position = Vector2(-2, 2)
+shape = SubResource("CircleShape2D_5tqt5")
+debug_color = Color(0.498039, 0.380392, 1, 0.419608)
+
+[node name="P-18" type="Area2D" parent="."]
+position = Vector2(489, 335)
+script = ExtResource("23_1qodk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="P-18"]
+position = Vector2(-2, 2)
+shape = SubResource("CircleShape2D_5tqt5")
+debug_color = Color(0.498039, 0.380392, 1, 0.419608)
+
+[node name="P-19" type="Area2D" parent="."]
+position = Vector2(394, 247)
+script = ExtResource("23_1qodk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="P-19"]
+position = Vector2(-2, 2)
+shape = SubResource("CircleShape2D_5tqt5")
+debug_color = Color(0.498039, 0.380392, 1, 0.419608)
+
+[node name="P-20" type="Area2D" parent="."]
+position = Vector2(710, -393)
+script = ExtResource("23_1qodk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="P-20"]
+position = Vector2(-2, 2)
+shape = SubResource("CircleShape2D_5tqt5")
+debug_color = Color(0.498039, 0.380392, 1, 0.419608)
 
 [node name="plastica-01" type="Area2D" parent="."]
 position = Vector2(-279, -230)
@@ -91851,6 +92042,141 @@ tile_set = SubResource("TileSet_6txub")
 format = 2
 layer_0/tile_data = PackedInt32Array(589834, 2752512, 4, 655370, 2752512, 5, 524299, 2818048, 3, 589835, 2818048, 4, 655371, 2818048, 5)
 
+[node name="O-01" type="Area2D" parent="."]
+position = Vector2(-137, 789)
+script = ExtResource("23_x6i8x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="O-01"]
+position = Vector2(316, -570)
+shape = SubResource("CircleShape2D_v7fy7")
+debug_color = Color(0.741176, 0.886275, 0.101961, 0.419608)
+
+[node name="O-02" type="Area2D" parent="."]
+position = Vector2(515, 1187)
+script = ExtResource("23_x6i8x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="O-02"]
+position = Vector2(316, -570)
+shape = SubResource("CircleShape2D_v7fy7")
+debug_color = Color(0.741176, 0.886275, 0.101961, 0.419608)
+
+[node name="O-03" type="Area2D" parent="."]
+position = Vector2(687, 1541)
+script = ExtResource("23_x6i8x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="O-03"]
+position = Vector2(316, -570)
+shape = SubResource("CircleShape2D_v7fy7")
+debug_color = Color(0.741176, 0.886275, 0.101961, 0.419608)
+
+[node name="O-04" type="Area2D" parent="."]
+position = Vector2(233, 1763)
+script = ExtResource("23_x6i8x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="O-04"]
+position = Vector2(316, -570)
+shape = SubResource("CircleShape2D_v7fy7")
+debug_color = Color(0.741176, 0.886275, 0.101961, 0.419608)
+
+[node name="O-05" type="Area2D" parent="."]
+position = Vector2(645, 1714)
+script = ExtResource("23_x6i8x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="O-05"]
+position = Vector2(316, -570)
+shape = SubResource("CircleShape2D_v7fy7")
+debug_color = Color(0.741176, 0.886275, 0.101961, 0.419608)
+
+[node name="O-06" type="Area2D" parent="."]
+position = Vector2(593, 671)
+script = ExtResource("23_x6i8x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="O-06"]
+position = Vector2(316, -570)
+shape = SubResource("CircleShape2D_v7fy7")
+debug_color = Color(0.741176, 0.886275, 0.101961, 0.419608)
+
+[node name="O-07" type="Area2D" parent="."]
+position = Vector2(566, 1357)
+script = ExtResource("23_x6i8x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="O-07"]
+position = Vector2(316, -570)
+shape = SubResource("CircleShape2D_v7fy7")
+debug_color = Color(0.741176, 0.886275, 0.101961, 0.419608)
+
+[node name="O-08" type="Area2D" parent="."]
+position = Vector2(-557, 1382)
+script = ExtResource("23_x6i8x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="O-08"]
+position = Vector2(316, -570)
+shape = SubResource("CircleShape2D_v7fy7")
+debug_color = Color(0.741176, 0.886275, 0.101961, 0.419608)
+
+[node name="O-09" type="Area2D" parent="."]
+position = Vector2(-538, 1621)
+script = ExtResource("23_x6i8x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="O-09"]
+position = Vector2(316, -570)
+shape = SubResource("CircleShape2D_v7fy7")
+debug_color = Color(0.741176, 0.886275, 0.101961, 0.419608)
+
+[node name="O-10" type="Area2D" parent="."]
+position = Vector2(-355, 1318)
+script = ExtResource("23_x6i8x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="O-10"]
+position = Vector2(316, -570)
+shape = SubResource("CircleShape2D_v7fy7")
+debug_color = Color(0.741176, 0.886275, 0.101961, 0.419608)
+
+[node name="O-11" type="Area2D" parent="."]
+position = Vector2(-96, 1528)
+script = ExtResource("23_x6i8x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="O-11"]
+position = Vector2(316, -570)
+shape = SubResource("CircleShape2D_v7fy7")
+debug_color = Color(0.741176, 0.886275, 0.101961, 0.419608)
+
+[node name="O-12" type="Area2D" parent="."]
+position = Vector2(26, 1056)
+script = ExtResource("23_x6i8x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="O-12"]
+position = Vector2(316, -570)
+shape = SubResource("CircleShape2D_v7fy7")
+debug_color = Color(0.741176, 0.886275, 0.101961, 0.419608)
+
+[node name="O-13" type="Area2D" parent="."]
+position = Vector2(418, 901)
+script = ExtResource("23_x6i8x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="O-13"]
+position = Vector2(316, -570)
+shape = SubResource("CircleShape2D_v7fy7")
+debug_color = Color(0.741176, 0.886275, 0.101961, 0.419608)
+
+[node name="O-14" type="Area2D" parent="."]
+position = Vector2(-367, 635)
+script = ExtResource("23_x6i8x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="O-14"]
+position = Vector2(316, -570)
+shape = SubResource("CircleShape2D_v7fy7")
+debug_color = Color(0.741176, 0.886275, 0.101961, 0.419608)
+
+[node name="O-15" type="Area2D" parent="."]
+position = Vector2(-281, 944)
+script = ExtResource("23_x6i8x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="O-15"]
+position = Vector2(316, -570)
+shape = SubResource("CircleShape2D_v7fy7")
+debug_color = Color(0.741176, 0.886275, 0.101961, 0.419608)
+
 [node name="organico-01" type="Area2D" parent="."]
 position = Vector2(988, 1081)
 script = ExtResource("17_3al3l")
@@ -91877,7 +92203,7 @@ format = 2
 layer_0/tile_data = PackedInt32Array(458747, 2555904, 9, 524283, 2555904, 10, 589819, 2555904, 11, 458748, 2621440, 9, 524284, 2621440, 10, 589820, 2621440, 11, 524285, 2686976, 10, 589821, 2686976, 11)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="organico-02"]
-position = Vector2(-27, 63)
+position = Vector2(-26, 63)
 shape = SubResource("CircleShape2D_ouupl")
 debug_color = Color(0.223529, 0.639216, 0, 0.419608)
 
@@ -92076,6 +92402,96 @@ position = Vector2(-25, 60)
 shape = SubResource("CircleShape2D_ouupl")
 debug_color = Color(0.223529, 0.639216, 0, 0.419608)
 
+[node name="I - 01" type="Area2D" parent="."]
+position = Vector2(2, -2)
+script = ExtResource("25_sxli1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="I - 01"]
+position = Vector2(1, -32)
+shape = SubResource("CircleShape2D_ri27l")
+debug_color = Color(0, 0.0313726, 0.0470588, 0.419608)
+
+[node name="I - 02" type="Area2D" parent="."]
+position = Vector2(68, 1209)
+script = ExtResource("25_sxli1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="I - 02"]
+position = Vector2(1, -32)
+shape = SubResource("CircleShape2D_ri27l")
+debug_color = Color(0, 0.0313726, 0.0470588, 0.419608)
+
+[node name="I - 03" type="Area2D" parent="."]
+position = Vector2(940, 1226)
+script = ExtResource("25_sxli1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="I - 03"]
+position = Vector2(1, -32)
+shape = SubResource("CircleShape2D_ri27l")
+debug_color = Color(0, 0.0313726, 0.0470588, 0.419608)
+
+[node name="I - 04" type="Area2D" parent="."]
+position = Vector2(656, 898)
+script = ExtResource("25_sxli1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="I - 04"]
+position = Vector2(1, -32)
+shape = SubResource("CircleShape2D_ri27l")
+debug_color = Color(0, 0.0313726, 0.0470588, 0.419608)
+
+[node name="I - 05" type="Area2D" parent="."]
+position = Vector2(974, 483)
+script = ExtResource("25_sxli1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="I - 05"]
+position = Vector2(1, -32)
+shape = SubResource("CircleShape2D_ri27l")
+debug_color = Color(0, 0.0313726, 0.0470588, 0.419608)
+
+[node name="I - 06" type="Area2D" parent="."]
+position = Vector2(1009, -305)
+script = ExtResource("25_sxli1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="I - 06"]
+position = Vector2(1, -32)
+shape = SubResource("CircleShape2D_ri27l")
+debug_color = Color(0, 0.0313726, 0.0470588, 0.419608)
+
+[node name="I - 07" type="Area2D" parent="."]
+position = Vector2(1016, 263)
+script = ExtResource("25_sxli1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="I - 07"]
+position = Vector2(1, -32)
+shape = SubResource("CircleShape2D_ri27l")
+debug_color = Color(0, 0.0313726, 0.0470588, 0.419608)
+
+[node name="I - 08" type="Area2D" parent="."]
+position = Vector2(-335, 1144)
+script = ExtResource("25_sxli1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="I - 08"]
+position = Vector2(1, -32)
+shape = SubResource("CircleShape2D_ri27l")
+debug_color = Color(0, 0.0313726, 0.0470588, 0.419608)
+
+[node name="I - 09" type="Area2D" parent="."]
+position = Vector2(795, -14)
+script = ExtResource("25_sxli1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="I - 09"]
+position = Vector2(1, -32)
+shape = SubResource("CircleShape2D_ri27l")
+debug_color = Color(0, 0.0313726, 0.0470588, 0.419608)
+
+[node name="I - 10" type="Area2D" parent="."]
+position = Vector2(-332, -326)
+script = ExtResource("25_sxli1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="I - 10"]
+position = Vector2(1, -32)
+shape = SubResource("CircleShape2D_ri27l")
+debug_color = Color(0, 0.0313726, 0.0470588, 0.419608)
+
 [node name="indifferenziato-01" type="Area2D" parent="."]
 position = Vector2(37, -82)
 script = ExtResource("17_3al3l")
@@ -92087,7 +92503,7 @@ format = 2
 layer_0/tile_data = PackedInt32Array(327675, 2555904, 31, 393211, 2555904, 32, 262140, 2621440, 30, 327676, 2621440, 31, 393212, 2621440, 32, 262141, 2686976, 30, 327677, 2686976, 31, 393213, 2686976, 32)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="indifferenziato-01"]
-position = Vector2(-36, 49)
+position = Vector2(-34, 48)
 shape = SubResource("CircleShape2D_ouupl")
 debug_color = Color(0.223529, 0.639216, 0, 0.419608)
 
@@ -92286,6 +92702,46 @@ debug_color = Color(0.223529, 0.639216, 0, 0.419608)
 [connection signal="body_exited" from="carta-04" to="carta-04" method="_on_body_exited"]
 [connection signal="body_entered" from="carta-03" to="carta-03" method="_on_body_entered"]
 [connection signal="body_exited" from="carta-03" to="carta-03" method="_on_body_exited"]
+[connection signal="body_entered" from="P-01" to="P-01" method="_on_body_entered"]
+[connection signal="body_exited" from="P-01" to="P-01" method="_on_body_exited"]
+[connection signal="body_entered" from="P-02" to="P-02" method="_on_body_entered"]
+[connection signal="body_exited" from="P-02" to="P-02" method="_on_body_exited"]
+[connection signal="body_entered" from="P-03" to="P-03" method="_on_body_entered"]
+[connection signal="body_exited" from="P-03" to="P-03" method="_on_body_exited"]
+[connection signal="body_entered" from="P-04" to="P-04" method="_on_body_entered"]
+[connection signal="body_exited" from="P-04" to="P-04" method="_on_body_exited"]
+[connection signal="body_entered" from="P-05" to="P-05" method="_on_body_entered"]
+[connection signal="body_exited" from="P-05" to="P-05" method="_on_body_exited"]
+[connection signal="body_entered" from="P-06" to="P-06" method="_on_body_entered"]
+[connection signal="body_exited" from="P-06" to="P-06" method="_on_body_exited"]
+[connection signal="body_entered" from="P-07" to="P-07" method="_on_body_entered"]
+[connection signal="body_exited" from="P-07" to="P-07" method="_on_body_exited"]
+[connection signal="body_entered" from="P-08" to="P-08" method="_on_body_entered"]
+[connection signal="body_exited" from="P-08" to="P-08" method="_on_body_exited"]
+[connection signal="body_entered" from="P-09" to="P-09" method="_on_body_entered"]
+[connection signal="body_exited" from="P-09" to="P-09" method="_on_body_exited"]
+[connection signal="body_entered" from="P-10" to="P-10" method="_on_body_entered"]
+[connection signal="body_exited" from="P-10" to="P-10" method="_on_body_exited"]
+[connection signal="body_entered" from="P-11" to="P-11" method="_on_body_entered"]
+[connection signal="body_exited" from="P-11" to="P-11" method="_on_body_exited"]
+[connection signal="body_entered" from="P-12" to="P-12" method="_on_body_entered"]
+[connection signal="body_exited" from="P-12" to="P-12" method="_on_body_exited"]
+[connection signal="body_entered" from="P-13" to="P-13" method="_on_body_entered"]
+[connection signal="body_exited" from="P-13" to="P-13" method="_on_body_exited"]
+[connection signal="body_entered" from="P-14" to="P-14" method="_on_body_entered"]
+[connection signal="body_exited" from="P-14" to="P-14" method="_on_body_exited"]
+[connection signal="body_entered" from="P-15" to="P-15" method="_on_body_entered"]
+[connection signal="body_exited" from="P-15" to="P-15" method="_on_body_exited"]
+[connection signal="body_entered" from="P-16" to="P-16" method="_on_body_entered"]
+[connection signal="body_exited" from="P-16" to="P-16" method="_on_body_exited"]
+[connection signal="body_entered" from="P-17" to="P-17" method="_on_body_entered"]
+[connection signal="body_exited" from="P-17" to="P-17" method="_on_body_exited"]
+[connection signal="body_entered" from="P-18" to="P-18" method="_on_body_entered"]
+[connection signal="body_exited" from="P-18" to="P-18" method="_on_body_exited"]
+[connection signal="body_entered" from="P-19" to="P-19" method="_on_body_entered"]
+[connection signal="body_exited" from="P-19" to="P-19" method="_on_body_exited"]
+[connection signal="body_entered" from="P-20" to="P-20" method="_on_body_entered"]
+[connection signal="body_exited" from="P-20" to="P-20" method="_on_body_exited"]
 [connection signal="body_entered" from="plastica-01" to="plastica-01" method="_on_body_entered"]
 [connection signal="body_exited" from="plastica-01" to="plastica-01" method="_on_body_exited"]
 [connection signal="body_entered" from="plastica-02" to="plastica-02" method="_on_body_entered"]
@@ -92326,6 +92782,36 @@ debug_color = Color(0.223529, 0.639216, 0, 0.419608)
 [connection signal="body_exited" from="plastica-19" to="plastica-19" method="_on_body_exited"]
 [connection signal="body_entered" from="plastica-20" to="plastica-20" method="_on_body_entered"]
 [connection signal="body_exited" from="plastica-20" to="plastica-20" method="_on_body_exited"]
+[connection signal="body_entered" from="O-01" to="O-01" method="_on_body_entered"]
+[connection signal="body_exited" from="O-01" to="O-01" method="_on_body_exited"]
+[connection signal="body_entered" from="O-02" to="O-02" method="_on_body_entered"]
+[connection signal="body_exited" from="O-02" to="O-02" method="_on_body_exited"]
+[connection signal="body_entered" from="O-03" to="O-03" method="_on_body_entered"]
+[connection signal="body_exited" from="O-03" to="O-03" method="_on_body_exited"]
+[connection signal="body_entered" from="O-04" to="O-04" method="_on_body_entered"]
+[connection signal="body_exited" from="O-04" to="O-04" method="_on_body_exited"]
+[connection signal="body_entered" from="O-05" to="O-05" method="_on_body_entered"]
+[connection signal="body_exited" from="O-05" to="O-05" method="_on_body_exited"]
+[connection signal="body_entered" from="O-06" to="O-06" method="_on_body_entered"]
+[connection signal="body_exited" from="O-06" to="O-06" method="_on_body_exited"]
+[connection signal="body_entered" from="O-07" to="O-07" method="_on_body_entered"]
+[connection signal="body_exited" from="O-07" to="O-07" method="_on_body_exited"]
+[connection signal="body_entered" from="O-08" to="O-08" method="_on_body_entered"]
+[connection signal="body_exited" from="O-08" to="O-08" method="_on_body_exited"]
+[connection signal="body_entered" from="O-09" to="O-09" method="_on_body_entered"]
+[connection signal="body_exited" from="O-09" to="O-09" method="_on_body_exited"]
+[connection signal="body_entered" from="O-10" to="O-10" method="_on_body_entered"]
+[connection signal="body_exited" from="O-10" to="O-10" method="_on_body_exited"]
+[connection signal="body_entered" from="O-11" to="O-11" method="_on_body_entered"]
+[connection signal="body_exited" from="O-11" to="O-11" method="_on_body_exited"]
+[connection signal="body_entered" from="O-12" to="O-12" method="_on_body_entered"]
+[connection signal="body_exited" from="O-12" to="O-12" method="_on_body_exited"]
+[connection signal="body_entered" from="O-13" to="O-13" method="_on_body_entered"]
+[connection signal="body_exited" from="O-13" to="O-13" method="_on_body_exited"]
+[connection signal="body_entered" from="O-14" to="O-14" method="_on_body_entered"]
+[connection signal="body_exited" from="O-14" to="O-14" method="_on_body_exited"]
+[connection signal="body_entered" from="O-15" to="O-15" method="_on_body_entered"]
+[connection signal="body_exited" from="O-15" to="O-15" method="_on_body_exited"]
 [connection signal="body_entered" from="organico-01" to="organico-01" method="_on_body_entered"]
 [connection signal="body_exited" from="organico-01" to="organico-01" method="_on_body_exited"]
 [connection signal="body_entered" from="organico-02" to="organico-02" method="_on_body_entered"]
@@ -92356,6 +92842,26 @@ debug_color = Color(0.223529, 0.639216, 0, 0.419608)
 [connection signal="body_exited" from="organico-14" to="organico-14" method="_on_body_exited"]
 [connection signal="body_entered" from="organico-15" to="organico-15" method="_on_body_entered"]
 [connection signal="body_exited" from="organico-15" to="organico-15" method="_on_body_exited"]
+[connection signal="body_entered" from="I - 01" to="I - 01" method="_on_body_entered"]
+[connection signal="body_exited" from="I - 01" to="I - 01" method="_on_body_exited"]
+[connection signal="body_entered" from="I - 02" to="I - 02" method="_on_body_entered"]
+[connection signal="body_exited" from="I - 02" to="I - 02" method="_on_body_exited"]
+[connection signal="body_entered" from="I - 03" to="I - 03" method="_on_body_entered"]
+[connection signal="body_exited" from="I - 03" to="I - 03" method="_on_body_exited"]
+[connection signal="body_entered" from="I - 04" to="I - 04" method="_on_body_entered"]
+[connection signal="body_exited" from="I - 04" to="I - 04" method="_on_body_exited"]
+[connection signal="body_entered" from="I - 05" to="I - 05" method="_on_body_entered"]
+[connection signal="body_exited" from="I - 05" to="I - 05" method="_on_body_exited"]
+[connection signal="body_entered" from="I - 06" to="I - 06" method="_on_body_entered"]
+[connection signal="body_exited" from="I - 06" to="I - 06" method="_on_body_exited"]
+[connection signal="body_entered" from="I - 07" to="I - 07" method="_on_body_entered"]
+[connection signal="body_exited" from="I - 07" to="I - 07" method="_on_body_exited"]
+[connection signal="body_entered" from="I - 08" to="I - 08" method="_on_body_entered"]
+[connection signal="body_exited" from="I - 08" to="I - 08" method="_on_body_exited"]
+[connection signal="body_entered" from="I - 09" to="I - 09" method="_on_body_entered"]
+[connection signal="body_exited" from="I - 09" to="I - 09" method="_on_body_exited"]
+[connection signal="body_entered" from="I - 10" to="I - 10" method="_on_body_entered"]
+[connection signal="body_exited" from="I - 10" to="I - 10" method="_on_body_exited"]
 [connection signal="body_entered" from="indifferenziato-01" to="indifferenziato-01" method="_on_body_entered"]
 [connection signal="body_exited" from="indifferenziato-01" to="indifferenziato-01" method="_on_body_exited"]
 [connection signal="body_entered" from="indifferenziato-02" to="indifferenziato-02" method="_on_body_entered"]

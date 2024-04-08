@@ -19,6 +19,9 @@ config/icon="res://icon.svg"
 
 Singleton="*res://Scenes/livello_1/Singleton.gd"
 SingletonCarta="*res://Scenes/livello_1/singleton_carta.gd"
+SingletonPlastica="*res://Scenes/livello_1/singletonPlastica.gd"
+SingletonOrganico="*res://Scenes/livello_1/singletonOrganico.gd"
+SingletonIndiff="*res://Scenes/livello_1/singletonIndiff.gd"
 
 [rendering]
 
