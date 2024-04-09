@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://c31uvbysyivaj"]
+
+[node name="punteggio" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1156.0
+offset_bottom = 646.0
+expand_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 1091.0
+offset_bottom = 576.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "BEN FATTO, QUESTI SONO I TUOI RISULTATI
+"
+horizontal_alignment = 1

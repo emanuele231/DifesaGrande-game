@@ -1,4 +1,4 @@
-[gd_scene load_steps=181 format=3 uid="uid://dqiw7bvjmib4d"]
+[gd_scene load_steps=180 format=3 uid="uid://dqiw7bvjmib4d"]
 
 [ext_resource type="Script" path="res://scripts/Player_prov_movements.gd" id="1_qbu6o"]
 [ext_resource type="Texture2D" uid="uid://dw1xgygvvs0nx" path="res://personaggi/Assessore chara.png" id="2_elxb5"]
@@ -37,7 +37,6 @@
 [ext_resource type="Texture2D" uid="uid://cmbpin5ryk4f1" path="res://NPG/npg_z-quercus_09_universal.png" id="32_va04q"]
 [ext_resource type="Script" path="res://Scenes/mappa_game/Label.gd" id="36_0syno"]
 [ext_resource type="Script" path="res://Scenes/mappa_game/Area2D.gd" id="37_4exyn"]
-[ext_resource type="Texture2D" uid="uid://c6nyiskbspkys" path="res://personaggi/sindaco.png" id="38_oqa0k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1vaym"]
 size = Vector2(11, 23)
@@ -56754,21 +56753,6 @@ script = ExtResource("37_4exyn")
 position = Vector2(-77, 26)
 shape = SubResource("CircleShape2D_bckrd")
 debug_color = Color(0.976471, 0, 0.4, 0.419608)
-
-[node name="sindaco_quercus2" type="CharacterBody2D" parent="."]
-
-[node name="Sprite2D" type="Sprite2D" parent="sindaco_quercus2"]
-position = Vector2(-355, 196)
-scale = Vector2(0.568181, 0.55597)
-texture = ExtResource("38_oqa0k")
-hframes = 15
-vframes = 20
-frame = 30
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="sindaco_quercus2"]
-position = Vector2(337.5, 36.25)
-shape = SubResource("RectangleShape2D_w8wdk")
-debug_color = Color(0.329412, 0.588235, 0.584314, 0.419608)
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
