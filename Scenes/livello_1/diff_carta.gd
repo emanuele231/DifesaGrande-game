@@ -5,6 +5,7 @@ var entered: bool = false
 
 
 
+
 func _on_body_entered(body: CharacterBody2D):
 	entered = true 
 
