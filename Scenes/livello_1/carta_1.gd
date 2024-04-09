@@ -40,12 +40,10 @@ func set_catch():
 	var index = singleton.get_custom_index()
 	index += 1
 	if index < capienza_sequence.size():
+		stop = true
 		singleton.set_index(index)
-		print(index)
 		$"../player/Camera2D/punteggi/capienza_sacco".text = capienza_sequence[index]
 		$"../player/Camera2D/punteggi/capienza_sacco".show()
-		if index == 10:
-			$"../player/Camera2D/punteggi/capienza_sacco".modulate = Color(1, 0, 0) 
 	else:
 		stop = false
 
