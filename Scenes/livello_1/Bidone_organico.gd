@@ -17,7 +17,7 @@ var capienza := [
 ]
 
 var stop1: bool = false
-
+var puntiO: int = 0
 func _on_body_entered(body: CharacterBody2D):
 	entered = true
 
@@ -45,6 +45,7 @@ func assegna():
 	if organico > 0:
 		stop1 = false
 		organico = organico - 1
+		puntiO += 2
 		o_sing.set_organico(organico)
 		$"../player/Camera2D/punteggi/organico_rimasto".text = str(organico)
 	else:

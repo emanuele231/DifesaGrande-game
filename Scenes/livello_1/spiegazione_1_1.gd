@@ -22,6 +22,9 @@ var _on_player_1_callback = null
 var assessore_script_1 = preload("res://Scenes/livello_1/assessore_1_1.gd")
 var assessore_1 = assessore_script_1.new()
 var _assessore_1_callback = null
+var punteggi_script = preload("res://Scenes/livello_1/punteggi.gd")
+var punteggi = punteggi_script.new()
+var _timer_callback = null
 var _label_02_callback = null
 signal spiegazione_chiusa
 
@@ -39,9 +42,10 @@ func _ready():
 	
 func enable_player_movement():
 	emit_signal("spiegazione_chiusa")
-	if _on_player_1_callback != null and _assessore_1_callback != null: #and _label_02_callback != null:
+	if _on_player_1_callback != null and _assessore_1_callback != null and _timer_callback != null: #and _label_02_callback != null:
 		_on_player_1_callback._on_player_1()
 		_assessore_1_callback._assessore_1()
+		_timer_callback._timer()
 		#_label_02_callback._on_dialogo_completo()
 		
 
