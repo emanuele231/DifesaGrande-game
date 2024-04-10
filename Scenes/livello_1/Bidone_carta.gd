@@ -13,6 +13,7 @@ var capienza := [
 	"10/10"
 ]
 
+var puntiC: int = 0
 var entered: bool = false
 var stop1: bool = false
 
@@ -44,7 +45,9 @@ func assegna():
 	if carta > 0:
 		stop1 = false
 		carta = carta - 1
+		puntiC += 3
 		c_sing.set_carta(carta)
+		print(puntiC)
 		$"../player/Camera2D/punteggi/carta_rimasta".text = str(carta)
 	else:
 		stop1 = true

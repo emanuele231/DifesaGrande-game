@@ -15,7 +15,7 @@ var capienza := [
 	"9/10",
 	"10/10"
 ]
-
+var puntiI: int = 0
 var stop1: bool = false
 
 
@@ -48,6 +48,7 @@ func assegna():
 	if indiff > 0:
 		stop1 = false
 		indiff = indiff - 1
+		puntiI += 4
 		i_sing.set_indiff(indiff)
 		$"../player/Camera2D/punteggi/indifferenziato_rimasto".text = str(indiff)
 	else:

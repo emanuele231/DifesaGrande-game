@@ -16,7 +16,7 @@ var capienza := [
 	"10/10"
 ]
 var stop1: bool = false
-
+var puntiP: int = 0
 
 func _on_body_entered(body: CharacterBody2D):
 	entered = true
@@ -45,6 +45,7 @@ func assegna():
 	if plastica > 0:
 		stop1 = false
 		plastica = plastica - 1
+		puntiP += 3
 		p_sing.set_plastica(plastica)
 		$"../player/Camera2D/punteggi/plastica_rimasta".text = str(plastica)
 	else:
