@@ -9,7 +9,6 @@ var can_move: bool = false
 
 func _ready():
 	get_parent().get_node("Player_prov/Sprite2D/Dialogo_01")._assessore_callback = self
-
 func _on_dialogo_completato():
 	can_move = true
 
@@ -22,6 +21,11 @@ func move(delta):
 		anim_ass.set("parameters/walk/blend_position", new_position)
 		animazione.travel("walk")
 		position = new_position
+
+
+
+	
+
 
 
 

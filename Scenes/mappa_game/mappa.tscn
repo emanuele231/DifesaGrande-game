@@ -1,4 +1,4 @@
-[gd_scene load_steps=181 format=3 uid="uid://dqiw7bvjmib4d"]
+[gd_scene load_steps=183 format=3 uid="uid://dqiw7bvjmib4d"]
 
 [ext_resource type="Script" path="res://scripts/Player_prov_movements.gd" id="1_qbu6o"]
 [ext_resource type="Texture2D" uid="uid://dw1xgygvvs0nx" path="res://personaggi/Assessore chara.png" id="2_elxb5"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://Scenes/mappa_game/Assessore.gd" id="4_iw720"]
 [ext_resource type="Texture2D" uid="uid://7e8q311i0fbj" path="res://World of Solaria Rural Village Update 05a/World of Solaria Rural Village Update 05a/16x16/Animated Tiles/Village Animated Smoke.png" id="4_m35kx"]
 [ext_resource type="Texture2D" uid="uid://vdxita3uu0wu" path="res://assets acquistati/assets acquistati 2/MEGA BUNDLE 12 ASSET PACKS/MEGA BUNDLE 12 ASSET PACKS/HARVEST TINY FARM/HOUSES/HOUSE 1.png" id="5_w26o0"]
+[ext_resource type="Script" path="res://Scenes/mappa_game/pause_resume.gd" id="6_gmm3f"]
 [ext_resource type="Texture2D" uid="uid://eji2wp281v1i" path="res://assets acquistati/assets acquistati 2/MEGA BUNDLE 12 ASSET PACKS/MEGA BUNDLE 12 ASSET PACKS/HARVEST TINY FARM/HOUSES/HOUSE 2.png" id="6_gmw3r"]
 [ext_resource type="Texture2D" uid="uid://co17f5xgdgvyh" path="res://assets acquistati/assets acquistati 2/MEGA BUNDLE 12 ASSET PACKS/MEGA BUNDLE 12 ASSET PACKS/HARVEST TINY FARM/TREES/TREE 3.png" id="7_3av7p"]
 [ext_resource type="Texture2D" uid="uid://con2c3m6inlxq" path="res://assets acquistati/assets acquistati 2/MEGA BUNDLE 12 ASSET PACKS/MEGA BUNDLE 12 ASSET PACKS/SENGOKU ADVENTURE TILESET/TILES SENGOKU ADVENTURE.png" id="8_2d2wb"]
@@ -133,6 +134,8 @@ border_width_right = 4
 border_width_bottom = 4
 border_color = Color(0.529412, 0.309804, 0.0352941, 1)
 
+[sub_resource type="GDScript" id="GDScript_x2n7i"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_juwug"]
 bg_color = Color(1, 1, 1, 0.576471)
 border_width_left = 2
@@ -141,7 +144,8 @@ border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0.698039, 0.258824, 0.113725, 1)
 
-[sub_resource type="GDScript" id="GDScript_x2n7i"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2jr4g"]
+bg_color = Color(0, 0, 0, 0.494118)
 
 [sub_resource type="Animation" id="Animation_7rhlx"]
 length = 0.001
@@ -56438,16 +56442,6 @@ vertical_alignment = 1
 wait_time = 4.0
 one_shot = true
 
-[node name="Button" type="Button" parent="Player_prov/Sprite2D/Dialogo_01"]
-layout_mode = 0
-offset_left = 664.761
-offset_top = -364.852
-offset_right = 729.761
-offset_bottom = -333.852
-theme_override_colors/font_color = Color(0.635294, 0.239216, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_juwug")
-text = "II"
-
 [node name="Camera2D" type="Camera2D" parent="Player_prov/Sprite2D"]
 position = Vector2(11.283, 9.57266)
 scale = Vector2(0.699999, 0.842105)
@@ -56462,6 +56456,54 @@ rotation_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 script = SubResource("GDScript_x2n7i")
+
+[node name="Control" type="Control" parent="Player_prov/Sprite2D/Camera2D"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -761.0
+offset_top = -342.0
+offset_right = 673.0
+offset_bottom = 335.0
+script = ExtResource("6_gmm3f")
+
+[node name="Button" type="Button" parent="Player_prov/Sprite2D/Camera2D/Control"]
+offset_left = 1240.86
+offset_top = 89.4144
+offset_right = 1305.86
+offset_bottom = 120.414
+theme_override_colors/font_color = Color(0.635294, 0.239216, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_juwug")
+text = "II"
+
+[node name="pausa" type="Control" parent="Player_prov/Sprite2D/Camera2D"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Player_prov/Sprite2D/Camera2D/pausa"]
+layout_mode = 0
+offset_left = -777.333
+offset_top = -278.347
+offset_right = 538.667
+offset_bottom = 264.653
+theme_override_styles/normal = SubResource("StyleBoxFlat_2jr4g")
+
+[node name="riprendi" type="Button" parent="Player_prov/Sprite2D/Camera2D/pausa"]
+layout_mode = 0
+offset_left = -413.966
+offset_top = -32.4449
+offset_right = -225.966
+offset_bottom = 24.5551
+text = "RIPRENDI"
+
+[node name="back" type="Button" parent="Player_prov/Sprite2D/Camera2D/pausa"]
+layout_mode = 0
+offset_left = 39.58
+offset_top = -37.1287
+offset_right = 203.58
+offset_bottom = 18.8713
+text = "TORNA AL MENU'"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Player_prov"]
 libraries = {
@@ -56772,5 +56814,8 @@ position = Vector2(-77, 26)
 shape = SubResource("CircleShape2D_bckrd")
 debug_color = Color(0.976471, 0, 0.4, 0.419608)
 
+[connection signal="pressed" from="Player_prov/Sprite2D/Camera2D/Control/Button" to="Player_prov/Sprite2D/Camera2D/Control" method="_on_button_pressed"]
+[connection signal="pressed" from="Player_prov/Sprite2D/Camera2D/pausa/riprendi" to="Player_prov/Sprite2D/Camera2D/Control" method="_on_riprendi_pressed"]
+[connection signal="pressed" from="Player_prov/Sprite2D/Camera2D/pausa/back" to="Player_prov/Sprite2D/Camera2D/Control" method="_on_back_pressed"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
