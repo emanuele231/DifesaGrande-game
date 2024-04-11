@@ -1,10 +1,12 @@
 extends Control
 
-var timer_duration = 3
+var timer_duration = 60
 var current_time = 1
 var timer_running: bool = false
 var end: bool = false
-	
+var carta_script = preload("res://Scenes/livello_1/Bidone_carta.gd")
+var carta = carta_script.new()
+
 func _ready():
 	get_node("../../Sprite2D/spiegazione_1_1")._timer_callback = self
 	$carta_rimasta.z_index = 3
@@ -13,10 +15,12 @@ func _ready():
 	$capienza_sacco.z_index = 3
 	$organico_rimasto.z_index = 3
 	$timer.z_index = 3
-
+	$"../pannello punteggio finale".z_index = 3
+	$"../pannello punteggio finale".hide()
 
 func _timer():
 	timer_running = true
+	$"../pannello punteggio finale".hide()
 
 func _process(delta):
 	var p_position = global_position
@@ -31,6 +35,8 @@ func _process(delta):
 		end = false
 		if current_time >= timer_duration:
 			timer_running = false
+			$"../pannello punteggio finale".show()
+			punteggio_finale()
 			current_time = timer_duration
 			end = true
 		update_timer()
@@ -40,7 +46,22 @@ func update_timer():
 	var time_left = round(timer_duration - current_time)
 	$timer.text = str(time_left)
 	
-
+func punteggio_finale():
+	var puntiC_s = get_node("/root/PuntiSingleton")
+	var punti = puntiC_s.get_custom_puntiC()
+	
+	var puntiI_s = get_node("/root/PuntiSingleton")
+	var puntiI = puntiI_s.get_custom_puntiI()
+	
+	var puntiP_s = get_node("/root/PuntiSingleton")
+	var puntiP = puntiP_s.get_custom_puntiP()
+	
+	var puntiO_s = get_node("/root/PuntiSingleton")
+	var puntiO = puntiO_s.get_custom_puntiO()
+	
+	var somma_punti = punti + puntiI + puntiP + puntiO
+	
+	$"../pannello punteggio finale/punti".text = str(somma_punti)
 		
 	
 	

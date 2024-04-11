@@ -45,7 +45,10 @@ func assegna():
 	if organico > 0:
 		stop1 = false
 		organico = organico - 1
+		var puntiO_sing = get_node("/root/PuntiSingleton")
+		puntiO = puntiO_sing.get_custom_puntiO()
 		puntiO += 2
+		puntiO_sing.set_puntiO(puntiO)
 		o_sing.set_organico(organico)
 		$"../player/Camera2D/punteggi/organico_rimasto".text = str(organico)
 	else:

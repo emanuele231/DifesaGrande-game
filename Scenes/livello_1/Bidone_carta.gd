@@ -45,9 +45,12 @@ func assegna():
 	if carta > 0:
 		stop1 = false
 		carta = carta - 1
+		var puntiC_sing = get_node("/root/PuntiSingleton")
+		puntiC = puntiC_sing.get_custom_puntiC()
 		puntiC += 3
+		puntiC_sing.set_puntiC(puntiC)
 		c_sing.set_carta(carta)
-		print(puntiC)
+		
 		$"../player/Camera2D/punteggi/carta_rimasta".text = str(carta)
 	else:
 		stop1 = true
