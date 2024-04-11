@@ -1,8 +1,9 @@
 extends Control
 
-var timer_duration = 300
+var timer_duration = 3
 var current_time = 1
 var timer_running: bool = false
+var end: bool = false
 	
 func _ready():
 	get_node("../../Sprite2D/spiegazione_1_1")._timer_callback = self
@@ -27,16 +28,17 @@ func _process(delta):
 	global_position = p_position
 	if timer_running == true:
 		current_time += delta
+		end = false
 		if current_time >= timer_duration:
 			timer_running = false
 			current_time = timer_duration
+			end = true
 		update_timer()
 
 
 func update_timer():
 	var time_left = round(timer_duration - current_time)
 	$timer.text = str(time_left)
-
 	
 
 		
