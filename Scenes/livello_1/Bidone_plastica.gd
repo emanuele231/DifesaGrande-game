@@ -45,7 +45,10 @@ func assegna():
 	if plastica > 0:
 		stop1 = false
 		plastica = plastica - 1
+		var puntiP_sing = get_node("/root/PuntiSingleton")
+		puntiP = puntiP_sing.get_custom_puntiP()
 		puntiP += 3
+		puntiP_sing.set_puntiP(puntiP)
 		p_sing.set_plastica(plastica)
 		$"../player/Camera2D/punteggi/plastica_rimasta".text = str(plastica)
 	else:

@@ -48,7 +48,10 @@ func assegna():
 	if indiff > 0:
 		stop1 = false
 		indiff = indiff - 1
+		var puntiI_sing = get_node("/root/PuntiSingleton")
+		puntiI = puntiI_sing.get_custom_puntiI()
 		puntiI += 4
+		puntiI_sing.set_puntiI(puntiI)
 		i_sing.set_indiff(indiff)
 		$"../player/Camera2D/punteggi/indifferenziato_rimasto".text = str(indiff)
 	else:
