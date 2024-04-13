@@ -24,6 +24,13 @@ SingletonOrganico="*res://Scenes/livello_1/singletonOrganico.gd"
 SingletonIndiff="*res://Scenes/livello_1/singletonIndiff.gd"
 PuntiSingleton="*res://Scenes/livello_1/punti_singleton.gd"
 
+[input]
+
+pausa={
+"deadzone": 0.5,
+"events": []
+}
+
 [rendering]
 
 renderer/rendering_method="mobile"
