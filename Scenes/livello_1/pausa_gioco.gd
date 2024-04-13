@@ -1,6 +1,5 @@
 extends Control
 
-@onready var riavvia = preload("res://Scenes/livello_1/lvl_1_raccolta_rifiuti.tscn")
 @onready var pannello_pausa = $"."
 var riprendi: bool = false
 
@@ -15,3 +14,8 @@ func _on_riprendi_button_down():
 func _on_riavvia_button_down():
 	get_tree().reload_current_scene()
 	
+
+
+func _on_back_button_down():
+	var back = preload("res://Scenes/mappa_game/mappa.tscn") as PackedScene
+	get_tree().change_scene_to_packed(back)

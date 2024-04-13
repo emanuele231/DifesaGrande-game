@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://bcet6ddrgr57d"]
 
-[ext_resource type="Script" path="res://menu.gd" id="1_u67vg"]
+[ext_resource type="Script" path="res://Scenes/menu.gd" id="1_inog3"]
 [ext_resource type="FontFile" uid="uid://c4klt508djmoq" path="res://burnstown-dam/burnstown dam.otf" id="2_45vwf"]
 [ext_resource type="Script" path="res://Scenes/menu/TextureRect.gd" id="3_jtg8g"]
 
@@ -78,17 +78,10 @@ expand_margin_top = 15.0
 expand_margin_right = 50.0
 expand_margin_bottom = 15.0
 
-[node name="menu" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("1_u67vg")
+[node name="menu" type="Node2D"]
+script = ExtResource("1_inog3")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 0
 offset_left = 3.0
 offset_top = 6.0
 offset_right = 1155.0
@@ -97,7 +90,6 @@ expand_mode = 2
 script = ExtResource("3_jtg8g")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 0
 offset_left = 24.0
 offset_top = 41.0
 offset_right = 1122.0
@@ -165,3 +157,6 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_6d54r")
 theme_override_styles/hover = SubResource("StyleBoxFlat_b6iha")
 text = "ESCI
 "
+
+[connection signal="button_down" from="MarginContainer/HBoxContainer/VBoxContainer/Start" to="." method="_on_start_button_down"]
+[connection signal="button_down" from="MarginContainer/HBoxContainer/VBoxContainer/Esci" to="." method="_on_esci_button_down"]

@@ -56821,6 +56821,7 @@ debug_color = Color(0.976471, 0, 0.4, 0.419608)
 [connection signal="pressed" from="Player_prov/Sprite2D/Camera2D/Control/Button" to="Player_prov/Sprite2D/Camera2D/Control" method="_on_button_pressed"]
 [connection signal="button_down" from="Player_prov/Sprite2D/Camera2D/pausa/riprendi" to="Player_prov/Sprite2D/Camera2D/pausa" method="_on_riprendi_button_down"]
 [connection signal="pressed" from="Player_prov/Sprite2D/Camera2D/pausa/riprendi" to="Player_prov/Sprite2D/Camera2D/Control" method="_on_riprendi_pressed"]
+[connection signal="button_down" from="Player_prov/Sprite2D/Camera2D/pausa/back" to="Player_prov/Sprite2D/Camera2D/pausa" method="_on_back_button_down"]
 [connection signal="pressed" from="Player_prov/Sprite2D/Camera2D/pausa/back" to="Player_prov/Sprite2D/Camera2D/Control" method="_on_back_pressed"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
