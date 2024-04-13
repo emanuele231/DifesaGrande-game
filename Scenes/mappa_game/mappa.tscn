@@ -1,4 +1,4 @@
-[gd_scene load_steps=183 format=3 uid="uid://dqiw7bvjmib4d"]
+[gd_scene load_steps=184 format=3 uid="uid://dqiw7bvjmib4d"]
 
 [ext_resource type="Script" path="res://scripts/Player_prov_movements.gd" id="1_qbu6o"]
 [ext_resource type="Texture2D" uid="uid://dw1xgygvvs0nx" path="res://personaggi/Assessore chara.png" id="2_elxb5"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" path="res://Scenes/mappa_game/pause_resume.gd" id="6_gmm3f"]
 [ext_resource type="Texture2D" uid="uid://eji2wp281v1i" path="res://assets acquistati/assets acquistati 2/MEGA BUNDLE 12 ASSET PACKS/MEGA BUNDLE 12 ASSET PACKS/HARVEST TINY FARM/HOUSES/HOUSE 2.png" id="6_gmw3r"]
 [ext_resource type="Texture2D" uid="uid://co17f5xgdgvyh" path="res://assets acquistati/assets acquistati 2/MEGA BUNDLE 12 ASSET PACKS/MEGA BUNDLE 12 ASSET PACKS/HARVEST TINY FARM/TREES/TREE 3.png" id="7_3av7p"]
+[ext_resource type="Script" path="res://Scenes/mappa_game/pannello-pausa.gd" id="7_qg7m8"]
 [ext_resource type="Texture2D" uid="uid://con2c3m6inlxq" path="res://assets acquistati/assets acquistati 2/MEGA BUNDLE 12 ASSET PACKS/MEGA BUNDLE 12 ASSET PACKS/SENGOKU ADVENTURE TILESET/TILES SENGOKU ADVENTURE.png" id="8_2d2wb"]
 [ext_resource type="Texture2D" uid="uid://chubrd1ppjr5m" path="res://tileset_town_multi_v002.png" id="9_7lesg"]
 [ext_resource type="Texture2D" uid="uid://v277i0k103fk" path="res://lpc_bazaar_rework-1.0-1/preview.png" id="10_jjxf4"]
@@ -56467,6 +56468,7 @@ offset_bottom = 335.0
 script = ExtResource("6_gmm3f")
 
 [node name="Button" type="Button" parent="Player_prov/Sprite2D/Camera2D/Control"]
+layout_mode = 0
 offset_left = 1240.86
 offset_top = 89.4144
 offset_right = 1305.86
@@ -56480,6 +56482,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("7_qg7m8")
 
 [node name="Label" type="Label" parent="Player_prov/Sprite2D/Camera2D/pausa"]
 layout_mode = 0
@@ -56814,8 +56817,11 @@ position = Vector2(-77, 26)
 shape = SubResource("CircleShape2D_bckrd")
 debug_color = Color(0.976471, 0, 0.4, 0.419608)
 
+[connection signal="button_down" from="Player_prov/Sprite2D/Camera2D/Control/Button" to="Player_prov/Sprite2D/Camera2D/Control" method="_on_button_button_down"]
 [connection signal="pressed" from="Player_prov/Sprite2D/Camera2D/Control/Button" to="Player_prov/Sprite2D/Camera2D/Control" method="_on_button_pressed"]
+[connection signal="button_down" from="Player_prov/Sprite2D/Camera2D/pausa/riprendi" to="Player_prov/Sprite2D/Camera2D/pausa" method="_on_riprendi_button_down"]
 [connection signal="pressed" from="Player_prov/Sprite2D/Camera2D/pausa/riprendi" to="Player_prov/Sprite2D/Camera2D/Control" method="_on_riprendi_pressed"]
+[connection signal="button_down" from="Player_prov/Sprite2D/Camera2D/pausa/back" to="Player_prov/Sprite2D/Camera2D/pausa" method="_on_back_button_down"]
 [connection signal="pressed" from="Player_prov/Sprite2D/Camera2D/pausa/back" to="Player_prov/Sprite2D/Camera2D/Control" method="_on_back_pressed"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

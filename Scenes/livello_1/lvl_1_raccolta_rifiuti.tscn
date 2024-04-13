@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://defgwmp6sk7tl"]
 
-[ext_resource type="Script" path="res://menu.gd" id="1_rhonm"]
+[ext_resource type="Script" path="res://Scenes/menu.gd" id="1_rhonm"]
 [ext_resource type="Script" path="res://Scenes/menu/TextureRect.gd" id="2_hmbh3"]
 [ext_resource type="FontFile" uid="uid://c4klt508djmoq" path="res://burnstown-dam/burnstown dam.otf" id="3_t827k"]
 
