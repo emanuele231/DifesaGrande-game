@@ -56506,7 +56506,7 @@ offset_left = 39.58
 offset_top = -37.1287
 offset_right = 203.58
 offset_bottom = 18.8713
-text = "TORNA AL MENU'"
+text = "ESCI DAL GIOCO"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Player_prov"]
 libraries = {

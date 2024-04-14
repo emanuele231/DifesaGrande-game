@@ -3,7 +3,8 @@ extends Control
 @onready var pausa = $"." 
 var ripresa: bool = false
 
-
+func _ready():
+	$".".z_index = 3
 
 func _on_riprendi_button_down():
 	ripresa = true
@@ -14,5 +15,4 @@ func _on_riprendi_button_down():
 
 
 func _on_back_button_down():
-	var rigioca = preload("res://Scenes/menu/menu.tscn") as PackedScene
-	get_tree().change_scene_to_packed(rigioca)
+	get_tree().quit()
