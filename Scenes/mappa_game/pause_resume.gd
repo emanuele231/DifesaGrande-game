@@ -1,4 +1,4 @@
-extends Control
+extends MarginContainer
 
 @onready var pannello_pausa = $"../pausa"
 var paused: bool = false
