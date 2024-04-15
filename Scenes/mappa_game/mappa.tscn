@@ -56447,7 +56447,7 @@ one_shot = true
 position = Vector2(11.283, 9.57266)
 scale = Vector2(0.699999, 0.842105)
 ignore_rotation = false
-zoom = Vector2(2.5, 2.5)
+zoom = Vector2(3.5, 3.5)
 limit_left = -312
 limit_top = -423
 limit_right = 1005
@@ -56469,10 +56469,10 @@ script = ExtResource("6_gmm3f")
 
 [node name="Button" type="Button" parent="Player_prov/Sprite2D/Camera2D/Control"]
 layout_mode = 0
-offset_left = 1240.86
-offset_top = 89.4144
-offset_right = 1305.86
-offset_bottom = 120.414
+offset_left = 1378.78
+offset_top = 58.9694
+offset_right = 1443.78
+offset_bottom = 89.969
 theme_override_colors/font_color = Color(0.635294, 0.239216, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_juwug")
 text = "II"

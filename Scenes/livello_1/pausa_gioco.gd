@@ -3,7 +3,12 @@ extends Control
 @onready var pannello_pausa = $"."
 var riprendi: bool = false
 
-
+func _ready():
+	$".".z_index = 3
+	$Label.z_index = 3
+	$riprendi.z_index = 3
+	$riavvia.z_index = 3
+	$back.z_index = 3
 
 func _on_riprendi_button_down():
 	riprendi = true
