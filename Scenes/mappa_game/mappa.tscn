@@ -56451,15 +56451,21 @@ drag_horizontal_enabled = true
 drag_vertical_enabled = true
 script = SubResource("GDScript_x2n7i")
 
-[node name="Control" type="MarginContainer" parent="Player_prov/Sprite2D/Camera2D"]
-offset_left = 811.0
+[node name="Control" type="Control" parent="Player_prov/Sprite2D/Camera2D"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -1175.0
 offset_top = -454.0
 offset_right = 907.0
-offset_bottom = -417.0
+offset_bottom = 478.0
 script = ExtResource("6_gmm3f")
 
 [node name="Button" type="Button" parent="Player_prov/Sprite2D/Camera2D/Control"]
 layout_mode = 2
+offset_left = 1654.86
+offset_top = 187.363
+offset_right = 1758.86
+offset_bottom = 224.363
 theme_override_colors/font_color = Color(0.635294, 0.239216, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_juwug")
 text = "II"
@@ -56467,8 +56473,10 @@ text = "II"
 [node name="pausa" type="Control" parent="Player_prov/Sprite2D/Camera2D"]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 55.0
+offset_top = 26.0
+offset_right = 193.0
+offset_bottom = 103.0
 script = ExtResource("7_qg7m8")
 
 [node name="Label" type="Label" parent="Player_prov/Sprite2D/Camera2D/pausa"]

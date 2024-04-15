@@ -1,11 +1,12 @@
 extends Control
 
-var timer_duration = 60
+var timer_duration = 600
 var current_time = 1
 var timer_running: bool = false
 var end: bool = false
 var carta_script = preload("res://Scenes/livello_1/Bidone_carta.gd")
 var carta = carta_script.new()
+var camera_limits = Rect2(-352, -464, 1040, 1232)
 
 func _ready():
 	get_node("../../Sprite2D/spiegazione_1_1")._timer_callback = self
@@ -18,18 +19,25 @@ func _ready():
 	$"../pannello punteggio finale".z_index = 3
 	$"../pannello punteggio finale".hide()
 
+
 func _timer():
 	timer_running = true
 	$"../pannello punteggio finale".hide()
 
 func _process(delta):
+	var camera_position = get_viewport().get_camera_2d().global_position
+	var new_position = position + camera_position
+	
+	
+	'''
 	var p_position = position
-	var min_limit = Vector2(-352, -464) 
-	var max_limit = Vector2(1040, 1232) 
+	var min_limit = Vector2(-1500, -1500) 
+	var max_limit = Vector2(1500, 1500) 
 
 	p_position.x = clamp(p_position.x, min_limit.x, max_limit.x)
 	p_position.y = clamp(p_position.y, min_limit.y, max_limit.y)
 	position = p_position
+	'''
 	if timer_running == true:
 		current_time += delta
 		end = false
