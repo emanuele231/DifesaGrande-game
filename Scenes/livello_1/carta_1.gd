@@ -29,7 +29,7 @@ func _on_body_exited(body):
 
 func _process(delta):
 	if entered == true:
-		if Input.is_key_label_pressed(KEY_C):
+		if Input.is_joy_button_pressed(JOY_BUTTON_A, JOY_BUTTON_A):
 			set_catch()
 			if stop == true:
 				free()

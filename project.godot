@@ -30,6 +30,10 @@ pausa={
 "deadzone": 0.5,
 "events": []
 }
+gamepad_a={
+"deadzone": 0.5,
+"events": []
+}
 
 [rendering]
 
