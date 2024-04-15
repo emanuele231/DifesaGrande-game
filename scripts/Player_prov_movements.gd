@@ -15,7 +15,7 @@ func _on_dialog_complete():
 
 func _process(delta):
 	var player_position = position
-	var min_limit = Vector2(-415, -1060)  # Imposta i limiti minimi della mappa
+	var min_limit = Vector2(-415, -1060) # Imposta i limiti minimi della mappa
 	var max_limit = Vector2(880, 425) 
 
 	player_position.x = clamp(player_position.x, min_limit.x, max_limit.x)
@@ -32,8 +32,17 @@ func _physics_process(_delta):
 
 func move():
 	if can_move:
-		input_movement = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-	
+		input_movement = Vector2.ZERO
+
+		if Input.is_action_pressed("ui_left"):
+			input_movement.x = -1
+		if Input.is_action_pressed("ui_right"):
+			input_movement.x = 1
+		if Input.is_action_pressed("ui_up"):
+			input_movement.y = -1
+		if Input.is_action_pressed("ui_down"):
+			input_movement.y = 1
+
 		if input_movement != Vector2.ZERO:
 			anim_tree.set("parameters/idle/blend_position", input_movement)
 			anim_tree.set("parameters/walk/blend_position", input_movement)
@@ -44,8 +53,5 @@ func move():
 			animazione.travel("idle")
 			velocity = Vector2.ZERO
 		move_and_slide()
-
-
-
 
 

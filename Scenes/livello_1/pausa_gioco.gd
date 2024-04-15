@@ -18,6 +18,11 @@ func _on_riprendi_button_down():
 
 func _on_riavvia_button_down():
 	get_tree().reload_current_scene()
+	var punti_plasS = get_node("/root/PuntiSingleton")
+	var puntiPlas = punti_plasS.get_custom_plastica()
+	puntiPlas = 0
+	puntiPlas = punti_plasS.set_plastica(puntiPlas)
+	$"../pannello punteggio finale/punti".text = str(puntiPlas)
 	
 
 
