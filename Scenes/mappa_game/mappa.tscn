@@ -1,6 +1,5 @@
-[gd_scene load_steps=185 format=3 uid="uid://dqiw7bvjmib4d"]
+[gd_scene load_steps=184 format=3 uid="uid://dqiw7bvjmib4d"]
 
-[ext_resource type="AudioStream" uid="uid://dbotrckbbnej1" path="res://Scenes/mappa_game/Mappa Theme.wav" id="1_8avti"]
 [ext_resource type="Script" path="res://scripts/Player_prov_movements.gd" id="1_qbu6o"]
 [ext_resource type="Texture2D" uid="uid://dw1xgygvvs0nx" path="res://personaggi/Assessore chara.png" id="2_elxb5"]
 [ext_resource type="Texture2D" uid="uid://dh0bh5kpvdgov" path="res://World of Solaria Rural Village Update 05a/World of Solaria Rural Village Update 05a/16x16/Tilesets/Rural Village Farming.png" id="3_7wf1g"]
@@ -125,17 +124,6 @@ states/walk/node = SubResource("AnimationNodeBlendSpace2D_qmnr8")
 states/walk/position = Vector2(551, 94)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_n5qet")]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_juwug"]
-bg_color = Color(1, 1, 1, 0.576471)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.698039, 0.258824, 0.113725, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2jr4g"]
-bg_color = Color(0, 0, 0, 0.494118)
-
 [sub_resource type="SystemFont" id="SystemFont_kudhw"]
 font_names = PackedStringArray("Cascadia Code")
 
@@ -148,6 +136,17 @@ border_width_bottom = 4
 border_color = Color(0.529412, 0.309804, 0.0352941, 1)
 
 [sub_resource type="GDScript" id="GDScript_x2n7i"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_juwug"]
+bg_color = Color(1, 1, 1, 0.576471)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.698039, 0.258824, 0.113725, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2jr4g"]
+bg_color = Color(0, 0, 0, 0.494118)
 
 [sub_resource type="Animation" id="Animation_7rhlx"]
 length = 0.001
@@ -56361,10 +56360,6 @@ radius = 25.318
 [node name="MAPPA" type="Node2D"]
 position = Vector2(215, 296)
 
-[node name="Mappa Theme" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("1_8avti")
-autoplay = true
-
 [node name="Assessore" type="CharacterBody2D" parent="."]
 position = Vector2(-3.05176e-05, -3.05176e-05)
 script = ExtResource("4_iw720")
@@ -56406,64 +56401,6 @@ texture = ExtResource("4_710u0")
 hframes = 13
 vframes = 21
 frame = 105
-
-[node name="CanvasLayer" type="CanvasLayer" parent="Player_prov/Sprite2D"]
-
-[node name="Control" type="Control" parent="Player_prov/Sprite2D/CanvasLayer"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 33.1579
-offset_top = 47.8201
-offset_right = 1467.16
-offset_bottom = 724.82
-script = ExtResource("6_gmm3f")
-
-[node name="Button" type="Button" parent="Player_prov/Sprite2D/CanvasLayer/Control"]
-layout_mode = 0
-offset_left = 1378.78
-offset_top = 58.9694
-offset_right = 1443.78
-offset_bottom = 89.969
-theme_override_colors/font_color = Color(0.635294, 0.239216, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_juwug")
-text = "II"
-
-[node name="pausa" type="Control" parent="Player_prov/Sprite2D/CanvasLayer"]
-layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-script = ExtResource("7_qg7m8")
-
-[node name="Label" type="Label" parent="Player_prov/Sprite2D/CanvasLayer/pausa"]
-layout_mode = 0
-offset_left = -510.077
-offset_top = -206.854
-offset_right = 805.923
-offset_bottom = 336.146
-theme_override_styles/normal = SubResource("StyleBoxFlat_2jr4g")
-
-[node name="riprendi" type="Button" parent="Player_prov/Sprite2D/CanvasLayer/pausa"]
-layout_mode = 0
-offset_left = -146.71
-offset_top = 39.0482
-offset_right = 41.2898
-offset_bottom = 96.0482
-text = "RIPRENDI"
-
-[node name="back" type="Button" parent="Player_prov/Sprite2D/CanvasLayer/pausa"]
-layout_mode = 0
-offset_left = 306.836
-offset_top = 34.3644
-offset_right = 470.836
-offset_bottom = 90.3644
-text = "ESCI DAL GIOCO"
 
 [node name="Dialogo_01" type="Control" parent="Player_prov/Sprite2D"]
 layout_mode = 3
@@ -56520,6 +56457,56 @@ rotation_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 script = SubResource("GDScript_x2n7i")
+
+[node name="Control" type="Control" parent="Player_prov/Sprite2D/Camera2D"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -761.0
+offset_top = -342.0
+offset_right = 673.0
+offset_bottom = 335.0
+script = ExtResource("6_gmm3f")
+
+[node name="Button" type="Button" parent="Player_prov/Sprite2D/Camera2D/Control"]
+layout_mode = 0
+offset_left = 1378.78
+offset_top = 58.9694
+offset_right = 1443.78
+offset_bottom = 89.969
+theme_override_colors/font_color = Color(0.635294, 0.239216, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_juwug")
+text = "II"
+
+[node name="pausa" type="Control" parent="Player_prov/Sprite2D/Camera2D"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("7_qg7m8")
+
+[node name="Label" type="Label" parent="Player_prov/Sprite2D/Camera2D/pausa"]
+layout_mode = 0
+offset_left = -777.333
+offset_top = -278.347
+offset_right = 538.667
+offset_bottom = 264.653
+theme_override_styles/normal = SubResource("StyleBoxFlat_2jr4g")
+
+[node name="riprendi" type="Button" parent="Player_prov/Sprite2D/Camera2D/pausa"]
+layout_mode = 0
+offset_left = -413.966
+offset_top = -32.4449
+offset_right = -225.966
+offset_bottom = 24.5551
+text = "RIPRENDI"
+
+[node name="back" type="Button" parent="Player_prov/Sprite2D/Camera2D/pausa"]
+layout_mode = 0
+offset_left = 39.58
+offset_top = -37.1287
+offset_right = 203.58
+offset_bottom = 18.8713
+text = "ESCI DAL GIOCO"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Player_prov"]
 libraries = {
@@ -56830,11 +56817,11 @@ position = Vector2(-77, 26)
 shape = SubResource("CircleShape2D_bckrd")
 debug_color = Color(0.976471, 0, 0.4, 0.419608)
 
-[connection signal="button_down" from="Player_prov/Sprite2D/CanvasLayer/Control/Button" to="Player_prov/Sprite2D/CanvasLayer/Control" method="_on_button_button_down"]
-[connection signal="pressed" from="Player_prov/Sprite2D/CanvasLayer/Control/Button" to="Player_prov/Sprite2D/CanvasLayer/Control" method="_on_button_pressed"]
-[connection signal="button_down" from="Player_prov/Sprite2D/CanvasLayer/pausa/riprendi" to="Player_prov/Sprite2D/CanvasLayer/pausa" method="_on_riprendi_button_down"]
-[connection signal="pressed" from="Player_prov/Sprite2D/CanvasLayer/pausa/riprendi" to="Player_prov/Sprite2D/CanvasLayer/Control" method="_on_riprendi_pressed"]
-[connection signal="button_down" from="Player_prov/Sprite2D/CanvasLayer/pausa/back" to="Player_prov/Sprite2D/CanvasLayer/pausa" method="_on_back_button_down"]
-[connection signal="pressed" from="Player_prov/Sprite2D/CanvasLayer/pausa/back" to="Player_prov/Sprite2D/CanvasLayer/Control" method="_on_back_pressed"]
+[connection signal="button_down" from="Player_prov/Sprite2D/Camera2D/Control/Button" to="Player_prov/Sprite2D/Camera2D/Control" method="_on_button_button_down"]
+[connection signal="pressed" from="Player_prov/Sprite2D/Camera2D/Control/Button" to="Player_prov/Sprite2D/Camera2D/Control" method="_on_button_pressed"]
+[connection signal="button_down" from="Player_prov/Sprite2D/Camera2D/pausa/riprendi" to="Player_prov/Sprite2D/Camera2D/pausa" method="_on_riprendi_button_down"]
+[connection signal="pressed" from="Player_prov/Sprite2D/Camera2D/pausa/riprendi" to="Player_prov/Sprite2D/Camera2D/Control" method="_on_riprendi_pressed"]
+[connection signal="button_down" from="Player_prov/Sprite2D/Camera2D/pausa/back" to="Player_prov/Sprite2D/Camera2D/pausa" method="_on_back_button_down"]
+[connection signal="pressed" from="Player_prov/Sprite2D/Camera2D/pausa/back" to="Player_prov/Sprite2D/Camera2D/Control" method="_on_back_pressed"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
