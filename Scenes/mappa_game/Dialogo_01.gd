@@ -31,7 +31,7 @@ func _ready():
 	
 	show_next_dialog()
 	enable_player_movement()
-
+	$indicazione.z_index = 3
 
 	
 func enable_player_movement():
@@ -58,6 +58,7 @@ func show_next_dialog() -> void:
 			assessore.can_move = false
 		else:
 			$Label.free()
+			$indicazione.free()
 			enable_player_movement()
 
 
