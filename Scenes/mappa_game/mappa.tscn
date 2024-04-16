@@ -1,4 +1,4 @@
-[gd_scene load_steps=188 format=3 uid="uid://dqiw7bvjmib4d"]
+[gd_scene load_steps=192 format=3 uid="uid://dqiw7bvjmib4d"]
 
 [ext_resource type="Script" path="res://scripts/Player_prov_movements.gd" id="1_qbu6o"]
 [ext_resource type="Texture2D" uid="uid://dw1xgygvvs0nx" path="res://personaggi/Assessore chara.png" id="2_elxb5"]
@@ -148,13 +148,11 @@ border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0.698039, 0.258824, 0.113725, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2jr4g"]
-bg_color = Color(1, 1, 1, 0.494118)
-border_width_left = 8
-border_width_top = 8
-border_width_right = 8
-border_width_bottom = 8
-border_color = Color(0.639216, 0.337255, 0.0196078, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eu8ui"]
+bg_color = Color(0.898039, 0.443137, 0.0823529, 0.721569)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bx13f"]
+bg_color = Color(1, 1, 1, 0.568627)
 
 [sub_resource type="SystemFont" id="SystemFont_d002p"]
 font_names = PackedStringArray("Cascadia Code")
@@ -169,6 +167,20 @@ border_color = Color(0.717647, 0.364706, 0.0392157, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_adlue"]
 bg_color = Color(0.929412, 0.486275, 0, 0.854902)
+
+[sub_resource type="SystemFont" id="SystemFont_1d6bt"]
+font_names = PackedStringArray("Cascadia Code")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ddra0"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.658824, 0.356863, 0.0588235, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k3kqw"]
+bg_color = Color(0.933333, 0.435294, 0.00784314, 1)
 
 [sub_resource type="Animation" id="Animation_7rhlx"]
 length = 0.001
@@ -56508,9 +56520,11 @@ offset_right = 1443.78
 offset_bottom = 89.969
 theme_override_colors/font_color = Color(0.635294, 0.239216, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_juwug")
+theme_override_styles/hover = SubResource("StyleBoxFlat_eu8ui")
 text = "II"
 
 [node name="pausa" type="Control" parent="Player_prov/Sprite2D/Camera2D"]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -56524,7 +56538,7 @@ offset_top = -384.0
 offset_right = 722.0
 offset_bottom = 434.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_2jr4g")
+theme_override_styles/normal = SubResource("StyleBoxFlat_bx13f")
 
 [node name="riprendi" type="Button" parent="Player_prov/Sprite2D/Camera2D/pausa"]
 layout_mode = 0
@@ -56546,6 +56560,12 @@ offset_left = 39.58
 offset_top = -37.1287
 offset_right = 203.58
 offset_bottom = 18.8713
+theme_override_colors/font_color = Color(0.490196, 0.239216, 0.00392157, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("SystemFont_1d6bt")
+theme_override_font_sizes/font_size = 17
+theme_override_styles/normal = SubResource("StyleBoxFlat_ddra0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_k3kqw")
 text = "ESCI DAL GIOCO"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Player_prov"]
@@ -56851,12 +56871,12 @@ script = ExtResource("36_0syno")
 
 [node name="Label" type="Label" parent="Label"]
 layout_mode = 0
-offset_left = -18.0
-offset_top = 17.0
-offset_right = 23.0
-offset_bottom = 36.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 11
+offset_left = -4.0
+offset_top = -2.0
+offset_right = 37.0
+offset_bottom = 15.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
 text = "premi x"
 
 [node name="Area2D" type="Area2D" parent="."]
