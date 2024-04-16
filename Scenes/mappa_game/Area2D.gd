@@ -14,4 +14,4 @@ func _process(delta):
 	if entered == true:
 		if Input.is_joy_button_pressed(JOY_BUTTON_Y,JOY_BUTTON_Y):
 			get_tree().change_scene_to_packed(Raccolta_rifiuti)
-			
+

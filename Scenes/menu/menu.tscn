@@ -1,8 +1,13 @@
-[gd_scene load_steps=15 format=3 uid="uid://bcet6ddrgr57d"]
+[gd_scene load_steps=17 format=3 uid="uid://bcet6ddrgr57d"]
 
 [ext_resource type="Script" path="res://Scenes/menu.gd" id="1_inog3"]
 [ext_resource type="FontFile" uid="uid://c4klt508djmoq" path="res://burnstown-dam/burnstown dam.otf" id="2_45vwf"]
 [ext_resource type="Script" path="res://Scenes/menu/TextureRect.gd" id="3_jtg8g"]
+[ext_resource type="AudioStream" uid="uid://crov63jljdu0f" path="res://Scenes/menu/Menu theme.wav" id="4_uk27y"]
+
+[sub_resource type="SystemFont" id="SystemFont_m4k02"]
+font_weight = 375
+msdf_size = 44
 
 [sub_resource type="LabelSettings" id="LabelSettings_rk0s6"]
 resource_local_to_scene = true
@@ -102,10 +107,12 @@ theme_override_constants/separation = 60
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
 modulate = Color(0.870588, 0.537255, 0.0784314, 1)
 self_modulate = Color(1, 1, 0.00784314, 1)
+clip_contents = true
 layout_mode = 2
-theme_override_colors/font_color = Color(0.964706, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_m4k02")
 theme_override_font_sizes/font_size = 51
-text = "QUERCUS"
+text = "THE QUERCUS GAME"
 label_settings = SubResource("LabelSettings_rk0s6")
 horizontal_alignment = 1
 
@@ -157,6 +164,10 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_6d54r")
 theme_override_styles/hover = SubResource("StyleBoxFlat_b6iha")
 text = "ESCI
 "
+
+[node name="Menu theme" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_uk27y")
+autoplay = true
 
 [connection signal="button_down" from="MarginContainer/HBoxContainer/VBoxContainer/Start" to="." method="_on_start_button_down"]
 [connection signal="button_down" from="MarginContainer/HBoxContainer/VBoxContainer/Esci" to="." method="_on_esci_button_down"]
