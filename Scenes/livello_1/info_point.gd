@@ -1,5 +1,9 @@
 extends Control
 
+func _input(event: InputEvent) -> void:
+	if event is InputEventJoypadButton and event.is_pressed():
+		if Input.is_joy_button_pressed(JOY_BUTTON_A, JOY_BUTTON_BACK):
+			_on_capito_button_down()
 
 func _ready():
 	$Label.z_index = 3

@@ -22,6 +22,7 @@ var _assessore_callback = null
 var _label_01_callback = null
 signal dialogo_completato
 
+var block: bool = false
 
 
 
@@ -32,6 +33,7 @@ func _ready():
 	show_next_dialog()
 	enable_player_movement()
 	$indicazione.z_index = 3
+
 
 	
 func enable_player_movement():
@@ -66,3 +68,5 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventJoypadButton and event.is_pressed():
 		if current_dialog_index < dialog_sequence.size():
 			show_next_dialog()
+		if Input.is_joy_button_pressed(JOY_BUTTON_A,JOY_BUTTON_X):
+			pass
