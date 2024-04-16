@@ -1,8 +1,10 @@
-[gd_scene load_steps=17 format=3 uid="uid://bcet6ddrgr57d"]
+[gd_scene load_steps=14 format=3 uid="uid://bcet6ddrgr57d"]
 
 [ext_resource type="Script" path="res://Scenes/menu.gd" id="1_inog3"]
-[ext_resource type="FontFile" uid="uid://c4klt508djmoq" path="res://burnstown-dam/burnstown dam.otf" id="2_45vwf"]
 [ext_resource type="Script" path="res://Scenes/menu/TextureRect.gd" id="3_jtg8g"]
+[ext_resource type="FontFile" uid="uid://dl4u8nxh5sxto" path="res://Scenes/menu/Fonts/FOREST THING.ttf" id="3_olhfs"]
+[ext_resource type="FontFile" uid="uid://bv6cm8cfu7lmm" path="res://Scenes/menu/Fonts/FORESTANA.ttf" id="4_4r65b"]
+[ext_resource type="Theme" uid="uid://beyt1nfrpkx7f" path="res://Scenes/menu/Button_theme.tres" id="4_i84m0"]
 [ext_resource type="AudioStream" uid="uid://crov63jljdu0f" path="res://Scenes/menu/Menu theme.wav" id="4_uk27y"]
 
 [sub_resource type="SystemFont" id="SystemFont_m4k02"]
@@ -12,41 +14,24 @@ msdf_size = 44
 [sub_resource type="LabelSettings" id="LabelSettings_rk0s6"]
 resource_local_to_scene = true
 line_spacing = 50.0
-font = ExtResource("2_45vwf")
+font = ExtResource("3_olhfs")
 font_size = 120
-font_color = Color(0.868778, 0.537436, 0.0782634, 1)
+font_color = Color(1, 0.823529, 0.658824, 1)
 outline_size = 15
 outline_color = Color(1, 0.733333, 0.0941176, 0.572549)
 shadow_size = 10
 shadow_color = Color(0, 0, 0, 1)
 shadow_offset = Vector2(3, 3)
 
-[sub_resource type="SystemFont" id="SystemFont_566jq"]
-font_names = PackedStringArray("MS UI Gothic")
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ws28"]
-bg_color = Color(1, 1, 1, 0.533333)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_color = Color(0.643137, 0.298039, 0.0862745, 1)
-expand_margin_left = 50.0
-expand_margin_top = 15.0
-expand_margin_right = 50.0
-expand_margin_bottom = 15.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yavla"]
-bg_color = Color(0.647059, 0.32549, 0, 0.501961)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_color = Color(0.658824, 0.321569, 0.0196078, 1)
-expand_margin_left = 50.0
-expand_margin_top = 15.0
-expand_margin_right = 50.0
-expand_margin_bottom = 15.0
+[sub_resource type="LabelSettings" id="LabelSettings_668vj"]
+font = ExtResource("4_4r65b")
+font_size = 100
+font_color = Color(0.764706, 0.513726, 0.305882, 1)
+outline_size = 2
+outline_color = Color(0.243137, 0.027451, 0.0705882, 0.92549)
+shadow_size = 4
+shadow_color = Color(0.560784, 0.278431, 0, 0.768627)
+shadow_offset = Vector2(3, 7)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6d5yu"]
 
@@ -55,33 +40,6 @@ expand_margin_bottom = 15.0
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_265el"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fswab"]
-
-[sub_resource type="SystemFont" id="SystemFont_apfil"]
-font_names = PackedStringArray("MS UI Gothic")
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6d54r"]
-bg_color = Color(1, 1, 1, 0.494118)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_color = Color(0.592157, 0.286275, 0, 1)
-expand_margin_left = 50.0
-expand_margin_top = 15.0
-expand_margin_right = 50.0
-expand_margin_bottom = 15.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b6iha"]
-bg_color = Color(0.745098, 0.356863, 0, 0.47451)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_color = Color(0.580392, 0.309804, 0, 1)
-expand_margin_left = 50.0
-expand_margin_top = 15.0
-expand_margin_right = 50.0
-expand_margin_bottom = 15.0
 
 [node name="menu" type="Node2D"]
 script = ExtResource("1_inog3")
@@ -105,6 +63,7 @@ layout_mode = 2
 theme_override_constants/separation = 60
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+visible = false
 modulate = Color(0.870588, 0.537255, 0.0784314, 1)
 self_modulate = Color(1, 1, 0.00784314, 1)
 clip_contents = true
@@ -115,6 +74,14 @@ theme_override_font_sizes/font_size = 51
 text = "THE QUERCUS GAME"
 label_settings = SubResource("LabelSettings_rk0s6")
 horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+text = "THE QUERCUS GAME"
+label_settings = SubResource("LabelSettings_668vj")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -127,13 +94,10 @@ size_flags_stretch_ratio = 0.0
 auto_translate = false
 localize_numeral_system = false
 
-[node name="Start" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="GiocaButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+texture_filter = 1
 layout_mode = 2
-theme_override_colors/font_color = Color(0.580392, 0.262745, 0, 1)
-theme_override_fonts/font = SubResource("SystemFont_566jq")
-theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = SubResource("StyleBoxFlat_5ws28")
-theme_override_styles/hover = SubResource("StyleBoxFlat_yavla")
+theme = ExtResource("4_i84m0")
 text = "GIOCA"
 
 [node name="HSeparator" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]
@@ -152,22 +116,15 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_265el")
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_fswab")
 
-[node name="Esci" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="EsciButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+texture_filter = 1
 layout_mode = 2
-theme_override_colors/font_color = Color(0.545098, 0.247059, 0.0352941, 1)
-theme_override_constants/outline_size = 0
-theme_override_constants/h_separation = 0
-theme_override_constants/icon_max_width = 0
-theme_override_fonts/font = SubResource("SystemFont_apfil")
-theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = SubResource("StyleBoxFlat_6d54r")
-theme_override_styles/hover = SubResource("StyleBoxFlat_b6iha")
-text = "ESCI
-"
+theme = ExtResource("4_i84m0")
+text = "ESCI"
 
 [node name="Menu theme" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_uk27y")
 autoplay = true
 
-[connection signal="button_down" from="MarginContainer/HBoxContainer/VBoxContainer/Start" to="." method="_on_start_button_down"]
-[connection signal="button_down" from="MarginContainer/HBoxContainer/VBoxContainer/Esci" to="." method="_on_esci_button_down"]
+[connection signal="button_down" from="MarginContainer/HBoxContainer/VBoxContainer/GiocaButton" to="." method="_on_start_button_down"]
+[connection signal="button_down" from="MarginContainer/HBoxContainer/VBoxContainer/EsciButton" to="." method="_on_esci_button_down"]

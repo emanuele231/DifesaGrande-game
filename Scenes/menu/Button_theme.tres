@@ -1,0 +1,78 @@
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://beyt1nfrpkx7f"]
+
+[ext_resource type="FontFile" uid="uid://bv6cm8cfu7lmm" path="res://Scenes/menu/Fonts/FORESTANA.ttf" id="1_ajgoq"]
+[ext_resource type="Texture2D" uid="uid://c2ydmt8ctkpwr" path="res://Scenes/menu/GUI/Tiny Wonder UI Free/buttons free.png" id="1_n3c2u"]
+[ext_resource type="FontFile" uid="uid://bu8074xritaxh" path="res://Scenes/menu/Fonts/Ravenwood-g5JR.ttf" id="2_x58mv"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m15oe"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fncwu"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.75)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sdlln"]
+texture = ExtResource("1_n3c2u")
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+region_rect = Rect2(51, 36, 42, 26)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rvkfm"]
+texture = ExtResource("1_n3c2u")
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+region_rect = Rect2(3, 34, 42, 28)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o0tpf"]
+texture = ExtResource("1_n3c2u")
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+region_rect = Rect2(51, 68, 42, 26)
+
+[resource]
+default_font = ExtResource("2_x58mv")
+Button/colors/font_color = Color(1, 0.823529, 0.658824, 1)
+Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_color = Color(1, 0.709804, 0.419608, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(1, 1, 1, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
+Button/colors/icon_focus_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/constants/h_separation = 2
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 0
+Button/font_sizes/font_size = 80
+Button/fonts/font = ExtResource("1_ajgoq")
+Button/styles/disabled = SubResource("StyleBoxTexture_m15oe")
+Button/styles/focus = SubResource("StyleBoxFlat_fncwu")
+Button/styles/hover = SubResource("StyleBoxTexture_sdlln")
+Button/styles/normal = SubResource("StyleBoxTexture_rvkfm")
+Button/styles/pressed = SubResource("StyleBoxTexture_o0tpf")
