@@ -1,4 +1,4 @@
-[gd_scene load_steps=192 format=3 uid="uid://dqiw7bvjmib4d"]
+[gd_scene load_steps=193 format=3 uid="uid://dqiw7bvjmib4d"]
 
 [ext_resource type="Script" path="res://scripts/Player_prov_movements.gd" id="1_qbu6o"]
 [ext_resource type="Texture2D" uid="uid://dw1xgygvvs0nx" path="res://personaggi/Assessore chara.png" id="2_elxb5"]
@@ -39,6 +39,7 @@
 [ext_resource type="Texture2D" uid="uid://cmbpin5ryk4f1" path="res://NPG/npg_z-quercus_09_universal.png" id="32_va04q"]
 [ext_resource type="Script" path="res://Scenes/mappa_game/Label.gd" id="36_0syno"]
 [ext_resource type="Script" path="res://Scenes/mappa_game/Area2D.gd" id="37_4exyn"]
+[ext_resource type="AudioStream" uid="uid://dbotrckbbnej1" path="res://Scenes/mappa_game/Mappa Theme.wav" id="40_rtxhl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1vaym"]
 size = Vector2(11, 23)
@@ -56394,6 +56395,10 @@ radius = 25.318
 [node name="MAPPA" type="Node2D"]
 position = Vector2(215, 296)
 
+[node name="Mappa Theme" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("40_rtxhl")
+autoplay = true
+
 [node name="Assessore" type="CharacterBody2D" parent="."]
 position = Vector2(-3.05176e-05, -3.05176e-05)
 script = ExtResource("4_iw720")
@@ -56503,16 +56508,18 @@ drag_horizontal_enabled = true
 drag_vertical_enabled = true
 script = SubResource("GDScript_x2n7i")
 
-[node name="Control" type="Control" parent="Player_prov/Sprite2D/Camera2D"]
+[node name="CanvasLayer" type="CanvasLayer" parent="Player_prov/Sprite2D/Camera2D"]
+
+[node name="Control" type="Control" parent="Player_prov/Sprite2D/Camera2D/CanvasLayer"]
 layout_mode = 3
-anchors_preset = 0
-offset_left = -761.419
-offset_top = -343.921
-offset_right = 672.581
-offset_bottom = 333.079
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("6_gmm3f")
 
-[node name="Button" type="Button" parent="Player_prov/Sprite2D/Camera2D/Control"]
+[node name="Button" type="Button" parent="Player_prov/Sprite2D/Camera2D/CanvasLayer/Control"]
 layout_mode = 0
 offset_left = 1378.78
 offset_top = 58.9694
@@ -56523,29 +56530,30 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_juwug")
 theme_override_styles/hover = SubResource("StyleBoxFlat_eu8ui")
 text = "II"
 
-[node name="pausa" type="Control" parent="Player_prov/Sprite2D/Camera2D"]
-visible = false
+[node name="pausa" type="Control" parent="Player_prov/Sprite2D/Camera2D/CanvasLayer"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("7_qg7m8")
 
-[node name="Label" type="Label" parent="Player_prov/Sprite2D/Camera2D/pausa"]
+[node name="Label" type="Label" parent="Player_prov/Sprite2D/Camera2D/CanvasLayer/pausa"]
 layout_mode = 0
-offset_left = -974.0
-offset_top = -384.0
-offset_right = 722.0
-offset_bottom = 434.0
+offset_left = -2790.0
+offset_top = -1716.0
+offset_right = 2382.0
+offset_bottom = 2258.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_bx13f")
 
-[node name="riprendi" type="Button" parent="Player_prov/Sprite2D/Camera2D/pausa"]
+[node name="riprendi" type="Button" parent="Player_prov/Sprite2D/Camera2D/CanvasLayer/pausa"]
 layout_mode = 0
-offset_left = -413.966
-offset_top = -32.4449
-offset_right = -225.966
-offset_bottom = 24.5551
+offset_left = 112.923
+offset_top = 131.701
+offset_right = 300.923
+offset_bottom = 188.701
 theme_override_colors/font_color = Color(0.619608, 0.305882, 0, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = SubResource("SystemFont_d002p")
@@ -56554,12 +56562,12 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_kcvjt")
 theme_override_styles/hover = SubResource("StyleBoxFlat_adlue")
 text = "RIPRENDI"
 
-[node name="back" type="Button" parent="Player_prov/Sprite2D/Camera2D/pausa"]
+[node name="back" type="Button" parent="Player_prov/Sprite2D/Camera2D/CanvasLayer/pausa"]
 layout_mode = 0
-offset_left = 39.58
-offset_top = -37.1287
-offset_right = 203.58
-offset_bottom = 18.8713
+offset_left = 566.889
+offset_top = 127.146
+offset_right = 772.889
+offset_bottom = 197.146
 theme_override_colors/font_color = Color(0.490196, 0.239216, 0.00392157, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = SubResource("SystemFont_1d6bt")
@@ -56887,11 +56895,11 @@ position = Vector2(-62, 21)
 shape = SubResource("CircleShape2D_bckrd")
 debug_color = Color(0.976471, 0, 0.4, 0.419608)
 
-[connection signal="button_down" from="Player_prov/Sprite2D/Camera2D/Control/Button" to="Player_prov/Sprite2D/Camera2D/Control" method="_on_button_button_down"]
-[connection signal="pressed" from="Player_prov/Sprite2D/Camera2D/Control/Button" to="Player_prov/Sprite2D/Camera2D/Control" method="_on_button_pressed"]
-[connection signal="button_down" from="Player_prov/Sprite2D/Camera2D/pausa/riprendi" to="Player_prov/Sprite2D/Camera2D/pausa" method="_on_riprendi_button_down"]
-[connection signal="pressed" from="Player_prov/Sprite2D/Camera2D/pausa/riprendi" to="Player_prov/Sprite2D/Camera2D/Control" method="_on_riprendi_pressed"]
-[connection signal="button_down" from="Player_prov/Sprite2D/Camera2D/pausa/back" to="Player_prov/Sprite2D/Camera2D/pausa" method="_on_back_button_down"]
-[connection signal="pressed" from="Player_prov/Sprite2D/Camera2D/pausa/back" to="Player_prov/Sprite2D/Camera2D/Control" method="_on_back_pressed"]
+[connection signal="button_down" from="Player_prov/Sprite2D/Camera2D/CanvasLayer/Control/Button" to="Player_prov/Sprite2D/Camera2D/CanvasLayer/Control" method="_on_button_button_down"]
+[connection signal="pressed" from="Player_prov/Sprite2D/Camera2D/CanvasLayer/Control/Button" to="Player_prov/Sprite2D/Camera2D/CanvasLayer/Control" method="_on_button_pressed"]
+[connection signal="button_down" from="Player_prov/Sprite2D/Camera2D/CanvasLayer/pausa/riprendi" to="Player_prov/Sprite2D/Camera2D/CanvasLayer/pausa" method="_on_riprendi_button_down"]
+[connection signal="pressed" from="Player_prov/Sprite2D/Camera2D/CanvasLayer/pausa/riprendi" to="Player_prov/Sprite2D/Camera2D/CanvasLayer/Control" method="_on_riprendi_pressed"]
+[connection signal="button_down" from="Player_prov/Sprite2D/Camera2D/CanvasLayer/pausa/back" to="Player_prov/Sprite2D/Camera2D/CanvasLayer/pausa" method="_on_back_button_down"]
+[connection signal="pressed" from="Player_prov/Sprite2D/Camera2D/CanvasLayer/pausa/back" to="Player_prov/Sprite2D/Camera2D/CanvasLayer/Control" method="_on_back_pressed"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
