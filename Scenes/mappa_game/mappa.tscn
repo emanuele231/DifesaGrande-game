@@ -1,4 +1,4 @@
-[gd_scene load_steps=184 format=3 uid="uid://dqiw7bvjmib4d"]
+[gd_scene load_steps=188 format=3 uid="uid://dqiw7bvjmib4d"]
 
 [ext_resource type="Script" path="res://scripts/Player_prov_movements.gd" id="1_qbu6o"]
 [ext_resource type="Texture2D" uid="uid://dw1xgygvvs0nx" path="res://personaggi/Assessore chara.png" id="2_elxb5"]
@@ -135,6 +135,9 @@ border_width_right = 4
 border_width_bottom = 4
 border_color = Color(0.529412, 0.309804, 0.0352941, 1)
 
+[sub_resource type="SystemFont" id="SystemFont_6mbsi"]
+font_names = PackedStringArray("Cascadia Code")
+
 [sub_resource type="GDScript" id="GDScript_x2n7i"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_juwug"]
@@ -146,7 +149,26 @@ border_width_bottom = 2
 border_color = Color(0.698039, 0.258824, 0.113725, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2jr4g"]
-bg_color = Color(0, 0, 0, 0.494118)
+bg_color = Color(1, 1, 1, 0.494118)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.639216, 0.337255, 0.0196078, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_d002p"]
+font_names = PackedStringArray("Cascadia Code")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kcvjt"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.717647, 0.364706, 0.0392157, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_adlue"]
+bg_color = Color(0.929412, 0.486275, 0, 0.854902)
 
 [sub_resource type="Animation" id="Animation_7rhlx"]
 length = 0.001
@@ -56449,7 +56471,8 @@ offset_left = 681.0
 offset_top = 89.0
 offset_right = 746.0
 offset_bottom = 115.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.721569, 0.392157, 0.00784314, 1)
+theme_override_fonts/font = SubResource("SystemFont_6mbsi")
 text = "premi A
 "
 
@@ -56509,6 +56532,12 @@ offset_left = -413.966
 offset_top = -32.4449
 offset_right = -225.966
 offset_bottom = 24.5551
+theme_override_colors/font_color = Color(0.619608, 0.305882, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("SystemFont_d002p")
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxFlat_kcvjt")
+theme_override_styles/hover = SubResource("StyleBoxFlat_adlue")
 text = "RIPRENDI"
 
 [node name="back" type="Button" parent="Player_prov/Sprite2D/Camera2D/pausa"]
