@@ -24,6 +24,10 @@ SingletonOrganico="*res://Scenes/livello_1/singletonOrganico.gd"
 SingletonIndiff="*res://Scenes/livello_1/singletonIndiff.gd"
 PuntiSingleton="*res://Scenes/livello_1/punti_singleton.gd"
 
+[dotnet]
+
+project/assembly_name="Difesa Grande-game"
+
 [input]
 
 pausa={
@@ -37,4 +41,5 @@ gamepad_a={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="mobile"
