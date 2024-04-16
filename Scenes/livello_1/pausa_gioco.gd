@@ -3,6 +3,15 @@ extends Control
 @onready var pannello_pausa = $"."
 var riprendi: bool = false
 
+func _input(event: InputEvent) -> void:
+	if event is InputEventJoypadButton and event.is_pressed():
+			if Input.is_joy_button_pressed(JOY_BUTTON_A, JOY_BUTTON_B):
+				_on_riprendi_button_down()
+			elif Input.is_joy_button_pressed(JOY_BUTTON_A, JOY_BUTTON_Y):
+				_on_riavvia_button_down()
+			elif Input.is_joy_button_pressed(JOY_BUTTON_A, JOY_BUTTON_X):
+				_on_back_button_down()
+
 func _ready():
 	$".".z_index = 3
 	$Label.z_index = 3
