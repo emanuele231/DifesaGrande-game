@@ -17,7 +17,8 @@ func _ready():
 	$timer.z_index = 3
 	$"../pannello punteggio finale".z_index = 3
 	$"../pannello punteggio finale".hide()
-
+	$"info-point".hide()
+	$info.z_index = 3
 func _timer():
 	timer_running = true
 	$"../pannello punteggio finale".hide()
@@ -30,6 +31,7 @@ func _process(delta):
 	p_position.x = clamp(p_position.x, min_limit.x, max_limit.x)
 	p_position.y = clamp(p_position.y, min_limit.y, max_limit.y)
 	position = p_position
+	$Control.show()
 	if timer_running == true:
 		current_time += delta
 		end = false
@@ -39,6 +41,8 @@ func _process(delta):
 			punteggio_finale()
 			current_time = timer_duration
 			end = true
+			Engine.time_scale = 0
+			$Control.hide()
 		update_timer()
 
 
@@ -65,3 +69,8 @@ func punteggio_finale():
 		
 	
 	
+
+
+func _on_info_button_down():
+	Engine.time_scale = 0
+	$"info-point".show()

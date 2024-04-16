@@ -56443,6 +56443,16 @@ vertical_alignment = 1
 wait_time = 4.0
 one_shot = true
 
+[node name="indicazione" type="Label" parent="Player_prov/Sprite2D/Dialogo_01"]
+layout_mode = 0
+offset_left = 681.0
+offset_top = 89.0
+offset_right = 746.0
+offset_bottom = 115.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "premi A
+"
+
 [node name="Camera2D" type="Camera2D" parent="Player_prov/Sprite2D"]
 position = Vector2(11.283, 9.57266)
 scale = Vector2(0.699999, 0.842105)
@@ -56461,10 +56471,10 @@ script = SubResource("GDScript_x2n7i")
 [node name="Control" type="Control" parent="Player_prov/Sprite2D/Camera2D"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = -761.0
-offset_top = -342.0
-offset_right = 673.0
-offset_bottom = 335.0
+offset_left = -761.419
+offset_top = -343.921
+offset_right = 672.581
+offset_bottom = 333.079
 script = ExtResource("6_gmm3f")
 
 [node name="Button" type="Button" parent="Player_prov/Sprite2D/Camera2D/Control"]
@@ -56486,10 +56496,11 @@ script = ExtResource("7_qg7m8")
 
 [node name="Label" type="Label" parent="Player_prov/Sprite2D/Camera2D/pausa"]
 layout_mode = 0
-offset_left = -777.333
-offset_top = -278.347
-offset_right = 538.667
-offset_bottom = 264.653
+offset_left = -974.0
+offset_top = -384.0
+offset_right = 722.0
+offset_bottom = 434.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_2jr4g")
 
 [node name="riprendi" type="Button" parent="Player_prov/Sprite2D/Camera2D/pausa"]
@@ -56809,11 +56820,21 @@ text = "!
 "
 script = ExtResource("36_0syno")
 
+[node name="Label" type="Label" parent="Label"]
+layout_mode = 0
+offset_left = -18.0
+offset_top = 17.0
+offset_right = 23.0
+offset_bottom = 36.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 11
+text = "premi x"
+
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("37_4exyn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-77, 26)
+position = Vector2(-62, 21)
 shape = SubResource("CircleShape2D_bckrd")
 debug_color = Color(0.976471, 0, 0.4, 0.419608)
 
