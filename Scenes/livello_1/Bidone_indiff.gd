@@ -29,7 +29,7 @@ func _on_body_exited(body):
 	entered = false
 
 func _process(delta):
-	if entered == true and Input.is_joy_button_pressed(JOY_BUTTON_B,JOY_BUTTON_B) or Input.is_action_just_pressed("ui_accept"):
+	if entered == true and Input.is_joy_button_pressed(JOY_BUTTON_A,JOY_BUTTON_B) or Input.is_action_just_pressed("ui_accept"):
 		assegna()
 		if stop1 == false:
 			svuota_sacco()

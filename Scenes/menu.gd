@@ -6,9 +6,9 @@ extends Node2D
 
 func _input(event):
 	if event is InputEventJoypadButton: 
-		if event.button_index == 1 and event.pressed: 
+		if event.button_index == 0 and event.pressed: 
 			_on_start_button_down()
-		elif event.button_index == 0 and event.pressed:
+		elif event.button_index == 1 and event.pressed:
 			_on_esci_button_down()
 
 

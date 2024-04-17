@@ -65,13 +65,18 @@ func show_next_dialog() -> void:
 				assessore_1.can_move = false
 			else:
 				$Label.free()
+				$Label2.free()
 				enable_player_movement()
 	else:
 		print("label vuoto")
 
 
 func _input(event: InputEvent) -> void:
-
-	if event is InputEventMouseButton and event.is_pressed():
+	if event is InputEventJoypadButton and event.is_pressed():
 		if current_dialog_index < dialog_sequence.size():
 			show_next_dialog()
+			if Input.is_joy_button_pressed(JOY_BUTTON_A,JOY_BUTTON_A):
+				pass
+	#if event is InputEventMouseButton and event.is_pressed():
+		#if current_dialog_index < dialog_sequence.size():
+			#show_next_dialog()

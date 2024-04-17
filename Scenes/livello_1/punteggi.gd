@@ -1,6 +1,6 @@
 extends Control
 
-var timer_duration = 60
+var timer_duration = 600
 var current_time = 1
 var timer_running: bool = false
 var end: bool = false
