@@ -26,7 +26,7 @@ func _on_body_exited(body):
 	entered = false
 
 func _process(delta):
-	if entered == true and Input.is_joy_button_pressed(JOY_BUTTON_B,JOY_BUTTON_B) or Input.is_action_just_pressed("ui_accept"):
+	if entered == true and Input.is_joy_button_pressed(JOY_BUTTON_A,JOY_BUTTON_B) or Input.is_action_just_pressed("ui_accept"):
 		assegna()
 		if stop1 == false:
 			svuota_sacco()
@@ -37,7 +37,7 @@ func svuota_sacco():
 	if sacco <= 10 and sacco > 0:
 		sacco -= 1
 		singleton.set_index(sacco)
-		$"../player/Camera2D/punteggi/capienza_sacco".text = capienza[sacco]
+		$"../player/Camera2D/CanvasLayer/punteggi/capienza_sacco".text = capienza[sacco]
 
 func assegna():
 	var o_sing = get_node("/root/SingletonOrganico")
@@ -50,6 +50,6 @@ func assegna():
 		puntiO += 2
 		puntiO_sing.set_puntiO(puntiO)
 		o_sing.set_organico(organico)
-		$"../player/Camera2D/punteggi/organico_rimasto".text = str(organico)
+		$"../player/Camera2D/CanvasLayer/punteggi/capienza_sacco".text = str(organico)
 	else:
 		stop1 = true

@@ -23,5 +23,6 @@ func plastica():
 	var plastica = plastica_sin.get_custom_plastica()
 	plastica += 1
 	plastica_sin.set_plastica(plastica)
-	$"../player/Camera2D/punteggi/plastica_rimasta".text = str(plastica)
+	print(plastica)
+	$"../player/Camera2D/CanvasLayer/punteggi/capienza_sacco".text = str(plastica)
 

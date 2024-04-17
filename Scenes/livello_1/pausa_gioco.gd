@@ -6,12 +6,11 @@ var pausa = pausa_script.new()
 var riprendi: bool = false
 
 func _input(event: InputEvent) -> void:
-	if event is InputEventJoypadButton and event.is_pressed() and pausa.paused == true:
-			if Input.is_joy_button_pressed(JOY_BUTTON_A, JOY_BUTTON_B):
+			if Input.is_joy_button_pressed(JOY_BUTTON_A, JOY_BUTTON_B)and pausa.paused == true:
 				_on_riprendi_button_down()
-			elif Input.is_joy_button_pressed(JOY_BUTTON_A, JOY_BUTTON_Y):
+			elif Input.is_joy_button_pressed(JOY_BUTTON_A, JOY_BUTTON_Y)and pausa.paused == true:
 				_on_riavvia_button_down()
-			elif Input.is_joy_button_pressed(JOY_BUTTON_A, JOY_BUTTON_X):
+			elif Input.is_joy_button_pressed(JOY_BUTTON_A, JOY_BUTTON_X)and pausa.paused == true:
 				_on_back_button_down()
 
 func _ready():

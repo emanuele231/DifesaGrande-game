@@ -22,4 +22,4 @@ func indifferenziato():
 	var indiff = indiff_sin.get_custom_indiff()
 	indiff += 1
 	indiff_sin.set_indiff(indiff)
-	$"../player/Camera2D/punteggi/indifferenziato_rimasto".text = str(indiff)
+	$"../player/Camera2D/CanvasLayer/punteggi/capienza_sacco".text = str(indiff)
