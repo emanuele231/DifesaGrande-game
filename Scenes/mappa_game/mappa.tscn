@@ -56488,9 +56488,9 @@ offset_left = 681.0
 offset_top = 89.0
 offset_right = 746.0
 offset_bottom = 115.0
-theme_override_colors/font_color = Color(0.721569, 0.392157, 0.00784314, 1)
+theme_override_colors/font_color = Color(0.835294, 0, 0, 1)
 theme_override_fonts/font = SubResource("SystemFont_6mbsi")
-text = "premi A
+text = "PREMI A
 "
 
 [node name="Camera2D" type="Camera2D" parent="Player_prov/Sprite2D"]
@@ -56530,16 +56530,30 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_juwug")
 theme_override_styles/hover = SubResource("StyleBoxFlat_eu8ui")
 text = "II"
 
+[node name="Label" type="Label" parent="Player_prov/Sprite2D/Camera2D/CanvasLayer/Control/Button"]
+layout_mode = 0
+offset_left = 28.22
+offset_top = 20.0306
+offset_right = 129.22
+offset_bottom = 46.0306
+theme_override_colors/font_color = Color(0.835294, 0, 0, 1)
+text = "PREMI START"
+
 [node name="pausa" type="Control" parent="Player_prov/Sprite2D/Camera2D/CanvasLayer"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 5.0
+offset_right = 1.0
+offset_bottom = 5.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("7_qg7m8")
 
 [node name="Label" type="Label" parent="Player_prov/Sprite2D/Camera2D/CanvasLayer/pausa"]
+visible = false
 layout_mode = 0
 offset_left = -2790.0
 offset_top = -1716.0
@@ -56562,6 +56576,15 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_kcvjt")
 theme_override_styles/hover = SubResource("StyleBoxFlat_adlue")
 text = "RIPRENDI"
 
+[node name="Label" type="Label" parent="Player_prov/Sprite2D/Camera2D/CanvasLayer/pausa/riprendi"]
+layout_mode = 0
+offset_left = 121.077
+offset_top = 35.299
+offset_right = 185.077
+offset_bottom = 61.299
+theme_override_colors/font_color = Color(0.835294, 0, 0, 1)
+text = "PREMI B"
+
 [node name="back" type="Button" parent="Player_prov/Sprite2D/Camera2D/CanvasLayer/pausa"]
 layout_mode = 0
 offset_left = 566.889
@@ -56575,6 +56598,16 @@ theme_override_font_sizes/font_size = 17
 theme_override_styles/normal = SubResource("StyleBoxFlat_ddra0")
 theme_override_styles/hover = SubResource("StyleBoxFlat_k3kqw")
 text = "ESCI DAL GIOCO"
+
+[node name="Label" type="Label" parent="Player_prov/Sprite2D/Camera2D/CanvasLayer/pausa/back"]
+layout_mode = 0
+offset_left = 136.111
+offset_top = 46.854
+offset_right = 202.111
+offset_bottom = 72.854
+theme_override_colors/font_color = Color(0.835294, 0, 0, 1)
+text = "PREMI X
+"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Player_prov"]
 libraries = {
@@ -56883,9 +56916,9 @@ offset_left = -4.0
 offset_top = -2.0
 offset_right = 37.0
 offset_bottom = 15.0
-theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_color = Color(0.835294, 0, 0, 1)
 theme_override_font_sizes/font_size = 10
-text = "premi x"
+text = "PREMI Y"
 
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("37_4exyn")
