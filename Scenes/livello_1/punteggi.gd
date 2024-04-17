@@ -8,7 +8,7 @@ var carta_script = preload("res://Scenes/livello_1/Bidone_carta.gd")
 var carta = carta_script.new()
 
 func _ready():
-	get_node("../../Sprite2D/spiegazione_1_1")._timer_callback = self
+	get_node("../../../Sprite2D/spiegazione_1_1")._timer_callback = self
 	$carta_rimasta.z_index = 3
 	$plastica_rimasta.z_index = 3
 	$indifferenziato_rimasto.z_index = 3

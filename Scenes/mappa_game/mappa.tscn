@@ -56481,10 +56481,10 @@ script = ExtResource("6_gmm3f")
 
 [node name="Button" type="Button" parent="Player_prov/Sprite2D/Camera2D/CanvasLayer/Control"]
 layout_mode = 0
-offset_left = 1496.0
+offset_left = 1603.0
 offset_top = 61.0
-offset_right = 1561.0
-offset_bottom = 117.0
+offset_right = 1688.0
+offset_bottom = 134.0
 theme_override_styles/normal = SubResource("StyleBoxTexture_05vj1")
 theme_override_styles/hover = SubResource("StyleBoxTexture_40fj7")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_o0ya8")
@@ -56846,7 +56846,7 @@ offset_right = 68.0
 offset_bottom = 4.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("8_l08so")
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 14
 theme_override_styles/normal = SubResource("StyleBoxTexture_2ig1n")
 text = "Premi X"
 horizontal_alignment = 1
