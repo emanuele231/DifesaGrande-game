@@ -1,14 +1,14 @@
 extends Control
 
 var dialog_sequence := [
-	"Benvenuto nel bosco Difesa Grande!",
-	"Da qui, inizia la tua avventura!",
-	"Ci troviamo, adesso, nel bar Quercus",
-	"Qui svolgerai il tuo primo compito",
-	"Per muoverti puoi utilizzare le frecce direzionali",
-	"Recati al punto segnalato per iniziare il minigioco",
-	"Ma se vuoi studiare meglio la zona",
-	"Puoi farti un giro del luogo, prima di giocare",
+	"Ciao! Sono Marienza, l'assessore del comune di Gravina",
+	"Ti do il benvenuto nel bosco Difesa Grande!",
+	"Da qui la tua vita potrà ricominciare..",
+	"..ed il tuo lavoro ci sarà di grande aiuto",
+	"Per iniziare ti consiglio di guardarti attorno",
+	"una volta che ti sarai ambientato potrai svolgere il tuo primo compito",
+	"Utilizza la rotellina per muoverti",
+	"e recati al punto segnalato con '!' per iniziare il minigioco",
 	"In bocca al lupo guardiano!"
 ]  
 
@@ -65,7 +65,7 @@ func show_next_dialog() -> void:
 
 
 func _input(event: InputEvent) -> void:
-	if event is InputEventJoypadButton and event.is_pressed() or event is InputEventMouseButton:
+	if event is InputEventJoypadButton and event.is_pressed() or event is InputEventMouseButton and event.is_pressed():
 		if current_dialog_index < dialog_sequence.size():
 			show_next_dialog()
 			if Input.is_joy_button_pressed(JOY_BUTTON_A,JOY_BUTTON_A):
