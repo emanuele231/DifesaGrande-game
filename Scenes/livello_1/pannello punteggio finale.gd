@@ -4,7 +4,11 @@ func _ready():
 	$Button.z_index = 3
 
 
+func process():
+	if Input.is_joy_button_pressed(JOY_BUTTON_A, JOY_BUTTON_A):
+		_on_button_button_down()
 
+	
 func _on_button_button_down():
 	var back_to_map = preload("res://Scenes/mappa_game/mappa.tscn") as PackedScene
 	get_tree().change_scene_to_packed(back_to_map)

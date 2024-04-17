@@ -25,7 +25,7 @@ func carta():
 	var carta = carta_sin.get_custom_carta()
 	carta += 1
 	carta_sin.set_carta(carta)
-	$"../player/Camera2D/punteggi/carta_rimasta".text = str(carta)
+	$"../player/Camera2D/CanvasLayer/punteggi/capienza_sacco".text = str(carta)
 
 
 

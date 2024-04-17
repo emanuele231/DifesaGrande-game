@@ -29,7 +29,7 @@ func _on_body_exited(body):
 	entered = false
 
 func _process(delta):
-	if entered == true and Input.is_joy_button_pressed(JOY_BUTTON_B,JOY_BUTTON_B) or Input.is_action_just_pressed("ui_accept"):
+	if entered == true and Input.is_joy_button_pressed(JOY_BUTTON_A,JOY_BUTTON_B) or Input.is_action_just_pressed("ui_accept"):
 		assegna()
 		if stop1 == false:
 			svuota_sacco()
@@ -40,7 +40,7 @@ func svuota_sacco():
 	if sacco <= 10 and sacco > 0:
 		sacco -= 1
 		singleton.set_index(sacco)
-		$"../player/Camera2D/punteggi/capienza_sacco".text = capienza[sacco]
+		$"../player/Camera2D/CanvasLayer/punteggi/capienza_sacco".text = capienza[sacco]
 
 func assegna():
 	var i_sing = get_node("/root/SingletonIndiff")
@@ -53,6 +53,6 @@ func assegna():
 		puntiI += 4
 		puntiI_sing.set_puntiI(puntiI)
 		i_sing.set_indiff(indiff)
-		$"../player/Camera2D/punteggi/indifferenziato_rimasto".text = str(indiff)
+		$"../player/Camera2D/CanvasLayer/punteggi/capienza_sacco".text = str(indiff)
 	else:
 		stop1 = true

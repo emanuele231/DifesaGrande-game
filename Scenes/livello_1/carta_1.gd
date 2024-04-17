@@ -42,8 +42,8 @@ func set_catch():
 	if index < capienza_sequence.size():
 		stop = true
 		singleton.set_index(index)
-		$"../player/Camera2D/punteggi/capienza_sacco".text = capienza_sequence[index]
-		$"../player/Camera2D/punteggi/capienza_sacco".show()
+		$"../player/Camera2D/CanvasLayer/punteggi/capienza_sacco".text = capienza_sequence[index]
+		$"../player/Camera2D/CanvasLayer/punteggi/capienza_sacco".show()
 	else:
 		stop = false
 

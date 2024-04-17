@@ -37,7 +37,7 @@ func svuota_sacco():
 	if sacco <= 10 and sacco > 0:
 		sacco -= 1
 		singleton.set_index(sacco)
-		$"../player/Camera2D/punteggi/capienza_sacco".text = capienza[sacco]
+		$"../player/Camera2D/CanvasLayer/punteggi/capienza_sacco".text = capienza[sacco]
 
 func assegna():
 	var c_sing = get_node("/root/SingletonCarta")
@@ -51,7 +51,7 @@ func assegna():
 		puntiC_sing.set_puntiC(puntiC)
 		c_sing.set_carta(carta)
 		
-		$"../player/Camera2D/punteggi/carta_rimasta".text = str(carta)
+		$"../player/Camera2D/CanvasLayer/punteggi/capienza_sacco".text = str(carta)
 	else:
 		stop1 = true
 

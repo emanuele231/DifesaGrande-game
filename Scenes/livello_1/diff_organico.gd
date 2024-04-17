@@ -23,5 +23,5 @@ func organico():
 	var organico = organico_sin.get_custom_organico()
 	organico += 1
 	organico_sin.set_organico(organico)
-	$"../player/Camera2D/punteggi/organico_rimasto".text = str(organico)
+	$"../player/Camera2D/CanvasLayer/punteggi/capienza_sacco".text = str(organico)
 
