@@ -66,6 +66,7 @@ func show_next_dialog() -> void:
 			else:
 				$Label.free()
 				enable_player_movement()
+
 	else:
 		print("label vuoto")
 
