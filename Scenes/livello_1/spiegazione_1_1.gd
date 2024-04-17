@@ -4,13 +4,13 @@ var dialog_sequence := [
 	"Bene, qui inizia il tuo primo compito!",
 	"Come puoi vedere la gente non ha interesse nel rispettare l'ambiente..",
 	"Ora tocca a te!",
-	"Dovrai raccogliere questi rifiuti entro 10 minuti",
+	"Dovrai raccogliere questi rifiuti entro 5 minuti",
 	"Prima che arrivino i clienti del bar",
 	"Come vedi hai una busta, che può contenere un massimo di 10 rifiuti",
-	"Per raccoglierli, ti basta avvicinarti ad essi e premere C",
+	"Per raccoglierli, ti basta avvicinarti ad essi e premere 'A'",
 	"Le icone a destra di diranno che tipo di rifiuto hai raccolto",
 	"Quando la tua busta sarà piena, recati ai bidoni della spazzatura",
-	"Lì, potrai gettare i rifiuti nei rispettivi cassonetti",
+	"Lì, potrai gettare i rifiuti nei rispettivi cassonetti premendo 'B'",
 	"Allo scadere del tempo, il sindaco comunicherà il tuo punteggio",
 	"In bocca al lupo! E ricorda di differenziare!"
 ]  
@@ -72,7 +72,7 @@ func show_next_dialog() -> void:
 
 
 func _input(event: InputEvent) -> void:
-	if event is InputEventJoypadButton and event.is_pressed() or event is InputEventMouseButton:
+	if event is InputEventJoypadButton and event.is_pressed() or event is InputEventMouseButton and event.is_pressed():
 		if current_dialog_index < dialog_sequence.size():
 			show_next_dialog()
 			if Input.is_joy_button_pressed(JOY_BUTTON_A,JOY_BUTTON_A):
