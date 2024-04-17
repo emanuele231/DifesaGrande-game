@@ -3,6 +3,8 @@ extends Control
 @onready var pannello_pausa = $"../pausa"
 var paused: bool = false
 
+
+
 func _ready():
 	paused = false
 	pannello_pausa.hide()

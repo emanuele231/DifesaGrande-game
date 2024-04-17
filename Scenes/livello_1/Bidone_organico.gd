@@ -50,6 +50,6 @@ func assegna():
 		puntiO += 2
 		puntiO_sing.set_puntiO(puntiO)
 		o_sing.set_organico(organico)
-		$"../player/Camera2D/CanvasLayer/punteggi/capienza_sacco".text = str(organico)
+		$"../player/Camera2D/CanvasLayer/punteggi/organico_rimasto".text = str(organico)
 	else:
 		stop1 = true

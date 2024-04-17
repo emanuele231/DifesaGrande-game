@@ -50,6 +50,6 @@ func assegna():
 		puntiP += 3
 		puntiP_sing.set_puntiP(puntiP)
 		p_sing.set_plastica(plastica)
-		$"../player/Camera2D/CanvasLayer/punteggi/capienza_sacco".text = str(plastica)
+		$"../player/Camera2D/CanvasLayer/punteggi/plastica_rimasta".text = str(plastica)
 	else:
 		stop1 = true

@@ -51,7 +51,7 @@ func assegna():
 		puntiC_sing.set_puntiC(puntiC)
 		c_sing.set_carta(carta)
 		
-		$"../player/Camera2D/CanvasLayer/punteggi/capienza_sacco".text = str(carta)
+		$"../player/Camera2D/CanvasLayer/punteggi/carta_rimasta".text = str(carta)
 	else:
 		stop1 = true
 

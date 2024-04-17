@@ -14,7 +14,7 @@ func _on_body_exited(body):
 	entered = false
 
 func _process(delta):
-	if entered == true and Input.is_joy_button_pressed(JOY_BUTTON_A, JOY_BUTTON_A) or Input.is_action_just_pressed("ui_accept"):
+	if entered == true and Input.is_joy_button_pressed(JOY_BUTTON_A, JOY_BUTTON_A):
 		var singleton = get_node("/root/Singleton")
 		var index = singleton.get_custom_index()
 		if index < 10:
@@ -25,7 +25,7 @@ func carta():
 	var carta = carta_sin.get_custom_carta()
 	carta += 1
 	carta_sin.set_carta(carta)
-	$"../player/Camera2D/CanvasLayer/punteggi/capienza_sacco".text = str(carta)
+	$"../player/Camera2D/CanvasLayer/punteggi/carta_rimasta".text = str(carta)
 
 
 

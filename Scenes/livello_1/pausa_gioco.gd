@@ -6,7 +6,7 @@ var pausa = pausa_script.new()
 var riprendi: bool = false
 
 func _input(event: InputEvent) -> void:
-			if Input.is_joy_button_pressed(JOY_BUTTON_A, JOY_BUTTON_B)and pausa.paused == true:
+			if Input.is_joy_button_pressed(JOY_BUTTON_A, JOY_BUTTON_B):
 				_on_riprendi_button_down()
 			elif Input.is_joy_button_pressed(JOY_BUTTON_A, JOY_BUTTON_Y)and pausa.paused == true:
 				_on_riavvia_button_down()
