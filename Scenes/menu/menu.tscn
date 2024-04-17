@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bcet6ddrgr57d"]
+[gd_scene load_steps=16 format=3 uid="uid://bcet6ddrgr57d"]
 
 [ext_resource type="Script" path="res://Scenes/menu.gd" id="1_inog3"]
 [ext_resource type="Script" path="res://Scenes/menu/TextureRect.gd" id="3_jtg8g"]
@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://bv6cm8cfu7lmm" path="res://Scenes/menu/Fonts/FORESTANA.ttf" id="4_4r65b"]
 [ext_resource type="Theme" uid="uid://beyt1nfrpkx7f" path="res://Scenes/menu/Button_theme.tres" id="4_i84m0"]
 [ext_resource type="AudioStream" uid="uid://crov63jljdu0f" path="res://Scenes/menu/Menu theme.wav" id="4_uk27y"]
+[ext_resource type="Texture2D" uid="uid://chthickflak0n" path="res://Scenes/menu/GUI/Tiny Wonder UI Free/base free.png" id="7_ycoid"]
 
 [sub_resource type="SystemFont" id="SystemFont_m4k02"]
 font_weight = 375
@@ -41,8 +42,13 @@ shadow_offset = Vector2(3, 7)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fswab"]
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hptsn"]
+texture = ExtResource("7_ycoid")
+region_rect = Rect2(9, 57, 30, 30)
+
 [node name="menu" type="Node2D"]
 script = ExtResource("1_inog3")
+metadata/_edit_vertical_guides_ = [1039.0]
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_left = 3.0
@@ -125,6 +131,34 @@ text = "ESCI"
 [node name="Menu theme" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_uk27y")
 autoplay = true
+
+[node name="Press A" type="Label" parent="."]
+top_level = true
+offset_left = 1039.0
+offset_top = 760.0
+offset_right = 1082.0
+offset_bottom = 795.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_4r65b")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxTexture_hptsn")
+text = "A"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Press B" type="Label" parent="."]
+top_level = true
+offset_left = 1039.0
+offset_top = 875.0
+offset_right = 1082.0
+offset_bottom = 910.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_4r65b")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxTexture_hptsn")
+text = "B"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="button_down" from="MarginContainer/HBoxContainer/VBoxContainer/GiocaButton" to="." method="_on_start_button_down"]
 [connection signal="button_down" from="MarginContainer/HBoxContainer/VBoxContainer/EsciButton" to="." method="_on_esci_button_down"]
