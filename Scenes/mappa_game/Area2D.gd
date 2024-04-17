@@ -12,9 +12,9 @@ func _on_body_exited(body):
 
 func _process(delta):
 	if entered == true:
-		#if Input.is_joy_button_pressed(JOY_AXIS_LEFT_X,JOY_BUTTON_X):
-		#	get_tree().change_scene_to_packed(Raccolta_rifiuti)
-
-		if Input.is_key_pressed(KEY_X):
+		if Input.is_joy_button_pressed(JOY_AXIS_LEFT_X,JOY_BUTTON_X):
 			get_tree().change_scene_to_packed(Raccolta_rifiuti)
+
+		#if Input.is_key_pressed(KEY_X):
+			#get_tree().change_scene_to_packed(Raccolta_rifiuti)
 
