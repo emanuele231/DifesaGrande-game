@@ -65,7 +65,7 @@ func punteggio_finale():
 	
 	var somma_punti = punti + puntiI + puntiP + puntiO
 	
-	$"../pannello punteggio finale/punti".text = str(somma_punti)
+	$"../pannello punteggio finale".text = str(somma_punti)
 		
 	
 	
