@@ -4,7 +4,7 @@ var dialog_sequence := [
 	"Bene, qui inizia il tuo primo compito!",
 	"Come puoi vedere la gente non ha interesse nel rispettare l'ambiente..",
 	"Ora tocca a te!",
-	"Dovrai raccogliere questi rifiuti entro 5 minuti",
+	"Dovrai raccogliere questi rifiuti entro 250 secondi",
 	"Prima che arrivino i clienti del bar",
 	"Come vedi hai una busta, che può contenere un massimo di 10 rifiuti",
 	"Per raccoglierli, ti basta avvicinarti ad essi e premere 'A'",

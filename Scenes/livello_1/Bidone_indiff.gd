@@ -53,6 +53,6 @@ func assegna():
 		puntiI += 4
 		puntiI_sing.set_puntiI(puntiI)
 		i_sing.set_indiff(indiff)
-		$"../player/Camera2D/CanvasLayer/punteggi/capienza_sacco".text = str(indiff)
+		$"../player/Camera2D/CanvasLayer/punteggi/indifferenziato_rimasto".text = str(indiff)
 	else:
 		stop1 = true
