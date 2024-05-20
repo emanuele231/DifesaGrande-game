@@ -26,7 +26,7 @@ func _on_body_exited(body):
 	entered = false
 
 func _process(delta):
-	if entered == true and Input.is_joy_button_pressed(JOY_BUTTON_A, JOY_BUTTON_B):
+	if entered == true and Input.is_key_label_pressed(KEY_C):
 		assegna()
 		if stop1 == false:
 			svuota_sacco()

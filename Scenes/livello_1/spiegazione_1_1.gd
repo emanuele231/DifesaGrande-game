@@ -7,10 +7,10 @@ var dialog_sequence := [
 	"Dovrai raccogliere questi rifiuti entro 250 secondi",
 	"Prima che arrivino i clienti del bar",
 	"Come vedi hai una busta, che può contenere un massimo di 10 rifiuti",
-	"Per raccoglierli, ti basta avvicinarti ad essi e premere 'A'",
+	"Per raccoglierli, ti basta avvicinarti ad essi e premere 'C'",
 	"Le icone a destra di diranno che tipo di rifiuto hai raccolto",
 	"Quando la tua busta sarà piena, recati ai bidoni della spazzatura",
-	"Lì, potrai gettare i rifiuti nei rispettivi cassonetti premendo 'B'",
+	"Lì, potrai gettare i rifiuti nei rispettivi cassonetti premendo 'C'",
 	"Allo scadere del tempo, il sindaco comunicherà il tuo punteggio",
 	"In bocca al lupo! E ricorda di differenziare!"
 ]  
