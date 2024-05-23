@@ -7,7 +7,7 @@ var dialog_sequence := [
 	"..ed il tuo lavoro ci sarà di grande aiuto",
 	"Per iniziare ti consiglio di guardarti attorno",
 	"una volta che ti sarai ambientato potrai svolgere il tuo primo compito",
-	"Utilizza la rotellina per muoverti",
+	"Utilizza la frecce direzionali per muoverti",
 	"e recati al punto segnalato con '!' per iniziare il minigioco",
 	"In bocca al lupo guardiano!"
 ]  
