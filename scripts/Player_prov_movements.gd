@@ -15,7 +15,7 @@ func _on_dialog_complete():
 
 func _process(delta):
 	var player_position = position
-	var min_limit = Vector2(-415, -2500) # -1060 oer la zona 1
+	var min_limit = Vector2(-415, -2690) # -1060 oer la zona 1
 	var max_limit = Vector2(880, 425) 
 
 	player_position.x = clamp(player_position.x, min_limit.x, max_limit.x)

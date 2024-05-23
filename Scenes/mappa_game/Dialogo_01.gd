@@ -72,13 +72,3 @@ func _input(event: InputEvent) -> void:
 				pass
 
 
-	#if event is InputEventMouseButton and event.is_pressed():
-		#if current_dialog_index < dialog_sequence.size():
-			#show_next_dialog()
-
-	# if event is InputEventJoypadButton and event.is_pressed():
-	#	if current_dialog_index < dialog_sequence.size():
-	#		show_next_dialog()
-	#	if Input.is_joy_button_pressed(JOY_BUTTON_A,JOY_BUTTON_X):
-	#		pass
-	# 
