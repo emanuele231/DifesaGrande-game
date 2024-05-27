@@ -56508,7 +56508,7 @@ offset_right = 412.0
 offset_bottom = 256.0
 script = ExtResource("10_2hwb5")
 
-[node name="Label" type="Label" parent="Player_prov/Sprite2D/Dialogo_02"]
+[node name="Label_02" type="Label" parent="Player_prov/Sprite2D/Dialogo_02"]
 layout_mode = 0
 offset_right = 785.0
 offset_bottom = 128.0
@@ -56999,5 +56999,5 @@ debug_color = Color(0.65098, 0.521569, 0, 0.419608)
 [connection signal="pressed" from="Player_prov/Sprite2D/Camera2D/CanvasLayer/pausa/back" to="Player_prov/Sprite2D/Camera2D/CanvasLayer/Control" method="_on_back_pressed"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
-[connection signal="body_entered" from="assessore-lvl-2/Area2D" to="Player_prov/Sprite2D/Dialogo_02" method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="assessore-lvl-2/Area2D" to="Player_prov/Sprite2D/Dialogo_02" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="assessore-lvl-2/Area2D" to="assessore-lvl-2" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="assessore-lvl-2/Area2D" to="assessore-lvl-2" method="_on_area_2d_body_exited"]
