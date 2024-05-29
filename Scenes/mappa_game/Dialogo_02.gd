@@ -15,8 +15,6 @@ var dialog_01_sequence := [
 var current_dialog_index: int = -1
 var player_script = preload("res://scripts/Player_prov_movements.gd")
 var player = player_script.new()
-var assessore_script = preload("res://Scenes/mappa_game/assessore-lvl-2.gd")
-var assessore = assessore_script.new()
 var _on_dialog_complete_callback = null
 var _assessore_2_callback = null
 var _label_01_callback = null
@@ -36,7 +34,7 @@ func enable_player_movement():
 
 		
 
-func show_next_dialog() -> void:
+func show_next_dialog():
 		$Label_02.show()
 		if current_dialog_index >= -1:
 			current_dialog_index += 1

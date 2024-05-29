@@ -1,4 +1,4 @@
-[gd_scene load_steps=205 format=3 uid="uid://dqiw7bvjmib4d"]
+[gd_scene load_steps=204 format=3 uid="uid://dqiw7bvjmib4d"]
 
 [ext_resource type="Script" path="res://scripts/Player_prov_movements.gd" id="1_qbu6o"]
 [ext_resource type="Texture2D" uid="uid://dw1xgygvvs0nx" path="res://personaggi/Assessore chara.png" id="2_elxb5"]
@@ -17,7 +17,6 @@
 [ext_resource type="FontFile" uid="uid://bu8074xritaxh" path="res://Scenes/menu/Fonts/Ravenwood-g5JR.ttf" id="8_l08so"]
 [ext_resource type="Texture2D" uid="uid://chubrd1ppjr5m" path="res://tileset_town_multi_v002.png" id="9_7lesg"]
 [ext_resource type="Texture2D" uid="uid://bvojxyurrfiwk" path="res://Scenes/menu/GUI/Tiny Wonder UI Free/pause_button.png" id="9_43dhy"]
-[ext_resource type="Script" path="res://Scenes/mappa_game/Dialogo_02.gd" id="10_2hwb5"]
 [ext_resource type="Texture2D" uid="uid://v277i0k103fk" path="res://lpc_bazaar_rework-1.0-1/preview.png" id="10_jjxf4"]
 [ext_resource type="Texture2D" uid="uid://chthickflak0n" path="res://Scenes/menu/GUI/Tiny Wonder UI Free/base free.png" id="11_u8vm0"]
 [ext_resource type="Texture2D" uid="uid://cqdqmimman685" path="res://lpc_bazaar_rework-1.0-1/PNG/32x32/bazaar_table-ns-red.png" id="11_uag7q"]
@@ -56955,18 +56954,22 @@ script = ExtResource("49_0pdio")
 [node name="Dialogo_02" type="Control" parent="assessore-lvl-2"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = -750.0
-offset_top = -1157.0
+offset_left = -707.0
+offset_top = -1184.0
 offset_right = 52.0
 offset_bottom = -1033.0
-script = ExtResource("10_2hwb5")
 
 [node name="Label_02" type="Label" parent="assessore-lvl-2/Dialogo_02"]
-layout_mode = 0
-offset_left = 10.0
-offset_top = 15.0
-offset_right = 795.0
-offset_bottom = 143.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.034
+anchor_top = 0.121
+anchor_right = 0.034
+anchor_bottom = 0.121
+offset_left = 48.194
+offset_top = -0.271002
+offset_right = 768.194
+offset_bottom = 111.729
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_qjp3e")
 text = "dialogo livello 2"
