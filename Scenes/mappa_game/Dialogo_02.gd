@@ -23,16 +23,7 @@ var _label_01_callback = null
 signal dialogo_completato
 
 var block: bool = false
-	
-	
-
-func _ready():
-	if assessore.can_talk == true:
-		$Label_02.hide()
-	
-
-
-
+		
 	
 func enable_player_movement():
 	emit_signal("dialogo_completato")
@@ -46,7 +37,6 @@ func enable_player_movement():
 		
 
 func show_next_dialog() -> void:
-	if assessore.can_talk == true:
 		$Label_02.show()
 		if current_dialog_index >= -1:
 			current_dialog_index += 1

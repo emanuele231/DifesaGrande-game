@@ -4,10 +4,9 @@ extends CharacterBody2D
 const SPEED = 70
 var can_move: bool = false
 var can_talk: bool = false
-signal now_you_can_talk
 
-func _ready():
-	get_parent().get_node("Player_prov/Sprite2D/Dialogo_02")._assessore_2_callback = self
+
+
 
 
 func _assessore_2():
@@ -23,9 +22,11 @@ func move(_delta):
 
 
 func _on_area_2d_body_entered(body: CharacterBody2D):
-		can_talk = true
-		emit_signal("now_you_can_talk")
+	can_talk = true
+	if Input.is_key_label_pressed(KEY_A):
+		$Dialogo_02/Label_02.show()
 		print("ok")
+
 
 
 func _on_area_2d_body_exited(body: CharacterBody2D):
