@@ -1,4 +1,4 @@
-[gd_scene load_steps=204 format=3 uid="uid://dqiw7bvjmib4d"]
+[gd_scene load_steps=209 format=3 uid="uid://dqiw7bvjmib4d"]
 
 [ext_resource type="Script" path="res://scripts/Player_prov_movements.gd" id="1_qbu6o"]
 [ext_resource type="Texture2D" uid="uid://dw1xgygvvs0nx" path="res://personaggi/Assessore chara.png" id="2_elxb5"]
@@ -49,7 +49,10 @@
 [ext_resource type="Texture2D" uid="uid://c2ydmt8ctkpwr" path="res://Scenes/menu/GUI/Tiny Wonder UI Free/buttons free.png" id="44_73a8n"]
 [ext_resource type="Texture2D" uid="uid://cqdhb1arogwd" path="res://assets acquistati/assets acquistati 2/MEGA BUNDLE 12 ASSET PACKS/MEGA BUNDLE 12 ASSET PACKS/SENGOKU ADVENTURE TILESET/DAY/FARM GROUND 3.png" id="47_ilajt"]
 [ext_resource type="Script" path="res://Scenes/mappa_game/assessore-lvl-2.gd" id="49_0pdio"]
+[ext_resource type="Script" path="res://Scenes/mappa_game/accesso_min_2.gd" id="49_41qfv"]
 [ext_resource type="Texture2D" uid="uid://bw2k82fmu64wt" path="res://personaggi/assessore (2).png" id="49_stxq3"]
+[ext_resource type="Texture2D" uid="uid://dro28d2w14ssr" path="res://pixel-art-animals-rabbit/RabbitAnimations/RabbitSprites.png" id="52_b4cw7"]
+[ext_resource type="Script" path="res://Scenes/mappa_game/lepre_fugge.gd" id="53_38046"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1vaym"]
 size = Vector2(11, 23)
@@ -56384,16 +56387,31 @@ region_rect = Rect2(3, 34, 42, 28)
 radius = 25.318
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kogwf"]
-radius = 31.0644
+radius = 42.0119
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qjp3e"]
 bg_color = Color(1, 1, 1, 0.607843)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.756863, 0.298039, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r5md7"]
 size = Vector2(11, 26)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7866l"]
 radius = 20.025
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vfjty"]
+size = Vector2(22.75, 16.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_an6ix"]
+radius = 34.1321
 
 [node name="MAPPA" type="Node2D"]
 position = Vector2(215, 296)
@@ -56520,10 +56538,10 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -61.0
-offset_top = -31.0
-offset_right = -61.0
-offset_bottom = -31.0
+offset_left = -59.0
+offset_top = -36.0
+offset_right = -59.0
+offset_bottom = -36.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("6_gmm3f")
@@ -56931,10 +56949,10 @@ shape = SubResource("CircleShape2D_bckrd")
 debug_color = Color(0.976471, 0, 0.4, 0.419608)
 
 [node name="min-2" type="Area2D" parent="."]
-position = Vector2(-366, -2075)
+position = Vector2(-347, -2048)
+script = ExtResource("49_41qfv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="min-2"]
-position = Vector2(19, 30)
 shape = SubResource("CircleShape2D_kogwf")
 debug_color = Color(0.996078, 0, 0.164706, 0.419608)
 
@@ -56954,10 +56972,10 @@ script = ExtResource("49_0pdio")
 [node name="Dialogo_02" type="Control" parent="assessore-lvl-2"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = -707.0
-offset_top = -1184.0
-offset_right = 52.0
-offset_bottom = -1033.0
+offset_left = -593.0
+offset_top = -1178.0
+offset_right = -144.0
+offset_bottom = -1072.0
 
 [node name="Label_02" type="Label" parent="assessore-lvl-2/Dialogo_02"]
 layout_mode = 1
@@ -56966,10 +56984,10 @@ anchor_left = 0.034
 anchor_top = 0.121
 anchor_right = 0.034
 anchor_bottom = 0.121
-offset_left = 48.194
-offset_top = -0.271002
-offset_right = 768.194
-offset_bottom = 111.729
+offset_left = 77.734
+offset_top = 29.174
+offset_right = 555.734
+offset_bottom = 127.174
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_qjp3e")
 text = "dialogo livello 2"
@@ -56982,7 +57000,20 @@ scale = Vector2(0.609375, 0.59375)
 texture = ExtResource("49_stxq3")
 hframes = 13
 vframes = 21
-frame = 39
+frame = 143
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="assessore-lvl-2/Sprite2D"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_xua6f")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="assessore-lvl-2/Sprite2D"]
+tree_root = SubResource("AnimationNodeStateMachine_q8sy2")
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/idle/blend_position = Vector2(0, 0)
+parameters/walk/blend_position = Vector2(-0.00467288, 0.988024)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="assessore-lvl-2"]
 position = Vector2(-361.5, -1203)
@@ -56996,6 +57027,60 @@ position = Vector2(1, 1)
 shape = SubResource("CircleShape2D_7866l")
 debug_color = Color(0.65098, 0.521569, 0, 0.419608)
 
+[node name="Lepre-01" type="CharacterBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Lepre-01"]
+position = Vector2(18.25, -928)
+scale = Vector2(0.689189, 0.6875)
+texture = ExtResource("52_b4cw7")
+hframes = 3
+vframes = 4
+frame = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lepre-01"]
+position = Vector2(16, -928)
+shape = SubResource("RectangleShape2D_vfjty")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="Scappa" type="Area2D" parent="Lepre-01"]
+script = ExtResource("53_38046")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lepre-01/Scappa"]
+position = Vector2(16, -928)
+shape = SubResource("CircleShape2D_an6ix")
+debug_color = Color(0.968627, 0.0862745, 0.388235, 0.419608)
+
+[node name="Lepre-02" type="CharacterBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Lepre-02"]
+position = Vector2(92.75, -920)
+scale = Vector2(0.716216, 0.75)
+texture = ExtResource("52_b4cw7")
+hframes = 3
+vframes = 4
+frame = 6
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Lepre-02"]
+position = Vector2(91, -919)
+shape = SubResource("RectangleShape2D_vfjty")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="Lepre-03" type="CharacterBody2D" parent="."]
+position = Vector2(-2, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Lepre-03"]
+position = Vector2(26.75, -872.5)
+scale = Vector2(0.824324, 0.84375)
+texture = ExtResource("52_b4cw7")
+hframes = 3
+vframes = 4
+frame = 9
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Lepre-03"]
+position = Vector2(26, -872)
+shape = SubResource("RectangleShape2D_vfjty")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
 [connection signal="button_down" from="Player_prov/Sprite2D/Camera2D/CanvasLayer/Control/Button" to="Player_prov/Sprite2D/Camera2D/CanvasLayer/Control" method="_on_button_button_down"]
 [connection signal="pressed" from="Player_prov/Sprite2D/Camera2D/CanvasLayer/Control/Button" to="Player_prov/Sprite2D/Camera2D/CanvasLayer/Control" method="_on_button_pressed"]
 [connection signal="button_down" from="Player_prov/Sprite2D/Camera2D/CanvasLayer/pausa/riprendi" to="Player_prov/Sprite2D/Camera2D/CanvasLayer/pausa" method="_on_riprendi_button_down"]
@@ -57006,3 +57091,5 @@ debug_color = Color(0.65098, 0.521569, 0, 0.419608)
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
 [connection signal="body_entered" from="assessore-lvl-2/Area2D" to="assessore-lvl-2" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="assessore-lvl-2/Area2D" to="assessore-lvl-2" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="Lepre-01/Scappa" to="Lepre-01/Scappa" method="_on_body_entered"]
+[connection signal="body_exited" from="Lepre-01/Scappa" to="Lepre-01/Scappa" method="_on_body_exited"]

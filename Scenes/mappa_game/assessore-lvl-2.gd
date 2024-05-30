@@ -17,8 +17,12 @@ var dialogo = dialogo_script.new()
 var current_dialog_index: int = -1
 @onready var dialog_label = $Dialogo_02/Label_02
 
+@onready var anim_ass = $Sprite2D/AnimationTree
+@onready var animazione = anim_ass.get("parameters/playback")
+
 func _ready():
 	dialog_label.hide()
+	dialog_label.z_index = 3
 
 
 func _assessore_2():
@@ -30,6 +34,8 @@ func _physics_process(_delta):
 func move(_delta):
 	if can_move == true:
 		var new_position = position + Vector2.DOWN * SPEED * _delta
+		anim_ass.set("parameters/walk/blend_position", new_position)
+		animazione.travel("walk")
 		position = new_position
 
 
@@ -58,5 +64,6 @@ func now_you_can_talk():
 		else:
 			if dialog_label:
 				dialog_label.free()
+				$Area2D.free()
 				can_move = true
 			current_dialog_index = -1
