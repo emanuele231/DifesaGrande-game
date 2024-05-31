@@ -57000,7 +57000,7 @@ scale = Vector2(0.609375, 0.59375)
 texture = ExtResource("49_stxq3")
 hframes = 13
 vframes = 21
-frame = 143
+frame = 131
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="assessore-lvl-2/Sprite2D"]
 root_node = NodePath("../..")
@@ -57028,6 +57028,7 @@ shape = SubResource("CircleShape2D_7866l")
 debug_color = Color(0.65098, 0.521569, 0, 0.419608)
 
 [node name="Lepre-01" type="CharacterBody2D" parent="."]
+script = ExtResource("53_38046")
 
 [node name="Sprite2D" type="Sprite2D" parent="Lepre-01"]
 position = Vector2(18.25, -928)
@@ -57043,7 +57044,6 @@ shape = SubResource("RectangleShape2D_vfjty")
 debug_color = Color(0, 0.6, 0.701961, 0.419608)
 
 [node name="Scappa" type="Area2D" parent="Lepre-01"]
-script = ExtResource("53_38046")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Lepre-01/Scappa"]
 position = Vector2(16, -928)
@@ -57051,35 +57051,52 @@ shape = SubResource("CircleShape2D_an6ix")
 debug_color = Color(0.968627, 0.0862745, 0.388235, 0.419608)
 
 [node name="Lepre-02" type="CharacterBody2D" parent="."]
+position = Vector2(68, -15)
+script = ExtResource("53_38046")
 
 [node name="Sprite2D" type="Sprite2D" parent="Lepre-02"]
-position = Vector2(92.75, -920)
-scale = Vector2(0.716216, 0.75)
+position = Vector2(18.25, -928)
+scale = Vector2(0.689189, 0.6875)
 texture = ExtResource("52_b4cw7")
 hframes = 3
 vframes = 4
-frame = 6
+frame = 3
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Lepre-02"]
-position = Vector2(91, -919)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lepre-02"]
+position = Vector2(16, -928)
 shape = SubResource("RectangleShape2D_vfjty")
 debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="Scappa" type="Area2D" parent="Lepre-02"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lepre-02/Scappa"]
+position = Vector2(16, -928)
+shape = SubResource("CircleShape2D_an6ix")
+debug_color = Color(0.968627, 0.0862745, 0.388235, 0.419608)
 
 [node name="Lepre-03" type="CharacterBody2D" parent="."]
-position = Vector2(-2, 1)
+position = Vector2(51, 60)
+script = ExtResource("53_38046")
 
 [node name="Sprite2D" type="Sprite2D" parent="Lepre-03"]
-position = Vector2(26.75, -872.5)
-scale = Vector2(0.824324, 0.84375)
+position = Vector2(18.25, -928)
+scale = Vector2(0.689189, 0.6875)
 texture = ExtResource("52_b4cw7")
 hframes = 3
 vframes = 4
-frame = 9
+frame = 3
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Lepre-03"]
-position = Vector2(26, -872)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lepre-03"]
+position = Vector2(16, -928)
 shape = SubResource("RectangleShape2D_vfjty")
 debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="Scappa" type="Area2D" parent="Lepre-03"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lepre-03/Scappa"]
+position = Vector2(16, -928)
+shape = SubResource("CircleShape2D_an6ix")
+debug_color = Color(0.968627, 0.0862745, 0.388235, 0.419608)
 
 [connection signal="button_down" from="Player_prov/Sprite2D/Camera2D/CanvasLayer/Control/Button" to="Player_prov/Sprite2D/Camera2D/CanvasLayer/Control" method="_on_button_button_down"]
 [connection signal="pressed" from="Player_prov/Sprite2D/Camera2D/CanvasLayer/Control/Button" to="Player_prov/Sprite2D/Camera2D/CanvasLayer/Control" method="_on_button_pressed"]
@@ -57091,5 +57108,9 @@ debug_color = Color(0, 0.6, 0.701961, 0.419608)
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
 [connection signal="body_entered" from="assessore-lvl-2/Area2D" to="assessore-lvl-2" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="assessore-lvl-2/Area2D" to="assessore-lvl-2" method="_on_area_2d_body_exited"]
-[connection signal="body_entered" from="Lepre-01/Scappa" to="Lepre-01/Scappa" method="_on_body_entered"]
-[connection signal="body_exited" from="Lepre-01/Scappa" to="Lepre-01/Scappa" method="_on_body_exited"]
+[connection signal="body_entered" from="Lepre-01/Scappa" to="Lepre-01" method="_on_scappa_body_entered"]
+[connection signal="body_exited" from="Lepre-01/Scappa" to="Lepre-01" method="_on_scappa_body_exited"]
+[connection signal="body_entered" from="Lepre-02/Scappa" to="Lepre-02" method="_on_scappa_body_entered"]
+[connection signal="body_exited" from="Lepre-02/Scappa" to="Lepre-02" method="_on_scappa_body_exited"]
+[connection signal="body_entered" from="Lepre-03/Scappa" to="Lepre-03" method="_on_scappa_body_entered"]
+[connection signal="body_exited" from="Lepre-03/Scappa" to="Lepre-03" method="_on_scappa_body_exited"]
