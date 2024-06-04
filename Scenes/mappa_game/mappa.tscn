@@ -57000,7 +57000,7 @@ scale = Vector2(0.609375, 0.59375)
 texture = ExtResource("49_stxq3")
 hframes = 13
 vframes = 21
-frame = 143
+frame = 131
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="assessore-lvl-2/Sprite2D"]
 root_node = NodePath("../..")
@@ -57028,6 +57028,7 @@ shape = SubResource("CircleShape2D_7866l")
 debug_color = Color(0.65098, 0.521569, 0, 0.419608)
 
 [node name="Lepre-01" type="CharacterBody2D" parent="."]
+script = ExtResource("53_38046")
 
 [node name="Sprite2D" type="Sprite2D" parent="Lepre-01"]
 position = Vector2(18.25, -928)
@@ -57043,7 +57044,6 @@ shape = SubResource("RectangleShape2D_vfjty")
 debug_color = Color(0, 0.6, 0.701961, 0.419608)
 
 [node name="Scappa" type="Area2D" parent="Lepre-01"]
-script = ExtResource("53_38046")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Lepre-01/Scappa"]
 position = Vector2(16, -928)
@@ -57051,35 +57051,340 @@ shape = SubResource("CircleShape2D_an6ix")
 debug_color = Color(0.968627, 0.0862745, 0.388235, 0.419608)
 
 [node name="Lepre-02" type="CharacterBody2D" parent="."]
+position = Vector2(68, -15)
+script = ExtResource("53_38046")
 
 [node name="Sprite2D" type="Sprite2D" parent="Lepre-02"]
-position = Vector2(92.75, -920)
-scale = Vector2(0.716216, 0.75)
+position = Vector2(18.25, -928)
+scale = Vector2(0.689189, 0.6875)
 texture = ExtResource("52_b4cw7")
 hframes = 3
 vframes = 4
-frame = 6
+frame = 3
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Lepre-02"]
-position = Vector2(91, -919)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lepre-02"]
+position = Vector2(16, -928)
 shape = SubResource("RectangleShape2D_vfjty")
 debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="Scappa" type="Area2D" parent="Lepre-02"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lepre-02/Scappa"]
+position = Vector2(16, -928)
+shape = SubResource("CircleShape2D_an6ix")
+debug_color = Color(0.968627, 0.0862745, 0.388235, 0.419608)
 
 [node name="Lepre-03" type="CharacterBody2D" parent="."]
-position = Vector2(-2, 1)
+position = Vector2(51, 60)
+script = ExtResource("53_38046")
 
 [node name="Sprite2D" type="Sprite2D" parent="Lepre-03"]
-position = Vector2(26.75, -872.5)
-scale = Vector2(0.824324, 0.84375)
+position = Vector2(18.25, -928)
+scale = Vector2(0.689189, 0.6875)
 texture = ExtResource("52_b4cw7")
 hframes = 3
 vframes = 4
-frame = 9
+frame = 3
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Lepre-03"]
-position = Vector2(26, -872)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lepre-03"]
+position = Vector2(16, -928)
 shape = SubResource("RectangleShape2D_vfjty")
 debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="Scappa" type="Area2D" parent="Lepre-03"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lepre-03/Scappa"]
+position = Vector2(16, -928)
+shape = SubResource("CircleShape2D_an6ix")
+debug_color = Color(0.968627, 0.0862745, 0.388235, 0.419608)
+
+[node name="Lepre-04" type="CharacterBody2D" parent="."]
+position = Vector2(60, -295)
+script = ExtResource("53_38046")
+
+[node name="Sprite2D" type="Sprite2D" parent="Lepre-04"]
+position = Vector2(18.25, -928)
+scale = Vector2(0.689189, 0.6875)
+texture = ExtResource("52_b4cw7")
+hframes = 3
+vframes = 4
+frame = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lepre-04"]
+position = Vector2(16, -928)
+shape = SubResource("RectangleShape2D_vfjty")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="Scappa" type="Area2D" parent="Lepre-04"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lepre-04/Scappa"]
+position = Vector2(16, -928)
+shape = SubResource("CircleShape2D_an6ix")
+debug_color = Color(0.968627, 0.0862745, 0.388235, 0.419608)
+
+[node name="Lepre-05" type="CharacterBody2D" parent="."]
+position = Vector2(154, -350)
+script = ExtResource("53_38046")
+
+[node name="Sprite2D" type="Sprite2D" parent="Lepre-05"]
+position = Vector2(18.25, -928)
+scale = Vector2(0.689189, 0.6875)
+texture = ExtResource("52_b4cw7")
+hframes = 3
+vframes = 4
+frame = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lepre-05"]
+position = Vector2(16, -928)
+shape = SubResource("RectangleShape2D_vfjty")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="Scappa" type="Area2D" parent="Lepre-05"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lepre-05/Scappa"]
+position = Vector2(16, -928)
+shape = SubResource("CircleShape2D_an6ix")
+debug_color = Color(0.968627, 0.0862745, 0.388235, 0.419608)
+
+[node name="Lepre-06" type="CharacterBody2D" parent="."]
+position = Vector2(404, 72)
+script = ExtResource("53_38046")
+
+[node name="Sprite2D" type="Sprite2D" parent="Lepre-06"]
+position = Vector2(18.25, -928)
+scale = Vector2(0.689189, 0.6875)
+texture = ExtResource("52_b4cw7")
+hframes = 3
+vframes = 4
+frame = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lepre-06"]
+position = Vector2(16, -928)
+shape = SubResource("RectangleShape2D_vfjty")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="Scappa" type="Area2D" parent="Lepre-06"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lepre-06/Scappa"]
+position = Vector2(16, -928)
+shape = SubResource("CircleShape2D_an6ix")
+debug_color = Color(0.968627, 0.0862745, 0.388235, 0.419608)
+
+[node name="Lepre-07" type="CharacterBody2D" parent="."]
+position = Vector2(580, -451)
+script = ExtResource("53_38046")
+
+[node name="Sprite2D" type="Sprite2D" parent="Lepre-07"]
+position = Vector2(18.25, -928)
+scale = Vector2(0.689189, 0.6875)
+texture = ExtResource("52_b4cw7")
+hframes = 3
+vframes = 4
+frame = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lepre-07"]
+position = Vector2(16, -928)
+shape = SubResource("RectangleShape2D_vfjty")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="Scappa" type="Area2D" parent="Lepre-07"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lepre-07/Scappa"]
+position = Vector2(16, -928)
+shape = SubResource("CircleShape2D_an6ix")
+debug_color = Color(0.968627, 0.0862745, 0.388235, 0.419608)
+
+[node name="Lepre-08" type="CharacterBody2D" parent="."]
+position = Vector2(507, -503)
+script = ExtResource("53_38046")
+
+[node name="Sprite2D" type="Sprite2D" parent="Lepre-08"]
+position = Vector2(18.25, -928)
+scale = Vector2(0.689189, 0.6875)
+texture = ExtResource("52_b4cw7")
+hframes = 3
+vframes = 4
+frame = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lepre-08"]
+position = Vector2(16, -928)
+shape = SubResource("RectangleShape2D_vfjty")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="Scappa" type="Area2D" parent="Lepre-08"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lepre-08/Scappa"]
+position = Vector2(16, -928)
+shape = SubResource("CircleShape2D_an6ix")
+debug_color = Color(0.968627, 0.0862745, 0.388235, 0.419608)
+
+[node name="Lepre-09" type="CharacterBody2D" parent="."]
+position = Vector2(-81, -439)
+script = ExtResource("53_38046")
+
+[node name="Sprite2D" type="Sprite2D" parent="Lepre-09"]
+position = Vector2(18.25, -928)
+scale = Vector2(0.689189, 0.6875)
+texture = ExtResource("52_b4cw7")
+hframes = 3
+vframes = 4
+frame = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lepre-09"]
+position = Vector2(16, -928)
+shape = SubResource("RectangleShape2D_vfjty")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="Scappa" type="Area2D" parent="Lepre-09"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lepre-09/Scappa"]
+position = Vector2(16, -928)
+shape = SubResource("CircleShape2D_an6ix")
+debug_color = Color(0.968627, 0.0862745, 0.388235, 0.419608)
+
+[node name="Lepre-10" type="CharacterBody2D" parent="."]
+position = Vector2(-50, -791)
+script = ExtResource("53_38046")
+
+[node name="Sprite2D" type="Sprite2D" parent="Lepre-10"]
+position = Vector2(18.25, -928)
+scale = Vector2(0.689189, 0.6875)
+texture = ExtResource("52_b4cw7")
+hframes = 3
+vframes = 4
+frame = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lepre-10"]
+position = Vector2(16, -928)
+shape = SubResource("RectangleShape2D_vfjty")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="Scappa" type="Area2D" parent="Lepre-10"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lepre-10/Scappa"]
+position = Vector2(16, -928)
+shape = SubResource("CircleShape2D_an6ix")
+debug_color = Color(0.968627, 0.0862745, 0.388235, 0.419608)
+
+[node name="Lepre-11" type="CharacterBody2D" parent="."]
+position = Vector2(-545, -767)
+script = ExtResource("53_38046")
+
+[node name="Sprite2D" type="Sprite2D" parent="Lepre-11"]
+position = Vector2(18.25, -928)
+scale = Vector2(0.689189, 0.6875)
+texture = ExtResource("52_b4cw7")
+hframes = 3
+vframes = 4
+frame = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lepre-11"]
+position = Vector2(16, -928)
+shape = SubResource("RectangleShape2D_vfjty")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="Scappa" type="Area2D" parent="Lepre-11"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lepre-11/Scappa"]
+position = Vector2(16, -928)
+shape = SubResource("CircleShape2D_an6ix")
+debug_color = Color(0.968627, 0.0862745, 0.388235, 0.419608)
+
+[node name="Lepre-12" type="CharacterBody2D" parent="."]
+position = Vector2(656, -853)
+script = ExtResource("53_38046")
+
+[node name="Sprite2D" type="Sprite2D" parent="Lepre-12"]
+position = Vector2(18.25, -928)
+scale = Vector2(0.689189, 0.6875)
+texture = ExtResource("52_b4cw7")
+hframes = 3
+vframes = 4
+frame = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lepre-12"]
+position = Vector2(16, -928)
+shape = SubResource("RectangleShape2D_vfjty")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="Scappa" type="Area2D" parent="Lepre-12"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lepre-12/Scappa"]
+position = Vector2(16, -928)
+shape = SubResource("CircleShape2D_an6ix")
+debug_color = Color(0.968627, 0.0862745, 0.388235, 0.419608)
+
+[node name="Lepre-13" type="CharacterBody2D" parent="."]
+position = Vector2(475, -1275)
+script = ExtResource("53_38046")
+
+[node name="Sprite2D" type="Sprite2D" parent="Lepre-13"]
+position = Vector2(18.25, -928)
+scale = Vector2(0.689189, 0.6875)
+texture = ExtResource("52_b4cw7")
+hframes = 3
+vframes = 4
+frame = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lepre-13"]
+position = Vector2(16, -928)
+shape = SubResource("RectangleShape2D_vfjty")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="Scappa" type="Area2D" parent="Lepre-13"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lepre-13/Scappa"]
+position = Vector2(16, -928)
+shape = SubResource("CircleShape2D_an6ix")
+debug_color = Color(0.968627, 0.0862745, 0.388235, 0.419608)
+
+[node name="Lepre-14" type="CharacterBody2D" parent="."]
+position = Vector2(-537, -959)
+script = ExtResource("53_38046")
+
+[node name="Sprite2D" type="Sprite2D" parent="Lepre-14"]
+position = Vector2(18.25, -928)
+scale = Vector2(0.689189, 0.6875)
+texture = ExtResource("52_b4cw7")
+hframes = 3
+vframes = 4
+frame = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lepre-14"]
+position = Vector2(16, -928)
+shape = SubResource("RectangleShape2D_vfjty")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="Scappa" type="Area2D" parent="Lepre-14"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lepre-14/Scappa"]
+position = Vector2(16, -928)
+shape = SubResource("CircleShape2D_an6ix")
+debug_color = Color(0.968627, 0.0862745, 0.388235, 0.419608)
+
+[node name="Lepre-15" type="CharacterBody2D" parent="."]
+position = Vector2(-241, -1263)
+script = ExtResource("53_38046")
+
+[node name="Sprite2D" type="Sprite2D" parent="Lepre-15"]
+position = Vector2(18.25, -928)
+scale = Vector2(0.689189, 0.6875)
+texture = ExtResource("52_b4cw7")
+hframes = 3
+vframes = 4
+frame = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lepre-15"]
+position = Vector2(16, -928)
+shape = SubResource("RectangleShape2D_vfjty")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="Scappa" type="Area2D" parent="Lepre-15"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lepre-15/Scappa"]
+position = Vector2(16, -928)
+shape = SubResource("CircleShape2D_an6ix")
+debug_color = Color(0.968627, 0.0862745, 0.388235, 0.419608)
 
 [connection signal="button_down" from="Player_prov/Sprite2D/Camera2D/CanvasLayer/Control/Button" to="Player_prov/Sprite2D/Camera2D/CanvasLayer/Control" method="_on_button_button_down"]
 [connection signal="pressed" from="Player_prov/Sprite2D/Camera2D/CanvasLayer/Control/Button" to="Player_prov/Sprite2D/Camera2D/CanvasLayer/Control" method="_on_button_pressed"]
@@ -57091,5 +57396,33 @@ debug_color = Color(0, 0.6, 0.701961, 0.419608)
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
 [connection signal="body_entered" from="assessore-lvl-2/Area2D" to="assessore-lvl-2" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="assessore-lvl-2/Area2D" to="assessore-lvl-2" method="_on_area_2d_body_exited"]
-[connection signal="body_entered" from="Lepre-01/Scappa" to="Lepre-01/Scappa" method="_on_body_entered"]
-[connection signal="body_exited" from="Lepre-01/Scappa" to="Lepre-01/Scappa" method="_on_body_exited"]
+[connection signal="body_entered" from="Lepre-01/Scappa" to="Lepre-01" method="_on_scappa_body_entered"]
+[connection signal="body_exited" from="Lepre-01/Scappa" to="Lepre-01" method="_on_scappa_body_exited"]
+[connection signal="body_entered" from="Lepre-02/Scappa" to="Lepre-02" method="_on_scappa_body_entered"]
+[connection signal="body_exited" from="Lepre-02/Scappa" to="Lepre-02" method="_on_scappa_body_exited"]
+[connection signal="body_entered" from="Lepre-03/Scappa" to="Lepre-03" method="_on_scappa_body_entered"]
+[connection signal="body_exited" from="Lepre-03/Scappa" to="Lepre-03" method="_on_scappa_body_exited"]
+[connection signal="body_entered" from="Lepre-04/Scappa" to="Lepre-04" method="_on_scappa_body_entered"]
+[connection signal="body_exited" from="Lepre-04/Scappa" to="Lepre-04" method="_on_scappa_body_exited"]
+[connection signal="body_entered" from="Lepre-05/Scappa" to="Lepre-05" method="_on_scappa_body_entered"]
+[connection signal="body_exited" from="Lepre-05/Scappa" to="Lepre-05" method="_on_scappa_body_exited"]
+[connection signal="body_entered" from="Lepre-06/Scappa" to="Lepre-06" method="_on_scappa_body_entered"]
+[connection signal="body_exited" from="Lepre-06/Scappa" to="Lepre-06" method="_on_scappa_body_exited"]
+[connection signal="body_entered" from="Lepre-07/Scappa" to="Lepre-07" method="_on_scappa_body_entered"]
+[connection signal="body_exited" from="Lepre-07/Scappa" to="Lepre-07" method="_on_scappa_body_exited"]
+[connection signal="body_entered" from="Lepre-08/Scappa" to="Lepre-08" method="_on_scappa_body_entered"]
+[connection signal="body_exited" from="Lepre-08/Scappa" to="Lepre-08" method="_on_scappa_body_exited"]
+[connection signal="body_entered" from="Lepre-09/Scappa" to="Lepre-09" method="_on_scappa_body_entered"]
+[connection signal="body_exited" from="Lepre-09/Scappa" to="Lepre-09" method="_on_scappa_body_exited"]
+[connection signal="body_entered" from="Lepre-10/Scappa" to="Lepre-10" method="_on_scappa_body_entered"]
+[connection signal="body_exited" from="Lepre-10/Scappa" to="Lepre-10" method="_on_scappa_body_exited"]
+[connection signal="body_entered" from="Lepre-11/Scappa" to="Lepre-11" method="_on_scappa_body_entered"]
+[connection signal="body_exited" from="Lepre-11/Scappa" to="Lepre-11" method="_on_scappa_body_exited"]
+[connection signal="body_entered" from="Lepre-12/Scappa" to="Lepre-12" method="_on_scappa_body_entered"]
+[connection signal="body_exited" from="Lepre-12/Scappa" to="Lepre-12" method="_on_scappa_body_exited"]
+[connection signal="body_entered" from="Lepre-13/Scappa" to="Lepre-13" method="_on_scappa_body_entered"]
+[connection signal="body_exited" from="Lepre-13/Scappa" to="Lepre-13" method="_on_scappa_body_exited"]
+[connection signal="body_entered" from="Lepre-14/Scappa" to="Lepre-14" method="_on_scappa_body_entered"]
+[connection signal="body_exited" from="Lepre-14/Scappa" to="Lepre-14" method="_on_scappa_body_exited"]
+[connection signal="body_entered" from="Lepre-15/Scappa" to="Lepre-15" method="_on_scappa_body_entered"]
+[connection signal="body_exited" from="Lepre-15/Scappa" to="Lepre-15" method="_on_scappa_body_exited"]
