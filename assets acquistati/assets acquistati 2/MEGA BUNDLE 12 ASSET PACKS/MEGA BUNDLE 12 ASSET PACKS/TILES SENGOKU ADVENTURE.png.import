@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://con2c3m6inlxq"
-path="res://.godot/imported/TILES SENGOKU ADVENTURE.png-0effa6e235a631d13ab4878208692272.ctex"
+path="res://.godot/imported/TILES SENGOKU ADVENTURE.png-88f882bad472a4395f366e8d8466b03a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets acquistati/assets acquistati 2/MEGA BUNDLE 12 ASSET PACKS/MEGA BUNDLE 12 ASSET PACKS/SENGOKU ADVENTURE TILESET/TILES SENGOKU ADVENTURE.png"
-dest_files=["res://.godot/imported/TILES SENGOKU ADVENTURE.png-0effa6e235a631d13ab4878208692272.ctex"]
+source_file="res://assets acquistati/assets acquistati 2/MEGA BUNDLE 12 ASSET PACKS/MEGA BUNDLE 12 ASSET PACKS/TILES SENGOKU ADVENTURE.png"
+dest_files=["res://.godot/imported/TILES SENGOKU ADVENTURE.png-88f882bad472a4395f366e8d8466b03a.ctex"]
 
 [params]
 
