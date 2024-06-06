@@ -8,10 +8,10 @@ var can_move: bool = false
 
 
 func _ready():
-	get_parent().get_node("player/Sprite2D/dialogo_min_2")._assessore_1_callback = self
+	get_parent().get_node("player/Sprite2D/dialogo_min_2")._assessore_2_callback = self
 
 
-func _assessore_1():
+func _assessore_2():
 	can_move = true
 
 func _physics_process(_delta):

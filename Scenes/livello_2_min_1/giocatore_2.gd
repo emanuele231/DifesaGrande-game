@@ -8,17 +8,17 @@ var can_move: bool = false
 @onready var animazioni = anim_tree.get("parameters/playback")
 
 func _ready():
-	get_node("Sprite2D/dialogo_min_2")._on_player_1_callback = self
+	get_node("Sprite2D/dialogo_min_2")._on_player_2_callback = self
 
-func _on_player_1():
+func _on_player_2():
 	can_move = true
 
 
 
 func _process(delta):
 	var player_position = position
-	var min_limit = Vector2(-520, -755)  # Imposta i limiti minimi della mappa
-	var max_limit = Vector2(860, 905) 
+	var min_limit = Vector2(-200, -1180)  # Imposta i limiti minimi della mappa
+	var max_limit = Vector2(1400, 800) 
 
 	player_position.x = clamp(player_position.x, min_limit.x, max_limit.x)
 	player_position.y = clamp(player_position.y, min_limit.y, max_limit.y)

@@ -12,7 +12,6 @@ func _on_body_exited(body):
 	
 func _process(delta):
 	if entered == true:
-		print("ok")
 		if Input.is_joy_button_pressed(JOY_AXIS_LEFT_X,JOY_BUTTON_X) or Input.is_action_just_pressed("ui_accept"):
 			get_tree().change_scene_to_packed(Caccia_al_Vandalo)
 

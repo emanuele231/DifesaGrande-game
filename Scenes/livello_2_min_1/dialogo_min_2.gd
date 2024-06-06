@@ -13,12 +13,12 @@ var dialog_sequence := [
 ]  
 
 var current_dialog_index: int = -1
-var player_script_1 = preload("res://Scenes/livello_2_min_1/giocatore_2.gd")
-var player_1 = player_script_1.new()
-var _on_player_1_callback = null
-var assessore_script_1 = preload("res://Scenes/livello_2_min_1/assessore_2.gd")
-var assessore_1 = assessore_script_1.new()
-var _assessore_1_callback = null
+var player_script_2 = preload("res://Scenes/livello_2_min_1/giocatore_2.gd")
+var player_2 = player_script_2.new()
+var _on_player_2_callback = null
+var assessore_script_2 = preload("res://Scenes/livello_2_min_1/assessore_2.gd")
+var assessore_2 = assessore_script_2.new()
+var _assessore_2_callback = null
 var punteggi_script = preload("res://Scenes/livello_1/punteggi.gd")
 var punteggi = punteggi_script.new()
 var _timer_callback = null
@@ -39,11 +39,10 @@ func _ready():
 	
 func enable_player_movement():
 	emit_signal("spiegazione_chiusa")
-	if _on_player_1_callback != null and _assessore_1_callback != null and _timer_callback != null: #and _label_02_callback != null:
-		_on_player_1_callback._on_player_1()
-		_assessore_1_callback._assessore_1()
-		_timer_callback._timer()
-		#_label_02_callback._on_dialogo_completo()
+	if _on_player_2_callback != null and _assessore_2_callback != null:
+		_on_player_2_callback._on_player_2()
+		_assessore_2_callback._assessore_2()
+
 		
 
 
@@ -58,8 +57,8 @@ func show_next_dialog() -> void:
 				$Label.text = dialog_sequence[current_dialog_index]
 				$Label.show()
 				$Label.z_index = 2
-				player_1.can_move = false
-				assessore_1.can_move = false
+				player_2.can_move = false
+				assessore_2.can_move = false
 			else:
 				$Label.free()
 				enable_player_movement()
