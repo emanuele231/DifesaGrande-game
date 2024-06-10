@@ -48,9 +48,3 @@ func move():
 		move_and_slide()
 
 
-
-
-
-
-
-
