@@ -13,7 +13,6 @@
 [ext_resource type="Texture2D" uid="uid://co17f5xgdgvyh" path="res://assets acquistati/assets acquistati 2/MEGA BUNDLE 12 ASSET PACKS/MEGA BUNDLE 12 ASSET PACKS/HARVEST TINY FARM/TREES/TREE 3.png" id="7_3av7p"]
 [ext_resource type="Theme" uid="uid://bw0dlvq75ti5t" path="res://Scenes/livello_1/ThemesGUI/DialoghiTheme.tres" id="7_e8ulp"]
 [ext_resource type="Script" path="res://Scenes/mappa_game/pannello-pausa.gd" id="7_qg7m8"]
-[ext_resource type="Texture2D" uid="uid://con2c3m6inlxq" path="res://assets acquistati/assets acquistati 2/MEGA BUNDLE 12 ASSET PACKS/MEGA BUNDLE 12 ASSET PACKS/SENGOKU ADVENTURE TILESET/TILES SENGOKU ADVENTURE.png" id="8_2d2wb"]
 [ext_resource type="FontFile" uid="uid://bu8074xritaxh" path="res://Scenes/menu/Fonts/Ravenwood-g5JR.ttf" id="8_l08so"]
 [ext_resource type="Texture2D" uid="uid://chubrd1ppjr5m" path="res://tileset_town_multi_v002.png" id="9_7lesg"]
 [ext_resource type="Texture2D" uid="uid://bvojxyurrfiwk" path="res://Scenes/menu/GUI/Tiny Wonder UI Free/pause_button.png" id="9_43dhy"]
@@ -28,6 +27,7 @@
 [ext_resource type="Texture2D" uid="uid://53wu7ggy1wm0" path="res://gdm-2d-top-down-180-pixel-art-vehicles/2D Top down 180 pixel vehicles/2D Top Down 180 Vehicles ( originale size ).png" id="16_r8hy7"]
 [ext_resource type="Texture2D" uid="uid://dyip1y5i3fpdk" path="res://Modern_Exteriors_RPG_Maker_MV_v31.7/Modern_Exteriors_RPG_Maker_MV/Tileset_17_MV.png" id="17_yfwqq"]
 [ext_resource type="Texture2D" uid="uid://dwy8h1rj0k0cl" path="res://Modern_Exteriors_RPG_Maker_MV_v31.7/Modern_Exteriors_RPG_Maker_MV/Tileset_22_MV.png" id="18_gxjww"]
+[ext_resource type="Texture2D" uid="uid://con2c3m6inlxq" path="res://assets acquistati/assets acquistati 2/MEGA BUNDLE 12 ASSET PACKS/MEGA BUNDLE 12 ASSET PACKS/TILES SENGOKU ADVENTURE.png" id="19_5b8nm"]
 [ext_resource type="Texture2D" uid="uid://dfb1wsewioj0e" path="res://Modern_Exteriors_RPG_Maker_MV_v31.7/Modern_Exteriors_RPG_Maker_MV/Tileset_30_MV.png" id="19_hiev7"]
 [ext_resource type="Script" path="res://Scenes/mappa_game/NPG_1_quercus.gd" id="20_d1s8c"]
 [ext_resource type="Texture2D" uid="uid://bv7vgn3cbmnvc" path="res://NPG/npg_z-quercus_01_universal.png" id="20_mbwrk"]
@@ -385,7 +385,7 @@ states/Start/position = Vector2(180, 104)
 states/idle/node = SubResource("AnimationNodeBlendSpace2D_4b041")
 states/idle/position = Vector2(345, 68)
 states/walk/node = SubResource("AnimationNodeBlendSpace2D_ufkdj")
-states/walk/position = Vector2(455, 83)
+states/walk/position = Vector2(622, 68)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_5td2f")]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1lnck"]
@@ -662,7 +662,7 @@ texture = ExtResource("7_3av7p")
 sources/0 = SubResource("TileSetAtlasSource_r8g4c")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p8b4b"]
-texture = ExtResource("8_2d2wb")
+texture = ExtResource("19_5b8nm")
 32:4/0 = 0
 33:4/0 = 0
 34:4/0 = 0
@@ -17811,7 +17811,7 @@ sources/0 = SubResource("TileSetAtlasSource_3t3xp")
 sources/3 = SubResource("TileSetAtlasSource_nj3yg")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kncq2"]
-texture = ExtResource("8_2d2wb")
+texture = ExtResource("19_5b8nm")
 32:4/0 = 0
 32:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 32:4/0/physics_layer_0/angular_velocity = 0.0
@@ -56957,10 +56957,10 @@ shape = SubResource("CircleShape2D_kogwf")
 debug_color = Color(0.996078, 0, 0.164706, 0.419608)
 
 [node name="accesso-livello-2" type="Label" parent="."]
-offset_left = -366.0
+offset_left = -367.0
 offset_top = -2075.0
-offset_right = -326.0
-offset_bottom = -2033.0
+offset_right = -327.0
+offset_bottom = -2023.0
 theme_override_font_sizes/font_size = 35
 text = "!!!"
 horizontal_alignment = 1
@@ -57394,6 +57394,8 @@ debug_color = Color(0.968627, 0.0862745, 0.388235, 0.419608)
 [connection signal="pressed" from="Player_prov/Sprite2D/Camera2D/CanvasLayer/pausa/back" to="Player_prov/Sprite2D/Camera2D/CanvasLayer/Control" method="_on_back_pressed"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
+[connection signal="body_entered" from="min-2" to="min-2" method="_on_body_entered"]
+[connection signal="body_exited" from="min-2" to="min-2" method="_on_body_exited"]
 [connection signal="body_entered" from="assessore-lvl-2/Area2D" to="assessore-lvl-2" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="assessore-lvl-2/Area2D" to="assessore-lvl-2" method="_on_area_2d_body_exited"]
 [connection signal="body_entered" from="Lepre-01/Scappa" to="Lepre-01" method="_on_scappa_body_entered"]
