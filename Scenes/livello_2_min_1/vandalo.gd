@@ -5,6 +5,7 @@ var speed: int = 150
 var direction: Vector2 = Vector2.ZERO
 var player_position: Vector2 = Vector2.ZERO
 var victory: bool = false
+var schiva: bool = false
 
 @onready var animation_tree = $AnimationTree
 @onready var animation_state = animation_tree.get("parameters/playback")
@@ -28,7 +29,11 @@ func _process(delta):
 
 func _physics_process(delta):
 	if can_run:
-		direction = (position - player_position).normalized()
+		if schiva:
+			direction = change_direction_90_degrees(direction)
+			schiva = false  # Reset the flag after changing direction
+		else:
+			direction = (position - player_position).normalized()
 		move(delta)
 
 func move(delta):
@@ -36,6 +41,9 @@ func move(delta):
 	position += motion
 	update_animation(motion)
 
+func change_direction_90_degrees(current_direction: Vector2) -> Vector2:
+	var new_direction = current_direction.rotated(deg_to_rad(90))
+	return new_direction
 
 func _ready():
 	randomize()
@@ -46,10 +54,14 @@ func update_animation(motion: Vector2):
 	else:
 		animation_state.travel("idle")
 
-
 func _on_catturato_body_entered(body: CharacterBody2D):
 	victory = true
 
-
 func _on_catturato_body_exited(body):
 	victory = false
+
+func _on_changedirection_body_entered(body: CharacterBody2D):
+	schiva = true
+
+func _on_changedirection_body_exited(body):
+	schiva = false

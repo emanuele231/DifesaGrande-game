@@ -1,4 +1,4 @@
-[gd_scene load_steps=88 format=3 uid="uid://32e0xsjsydvr"]
+[gd_scene load_steps=89 format=3 uid="uid://32e0xsjsydvr"]
 
 [ext_resource type="Texture2D" uid="uid://con2c3m6inlxq" path="res://assets acquistati/assets acquistati 2/MEGA BUNDLE 12 ASSET PACKS/MEGA BUNDLE 12 ASSET PACKS/TILES SENGOKU ADVENTURE.png" id="1_xxg1w"]
 [ext_resource type="Texture2D" uid="uid://bjmspdiysna62" path="res://assets acquistati/assets acquistati 2/MEGA BUNDLE 12 ASSET PACKS/MEGA BUNDLE 12 ASSET PACKS/SENGOKU ADVENTURE TILESET/DAY/FARM GROUND 1.png" id="2_32f5m"]
@@ -19419,6 +19419,9 @@ states/walk/node = SubResource("AnimationNodeBlendSpace2D_n65iv")
 states/walk/position = Vector2(641, 93)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_qh27q")]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_jr0ii"]
+radius = 35.1283
+
 [node name="acchiappa_il_vandalo_1" type="Node2D"]
 
 [node name="terreno" type="TileMap" parent="."]
@@ -19542,8 +19545,8 @@ position = Vector2(68, 25)
 script = ExtResource("8_43t3d")
 
 [node name="Sprite2D" type="Sprite2D" parent="vandalo"]
-position = Vector2(-71, -206)
-scale = Vector2(0.4375, 0.497988)
+position = Vector2(-68, -202)
+scale = Vector2(0.53125, 0.577761)
 texture = ExtResource("5_8a5ue")
 hframes = 13
 vframes = 40
@@ -19560,11 +19563,12 @@ debug_color = Color(0.733333, 0.466667, 0.12549, 0.419608)
 [node name="catturato" type="Area2D" parent="vandalo/Sprite2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="vandalo/Sprite2D/catturato"]
+position = Vector2(0, 1.57803)
 shape = SubResource("CircleShape2D_dakhc")
 debug_color = Color(0.423529, 0.482353, 0.945098, 0.419608)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="vandalo"]
-position = Vector2(-71, -208)
+position = Vector2(-69, -210)
 shape = SubResource("RectangleShape2D_ncnm4")
 debug_color = Color(0.717647, 0.254902, 1, 0.419608)
 
@@ -19580,7 +19584,17 @@ active = true
 parameters/idle/blend_position = Vector2(-0.00319999, 0.968085)
 parameters/walk/blend_position = Vector2(0, 0)
 
+[node name="change-direction" type="Area2D" parent="."]
+position = Vector2(817, 109)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="change-direction"]
+position = Vector2(-6, 7)
+shape = SubResource("CircleShape2D_jr0ii")
+debug_color = Color(1, 1, 1, 0.419608)
+
 [connection signal="body_entered" from="vandalo/Sprite2D/rincorri" to="vandalo" method="_on_rincorri_body_entered"]
 [connection signal="body_exited" from="vandalo/Sprite2D/rincorri" to="vandalo" method="_on_rincorri_body_exited"]
 [connection signal="body_entered" from="vandalo/Sprite2D/catturato" to="vandalo" method="_on_catturato_body_entered"]
 [connection signal="body_exited" from="vandalo/Sprite2D/catturato" to="vandalo" method="_on_catturato_body_exited"]
+[connection signal="body_entered" from="change-direction" to="vandalo" method="_on_changedirection_body_entered"]
+[connection signal="body_exited" from="change-direction" to="vandalo" method="_on_changedirection_body_exited"]
