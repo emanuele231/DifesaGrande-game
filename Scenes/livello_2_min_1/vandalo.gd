@@ -39,7 +39,7 @@ func _physics_process(delta):
 func move(delta):
 	var motion = direction * speed * delta
 	position += motion
-	update_animation(motion)
+
 
 func change_direction_90_degrees(current_direction: Vector2) -> Vector2:
 	var new_direction = current_direction.rotated(deg_to_rad(90))
@@ -48,11 +48,7 @@ func change_direction_90_degrees(current_direction: Vector2) -> Vector2:
 func _ready():
 	randomize()
 
-func update_animation(motion: Vector2):
-	if motion.length() > 0:
-		animation_state.travel("walk")
-	else:
-		animation_state.travel("idle")
+
 
 func _on_catturato_body_entered(body: CharacterBody2D):
 	victory = true
