@@ -19363,61 +19363,63 @@ _data = {
 "walk_up": SubResource("Animation_2i16v")
 }
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ypq6t"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fsly8"]
 animation = &"idle_down"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0ip5d"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_t2m7f"]
 animation = &"idle_right"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_d6fr6"]
-animation = &"idle_up"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_lgiho"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_c0u7o"]
 animation = &"idle_left"
 
-[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_2oomc"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_ypq6t")
-blend_point_0/pos = Vector2(0, 0.9)
-blend_point_1/node = SubResource("AnimationNodeAnimation_0ip5d")
-blend_point_1/pos = Vector2(1, 0)
-blend_point_2/node = SubResource("AnimationNodeAnimation_d6fr6")
-blend_point_2/pos = Vector2(0, -0.9)
-blend_point_3/node = SubResource("AnimationNodeAnimation_lgiho")
-blend_point_3/pos = Vector2(-1, 0)
-blend_mode = 1
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_cmypq"]
+animation = &"idle_up"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7fss7"]
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_342c3"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_fsly8")
+blend_point_0/pos = Vector2(0, 0.8)
+blend_point_1/node = SubResource("AnimationNodeAnimation_t2m7f")
+blend_point_1/pos = Vector2(1, 0)
+blend_point_2/node = SubResource("AnimationNodeAnimation_c0u7o")
+blend_point_2/pos = Vector2(-1, 0)
+blend_point_3/node = SubResource("AnimationNodeAnimation_cmypq")
+blend_point_3/pos = Vector2(0, -0.9)
+blend_mode = 1
+sync = true
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_o1b68"]
 animation = &"walk_down"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_80gpy"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_oar4y"]
 animation = &"walk_right"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_vxqeu"]
-animation = &"walk_up"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1hoxj"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_e2ce7"]
 animation = &"walk_left"
 
-[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_n65iv"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_7fss7")
-blend_point_0/pos = Vector2(0, 1)
-blend_point_1/node = SubResource("AnimationNodeAnimation_80gpy")
-blend_point_1/pos = Vector2(1, 0)
-blend_point_2/node = SubResource("AnimationNodeAnimation_vxqeu")
-blend_point_2/pos = Vector2(0, -0.9)
-blend_point_3/node = SubResource("AnimationNodeAnimation_1hoxj")
-blend_point_3/pos = Vector2(-1, 0)
-blend_mode = 1
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tdlig"]
+animation = &"walk_up"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_qh27q"]
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_2b4nd"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_o1b68")
+blend_point_0/pos = Vector2(0, 0.9)
+blend_point_1/node = SubResource("AnimationNodeAnimation_oar4y")
+blend_point_1/pos = Vector2(1, 0)
+blend_point_2/node = SubResource("AnimationNodeAnimation_e2ce7")
+blend_point_2/pos = Vector2(-1, 0)
+blend_point_3/node = SubResource("AnimationNodeAnimation_tdlig")
+blend_point_3/pos = Vector2(0, -0.8)
+blend_mode = 1
+sync = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_gtnkt"]
 advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_ool2g"]
-states/idle/node = SubResource("AnimationNodeBlendSpace2D_2oomc")
-states/idle/position = Vector2(414, 59)
-states/walk/node = SubResource("AnimationNodeBlendSpace2D_n65iv")
-states/walk/position = Vector2(641, 93)
-transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_qh27q")]
+states/idle/node = SubResource("AnimationNodeBlendSpace2D_342c3")
+states/idle/position = Vector2(417, 116)
+states/walk/node = SubResource("AnimationNodeBlendSpace2D_2b4nd")
+states/walk/position = Vector2(635, 46)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_gtnkt")]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jr0ii"]
 radius = 35.1283
@@ -19581,8 +19583,8 @@ libraries = {
 tree_root = SubResource("AnimationNodeStateMachine_ool2g")
 anim_player = NodePath("../AnimationPlayer")
 active = true
-parameters/idle/blend_position = Vector2(-0.00319999, 0.968085)
-parameters/walk/blend_position = Vector2(0, 0)
+parameters/idle/blend_position = Vector2(-0.0791599, 0.434108)
+parameters/walk/blend_position = Vector2(-0.00161552, 0.898618)
 
 [node name="change-direction" type="Area2D" parent="."]
 position = Vector2(817, 109)
