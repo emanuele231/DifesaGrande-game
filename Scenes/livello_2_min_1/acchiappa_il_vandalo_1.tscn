@@ -19154,11 +19154,11 @@ _data = {
 "walk_up": SubResource("Animation_1y8a8")
 }
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_fknc5"]
-radius = 165.677
+[sub_resource type="CircleShape2D" id="CircleShape2D_216nd"]
+radius = 245.731
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_dakhc"]
-radius = 65.5255
+[sub_resource type="CircleShape2D" id="CircleShape2D_wmjbk"]
+radius = 51.474
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ncnm4"]
 size = Vector2(10, 21)
@@ -19168,26 +19168,14 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:vframes")
+tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
 "update": 1,
-"values": [40]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [91]
+"values": []
 }
 
 [sub_resource type="Animation" id="Animation_gtf13"]
@@ -19204,7 +19192,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [117]
+"values": [118]
 }
 
 [sub_resource type="Animation" id="Animation_u81h6"]
@@ -19231,22 +19219,10 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:vframes")
+tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [42]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -19260,26 +19236,14 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:vframes")
+tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [40]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [91]
+"values": [92]
 }
 
 [sub_resource type="Animation" id="Animation_jfnom"]
@@ -19301,7 +19265,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_nuy7e"]
 resource_name = "walk_left"
-length = 0.76
+length = 0.82
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -19310,10 +19274,10 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [105, 106, 107, 108, 109, 110, 111, 112]
+"values": [104, 105, 106, 107, 108, 109, 110, 111, 112]
 }
 
 [sub_resource type="Animation" id="Animation_6jtb6"]
@@ -19330,7 +19294,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [131, 132, 133, 134, 135, 136, 137, 138]
+"values": [130, 131, 132, 133, 134, 135, 136, 137]
 }
 
 [sub_resource type="Animation" id="Animation_2i16v"]
@@ -19344,7 +19308,7 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [92, 93, 94, 95, 96, 97, 98, 99]
@@ -19547,30 +19511,27 @@ position = Vector2(68, 25)
 script = ExtResource("8_43t3d")
 
 [node name="Sprite2D" type="Sprite2D" parent="vandalo"]
-position = Vector2(-68, -202)
-scale = Vector2(0.53125, 0.577761)
+position = Vector2(-69, -211)
+scale = Vector2(0.506611, 0.505095)
 texture = ExtResource("5_8a5ue")
 hframes = 13
-vframes = 40
-frame = 91
+vframes = 41
+frame = 118
 
-[node name="rincorri" type="Area2D" parent="vandalo/Sprite2D"]
-position = Vector2(0, -12.0485)
-scale = Vector2(2.28571, 2.00808)
+[node name="Rincorri" type="Area2D" parent="vandalo/Sprite2D"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="vandalo/Sprite2D/rincorri"]
-shape = SubResource("CircleShape2D_fknc5")
-debug_color = Color(0.733333, 0.466667, 0.12549, 0.419608)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="vandalo/Sprite2D/Rincorri"]
+shape = SubResource("CircleShape2D_216nd")
+debug_color = Color(0.737255, 0.466667, 0, 0.419608)
 
-[node name="catturato" type="Area2D" parent="vandalo/Sprite2D"]
+[node name="Catturato" type="Area2D" parent="vandalo/Sprite2D"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="vandalo/Sprite2D/catturato"]
-position = Vector2(0, 1.57803)
-shape = SubResource("CircleShape2D_dakhc")
-debug_color = Color(0.423529, 0.482353, 0.945098, 0.419608)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="vandalo/Sprite2D/Catturato"]
+shape = SubResource("CircleShape2D_wmjbk")
+debug_color = Color(0.141176, 0.517647, 1, 0.419608)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="vandalo"]
-position = Vector2(-69, -210)
+position = Vector2(-69, -212)
 shape = SubResource("RectangleShape2D_ncnm4")
 debug_color = Color(0.717647, 0.254902, 1, 0.419608)
 
@@ -19594,9 +19555,5 @@ position = Vector2(-6, 7)
 shape = SubResource("CircleShape2D_jr0ii")
 debug_color = Color(1, 1, 1, 0.419608)
 
-[connection signal="body_entered" from="vandalo/Sprite2D/rincorri" to="vandalo" method="_on_rincorri_body_entered"]
-[connection signal="body_exited" from="vandalo/Sprite2D/rincorri" to="vandalo" method="_on_rincorri_body_exited"]
-[connection signal="body_entered" from="vandalo/Sprite2D/catturato" to="vandalo" method="_on_catturato_body_entered"]
-[connection signal="body_exited" from="vandalo/Sprite2D/catturato" to="vandalo" method="_on_catturato_body_exited"]
 [connection signal="body_entered" from="change-direction" to="vandalo" method="_on_changedirection_body_entered"]
 [connection signal="body_exited" from="change-direction" to="vandalo" method="_on_changedirection_body_exited"]
