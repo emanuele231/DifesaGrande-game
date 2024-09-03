@@ -1,4 +1,4 @@
-[gd_scene load_steps=89 format=3 uid="uid://32e0xsjsydvr"]
+[gd_scene load_steps=92 format=3 uid="uid://32e0xsjsydvr"]
 
 [ext_resource type="Texture2D" uid="uid://con2c3m6inlxq" path="res://assets acquistati/assets acquistati 2/MEGA BUNDLE 12 ASSET PACKS/MEGA BUNDLE 12 ASSET PACKS/TILES SENGOKU ADVENTURE.png" id="1_xxg1w"]
 [ext_resource type="Texture2D" uid="uid://bjmspdiysna62" path="res://assets acquistati/assets acquistati 2/MEGA BUNDLE 12 ASSET PACKS/MEGA BUNDLE 12 ASSET PACKS/SENGOKU ADVENTURE TILESET/DAY/FARM GROUND 1.png" id="2_32f5m"]
@@ -19154,11 +19154,20 @@ _data = {
 "walk_up": SubResource("Animation_1y8a8")
 }
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_216nd"]
-radius = 245.731
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3bcje"]
+size = Vector2(70.0735, 95.0315)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wmjbk"]
 radius = 51.474
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kr43y"]
+size = Vector2(98.6951, 43.5562)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kybpv"]
+size = Vector2(95.7342, 84.1426)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7wewy"]
+size = Vector2(94.7473, 97.0114)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ncnm4"]
 size = Vector2(10, 21)
@@ -19521,7 +19530,8 @@ frame = 118
 [node name="Rincorri" type="Area2D" parent="vandalo/Sprite2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="vandalo/Sprite2D/Rincorri"]
-shape = SubResource("CircleShape2D_216nd")
+position = Vector2(-86.3582, 1.9798)
+shape = SubResource("RectangleShape2D_3bcje")
 debug_color = Color(0.737255, 0.466667, 0, 0.419608)
 
 [node name="Catturato" type="Area2D" parent="vandalo/Sprite2D"]
@@ -19530,8 +19540,29 @@ debug_color = Color(0.737255, 0.466667, 0, 0.419608)
 shape = SubResource("CircleShape2D_wmjbk")
 debug_color = Color(0.141176, 0.517647, 1, 0.419608)
 
+[node name="Rincorri-su" type="Area2D" parent="vandalo/Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="vandalo/Sprite2D/Rincorri-su"]
+position = Vector2(-1.9739, -67.3141)
+shape = SubResource("RectangleShape2D_kr43y")
+debug_color = Color(0.607843, 0.537255, 0.00784314, 0.419608)
+
+[node name="Rincorri-giu" type="Area2D" parent="vandalo/Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="vandalo/Sprite2D/Rincorri-giu"]
+position = Vector2(-1.9739, 91.072)
+shape = SubResource("RectangleShape2D_kybpv")
+debug_color = Color(0.54902, 0.32549, 0.0117647, 0.419608)
+
+[node name="Rincorri-sinistra" type="Area2D" parent="vandalo/Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="vandalo/Sprite2D/Rincorri-sinistra"]
+position = Vector2(92.7734, 2.96973)
+shape = SubResource("RectangleShape2D_7wewy")
+debug_color = Color(0.431373, 0.235294, 0.0745098, 0.419608)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="vandalo"]
-position = Vector2(-69, -212)
+position = Vector2(-69, -211)
 shape = SubResource("RectangleShape2D_ncnm4")
 debug_color = Color(0.717647, 0.254902, 1, 0.419608)
 
@@ -19555,5 +19586,13 @@ position = Vector2(-6, 7)
 shape = SubResource("CircleShape2D_jr0ii")
 debug_color = Color(1, 1, 1, 0.419608)
 
+[connection signal="body_entered" from="vandalo/Sprite2D/Rincorri" to="vandalo" method="_on_rincorri_body_entered"]
+[connection signal="body_exited" from="vandalo/Sprite2D/Rincorri" to="vandalo" method="_on_rincorri_body_exited"]
+[connection signal="body_entered" from="vandalo/Sprite2D/Rincorri-su" to="vandalo" method="_on_rincorrisu_body_entered"]
+[connection signal="body_exited" from="vandalo/Sprite2D/Rincorri-su" to="vandalo" method="_on_rincorrisu_body_exited"]
+[connection signal="body_entered" from="vandalo/Sprite2D/Rincorri-giu" to="vandalo" method="_on_rincorrigiu_body_entered"]
+[connection signal="body_exited" from="vandalo/Sprite2D/Rincorri-giu" to="vandalo" method="_on_rincorrigiu_body_exited"]
+[connection signal="body_entered" from="vandalo/Sprite2D/Rincorri-sinistra" to="vandalo" method="_on_rincorrisinistra_body_entered"]
+[connection signal="body_exited" from="vandalo/Sprite2D/Rincorri-sinistra" to="vandalo" method="_on_rincorrisinistra_body_exited"]
 [connection signal="body_entered" from="change-direction" to="vandalo" method="_on_changedirection_body_entered"]
 [connection signal="body_exited" from="change-direction" to="vandalo" method="_on_changedirection_body_exited"]

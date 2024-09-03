@@ -20,7 +20,67 @@ func _process(delta):
 	player_position.y = clamp(player_position.y, min_limit.y, max_limit.y)
 	position = player_position
 
+func _on_rincorri_body_entered(body: CharacterBody2D):
+	can_run = true
+	fugaDestra()
 
 
+func _on_rincorri_body_exited(body):
+	can_run = false
 
 
+func _physics_process(delta):
+	if can_run:
+		move(delta)
+
+func fugaDestra():
+	direction = Vector2.RIGHT
+
+func fugaSinistra():
+	direction = Vector2.LEFT
+
+func fugaSu():
+	direction = Vector2.DOWN
+
+func fugaGiu():
+	direction = Vector2.UP
+
+
+func move(delta):
+	var motion = direction * speed * delta
+	position += motion
+	update_animation(motion)
+
+
+func update_animation(motion: Vector2):
+	if motion.length() > 0:
+		animation_state.travel("walk")
+	else:
+		animation_state.travel("idle")
+
+
+func _on_rincorrisu_body_entered(body: CharacterBody2D):
+	can_run = true
+	fugaSu()
+
+
+func _on_rincorrisu_body_exited(body):
+	can_run = false
+
+
+func _on_rincorrigiu_body_entered(body: CharacterBody2D):
+	can_run = true
+	fugaGiu()
+
+
+func _on_rincorrigiu_body_exited(body):
+	can_run = false
+
+
+func _on_rincorrisinistra_body_entered(body: CharacterBody2D):
+	can_run = true
+	fugaSinistra()
+
+
+func _on_rincorrisinistra_body_exited(body):
+	can_run = false
