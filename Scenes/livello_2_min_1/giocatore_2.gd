@@ -48,3 +48,7 @@ func move():
 		move_and_slide()
 
 
+
+
+func _on_scappa_body_entered(body):
+	pass # Replace with function body.

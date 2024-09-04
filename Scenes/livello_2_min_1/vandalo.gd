@@ -84,3 +84,37 @@ func _on_rincorrisinistra_body_entered(body: CharacterBody2D):
 
 func _on_rincorrisinistra_body_exited(body):
 	can_run = false
+
+
+func _on_changedirection_body_entered(body: CharacterBody2D):
+	can_run = true
+	fugaSu()
+
+
+func _on_changedirection_body_exited(body):
+	can_run = true
+
+
+func _on_changedirectionopposite_body_entered(body: CharacterBody2D):
+	can_run = true
+	fugaGiu()
+
+func _on_changedirectionopposite_body_exited(body):
+	can_run = true
+
+
+func _on_lookaround_body_entered(body: CharacterBody2D):
+	can_run = true
+	fugaDestra()
+
+
+func _on_lookaround_body_exited(body):
+	can_run = true
+
+
+func _on_scappa_body_entered(body: CharacterBody2D):
+	can_run = true
+
+
+func _on_scappa_body_exited(body):
+	can_run = false
