@@ -1,4 +1,4 @@
-[gd_scene load_steps=95 format=3 uid="uid://32e0xsjsydvr"]
+[gd_scene load_steps=96 format=3 uid="uid://32e0xsjsydvr"]
 
 [ext_resource type="Texture2D" uid="uid://con2c3m6inlxq" path="res://assets acquistati/assets acquistati 2/MEGA BUNDLE 12 ASSET PACKS/MEGA BUNDLE 12 ASSET PACKS/TILES SENGOKU ADVENTURE.png" id="1_xxg1w"]
 [ext_resource type="Texture2D" uid="uid://bjmspdiysna62" path="res://assets acquistati/assets acquistati 2/MEGA BUNDLE 12 ASSET PACKS/MEGA BUNDLE 12 ASSET PACKS/SENGOKU ADVENTURE TILESET/DAY/FARM GROUND 1.png" id="2_32f5m"]
@@ -19155,22 +19155,22 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3bcje"]
-size = Vector2(146.069, 172.245)
+size = Vector2(191.469, 215.801)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i4w7y"]
 size = Vector2(35.5302, 51.4754)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kr43y"]
-size = Vector2(157.912, 120.769)
+size = Vector2(213.181, 164.325)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kybpv"]
-size = Vector2(179.625, 124.729)
+size = Vector2(226.999, 154.426)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7wewy"]
-size = Vector2(122.382, 176.204)
+size = Vector2(177.651, 205.901)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u8deu"]
-size = Vector2(303.981, 296.974)
+size = Vector2(404.65, 370.227)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ncnm4"]
 size = Vector2(10, 21)
@@ -19401,10 +19401,13 @@ transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition
 size = Vector2(18.5, 51)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vjoc2"]
-size = Vector2(20, 50)
+size = Vector2(20, 46)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3g3yr"]
 size = Vector2(57, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ax21"]
+size = Vector2(52.5, 14.5)
 
 [node name="acchiappa_il_vandalo_1" type="Node2D"]
 
@@ -19539,7 +19542,7 @@ frame = 118
 [node name="Rincorri" type="Area2D" parent="vandalo/Sprite2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="vandalo/Sprite2D/Rincorri"]
-position = Vector2(-90.7995, -62.3645)
+position = Vector2(-113.499, -84.1425)
 shape = SubResource("RectangleShape2D_3bcje")
 debug_color = Color(0.737255, 0.466667, 0, 0.419608)
 
@@ -19553,28 +19556,28 @@ debug_color = Color(0.141176, 0.517647, 1, 0.419608)
 [node name="Rincorri-su" type="Area2D" parent="vandalo/Sprite2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="vandalo/Sprite2D/Rincorri-su"]
-position = Vector2(61.1909, -88.1023)
+position = Vector2(88.8256, -109.88)
 shape = SubResource("RectangleShape2D_kr43y")
 debug_color = Color(0.607843, 0.537255, 0.00784314, 0.419608)
 
 [node name="Rincorri-giu" type="Area2D" parent="vandalo/Sprite2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="vandalo/Sprite2D/Rincorri-giu"]
-position = Vector2(-72.0474, 86.1225)
+position = Vector2(-95.7342, 100.971)
 shape = SubResource("RectangleShape2D_kybpv")
 debug_color = Color(0.54902, 0.32549, 0.0117647, 0.419608)
 
 [node name="Rincorri-sinistra" type="Area2D" parent="vandalo/Sprite2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="vandalo/Sprite2D/Rincorri-sinistra"]
-position = Vector2(78.9561, 60.3848)
+position = Vector2(106.591, 75.2336)
 shape = SubResource("RectangleShape2D_7wewy")
 debug_color = Color(0.431373, 0.235294, 0.0745098, 0.419608)
 
 [node name="SCAPPA" type="Area2D" parent="vandalo/Sprite2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="vandalo/Sprite2D/SCAPPA"]
-position = Vector2(-11.8434, 0)
+position = Vector2(-6.90866, -6.92938)
 shape = SubResource("RectangleShape2D_u8deu")
 debug_color = Color(0.654902, 0.121569, 0.12549, 0.419608)
 
@@ -19627,6 +19630,142 @@ position = Vector2(-642.5, -392.5)
 shape = SubResource("RectangleShape2D_q2ftp")
 debug_color = Color(1, 1, 1, 0.419608)
 
+[node name="change-direction5" type="Area2D" parent="."]
+position = Vector2(574, 205)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="change-direction5"]
+position = Vector2(-642.5, -392.5)
+shape = SubResource("RectangleShape2D_q2ftp")
+debug_color = Color(1, 1, 1, 0.419608)
+
+[node name="change-direction6" type="Area2D" parent="."]
+position = Vector2(1207, 319)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="change-direction6"]
+position = Vector2(-642.5, -392.5)
+shape = SubResource("RectangleShape2D_q2ftp")
+debug_color = Color(1, 1, 1, 0.419608)
+
+[node name="change-direction7" type="Area2D" parent="."]
+position = Vector2(444, 268)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="change-direction7"]
+position = Vector2(-642.5, -392.5)
+shape = SubResource("RectangleShape2D_q2ftp")
+debug_color = Color(1, 1, 1, 0.419608)
+
+[node name="change-direction8" type="Area2D" parent="."]
+position = Vector2(899, 317)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="change-direction8"]
+position = Vector2(-642.5, -392.5)
+shape = SubResource("RectangleShape2D_q2ftp")
+debug_color = Color(1, 1, 1, 0.419608)
+
+[node name="change-direction9" type="Area2D" parent="."]
+position = Vector2(561, -530)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="change-direction9"]
+position = Vector2(-642.5, -392.5)
+shape = SubResource("RectangleShape2D_q2ftp")
+debug_color = Color(1, 1, 1, 0.419608)
+
+[node name="change-direction10" type="Area2D" parent="."]
+position = Vector2(900, -512)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="change-direction10"]
+position = Vector2(-642.5, -392.5)
+shape = SubResource("RectangleShape2D_q2ftp")
+debug_color = Color(1, 1, 1, 0.419608)
+
+[node name="change-direction11" type="Area2D" parent="."]
+position = Vector2(1198, -565)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="change-direction11"]
+position = Vector2(-642.5, -392.5)
+shape = SubResource("RectangleShape2D_q2ftp")
+debug_color = Color(1, 1, 1, 0.419608)
+
+[node name="change-direction12" type="Area2D" parent="."]
+position = Vector2(1354, -416)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="change-direction12"]
+position = Vector2(-642.5, -392.5)
+shape = SubResource("RectangleShape2D_q2ftp")
+debug_color = Color(1, 1, 1, 0.419608)
+
+[node name="change-direction13" type="Area2D" parent="."]
+position = Vector2(451, -324)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="change-direction13"]
+position = Vector2(-642.5, -392.5)
+shape = SubResource("RectangleShape2D_q2ftp")
+debug_color = Color(1, 1, 1, 0.419608)
+
+[node name="change-direction14" type="Area2D" parent="."]
+position = Vector2(645, -351)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="change-direction14"]
+position = Vector2(-642.5, -392.5)
+shape = SubResource("RectangleShape2D_q2ftp")
+debug_color = Color(1, 1, 1, 0.419608)
+
+[node name="change-direction15" type="Area2D" parent="."]
+position = Vector2(547, -178)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="change-direction15"]
+position = Vector2(-642.5, -392.5)
+shape = SubResource("RectangleShape2D_q2ftp")
+debug_color = Color(1, 1, 1, 0.419608)
+
+[node name="change-direction16" type="Area2D" parent="."]
+position = Vector2(1044, 190)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="change-direction16"]
+position = Vector2(-642.5, -392.5)
+shape = SubResource("RectangleShape2D_q2ftp")
+debug_color = Color(1, 1, 1, 0.419608)
+
+[node name="change-direction17" type="Area2D" parent="."]
+position = Vector2(1207, 113)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="change-direction17"]
+position = Vector2(-642.5, -392.5)
+shape = SubResource("RectangleShape2D_q2ftp")
+debug_color = Color(1, 1, 1, 0.419608)
+
+[node name="change-direction18" type="Area2D" parent="."]
+position = Vector2(1453, -64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="change-direction18"]
+position = Vector2(-642.5, -392.5)
+shape = SubResource("RectangleShape2D_q2ftp")
+debug_color = Color(1, 1, 1, 0.419608)
+
+[node name="change-direction19" type="Area2D" parent="."]
+position = Vector2(1124, -387)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="change-direction19"]
+position = Vector2(-642.5, -392.5)
+shape = SubResource("RectangleShape2D_q2ftp")
+debug_color = Color(1, 1, 1, 0.419608)
+
+[node name="change-direction20" type="Area2D" parent="."]
+position = Vector2(753, -387)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="change-direction20"]
+position = Vector2(-642.5, -392.5)
+shape = SubResource("RectangleShape2D_q2ftp")
+debug_color = Color(1, 1, 1, 0.419608)
+
+[node name="change-direction21" type="Area2D" parent="."]
+position = Vector2(1003, -188)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="change-direction21"]
+position = Vector2(-642.5, -392.5)
+shape = SubResource("RectangleShape2D_q2ftp")
+debug_color = Color(1, 1, 1, 0.419608)
+
 [node name="changedirectionopposite" type="Area2D" parent="."]
 position = Vector2(788, -84)
 
@@ -19659,12 +19798,475 @@ position = Vector2(-558, -198)
 shape = SubResource("RectangleShape2D_vjoc2")
 debug_color = Color(0.937255, 0.427451, 0.705882, 0.419608)
 
+[node name="changedirectionopposite5" type="Area2D" parent="."]
+position = Vector2(1068, 126)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="changedirectionopposite5"]
+position = Vector2(-558, -198)
+shape = SubResource("RectangleShape2D_vjoc2")
+debug_color = Color(0.937255, 0.427451, 0.705882, 0.419608)
+
+[node name="changedirectionopposite6" type="Area2D" parent="."]
+position = Vector2(1310, -257)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="changedirectionopposite6"]
+position = Vector2(-558, -198)
+shape = SubResource("RectangleShape2D_vjoc2")
+debug_color = Color(0.937255, 0.427451, 0.705882, 0.419608)
+
+[node name="changedirectionopposite7" type="Area2D" parent="."]
+position = Vector2(990, -584)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="changedirectionopposite7"]
+position = Vector2(-558, -198)
+shape = SubResource("RectangleShape2D_vjoc2")
+debug_color = Color(0.937255, 0.427451, 0.705882, 0.419608)
+
+[node name="changedirectionopposite8" type="Area2D" parent="."]
+position = Vector2(1212, -613)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="changedirectionopposite8"]
+position = Vector2(-558, -198)
+shape = SubResource("RectangleShape2D_vjoc2")
+debug_color = Color(0.937255, 0.427451, 0.705882, 0.419608)
+
+[node name="changedirectionopposite9" type="Area2D" parent="."]
+position = Vector2(1167, -754)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="changedirectionopposite9"]
+position = Vector2(-558, -198)
+shape = SubResource("RectangleShape2D_vjoc2")
+debug_color = Color(0.937255, 0.427451, 0.705882, 0.419608)
+
+[node name="changedirectionopposite10" type="Area2D" parent="."]
+position = Vector2(867, -706)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="changedirectionopposite10"]
+position = Vector2(-558, -198)
+shape = SubResource("RectangleShape2D_vjoc2")
+debug_color = Color(0.937255, 0.427451, 0.705882, 0.419608)
+
+[node name="changedirectionopposite11" type="Area2D" parent="."]
+position = Vector2(530, -724)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="changedirectionopposite11"]
+position = Vector2(-558, -198)
+shape = SubResource("RectangleShape2D_vjoc2")
+debug_color = Color(0.937255, 0.427451, 0.705882, 0.419608)
+
+[node name="changedirectionopposite12" type="Area2D" parent="."]
+position = Vector2(721, -579)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="changedirectionopposite12"]
+position = Vector2(-558, -198)
+shape = SubResource("RectangleShape2D_vjoc2")
+debug_color = Color(0.937255, 0.427451, 0.705882, 0.419608)
+
+[node name="changedirectionopposite13" type="Area2D" parent="."]
+position = Vector2(507, -549)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="changedirectionopposite13"]
+position = Vector2(-558, -198)
+shape = SubResource("RectangleShape2D_vjoc2")
+debug_color = Color(0.937255, 0.427451, 0.705882, 0.419608)
+
+[node name="changedirectionopposite14" type="Area2D" parent="."]
+position = Vector2(414, -518)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="changedirectionopposite14"]
+position = Vector2(-558, -198)
+shape = SubResource("RectangleShape2D_vjoc2")
+debug_color = Color(0.937255, 0.427451, 0.705882, 0.419608)
+
+[node name="changedirectionopposite15" type="Area2D" parent="."]
+position = Vector2(865, -383)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="changedirectionopposite15"]
+position = Vector2(-558, -198)
+shape = SubResource("RectangleShape2D_vjoc2")
+debug_color = Color(0.937255, 0.427451, 0.705882, 0.419608)
+
+[node name="changedirectionopposite16" type="Area2D" parent="."]
+position = Vector2(872, 127)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="changedirectionopposite16"]
+position = Vector2(-558, -200)
+shape = SubResource("RectangleShape2D_vjoc2")
+debug_color = Color(0.937255, 0.427451, 0.705882, 0.419608)
+
+[node name="changedirectionopposite17" type="Area2D" parent="."]
+position = Vector2(423, 79)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="changedirectionopposite17"]
+position = Vector2(-558, -198)
+shape = SubResource("RectangleShape2D_vjoc2")
+debug_color = Color(0.937255, 0.427451, 0.705882, 0.419608)
+
+[node name="changedirectionopposite18" type="Area2D" parent="."]
+position = Vector2(1073, -84)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="changedirectionopposite18"]
+position = Vector2(-558, -198)
+shape = SubResource("RectangleShape2D_vjoc2")
+debug_color = Color(0.937255, 0.427451, 0.705882, 0.419608)
+
+[node name="changedirectionopposite19" type="Area2D" parent="."]
+position = Vector2(908, -4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="changedirectionopposite19"]
+position = Vector2(-558, -198)
+shape = SubResource("RectangleShape2D_vjoc2")
+debug_color = Color(0.937255, 0.427451, 0.705882, 0.419608)
+
+[node name="changedirectionopposite20" type="Area2D" parent="."]
+position = Vector2(541, 11)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="changedirectionopposite20"]
+position = Vector2(-558, -198)
+shape = SubResource("RectangleShape2D_vjoc2")
+debug_color = Color(0.937255, 0.427451, 0.705882, 0.419608)
+
+[node name="changedirectionopposite21" type="Area2D" parent="."]
+position = Vector2(515, -369)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="changedirectionopposite21"]
+position = Vector2(-558, -198)
+shape = SubResource("RectangleShape2D_vjoc2")
+debug_color = Color(0.937255, 0.427451, 0.705882, 0.419608)
+
 [node name="lookaround" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="lookaround"]
 position = Vector2(200.5, -264)
 shape = SubResource("RectangleShape2D_3g3yr")
 debug_color = Color(0.658824, 0.145098, 0.447059, 0.419608)
+
+[node name="lookaround2" type="Area2D" parent="."]
+position = Vector2(383, -710)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lookaround2"]
+position = Vector2(200.5, -264)
+shape = SubResource("RectangleShape2D_3g3yr")
+debug_color = Color(0.658824, 0.145098, 0.447059, 0.419608)
+
+[node name="lookaround3" type="Area2D" parent="."]
+position = Vector2(84, -622)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lookaround3"]
+position = Vector2(200.5, -264)
+shape = SubResource("RectangleShape2D_3g3yr")
+debug_color = Color(0.658824, 0.145098, 0.447059, 0.419608)
+
+[node name="lookaround4" type="Area2D" parent="."]
+position = Vector2(-255, -676)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lookaround4"]
+position = Vector2(200.5, -264)
+shape = SubResource("RectangleShape2D_3g3yr")
+debug_color = Color(0.658824, 0.145098, 0.447059, 0.419608)
+
+[node name="lookaround5" type="Area2D" parent="."]
+position = Vector2(-367, -469)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lookaround5"]
+position = Vector2(200.5, -264)
+shape = SubResource("RectangleShape2D_3g3yr")
+debug_color = Color(0.658824, 0.145098, 0.447059, 0.419608)
+
+[node name="lookaround6" type="Area2D" parent="."]
+position = Vector2(-226, -465)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lookaround6"]
+position = Vector2(200.5, -264)
+shape = SubResource("RectangleShape2D_3g3yr")
+debug_color = Color(0.658824, 0.145098, 0.447059, 0.419608)
+
+[node name="lookaround7" type="Area2D" parent="."]
+position = Vector2(-269, -323)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lookaround7"]
+position = Vector2(200.5, -264)
+shape = SubResource("RectangleShape2D_3g3yr")
+debug_color = Color(0.658824, 0.145098, 0.447059, 0.419608)
+
+[node name="lookaround8" type="Area2D" parent="."]
+position = Vector2(337, 208)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lookaround8"]
+position = Vector2(200.5, -264)
+shape = SubResource("RectangleShape2D_3g3yr")
+debug_color = Color(0.658824, 0.145098, 0.447059, 0.419608)
+
+[node name="lookaround9" type="Area2D" parent="."]
+position = Vector2(482, -530)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lookaround9"]
+position = Vector2(200.5, -264)
+shape = SubResource("RectangleShape2D_3g3yr")
+debug_color = Color(0.658824, 0.145098, 0.447059, 0.419608)
+
+[node name="lookaround10" type="Area2D" parent="."]
+position = Vector2(256, -535)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lookaround10"]
+position = Vector2(200.5, -264)
+shape = SubResource("RectangleShape2D_3g3yr")
+debug_color = Color(0.658824, 0.145098, 0.447059, 0.419608)
+
+[node name="lookaround11" type="Area2D" parent="."]
+position = Vector2(-63, -497)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lookaround11"]
+position = Vector2(200.5, -264)
+shape = SubResource("RectangleShape2D_3g3yr")
+debug_color = Color(0.658824, 0.145098, 0.447059, 0.419608)
+
+[node name="lookaround12" type="Area2D" parent="."]
+position = Vector2(134, -334)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lookaround12"]
+position = Vector2(200.5, -264)
+shape = SubResource("RectangleShape2D_3g3yr")
+debug_color = Color(0.658824, 0.145098, 0.447059, 0.419608)
+
+[node name="lookaround13" type="Area2D" parent="."]
+position = Vector2(-27, -230)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lookaround13"]
+position = Vector2(200.5, -264)
+shape = SubResource("RectangleShape2D_3g3yr")
+debug_color = Color(0.658824, 0.145098, 0.447059, 0.419608)
+
+[node name="lookaround14" type="Area2D" parent="."]
+position = Vector2(293, -258)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lookaround14"]
+position = Vector2(200.5, -264)
+shape = SubResource("RectangleShape2D_3g3yr")
+debug_color = Color(0.658824, 0.145098, 0.447059, 0.419608)
+
+[node name="lookaround15" type="Area2D" parent="."]
+position = Vector2(581, -208)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lookaround15"]
+position = Vector2(200.5, -264)
+shape = SubResource("RectangleShape2D_3g3yr")
+debug_color = Color(0.658824, 0.145098, 0.447059, 0.419608)
+
+[node name="lookaround16" type="Area2D" parent="."]
+position = Vector2(338, -34)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lookaround16"]
+position = Vector2(200.5, -264)
+shape = SubResource("RectangleShape2D_3g3yr")
+debug_color = Color(0.658824, 0.145098, 0.447059, 0.419608)
+
+[node name="lookaround17" type="Area2D" parent="."]
+position = Vector2(86, 172)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lookaround17"]
+position = Vector2(200.5, -264)
+shape = SubResource("RectangleShape2D_3g3yr")
+debug_color = Color(0.658824, 0.145098, 0.447059, 0.419608)
+
+[node name="lookaround18" type="Area2D" parent="."]
+position = Vector2(177, 79)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lookaround18"]
+position = Vector2(200.5, -264)
+shape = SubResource("RectangleShape2D_3g3yr")
+debug_color = Color(0.658824, 0.145098, 0.447059, 0.419608)
+
+[node name="lookaround19" type="Area2D" parent="."]
+position = Vector2(-353, -131)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lookaround19"]
+position = Vector2(200.5, -264)
+shape = SubResource("RectangleShape2D_3g3yr")
+debug_color = Color(0.658824, 0.145098, 0.447059, 0.419608)
+
+[node name="lookaround20" type="Area2D" parent="."]
+position = Vector2(-369, 158)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lookaround20"]
+position = Vector2(200.5, -264)
+shape = SubResource("RectangleShape2D_3g3yr")
+debug_color = Color(0.658824, 0.145098, 0.447059, 0.419608)
+
+[node name="lookaround21" type="Area2D" parent="."]
+position = Vector2(-243, 94)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lookaround21"]
+position = Vector2(200.5, -264)
+shape = SubResource("RectangleShape2D_3g3yr")
+debug_color = Color(0.658824, 0.145098, 0.447059, 0.419608)
+
+[node name="lookaroundopposite" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lookaroundopposite"]
+position = Vector2(286, -58)
+shape = SubResource("RectangleShape2D_7ax21")
+debug_color = Color(0.756863, 0.113725, 0.341176, 0.419608)
+
+[node name="lookaroundopposite2" type="Area2D" parent="."]
+position = Vector2(-3, -864)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lookaroundopposite2"]
+position = Vector2(286, -58)
+shape = SubResource("RectangleShape2D_7ax21")
+debug_color = Color(0.756863, 0.113725, 0.341176, 0.419608)
+
+[node name="lookaroundopposite3" type="Area2D" parent="."]
+position = Vector2(-313, -703)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lookaroundopposite3"]
+position = Vector2(286, -58)
+shape = SubResource("RectangleShape2D_7ax21")
+debug_color = Color(0.756863, 0.113725, 0.341176, 0.419608)
+
+[node name="lookaroundopposite4" type="Area2D" parent="."]
+position = Vector2(396, -769)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lookaroundopposite4"]
+position = Vector2(286, -58)
+shape = SubResource("RectangleShape2D_7ax21")
+debug_color = Color(0.756863, 0.113725, 0.341176, 0.419608)
+
+[node name="lookaroundopposite5" type="Area2D" parent="."]
+position = Vector2(172, -703)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lookaroundopposite5"]
+position = Vector2(286, -58)
+shape = SubResource("RectangleShape2D_7ax21")
+debug_color = Color(0.756863, 0.113725, 0.341176, 0.419608)
+
+[node name="lookaroundopposite6" type="Area2D" parent="."]
+position = Vector2(-152, -739)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lookaroundopposite6"]
+position = Vector2(286, -58)
+shape = SubResource("RectangleShape2D_7ax21")
+debug_color = Color(0.756863, 0.113725, 0.341176, 0.419608)
+
+[node name="lookaroundopposite7" type="Area2D" parent="."]
+position = Vector2(296, -881)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lookaroundopposite7"]
+position = Vector2(286, -58)
+shape = SubResource("RectangleShape2D_7ax21")
+debug_color = Color(0.756863, 0.113725, 0.341176, 0.419608)
+
+[node name="lookaroundopposite8" type="Area2D" parent="."]
+position = Vector2(50, -508)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lookaroundopposite8"]
+position = Vector2(286, -58)
+shape = SubResource("RectangleShape2D_7ax21")
+debug_color = Color(0.756863, 0.113725, 0.341176, 0.419608)
+
+[node name="lookaroundopposite9" type="Area2D" parent="."]
+position = Vector2(-341, -847)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lookaroundopposite9"]
+position = Vector2(286, -58)
+shape = SubResource("RectangleShape2D_7ax21")
+debug_color = Color(0.756863, 0.113725, 0.341176, 0.419608)
+
+[node name="lookaroundopposite10" type="Area2D" parent="."]
+position = Vector2(-453, -641)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lookaroundopposite10"]
+position = Vector2(286, -58)
+shape = SubResource("RectangleShape2D_7ax21")
+debug_color = Color(0.756863, 0.113725, 0.341176, 0.419608)
+
+[node name="lookaroundopposite11" type="Area2D" parent="."]
+position = Vector2(-356, -494)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lookaroundopposite11"]
+position = Vector2(286, -58)
+shape = SubResource("RectangleShape2D_7ax21")
+debug_color = Color(0.756863, 0.113725, 0.341176, 0.419608)
+
+[node name="lookaroundopposite12" type="Area2D" parent="."]
+position = Vector2(-436, -369)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lookaroundopposite12"]
+position = Vector2(286, -58)
+shape = SubResource("RectangleShape2D_7ax21")
+debug_color = Color(0.756863, 0.113725, 0.341176, 0.419608)
+
+[node name="lookaroundopposite13" type="Area2D" parent="."]
+position = Vector2(-454, -84)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lookaroundopposite13"]
+position = Vector2(286, -58)
+shape = SubResource("RectangleShape2D_7ax21")
+debug_color = Color(0.756863, 0.113725, 0.341176, 0.419608)
+
+[node name="lookaroundopposite14" type="Area2D" parent="."]
+position = Vector2(497, -383)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lookaroundopposite14"]
+position = Vector2(286, -58)
+shape = SubResource("RectangleShape2D_7ax21")
+debug_color = Color(0.756863, 0.113725, 0.341176, 0.419608)
+
+[node name="lookaroundopposite15" type="Area2D" parent="."]
+position = Vector2(203, -431)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lookaroundopposite15"]
+position = Vector2(286, -58)
+shape = SubResource("RectangleShape2D_7ax21")
+debug_color = Color(0.756863, 0.113725, 0.341176, 0.419608)
+
+[node name="lookaroundopposite16" type="Area2D" parent="."]
+position = Vector2(-113, -399)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lookaroundopposite16"]
+position = Vector2(286, -58)
+shape = SubResource("RectangleShape2D_7ax21")
+debug_color = Color(0.756863, 0.113725, 0.341176, 0.419608)
+
+[node name="lookaroundopposite17" type="Area2D" parent="."]
+position = Vector2(-87, -242)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lookaroundopposite17"]
+position = Vector2(286, -58)
+shape = SubResource("RectangleShape2D_7ax21")
+debug_color = Color(0.756863, 0.113725, 0.341176, 0.419608)
+
+[node name="lookaroundopposite18" type="Area2D" parent="."]
+position = Vector2(254, -206)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lookaroundopposite18"]
+position = Vector2(286, -58)
+shape = SubResource("RectangleShape2D_7ax21")
+debug_color = Color(0.756863, 0.113725, 0.341176, 0.419608)
+
+[node name="lookaroundopposite19" type="Area2D" parent="."]
+position = Vector2(89, -161)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lookaroundopposite19"]
+position = Vector2(286, -58)
+shape = SubResource("RectangleShape2D_7ax21")
+debug_color = Color(0.756863, 0.113725, 0.341176, 0.419608)
+
+[node name="lookaroundopposite20" type="Area2D" parent="."]
+position = Vector2(251, -30)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lookaroundopposite20"]
+position = Vector2(286, -58)
+shape = SubResource("RectangleShape2D_7ax21")
+debug_color = Color(0.756863, 0.113725, 0.341176, 0.419608)
+
+[node name="lookaroundopposite21" type="Area2D" parent="."]
+position = Vector2(-331, -147)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lookaroundopposite21"]
+position = Vector2(286, -58)
+shape = SubResource("RectangleShape2D_7ax21")
+debug_color = Color(0.756863, 0.113725, 0.341176, 0.419608)
 
 [connection signal="body_entered" from="vandalo/Sprite2D/Rincorri" to="vandalo" method="_on_rincorri_body_entered"]
 [connection signal="body_exited" from="vandalo/Sprite2D/Rincorri" to="vandalo" method="_on_rincorri_body_exited"]
@@ -19684,6 +20286,40 @@ debug_color = Color(0.658824, 0.145098, 0.447059, 0.419608)
 [connection signal="body_exited" from="change-direction3" to="vandalo" method="_on_changedirection_body_exited"]
 [connection signal="body_entered" from="change-direction4" to="vandalo" method="_on_changedirection_body_entered"]
 [connection signal="body_exited" from="change-direction4" to="vandalo" method="_on_changedirection_body_exited"]
+[connection signal="body_entered" from="change-direction5" to="vandalo" method="_on_changedirection_body_entered"]
+[connection signal="body_exited" from="change-direction5" to="vandalo" method="_on_changedirection_body_exited"]
+[connection signal="body_entered" from="change-direction6" to="vandalo" method="_on_changedirection_body_entered"]
+[connection signal="body_exited" from="change-direction6" to="vandalo" method="_on_changedirection_body_exited"]
+[connection signal="body_entered" from="change-direction7" to="vandalo" method="_on_changedirection_body_entered"]
+[connection signal="body_exited" from="change-direction7" to="vandalo" method="_on_changedirection_body_exited"]
+[connection signal="body_entered" from="change-direction8" to="vandalo" method="_on_changedirection_body_entered"]
+[connection signal="body_exited" from="change-direction8" to="vandalo" method="_on_changedirection_body_exited"]
+[connection signal="body_entered" from="change-direction9" to="vandalo" method="_on_changedirection_body_entered"]
+[connection signal="body_exited" from="change-direction9" to="vandalo" method="_on_changedirection_body_exited"]
+[connection signal="body_entered" from="change-direction10" to="vandalo" method="_on_changedirection_body_entered"]
+[connection signal="body_exited" from="change-direction10" to="vandalo" method="_on_changedirection_body_exited"]
+[connection signal="body_entered" from="change-direction11" to="vandalo" method="_on_changedirection_body_entered"]
+[connection signal="body_exited" from="change-direction11" to="vandalo" method="_on_changedirection_body_exited"]
+[connection signal="body_entered" from="change-direction12" to="vandalo" method="_on_changedirection_body_entered"]
+[connection signal="body_exited" from="change-direction12" to="vandalo" method="_on_changedirection_body_exited"]
+[connection signal="body_entered" from="change-direction13" to="vandalo" method="_on_changedirection_body_entered"]
+[connection signal="body_exited" from="change-direction13" to="vandalo" method="_on_changedirection_body_exited"]
+[connection signal="body_entered" from="change-direction14" to="vandalo" method="_on_changedirection_body_entered"]
+[connection signal="body_exited" from="change-direction14" to="vandalo" method="_on_changedirection_body_exited"]
+[connection signal="body_entered" from="change-direction15" to="vandalo" method="_on_changedirection_body_entered"]
+[connection signal="body_exited" from="change-direction15" to="vandalo" method="_on_changedirection_body_exited"]
+[connection signal="body_entered" from="change-direction16" to="vandalo" method="_on_changedirection_body_entered"]
+[connection signal="body_exited" from="change-direction16" to="vandalo" method="_on_changedirection_body_exited"]
+[connection signal="body_entered" from="change-direction17" to="vandalo" method="_on_changedirection_body_entered"]
+[connection signal="body_exited" from="change-direction17" to="vandalo" method="_on_changedirection_body_exited"]
+[connection signal="body_entered" from="change-direction18" to="vandalo" method="_on_changedirection_body_entered"]
+[connection signal="body_exited" from="change-direction18" to="vandalo" method="_on_changedirection_body_exited"]
+[connection signal="body_entered" from="change-direction19" to="vandalo" method="_on_changedirection_body_entered"]
+[connection signal="body_exited" from="change-direction19" to="vandalo" method="_on_changedirection_body_exited"]
+[connection signal="body_entered" from="change-direction20" to="vandalo" method="_on_changedirection_body_entered"]
+[connection signal="body_exited" from="change-direction20" to="vandalo" method="_on_changedirection_body_exited"]
+[connection signal="body_entered" from="change-direction21" to="vandalo" method="_on_changedirection_body_entered"]
+[connection signal="body_exited" from="change-direction21" to="vandalo" method="_on_changedirection_body_exited"]
 [connection signal="body_entered" from="changedirectionopposite" to="vandalo" method="_on_changedirectionopposite_body_entered"]
 [connection signal="body_exited" from="changedirectionopposite" to="vandalo" method="_on_changedirectionopposite_body_exited"]
 [connection signal="body_entered" from="changedirectionopposite2" to="vandalo" method="_on_changedirectionopposite_body_entered"]
@@ -19692,5 +20328,121 @@ debug_color = Color(0.658824, 0.145098, 0.447059, 0.419608)
 [connection signal="body_exited" from="changedirectionopposite3" to="vandalo" method="_on_changedirectionopposite_body_exited"]
 [connection signal="body_entered" from="changedirectionopposite4" to="vandalo" method="_on_changedirectionopposite_body_entered"]
 [connection signal="body_exited" from="changedirectionopposite4" to="vandalo" method="_on_changedirectionopposite_body_exited"]
+[connection signal="body_entered" from="changedirectionopposite5" to="vandalo" method="_on_changedirectionopposite_body_entered"]
+[connection signal="body_exited" from="changedirectionopposite5" to="vandalo" method="_on_changedirectionopposite_body_exited"]
+[connection signal="body_entered" from="changedirectionopposite6" to="vandalo" method="_on_changedirectionopposite_body_entered"]
+[connection signal="body_exited" from="changedirectionopposite6" to="vandalo" method="_on_changedirectionopposite_body_exited"]
+[connection signal="body_entered" from="changedirectionopposite7" to="vandalo" method="_on_changedirectionopposite_body_entered"]
+[connection signal="body_exited" from="changedirectionopposite7" to="vandalo" method="_on_changedirectionopposite_body_exited"]
+[connection signal="body_entered" from="changedirectionopposite8" to="vandalo" method="_on_changedirectionopposite_body_entered"]
+[connection signal="body_exited" from="changedirectionopposite8" to="vandalo" method="_on_changedirectionopposite_body_exited"]
+[connection signal="body_entered" from="changedirectionopposite9" to="vandalo" method="_on_changedirectionopposite_body_entered"]
+[connection signal="body_exited" from="changedirectionopposite9" to="vandalo" method="_on_changedirectionopposite_body_exited"]
+[connection signal="body_entered" from="changedirectionopposite10" to="vandalo" method="_on_changedirectionopposite_body_entered"]
+[connection signal="body_exited" from="changedirectionopposite10" to="vandalo" method="_on_changedirectionopposite_body_exited"]
+[connection signal="body_entered" from="changedirectionopposite11" to="vandalo" method="_on_changedirectionopposite_body_entered"]
+[connection signal="body_exited" from="changedirectionopposite11" to="vandalo" method="_on_changedirectionopposite_body_exited"]
+[connection signal="body_entered" from="changedirectionopposite12" to="vandalo" method="_on_changedirectionopposite_body_entered"]
+[connection signal="body_exited" from="changedirectionopposite12" to="vandalo" method="_on_changedirectionopposite_body_exited"]
+[connection signal="body_entered" from="changedirectionopposite13" to="vandalo" method="_on_changedirectionopposite_body_entered"]
+[connection signal="body_exited" from="changedirectionopposite13" to="vandalo" method="_on_changedirectionopposite_body_exited"]
+[connection signal="body_entered" from="changedirectionopposite14" to="vandalo" method="_on_changedirectionopposite_body_entered"]
+[connection signal="body_exited" from="changedirectionopposite14" to="vandalo" method="_on_changedirectionopposite_body_exited"]
+[connection signal="body_entered" from="changedirectionopposite15" to="vandalo" method="_on_changedirectionopposite_body_entered"]
+[connection signal="body_exited" from="changedirectionopposite15" to="vandalo" method="_on_changedirectionopposite_body_exited"]
+[connection signal="body_entered" from="changedirectionopposite16" to="vandalo" method="_on_changedirectionopposite_body_entered"]
+[connection signal="body_exited" from="changedirectionopposite16" to="vandalo" method="_on_changedirectionopposite_body_exited"]
+[connection signal="body_entered" from="changedirectionopposite17" to="vandalo" method="_on_changedirectionopposite_body_entered"]
+[connection signal="body_exited" from="changedirectionopposite17" to="vandalo" method="_on_changedirectionopposite_body_exited"]
+[connection signal="body_entered" from="changedirectionopposite18" to="vandalo" method="_on_changedirectionopposite_body_entered"]
+[connection signal="body_exited" from="changedirectionopposite18" to="vandalo" method="_on_changedirectionopposite_body_exited"]
+[connection signal="body_entered" from="changedirectionopposite19" to="vandalo" method="_on_changedirectionopposite_body_entered"]
+[connection signal="body_exited" from="changedirectionopposite19" to="vandalo" method="_on_changedirectionopposite_body_exited"]
+[connection signal="body_entered" from="changedirectionopposite20" to="vandalo" method="_on_changedirectionopposite_body_entered"]
+[connection signal="body_exited" from="changedirectionopposite20" to="vandalo" method="_on_changedirectionopposite_body_exited"]
+[connection signal="body_entered" from="changedirectionopposite21" to="vandalo" method="_on_changedirectionopposite_body_entered"]
+[connection signal="body_exited" from="changedirectionopposite21" to="vandalo" method="_on_changedirectionopposite_body_exited"]
 [connection signal="body_entered" from="lookaround" to="vandalo" method="_on_lookaround_body_entered"]
 [connection signal="body_exited" from="lookaround" to="vandalo" method="_on_lookaround_body_exited"]
+[connection signal="body_entered" from="lookaround2" to="vandalo" method="_on_lookaround_body_entered"]
+[connection signal="body_exited" from="lookaround2" to="vandalo" method="_on_lookaround_body_exited"]
+[connection signal="body_entered" from="lookaround3" to="vandalo" method="_on_lookaround_body_entered"]
+[connection signal="body_exited" from="lookaround3" to="vandalo" method="_on_lookaround_body_exited"]
+[connection signal="body_entered" from="lookaround4" to="vandalo" method="_on_lookaround_body_entered"]
+[connection signal="body_exited" from="lookaround4" to="vandalo" method="_on_lookaround_body_exited"]
+[connection signal="body_entered" from="lookaround5" to="vandalo" method="_on_lookaround_body_entered"]
+[connection signal="body_exited" from="lookaround5" to="vandalo" method="_on_lookaround_body_exited"]
+[connection signal="body_entered" from="lookaround6" to="vandalo" method="_on_lookaround_body_entered"]
+[connection signal="body_exited" from="lookaround6" to="vandalo" method="_on_lookaround_body_exited"]
+[connection signal="body_entered" from="lookaround7" to="vandalo" method="_on_lookaround_body_entered"]
+[connection signal="body_exited" from="lookaround7" to="vandalo" method="_on_lookaround_body_exited"]
+[connection signal="body_entered" from="lookaround8" to="vandalo" method="_on_lookaround_body_entered"]
+[connection signal="body_exited" from="lookaround8" to="vandalo" method="_on_lookaround_body_exited"]
+[connection signal="body_entered" from="lookaround9" to="vandalo" method="_on_lookaround_body_entered"]
+[connection signal="body_exited" from="lookaround9" to="vandalo" method="_on_lookaround_body_exited"]
+[connection signal="body_entered" from="lookaround10" to="vandalo" method="_on_lookaround_body_entered"]
+[connection signal="body_exited" from="lookaround10" to="vandalo" method="_on_lookaround_body_exited"]
+[connection signal="body_entered" from="lookaround11" to="vandalo" method="_on_lookaround_body_entered"]
+[connection signal="body_exited" from="lookaround11" to="vandalo" method="_on_lookaround_body_exited"]
+[connection signal="body_entered" from="lookaround12" to="vandalo" method="_on_lookaround_body_entered"]
+[connection signal="body_exited" from="lookaround12" to="vandalo" method="_on_lookaround_body_exited"]
+[connection signal="body_entered" from="lookaround13" to="vandalo" method="_on_lookaround_body_entered"]
+[connection signal="body_exited" from="lookaround13" to="vandalo" method="_on_lookaround_body_exited"]
+[connection signal="body_entered" from="lookaround14" to="vandalo" method="_on_lookaround_body_entered"]
+[connection signal="body_exited" from="lookaround14" to="vandalo" method="_on_lookaround_body_exited"]
+[connection signal="body_entered" from="lookaround15" to="vandalo" method="_on_lookaround_body_entered"]
+[connection signal="body_exited" from="lookaround15" to="vandalo" method="_on_lookaround_body_exited"]
+[connection signal="body_entered" from="lookaround16" to="vandalo" method="_on_lookaround_body_entered"]
+[connection signal="body_exited" from="lookaround16" to="vandalo" method="_on_lookaround_body_exited"]
+[connection signal="body_entered" from="lookaround17" to="vandalo" method="_on_lookaround_body_entered"]
+[connection signal="body_exited" from="lookaround17" to="vandalo" method="_on_lookaround_body_exited"]
+[connection signal="body_entered" from="lookaround18" to="vandalo" method="_on_lookaround_body_entered"]
+[connection signal="body_exited" from="lookaround18" to="vandalo" method="_on_lookaround_body_exited"]
+[connection signal="body_entered" from="lookaround19" to="vandalo" method="_on_lookaround_body_entered"]
+[connection signal="body_exited" from="lookaround19" to="vandalo" method="_on_lookaround_body_exited"]
+[connection signal="body_entered" from="lookaround20" to="vandalo" method="_on_lookaround_body_entered"]
+[connection signal="body_exited" from="lookaround20" to="vandalo" method="_on_lookaround_body_exited"]
+[connection signal="body_entered" from="lookaround21" to="vandalo" method="_on_lookaround_body_entered"]
+[connection signal="body_exited" from="lookaround21" to="vandalo" method="_on_lookaround_body_exited"]
+[connection signal="body_entered" from="lookaroundopposite" to="vandalo" method="_on_lookaroundopposite_body_entered"]
+[connection signal="body_exited" from="lookaroundopposite" to="vandalo" method="_on_lookaroundopposite_body_exited"]
+[connection signal="body_entered" from="lookaroundopposite2" to="vandalo" method="_on_lookaroundopposite_body_entered"]
+[connection signal="body_exited" from="lookaroundopposite2" to="vandalo" method="_on_lookaroundopposite_body_exited"]
+[connection signal="body_entered" from="lookaroundopposite3" to="vandalo" method="_on_lookaroundopposite_body_entered"]
+[connection signal="body_exited" from="lookaroundopposite3" to="vandalo" method="_on_lookaroundopposite_body_exited"]
+[connection signal="body_entered" from="lookaroundopposite4" to="vandalo" method="_on_lookaroundopposite_body_entered"]
+[connection signal="body_exited" from="lookaroundopposite4" to="vandalo" method="_on_lookaroundopposite_body_exited"]
+[connection signal="body_entered" from="lookaroundopposite5" to="vandalo" method="_on_lookaroundopposite_body_entered"]
+[connection signal="body_exited" from="lookaroundopposite5" to="vandalo" method="_on_lookaroundopposite_body_exited"]
+[connection signal="body_entered" from="lookaroundopposite6" to="vandalo" method="_on_lookaroundopposite_body_entered"]
+[connection signal="body_exited" from="lookaroundopposite6" to="vandalo" method="_on_lookaroundopposite_body_exited"]
+[connection signal="body_entered" from="lookaroundopposite7" to="vandalo" method="_on_lookaroundopposite_body_entered"]
+[connection signal="body_exited" from="lookaroundopposite7" to="vandalo" method="_on_lookaroundopposite_body_exited"]
+[connection signal="body_entered" from="lookaroundopposite8" to="vandalo" method="_on_lookaroundopposite_body_entered"]
+[connection signal="body_exited" from="lookaroundopposite8" to="vandalo" method="_on_lookaroundopposite_body_exited"]
+[connection signal="body_entered" from="lookaroundopposite9" to="vandalo" method="_on_lookaroundopposite_body_entered"]
+[connection signal="body_exited" from="lookaroundopposite9" to="vandalo" method="_on_lookaroundopposite_body_exited"]
+[connection signal="body_entered" from="lookaroundopposite10" to="vandalo" method="_on_lookaroundopposite_body_entered"]
+[connection signal="body_exited" from="lookaroundopposite10" to="vandalo" method="_on_lookaroundopposite_body_exited"]
+[connection signal="body_entered" from="lookaroundopposite11" to="vandalo" method="_on_lookaroundopposite_body_entered"]
+[connection signal="body_exited" from="lookaroundopposite11" to="vandalo" method="_on_lookaroundopposite_body_exited"]
+[connection signal="body_entered" from="lookaroundopposite12" to="vandalo" method="_on_lookaroundopposite_body_entered"]
+[connection signal="body_exited" from="lookaroundopposite12" to="vandalo" method="_on_lookaroundopposite_body_exited"]
+[connection signal="body_entered" from="lookaroundopposite13" to="vandalo" method="_on_lookaroundopposite_body_entered"]
+[connection signal="body_exited" from="lookaroundopposite13" to="vandalo" method="_on_lookaroundopposite_body_exited"]
+[connection signal="body_entered" from="lookaroundopposite14" to="vandalo" method="_on_lookaroundopposite_body_entered"]
+[connection signal="body_exited" from="lookaroundopposite14" to="vandalo" method="_on_lookaroundopposite_body_exited"]
+[connection signal="body_entered" from="lookaroundopposite15" to="vandalo" method="_on_lookaroundopposite_body_entered"]
+[connection signal="body_exited" from="lookaroundopposite15" to="vandalo" method="_on_lookaroundopposite_body_exited"]
+[connection signal="body_entered" from="lookaroundopposite16" to="vandalo" method="_on_lookaroundopposite_body_entered"]
+[connection signal="body_exited" from="lookaroundopposite16" to="vandalo" method="_on_lookaroundopposite_body_exited"]
+[connection signal="body_entered" from="lookaroundopposite17" to="vandalo" method="_on_lookaroundopposite_body_entered"]
+[connection signal="body_exited" from="lookaroundopposite17" to="vandalo" method="_on_lookaroundopposite_body_exited"]
+[connection signal="body_entered" from="lookaroundopposite18" to="vandalo" method="_on_lookaroundopposite_body_entered"]
+[connection signal="body_exited" from="lookaroundopposite18" to="vandalo" method="_on_lookaroundopposite_body_exited"]
+[connection signal="body_entered" from="lookaroundopposite19" to="vandalo" method="_on_lookaroundopposite_body_entered"]
+[connection signal="body_exited" from="lookaroundopposite19" to="vandalo" method="_on_lookaroundopposite_body_exited"]
+[connection signal="body_entered" from="lookaroundopposite20" to="vandalo" method="_on_lookaroundopposite_body_entered"]
+[connection signal="body_exited" from="lookaroundopposite20" to="vandalo" method="_on_lookaroundopposite_body_exited"]
+[connection signal="body_entered" from="lookaroundopposite21" to="vandalo" method="_on_lookaroundopposite_body_entered"]
+[connection signal="body_exited" from="lookaroundopposite21" to="vandalo" method="_on_lookaroundopposite_body_exited"]

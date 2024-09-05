@@ -1,11 +1,11 @@
 extends CharacterBody2D
 
 var can_run: bool = false
-var speed: int = 150
+var speed: int = 180
 var direction: Vector2 = Vector2.ZERO
 var player_position: Vector2 = Vector2.ZERO
 var victory: bool = false
-var schiva: bool = false
+
 
 @onready var animation_tree = $AnimationTree
 @onready var animation_state = animation_tree.get("parameters/playback")
@@ -118,3 +118,11 @@ func _on_scappa_body_entered(body: CharacterBody2D):
 
 func _on_scappa_body_exited(body):
 	can_run = false
+
+
+func _on_lookaroundopposite_body_entered(body: CharacterBody2D):
+	can_run = true
+	fugaSinistra()
+
+func _on_lookaroundopposite_body_exited(body):
+	can_run = true
