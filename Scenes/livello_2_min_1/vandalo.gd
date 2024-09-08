@@ -14,8 +14,8 @@ var victory: bool = false
 
 func _process(delta):
 	var player_position = position
-	var min_limit = Vector2(-50, -980)  
-	var max_limit = Vector2(1200, 600) 
+	var min_limit = Vector2(-130, -835)  
+	var max_limit = Vector2(1450, 1150) 
 	player_position.x = clamp(player_position.x, min_limit.x, max_limit.x)
 	player_position.y = clamp(player_position.y, min_limit.y, max_limit.y)
 	position = player_position
