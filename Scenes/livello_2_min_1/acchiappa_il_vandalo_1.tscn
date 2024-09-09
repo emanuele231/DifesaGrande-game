@@ -1,4 +1,4 @@
-[gd_scene load_steps=96 format=3 uid="uid://32e0xsjsydvr"]
+[gd_scene load_steps=97 format=3 uid="uid://32e0xsjsydvr"]
 
 [ext_resource type="Texture2D" uid="uid://con2c3m6inlxq" path="res://assets acquistati/assets acquistati 2/MEGA BUNDLE 12 ASSET PACKS/MEGA BUNDLE 12 ASSET PACKS/TILES SENGOKU ADVENTURE.png" id="1_xxg1w"]
 [ext_resource type="Texture2D" uid="uid://bjmspdiysna62" path="res://assets acquistati/assets acquistati 2/MEGA BUNDLE 12 ASSET PACKS/MEGA BUNDLE 12 ASSET PACKS/SENGOKU ADVENTURE TILESET/DAY/FARM GROUND 1.png" id="2_32f5m"]
@@ -18935,6 +18935,14 @@ states/walk/node = SubResource("AnimationNodeBlendSpace2D_ncdo3")
 states/walk/position = Vector2(575, 73)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_2h1jh")]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fu3lh"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 3
+border_color = Color(0.682353, 0.321569, 0.0470588, 1)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7glti"]
 size = Vector2(8, 21)
 
@@ -19497,6 +19505,36 @@ anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/idle/blend_position = Vector2(0, 0)
 parameters/walk/blend_position = Vector2(0, 0)
+
+[node name="punteggio" type="Control" parent="player"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -26.0
+offset_top = 115.0
+offset_right = 14.0
+offset_bottom = 155.0
+
+[node name="Label" type="Label" parent="player/punteggio"]
+layout_mode = 0
+offset_left = -141.0
+offset_top = -51.0
+offset_right = 153.0
+offset_bottom = 120.0
+theme_override_colors/font_color = Color(0.592157, 0.337255, 0.0705882, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_fu3lh")
+text = "Totale punteggio: "
+horizontal_alignment = 1
+
+[node name="punti" type="Label" parent="player/punteggio"]
+layout_mode = 0
+offset_left = -12.0
+offset_top = 15.0
+offset_right = 29.0
+offset_bottom = 43.0
+theme_override_colors/font_color = Color(0.666667, 0.294118, 0.00784314, 1)
+text = "300"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="assessore_2" type="CharacterBody2D" parent="."]
 position = Vector2(2, -1)
@@ -21710,6 +21748,8 @@ debug_color = Color(0.756863, 0.113725, 0.341176, 0.419608)
 
 [connection signal="body_entered" from="vandalo/Sprite2D/Rincorri" to="vandalo" method="_on_rincorri_body_entered"]
 [connection signal="body_exited" from="vandalo/Sprite2D/Rincorri" to="vandalo" method="_on_rincorri_body_exited"]
+[connection signal="body_entered" from="vandalo/Sprite2D/Catturato" to="player" method="_on_catturato_body_entered"]
+[connection signal="body_exited" from="vandalo/Sprite2D/Catturato" to="player" method="_on_catturato_body_exited"]
 [connection signal="body_entered" from="vandalo/Sprite2D/Rincorri-su" to="vandalo" method="_on_rincorrisu_body_entered"]
 [connection signal="body_exited" from="vandalo/Sprite2D/Rincorri-su" to="vandalo" method="_on_rincorrisu_body_exited"]
 [connection signal="body_entered" from="vandalo/Sprite2D/Rincorri-giu" to="vandalo" method="_on_rincorrigiu_body_entered"]
