@@ -21748,6 +21748,8 @@ debug_color = Color(0.756863, 0.113725, 0.341176, 0.419608)
 
 [connection signal="body_entered" from="vandalo/Sprite2D/Rincorri" to="vandalo" method="_on_rincorri_body_entered"]
 [connection signal="body_exited" from="vandalo/Sprite2D/Rincorri" to="vandalo" method="_on_rincorri_body_exited"]
+[connection signal="body_entered" from="vandalo/Sprite2D/Catturato" to="player" method="_on_catturato_body_entered"]
+[connection signal="body_exited" from="vandalo/Sprite2D/Catturato" to="player" method="_on_catturato_body_exited"]
 [connection signal="body_entered" from="vandalo/Sprite2D/Rincorri-su" to="vandalo" method="_on_rincorrisu_body_entered"]
 [connection signal="body_exited" from="vandalo/Sprite2D/Rincorri-su" to="vandalo" method="_on_rincorrisu_body_exited"]
 [connection signal="body_entered" from="vandalo/Sprite2D/Rincorri-giu" to="vandalo" method="_on_rincorrigiu_body_entered"]
