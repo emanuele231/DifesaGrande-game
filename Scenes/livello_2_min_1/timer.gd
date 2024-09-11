@@ -8,6 +8,10 @@ var end: bool = false
 func _ready():
 	$Label.z_index = 3
 
+
+func _timer():
+	timer_running = true
+
 func _process(delta):
 	if timer_running == true:
 		current_time += delta
