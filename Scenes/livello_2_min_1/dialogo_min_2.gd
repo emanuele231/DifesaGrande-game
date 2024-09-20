@@ -39,9 +39,10 @@ func _ready():
 	
 func enable_player_movement():
 	emit_signal("spiegazione_chiusa")
-	if _on_player_2_callback != null and _assessore_2_callback != null:
+	if _on_player_2_callback != null and _assessore_2_callback != null and _timer_callback != null:
 		_on_player_2_callback._on_player_2()
 		_assessore_2_callback._assessore_2()
+		_timer_callback._timer()
 
 		
 
