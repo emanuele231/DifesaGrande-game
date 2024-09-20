@@ -6,6 +6,8 @@ var input_movement = Vector2.ZERO
 var can_move: bool = false
 @onready var anim_tree = $AnimationTree
 @onready var animazioni = anim_tree.get("parameters/playback")
+var points_script = preload("res://Scenes/livello_2_min_1/timer.gd")
+var points = points_script.new()
 
 func _ready():
 	get_node("Sprite2D/dialogo_min_2")._on_player_2_callback = self
@@ -59,5 +61,8 @@ func _on_catturato_body_entered(body: CharacterBody2D):
 		$punteggio.show()
 
 
+
 func _on_catturato_body_exited(body):
 	pass
+
+
