@@ -1,4 +1,4 @@
-[gd_scene load_steps=98 format=3 uid="uid://32e0xsjsydvr"]
+[gd_scene load_steps=99 format=3 uid="uid://32e0xsjsydvr"]
 
 [ext_resource type="Texture2D" uid="uid://con2c3m6inlxq" path="res://assets acquistati/assets acquistati 2/MEGA BUNDLE 12 ASSET PACKS/MEGA BUNDLE 12 ASSET PACKS/TILES SENGOKU ADVENTURE.png" id="1_xxg1w"]
 [ext_resource type="Texture2D" uid="uid://bjmspdiysna62" path="res://assets acquistati/assets acquistati 2/MEGA BUNDLE 12 ASSET PACKS/MEGA BUNDLE 12 ASSET PACKS/SENGOKU ADVENTURE TILESET/DAY/FARM GROUND 1.png" id="2_32f5m"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://Scenes/livello_2_min_1/assessore_2.gd" id="5_55t28"]
 [ext_resource type="Script" path="res://Scenes/livello_2_min_1/dialogo_min_2.gd" id="5_wgqir"]
 [ext_resource type="Script" path="res://Scenes/livello_2_min_1/timer.gd" id="6_vq3jf"]
+[ext_resource type="Script" path="res://Scenes/livello_2_min_1/punteggio.gd" id="7_mdqxb"]
 [ext_resource type="Script" path="res://Scenes/livello_2_min_1/vandalo.gd" id="8_43t3d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c0thc"]
@@ -19515,6 +19516,7 @@ offset_left = -26.0
 offset_top = 115.0
 offset_right = 14.0
 offset_bottom = 155.0
+script = ExtResource("7_mdqxb")
 
 [node name="Label" type="Label" parent="player/punteggio"]
 layout_mode = 0
