@@ -1,4 +1,4 @@
-[gd_scene load_steps=99 format=3 uid="uid://32e0xsjsydvr"]
+[gd_scene load_steps=106 format=3 uid="uid://32e0xsjsydvr"]
 
 [ext_resource type="Texture2D" uid="uid://con2c3m6inlxq" path="res://assets acquistati/assets acquistati 2/MEGA BUNDLE 12 ASSET PACKS/MEGA BUNDLE 12 ASSET PACKS/TILES SENGOKU ADVENTURE.png" id="1_xxg1w"]
 [ext_resource type="Texture2D" uid="uid://bjmspdiysna62" path="res://assets acquistati/assets acquistati 2/MEGA BUNDLE 12 ASSET PACKS/MEGA BUNDLE 12 ASSET PACKS/SENGOKU ADVENTURE TILESET/DAY/FARM GROUND 1.png" id="2_32f5m"]
@@ -7,7 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://dw1xgygvvs0nx" path="res://personaggi/Assessore chara.png" id="4_na71w"]
 [ext_resource type="Texture2D" uid="uid://c7og0ds4u7hth" path="res://personaggi/vandalo.png" id="5_8a5ue"]
 [ext_resource type="Script" path="res://Scenes/livello_2_min_1/assessore_2.gd" id="5_55t28"]
+[ext_resource type="Script" path="res://Scenes/livello_2_min_1/Pausa.gd" id="5_apyux"]
 [ext_resource type="Script" path="res://Scenes/livello_2_min_1/dialogo_min_2.gd" id="5_wgqir"]
+[ext_resource type="Script" path="res://Scenes/livello_2_min_1/Control.gd" id="6_5qv8b"]
 [ext_resource type="Script" path="res://Scenes/livello_2_min_1/timer.gd" id="6_vq3jf"]
 [ext_resource type="Script" path="res://Scenes/livello_2_min_1/punteggio.gd" id="7_mdqxb"]
 [ext_resource type="Script" path="res://Scenes/livello_2_min_1/vandalo.gd" id="8_43t3d"]
@@ -18695,6 +18697,31 @@ texture = ExtResource("1_xxg1w")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_6m2dx")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5812w"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.701961, 0.2, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gkvqc"]
+bg_color = Color(1, 1, 1, 0.580392)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.783058, 0.228083, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_83b08"]
+bg_color = Color(0.917647, 0.478431, 0.266667, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sfiqi"]
+bg_color = Color(0.917647, 0.478431, 0.266667, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fgirx"]
+bg_color = Color(0.917647, 0.478431, 0.266667, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n6kdn"]
 bg_color = Color(1, 1, 1, 0.662745)
 border_width_left = 3
@@ -19452,19 +19479,75 @@ limit_top = -1055
 limit_right = 1405
 limit_bottom = 955
 
+[node name="Pausa" type="Button" parent="player/Sprite2D/Camera2D"]
+offset_left = 178.321
+offset_top = -70.7327
+offset_right = 232.321
+offset_bottom = -11.7327
+theme_override_colors/font_color = Color(0.783058, 0.228083, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_5812w")
+text = "11"
+script = ExtResource("5_apyux")
+
+[node name="Control" type="Control" parent="player/Sprite2D/Camera2D"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -139.024
+offset_top = -31.7328
+offset_right = 164.976
+offset_bottom = 175.267
+script = ExtResource("6_5qv8b")
+
+[node name="Label" type="Label" parent="player/Sprite2D/Camera2D/Control"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 46.0
+offset_right = 283.0
+offset_bottom = 199.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_gkvqc")
+
+[node name="Riprendi" type="Button" parent="player/Sprite2D/Camera2D/Control"]
+layout_mode = 0
+offset_left = 114.024
+offset_top = 69.5215
+offset_right = 180.024
+offset_bottom = 92.5215
+theme_override_styles/normal = SubResource("StyleBoxFlat_83b08")
+text = "Riprendi"
+
+[node name="Ricomincia" type="Button" parent="player/Sprite2D/Camera2D/Control"]
+layout_mode = 0
+offset_left = 114.024
+offset_top = 113.608
+offset_right = 198.024
+offset_bottom = 136.608
+theme_override_styles/normal = SubResource("StyleBoxFlat_sfiqi")
+text = "Ricomincia"
+
+[node name="Torna al menù" type="Button" parent="player/Sprite2D/Camera2D/Control"]
+layout_mode = 0
+offset_left = 112.651
+offset_top = 157.695
+offset_right = 225.651
+offset_bottom = 180.695
+theme_override_styles/normal = SubResource("StyleBoxFlat_fgirx")
+text = "Torna al menù"
+
 [node name="dialogo_min_2" type="Control" parent="player/Sprite2D"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = -216.264
-offset_top = 35.5165
-offset_right = 269.736
-offset_bottom = 157.516
+offset_left = -211.556
+offset_top = 34.7826
+offset_right = 274.444
+offset_bottom = 156.782
 script = ExtResource("5_wgqir")
 
 [node name="Label" type="Label" parent="player/Sprite2D/dialogo_min_2"]
 layout_mode = 0
-offset_right = 436.0
-offset_bottom = 86.0
+offset_left = 11.8196
+offset_top = -4.44406
+offset_right = 447.82
+offset_bottom = 81.5559
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_n6kdn")
 text = "daje"
@@ -19510,6 +19593,7 @@ parameters/idle/blend_position = Vector2(0, 0)
 parameters/walk/blend_position = Vector2(0, 0)
 
 [node name="punteggio" type="Control" parent="player"]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = -26.0
@@ -19520,21 +19604,23 @@ script = ExtResource("7_mdqxb")
 
 [node name="Label" type="Label" parent="player/punteggio"]
 layout_mode = 0
-offset_left = -141.0
-offset_top = -51.0
-offset_right = 153.0
-offset_bottom = 120.0
+offset_left = -139.0
+offset_top = -46.0
+offset_right = 155.0
+offset_bottom = 125.0
 theme_override_colors/font_color = Color(0.592157, 0.337255, 0.0705882, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_fu3lh")
 text = "Totale punteggio: "
 horizontal_alignment = 1
 
 [node name="punti" type="Label" parent="player/punteggio"]
-layout_mode = 0
-offset_left = -12.0
-offset_top = 15.0
-offset_right = 29.0
-offset_bottom = 43.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.075
+anchor_right = -0.075
+offset_top = 14.0
+offset_right = 41.0
+offset_bottom = 42.0
 theme_override_colors/font_color = Color(0.666667, 0.294118, 0.00784314, 1)
 text = "300"
 horizontal_alignment = 1
@@ -19884,7 +19970,7 @@ debug_color = Color(1, 1, 1, 0.419608)
 position = Vector2(799, 512)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="change-direction31"]
-position = Vector2(-642.5, -392.5)
+position = Vector2(-656, -391)
 shape = SubResource("RectangleShape2D_q2ftp")
 debug_color = Color(1, 1, 1, 0.419608)
 
@@ -21750,6 +21836,9 @@ position = Vector2(286, -58)
 shape = SubResource("RectangleShape2D_7ax21")
 debug_color = Color(0.756863, 0.113725, 0.341176, 0.419608)
 
+[connection signal="button_down" from="player/Sprite2D/Camera2D/Pausa" to="player/Sprite2D/Camera2D/Pausa" method="_on_button_down"]
+[connection signal="button_down" from="player/Sprite2D/Camera2D/Control/Riprendi" to="player/Sprite2D/Camera2D/Control" method="_on_riprendi_button_down"]
+[connection signal="button_down" from="player/Sprite2D/Camera2D/Control/Torna al menù" to="player/Sprite2D/Camera2D/Control" method="_on_torna_al_menù_button_down"]
 [connection signal="body_entered" from="vandalo/Sprite2D/Rincorri" to="vandalo" method="_on_rincorri_body_entered"]
 [connection signal="body_exited" from="vandalo/Sprite2D/Rincorri" to="vandalo" method="_on_rincorri_body_exited"]
 [connection signal="body_entered" from="vandalo/Sprite2D/Catturato" to="player" method="_on_catturato_body_entered"]
