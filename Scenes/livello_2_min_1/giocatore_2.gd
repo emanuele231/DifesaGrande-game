@@ -13,7 +13,7 @@ func _ready():
 	get_node("Sprite2D/dialogo_min_2")._on_player_2_callback = self
 	$punteggio.hide()
 	$punteggio.z_index = 3
-
+	$Sprite2D/Camera2D/Control.hide()
 func _on_player_2():
 	can_move = true
 
