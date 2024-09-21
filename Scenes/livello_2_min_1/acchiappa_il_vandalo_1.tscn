@@ -19506,16 +19506,16 @@ offset_right = 283.0
 offset_bottom = 199.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_gkvqc")
 
-[node name="Riprendi" type="Button" parent="player/Sprite2D/Camera2D/Control"]
+[node name="riprendi" type="Button" parent="player/Sprite2D/Camera2D/Control"]
 layout_mode = 0
-offset_left = 114.024
-offset_top = 69.5215
-offset_right = 180.024
-offset_bottom = 92.5215
+offset_left = 114.0
+offset_top = 70.0
+offset_right = 213.0
+offset_bottom = 93.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_83b08")
 text = "Riprendi"
 
-[node name="Ricomincia" type="Button" parent="player/Sprite2D/Camera2D/Control"]
+[node name="ricomincia" type="Button" parent="player/Sprite2D/Camera2D/Control"]
 layout_mode = 0
 offset_left = 114.024
 offset_top = 113.608
@@ -19524,7 +19524,7 @@ offset_bottom = 136.608
 theme_override_styles/normal = SubResource("StyleBoxFlat_sfiqi")
 text = "Ricomincia"
 
-[node name="Torna al menù" type="Button" parent="player/Sprite2D/Camera2D/Control"]
+[node name="torna_al_menu" type="Button" parent="player/Sprite2D/Camera2D/Control"]
 layout_mode = 0
 offset_left = 112.651
 offset_top = 157.695
@@ -19534,6 +19534,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_fgirx")
 text = "Torna al menù"
 
 [node name="dialogo_min_2" type="Control" parent="player/Sprite2D"]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = -211.556
@@ -21837,8 +21838,9 @@ shape = SubResource("RectangleShape2D_7ax21")
 debug_color = Color(0.756863, 0.113725, 0.341176, 0.419608)
 
 [connection signal="button_down" from="player/Sprite2D/Camera2D/Pausa" to="player/Sprite2D/Camera2D/Pausa" method="_on_button_down"]
-[connection signal="button_down" from="player/Sprite2D/Camera2D/Control/Riprendi" to="player/Sprite2D/Camera2D/Control" method="_on_riprendi_button_down"]
-[connection signal="button_down" from="player/Sprite2D/Camera2D/Control/Torna al menù" to="player/Sprite2D/Camera2D/Control" method="_on_torna_al_menù_button_down"]
+[connection signal="button_down" from="player/Sprite2D/Camera2D/Control/riprendi" to="player/Sprite2D/Camera2D/Control" method="_on_riprendi_button_down"]
+[connection signal="button_down" from="player/Sprite2D/Camera2D/Control/ricomincia" to="player/Sprite2D/Camera2D/Control" method="_on_ricomincia_button_down"]
+[connection signal="button_down" from="player/Sprite2D/Camera2D/Control/torna_al_menu" to="player/Sprite2D/Camera2D/Control" method="_on_torna_al_menu_button_down"]
 [connection signal="body_entered" from="vandalo/Sprite2D/Rincorri" to="vandalo" method="_on_rincorri_body_entered"]
 [connection signal="body_exited" from="vandalo/Sprite2D/Rincorri" to="vandalo" method="_on_rincorri_body_exited"]
 [connection signal="body_entered" from="vandalo/Sprite2D/Catturato" to="player" method="_on_catturato_body_entered"]
