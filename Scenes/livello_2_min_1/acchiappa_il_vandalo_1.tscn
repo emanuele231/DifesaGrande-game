@@ -19493,62 +19493,61 @@ script = ExtResource("5_apyux")
 layout_mode = 3
 anchors_preset = 0
 offset_left = -139.024
-offset_top = -31.7328
+offset_top = -35.1241
 offset_right = 164.976
-offset_bottom = 175.267
+offset_bottom = 171.876
 script = ExtResource("6_5qv8b")
 
 [node name="Label" type="Label" parent="player/Sprite2D/Camera2D/Control"]
 layout_mode = 0
-offset_left = 30.0
-offset_top = 46.0
-offset_right = 283.0
-offset_bottom = 199.0
+offset_left = -90.6703
+offset_top = -130.565
+offset_right = 410.33
+offset_bottom = 193.435
 theme_override_styles/normal = SubResource("StyleBoxFlat_gkvqc")
 
 [node name="riprendi" type="Button" parent="player/Sprite2D/Camera2D/Control"]
 layout_mode = 0
-offset_left = 114.0
-offset_top = 70.0
-offset_right = 213.0
-offset_bottom = 93.0
+offset_left = 98.9127
+offset_top = -62.7389
+offset_right = 197.913
+offset_bottom = -39.7389
 theme_override_styles/normal = SubResource("StyleBoxFlat_83b08")
 text = "Riprendi"
 
 [node name="ricomincia" type="Button" parent="player/Sprite2D/Camera2D/Control"]
 layout_mode = 0
-offset_left = 114.024
-offset_top = 113.608
-offset_right = 198.024
-offset_bottom = 136.608
+offset_left = 100.287
+offset_top = -15.2608
+offset_right = 184.287
+offset_bottom = 7.7392
 theme_override_styles/normal = SubResource("StyleBoxFlat_sfiqi")
 text = "Ricomincia"
 
 [node name="torna_al_menu" type="Button" parent="player/Sprite2D/Camera2D/Control"]
 layout_mode = 0
-offset_left = 112.651
-offset_top = 157.695
-offset_right = 225.651
-offset_bottom = 180.695
+offset_left = 98.9127
+offset_top = 33.9129
+offset_right = 211.913
+offset_bottom = 56.9129
 theme_override_styles/normal = SubResource("StyleBoxFlat_fgirx")
 text = "Torna al menù"
 
 [node name="dialogo_min_2" type="Control" parent="player/Sprite2D"]
-visible = false
 layout_mode = 3
 anchors_preset = 0
-offset_left = -211.556
-offset_top = 34.7826
-offset_right = 274.444
-offset_bottom = 156.782
+offset_left = -213.333
+offset_top = 55.1883
+offset_right = 272.667
+offset_bottom = 177.188
 script = ExtResource("5_wgqir")
 
 [node name="Label" type="Label" parent="player/Sprite2D/dialogo_min_2"]
 layout_mode = 0
-offset_left = 11.8196
-offset_top = -4.44406
-offset_right = 447.82
-offset_bottom = 81.5559
+offset_left = 7.11158
+offset_top = 38.9565
+offset_right = 443.112
+offset_bottom = 124.956
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_n6kdn")
 text = "daje"
