@@ -19,7 +19,7 @@ func _process(delta):
 
 func _on_rincorri_body_entered(body: CharacterBody2D):
 	can_run = true
-	fugaDestra()
+	fugaSu()
 
 func _on_rincorri_body_exited(body):
 	can_run = false
@@ -68,21 +68,21 @@ func update_animation(motion: Vector2):
 # Segnali per gestire il movimento in diverse direzioni
 func _on_rincorrisu_body_entered(body: CharacterBody2D):
 	can_run = true
-	fugaSu()
+	fugaSinistra()
 
 func _on_rincorrisu_body_exited(body):
 	can_run = false
 
 func _on_rincorrigiu_body_entered(body: CharacterBody2D):
 	can_run = true
-	fugaGiu()
+	fugaDestra()
 
 func _on_rincorrigiu_body_exited(body):
 	can_run = false
 
 func _on_rincorrisinistra_body_entered(body: CharacterBody2D):
 	can_run = true
-	fugaSinistra()
+	fugaGiu()
 
 func _on_rincorrisinistra_body_exited(body):
 	can_run = false

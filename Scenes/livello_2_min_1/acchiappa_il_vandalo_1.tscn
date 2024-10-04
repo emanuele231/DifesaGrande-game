@@ -19188,22 +19188,22 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3bcje"]
-size = Vector2(187.521, 219.761)
+size = Vector2(104.617, 140.567)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i4w7y"]
-size = Vector2(43.4258, 59.3948)
+size = Vector2(31.5824, 51.4755)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kr43y"]
-size = Vector2(213.181, 160.365)
+size = Vector2(138.173, 75.2332)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kybpv"]
-size = Vector2(230.947, 150.467)
+size = Vector2(148.043, 93.0519)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7wewy"]
-size = Vector2(173.704, 209.861)
+size = Vector2(92.7734, 158.386)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u8deu"]
-size = Vector2(404.65, 370.227)
+size = Vector2(240.816, 233.619)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ncnm4"]
 size = Vector2(10, 21)
@@ -19317,7 +19317,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [118, 119, 120, 121, 122, 123, 124, 125]
+"values": [130, 131, 132, 133, 134, 135, 136, 137]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -19329,7 +19329,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [41]
+"values": [46]
 }
 
 [sub_resource type="Animation" id="Animation_nuy7e"]
@@ -19346,7 +19346,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [104, 105, 106, 107, 108, 109, 110, 111, 112]
+"values": [117, 118, 119, 120, 121, 122, 123, 124, 125]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -19358,7 +19358,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [41]
+"values": [46]
 }
 
 [sub_resource type="Animation" id="Animation_6jtb6"]
@@ -19375,7 +19375,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [130, 131, 132, 133, 134, 135, 136, 137]
+"values": [143, 144, 145, 146, 147, 148, 149, 150]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -19387,7 +19387,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [42]
+"values": [46]
 }
 
 [sub_resource type="Animation" id="Animation_2i16v"]
@@ -19404,7 +19404,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [92, 93, 94, 95, 96, 97, 98, 99]
+"values": [105, 106, 107, 108, 109, 110, 111, 112]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -19416,7 +19416,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [40]
+"values": [46]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nocu8"]
@@ -19706,47 +19706,47 @@ scale = Vector2(0.506611, 0.505095)
 texture = ExtResource("5_8a5ue")
 hframes = 13
 vframes = 41
-frame = 130
+frame = 106
 
 [node name="Rincorri" type="Area2D" parent="vandalo/Sprite2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="vandalo/Sprite2D/Rincorri"]
-position = Vector2(-115.473, -82.1627)
+position = Vector2(-74.0213, -42.5664)
 shape = SubResource("RectangleShape2D_3bcje")
 debug_color = Color(0.737255, 0.466667, 0, 0.419608)
 
 [node name="Catturato" type="Area2D" parent="vandalo/Sprite2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="vandalo/Sprite2D/Catturato"]
-position = Vector2(0, -1.9798)
+position = Vector2(1.90735e-06, -1.97983)
 shape = SubResource("RectangleShape2D_i4w7y")
 debug_color = Color(0.141176, 0.517647, 1, 0.419608)
 
 [node name="Rincorri-su" type="Area2D" parent="vandalo/Sprite2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="vandalo/Sprite2D/Rincorri-su"]
-position = Vector2(88.8256, -111.86)
+position = Vector2(45.3997, -75.2335)
 shape = SubResource("RectangleShape2D_kr43y")
 debug_color = Color(0.607843, 0.537255, 0.00784314, 0.419608)
 
 [node name="Rincorri-giu" type="Area2D" parent="vandalo/Sprite2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="vandalo/Sprite2D/Rincorri-giu"]
-position = Vector2(-93.7604, 102.951)
+position = Vector2(-52.3084, 74.2433)
 shape = SubResource("RectangleShape2D_kybpv")
 debug_color = Color(0.54902, 0.32549, 0.0117647, 0.419608)
 
 [node name="Rincorri-sinistra" type="Area2D" parent="vandalo/Sprite2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="vandalo/Sprite2D/Rincorri-sinistra"]
-position = Vector2(108.565, 73.2535)
+position = Vector2(68.0996, 41.5762)
 shape = SubResource("RectangleShape2D_7wewy")
 debug_color = Color(0.431373, 0.235294, 0.0745098, 0.419608)
 
 [node name="SCAPPA" type="Area2D" parent="vandalo/Sprite2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="vandalo/Sprite2D/SCAPPA"]
-position = Vector2(-6.90866, -6.92938)
+position = Vector2(-5.92171, 3.95959)
 shape = SubResource("RectangleShape2D_u8deu")
 debug_color = Color(0.654902, 0.121569, 0.12549, 0.419608)
 
