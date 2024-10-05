@@ -8,6 +8,7 @@ var victory: bool = false
 
 @onready var animation_tree = $AnimationTree
 @onready var animation_state = animation_tree.get("parameters/playback")
+@onready var fuga_timer = $Timer
 
 func _process(delta):
 	var player_position = position
@@ -19,10 +20,12 @@ func _process(delta):
 
 func _on_rincorri_body_entered(body: CharacterBody2D):
 	can_run = true
+	fuga_timer.start(3.0)
 	fugaSu()
 
 func _on_rincorri_body_exited(body):
-	can_run = false
+	if fuga_timer.is_stopped():
+		can_run = false
 
 func _physics_process(delta):
 	if can_run:
@@ -75,10 +78,12 @@ func _on_rincorrisu_body_exited(body):
 
 func _on_rincorrigiu_body_entered(body: CharacterBody2D):
 	can_run = true
+	fuga_timer.start(3.0)
 	fugaDestra()
 
 func _on_rincorrigiu_body_exited(body):
-	can_run = false
+	if fuga_timer.is_stopped():
+		can_run = false
 
 func _on_rincorrisinistra_body_entered(body: CharacterBody2D):
 	can_run = true

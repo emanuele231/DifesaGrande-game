@@ -19765,6 +19765,8 @@ tree_root = SubResource("AnimationNodeStateMachine_ool2g")
 anim_player = NodePath("../AnimationPlayer")
 active = true
 
+[node name="Timer" type="Timer" parent="vandalo"]
+
 [node name="change-direction" type="Area2D" parent="."]
 position = Vector2(817, 109)
 
