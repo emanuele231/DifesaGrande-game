@@ -56,7 +56,6 @@ func move():
 
 func _on_catturato_body_entered(body: CharacterBody2D):
 	if Input.is_key_label_pressed(KEY_A):
-		print("ci sono")
 		Engine.time_scale = 0
 		$punteggio.show()
 

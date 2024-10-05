@@ -56949,7 +56949,7 @@ shape = SubResource("CircleShape2D_bckrd")
 debug_color = Color(0.976471, 0, 0.4, 0.419608)
 
 [node name="min-2" type="Area2D" parent="."]
-position = Vector2(-347, -2048)
+position = Vector2(-349, -1664)
 script = ExtResource("49_41qfv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="min-2"]
@@ -56957,10 +56957,10 @@ shape = SubResource("CircleShape2D_kogwf")
 debug_color = Color(0.996078, 0, 0.164706, 0.419608)
 
 [node name="accesso-livello-2" type="Label" parent="."]
-offset_left = -367.0
-offset_top = -2075.0
-offset_right = -327.0
-offset_bottom = -2023.0
+offset_left = -371.0
+offset_top = -1692.0
+offset_right = -331.0
+offset_bottom = -1640.0
 theme_override_font_sizes/font_size = 35
 text = "!!!"
 horizontal_alignment = 1

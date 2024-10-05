@@ -10,7 +10,7 @@ var change_interval: float = 2.0
 
 
 func _on_scappa_body_entered(body: CharacterBody2D):
-	can_move = true
+	can_move = false
 	current_speed = fast_speed
 	set_escape_direction(body.position)
 
@@ -30,12 +30,7 @@ func _physics_process(delta):
 			randomize_direction()
 			time_passed = 0.0 
 		move_in(delta)
-	else:
-		time_passed += delta
-		if time_passed >= change_interval:
-			randomize_direction()
-			time_passed = 0.0 
-		move_out(delta)
+
 
 func move_out(delta):
 	var new_position = position + direction * normal_speed * delta
