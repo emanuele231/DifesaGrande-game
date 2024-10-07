@@ -1,32 +1,21 @@
 [gd_scene load_steps=14 format=3 uid="uid://bcet6ddrgr57d"]
 
 [ext_resource type="Script" path="res://Scenes/menu.gd" id="1_inog3"]
+[ext_resource type="Shader" path="res://Scenes/menu/scroll.gdshader" id="2_prxdt"]
+[ext_resource type="Texture2D" uid="uid://dggayypuc47w3" path="res://sfondi/background_tiled_2.png" id="3_cv8qm"]
 [ext_resource type="Script" path="res://Scenes/menu/TextureRect.gd" id="3_jtg8g"]
-[ext_resource type="FontFile" uid="uid://dl4u8nxh5sxto" path="res://Scenes/menu/Fonts/FOREST THING.ttf" id="3_olhfs"]
 [ext_resource type="FontFile" uid="uid://bv6cm8cfu7lmm" path="res://Scenes/menu/Fonts/FORESTANA.ttf" id="4_4r65b"]
 [ext_resource type="Theme" uid="uid://beyt1nfrpkx7f" path="res://Scenes/menu/Button_theme.tres" id="4_i84m0"]
 [ext_resource type="AudioStream" uid="uid://crov63jljdu0f" path="res://Scenes/menu/Menu theme.wav" id="4_uk27y"]
 
-[sub_resource type="SystemFont" id="SystemFont_m4k02"]
-font_weight = 375
-msdf_size = 44
-
-[sub_resource type="LabelSettings" id="LabelSettings_rk0s6"]
-resource_local_to_scene = true
-line_spacing = 50.0
-font = ExtResource("3_olhfs")
-font_size = 120
-font_color = Color(1, 0.823529, 0.658824, 1)
-outline_size = 15
-outline_color = Color(1, 0.733333, 0.0941176, 0.572549)
-shadow_size = 10
-shadow_color = Color(0, 0, 0, 1)
-shadow_offset = Vector2(3, 3)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8akud"]
+shader = ExtResource("2_prxdt")
+shader_parameter/speed = 0.1
 
 [sub_resource type="LabelSettings" id="LabelSettings_668vj"]
 font = ExtResource("4_4r65b")
-font_size = 100
-font_color = Color(0.764706, 0.513726, 0.305882, 1)
+font_size = 130
+font_color = Color(0.945098, 0.788235, 0.666667, 1)
 outline_size = 2
 outline_color = Color(0.243137, 0.027451, 0.0705882, 0.92549)
 shadow_size = 4
@@ -46,11 +35,15 @@ script = ExtResource("1_inog3")
 metadata/_edit_vertical_guides_ = [1039.0]
 
 [node name="TextureRect" type="TextureRect" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_8akud")
 offset_left = 3.0
 offset_top = 6.0
 offset_right = 1959.0
 offset_bottom = 1035.0
+texture = ExtResource("3_cv8qm")
 expand_mode = 2
+stretch_mode = 1
 script = ExtResource("3_jtg8g")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
@@ -62,19 +55,6 @@ offset_bottom = 940.0
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 60
-
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
-visible = false
-modulate = Color(0.870588, 0.537255, 0.0784314, 1)
-self_modulate = Color(1, 1, 0.00784314, 1)
-clip_contents = true
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = SubResource("SystemFont_m4k02")
-theme_override_font_sizes/font_size = 51
-text = "THE QUERCUS GAME"
-label_settings = SubResource("LabelSettings_rk0s6")
-horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="MarginContainer/VBoxContainer"]
 texture_filter = 1
