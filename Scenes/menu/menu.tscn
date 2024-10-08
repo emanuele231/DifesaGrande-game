@@ -37,9 +37,9 @@ metadata/_edit_vertical_guides_ = [1039.0]
 [node name="TextureRect" type="TextureRect" parent="."]
 texture_repeat = 2
 material = SubResource("ShaderMaterial_8akud")
-offset_left = 3.0
+offset_left = 2.0
 offset_top = 6.0
-offset_right = 1959.0
+offset_right = 1958.0
 offset_bottom = 1035.0
 texture = ExtResource("3_cv8qm")
 expand_mode = 2
