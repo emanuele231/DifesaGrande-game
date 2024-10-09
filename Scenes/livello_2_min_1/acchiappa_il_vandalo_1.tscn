@@ -19507,23 +19507,29 @@ limit_top = -1055
 limit_right = 1405
 limit_bottom = 955
 
-[node name="punteggio" type="Control" parent="player/Sprite2D/Camera2D"]
+[node name="CanvasLayer" type="CanvasLayer" parent="player/Sprite2D/Camera2D"]
+offset = Vector2(500, -500)
+scale = Vector2(3, 3)
+transform = Transform2D(3, 0, 0, 3, 500, -500)
+follow_viewport_enabled = true
+
+[node name="punteggio" type="Control" parent="player/Sprite2D/Camera2D/CanvasLayer"]
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -597.36
+offset_top = -191.081
+offset_right = -557.36
+offset_bottom = -151.081
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 script = ExtResource("7_mdqxb")
 
-[node name="Label" type="Label" parent="player/Sprite2D/Camera2D/punteggio"]
+[node name="Label" type="Label" parent="player/Sprite2D/Camera2D/CanvasLayer/punteggio"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -19544,7 +19550,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_fu3lh")
 text = "Totale punteggio: "
 horizontal_alignment = 1
 
-[node name="punti" type="Label" parent="player/Sprite2D/Camera2D/punteggio"]
+[node name="punti" type="Label" parent="player/Sprite2D/Camera2D/CanvasLayer/punteggio"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -19564,7 +19570,7 @@ text = "300"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Button" type="Button" parent="player/Sprite2D/Camera2D/punteggio"]
+[node name="Button" type="Button" parent="player/Sprite2D/Camera2D/CanvasLayer/punteggio"]
 layout_mode = 0
 offset_left = 48.0
 offset_top = 66.0
@@ -19575,7 +19581,7 @@ theme_override_font_sizes/font_size = 8
 text = "TORNA ALLA MAPPA
 "
 
-[node name="pausa-panel" type="Control" parent="player/Sprite2D/Camera2D"]
+[node name="pausa-panel" type="Control" parent="player/Sprite2D/Camera2D/CanvasLayer"]
 visible = false
 layout_mode = 3
 anchors_preset = 8
@@ -19583,15 +19589,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -313.5
-offset_top = -201.0
-offset_right = 313.5
-offset_bottom = 201.0
+offset_left = -811.003
+offset_top = -297.825
+offset_right = -184.003
+offset_bottom = 104.175
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("5_hoixx")
 
-[node name="Label" type="Label" parent="player/Sprite2D/Camera2D/pausa-panel"]
+[node name="Label" type="Label" parent="player/Sprite2D/Camera2D/CanvasLayer/pausa-panel"]
 layout_mode = 0
 offset_left = 20.0
 offset_top = -14.0
@@ -19599,7 +19605,7 @@ offset_right = 769.0
 offset_bottom = 374.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_bwk0j")
 
-[node name="riprendi" type="Button" parent="player/Sprite2D/Camera2D/pausa-panel"]
+[node name="riprendi" type="Button" parent="player/Sprite2D/Camera2D/CanvasLayer/pausa-panel"]
 texture_filter = 1
 layout_mode = 0
 offset_left = 303.0
@@ -19611,7 +19617,7 @@ theme_override_fonts/font = ExtResource("7_h3n2g")
 theme_override_font_sizes/font_size = 15
 text = "RIPRENDI"
 
-[node name="riavvia" type="Button" parent="player/Sprite2D/Camera2D/pausa-panel"]
+[node name="riavvia" type="Button" parent="player/Sprite2D/Camera2D/CanvasLayer/pausa-panel"]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.091
@@ -19626,7 +19632,7 @@ theme_override_font_sizes/font_size = 15
 text = "RIAVVIA
 "
 
-[node name="back" type="Button" parent="player/Sprite2D/Camera2D/pausa-panel"]
+[node name="back" type="Button" parent="player/Sprite2D/Camera2D/CanvasLayer/pausa-panel"]
 layout_mode = 1
 anchors_preset = -1
 anchor_bottom = 0.01
@@ -19641,16 +19647,16 @@ theme_override_font_sizes/font_size = 12
 text = "TORNA ALLA MAPPA
 "
 
-[node name="timer" type="Control" parent="player/Sprite2D/Camera2D"]
+[node name="timer" type="Control" parent="player/Sprite2D/Camera2D/CanvasLayer"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = -21.1361
-offset_top = -144.944
-offset_right = 67.8639
-offset_bottom = -104.944
+offset_left = -22.1875
+offset_top = 59.2342
+offset_right = 66.8125
+offset_bottom = 99.2342
 script = ExtResource("6_vq3jf")
 
-[node name="Label" type="Label" parent="player/Sprite2D/Camera2D/timer"]
+[node name="Label" type="Label" parent="player/Sprite2D/Camera2D/CanvasLayer/timer"]
 layout_mode = 0
 offset_left = 9.0
 offset_top = 1.0
@@ -19662,14 +19668,14 @@ text = "300"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Control" type="Control" parent="player/Sprite2D/Camera2D/timer"]
+[node name="Control" type="Control" parent="player/Sprite2D/Camera2D/CanvasLayer/timer"]
 layout_mode = 1
 anchors_preset = 0
 offset_right = 278.0
 offset_bottom = 167.0
 script = ExtResource("5_7xkd1")
 
-[node name="Button" type="Button" parent="player/Sprite2D/Camera2D/timer/Control"]
+[node name="Button" type="Button" parent="player/Sprite2D/Camera2D/CanvasLayer/timer/Control"]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -19683,7 +19689,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_3mjm3")
 theme_override_styles/hover = SubResource("StyleBoxTexture_mh0vc")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_jnbyn")
 
-[node name="Label" type="Label" parent="player/Sprite2D/Camera2D/timer/Control"]
+[node name="Label" type="Label" parent="player/Sprite2D/Camera2D/CanvasLayer/timer/Control"]
 texture_filter = 1
 layout_mode = 0
 offset_left = 219.333
@@ -19698,40 +19704,44 @@ label_settings = SubResource("LabelSettings_cchot")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="dialogo_min_2" type="Control" parent="player/Sprite2D"]
+[node name="dialogo_min_2" type="Control" parent="player/Sprite2D/Camera2D/CanvasLayer"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = -213.333
-offset_top = 55.1883
-offset_right = 272.667
-offset_bottom = 177.188
+offset_left = -127.0
+offset_top = 172.0
+offset_right = 359.0
+offset_bottom = 294.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
 script = ExtResource("5_wgqir")
 
-[node name="Label" type="Label" parent="player/Sprite2D/dialogo_min_2"]
+[node name="Label" type="Label" parent="player/Sprite2D/Camera2D/CanvasLayer/dialogo_min_2"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -218.0
-offset_top = -42.9998
-offset_right = 218.0
-offset_bottom = 42.9998
+offset_left = -159.5
+offset_top = -25.5
+offset_right = 159.5
+offset_bottom = 25.5
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.8, 0.8)
 theme = ExtResource("9_nbhgg")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "daje"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="indicazione" type="Label" parent="player/Sprite2D/dialogo_min_2"]
+[node name="indicazione" type="Label" parent="player/Sprite2D/Camera2D/CanvasLayer/dialogo_min_2"]
 layout_mode = 0
-offset_left = 396.444
-offset_top = 55.6522
-offset_right = 430.444
-offset_bottom = 87.6522
+offset_left = 295.333
+offset_top = 50.6667
+offset_right = 329.333
+offset_bottom = 82.6667
+scale = Vector2(0.6, 0.6)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("7_h3n2g")
 theme_override_font_sizes/font_size = 22
@@ -21967,10 +21977,10 @@ position = Vector2(286, -58)
 shape = SubResource("RectangleShape2D_7ax21")
 debug_color = Color(0.756863, 0.113725, 0.341176, 0.419608)
 
-[connection signal="button_down" from="player/Sprite2D/Camera2D/pausa-panel/riprendi" to="player/Sprite2D/Camera2D/pausa-panel" method="_on_riprendi_button_down"]
-[connection signal="button_down" from="player/Sprite2D/Camera2D/pausa-panel/riavvia" to="player/Sprite2D/Camera2D/pausa-panel" method="_on_riavvia_button_down"]
-[connection signal="button_down" from="player/Sprite2D/Camera2D/pausa-panel/back" to="player/Sprite2D/Camera2D/pausa-panel" method="_on_back_button_down"]
-[connection signal="button_down" from="player/Sprite2D/Camera2D/timer/Control/Button" to="player/Sprite2D/Camera2D/timer/Control" method="_on_button_button_down"]
+[connection signal="button_down" from="player/Sprite2D/Camera2D/CanvasLayer/pausa-panel/riprendi" to="player/Sprite2D/Camera2D/CanvasLayer/pausa-panel" method="_on_riprendi_button_down"]
+[connection signal="button_down" from="player/Sprite2D/Camera2D/CanvasLayer/pausa-panel/riavvia" to="player/Sprite2D/Camera2D/CanvasLayer/pausa-panel" method="_on_riavvia_button_down"]
+[connection signal="button_down" from="player/Sprite2D/Camera2D/CanvasLayer/pausa-panel/back" to="player/Sprite2D/Camera2D/CanvasLayer/pausa-panel" method="_on_back_button_down"]
+[connection signal="button_down" from="player/Sprite2D/Camera2D/CanvasLayer/timer/Control/Button" to="player/Sprite2D/Camera2D/CanvasLayer/timer/Control" method="_on_button_button_down"]
 [connection signal="body_entered" from="vandalo/Sprite2D/Rincorri" to="vandalo" method="_on_rincorri_body_entered"]
 [connection signal="body_exited" from="vandalo/Sprite2D/Rincorri" to="vandalo" method="_on_rincorri_body_exited"]
 [connection signal="body_entered" from="vandalo/Sprite2D/Catturato" to="player" method="_on_catturato_body_entered"]
