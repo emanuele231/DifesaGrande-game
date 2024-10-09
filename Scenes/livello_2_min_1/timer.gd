@@ -8,7 +8,7 @@ var end: bool = false
 
 func _ready():
 	$Label.z_index = 3
-	get_node("../dialogo_min_2")._timer_callback = self
+	get_node("../dialogo_min_2")._timer_callback = self  # qui da problema
 
 func _timer():
 	timer_running = true

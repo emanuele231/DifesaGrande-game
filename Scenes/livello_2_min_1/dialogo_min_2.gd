@@ -26,10 +26,6 @@ var _label_02_callback = null
 signal spiegazione_chiusa
 
 
-
-
-
-
 func _ready():
 	
 	show_next_dialog()
