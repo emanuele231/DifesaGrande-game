@@ -1,4 +1,4 @@
-[gd_scene load_steps=209 format=3 uid="uid://dqiw7bvjmib4d"]
+[gd_scene load_steps=208 format=3 uid="uid://dqiw7bvjmib4d"]
 
 [ext_resource type="Script" path="res://scripts/Player_prov_movements.gd" id="1_qbu6o"]
 [ext_resource type="Texture2D" uid="uid://dw1xgygvvs0nx" path="res://personaggi/Assessore chara.png" id="2_elxb5"]
@@ -56389,18 +56389,6 @@ radius = 25.318
 [sub_resource type="CircleShape2D" id="CircleShape2D_kogwf"]
 radius = 42.0119
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qjp3e"]
-bg_color = Color(1, 1, 1, 0.607843)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_color = Color(0.756863, 0.298039, 0, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r5md7"]
 size = Vector2(11, 26)
 
@@ -56986,11 +56974,26 @@ anchor_right = 0.034
 anchor_bottom = 0.121
 offset_left = 77.734
 offset_top = 29.174
-offset_right = 555.734
-offset_bottom = 127.174
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_qjp3e")
+offset_right = 458.734
+offset_bottom = 113.174
+theme = ExtResource("7_e8ulp")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 0
 text = "dialogo livello 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="indicazione" type="Label" parent="assessore-lvl-2/Dialogo_02"]
+layout_mode = 0
+offset_left = 397.0
+offset_top = 77.0
+offset_right = 435.0
+offset_bottom = 113.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("8_l08so")
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxTexture_b4cuv")
+text = "A"
 horizontal_alignment = 1
 vertical_alignment = 1
 
