@@ -11,9 +11,9 @@ var points = points_script.new()
 
 func _ready():
 	get_node("Sprite2D/dialogo_min_2")._on_player_2_callback = self
-	$punteggio.hide()
-	$punteggio.z_index = 3
-	$Sprite2D/Camera2D/Control.hide()
+	$Sprite2D/Camera2D/punteggio.hide()
+	$Sprite2D/Camera2D/punteggio.z_index = 3
+	
 func _on_player_2():
 	can_move = true
 
@@ -57,7 +57,7 @@ func move():
 func _on_catturato_body_entered(body: CharacterBody2D):
 	if Input.is_key_label_pressed(KEY_A):
 		Engine.time_scale = 0
-		$punteggio.show()
+		$Sprite2D/Camera2D/punteggio.show()
 
 
 

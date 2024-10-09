@@ -53,11 +53,14 @@ func show_next_dialog() -> void:
 			if current_dialog_index < dialog_sequence.size():
 				$Label.text = dialog_sequence[current_dialog_index]
 				$Label.show()
+				$indicazione.show()
+				$indicazione.z_index = 2
 				$Label.z_index = 2
 				player_2.can_move = false
 				assessore_2.can_move = false
 			else:
 				$Label.free()
+				$indicazione.free()
 				enable_player_movement()
 
 	else:

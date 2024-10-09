@@ -19728,9 +19728,9 @@ vertical_alignment = 1
 
 [node name="indicazione" type="Label" parent="player/Sprite2D/dialogo_min_2"]
 layout_mode = 0
-offset_left = 382.222
+offset_left = 396.444
 offset_top = 55.6522
-offset_right = 419.222
+offset_right = 430.444
 offset_bottom = 87.6522
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("7_h3n2g")

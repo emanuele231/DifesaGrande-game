@@ -16,13 +16,16 @@ var dialogo_script = preload("res://Scenes/mappa_game/Dialogo_02.gd")
 var dialogo = dialogo_script.new()
 var current_dialog_index: int = -1
 @onready var dialog_label = $Dialogo_02/Label_02
-
+@onready var dialog_indication = $Dialogo_02/indicazione
 @onready var anim_ass = $Sprite2D/AnimationTree
 @onready var animazione = anim_ass.get("parameters/playback")
 
 func _ready():
 	dialog_label.hide()
 	dialog_label.z_index = 3
+	dialog_indication.hide()
+	dialog_indication.z_index = 3
+	
 
 
 func _assessore_2():
@@ -59,11 +62,13 @@ func now_you_can_talk():
 		if current_dialog_index < dialog_01_sequence.size():
 			if dialog_label:
 				dialog_label.show()
+				dialog_indication.show()
 				dialog_label.text = dialog_01_sequence[current_dialog_index]
 				dialog_label.z_index = 2
 		else:
 			if dialog_label:
 				dialog_label.free()
+				dialog_indication.free()
 				$Area2D.free()
 				can_move = true
 			current_dialog_index = -1
