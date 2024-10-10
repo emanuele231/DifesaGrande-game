@@ -8,7 +8,7 @@ var can_move: bool = false
 
 
 func _ready():
-	get_parent().get_node("player/Sprite2D/dialogo_min_2")._assessore_2_callback = self
+	get_parent().get_node("player/Sprite2D/Camera2D/CanvasLayer/dialogo_min_2")._assessore_2_callback = self
 
 
 func _assessore_2():

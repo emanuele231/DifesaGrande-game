@@ -10,9 +10,9 @@ var points_script = preload("res://Scenes/livello_2_min_1/timer.gd")
 var points = points_script.new()
 
 func _ready():
-	get_node("Sprite2D/dialogo_min_2")._on_player_2_callback = self
+	get_node("Sprite2D/Camera2D/CanvasLayer/dialogo_min_2")._on_player_2_callback = self
 	$Sprite2D/Camera2D/CanvasLayer/punteggio.hide()
-	$Sprite2D/Camera2D/CanvasLayer/punteggio.z_index = 3
+	$Sprite2D/Camera2D/CanvasLayer/punteggio.z_index = 4
 	
 func _on_player_2():
 	can_move = true
@@ -58,6 +58,7 @@ func _on_catturato_body_entered(body: CharacterBody2D):
 	if Input.is_key_label_pressed(KEY_A):
 		Engine.time_scale = 0
 		$Sprite2D/Camera2D/CanvasLayer/punteggio.show()
+		$Sprite2D/Camera2D/CanvasLayer/dialogo_min_2/indicazione.hide()
 
 
 
@@ -65,3 +66,11 @@ func _on_catturato_body_exited(body):
 	pass
 
 
+
+
+func _on_area_2d_body_entered(body: CharacterBody2D):
+	$Sprite2D/Camera2D/CanvasLayer/dialogo_min_2/indicazione.show()
+
+
+func _on_area_2d_body_exited(body):
+	$Sprite2D/Camera2D/CanvasLayer/dialogo_min_2/indicazione.hide()

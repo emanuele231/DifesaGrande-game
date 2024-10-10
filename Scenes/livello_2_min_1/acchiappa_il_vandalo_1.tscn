@@ -1,4 +1,4 @@
-[gd_scene load_steps=109 format=3 uid="uid://32e0xsjsydvr"]
+[gd_scene load_steps=110 format=3 uid="uid://32e0xsjsydvr"]
 
 [ext_resource type="Texture2D" uid="uid://con2c3m6inlxq" path="res://assets acquistati/assets acquistati 2/MEGA BUNDLE 12 ASSET PACKS/MEGA BUNDLE 12 ASSET PACKS/TILES SENGOKU ADVENTURE.png" id="1_xxg1w"]
 [ext_resource type="Texture2D" uid="uid://bjmspdiysna62" path="res://assets acquistati/assets acquistati 2/MEGA BUNDLE 12 ASSET PACKS/MEGA BUNDLE 12 ASSET PACKS/SENGOKU ADVENTURE TILESET/DAY/FARM GROUND 1.png" id="2_32f5m"]
@@ -19462,6 +19462,9 @@ states/walk_right/position = Vector2(744, 123)
 states/walk_up/node = SubResource("AnimationNodeAnimation_erwry")
 states/walk_up/position = Vector2(618, 54)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_70idf"]
+size = Vector2(40, 42)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q2ftp"]
 size = Vector2(18.5, 51)
 
@@ -19511,19 +19514,19 @@ limit_bottom = 955
 offset = Vector2(500, -500)
 scale = Vector2(3, 3)
 transform = Transform2D(3, 0, 0, 3, 500, -500)
-follow_viewport_enabled = true
 
 [node name="punteggio" type="Control" parent="player/Sprite2D/Camera2D/CanvasLayer"]
+visible = false
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -597.36
-offset_top = -191.081
-offset_right = -557.36
-offset_bottom = -151.081
+offset_left = -657.333
+offset_top = -217.0
+offset_right = -618.333
+offset_bottom = -173.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -19536,16 +19539,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -147.0
-offset_top = -85.5
-offset_right = 147.0
-offset_bottom = 85.5
+offset_left = -361.5
+offset_top = -101.0
+offset_right = 70.5
+offset_bottom = 161.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("6_3uiow")
 theme_override_colors/font_color = Color(0.666667, 0.27451, 0.0509804, 1)
 theme_override_fonts/font = ExtResource("7_h3n2g")
-theme_override_font_sizes/font_size = 18
+theme_override_font_sizes/font_size = 23
 theme_override_styles/normal = SubResource("StyleBoxFlat_fu3lh")
 text = "Totale punteggio: "
 horizontal_alignment = 1
@@ -19557,27 +19560,27 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -29.5
-offset_top = -22.5
-offset_right = 29.5
-offset_bottom = 22.5
+offset_left = -204.833
+offset_top = -22.0
+offset_right = -102.833
+offset_bottom = 44.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.666667, 0.27451, 0.0509804, 1)
 theme_override_fonts/font = ExtResource("7_h3n2g")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 49
 text = "300"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Button" type="Button" parent="player/Sprite2D/Camera2D/CanvasLayer/punteggio"]
 layout_mode = 0
-offset_left = 48.0
-offset_top = 66.0
-offset_right = 152.0
-offset_bottom = 93.0
+offset_left = -209.333
+offset_top = 102.667
+offset_right = -61.3333
+offset_bottom = 140.667
 theme = ExtResource("6_3uiow")
-theme_override_font_sizes/font_size = 8
+theme_override_font_sizes/font_size = 11
 text = "TORNA ALLA MAPPA
 "
 
@@ -19650,18 +19653,18 @@ text = "TORNA ALLA MAPPA
 [node name="timer" type="Control" parent="player/Sprite2D/Camera2D/CanvasLayer"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = -22.1875
-offset_top = 59.2342
-offset_right = 66.8125
-offset_bottom = 99.2342
+offset_left = 142.667
+offset_top = 188.0
+offset_right = 231.667
+offset_bottom = 228.0
 script = ExtResource("6_vq3jf")
 
 [node name="Label" type="Label" parent="player/Sprite2D/Camera2D/CanvasLayer/timer"]
 layout_mode = 0
-offset_left = 9.0
-offset_top = 1.0
-offset_right = 82.0
-offset_bottom = 34.0
+offset_left = 12.0
+offset_top = -8.0
+offset_right = 78.0
+offset_bottom = 19.0
 theme = ExtResource("12_p07ge")
 theme_override_fonts/font = ExtResource("7_h3n2g")
 text = "300"
@@ -19671,8 +19674,10 @@ vertical_alignment = 1
 [node name="Control" type="Control" parent="player/Sprite2D/Camera2D/CanvasLayer/timer"]
 layout_mode = 1
 anchors_preset = 0
-offset_right = 278.0
-offset_bottom = 167.0
+offset_left = -252.667
+offset_top = -17.6667
+offset_right = 25.3333
+offset_bottom = 149.333
 script = ExtResource("5_7xkd1")
 
 [node name="Button" type="Button" parent="player/Sprite2D/Camera2D/CanvasLayer/timer/Control"]
@@ -19680,8 +19685,10 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -47.0
-offset_bottom = 51.0
+offset_left = 225.0
+offset_top = 13.3333
+offset_right = 279.0
+offset_bottom = 71.3333
 grow_horizontal = 0
 scale = Vector2(0.62228, 0.48445)
 theme_override_colors/font_color = Color(0.666667, 0.27451, 0.0509804, 1)
@@ -19692,12 +19699,12 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_jnbyn")
 [node name="Label" type="Label" parent="player/Sprite2D/Camera2D/CanvasLayer/timer/Control"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 219.333
-offset_top = 23.6667
-offset_right = 273.333
-offset_bottom = 40.6667
+offset_left = 501.667
+offset_top = 36.0
+offset_right = 537.667
+offset_bottom = 53.0
 theme_override_fonts/font = ExtResource("7_h3n2g")
-theme_override_font_sizes/font_size = 10
+theme_override_font_sizes/font_size = 11
 theme_override_styles/normal = SubResource("StyleBoxTexture_ljw76")
 text = "START"
 label_settings = SubResource("LabelSettings_cchot")
@@ -19707,10 +19714,10 @@ vertical_alignment = 1
 [node name="dialogo_min_2" type="Control" parent="player/Sprite2D/Camera2D/CanvasLayer"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = -127.0
-offset_top = 172.0
-offset_right = 359.0
-offset_bottom = 294.0
+offset_left = 204.0
+offset_top = 420.333
+offset_right = 476.0
+offset_bottom = 472.333
 size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("5_wgqir")
@@ -19722,10 +19729,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -159.5
-offset_top = -25.5
-offset_right = 159.5
-offset_bottom = 25.5
+offset_left = -382.0
+offset_top = -20.0
+offset_right = 86.0
+offset_bottom = 52.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.8, 0.8)
@@ -19737,10 +19744,10 @@ vertical_alignment = 1
 
 [node name="indicazione" type="Label" parent="player/Sprite2D/Camera2D/CanvasLayer/dialogo_min_2"]
 layout_mode = 0
-offset_left = 295.333
-offset_top = 50.6667
-offset_right = 329.333
-offset_bottom = 82.6667
+offset_left = 83.3333
+offset_top = 33.6666
+offset_right = 117.333
+offset_bottom = 65.6666
 scale = Vector2(0.6, 0.6)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("7_h3n2g")
@@ -19797,7 +19804,7 @@ libraries = {
 }
 
 [node name="vandalo" type="CharacterBody2D" parent="."]
-position = Vector2(81, 15)
+position = Vector2(-46, 89)
 script = ExtResource("8_43t3d")
 
 [node name="Sprite2D" type="Sprite2D" parent="vandalo"]
@@ -19866,6 +19873,13 @@ anim_player = NodePath("../AnimationPlayer")
 active = true
 
 [node name="Timer" type="Timer" parent="vandalo"]
+
+[node name="Area2D" type="Area2D" parent="vandalo"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="vandalo/Area2D"]
+position = Vector2(-68, -212)
+shape = SubResource("RectangleShape2D_70idf")
+debug_color = Color(1, 1, 1, 0.419608)
 
 [node name="change-direction" type="Area2D" parent="."]
 position = Vector2(817, 109)
@@ -21993,6 +22007,8 @@ debug_color = Color(0.756863, 0.113725, 0.341176, 0.419608)
 [connection signal="body_exited" from="vandalo/Sprite2D/Rincorri-sinistra" to="vandalo" method="_on_rincorrisinistra_body_exited"]
 [connection signal="body_entered" from="vandalo/Sprite2D/SCAPPA" to="vandalo" method="_on_scappa_body_entered"]
 [connection signal="body_exited" from="vandalo/Sprite2D/SCAPPA" to="vandalo" method="_on_scappa_body_exited"]
+[connection signal="body_entered" from="vandalo/Area2D" to="player" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="vandalo/Area2D" to="player" method="_on_area_2d_body_exited"]
 [connection signal="body_entered" from="change-direction" to="vandalo" method="_on_changedirection_body_entered"]
 [connection signal="body_exited" from="change-direction" to="vandalo" method="_on_changedirection_body_exited"]
 [connection signal="body_entered" from="change-direction2" to="vandalo" method="_on_changedirection_body_entered"]
