@@ -56950,7 +56950,21 @@ offset_top = -1692.0
 offset_right = -331.0
 offset_bottom = -1640.0
 theme_override_font_sizes/font_size = 35
-text = "!!!"
+text = "!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="accesso-livello-2"]
+texture_filter = 1
+offset_left = 17.0
+offset_top = -11.0
+offset_right = 39.0
+offset_bottom = 11.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("8_l08so")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxTexture_2ig1n")
+text = "X"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -57002,6 +57016,20 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("8_l08so")
 theme_override_font_sizes/font_size = 22
 theme_override_styles/normal = SubResource("StyleBoxTexture_b4cuv")
+text = "A"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label_A" type="Label" parent="assessore-lvl-2/Dialogo_02"]
+texture_filter = 1
+offset_left = 182.0
+offset_top = -194.0
+offset_right = 214.0
+offset_bottom = -162.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("8_l08so")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxTexture_2ig1n")
 text = "A"
 horizontal_alignment = 1
 vertical_alignment = 1

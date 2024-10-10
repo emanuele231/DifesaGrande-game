@@ -3,12 +3,12 @@ extends Control
 var dialog_sequence := [
 	"Oh no! Ecco chi stava infastidendo tutti!",
 	"Quel vandalo sta rovinando gli alberi di questa zona!",
-	"Ora tocca a te fermarlo",
-	"Dovrai catturarlo subito e cacciarlo via",
-	"Ma attento è molto veloce",
-	"Dovrai cercare di acchiapparlo entro 5 minuti",
-	"Altrimenti riuscirà a scappare!",
-	"Ricorda! Utilizza le frecce direzionali per muoverti",
+	"Tocca a te fermarlo, guardiano.",
+	"Catturalo il prima possibile e caccialo via.",
+	"Ma fai attezione, è molto veloce..",
+	"Dovrai acciuffarlo entro 5 minuti,",
+	"altrimenti riuscirà a scappare!",
+	"Ricorda: utilizza le frecce direzionali per muoverti.",
 	"Contiamo tutti su di te! Forza!"
 ]  
 
