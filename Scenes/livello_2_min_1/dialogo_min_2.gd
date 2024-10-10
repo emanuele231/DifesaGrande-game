@@ -60,7 +60,7 @@ func show_next_dialog() -> void:
 				assessore_2.can_move = false
 			else:
 				$Label.free()
-				$indicazione.free()
+				$indicazione.hide()
 				enable_player_movement()
 
 	else:

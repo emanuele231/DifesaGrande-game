@@ -56985,8 +56985,8 @@ vertical_alignment = 1
 
 [node name="indicazione" type="Label" parent="assessore-lvl-2/Dialogo_02"]
 layout_mode = 0
-offset_left = 397.0
-offset_top = 77.0
+offset_left = 405.0
+offset_top = 81.0
 offset_right = 435.0
 offset_bottom = 113.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
