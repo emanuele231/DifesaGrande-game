@@ -44,8 +44,7 @@ func move(_delta):
 
 func _on_area_2d_body_entered(body: CharacterBody2D):
 	can_talk = true
-
-
+	print("Posso parlare!")
 
 func _on_area_2d_body_exited(body: CharacterBody2D):
 	can_talk = false
@@ -56,6 +55,7 @@ func _input(event: InputEvent):
 
 func now_you_can_talk():
 	dialog_label.show()
+
 	if current_dialog_index >= -1:
 		current_dialog_index += 1
 		
