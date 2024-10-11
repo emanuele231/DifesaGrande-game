@@ -1,5 +1,6 @@
-[gd_scene load_steps=110 format=3 uid="uid://32e0xsjsydvr"]
+[gd_scene load_steps=111 format=3 uid="uid://32e0xsjsydvr"]
 
+[ext_resource type="AudioStream" uid="uid://bgwmnxwpa1qsy" path="res://Scenes/livello_1/MinigameRaccoltaTheme.mp3" id="1_j4ums"]
 [ext_resource type="Texture2D" uid="uid://con2c3m6inlxq" path="res://assets acquistati/assets acquistati 2/MEGA BUNDLE 12 ASSET PACKS/MEGA BUNDLE 12 ASSET PACKS/TILES SENGOKU ADVENTURE.png" id="1_xxg1w"]
 [ext_resource type="Texture2D" uid="uid://bjmspdiysna62" path="res://assets acquistati/assets acquistati 2/MEGA BUNDLE 12 ASSET PACKS/MEGA BUNDLE 12 ASSET PACKS/SENGOKU ADVENTURE TILESET/DAY/FARM GROUND 1.png" id="2_32f5m"]
 [ext_resource type="Script" path="res://Scenes/livello_2_min_1/giocatore_2.gd" id="3_an77o"]
@@ -19479,6 +19480,10 @@ size = Vector2(52.5, 14.5)
 
 [node name="acchiappa_il_vandalo_1" type="Node2D"]
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_j4ums")
+autoplay = true
+
 [node name="terreno" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_d4fbn")
 format = 2
@@ -19516,16 +19521,15 @@ scale = Vector2(3, 3)
 transform = Transform2D(3, 0, 0, 3, 500, -500)
 
 [node name="punteggio" type="Control" parent="player/Sprite2D/Camera2D/CanvasLayer"]
-visible = false
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -657.333
+offset_left = -682.333
 offset_top = -217.0
-offset_right = -618.333
+offset_right = -643.333
 offset_bottom = -173.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -19587,17 +19591,11 @@ text = "TORNA ALLA MAPPA
 [node name="pausa-panel" type="Control" parent="player/Sprite2D/Camera2D/CanvasLayer"]
 visible = false
 layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -811.003
-offset_top = -297.825
-offset_right = -184.003
-offset_bottom = 104.175
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
+offset_left = -225.667
+offset_top = 133.0
+offset_right = 401.333
+offset_bottom = 535.0
 script = ExtResource("5_hoixx")
 
 [node name="Label" type="Label" parent="player/Sprite2D/Camera2D/CanvasLayer/pausa-panel"]
@@ -19661,9 +19659,9 @@ script = ExtResource("6_vq3jf")
 
 [node name="Label" type="Label" parent="player/Sprite2D/Camera2D/CanvasLayer/timer"]
 layout_mode = 0
-offset_left = 12.0
+offset_left = -27.0002
 offset_top = -8.0
-offset_right = 78.0
+offset_right = 38.9998
 offset_bottom = 19.0
 theme = ExtResource("12_p07ge")
 theme_override_fonts/font = ExtResource("7_h3n2g")
@@ -19699,10 +19697,10 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_jnbyn")
 [node name="Label" type="Label" parent="player/Sprite2D/Camera2D/CanvasLayer/timer/Control"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 501.667
-offset_top = 36.0
-offset_right = 537.667
-offset_bottom = 53.0
+offset_left = 497.0
+offset_top = 40.6667
+offset_right = 543.0
+offset_bottom = 57.6667
 theme_override_fonts/font = ExtResource("7_h3n2g")
 theme_override_font_sizes/font_size = 11
 theme_override_styles/normal = SubResource("StyleBoxTexture_ljw76")
@@ -19729,9 +19727,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -382.0
+offset_left = -437.0
 offset_top = -20.0
-offset_right = 86.0
+offset_right = 179.0
 offset_bottom = 52.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -19744,10 +19742,10 @@ vertical_alignment = 1
 
 [node name="indicazione" type="Label" parent="player/Sprite2D/Camera2D/CanvasLayer/dialogo_min_2"]
 layout_mode = 0
-offset_left = 83.3333
-offset_top = 33.6666
-offset_right = 117.333
-offset_bottom = 65.6666
+offset_left = 144.667
+offset_top = 32.0003
+offset_right = 178.666
+offset_bottom = 64.0003
 scale = Vector2(0.6, 0.6)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("7_h3n2g")

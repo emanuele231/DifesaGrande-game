@@ -30,11 +30,12 @@ func _on_riprendi_button_down():
 
 func _on_riavvia_button_down():
 	get_tree().reload_current_scene()
+	
 	var puntiOS = get_node("/root/PuntiSingleton")
 	var puntiO = puntiOS.get_custom_puntiO()
 	puntiO = 0
 	puntiO = puntiOS.set_puntiO(puntiO)
-	
+
 	var puntiIS = get_node("/root/PuntiSingleton")
 	var puntiI = puntiIS.get_custom_puntiI()
 	puntiI = 0
@@ -52,7 +53,6 @@ func _on_riavvia_button_down():
 	
 	var somma: int = 0
 	$"../pannello punteggio finale/punti".text = str(somma)
-	
 
 
 func _on_back_button_down():

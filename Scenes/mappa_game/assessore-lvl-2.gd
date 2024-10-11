@@ -1,13 +1,13 @@
 extends CharacterBody2D
 
 var dialog_01_sequence := [
-	"Sei stato fantastico!!",
-	"Adesso il bar Quercus è stato ripulito",
-	"Benvenuto ora nella ZONA DELLE LEPRI",
-	"Come vedi, è pieno di lepri che gironzolano qua e la",
-	"Ma qualcosa le sta minacciando",
-	"Trova il punto esclamativo ( !!! ) bianco sulla strada",
-	"scopri che cosa minaccia queste creature!"
+	"Ehi, Guardiano! Hai ripulito il bar? Sei stato fantastico!",
+	"Adesso il bar Quercus è pulito e si vede già la differenza.",
+	"Ti do il benvenuto ora nella ZONA DELLE LEPRI.",
+	"Come vedi, è pieno di lepri che gironzolano quà e là.",
+	"Ma qualcosa le sta minacciando..",
+	"Trova il punto esclamativo ( ! ) bianco più avanti sulla strada,",
+	"e scopri cosa minaccia queste creature!"
 ]
 const SPEED = 70
 var can_move: bool = false
@@ -17,6 +17,7 @@ var dialogo = dialogo_script.new()
 var current_dialog_index: int = -1
 @onready var dialog_label = $Dialogo_02/Label_02
 @onready var dialog_indication = $Dialogo_02/indicazione
+@onready var assessore_label = $Dialogo_02/Label_A
 @onready var anim_ass = $Sprite2D/AnimationTree
 @onready var animazione = anim_ass.get("parameters/playback")
 
@@ -44,8 +45,7 @@ func move(_delta):
 
 func _on_area_2d_body_entered(body: CharacterBody2D):
 	can_talk = true
-
-
+	print("Posso parlare!")
 
 func _on_area_2d_body_exited(body: CharacterBody2D):
 	can_talk = false
@@ -56,6 +56,7 @@ func _input(event: InputEvent):
 
 func now_you_can_talk():
 	dialog_label.show()
+
 	if current_dialog_index >= -1:
 		current_dialog_index += 1
 		
@@ -69,6 +70,7 @@ func now_you_can_talk():
 			if dialog_label:
 				dialog_label.free()
 				dialog_indication.free()
+				assessore_label.free()
 				$Area2D.free()
 				can_move = true
 			current_dialog_index = -1
