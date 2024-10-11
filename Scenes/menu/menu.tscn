@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://Scenes/menu/TextureRect.gd" id="3_jtg8g"]
 [ext_resource type="FontFile" uid="uid://bv6cm8cfu7lmm" path="res://Scenes/menu/Fonts/FORESTANA.ttf" id="4_4r65b"]
 [ext_resource type="Theme" uid="uid://beyt1nfrpkx7f" path="res://Scenes/menu/Button_theme.tres" id="4_i84m0"]
-[ext_resource type="AudioStream" uid="uid://crov63jljdu0f" path="res://Scenes/menu/Menu theme.wav" id="4_uk27y"]
+[ext_resource type="AudioStream" uid="uid://dbotrckbbnej1" path="res://Scenes/mappa_game/Mappa Theme.wav" id="7_4u00g"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8akud"]
 shader = ExtResource("2_prxdt")
@@ -104,7 +104,7 @@ theme = ExtResource("4_i84m0")
 text = "ESCI"
 
 [node name="Menu theme" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_uk27y")
+stream = ExtResource("7_4u00g")
 autoplay = true
 
 [connection signal="button_down" from="MarginContainer/HBoxContainer/VBoxContainer/GiocaButton" to="." method="_on_start_button_down"]
