@@ -56433,6 +56433,50 @@ active = true
 parameters/idle/blend_position = Vector2(0, 0)
 parameters/walk/blend_position = Vector2(-0.00467288, 0.988024)
 
+[node name="indicazione2" type="Label" parent="."]
+offset_left = -175.0
+offset_top = 78.0
+offset_right = -90.0
+offset_bottom = 112.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("8_l08so")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = SubResource("StyleBoxTexture_b4cuv")
+text = "Minigioco 2
+<------"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="indicazione3" type="Label" parent="."]
+offset_left = -353.0
+offset_top = -58.0
+offset_right = -277.0
+offset_bottom = -21.0
+rotation = 1.57652
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("8_l08so")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = SubResource("StyleBoxTexture_b4cuv")
+text = "Minigioco 2
+<------"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="indicazione4" type="Label" parent="."]
+offset_left = -255.0
+offset_top = -521.0
+offset_right = -179.0
+offset_bottom = -484.0
+rotation = 1.57652
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("8_l08so")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = SubResource("StyleBoxTexture_b4cuv")
+text = "Minigioco 2
+<------"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Player_prov" type="CharacterBody2D" parent="."]
 position = Vector2(209, -459)
 floor_max_angle = 0.74351
@@ -56522,10 +56566,10 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 141.0
-offset_top = -111.0
-offset_right = 141.0
-offset_bottom = -111.0
+offset_left = 139.0
+offset_top = -86.0
+offset_right = 139.0
+offset_bottom = -86.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("6_gmm3f")

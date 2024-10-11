@@ -2,7 +2,7 @@ extends Control
 
 var dialog_sequence := [
 	"Oh no! Ecco chi stava infastidendo tutti!",
-	"C'è un vandalo che si nasconde in qui vicino",
+	"C'è un vandalo che si nasconde qui vicino",
 	"Sta rovinando gli alberi di questa zona!",
 	"Tocca a te fermarlo, guardiano.",
 	"Trovalo, catturalo il prima possibile e caccialo via.",
