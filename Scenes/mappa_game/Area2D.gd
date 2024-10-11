@@ -3,18 +3,21 @@ extends Area2D
 var entered: bool = false
 @onready var Raccolta_rifiuti = preload("res://Scenes/livello_1/raccolta_rifiuti_lvl_1.tscn") as PackedScene
 
-func _on_body_entered(body: CharacterBody2D):
+
+func _on_body_entered(body):
 	entered = true
+	print("siamo dentro")
+
+
 
 
 func _on_body_exited(body):
 	entered = false
 
+
 func _process(delta):
 	if entered == true:
-		if Input.is_joy_button_pressed(JOY_AXIS_LEFT_X,JOY_BUTTON_X) or Input.is_key_label_pressed(KEY_X):
+		if Input.is_joy_button_pressed(JOY_AXIS_LEFT_X,JOY_BUTTON_X) or Input.is_key_label_pressed(KEY_Y) or Input.is_action_just_pressed("ui_accept"):
 			get_tree().change_scene_to_packed(Raccolta_rifiuti)
 
-		#if Input.is_key_pressed(KEY_X):
-			#get_tree().change_scene_to_packed(Raccolta_rifiuti)
 

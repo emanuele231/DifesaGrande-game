@@ -9,7 +9,6 @@
 [ext_resource type="Script" path="res://Scenes/livello_1/pausa.gd" id="5_7xkd1"]
 [ext_resource type="Texture2D" uid="uid://c7og0ds4u7hth" path="res://personaggi/vandalo.png" id="5_8a5ue"]
 [ext_resource type="Script" path="res://Scenes/livello_2_min_1/assessore_2.gd" id="5_55t28"]
-[ext_resource type="Script" path="res://Scenes/livello_1/pausa_gioco.gd" id="5_hoixx"]
 [ext_resource type="Script" path="res://Scenes/livello_2_min_1/dialogo_min_2.gd" id="5_wgqir"]
 [ext_resource type="Theme" uid="uid://brb76mu8vmajm" path="res://Scenes/livello_1/ThemesGUI/PauseMenuTheme.tres" id="6_3uiow"]
 [ext_resource type="Script" path="res://Scenes/livello_2_min_1/timer.gd" id="6_vq3jf"]
@@ -18,6 +17,7 @@
 [ext_resource type="Script" path="res://Scenes/livello_2_min_1/punteggio.gd" id="7_mdqxb"]
 [ext_resource type="Script" path="res://Scenes/livello_2_min_1/vandalo.gd" id="8_43t3d"]
 [ext_resource type="Theme" uid="uid://bw0dlvq75ti5t" path="res://Scenes/livello_1/ThemesGUI/DialoghiTheme.tres" id="9_nbhgg"]
+[ext_resource type="Script" path="res://Scenes/livello_2_min_1/pausa-panel.gd" id="9_yynku"]
 [ext_resource type="Texture2D" uid="uid://chthickflak0n" path="res://Scenes/menu/GUI/Tiny Wonder UI Free/base free.png" id="10_4iqyh"]
 [ext_resource type="Theme" uid="uid://bf7wvfbpm0ko1" path="res://Scenes/livello_1/ThemesGUI/PunteggiTheme.tres" id="12_p07ge"]
 
@@ -19589,7 +19589,7 @@ offset_left = -225.667
 offset_top = 133.0
 offset_right = 401.333
 offset_bottom = 535.0
-script = ExtResource("5_hoixx")
+script = ExtResource("9_yynku")
 
 [node name="Label" type="Label" parent="player/Sprite2D/Camera2D/CanvasLayer/pausa-panel"]
 layout_mode = 0
@@ -19599,7 +19599,7 @@ offset_right = 769.0
 offset_bottom = 374.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_bwk0j")
 
-[node name="riprendi" type="Button" parent="player/Sprite2D/Camera2D/CanvasLayer/pausa-panel"]
+[node name="riprendi1" type="Button" parent="player/Sprite2D/Camera2D/CanvasLayer/pausa-panel"]
 texture_filter = 1
 layout_mode = 0
 offset_left = 303.0
@@ -19611,7 +19611,7 @@ theme_override_fonts/font = ExtResource("7_h3n2g")
 theme_override_font_sizes/font_size = 15
 text = "RIPRENDI"
 
-[node name="riavvia" type="Button" parent="player/Sprite2D/Camera2D/CanvasLayer/pausa-panel"]
+[node name="riavvia1" type="Button" parent="player/Sprite2D/Camera2D/CanvasLayer/pausa-panel"]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.091
@@ -19626,7 +19626,7 @@ theme_override_font_sizes/font_size = 15
 text = "RIAVVIA
 "
 
-[node name="back" type="Button" parent="player/Sprite2D/Camera2D/CanvasLayer/pausa-panel"]
+[node name="back1" type="Button" parent="player/Sprite2D/Camera2D/CanvasLayer/pausa-panel"]
 layout_mode = 1
 anchors_preset = -1
 anchor_bottom = 0.01
@@ -21968,9 +21968,9 @@ shape = SubResource("RectangleShape2D_7ax21")
 debug_color = Color(0.756863, 0.113725, 0.341176, 0.419608)
 
 [connection signal="button_down" from="player/Sprite2D/Camera2D/CanvasLayer/punteggio/Button" to="player/Sprite2D/Camera2D/CanvasLayer/punteggio" method="_on_button_button_down"]
-[connection signal="button_down" from="player/Sprite2D/Camera2D/CanvasLayer/pausa-panel/riprendi" to="player/Sprite2D/Camera2D/CanvasLayer/pausa-panel" method="_on_riprendi_button_down"]
-[connection signal="button_down" from="player/Sprite2D/Camera2D/CanvasLayer/pausa-panel/riavvia" to="player/Sprite2D/Camera2D/CanvasLayer/pausa-panel" method="_on_riavvia_button_down"]
-[connection signal="button_down" from="player/Sprite2D/Camera2D/CanvasLayer/pausa-panel/back" to="player/Sprite2D/Camera2D/CanvasLayer/pausa-panel" method="_on_back_button_down"]
+[connection signal="button_down" from="player/Sprite2D/Camera2D/CanvasLayer/pausa-panel/riprendi1" to="player/Sprite2D/Camera2D/CanvasLayer/pausa-panel" method="_on_riprendi_1_button_down"]
+[connection signal="button_down" from="player/Sprite2D/Camera2D/CanvasLayer/pausa-panel/riavvia1" to="player/Sprite2D/Camera2D/CanvasLayer/pausa-panel" method="_on_riavvia_1_button_down"]
+[connection signal="button_down" from="player/Sprite2D/Camera2D/CanvasLayer/pausa-panel/back1" to="player/Sprite2D/Camera2D/CanvasLayer/pausa-panel" method="_on_back_1_button_down"]
 [connection signal="button_down" from="player/Sprite2D/Camera2D/CanvasLayer/timer/Control/Button" to="player/Sprite2D/Camera2D/CanvasLayer/timer/Control" method="_on_button_button_down"]
 [connection signal="body_entered" from="vandalo/Sprite2D/Rincorri" to="vandalo" method="_on_rincorri_body_entered"]
 [connection signal="body_exited" from="vandalo/Sprite2D/Rincorri" to="vandalo" method="_on_rincorri_body_exited"]

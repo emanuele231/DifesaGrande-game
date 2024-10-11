@@ -56950,14 +56950,14 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("8_l08so")
 theme_override_font_sizes/font_size = 14
 theme_override_styles/normal = SubResource("StyleBoxTexture_2ig1n")
-text = "X"
+text = "Y"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="min-1" type="Area2D" parent="."]
 script = ExtResource("37_4exyn")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2DAccess1" type="CollisionShape2D" parent="min-1"]
 position = Vector2(-62, 21)
 shape = SubResource("CircleShape2D_bckrd")
 debug_color = Color(0.976471, 0, 0.4, 0.419608)
@@ -56966,7 +56966,7 @@ debug_color = Color(0.976471, 0, 0.4, 0.419608)
 position = Vector2(-349, -1664)
 script = ExtResource("49_41qfv")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="min-2"]
+[node name="CollisionShape2Daccess2" type="CollisionShape2D" parent="min-2"]
 shape = SubResource("CircleShape2D_kogwf")
 debug_color = Color(0.996078, 0, 0.164706, 0.419608)
 
@@ -57460,8 +57460,8 @@ debug_color = Color(0.968627, 0.0862745, 0.388235, 0.419608)
 [connection signal="pressed" from="Player_prov/Sprite2D/Camera2D/CanvasLayer/pausa/riprendi" to="Player_prov/Sprite2D/Camera2D/CanvasLayer/Control" method="_on_riprendi_pressed"]
 [connection signal="button_down" from="Player_prov/Sprite2D/Camera2D/CanvasLayer/pausa/back" to="Player_prov/Sprite2D/Camera2D/CanvasLayer/pausa" method="_on_back_button_down"]
 [connection signal="pressed" from="Player_prov/Sprite2D/Camera2D/CanvasLayer/pausa/back" to="Player_prov/Sprite2D/Camera2D/CanvasLayer/Control" method="_on_back_pressed"]
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
-[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
+[connection signal="body_entered" from="min-1" to="min-1" method="_on_body_entered"]
+[connection signal="body_exited" from="min-1" to="min-1" method="_on_body_exited"]
 [connection signal="body_entered" from="min-2" to="min-2" method="_on_body_entered"]
 [connection signal="body_exited" from="min-2" to="min-2" method="_on_body_exited"]
 [connection signal="body_entered" from="assessore-lvl-2/Area2D" to="assessore-lvl-2" method="_on_area_2d_body_entered"]
