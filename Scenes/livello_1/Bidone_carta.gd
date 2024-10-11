@@ -17,13 +17,19 @@ var puntiC: int = 0
 var entered: bool = false
 var stop1: bool = false
 
+func _ready():
+	$"../player/Sprite2D/spiegazione_1_1/indicazione2".hide()
+	$"../player/Sprite2D/spiegazione_1_1/indicazione2".z_index = 2
+
 
 func _on_body_entered(body: CharacterBody2D):
 	entered = true
+	$"../player/Sprite2D/spiegazione_1_1/indicazione2".show()
 
 
 func _on_body_exited(body):
 	entered = false
+	$"../player/Sprite2D/spiegazione_1_1/indicazione2".hide()
 
 func _process(delta):
 	if entered == true and Input.is_key_label_pressed(KEY_C):

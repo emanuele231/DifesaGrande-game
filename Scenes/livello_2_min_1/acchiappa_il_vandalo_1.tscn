@@ -1,4 +1,4 @@
-[gd_scene load_steps=111 format=3 uid="uid://32e0xsjsydvr"]
+[gd_scene load_steps=108 format=3 uid="uid://32e0xsjsydvr"]
 
 [ext_resource type="AudioStream" uid="uid://bgwmnxwpa1qsy" path="res://Scenes/livello_1/MinigameRaccoltaTheme.mp3" id="1_j4ums"]
 [ext_resource type="Texture2D" uid="uid://con2c3m6inlxq" path="res://assets acquistati/assets acquistati 2/MEGA BUNDLE 12 ASSET PACKS/MEGA BUNDLE 12 ASSET PACKS/TILES SENGOKU ADVENTURE.png" id="1_xxg1w"]
@@ -17,7 +17,6 @@
 [ext_resource type="FontFile" uid="uid://bu8074xritaxh" path="res://Scenes/menu/Fonts/Ravenwood-g5JR.ttf" id="7_h3n2g"]
 [ext_resource type="Script" path="res://Scenes/livello_2_min_1/punteggio.gd" id="7_mdqxb"]
 [ext_resource type="Script" path="res://Scenes/livello_2_min_1/vandalo.gd" id="8_43t3d"]
-[ext_resource type="Texture2D" uid="uid://c2ydmt8ctkpwr" path="res://Scenes/menu/GUI/Tiny Wonder UI Free/buttons free.png" id="8_egbnp"]
 [ext_resource type="Theme" uid="uid://bw0dlvq75ti5t" path="res://Scenes/livello_1/ThemesGUI/DialoghiTheme.tres" id="9_nbhgg"]
 [ext_resource type="Texture2D" uid="uid://chthickflak0n" path="res://Scenes/menu/GUI/Tiny Wonder UI Free/base free.png" id="10_4iqyh"]
 [ext_resource type="Theme" uid="uid://bf7wvfbpm0ko1" path="res://Scenes/livello_1/ThemesGUI/PunteggiTheme.tres" id="12_p07ge"]
@@ -18725,13 +18724,6 @@ texture = ExtResource("6_woh5i")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jnbyn"]
 texture = ExtResource("6_woh5i")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ljw76"]
-texture = ExtResource("8_egbnp")
-region_rect = Rect2(3, 34, 42, 28)
-
-[sub_resource type="LabelSettings" id="LabelSettings_cchot"]
-font_size = 10
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j1syo"]
 texture = ExtResource("10_4iqyh")
 region_rect = Rect2(9, 57, 30, 30)
@@ -19464,7 +19456,7 @@ states/walk_up/node = SubResource("AnimationNodeAnimation_erwry")
 states/walk_up/position = Vector2(618, 54)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_70idf"]
-size = Vector2(40, 42)
+size = Vector2(87, 83)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q2ftp"]
 size = Vector2(18.5, 51)
@@ -19521,6 +19513,7 @@ scale = Vector2(3, 3)
 transform = Transform2D(3, 0, 0, 3, 500, -500)
 
 [node name="punteggio" type="Control" parent="player/Sprite2D/Camera2D/CanvasLayer"]
+visible = false
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -19694,21 +19687,6 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_3mjm3")
 theme_override_styles/hover = SubResource("StyleBoxTexture_mh0vc")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_jnbyn")
 
-[node name="Label" type="Label" parent="player/Sprite2D/Camera2D/CanvasLayer/timer/Control"]
-texture_filter = 1
-layout_mode = 0
-offset_left = 497.0
-offset_top = 40.6667
-offset_right = 543.0
-offset_bottom = 57.6667
-theme_override_fonts/font = ExtResource("7_h3n2g")
-theme_override_font_sizes/font_size = 11
-theme_override_styles/normal = SubResource("StyleBoxTexture_ljw76")
-text = "START"
-label_settings = SubResource("LabelSettings_cchot")
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="dialogo_min_2" type="Control" parent="player/Sprite2D/Camera2D/CanvasLayer"]
 layout_mode = 3
 anchors_preset = 0
@@ -19742,10 +19720,10 @@ vertical_alignment = 1
 
 [node name="indicazione" type="Label" parent="player/Sprite2D/Camera2D/CanvasLayer/dialogo_min_2"]
 layout_mode = 0
-offset_left = 144.667
-offset_top = 32.0003
-offset_right = 178.666
-offset_bottom = 64.0003
+offset_left = 149.667
+offset_top = 47.0003
+offset_right = 183.666
+offset_bottom = 79.0003
 scale = Vector2(0.6, 0.6)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("7_h3n2g")
@@ -19802,7 +19780,7 @@ libraries = {
 }
 
 [node name="vandalo" type="CharacterBody2D" parent="."]
-position = Vector2(-46, 89)
+position = Vector2(418, 133)
 script = ExtResource("8_43t3d")
 
 [node name="Sprite2D" type="Sprite2D" parent="vandalo"]
@@ -19875,7 +19853,7 @@ active = true
 [node name="Area2D" type="Area2D" parent="vandalo"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="vandalo/Area2D"]
-position = Vector2(-68, -212)
+position = Vector2(-69, -210)
 shape = SubResource("RectangleShape2D_70idf")
 debug_color = Color(1, 1, 1, 0.419608)
 
@@ -21989,6 +21967,7 @@ position = Vector2(286, -58)
 shape = SubResource("RectangleShape2D_7ax21")
 debug_color = Color(0.756863, 0.113725, 0.341176, 0.419608)
 
+[connection signal="button_down" from="player/Sprite2D/Camera2D/CanvasLayer/punteggio/Button" to="player/Sprite2D/Camera2D/CanvasLayer/punteggio" method="_on_button_button_down"]
 [connection signal="button_down" from="player/Sprite2D/Camera2D/CanvasLayer/pausa-panel/riprendi" to="player/Sprite2D/Camera2D/CanvasLayer/pausa-panel" method="_on_riprendi_button_down"]
 [connection signal="button_down" from="player/Sprite2D/Camera2D/CanvasLayer/pausa-panel/riavvia" to="player/Sprite2D/Camera2D/CanvasLayer/pausa-panel" method="_on_riavvia_button_down"]
 [connection signal="button_down" from="player/Sprite2D/Camera2D/CanvasLayer/pausa-panel/back" to="player/Sprite2D/Camera2D/CanvasLayer/pausa-panel" method="_on_back_button_down"]

@@ -2,13 +2,16 @@ extends Control
 
 var dialog_sequence := [
 	"Oh no! Ecco chi stava infastidendo tutti!",
-	"Quel vandalo sta rovinando gli alberi di questa zona!",
+	"C'è un vandalo che si nasconde in qui vicino",
+	"Sta rovinando gli alberi di questa zona!",
 	"Tocca a te fermarlo, guardiano.",
-	"Catturalo il prima possibile e caccialo via.",
+	"Trovalo, catturalo il prima possibile e caccialo via.",
 	"Ma fai attezione, è molto veloce..",
 	"Dovrai acciuffarlo entro 5 minuti,",
 	"altrimenti riuscirà a scappare!",
 	"Ricorda: utilizza le frecce direzionali per muoverti.",
+	"Avvicinati a lui tenendo premuto il tasto 'A'",
+	"Dovrai toccarlo con il tasto premuto, per acciuffarlo",
 	"Contiamo tutti su di te! Forza!"
 ]  
 
@@ -68,7 +71,7 @@ func show_next_dialog() -> void:
 
 
 func _input(event: InputEvent) -> void:
-	if event is InputEventJoypadButton and event.is_pressed() or event is InputEventMouseButton and event.is_pressed():
+	if event is InputEventJoypadButton and event.is_pressed() or event is InputEventKey and event.is_pressed() and event.keycode == KEY_A:
 		if current_dialog_index < dialog_sequence.size():
 			show_next_dialog()
 			if Input.is_joy_button_pressed(JOY_BUTTON_A,JOY_BUTTON_A):

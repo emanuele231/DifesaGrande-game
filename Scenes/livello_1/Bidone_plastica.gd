@@ -15,15 +15,22 @@ var capienza := [
 	"9/10",
 	"10/10"
 ]
+
+func _ready():
+	$"../player/Sprite2D/spiegazione_1_1/indicazione2".hide()
+	$"../player/Sprite2D/spiegazione_1_1/indicazione2".z_index = 2
+	
 var stop1: bool = false
 var puntiP: int = 0
 
 func _on_body_entered(body: CharacterBody2D):
 	entered = true
+	$"../player/Sprite2D/spiegazione_1_1/indicazione2".show()
 
 
 func _on_body_exited(body):
 	entered = false
+	$"../player/Sprite2D/spiegazione_1_1/indicazione2".hide()
 
 func _process(delta):
 	if entered == true and Input.is_key_label_pressed(KEY_C):

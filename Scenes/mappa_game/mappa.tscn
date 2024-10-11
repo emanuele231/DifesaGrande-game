@@ -1,4 +1,4 @@
-[gd_scene load_steps=208 format=3 uid="uid://dqiw7bvjmib4d"]
+[gd_scene load_steps=207 format=3 uid="uid://dqiw7bvjmib4d"]
 
 [ext_resource type="Script" path="res://scripts/Player_prov_movements.gd" id="1_qbu6o"]
 [ext_resource type="Texture2D" uid="uid://dw1xgygvvs0nx" path="res://personaggi/Assessore chara.png" id="2_elxb5"]
@@ -152,10 +152,6 @@ texture = ExtResource("9_43dhy")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o0ya8"]
 texture = ExtResource("9_43dhy")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dbcwl"]
-texture = ExtResource("11_u8vm0")
-region_rect = Rect2(9, 57, 30, 30)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bx13f"]
 bg_color = Color(1, 1, 1, 0.568627)
@@ -56536,27 +56532,13 @@ script = ExtResource("6_gmm3f")
 
 [node name="Button" type="Button" parent="Player_prov/Sprite2D/Camera2D/CanvasLayer/Control"]
 layout_mode = 0
-offset_left = 1603.0
-offset_top = 61.0
-offset_right = 1688.0
-offset_bottom = 134.0
+offset_left = 1608.0
+offset_top = 147.0
+offset_right = 1693.0
+offset_bottom = 220.0
 theme_override_styles/normal = SubResource("StyleBoxTexture_05vj1")
 theme_override_styles/hover = SubResource("StyleBoxTexture_40fj7")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_o0ya8")
-
-[node name="Label" type="Label" parent="Player_prov/Sprite2D/Camera2D/CanvasLayer/Control"]
-layout_mode = 0
-offset_left = 1596.0
-offset_top = 134.0
-offset_right = 1696.0
-offset_bottom = 166.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("8_l08so")
-theme_override_font_sizes/font_size = 19
-theme_override_styles/normal = SubResource("StyleBoxTexture_dbcwl")
-text = "START"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="pausa" type="Control" parent="Player_prov/Sprite2D/Camera2D/CanvasLayer"]
 visible = false
@@ -56956,6 +56938,7 @@ vertical_alignment = 1
 
 [node name="Label" type="Label" parent="accesso-livello-2"]
 texture_filter = 1
+layout_mode = 0
 offset_left = 17.0
 offset_top = -11.0
 offset_right = 39.0
@@ -57016,12 +56999,13 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("8_l08so")
 theme_override_font_sizes/font_size = 22
 theme_override_styles/normal = SubResource("StyleBoxTexture_b4cuv")
-text = "A"
+text = "B"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label_A" type="Label" parent="assessore-lvl-2/Dialogo_02"]
 texture_filter = 1
+layout_mode = 0
 offset_left = 182.0
 offset_top = -194.0
 offset_right = 214.0
@@ -57030,7 +57014,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("8_l08so")
 theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxTexture_2ig1n")
-text = "A"
+text = "B"
 horizontal_alignment = 1
 vertical_alignment = 1
 

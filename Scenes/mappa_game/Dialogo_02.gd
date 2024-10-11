@@ -2,14 +2,14 @@ extends Control
 
 
 var dialog_01_sequence := [
-	"Sei stato fantastico!!",
-	"Adesso il bar Quercus è stato ripulito",
-	"Benvenuto ora nella ZONA DELLE LEPRI",
-	"Come vedi, è pieno di lepri che gironzolano qua e la",
-	"Ma qualcosa le sta minacciando",
-	"Trova il punto esclamativo ( !!! ) bianco sulla strada",
-	"scopri che cosa minaccia queste creature!"
-] 
+	"Ehi, Guardiano! Hai ripulito il bar? Sei stato fantastico!",
+	"Adesso il bar Quercus è pulito e si vede già la differenza.",
+	"Ti do il benvenuto ora nella ZONA DELLE LEPRI.",
+	"Come vedi, è pieno di lepri che gironzolano quà e là.",
+	"Ma qualcosa le sta minacciando..",
+	"Trova il punto esclamativo ( ! ) bianco più avanti sulla strada,",
+	"e scopri cosa minaccia queste creature!"
+]
 
 
 var current_dialog_index: int = -1
@@ -21,6 +21,14 @@ var _label_01_callback = null
 signal dialogo_completato
 
 var block: bool = false
+@onready var dialog_label = $Label_02
+@onready var dialog_indication = $indicazione
+
+func _ready():
+	dialog_label.hide()
+	dialog_label.z_index = 3
+	dialog_indication.hide()
+	dialog_indication.z_index = 3
 		
 	
 func enable_player_movement():

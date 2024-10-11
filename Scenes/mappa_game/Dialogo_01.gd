@@ -65,7 +65,7 @@ func show_next_dialog() -> void:
 
 
 func _input(event: InputEvent) -> void:
-	if event is InputEventJoypadButton and event.is_pressed() or event is InputEventMouseButton and event.is_pressed():
+	if event is InputEventJoypadButton and event.is_pressed() or event is InputEventKey and event.is_pressed() and event.keycode == KEY_A:
 		if current_dialog_index < dialog_sequence.size():
 			show_next_dialog()
 			if Input.is_joy_button_pressed(JOY_BUTTON_A,JOY_BUTTON_A):

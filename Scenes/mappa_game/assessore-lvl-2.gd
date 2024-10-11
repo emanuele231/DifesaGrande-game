@@ -51,8 +51,9 @@ func _on_area_2d_body_exited(body: CharacterBody2D):
 	can_talk = false
 
 func _input(event: InputEvent):
-	if can_talk == true and event is InputEventKey and event.is_pressed() and event.keycode == KEY_A:
-		now_you_can_talk()
+	if can_talk == true:
+		if event is InputEventKey and event.is_pressed() and event.keycode == KEY_B:
+			now_you_can_talk()
 
 func now_you_can_talk():
 	dialog_label.show()

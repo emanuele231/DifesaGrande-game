@@ -16,15 +16,21 @@ var capienza_sequence := [
 	"10/10"
 ]
 
+func _ready():
+	$"../player/Sprite2D/spiegazione_1_1/indicazione2".hide()
+	$"../player/Sprite2D/spiegazione_1_1/indicazione2".z_index = 2
+
 
 
 func _on_body_entered(body: CharacterBody2D):
 	entered = true
+	$"../player/Sprite2D/spiegazione_1_1/indicazione2".show()
 
 	
 
 func _on_body_exited(body):
 	entered = false
+	$"../player/Sprite2D/spiegazione_1_1/indicazione2".hide()
 
 
 func _process(delta):

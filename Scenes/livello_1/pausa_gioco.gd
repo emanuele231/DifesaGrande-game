@@ -52,7 +52,7 @@ func _on_riavvia_button_down():
 	puntiC = puntiCS.set_puntiC(puntiC)
 	
 	var somma: int = 0
-	$"../pannello punteggio finale/punti".text = str(somma)
+	$"../punteggio/punti".text = str(somma)
 
 
 func _on_back_button_down():
@@ -77,7 +77,7 @@ func _on_back_button_down():
 	puntiC = puntiCS.set_puntiC(puntiC)
 	
 	var somma: int = 0
-	$"../pannello punteggio finale/punti".text = str(somma)
+
 	var back = preload("res://Scenes/mappa_game/mappa.tscn") as PackedScene
 	get_tree().change_scene_to_packed(back)
 	
