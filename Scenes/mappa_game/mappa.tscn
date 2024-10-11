@@ -1,5 +1,6 @@
 [gd_scene load_steps=207 format=3 uid="uid://dqiw7bvjmib4d"]
 
+[ext_resource type="AudioStream" uid="uid://crov63jljdu0f" path="res://Scenes/menu/Menu theme.wav" id="1_olgpn"]
 [ext_resource type="Script" path="res://scripts/Player_prov_movements.gd" id="1_qbu6o"]
 [ext_resource type="Texture2D" uid="uid://dw1xgygvvs0nx" path="res://personaggi/Assessore chara.png" id="2_elxb5"]
 [ext_resource type="Texture2D" uid="uid://dh0bh5kpvdgov" path="res://World of Solaria Rural Village Update 05a/World of Solaria Rural Village Update 05a/16x16/Tilesets/Rural Village Farming.png" id="3_7wf1g"]
@@ -45,7 +46,6 @@
 [ext_resource type="Texture2D" uid="uid://cmbpin5ryk4f1" path="res://NPG/npg_z-quercus_09_universal.png" id="32_va04q"]
 [ext_resource type="Script" path="res://Scenes/mappa_game/Label.gd" id="36_0syno"]
 [ext_resource type="Script" path="res://Scenes/mappa_game/Area2D.gd" id="37_4exyn"]
-[ext_resource type="AudioStream" uid="uid://dbotrckbbnej1" path="res://Scenes/mappa_game/Mappa Theme.wav" id="40_rtxhl"]
 [ext_resource type="Texture2D" uid="uid://c2ydmt8ctkpwr" path="res://Scenes/menu/GUI/Tiny Wonder UI Free/buttons free.png" id="44_73a8n"]
 [ext_resource type="Texture2D" uid="uid://cqdhb1arogwd" path="res://assets acquistati/assets acquistati 2/MEGA BUNDLE 12 ASSET PACKS/MEGA BUNDLE 12 ASSET PACKS/SENGOKU ADVENTURE TILESET/DAY/FARM GROUND 3.png" id="47_ilajt"]
 [ext_resource type="Script" path="res://Scenes/mappa_game/assessore-lvl-2.gd" id="49_0pdio"]
@@ -56402,7 +56402,7 @@ position = Vector2(215, 296)
 metadata/_edit_horizontal_guides_ = [59.0]
 
 [node name="Mappa Theme" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("40_rtxhl")
+stream = ExtResource("1_olgpn")
 autoplay = true
 
 [node name="Assessore" type="CharacterBody2D" parent="."]
