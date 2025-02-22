@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://ehug37l74gth"]
+
+[node name="stats_panel" type="CanvasLayer"]
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 45.0
+offset_top = 40.0
+offset_right = 1106.0
+offset_bottom = 600.0
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 803.0
+offset_top = 283.0
+offset_right = 1016.0
+offset_bottom = 374.0
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 40.0
+offset_right = 217.0
+offset_bottom = 124.0
+text = "Indietro"

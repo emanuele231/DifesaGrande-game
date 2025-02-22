@@ -1,0 +1,123 @@
+[gd_scene load_steps=6 format=3 uid="uid://dt3nr74rtmta0"]
+
+[ext_resource type="Texture2D" uid="uid://cglk2ybk31ho7" path="res://Scenes/Bracconiere/bosco-difesa-grande.jpg" id="1_2rr16"]
+[ext_resource type="Texture2D" uid="uid://dh7doefot8s55" path="res://Scenes/Bracconiere/Screenshot 2025-02-22 125139.png" id="2_nr1gi"]
+[ext_resource type="Texture2D" uid="uid://c34oi6ioj51ct" path="res://Scenes/Bracconiere/Senza titolo.png" id="3_kk7p2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6hwl0"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_01blt"]
+bg_color = Color(0.564706, 0.933333, 0.564706, 1)
+
+[node name="CombatSystem" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+size_flags_vertical = 4
+
+[node name="Sfondo" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("1_2rr16")
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(552, 339)
+texture = ExtResource("2_nr1gi")
+
+[node name="ConvinzioneBracconiere" type="ProgressBar" parent="Sprite2D"]
+anchors_preset = -1
+anchor_top = -0.102
+anchor_bottom = -0.102
+offset_left = -180.0
+offset_top = -136.558
+offset_right = 178.0
+offset_bottom = -85.558
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/background = SubResource("StyleBoxFlat_6hwl0")
+theme_override_styles/fill = SubResource("StyleBoxFlat_01blt")
+step = 1.0
+value = 50.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_top = 450.0
+offset_right = 1152.0
+offset_bottom = 647.0
+texture = ExtResource("3_kk7p2")
+expand_mode = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.07
+anchor_top = 0.127
+anchor_right = 0.356
+anchor_bottom = 0.264
+offset_left = 0.360001
+offset_top = -0.019001
+offset_right = -0.112
+offset_bottom = -0.00799942
+step = 1.0
+
+[node name="TextEdit" type="TextEdit" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.01
+anchor_top = 0.091
+anchor_right = 0.058
+anchor_bottom = 0.325
+offset_left = -0.52
+offset_top = 0.072998
+offset_right = 0.183998
+offset_bottom = -0.0250015
+text = "   TU"
+placeholder_text = "TU"
+editable = false
+
+[node name="TextEdit2" type="TextEdit" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.013
+anchor_top = 0.437
+anchor_right = 0.36
+anchor_bottom = 0.848
+offset_left = 0.0240002
+offset_top = -0.0890045
+offset_right = 0.279968
+offset_bottom = -0.056015
+text = " Usa parla per convincere il bracconiere!
+Usa fuga per tornare alla mappa.
+Aiuta gli animali a sfuggire al bracconiere"
+placeholder_text = "Usa fuga per tornare alla mappa.
+Aiuta gli animali a sfuggire al bracconiere"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.641
+anchor_top = 0.173
+anchor_right = 0.641
+anchor_bottom = 0.173
+offset_left = -248.432
+offset_top = -12.081
+offset_right = 355.568
+offset_bottom = 137.919
+
+[node name="Button" type="Button" parent="TextureRect/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+tooltip_text = "Usa PARLA per convincere il bracconiere!"
+text = "PARLA"
+
+[node name="VSeparator" type="VSeparator" parent="TextureRect/HBoxContainer"]
+layout_mode = 2
+
+[node name="Button2" type="Button" parent="TextureRect/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+tooltip_text = "Usa FUGA per tornare alla mappa"
+text = "FUGA"

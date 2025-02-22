@@ -9,6 +9,7 @@ var can_move: bool = false
 var points_script = preload("res://Scenes/livello_2_min_1/timer.gd")
 var points = points_script.new()
 
+##prende il sistema di dialogo del vandalo (?)
 func _ready():
 	get_node("Sprite2D/Camera2D/CanvasLayer/dialogo_min_2")._on_player_2_callback = self
 	$Sprite2D/Camera2D/CanvasLayer/punteggio.hide()
@@ -18,7 +19,7 @@ func _on_player_2():
 	can_move = true
 
 
-
+##limiti mappa
 func _process(delta):
 	var player_position = position
 	var min_limit = Vector2(-200, -1180)  # Imposta i limiti minimi della mappa
@@ -53,7 +54,7 @@ func move():
 
 
 
-
+##cattura del vandalo
 func _on_catturato_body_entered(body: CharacterBody2D):
 	if Input.is_key_label_pressed(KEY_A):
 		Engine.time_scale = 0
