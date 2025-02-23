@@ -1,8 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://dt3nr74rtmta0"]
+[gd_scene load_steps=14 format=3 uid="uid://dt3nr74rtmta0"]
 
 [ext_resource type="Texture2D" uid="uid://cglk2ybk31ho7" path="res://Scenes/Bracconiere/bosco-difesa-grande.jpg" id="1_2rr16"]
 [ext_resource type="Texture2D" uid="uid://dh7doefot8s55" path="res://Scenes/Bracconiere/Screenshot 2025-02-22 125139.png" id="2_nr1gi"]
-[ext_resource type="Texture2D" uid="uid://c34oi6ioj51ct" path="res://Scenes/Bracconiere/Senza titolo.png" id="3_kk7p2"]
+[ext_resource type="Texture2D" uid="uid://syrmyyuedhuk" path="res://Rettangolo_dialoghi.png" id="3_7qdsu"]
+[ext_resource type="Script" path="res://Scenes/Bracconiere/Script/StateMachine.gd" id="4_nv2p2"]
+[ext_resource type="Script" path="res://Scenes/Bracconiere/Script/SelectState.gd" id="5_5ekkk"]
+[ext_resource type="Script" path="res://Scenes/Bracconiere/Script/ParlaState.gd" id="6_u7oi3"]
+[ext_resource type="Script" path="res://Scenes/Bracconiere/Script/DifesaState.gd" id="7_y06uv"]
+[ext_resource type="Script" path="res://Scenes/Bracconiere/PunteggioState.gd" id="8_cl11c"]
+[ext_resource type="Script" path="res://Scenes/Bracconiere/FinalState.gd" id="9_pqyxq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6hwl0"]
 bg_color = Color(1, 1, 1, 1)
@@ -10,7 +16,13 @@ bg_color = Color(1, 1, 1, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_01blt"]
 bg_color = Color(0.564706, 0.933333, 0.564706, 1)
 
-[node name="CombatSystem" type="Control"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e63db"]
+bg_color = Color(0.752941, 0, 0.164706, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bjkaq"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="CombatScene" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 size_flags_vertical = 4
@@ -42,82 +54,201 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_01blt")
 step = 1.0
 value = 50.0
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="SelectUI" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Bottom" type="TextureRect" parent="SelectUI"]
 layout_mode = 0
 offset_top = 450.0
 offset_right = 1152.0
 offset_bottom = 647.0
-texture = ExtResource("3_kk7p2")
+texture = ExtResource("3_7qdsu")
 expand_mode = 1
 
-[node name="ProgressBar" type="ProgressBar" parent="TextureRect"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.07
-anchor_top = 0.127
-anchor_right = 0.356
-anchor_bottom = 0.264
-offset_left = 0.360001
-offset_top = -0.019001
-offset_right = -0.112
-offset_bottom = -0.00799942
-step = 1.0
-
-[node name="TextEdit" type="TextEdit" parent="TextureRect"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.01
-anchor_top = 0.091
-anchor_right = 0.058
-anchor_bottom = 0.325
-offset_left = -0.52
-offset_top = 0.072998
-offset_right = 0.183998
-offset_bottom = -0.0250015
-text = "   TU"
-placeholder_text = "TU"
-editable = false
-
-[node name="TextEdit2" type="TextEdit" parent="TextureRect"]
+[node name="Istruzioni" type="TextEdit" parent="SelectUI/Bottom"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.013
 anchor_top = 0.437
 anchor_right = 0.36
 anchor_bottom = 0.848
-offset_left = 0.0240002
-offset_top = -0.0890045
-offset_right = 0.279968
-offset_bottom = -0.056015
-text = " Usa parla per convincere il bracconiere!
-Usa fuga per tornare alla mappa.
-Aiuta gli animali a sfuggire al bracconiere"
+offset_left = 20.024
+offset_top = -1.089
+offset_right = 20.28
+offset_bottom = -1.05595
+text = " Cerca di convincere il bracconiere"
 placeholder_text = "Usa fuga per tornare alla mappa.
 Aiuta gli animali a sfuggire al bracconiere"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect"]
+[node name="ActionButtons" type="HBoxContainer" parent="SelectUI/Bottom"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.641
 anchor_top = 0.173
-anchor_right = 0.641
-anchor_bottom = 0.173
+anchor_right = 0.95
+anchor_bottom = 0.873
 offset_left = -248.432
 offset_top = -12.081
-offset_right = 355.568
-offset_bottom = 137.919
+offset_right = -0.400024
+offset_bottom = 0.0189667
 
-[node name="Button" type="Button" parent="TextureRect/HBoxContainer"]
+[node name="SpeakButton" type="Button" parent="SelectUI/Bottom/ActionButtons"]
 layout_mode = 2
 size_flags_horizontal = 3
 tooltip_text = "Usa PARLA per convincere il bracconiere!"
 text = "PARLA"
 
-[node name="VSeparator" type="VSeparator" parent="TextureRect/HBoxContainer"]
+[node name="VSeparator" type="VSeparator" parent="SelectUI/Bottom/ActionButtons"]
 layout_mode = 2
 
-[node name="Button2" type="Button" parent="TextureRect/HBoxContainer"]
+[node name="FugaButton" type="Button" parent="SelectUI/Bottom/ActionButtons"]
 layout_mode = 2
 size_flags_horizontal = 3
 tooltip_text = "Usa FUGA per tornare alla mappa"
 text = "FUGA"
+
+[node name="ParlaUI" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Bottom" type="TextureRect" parent="ParlaUI"]
+layout_mode = 0
+offset_top = 450.0
+offset_right = 1152.0
+offset_bottom = 647.0
+texture = ExtResource("3_7qdsu")
+expand_mode = 1
+
+[node name="Frasi" type="VBoxContainer" parent="ParlaUI/Bottom"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.006
+anchor_top = 0.025
+anchor_right = 0.825
+anchor_bottom = 0.959
+offset_left = 0.0879998
+offset_top = 0.0749998
+offset_right = -0.400024
+offset_bottom = 0.0769958
+
+[node name="Button" type="Button" parent="ParlaUI/Bottom/Frasi"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Frase 1"
+
+[node name="Button2" type="Button" parent="ParlaUI/Bottom/Frasi"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Frase 2"
+
+[node name="Button3" type="Button" parent="ParlaUI/Bottom/Frasi"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Frase 3"
+
+[node name="Indietro" type="VBoxContainer" parent="ParlaUI/Bottom"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.849
+anchor_top = 0.127
+anchor_right = 0.977
+anchor_bottom = 0.873
+offset_left = -0.0480347
+offset_top = -0.019001
+offset_right = -0.504028
+offset_bottom = 0.0189972
+
+[node name="BackButton" type="Button" parent="ParlaUI/Bottom/Indietro"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Indietro"
+
+[node name="DifesaUI" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Bottom" type="TextureRect" parent="DifesaUI"]
+layout_mode = 0
+offset_top = 450.0
+offset_right = 1152.0
+offset_bottom = 647.0
+texture = ExtResource("3_7qdsu")
+expand_mode = 1
+
+[node name="Istruzioni" type="TextEdit" parent="DifesaUI/Bottom"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.013
+anchor_top = 0.437
+anchor_right = 0.36
+anchor_bottom = 0.848
+offset_left = 21.024
+offset_top = 0.910995
+offset_right = 21.28
+offset_bottom = 0.944046
+text = "Schiva le frecce usando i tasti freccia"
+
+[node name="Minigioco" type="TextureRect" parent="DifesaUI"]
+layout_mode = 0
+offset_left = 463.0
+offset_top = 28.0
+offset_right = 1127.0
+offset_bottom = 619.0
+texture = ExtResource("3_7qdsu")
+
+[node name="PlayerBar" type="ProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.07
+anchor_top = 0.127
+anchor_right = 0.356
+anchor_bottom = 0.264
+offset_left = 105.0
+offset_top = 484.0
+offset_right = 438.0
+offset_bottom = 512.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/background = SubResource("StyleBoxFlat_e63db")
+theme_override_styles/fill = SubResource("StyleBoxFlat_bjkaq")
+step = 1.0
+value = 50.0
+fill_mode = 1
+
+[node name="TextEdit" type="TextEdit" parent="PlayerBar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.21
+anchor_top = 0.091
+anchor_right = -0.045
+anchor_bottom = 1.0
+offset_left = -0.0699997
+offset_top = -9.548
+offset_right = -0.0150013
+offset_bottom = 3.0
+text = "   TU"
+placeholder_text = "TU"
+editable = false
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("4_nv2p2")
+
+[node name="SelectState" type="Node" parent="StateMachine"]
+script = ExtResource("5_5ekkk")
+
+[node name="ParlaState" type="Node" parent="StateMachine"]
+script = ExtResource("6_u7oi3")
+
+[node name="DifesaState" type="Node" parent="StateMachine"]
+script = ExtResource("7_y06uv")
+
+[node name="PunteggioState" type="Node" parent="StateMachine"]
+script = ExtResource("8_cl11c")
+
+[node name="FinalState" type="Node" parent="StateMachine"]
+script = ExtResource("9_pqyxq")
