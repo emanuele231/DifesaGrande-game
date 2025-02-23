@@ -16,5 +16,4 @@ func change_state(new_state: Node):
 func transition_to(state_name: String):
 	var new_state = get_node(state_name)
 	if new_state:
-		change_state(new_state)
-
+		change_state(new_state)   #cambia stato se ne trova uno con il nome dato

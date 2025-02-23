@@ -52,9 +52,10 @@ theme_override_font_sizes/font_size = 25
 theme_override_styles/background = SubResource("StyleBoxFlat_6hwl0")
 theme_override_styles/fill = SubResource("StyleBoxFlat_01blt")
 step = 1.0
-value = 50.0
+value = 100.0
 
 [node name="SelectUI" type="Control" parent="."]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -135,20 +136,17 @@ offset_top = 0.0749998
 offset_right = -0.400024
 offset_bottom = 0.0769958
 
-[node name="Button" type="Button" parent="ParlaUI/Bottom/Frasi"]
+[node name="Button1" type="Button" parent="ParlaUI/Bottom/Frasi"]
 layout_mode = 2
 size_flags_vertical = 3
-text = "Frase 1"
 
 [node name="Button2" type="Button" parent="ParlaUI/Bottom/Frasi"]
 layout_mode = 2
 size_flags_vertical = 3
-text = "Frase 2"
 
 [node name="Button3" type="Button" parent="ParlaUI/Bottom/Frasi"]
 layout_mode = 2
 size_flags_vertical = 3
-text = "Frase 3"
 
 [node name="Indietro" type="VBoxContainer" parent="ParlaUI/Bottom"]
 layout_mode = 1
@@ -193,6 +191,7 @@ offset_top = 0.910995
 offset_right = 21.28
 offset_bottom = 0.944046
 text = "Schiva le frecce usando i tasti freccia"
+editable = false
 
 [node name="Minigioco" type="TextureRect" parent="DifesaUI"]
 layout_mode = 0
@@ -217,7 +216,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_styles/background = SubResource("StyleBoxFlat_e63db")
 theme_override_styles/fill = SubResource("StyleBoxFlat_bjkaq")
 step = 1.0
-value = 50.0
+value = 100.0
 fill_mode = 1
 
 [node name="TextEdit" type="TextEdit" parent="PlayerBar"]

@@ -1,21 +1,20 @@
-# SelectState.gd
+#SelectState.gd
 extends State
 
-@onready var speakButton = $SpeakButton
-@onready var fugaButton = $FugaButton
-@onready var istruzioni = $Istruzioni
+@onready var selectUI = get_parent().get_parent().get_node("SelectUI")
+@onready var speakButton = get_parent().get_parent().get_node("SelectUI/Bottom/ActionButtons/SpeakButton")
+@onready var fugaButton = get_parent().get_parent().get_node("SelectUI/Bottom/ActionButtons/FugaButton")
+@onready var istruzioni = get_parent().get_parent().get_node("SelectUI/Bottom/Istruzioni")
 
 func enter():
-	speakButton.visible = true
-	fugaButton.visible = true
-	istruzioni.text = "Scegli un'azione: Parla o Fuga."
+	selectUI.visible = true
+	istruzioni.text = "Convinci il bracconiere!"
 
 	speakButton.pressed.connect(_on_parla_pressed)
 	fugaButton.pressed.connect(_on_fuga_pressed)
 
 func exit():
-	speakButton.visible = false
-	fugaButton.visible = false
+	selectUI.visible = false
 
 	# Disconnessione con controllo per evitare errori
 	if speakButton.pressed.is_connected(_on_parla_pressed):
@@ -27,7 +26,5 @@ func exit():
 func _on_parla_pressed():
 	get_parent().transition_to("ParlaState")
 
-
 func _on_fuga_pressed():
-	get_parent().transition_to("FinalState")
-  # Gestisci il ritorno alla mappa principale
+	get_parent().transition_to("FinalState")  # Gestire il ritorno alla mappa principale

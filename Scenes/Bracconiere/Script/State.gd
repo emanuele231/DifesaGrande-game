@@ -7,4 +7,3 @@ func enter():
 	
 func exit():
 	pass	
-

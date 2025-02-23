@@ -1,17 +1,27 @@
 # DifesaState.gd
 extends State
 
-@onready var PlayerBar = $"../../GiocatoreBar"
-##@onready var minigioco = $Minigioco
+@onready var playerBar = get_parent().get_parent().get_node("PlayerBar")
+@onready var bracconiereBar = get_parent().get_parent().get_node("Sprite2D/ConvinzioneBracconiere")
+@onready var bracconiere = get_parent().get_parent().get_node("Sprite2D")
+@onready var difesaUI = get_parent().get_parent().get_node("DifesaUI")
 
-var minigioco_completato = false
+##@onready var minigioco = get_parent().get_parent().get_node_or_null("DifesaUI/Bottom/Minigioco") 
 
-##func enter():
+
+##var minigioco_completato = false
+
+func enter():
+	difesaUI.visible = true
+	bracconiereBar = false
+	bracconiere.transform.origin.x -= 350  # Muove lo sprite a sinistra
+	
    ## minigioco.start_game()
 	##minigioco.game_over.connect(_on_game_over)
    ## minigioco.game_won.connect(_on_game_won)
 
-##func exit():
+func exit():
+	difesaUI.visible = false
 	##if minigioco.game_over.is_connected(_on_game_over):
 	  ##  minigioco.game_over.disconnect(_on_game_over)
    ## if minigioco.game_won.is_connected(_on_game_won):
