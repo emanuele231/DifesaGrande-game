@@ -1,8 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://dt3nr74rtmta0"]
+[gd_scene load_steps=17 format=3 uid="uid://dt3nr74rtmta0"]
 
 [ext_resource type="Texture2D" uid="uid://cglk2ybk31ho7" path="res://Scenes/Bracconiere/bosco-difesa-grande.jpg" id="1_2rr16"]
 [ext_resource type="Texture2D" uid="uid://dh7doefot8s55" path="res://Scenes/Bracconiere/Screenshot 2025-02-22 125139.png" id="2_nr1gi"]
-[ext_resource type="Texture2D" uid="uid://b27edy2sjif2l" path="res://Scenes/menu/GUI/Tiny Wonder UI Free/bars free modifica.png" id="3_5wev6"]
 [ext_resource type="Texture2D" uid="uid://syrmyyuedhuk" path="res://Rettangolo_dialoghi.png" id="3_7qdsu"]
 [ext_resource type="Script" path="res://Scenes/Bracconiere/Script/StateMachine.gd" id="4_nv2p2"]
 [ext_resource type="Script" path="res://Scenes/Bracconiere/Script/SelectState.gd" id="5_5ekkk"]
@@ -11,17 +10,47 @@
 [ext_resource type="Script" path="res://Scenes/Bracconiere/PunteggioState.gd" id="8_cl11c"]
 [ext_resource type="Script" path="res://Scenes/Bracconiere/FinalState.gd" id="9_pqyxq"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ul0im"]
-atlas = ExtResource("3_5wev6")
-region = Rect2(1, 53, 46, 5)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6hwl0"]
+bg_color = Color(1, 1, 1, 1)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mxuo1"]
-atlas = ExtResource("3_5wev6")
-region = Rect2(0, 4, 48, 7)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_01blt"]
+bg_color = Color(0.564706, 0.933333, 0.564706, 1)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_n0qtr"]
-atlas = ExtResource("3_5wev6")
-region = Rect2(1, 37, 46, 5)
+[sub_resource type="Animation" id="Animation_5o5x4"]
+resource_name = "diminuzione_convinzione"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:value")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.233333, 0.866667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [100.0, 100.0]
+}
+
+[sub_resource type="Animation" id="Animation_2b0r1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:value")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [100.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_drrqo"]
+_data = {
+"RESET": SubResource("Animation_2b0r1"),
+"diminuzione_convinzione": SubResource("Animation_5o5x4")
+}
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e63db"]
 bg_color = Color(0.752941, 0, 0.164706, 1)
@@ -46,35 +75,25 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(552, 339)
 texture = ExtResource("2_nr1gi")
 
-[node name="ConvinzioneBracconiere" type="TextureProgressBar" parent="Sprite2D"]
+[node name="ConvinzioneBracconiere" type="ProgressBar" parent="Sprite2D"]
 anchors_preset = -1
-anchor_left = -0.906
-anchor_top = -0.401
-anchor_right = 1.891
+anchor_top = -0.102
 anchor_bottom = -0.102
-offset_left = -55.032
-offset_top = -79.429
-offset_right = -55.048
-offset_bottom = -79.558
-tooltip_text = "Convinzione del bracconiere"
+offset_left = -180.0
+offset_top = -136.558
+offset_right = 178.0
+offset_bottom = -85.558
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/background = SubResource("StyleBoxFlat_6hwl0")
+theme_override_styles/fill = SubResource("StyleBoxFlat_01blt")
+step = 1.0
 value = 100.0
-nine_patch_stretch = true
-texture_under = SubResource("AtlasTexture_ul0im")
-texture_over = SubResource("AtlasTexture_mxuo1")
-texture_progress = SubResource("AtlasTexture_n0qtr")
 
-[node name="Label" type="Label" parent="Sprite2D/ConvinzioneBracconiere"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.422
-anchor_top = 0.255
-anchor_right = 0.534
-anchor_bottom = 0.706
-offset_left = -0.076004
-offset_top = -0.00500107
-offset_right = -0.172012
-offset_bottom = -0.00600052
-text = "100%"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D/ConvinzioneBracconiere"]
+libraries = {
+"": SubResource("AnimationLibrary_drrqo")
+}
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
 

@@ -5,6 +5,7 @@ extends State
 @onready var playerBar = get_parent().get_parent().get_node("PlayerBar")
 @onready var backButton = get_parent().get_parent().get_node("ParlaUI/Bottom/Indietro/BackButton")
 @onready var bracconiereBar = get_parent().get_parent().get_node("Sprite2D/ConvinzioneBracconiere")
+@onready var bracconiereBarLabel = get_parent().get_parent().get_node("Sprite2D/ConvinzioneBracconiere/Label")
 
 # Variabili per i tre bottoni
 @onready var button1 = get_parent().get_parent().get_node("ParlaUI/Bottom/Frasi/Button1")
@@ -73,8 +74,8 @@ func exit():
 	backButton.visible = false
 
 func _on_frase_pressed(danno: int):
-	bracconiereBar.value -= danno  # Riduce la barra del bracconiere
-	print("Danno inflitto:", danno, " - Valore attuale:", bracconiereBar.value)
+	await animate_bracconiere_bar(danno)  # Riduce la barra in modo graduale
+	await get_tree().create_timer(0.5).timeout  # Aspetta mezzo secondo prima di cambiare stato
 
 	if bracconiereBar.value <= 0:
 		get_parent().transition_to("PunteggioState")
@@ -83,3 +84,13 @@ func _on_frase_pressed(danno: int):
 		
 func _on_back_pressed():
 	get_parent().transition_to("SelectState")
+	
+func animate_bracconiere_bar(danno: int):
+	var target_value = bracconiereBar.value - danno
+	if target_value < 0:
+		target_value = 0
+
+	while bracconiereBar.value > target_value:
+		bracconiereBar.value -= 1
+		bracconiereBarLabel.text = str(bracconiereBar.value) + "%"  # Aggiorna il testo
+		await get_tree().create_timer(0.05).timeout
