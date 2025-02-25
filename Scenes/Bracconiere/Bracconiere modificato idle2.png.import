@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cw58hhsa11g4a"
-path="res://.godot/imported/Bracconiere.png-b7bdcf2ec67994765f769a7b698a854a.ctex"
+uid="uid://qqktdshsew62"
+path="res://.godot/imported/Bracconiere modificato idle2.png-e4e2165e89641cedc4a35326849e045f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Bracconiere/Bracconiere.png"
-dest_files=["res://.godot/imported/Bracconiere.png-b7bdcf2ec67994765f769a7b698a854a.ctex"]
+source_file="res://Scenes/Bracconiere/Bracconiere modificato idle2.png"
+dest_files=["res://.godot/imported/Bracconiere modificato idle2.png-e4e2165e89641cedc4a35326849e045f.ctex"]
 
 [params]
 

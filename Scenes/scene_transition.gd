@@ -14,6 +14,3 @@ func change_scene(target: String):
 	get_tree().change_scene_to_file(target)
 	$AnimationPlayer.play('loaded')
 	# implementare un loading screen fatto bene -> grafiche con foglie, alberi, simili.
-
-
-
