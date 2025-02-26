@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://durnhomvhrku1"
-path="res://.godot/imported/placeholder.jpg-b8ab2b983216beaabb0c15bf6d4d6c0e.ctex"
+uid="uid://2n6queddg0xa"
+path="res://.godot/imported/Rettangolo_dialoghi_modifica.png-01ce2238b642c85ff09f7d2bb241e37f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Bracconiere/placeholder.jpg"
-dest_files=["res://.godot/imported/placeholder.jpg-b8ab2b983216beaabb0c15bf6d4d6c0e.ctex"]
+source_file="res://Scenes/Rettangolo_dialoghi_modifica.png"
+dest_files=["res://.godot/imported/Rettangolo_dialoghi_modifica.png-01ce2238b642c85ff09f7d2bb241e37f.ctex"]
 
 [params]
 

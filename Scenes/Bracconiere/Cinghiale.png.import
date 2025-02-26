@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dh7doefot8s55"
-path="res://.godot/imported/Screenshot 2025-02-22 125139.png-577168c4c6df3651070a15f1d830fdaf.ctex"
+uid="uid://b1kaj07iq77lt"
+path="res://.godot/imported/Cinghiale.png-cdc2c2fc1295471458fa82ca7f2e82b6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Bracconiere/Screenshot 2025-02-22 125139.png"
-dest_files=["res://.godot/imported/Screenshot 2025-02-22 125139.png-577168c4c6df3651070a15f1d830fdaf.ctex"]
+source_file="res://Scenes/Bracconiere/Cinghiale.png"
+dest_files=["res://.godot/imported/Cinghiale.png-cdc2c2fc1295471458fa82ca7f2e82b6.ctex"]
 
 [params]
 

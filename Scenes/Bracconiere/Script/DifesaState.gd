@@ -3,8 +3,12 @@ extends State
 
 @onready var playerBar = get_parent().get_parent().get_node("PlayerBar")
 @onready var bracconiereBar = get_parent().get_parent().get_node("Sprite2D/ConvinzioneBracconiere")
+
 @onready var bracconiere = get_parent().get_parent().get_node("Sprite2D")
 @onready var difesaUI = get_parent().get_parent().get_node("DifesaUI")
+@onready var sfondoMinigioco = get_parent().get_parent().get_node("DifesaUI/SfondoMinigioco")
+
+@onready var animationPlayer = get_parent().get_parent().get_node("Sprite2D/AnimationPlayer")
 
 ##@onready var minigioco = get_parent().get_parent().get_node_or_null("DifesaUI/Bottom/Minigioco") 
 
@@ -13,9 +17,14 @@ extends State
 
 func enter():
 	difesaUI.visible = true
-	bracconiereBar = false
-	bracconiere.transform.origin.x -= 350  # Muove lo sprite a sinistra
+	sfondoMinigioco.visible = false
 	
+	bracconiereBar.visible = false
+	##bracconiere.transform.origin.x -= 350  # Muove lo sprite a sinistra
+	
+	await animationPlayer.animation_finished  # Aspetta la fine di qualsiasi animazione
+	
+	sfondoMinigioco.visible = true 
    ## minigioco.start_game()
 	##minigioco.game_over.connect(_on_game_over)
    ## minigioco.game_won.connect(_on_game_won)

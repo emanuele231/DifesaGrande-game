@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c34oi6ioj51ct"
-path="res://.godot/imported/Senza titolo.png-c8778773071e4865cc105c9dd191d552.ctex"
+uid="uid://csqjsr1vy0aw6"
+path="res://.godot/imported/bottone frase.png-c0b35b59928851fe90dba5c9f36b9ca1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Bracconiere/Senza titolo.png"
-dest_files=["res://.godot/imported/Senza titolo.png-c8778773071e4865cc105c9dd191d552.ctex"]
+source_file="res://Scenes/Bracconiere/bottone frase.png"
+dest_files=["res://.godot/imported/bottone frase.png-c0b35b59928851fe90dba5c9f36b9ca1.ctex"]
 
 [params]
 

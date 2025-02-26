@@ -9,8 +9,11 @@ extends State
 
 # Variabili per i tre bottoni
 @onready var button1 = get_parent().get_parent().get_node("ParlaUI/Bottom/Frasi/Button1")
+@onready var label1 = get_parent().get_parent().get_node("ParlaUI/Bottom/Frasi/Button1/Label1")
 @onready var button2 = get_parent().get_parent().get_node("ParlaUI/Bottom/Frasi/Button2")
+@onready var label2 = get_parent().get_parent().get_node("ParlaUI/Bottom/Frasi/Button2/Label2")
 @onready var button3 = get_parent().get_parent().get_node("ParlaUI/Bottom/Frasi/Button3")
+@onready var label3 = get_parent().get_parent().get_node("ParlaUI/Bottom/Frasi/Button3/Label3")
 
 
 var frase_buttons = []  # Inizialmente una lista vuota
@@ -46,9 +49,9 @@ func enter():
 	scelte = scelte.slice(0, 3)  # Seleziona le prime 3 frasi uniche
 
 	# Imposta il testo di ciascun bottone con le frasi
-	button1.text = scelte[0]["testo"]
-	button2.text = scelte[1]["testo"]
-	button3.text = scelte[2]["testo"]
+	label1.text = scelte[0]["testo"]
+	label2.text = scelte[1]["testo"]
+	label3.text = scelte[2]["testo"]
 
 	# Collega ogni bottone a un'azione di danno
 	button1.pressed.connect(_on_frase_pressed.bind(scelte[0]["danno"]))
