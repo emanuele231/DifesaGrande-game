@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://d0ya28bumrp14"]
+
+[ext_resource type="Script" path="res://Scenes/Bracconiere/movimentoFreccia.gd" id="1_gyyd0"]
+[ext_resource type="Texture2D" uid="uid://i02ud1708ew4" path="res://Scenes/Bracconiere/Bow and Arrows.png" id="2_yh8iw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g1ch7"]
+atlas = ExtResource("2_yh8iw")
+region = Rect2(32, 20, 16, 7)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i3e2t"]
+size = Vector2(45, 15)
+
+[node name="Freccia" type="Node2D"]
+script = ExtResource("1_gyyd0")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_g1ch7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, 0.5)
+shape = SubResource("RectangleShape2D_i3e2t")

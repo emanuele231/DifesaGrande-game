@@ -1,10 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://dvrb27w4hosbs"]
+[gd_scene load_steps=13 format=3 uid="uid://dvrb27w4hosbs"]
 
-[ext_resource type="Script" path="res://Scenes/Bracconiere/minigiocoFrecce.gd" id="1_4eulw"]
 [ext_resource type="Texture2D" uid="uid://cglk2ybk31ho7" path="res://Scenes/Bracconiere/bosco-difesa-grande.jpg" id="1_qigbw"]
 [ext_resource type="Script" path="res://Scenes/Bracconiere/movimentoAnimale.gd" id="2_fgu6k"]
 [ext_resource type="Texture2D" uid="uid://b1kaj07iq77lt" path="res://Scenes/Bracconiere/Cinghiale.png" id="2_vyyh1"]
-[ext_resource type="Script" path="res://Scenes/Bracconiere/spawnerFrecce.gd" id="4_faxeq"]
+[ext_resource type="Script" path="res://Scenes/Bracconiere/arrow_spawner.gd" id="4_v8ud2"]
+[ext_resource type="Texture2D" uid="uid://i02ud1708ew4" path="res://Scenes/Bracconiere/Bow and Arrows.png" id="5_7mtqy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_785oy"]
 atlas = ExtResource("2_vyyh1")
@@ -51,41 +51,46 @@ _data = {
 "movimentoAnimale": SubResource("Animation_akx2k")
 }
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_xc5x2"]
+atlas = ExtResource("5_7mtqy")
+region = Rect2(31, 18, 17, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kdakj"]
+atlas = ExtResource("5_7mtqy")
+region = Rect2(32, 18, 16, 11)
+
 [node name="MinigiocoFrecce" type="Node2D"]
-script = ExtResource("1_4eulw")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_left = 22.0
-offset_top = 43.0
-offset_right = 622.0
-offset_bottom = 613.0
+offset_right = 600.0
+offset_bottom = 570.0
 texture = ExtResource("1_qigbw")
 expand_mode = 2
 
-[node name="Animale" type="CharacterBody2D" parent="."]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 position = Vector2(-45, -42)
 script = ExtResource("2_fgu6k")
 
-[node name="Sprite2D" type="Sprite2D" parent="Animale"]
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
 position = Vector2(530, 345)
 scale = Vector2(5, 5)
 texture = SubResource("AtlasTexture_785oy")
 hframes = 2
 region_rect = Rect2(0, 0, 32, 16)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Animale"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(540.25, 350.5)
 shape = SubResource("RectangleShape2D_kygwb")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Animale"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D"]
 libraries = {
 "": SubResource("AnimationLibrary_pelsy")
 }
 
-[node name="SpawnerFrecce" type="Node2D" parent="."]
-position = Vector2(-175, 267)
-script = ExtResource("4_faxeq")
-
-[node name="Timer" type="Timer" parent="SpawnerFrecce"]
-
-[node name="TimerMinigioco" type="Timer" parent="."]
+[node name="ArrowSpawner" type="Sprite2D" parent="."]
+position = Vector2(-66, 306)
+scale = Vector2(5, 5)
+texture = SubResource("AtlasTexture_xc5x2")
+script = ExtResource("4_v8ud2")
+freccia_texture = SubResource("AtlasTexture_kdakj")
+spawn_rate = 0.5
