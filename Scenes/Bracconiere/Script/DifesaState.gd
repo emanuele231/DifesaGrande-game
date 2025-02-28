@@ -40,19 +40,11 @@ func precarica_minigioco():
 		_on_minigioco_terminato(false)  # Fallback
 	
 func avvia_minigioco():
-	var minigioco_scene = load(minigioco_path)
-	if minigioco_scene:
-		minigioco_instance = minigioco_scene.instantiate()
-		
-		# Connetti i segnali
-		minigioco_instance.vita_ridotta.connect(_on_vita_ridotta)
-		minigioco_instance.minigioco_terminato.connect(_on_minigioco_terminato)
-		
-		# Aggiungi il minigioco allo sfondo
-		sfondoMinigioco.add_child(minigioco_instance)
+	if minigioco_instance:
+		minigioco_instance.visible = true  # Rendi visibile il minigioco già precaricato
 	else:
-		push_error("Impossibile caricare il minigioco: " + minigioco_path)
-		_on_minigioco_terminato(false)  # Fallback
+		push_error("Minigioco non precaricato!")
+
 		
 #func mostra_e_avvia_minigioco():
 	#if minigioco_instance:

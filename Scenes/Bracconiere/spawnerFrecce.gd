@@ -10,7 +10,6 @@ var posizione_y_base : float = -42
 var scena_freccia : PackedScene
 
 func _ready():
-
 	timer = Timer.new()
 	add_child(timer)
 	

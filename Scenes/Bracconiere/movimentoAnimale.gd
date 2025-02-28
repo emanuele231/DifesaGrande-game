@@ -9,8 +9,13 @@ extends CharacterBody2D
 @onready var animation_player = $AnimationPlayer  # Riferimento all'AnimationPlayer
 
 func _ready():
-	
+	position.x = -45
+	position.y = -42
 	animation_player.play("movimentoAnimale")  # Avvia subito l'animazione e la tiene sempre attiva
+	print("Posizione iniziale globale:", global_position)
+	##global_position = Vector2(-45, -42)
+
+
 
 func _physics_process(delta):
 	var direction = Vector2.ZERO  # Vettore di direzione
@@ -33,6 +38,8 @@ func _physics_process(delta):
 		velocity = Vector2.ZERO
 
 	move_and_slide()  # Movimento con la fisica
+	
+	print("posizione",position)
 
 	# Limita la posizione ai confini della schermata
 	position.x = clamp(position.x, min_x, max_x)
