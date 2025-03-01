@@ -39,7 +39,7 @@ func _physics_process(delta):
 
 	move_and_slide()  # Movimento con la fisica
 	
-	print("posizione",position)
+	##print("posizione",position)
 
 	# Limita la posizione ai confini della schermata
 	position.x = clamp(position.x, min_x, max_x)

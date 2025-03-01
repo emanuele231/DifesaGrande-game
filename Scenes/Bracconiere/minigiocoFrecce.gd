@@ -22,9 +22,9 @@ func _ready():
 	timer_minigioco.timeout.connect(_on_minigioco_terminato)
 	timer_minigioco.start()
 	
-	print("Posizione iniziale globale:", global_position)
-	print("Nodo genitore:", get_parent().name)
-	print("Posizione genitore:", get_parent().global_position)
+	#print("Posizione iniziale globale:", global_position)
+	#print("Nodo genitore:", get_parent().name)
+	#print("Posizione genitore:", get_parent().global_position)
 
 func freccia_colpita(danno):
 	# Emetti il segnale per ridurre la vita

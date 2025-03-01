@@ -63,7 +63,7 @@ texture = ExtResource("1_qigbw")
 expand_mode = 2
 
 [node name="Animale" type="CharacterBody2D" parent="."]
-position = Vector2(-45, -42)
+position = Vector2(-44, -15)
 script = ExtResource("2_fgu6k")
 
 [node name="Sprite2D" type="Sprite2D" parent="Animale"]

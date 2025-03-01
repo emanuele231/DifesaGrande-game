@@ -2,11 +2,11 @@ extends Node2D
 
 @export var min_tempo_spawn : float = 0.5
 @export var max_tempo_spawn : float = 2.0
-@export var variazione_altezza : float = 100.0
+@export var variazione_altezza : float = 200.0
 @export var percorso_scena_freccia : String = "res://Scenes/Bracconiere/Freccia.tscn"
 
 var timer : Timer
-var posizione_y_base : float = -42
+var posizione_y_base : float = -15
 var scena_freccia : PackedScene
 
 func _ready():
@@ -39,9 +39,11 @@ func _on_timer_timeout():
 	var nuova_freccia = scena_freccia.instantiate()
 	
 	# Posiziona la freccia con una certa variazione verticale
-	nuova_freccia.position.y = posizione_y_base + randf_range(-variazione_altezza, variazione_altezza)
-	nuova_freccia.position.x = 100 # Assicura che appaia sul lato sinistro
+	#nuova_freccia.position.y = posizione_y_base + randf_range(min_spawn_y, max_spawn_y)
+	nuova_freccia.position.y = posizione_y_base + randf_range(-variazione_altezza,variazione_altezza)
+	nuova_freccia.position.x = 220 # Assicura che appaia sul lato sinistro
 	
+	print("freccia posizione",nuova_freccia.position)
 	# Aggiungi la freccia alla scena
 	add_child(nuova_freccia)
 	
