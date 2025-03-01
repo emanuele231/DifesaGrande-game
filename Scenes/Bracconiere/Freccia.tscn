@@ -10,10 +10,8 @@ region = Rect2(32, 20, 16, 7)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i3e2t"]
 size = Vector2(45, 15)
 
-[node name="Freccia" type="Node2D"]
+[node name="Freccia" type="Area2D"]
 script = ExtResource("1_gyyd0")
-
-[node name="Area2D" type="Area2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(3, 3)

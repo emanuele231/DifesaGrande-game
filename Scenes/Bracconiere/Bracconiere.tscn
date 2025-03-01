@@ -492,7 +492,6 @@ offset_top = 484.0
 offset_right = 436.0
 offset_bottom = 518.0
 value = 100.0
-fill_mode = 1
 nine_patch_stretch = true
 texture_under = SubResource("AtlasTexture_en5b4")
 texture_over = SubResource("AtlasTexture_xaepu")

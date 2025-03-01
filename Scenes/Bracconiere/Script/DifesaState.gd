@@ -1,12 +1,12 @@
 # DifesaState.gd
 extends State
-
 @onready var playerBar = get_parent().get_parent().get_node("PlayerBar")
 @onready var bracconiereBar = get_parent().get_parent().get_node("Sprite2D/ConvinzioneBracconiere")
 @onready var bracconiere = get_parent().get_parent().get_node("Sprite2D")
 @onready var difesaUI = get_parent().get_parent().get_node("DifesaUI")
 @onready var sfondoMinigioco = get_parent().get_parent().get_node("DifesaUI/SfondoMinigioco")
 @onready var animationPlayer = get_parent().get_parent().get_node("Sprite2D/AnimationPlayer")
+@onready var playerBarLabel = get_parent().get_parent().get_node("PlayerBar/Label")
 
 var minigioco_instance = null
 var minigioco_path = "res://Scenes/Bracconiere/minigiocoFrecce.tscn"
@@ -44,21 +44,14 @@ func avvia_minigioco():
 		minigioco_instance.visible = true  # Rendi visibile il minigioco già precaricato
 	else:
 		push_error("Minigioco non precaricato!")
-
 		
-#func mostra_e_avvia_minigioco():
-	#if minigioco_instance:
-		# Rendi visibile il minigioco
-		#minigioco_instance.visible = true
-		# Se il minigioco ha un metodo start o begin, chiamalo
-		#if minigioco_instance.has_method("start"):
-			#minigioco_instance.start()
-		#elif minigioco_instance.has_method("begin"):
-			#minigioco_instance.begin()
-
 func _on_vita_ridotta(danno):
+	print("Vita ridotta di: ", danno)  # Debug per verificare che il segnale venga ricevuto
 	# Riduci la barra della vita del giocatore
 	playerBar.value -= danno
+	
+	playerBarLabel.text = str(playerBar.value) + "%"  # Aggiorna il testo
+	await get_tree().create_timer(0.05).timeout
 	
 	# Verifica se il giocatore è stato sconfitto
 	if playerBar.value <= 0:
