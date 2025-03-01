@@ -85,5 +85,6 @@ func exit():
 		minigioco_instance.queue_free()
 		minigioco_instance = null
 	
+	bracconiereBar.visible = true
 	difesaUI.visible = false
 	sfondoMinigioco.visible = false

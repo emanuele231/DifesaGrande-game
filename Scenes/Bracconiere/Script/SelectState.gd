@@ -5,7 +5,6 @@ extends State
 @onready var speakButton = get_parent().get_parent().get_node("SelectUI/Bottom/ActionButtons/SpeakButton")
 @onready var fugaButton = get_parent().get_parent().get_node("SelectUI/Bottom/ActionButtons/FugaButton")
 @onready var istruzioni = get_parent().get_parent().get_node("SelectUI/Bottom/Istruzioni")
-
 @onready var sprite = get_parent().get_parent().get_node("Sprite2D")
 @onready var animationPlayer = get_parent().get_parent().get_node("Sprite2D/AnimationPlayer")
 
