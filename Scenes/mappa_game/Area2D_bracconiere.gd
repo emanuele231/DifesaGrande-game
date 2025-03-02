@@ -1,11 +1,9 @@
-# Questo script va applicato all'Area2D che è figlio del CharacterBody2D
 extends Area2D
 
 @export var scena_target: String = "res://Scenes/Bracconiere/Bracconiere.tscn"
 var giocatore_dentro = false
 
 func _ready():
-	# Connetti esplicitamente i segnali
 	body_entered.connect(_on_body_entered)
 	body_exited.connect(_on_body_exited)
 	print("Interazione scena inizializzata")
