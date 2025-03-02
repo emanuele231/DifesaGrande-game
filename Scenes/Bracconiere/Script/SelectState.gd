@@ -7,9 +7,11 @@ extends State
 @onready var istruzioni = get_parent().get_parent().get_node("SelectUI/Bottom/Istruzioni")
 @onready var sprite = get_parent().get_parent().get_node("Sprite2D")
 @onready var animationPlayer = get_parent().get_parent().get_node("Sprite2D/AnimationPlayer")
+@onready var playerBar = get_parent().get_parent().get_node("PlayerBar")
 
 func enter():
 	selectUI.visible = true
+	playerBar.visible = true
 	istruzioni.text = "Convinci il bracconiere!"
 
 	speakButton.pressed.connect(_on_parla_pressed)

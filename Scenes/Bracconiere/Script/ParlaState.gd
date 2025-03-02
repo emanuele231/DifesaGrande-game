@@ -61,7 +61,7 @@ func enter():
 func exit():
 	# Disattiva la UI della scena
 	parlaUI.visible = false
-	playerBar.visible = true
+	#playerBar.visible = true
 
 	# Disconnette i segnali 
 	button1.pressed.disconnect(_on_frase_pressed)
@@ -77,10 +77,12 @@ func exit():
 	backButton.visible = false
 
 func _on_frase_pressed(danno: int):
+	PunteggioBracconiere.aggiungi_punti(danno)
 	await animate_bracconiere_bar(danno)  # Riduce la barra in modo graduale
 	await get_tree().create_timer(0.5).timeout  # Aspetta mezzo secondo prima di cambiare stato
 
 	if bracconiereBar.value <= 0:
+		playerBar.visible = false
 		get_parent().transition_to("PunteggioState")
 	else:
 		get_parent().transition_to("DifesaState")

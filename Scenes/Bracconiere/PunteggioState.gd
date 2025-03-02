@@ -1,18 +1,20 @@
 #PunteggioState.gd
 extends State
 
-## Trova i nodi all'interno di CombatScene
-##@onready var punteggio_label = get_parent().get_node("CombatScene/PunteggioUI/PunteggioLabel")
+@onready var difesaUI = get_parent().get_parent().get_node("PunteggioUI")
+@onready var punteggio_label = get_parent().get_parent().get_node("PunteggioUI/punti")
 ##@onready var confermaButton = get_parent().get_node("CombatScene/PunteggioUI/ConfermaButton")
 
 ##var punteggio = 100  # Base
 
-##func enter():
-   ## punteggio_label.text = "Punteggio Finale: " + str(punteggio)
+func enter():
+	difesaUI.visible = true
+	punteggio_label.text = str(PunteggioBracconiere.punteggio)
    ## confermaButton.visible = true
    ## confermaButton.pressed.connect(_on_conferma_pressed)
 
-##func exit():
+func exit():
+	get_parent().transition_to("FinalState") 
    ## if confermaButton.pressed.is_connected(_on_conferma_pressed):
    ##     confermaButton.pressed.disconnect(_on_conferma_pressed)
    ## confermaButton.visible = false

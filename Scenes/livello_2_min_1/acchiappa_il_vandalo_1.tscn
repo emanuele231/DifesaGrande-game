@@ -10185,7 +10185,6 @@ scale = Vector2(3, 3)
 transform = Transform2D(3, 0, 0, 3, 500, -500)
 
 [node name="punteggio" type="Control" parent="player/Sprite2D/Camera2D/CanvasLayer"]
-visible = false
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -11206,7 +11205,7 @@ shape = SubResource("RectangleShape2D_vjoc2")
 debug_color = Color(0.937255, 0.427451, 0.705882, 0.419608)
 
 [node name="changedirectionopposite20" type="Area2D" parent="."]
-position = Vector2(541, 11)
+position = Vector2(541, -11)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="changedirectionopposite20"]
 position = Vector2(-558, -198)
