@@ -12,6 +12,3 @@ func play_animation(state_name: String):
 			animation_player.play("CamminaSX")
 		"PunteggioState":
 			animation_player.play("Idle")
-		"FinalState":
-			pass
-			##animation_player.play("sconfitta")

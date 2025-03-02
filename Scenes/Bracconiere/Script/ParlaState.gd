@@ -16,7 +16,7 @@ extends State
 @onready var label3 = get_parent().get_parent().get_node("CanvasLayer/ParlaUI/Bottom/Frasi/Button3/Label3")
 
 
-var frase_buttons = []  # Inizialmente una lista vuota
+var frase_buttons = []
 
 var frasi = [
 	{"testo": "Cacciare è sbagliato!", "danno": 20},
@@ -27,23 +27,18 @@ var frasi = [
 ]
 
 func enter():
-	# Attiva la UI della scena
 	parlaUI.visible = true
 	if backButton.visible == false:
 		backButton.visible = true
 		
-	# Rende visibili i bottoni quando si torna nello stato
 	button1.visible = true
 	button2.visible = true
 	button3.visible = true
 	
-	# disattiva la playerBar
 	playerBar.visible = false
 	
-	# Connetti i pulsanti
 	backButton.pressed.connect(_on_back_pressed)
 
-	# Scegli 3 frasi uniche dalla lista
 	var scelte = frasi.duplicate()
 	scelte.shuffle()  # Mescola le frasi
 	scelte = scelte.slice(0, 3)  # Seleziona le prime 3 frasi uniche
@@ -53,17 +48,13 @@ func enter():
 	label2.text = scelte[1]["testo"]
 	label3.text = scelte[2]["testo"]
 
-	# Collega ogni bottone a un'azione di danno
 	button1.pressed.connect(_on_frase_pressed.bind(scelte[0]["danno"]))
 	button2.pressed.connect(_on_frase_pressed.bind(scelte[1]["danno"]))
 	button3.pressed.connect(_on_frase_pressed.bind(scelte[2]["danno"]))
 
 func exit():
-	# Disattiva la UI della scena
 	parlaUI.visible = false
-	#playerBar.visible = true
 
-	# Disconnette i segnali 
 	button1.pressed.disconnect(_on_frase_pressed)
 	button2.pressed.disconnect(_on_frase_pressed)
 	button3.pressed.disconnect(_on_frase_pressed)
@@ -78,8 +69,8 @@ func exit():
 
 func _on_frase_pressed(danno: int):
 	PunteggioBracconiere.aggiungi_punti(danno)
-	await animate_bracconiere_bar(danno)  # Riduce la barra in modo graduale
-	await get_tree().create_timer(0.5).timeout  # Aspetta mezzo secondo prima di cambiare stato
+	await animate_bracconiere_bar(danno)  
+	await get_tree().create_timer(0.5).timeout  
 
 	if bracconiereBar.value <= 0:
 		playerBar.visible = false
@@ -97,5 +88,5 @@ func animate_bracconiere_bar(danno: int):
 
 	while bracconiereBar.value > target_value:
 		bracconiereBar.value -= 1
-		bracconiereBarLabel.text = str(bracconiereBar.value) + "%"  # Aggiorna il testo
+		bracconiereBarLabel.text = str(bracconiereBar.value) + "%" 
 		await get_tree().create_timer(0.05).timeout

@@ -18,7 +18,7 @@ func enter():
 	bracconiereBar.visible = false
 	playerBar.visible = true
 	
-	await animationPlayer.animation_finished  # Aspetta la fine dell'animazione precedente
+	await animationPlayer.animation_finished  
 	
 	sfondoMinigioco.visible = true
 	precarica_minigioco()
@@ -28,26 +28,26 @@ func precarica_minigioco():
 	var minigioco_scene = load(MINIGIOCO_PATH)
 	if minigioco_scene:
 		minigioco_instance = minigioco_scene.instantiate()
-		minigioco_instance.visible = false  # Nasconde il minigioco finché non viene avviato
+		minigioco_instance.visible = false 
 		minigioco_instance.vita_ridotta.connect(_on_vita_ridotta)
 		minigioco_instance.minigioco_terminato.connect(_on_minigioco_terminato)
 		sfondoMinigioco.add_child(minigioco_instance)
 	else:
 		push_error("Errore: impossibile caricare il minigioco!")
-		_on_minigioco_terminato(false)  # Se il caricamento fallisce, termina il minigioco
-
+		_on_minigioco_terminato(false)  
+		
 func avvia_minigioco():
 	if minigioco_instance:
-		minigioco_instance.visible = true  # Rendi visibile il minigioco precaricato
-		animationPlayer.play("Spara")  # Avvia l'animazione "Spara"
+		minigioco_instance.visible = true  
+		animationPlayer.play("Spara")  
 	else:
 		push_error("Errore: Minigioco non precaricato!")
 
 func _on_vita_ridotta(danno):
 	PunteggioBracconiere.rimuovi_punti(danno)
-	print("Vita ridotta di:", danno)  # Debug
-	playerBar.value = max(playerBar.value - danno, 0)  # Evita valori negativi
-	playerBarLabel.text = str(playerBar.value) + "%"  # Aggiorna il testo
+	print("Vita ridotta di:", danno)  
+	playerBar.value = max(playerBar.value - danno, 0)  
+	playerBarLabel.text = str(playerBar.value) + "%"  
 	
 	await get_tree().create_timer(0.05).timeout
 	

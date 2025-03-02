@@ -4,7 +4,7 @@ extends State
 @onready var punteggio_label = get_parent().get_parent().get_node("CanvasLayer/PunteggioUI/punti")
 @onready var mappaButton = get_parent().get_parent().get_node("CanvasLayer/PunteggioUI/Button")
 
-@onready var scena_mappa = preload("res://Scenes/mappa_game/mappa.tscn")  # Sostituisci con il percorso corretto
+@onready var scena_mappa = preload("res://Scenes/mappa_game/mappa.tscn") 
 
 func enter():
 	difesaUI.visible = true
@@ -18,5 +18,5 @@ func exit():
 	get_parent().transition_to("FinalState")
 
 func _on_mappa_pressed():
-	print("Caricamento scena mappa...")  # Debug
+	print("Caricamento scena mappa...") 
 	get_tree().change_scene_to_packed(scena_mappa)

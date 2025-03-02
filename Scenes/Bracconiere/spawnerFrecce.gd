@@ -20,33 +20,23 @@ func _ready():
 	else:
 		push_error("Impossibile trovare la scena freccia al percorso: " + percorso_scena_freccia)
 	
-	# Memorizza la posizione base di spawn
-	##posizione_y_base = position.y
-	
-	# Configura il timer per gli spawn
 	timer.wait_time = randf_range(min_tempo_spawn, max_tempo_spawn)
 	timer.timeout.connect(_on_timer_timeout)
 	timer.start()
 
 func _on_timer_timeout():
-	# Verifica che la scena sia stata caricata
 	if scena_freccia == null:
 		push_error("Scena freccia non disponibile!")
 		timer.start()
 		return
 	
-	# Genera una nuova freccia
 	var nuova_freccia = scena_freccia.instantiate()
-	
-	# Posiziona la freccia con una certa variazione verticale
-	#nuova_freccia.position.y = posizione_y_base + randf_range(min_spawn_y, max_spawn_y)
+
 	nuova_freccia.position.y = posizione_y_base + randf_range(-variazione_altezza,variazione_altezza)
 	nuova_freccia.position.x = 220 # Assicura che appaia sul lato sinistro
 	
 	print("freccia posizione",nuova_freccia.position)
-	# Aggiungi la freccia alla scena
 	add_child(nuova_freccia)
 	
-	# Riconfigura il timer per il prossimo spawn
 	timer.wait_time = randf_range(min_tempo_spawn, max_tempo_spawn)
 	timer.start()

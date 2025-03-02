@@ -1,21 +1,17 @@
 # Script principale di MinigiocoFrecce
 extends Node2D
 
-# Segnali per comunicare con la scena principale
 signal vita_ridotta(danno)
 signal minigioco_terminato(successo)
 
-# Variabili per la gestione del gioco
 @export var durata_minigioco : float = 10.0
 var timer_minigioco : Timer
 @onready var animale = $Animale
 
 func _ready():
 	print("Minigioco inizializzato")
-	# Aggiungi l'animale al gruppo per identificarlo nelle collisioni
 	animale.add_to_group("animale")
 	
-	# Crea e configura il timer per la durata del minigioco
 	timer_minigioco = Timer.new()
 	add_child(timer_minigioco)
 	timer_minigioco.wait_time = durata_minigioco
@@ -25,11 +21,9 @@ func _ready():
 
 func freccia_colpita(danno):
 	print("Funzione freccia_colpita chiamata con danno:", danno)
-	# Emetti il segnale per ridurre la vita
+
 	emit_signal("vita_ridotta", danno)
 
 func _on_minigioco_terminato():
-	# Termina il minigioco e invia segnale
 	get_tree().call_group("frecce", "queue_free")
-	# Emetti il segnale che il minigioco è terminato con successo
 	emit_signal("minigioco_terminato", true)
