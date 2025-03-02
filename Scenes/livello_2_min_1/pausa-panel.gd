@@ -12,6 +12,7 @@ func _input(event: InputEvent) -> void:
 				_on_riavvia_1_button_down()
 			elif Input.is_joy_button_pressed(JOY_BUTTON_A, JOY_BUTTON_X)and pausa.paused == true:
 				_on_back_1_button_down()
+				
 			
 
 func _ready():

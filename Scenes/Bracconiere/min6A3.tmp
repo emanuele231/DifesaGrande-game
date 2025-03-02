@@ -1,0 +1,89 @@
+[gd_scene load_steps=12 format=3 uid="uid://dvrb27w4hosbs"]
+
+[ext_resource type="Texture2D" uid="uid://cglk2ybk31ho7" path="res://Scenes/Bracconiere/bosco-difesa-grande.jpg" id="1_qigbw"]
+[ext_resource type="Script" path="res://Scenes/Bracconiere/movimentoAnimale.gd" id="2_fgu6k"]
+[ext_resource type="Texture2D" uid="uid://b1kaj07iq77lt" path="res://Scenes/Bracconiere/Cinghiale.png" id="2_vyyh1"]
+[ext_resource type="Script" path="res://Scenes/Bracconiere/frecce.gd" id="4_d6uy5"]
+[ext_resource type="PackedScene" uid="uid://3tgvjdy6muxg" path="res://Scenes/Bracconiere/Frecce.tscn" id="5_d050s"]
+
+[sub_resource type="GDScript" id="GDScript_6305c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_785oy"]
+atlas = ExtResource("2_vyyh1")
+region = Rect2(13.3035, 0, 90.6078, 47.1299)
+margin = Rect2(6, 0, 0, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kygwb"]
+size = Vector2(159.5, 75)
+
+[sub_resource type="Animation" id="Animation_0u87b"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_akx2k"]
+resource_name = "movimentoAnimale"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.533333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pelsy"]
+_data = {
+"RESET": SubResource("Animation_0u87b"),
+"movimentoAnimale": SubResource("Animation_akx2k")
+}
+
+[node name="MinigiocoFrecce" type="Node2D"]
+script = SubResource("GDScript_6305c")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 600.0
+offset_bottom = 570.0
+texture = ExtResource("1_qigbw")
+expand_mode = 2
+
+[node name="Animale" type="CharacterBody2D" parent="."]
+position = Vector2(-45, -42)
+script = ExtResource("2_fgu6k")
+
+[node name="Sprite2D" type="Sprite2D" parent="Animale"]
+position = Vector2(530, 345)
+scale = Vector2(5, 5)
+texture = SubResource("AtlasTexture_785oy")
+hframes = 2
+region_rect = Rect2(0, 0, 32, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Animale"]
+position = Vector2(540.25, 350.5)
+shape = SubResource("RectangleShape2D_kygwb")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Animale"]
+libraries = {
+"": SubResource("AnimationLibrary_pelsy")
+}
+
+[node name="Frecce" type="Node2D" parent="."]
+script = ExtResource("4_d6uy5")
+freccia_scene = ExtResource("5_d050s")
+
+[node name="Frecce" parent="Frecce" instance=ExtResource("5_d050s")]

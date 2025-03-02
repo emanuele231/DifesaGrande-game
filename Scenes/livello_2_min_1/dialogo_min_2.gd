@@ -1,5 +1,6 @@
 extends Control
 
+##dialogo vandalo
 var dialog_sequence := [
 	"Oh no! Ecco chi stava infastidendo tutti!",
 	"C'è un vandalo che si nasconde qui vicino",
@@ -47,7 +48,7 @@ func enable_player_movement():
 
 
 		
-
+##gestione dei dialoghi
 func show_next_dialog() -> void:
 	if $Label != null:
 		if current_dialog_index >= -1:
@@ -69,7 +70,7 @@ func show_next_dialog() -> void:
 	else:
 		print("label vuoto")
 
-
+##fa andare avanti il dialogo
 func _input(event: InputEvent) -> void:
 	if event is InputEventJoypadButton and event.is_pressed() or event is InputEventKey and event.is_pressed() and event.keycode == KEY_A:
 		if current_dialog_index < dialog_sequence.size():

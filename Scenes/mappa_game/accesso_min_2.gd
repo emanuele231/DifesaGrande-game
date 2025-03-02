@@ -14,5 +14,3 @@ func _process(delta):
 	if entered == true:
 		if Input.is_joy_button_pressed(JOY_AXIS_LEFT_X,JOY_BUTTON_X) or Input.is_key_label_pressed(KEY_X):
 			get_tree().change_scene_to_packed(Caccia_al_Vandalo)
-
-
