@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://dt3nr74rtmta0"]
+[gd_scene load_steps=36 format=3 uid="uid://dt3nr74rtmta0"]
 
 [ext_resource type="Texture2D" uid="uid://cglk2ybk31ho7" path="res://Scenes/Bracconiere/bosco-difesa-grande.jpg" id="1_2rr16"]
 [ext_resource type="Texture2D" uid="uid://qqktdshsew62" path="res://Scenes/Bracconiere/Bracconiere modificato idle2.png" id="2_cd0vm"]
@@ -14,7 +14,6 @@
 [ext_resource type="Texture2D" uid="uid://csqjsr1vy0aw6" path="res://Scenes/Bracconiere/bottone frase.png" id="8_8ooj0"]
 [ext_resource type="Script" path="res://Scenes/Bracconiere/PunteggioState.gd" id="8_cl11c"]
 [ext_resource type="Texture2D" uid="uid://chthickflak0n" path="res://Scenes/menu/GUI/Tiny Wonder UI Free/base free.png" id="8_yix80"]
-[ext_resource type="Script" path="res://Scenes/Bracconiere/FinalState.gd" id="9_pqyxq"]
 [ext_resource type="Theme" uid="uid://brb76mu8vmajm" path="res://Scenes/livello_1/ThemesGUI/PauseMenuTheme.tres" id="10_m33li"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ul0im"]
@@ -201,25 +200,13 @@ region = Rect2(0, 4, 48, 7)
 atlas = ExtResource("3_5wev6")
 region = Rect2(1, 37, 46, 5)
 
-[node name="CombatScene" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = -1152.0
-offset_bottom = -648.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 6
+[node name="CombatScene" type="Node2D"]
 
 [node name="Sfondo" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 1152.0
+offset_right = 1166.4
 offset_bottom = 648.0
 texture = ExtResource("1_2rr16")
-stretch_mode = 5
-metadata/_edit_use_anchors_ = true
+expand_mode = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(524, 342)
@@ -240,7 +227,7 @@ anchor_bottom = 0.102
 offset_left = -32.024
 offset_top = -32.02
 offset_right = -31.976
-offset_bottom = -32.028
+offset_bottom = -32.02
 tooltip_text = "Convinzione del bracconiere"
 value = 100.0
 nine_patch_stretch = true
@@ -267,13 +254,31 @@ libraries = {
 "": SubResource("AnimationLibrary_fk7tn")
 }
 
-[node name="SelectUI" type="Control" parent="."]
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("4_nv2p2")
+
+[node name="SelectState" type="Node" parent="StateMachine"]
+script = ExtResource("5_5ekkk")
+
+[node name="ParlaState" type="Node" parent="StateMachine"]
+script = ExtResource("6_u7oi3")
+
+[node name="DifesaState" type="Node" parent="StateMachine"]
+script = ExtResource("7_y06uv")
+
+[node name="PunteggioState" type="Node" parent="StateMachine"]
+script = ExtResource("8_cl11c")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="SelectUI" type="Control" parent="CanvasLayer"]
 visible = false
+layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Bottom" type="TextureRect" parent="SelectUI"]
+[node name="Bottom" type="TextureRect" parent="CanvasLayer/SelectUI"]
 layout_mode = 0
 offset_top = 450.0
 offset_right = 1152.0
@@ -281,7 +286,7 @@ offset_bottom = 647.0
 texture = ExtResource("6_fwiqk")
 expand_mode = 1
 
-[node name="Istruzioni" type="Label" parent="SelectUI/Bottom"]
+[node name="Istruzioni" type="Label" parent="CanvasLayer/SelectUI/Bottom"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.03
@@ -297,7 +302,7 @@ theme_override_fonts/font = ExtResource("7_bkfag")
 theme_override_font_sizes/font_size = 24
 text = "Cerca di convincere il bracconiere"
 
-[node name="ActionButtons" type="HBoxContainer" parent="SelectUI/Bottom"]
+[node name="ActionButtons" type="HBoxContainer" parent="CanvasLayer/SelectUI/Bottom"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.641
@@ -309,7 +314,7 @@ offset_top = 0.919003
 offset_right = 1.59998
 offset_bottom = -8.981
 
-[node name="SpeakButton" type="Button" parent="SelectUI/Bottom/ActionButtons"]
+[node name="SpeakButton" type="Button" parent="CanvasLayer/SelectUI/Bottom/ActionButtons"]
 layout_mode = 2
 size_flags_horizontal = 3
 tooltip_text = "Usa PARLA per convincere il bracconiere!"
@@ -319,10 +324,10 @@ theme_override_font_sizes/font_size = 70
 text = "PARLA"
 expand_icon = true
 
-[node name="VSeparator" type="VSeparator" parent="SelectUI/Bottom/ActionButtons"]
+[node name="VSeparator" type="VSeparator" parent="CanvasLayer/SelectUI/Bottom/ActionButtons"]
 layout_mode = 2
 
-[node name="FugaButton" type="Button" parent="SelectUI/Bottom/ActionButtons"]
+[node name="FugaButton" type="Button" parent="CanvasLayer/SelectUI/Bottom/ActionButtons"]
 layout_mode = 2
 size_flags_horizontal = 3
 tooltip_text = "Usa FUGA per tornare alla mappa"
@@ -331,13 +336,14 @@ theme_override_fonts/font = ExtResource("7_bkfag")
 theme_override_font_sizes/font_size = 70
 text = "FUGA"
 
-[node name="ParlaUI" type="Control" parent="."]
+[node name="ParlaUI" type="Control" parent="CanvasLayer"]
 visible = false
+layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Bottom" type="TextureRect" parent="ParlaUI"]
+[node name="Bottom" type="TextureRect" parent="CanvasLayer/ParlaUI"]
 layout_mode = 0
 offset_top = 450.0
 offset_right = 1152.0
@@ -345,7 +351,7 @@ offset_bottom = 647.0
 texture = ExtResource("6_fwiqk")
 expand_mode = 1
 
-[node name="Frasi" type="VBoxContainer" parent="ParlaUI/Bottom"]
+[node name="Frasi" type="VBoxContainer" parent="CanvasLayer/ParlaUI/Bottom"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.006
@@ -357,14 +363,14 @@ offset_top = 20.075
 offset_right = 21.6
 offset_bottom = -17.923
 
-[node name="Button1" type="TextureButton" parent="ParlaUI/Bottom/Frasi"]
+[node name="Button1" type="TextureButton" parent="CanvasLayer/ParlaUI/Bottom/Frasi"]
 layout_mode = 2
 size_flags_vertical = 3
 texture_normal = SubResource("AtlasTexture_osxed")
 texture_hover = SubResource("AtlasTexture_qw2mj")
 stretch_mode = 0
 
-[node name="Label1" type="Label" parent="ParlaUI/Bottom/Frasi/Button1"]
+[node name="Label1" type="Label" parent="CanvasLayer/ParlaUI/Bottom/Frasi/Button1"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.028
@@ -378,14 +384,14 @@ offset_bottom = 0.0139999
 theme_override_fonts/font = ExtResource("7_bkfag")
 theme_override_font_sizes/font_size = 27
 
-[node name="Button2" type="TextureButton" parent="ParlaUI/Bottom/Frasi"]
+[node name="Button2" type="TextureButton" parent="CanvasLayer/ParlaUI/Bottom/Frasi"]
 layout_mode = 2
 size_flags_vertical = 3
 texture_normal = SubResource("AtlasTexture_maydg")
 texture_hover = SubResource("AtlasTexture_ic14c")
 stretch_mode = 0
 
-[node name="Label2" type="Label" parent="ParlaUI/Bottom/Frasi/Button2"]
+[node name="Label2" type="Label" parent="CanvasLayer/ParlaUI/Bottom/Frasi/Button2"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.028
@@ -399,14 +405,14 @@ offset_bottom = 2.014
 theme_override_fonts/font = ExtResource("7_bkfag")
 theme_override_font_sizes/font_size = 27
 
-[node name="Button3" type="TextureButton" parent="ParlaUI/Bottom/Frasi"]
+[node name="Button3" type="TextureButton" parent="CanvasLayer/ParlaUI/Bottom/Frasi"]
 layout_mode = 2
 size_flags_vertical = 3
 texture_normal = SubResource("AtlasTexture_m8yko")
 texture_hover = SubResource("AtlasTexture_15rss")
 stretch_mode = 0
 
-[node name="Label3" type="Label" parent="ParlaUI/Bottom/Frasi/Button3"]
+[node name="Label3" type="Label" parent="CanvasLayer/ParlaUI/Bottom/Frasi/Button3"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.028
@@ -420,7 +426,7 @@ offset_bottom = -0.0100021
 theme_override_fonts/font = ExtResource("7_bkfag")
 theme_override_font_sizes/font_size = 27
 
-[node name="Indietro" type="VBoxContainer" parent="ParlaUI/Bottom"]
+[node name="Indietro" type="VBoxContainer" parent="CanvasLayer/ParlaUI/Bottom"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.849
@@ -432,7 +438,7 @@ offset_top = -0.019001
 offset_right = -0.504028
 offset_bottom = 0.0189972
 
-[node name="BackButton" type="TextureButton" parent="ParlaUI/Bottom/Indietro"]
+[node name="BackButton" type="TextureButton" parent="CanvasLayer/ParlaUI/Bottom/Indietro"]
 layout_mode = 2
 size_flags_vertical = 3
 tooltip_text = "Torna indietro"
@@ -440,7 +446,7 @@ texture_normal = SubResource("AtlasTexture_v3km1")
 texture_hover = SubResource("AtlasTexture_nu4tv")
 stretch_mode = 0
 
-[node name="Label" type="Label" parent="ParlaUI/Bottom/Indietro/BackButton"]
+[node name="Label" type="Label" parent="CanvasLayer/ParlaUI/Bottom/Indietro/BackButton"]
 layout_mode = 2
 anchor_left = 0.109
 anchor_top = 0.361
@@ -454,13 +460,14 @@ theme_override_fonts/font = ExtResource("7_bkfag")
 theme_override_font_sizes/font_size = 27
 text = "INDIETRO"
 
-[node name="DifesaUI" type="Control" parent="."]
+[node name="DifesaUI" type="Control" parent="CanvasLayer"]
 visible = false
+layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Bottom" type="TextureRect" parent="DifesaUI"]
+[node name="Bottom" type="TextureRect" parent="CanvasLayer/DifesaUI"]
 layout_mode = 0
 offset_top = 450.0
 offset_right = 1152.0
@@ -468,7 +475,7 @@ offset_bottom = 647.0
 texture = ExtResource("6_fwiqk")
 expand_mode = 1
 
-[node name="Istruzioni" type="TextEdit" parent="DifesaUI/Bottom"]
+[node name="Istruzioni" type="TextEdit" parent="CanvasLayer/DifesaUI/Bottom"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.013
@@ -482,7 +489,7 @@ offset_bottom = 0.944046
 text = "Schiva le frecce usando i tasti freccia"
 editable = false
 
-[node name="SfondoMinigioco" type="TextureRect" parent="DifesaUI"]
+[node name="SfondoMinigioco" type="TextureRect" parent="CanvasLayer/DifesaUI"]
 layout_mode = 0
 offset_left = 463.0
 offset_top = -12.0
@@ -490,13 +497,14 @@ offset_right = 1113.0
 offset_bottom = 638.0
 texture = ExtResource("6_fwiqk")
 
-[node name="PunteggioUI" type="Control" parent="."]
+[node name="PunteggioUI" type="Control" parent="CanvasLayer"]
 visible = false
+layout_mode = 3
 anchors_preset = 0
 offset_right = 1156.0
 offset_bottom = 645.0
 
-[node name="Label" type="Label" parent="PunteggioUI"]
+[node name="Label" type="Label" parent="CanvasLayer/PunteggioUI"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.039
@@ -517,7 +525,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_ouw0d")
 text = "Totale punteggio: "
 horizontal_alignment = 1
 
-[node name="punti" type="Label" parent="PunteggioUI"]
+[node name="punti" type="Label" parent="CanvasLayer/PunteggioUI"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.363
@@ -537,7 +545,7 @@ text = "300"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Button" type="Button" parent="PunteggioUI"]
+[node name="Button" type="Button" parent="CanvasLayer/PunteggioUI"]
 layout_mode = 1
 anchors_preset = -1
 offset_left = 427.0
@@ -549,24 +557,23 @@ theme_override_font_sizes/font_size = 25
 text = "TORNA ALLA MAPPA
 "
 
-[node name="PlayerBar" type="TextureProgressBar" parent="."]
-layout_mode = 1
+[node name="PlayerBar" type="TextureProgressBar" parent="CanvasLayer"]
 anchors_preset = -1
-anchor_left = 0.07
-anchor_top = 0.127
-anchor_right = 0.07
-anchor_bottom = 0.127
-offset_left = 105.0
-offset_top = 484.0
-offset_right = 436.0
-offset_bottom = 518.0
+anchor_left = 0.091
+anchor_top = 0.747
+anchor_right = 0.378
+anchor_bottom = 0.799
+offset_left = 0.167992
+offset_top = -0.0560303
+offset_right = 0.543976
+offset_bottom = 0.247986
 value = 100.0
 nine_patch_stretch = true
 texture_under = SubResource("AtlasTexture_en5b4")
 texture_over = SubResource("AtlasTexture_xaepu")
 texture_progress = SubResource("AtlasTexture_6j2dx")
 
-[node name="Label" type="Label" parent="PlayerBar"]
+[node name="Label" type="Label" parent="CanvasLayer/PlayerBar"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.417
@@ -580,7 +587,7 @@ theme_override_fonts/font = ExtResource("7_bkfag")
 theme_override_font_sizes/font_size = 20
 text = "100%"
 
-[node name="Label2" type="Label" parent="PlayerBar"]
+[node name="Label2" type="Label" parent="CanvasLayer/PlayerBar"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.156
@@ -595,21 +602,3 @@ theme = ExtResource("6_qa7xb")
 theme_type_variation = &"HeaderLarge"
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "TU"
-
-[node name="StateMachine" type="Node" parent="."]
-script = ExtResource("4_nv2p2")
-
-[node name="SelectState" type="Node" parent="StateMachine"]
-script = ExtResource("5_5ekkk")
-
-[node name="ParlaState" type="Node" parent="StateMachine"]
-script = ExtResource("6_u7oi3")
-
-[node name="DifesaState" type="Node" parent="StateMachine"]
-script = ExtResource("7_y06uv")
-
-[node name="PunteggioState" type="Node" parent="StateMachine"]
-script = ExtResource("8_cl11c")
-
-[node name="FinalState" type="Node" parent="StateMachine"]
-script = ExtResource("9_pqyxq")

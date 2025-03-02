@@ -1,13 +1,13 @@
 # DifesaState.gd
 extends State
 
-@onready var playerBar = get_parent().get_parent().get_node("PlayerBar")
+@onready var playerBar = get_parent().get_parent().get_node("CanvasLayer/PlayerBar")
 @onready var bracconiereBar = get_parent().get_parent().get_node("Sprite2D/ConvinzioneBracconiere")
 @onready var bracconiere = get_parent().get_parent().get_node("Sprite2D")
-@onready var difesaUI = get_parent().get_parent().get_node("DifesaUI")
-@onready var sfondoMinigioco = get_parent().get_parent().get_node("DifesaUI/SfondoMinigioco")
+@onready var difesaUI = get_parent().get_parent().get_node("CanvasLayer/DifesaUI")
+@onready var sfondoMinigioco = get_parent().get_parent().get_node("CanvasLayer/DifesaUI/SfondoMinigioco")
 @onready var animationPlayer = get_parent().get_parent().get_node("Sprite2D/AnimationPlayer")
-@onready var playerBarLabel = get_parent().get_parent().get_node("PlayerBar/Label")
+@onready var playerBarLabel = get_parent().get_parent().get_node("CanvasLayer/PlayerBar/Label")
 
 var minigioco_instance = null
 const MINIGIOCO_PATH = "res://Scenes/Bracconiere/minigiocoFrecce.tscn"

@@ -9,6 +9,7 @@ var input_movement = Vector2.ZERO
 var can_move: bool = false
 
 func _ready():
+	add_to_group("giocatore")
 	get_node("Sprite2D/Dialogo_01")._on_dialog_complete_callback = self
 	
 func _on_dialog_complete():

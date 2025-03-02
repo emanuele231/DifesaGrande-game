@@ -1,19 +1,19 @@
 #ParlaState.gd
 extends State
 
-@onready var parlaUI = get_parent().get_parent().get_node("ParlaUI")
-@onready var playerBar = get_parent().get_parent().get_node("PlayerBar")
-@onready var backButton = get_parent().get_parent().get_node("ParlaUI/Bottom/Indietro/BackButton")
+@onready var parlaUI = get_parent().get_parent().get_node("CanvasLayer/ParlaUI")
+@onready var playerBar = get_parent().get_parent().get_node("CanvasLayer/PlayerBar")
+@onready var backButton = get_parent().get_parent().get_node("CanvasLayer/ParlaUI/Bottom/Indietro/BackButton")
 @onready var bracconiereBar = get_parent().get_parent().get_node("Sprite2D/ConvinzioneBracconiere")
 @onready var bracconiereBarLabel = get_parent().get_parent().get_node("Sprite2D/ConvinzioneBracconiere/Label")
 
 # Variabili per i tre bottoni
-@onready var button1 = get_parent().get_parent().get_node("ParlaUI/Bottom/Frasi/Button1")
-@onready var label1 = get_parent().get_parent().get_node("ParlaUI/Bottom/Frasi/Button1/Label1")
-@onready var button2 = get_parent().get_parent().get_node("ParlaUI/Bottom/Frasi/Button2")
-@onready var label2 = get_parent().get_parent().get_node("ParlaUI/Bottom/Frasi/Button2/Label2")
-@onready var button3 = get_parent().get_parent().get_node("ParlaUI/Bottom/Frasi/Button3")
-@onready var label3 = get_parent().get_parent().get_node("ParlaUI/Bottom/Frasi/Button3/Label3")
+@onready var button1 = get_parent().get_parent().get_node("CanvasLayer/ParlaUI/Bottom/Frasi/Button1")
+@onready var label1 = get_parent().get_parent().get_node("CanvasLayer/ParlaUI/Bottom/Frasi/Button1/Label1")
+@onready var button2 = get_parent().get_parent().get_node("CanvasLayer/ParlaUI/Bottom/Frasi/Button2")
+@onready var label2 = get_parent().get_parent().get_node("CanvasLayer/ParlaUI/Bottom/Frasi/Button2/Label2")
+@onready var button3 = get_parent().get_parent().get_node("CanvasLayer/ParlaUI/Bottom/Frasi/Button3")
+@onready var label3 = get_parent().get_parent().get_node("CanvasLayer/ParlaUI/Bottom/Frasi/Button3/Label3")
 
 
 var frase_buttons = []  # Inizialmente una lista vuota
