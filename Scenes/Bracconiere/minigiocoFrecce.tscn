@@ -82,9 +82,10 @@ libraries = {
 "": SubResource("AnimationLibrary_pelsy")
 }
 
-[node name="SpawnerFrecce" type="Node2D" parent="."]
+[node name="SpawnerFrecce" type="Node2D" parent="." node_paths=PackedStringArray("animale")]
 position = Vector2(-175, 267)
 script = ExtResource("4_faxeq")
+animale = NodePath("../Animale")
 
 [node name="Timer" type="Timer" parent="SpawnerFrecce"]
 

@@ -2,7 +2,7 @@
 extends Node
 
 var current_state: Node = null
-@onready var animationStateMachine = get_parent().get_node("Sprite2D")
+@onready var animationStateMachine = get_parent().get_node("CanvasLayer/Sfondo/CenterContainer/Sprite2D")
 
 func _ready():
 	# Imposta lo stato iniziale
@@ -14,7 +14,6 @@ func change_state(new_state: Node):
 	current_state = new_state
 	current_state.enter()  
 	animationStateMachine.play_animation(new_state.name)
-
 
 func transition_to(state_name: String):
 	var new_state = get_node(state_name)

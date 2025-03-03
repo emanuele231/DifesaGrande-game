@@ -1,7 +1,6 @@
-[gd_scene load_steps=37 format=3 uid="uid://dt3nr74rtmta0"]
+[gd_scene load_steps=36 format=3 uid="uid://dt3nr74rtmta0"]
 
 [ext_resource type="Texture2D" uid="uid://cglk2ybk31ho7" path="res://Scenes/Bracconiere/bosco-difesa-grande.jpg" id="1_2rr16"]
-[ext_resource type="Script" path="res://Scenes/Bracconiere/CombatScene.gd" id="1_mgdf0"]
 [ext_resource type="Texture2D" uid="uid://qqktdshsew62" path="res://Scenes/Bracconiere/Bracconiere modificato idle2.png" id="2_cd0vm"]
 [ext_resource type="Texture2D" uid="uid://b27edy2sjif2l" path="res://Scenes/menu/GUI/Tiny Wonder UI Free/bars free modifica.png" id="3_5wev6"]
 [ext_resource type="Script" path="res://Scenes/Bracconiere/AnimationStateMachine.gd" id="3_jyap3"]
@@ -16,18 +15,6 @@
 [ext_resource type="Script" path="res://Scenes/Bracconiere/PunteggioState.gd" id="8_cl11c"]
 [ext_resource type="Texture2D" uid="uid://chthickflak0n" path="res://Scenes/menu/GUI/Tiny Wonder UI Free/base free.png" id="8_yix80"]
 [ext_resource type="Theme" uid="uid://brb76mu8vmajm" path="res://Scenes/livello_1/ThemesGUI/PauseMenuTheme.tres" id="10_m33li"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ul0im"]
-atlas = ExtResource("3_5wev6")
-region = Rect2(1, 53, 46, 5)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mxuo1"]
-atlas = ExtResource("3_5wev6")
-region = Rect2(0, 4, 48, 7)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_n0qtr"]
-atlas = ExtResource("3_5wev6")
-region = Rect2(1, 37, 46, 5)
 
 [sub_resource type="Animation" id="Animation_ur7k5"]
 resource_name = "CamminaSX"
@@ -149,6 +136,18 @@ _data = {
 "Spara": SubResource("Animation_fmfa2")
 }
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ul0im"]
+atlas = ExtResource("3_5wev6")
+region = Rect2(1, 53, 46, 5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mxuo1"]
+atlas = ExtResource("3_5wev6")
+region = Rect2(0, 4, 48, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n0qtr"]
+atlas = ExtResource("3_5wev6")
+region = Rect2(1, 37, 46, 5)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_osxed"]
 atlas = ExtResource("8_8ooj0")
 region = Rect2(16, 24, 121, 23)
@@ -202,10 +201,25 @@ atlas = ExtResource("3_5wev6")
 region = Rect2(1, 37, 46, 5)
 
 [node name="CombatScene" type="Node2D"]
-script = ExtResource("1_mgdf0")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+z_index = 1
+position = Vector2(524, 342)
+scale = Vector2(4, 4)
+texture = ExtResource("2_cd0vm")
+hframes = 13
+vframes = 21
+frame = 33
+region_rect = Rect2(0, 0, 832, 1360)
+script = ExtResource("3_jyap3")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Sprite2D"]
+libraries = {
+"": SubResource("AnimationLibrary_fk7tn")
+}
 
 [node name="Sfondo" type="Control" parent="CanvasLayer"]
 layout_mode = 3
@@ -261,32 +275,6 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("7_bkfag")
 theme_override_font_sizes/font_size = 30
 text = "100%"
-
-[node name="CenterContainer" type="Control" parent="CanvasLayer/Sfondo"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Sfondo/CenterContainer"]
-z_index = 1
-position = Vector2(524, 342)
-scale = Vector2(4, 4)
-texture = ExtResource("2_cd0vm")
-hframes = 13
-vframes = 21
-frame = 33
-region_rect = Rect2(0, 0, 832, 1360)
-script = ExtResource("3_jyap3")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Sfondo/CenterContainer/Sprite2D"]
-libraries = {
-"": SubResource("AnimationLibrary_fk7tn")
-}
 
 [node name="SelectUI" type="Control" parent="CanvasLayer"]
 visible = false
