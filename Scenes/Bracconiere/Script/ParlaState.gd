@@ -4,8 +4,8 @@ extends State
 @onready var parlaUI = get_parent().get_parent().get_node("CanvasLayer/ParlaUI")
 @onready var playerBar = get_parent().get_parent().get_node("CanvasLayer/PlayerBar")
 @onready var backButton = get_parent().get_parent().get_node("CanvasLayer/ParlaUI/Bottom/Indietro/BackButton")
-@onready var bracconiereBar = get_parent().get_parent().get_node("Sprite2D/ConvinzioneBracconiere")
-@onready var bracconiereBarLabel = get_parent().get_parent().get_node("Sprite2D/ConvinzioneBracconiere/Label")
+@onready var bracconiereBar = get_parent().get_parent().get_node("CanvasLayer/Sfondo/ConvinzioneBracconiere")
+@onready var bracconiereBarLabel = get_parent().get_parent().get_node("CanvasLayer/Sfondo/ConvinzioneBracconiere/Label")
 
 # Variabili per i tre bottoni
 @onready var button1 = get_parent().get_parent().get_node("CanvasLayer/ParlaUI/Bottom/Frasi/Button1")

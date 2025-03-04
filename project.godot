@@ -26,6 +26,11 @@ PuntiSingleton="*res://Scenes/livello_1/punti_singleton.gd"
 SceneTransition="*res://Scenes/transition.tscn"
 PunteggioBracconiere="*res://Scenes/Bracconiere/punteggio_bracconiere.gd"
 
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+
 [dotnet]
 
 project/assembly_name="Difesa Grande-game"

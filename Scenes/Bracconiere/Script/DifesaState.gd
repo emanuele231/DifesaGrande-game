@@ -2,11 +2,10 @@
 extends State
 
 @onready var playerBar = get_parent().get_parent().get_node("CanvasLayer/PlayerBar")
-@onready var bracconiereBar = get_parent().get_parent().get_node("Sprite2D/ConvinzioneBracconiere")
-@onready var bracconiere = get_parent().get_parent().get_node("Sprite2D")
+@onready var bracconiereBar = get_parent().get_parent().get_node("CanvasLayer/Sfondo/ConvinzioneBracconiere")
 @onready var difesaUI = get_parent().get_parent().get_node("CanvasLayer/DifesaUI")
 @onready var sfondoMinigioco = get_parent().get_parent().get_node("CanvasLayer/DifesaUI/SfondoMinigioco")
-@onready var animationPlayer = get_parent().get_parent().get_node("Sprite2D/AnimationPlayer")
+@onready var animationPlayer = get_parent().get_parent().get_node("CanvasLayer/Sfondo/Sprite2D/AnimationPlayer")
 @onready var playerBarLabel = get_parent().get_parent().get_node("CanvasLayer/PlayerBar/Label")
 
 var minigioco_instance = null
