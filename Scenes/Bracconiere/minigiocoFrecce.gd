@@ -9,6 +9,8 @@ var timer_minigioco : Timer
 @onready var animale = $Animale
 
 func _ready():
+	print("Genitore del nodo:", get_parent().name)
+
 	print("Minigioco inizializzato")
 	animale.add_to_group("animale")
 	

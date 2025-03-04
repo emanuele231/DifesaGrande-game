@@ -3,10 +3,11 @@ extends State
 @onready var difesaUI = get_parent().get_parent().get_node("CanvasLayer/PunteggioUI")
 @onready var punteggio_label = get_parent().get_parent().get_node("CanvasLayer/PunteggioUI/punti")
 @onready var mappaButton = get_parent().get_parent().get_node("CanvasLayer/PunteggioUI/Button")
-
+@onready var sprite = get_parent().get_parent().get_node("CanvasLayer/Sfondo/Sprite2D")
 @onready var scena_mappa = preload("res://Scenes/mappa_game/mappa.tscn") 
 
 func enter():
+	sprite.visible = false
 	difesaUI.visible = true
 	punteggio_label.text = str(PunteggioBracconiere.punteggio)
 	mappaButton.visible = true

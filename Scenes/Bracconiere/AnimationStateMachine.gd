@@ -24,8 +24,8 @@ func _on_window_resized():
 	var scale_factor = current_window_size / initial_window_size  
 	self.scale = initial_scale * scale_factor 
 	
-func _process(delta: float) -> void:
-	print("posizione", self.position)
+#func _process(delta: float) -> void:
+	#print("posizione", self.position)
 
 func play_animation(state_name: String):
 	if animation_player == null:
