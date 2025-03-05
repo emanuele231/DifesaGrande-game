@@ -13,7 +13,8 @@ extends State
 func enter():
 	selectUI.visible = true
 	playerBar.visible = true
-	istruzioni.text = "Convinci il bracconiere!"
+	istruzioni.text = "Convinci il bracconiere a non minacciare
+la natura e aiuta gli animali se necessario!"
 
 	speakButton.pressed.connect(_on_parla_pressed)
 	fugaButton.pressed.connect(_on_fuga_pressed)
