@@ -696,17 +696,17 @@ theme_type_variation = &"HeaderLarge"
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "TU"
 
-[node name="StateMachine" type="Node" parent="."]
+[node name="FiniteStateMachine" type="Node" parent="."]
 script = ExtResource("4_nv2p2")
 
-[node name="SelectState" type="Node" parent="StateMachine"]
+[node name="SelectState" type="Node" parent="FiniteStateMachine"]
 script = ExtResource("5_5ekkk")
 
-[node name="ParlaState" type="Node" parent="StateMachine"]
+[node name="ParlaState" type="Node" parent="FiniteStateMachine"]
 script = ExtResource("6_u7oi3")
 
-[node name="DifesaState" type="Node" parent="StateMachine"]
+[node name="DifesaState" type="Node" parent="FiniteStateMachine"]
 script = ExtResource("7_y06uv")
 
-[node name="PunteggioState" type="Node" parent="StateMachine"]
+[node name="PunteggioState" type="Node" parent="FiniteStateMachine"]
 script = ExtResource("8_cl11c")

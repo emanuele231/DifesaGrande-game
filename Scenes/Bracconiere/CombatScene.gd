@@ -1,6 +1,6 @@
 extends Node
 
-#func _ready():
+# func _ready():
 	# Imposta le ancore per il Control
 	#$CanvasLayer/Sfondo/CenterContainer.anchor_right = 1
 	#$CanvasLayer/Sfondo/CenterContainer.anchor_bottom = 1
