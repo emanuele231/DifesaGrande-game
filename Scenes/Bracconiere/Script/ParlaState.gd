@@ -1,17 +1,19 @@
 extends State
 
-@onready var parlaUI = get_parent().get_parent().get_node("CanvasLayer/ParlaUI")
-@onready var playerBar = get_parent().get_parent().get_node("CanvasLayer/PlayerBar")
-@onready var backButton = get_parent().get_parent().get_node("CanvasLayer/ParlaUI/Bottom/Indietro/BackButton")
-@onready var bracconiereBar = get_parent().get_parent().get_node("CanvasLayer/Sfondo/ConvinzioneBracconiere")
-@onready var bracconiereBarLabel = get_parent().get_parent().get_node("CanvasLayer/Sfondo/ConvinzioneBracconiere/Label")
+@onready var parlaUI = get_parent().get_parent().get_node("UI/ParlaUI")
+@onready var playerBar = get_parent().get_parent().get_node("UI/PlayerBar")
+@onready var backButton = get_parent().get_parent().get_node("UI/ParlaUI/Bottom/Indietro/BackButton")
+@onready var bracconiereBar = get_parent().get_parent().get_node("UI/ConvinzioneBracconiere")
+@onready var bracconiereBarLabel = get_parent().get_parent().get_node("UI/ConvinzioneBracconiere/Label")
 
-@onready var button1 = get_parent().get_parent().get_node("CanvasLayer/ParlaUI/Bottom/Frasi/Button1")
-@onready var label1 = get_parent().get_parent().get_node("CanvasLayer/ParlaUI/Bottom/Frasi/Button1/Label1")
-@onready var button2 = get_parent().get_parent().get_node("CanvasLayer/ParlaUI/Bottom/Frasi/Button2")
-@onready var label2 = get_parent().get_parent().get_node("CanvasLayer/ParlaUI/Bottom/Frasi/Button2/Label2")
-@onready var button3 = get_parent().get_parent().get_node("CanvasLayer/ParlaUI/Bottom/Frasi/Button3")
-@onready var label3 = get_parent().get_parent().get_node("CanvasLayer/ParlaUI/Bottom/Frasi/Button3/Label3")
+@onready var button1 = get_parent().get_parent().get_node("UI/ParlaUI/Bottom/Frasi/Button1")
+@onready var label1 = get_parent().get_parent().get_node("UI/ParlaUI/Bottom/Frasi/Button1/Label1")
+@onready var button2 = get_parent().get_parent().get_node("UI/ParlaUI/Bottom/Frasi/Button2")
+@onready var label2 = get_parent().get_parent().get_node("UI/ParlaUI/Bottom/Frasi/Button2/Label2")
+@onready var button3 = get_parent().get_parent().get_node("UI/ParlaUI/Bottom/Frasi/Button3")
+@onready var label3 = get_parent().get_parent().get_node("UI/ParlaUI/Bottom/Frasi/Button3/Label3")
+
+@onready var audioPlayer = get_parent().get_parent().get_node("Effetti")  # Aggiunto per il suono
 
 var frasi_semplici = [
 	{"testo": "Cacciare è sbagliato!", "danno": 10},
@@ -112,7 +114,11 @@ func _on_frase_pressed(danno: int):
 	await get_tree().create_timer(0.5).timeout  
 
 	if bracconiereBar.value <= 0:
+		
+		audioPlayer.stream = load("res://Scenes/Bracconiere/Sound Effects/cute-level-up-3-189853.mp3") 
+		audioPlayer.play()  # Riproduce il suono
 		playerBar.visible = false
+		bracconiereBar.visible = false
 		get_parent().transition_to("PunteggioState")
 	else:
 		get_parent().transition_to("DifesaState")

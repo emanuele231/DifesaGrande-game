@@ -1,11 +1,12 @@
 extends State
 
-@onready var playerBar = get_parent().get_parent().get_node("CanvasLayer/PlayerBar")
-@onready var bracconiereBar = get_parent().get_parent().get_node("CanvasLayer/Sfondo/ConvinzioneBracconiere")
-@onready var difesaUI = get_parent().get_parent().get_node("CanvasLayer/DifesaUI")
-@onready var sfondoMinigioco = get_parent().get_parent().get_node("CanvasLayer/DifesaUI/SfondoMinigioco")
-@onready var animationPlayer = get_parent().get_parent().get_node("CanvasLayer/Sfondo/Sprite2D/AnimationPlayer")
-@onready var playerBarLabel = get_parent().get_parent().get_node("CanvasLayer/PlayerBar/Label")
+@onready var playerBar = get_parent().get_parent().get_node("UI/PlayerBar")
+@onready var bracconiereBar = get_parent().get_parent().get_node("UI/ConvinzioneBracconiere")
+@onready var difesaUI = get_parent().get_parent().get_node("UI/DifesaUI")
+@onready var sfondoMinigioco = get_parent().get_parent().get_node("UI/DifesaUI/SfondoMinigioco")
+@onready var animationPlayer = get_parent().get_parent().get_node("Sprite2D/AnimationPlayer")
+@onready var playerBarLabel = get_parent().get_parent().get_node("UI/PlayerBar/Label")
+@onready var audioPlayer = get_parent().get_parent().get_node("Effetti")  # Aggiunto per il suono
 
 var minigioco_instance = null
 const MINIGIOCO_PATH = "res://Scenes/Bracconiere/minigiocoFrecce.tscn"
@@ -19,7 +20,7 @@ var full_screen_y = 70
 
 func _ready():
 	initial_window_size = Vector2(get_window().size)
-	get_window().size_changed.connect(_on_window_resized)
+	#get_window().size_changed.connect(_on_window_resized)
 
 func enter():
 	difesaUI.visible = true
@@ -40,9 +41,9 @@ func precarica_minigioco():
 		sfondoMinigioco.add_child(minigioco_instance)
 
 		# scale iniziale
-		initial_minigioco_scale = minigioco_instance.scale
+		#initial_minigioco_scale = minigioco_instance.scale
 
-		_on_window_resized()
+		#_on_window_resized()
 
 		minigioco_instance.visible = false 
 		minigioco_instance.vita_ridotta.connect(_on_vita_ridotta)
@@ -83,8 +84,11 @@ func _on_vita_ridotta(danno):
 	await get_tree().create_timer(0.05).timeout
 	
 	if playerBar.value <= 0:
+		audioPlayer.stream = load("res://Scenes/Bracconiere/Sound Effects/game-over-39-199830.mp3")  # Carica il suono
+		audioPlayer.play()  # Riproduce il suono di game over
 		termina_minigioco()
 		playerBar.visible = false
+		bracconiereBar.visible = false
 		get_parent().transition_to("PunteggioState")
 
 func _on_minigioco_terminato(successo):

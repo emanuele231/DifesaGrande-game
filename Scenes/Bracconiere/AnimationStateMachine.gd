@@ -10,7 +10,7 @@ func _ready():
 	initial_window_size = get_window().size  # salva la dimensione iniziale della finestra
 
 	center_sprite()  # Centra lo sprite: necessario all'inizio e al resize perchè altrimenti le animazioni basate su offset non funzionano correttamente
-	get_window().size_changed.connect(_on_window_resized)
+	#get_window().size_changed.connect(_on_window_resized)
 
 func center_sprite():
 	await get_tree().process_frame

@@ -92,4 +92,7 @@ animale = NodePath("../Animale")
 
 [node name="Timer" type="Timer" parent="SpawnerFrecce"]
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SpawnerFrecce"]
+volume_db = -1.868
+
 [node name="TimerMinigioco" type="Timer" parent="."]

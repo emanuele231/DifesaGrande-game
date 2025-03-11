@@ -7,7 +7,7 @@ signal minigioco_terminato(successo)
 @export var durata_minigioco : float = 10.0
 var timer_minigioco : Timer
 @onready var animale = $Animale
-
+@onready var audioPlayer = get_node("SpawnerFrecce/AudioStreamPlayer")
 func _ready():
 	print("Genitore del nodo:", get_parent().name)
 
@@ -22,9 +22,12 @@ func _ready():
 	timer_minigioco.start()
 
 func freccia_colpita(danno):
+	audioPlayer.stream = load("res://Scenes/Bracconiere/Sound Effects/classic-game-action-negative-19-224578.mp3") 
+	audioPlayer.play() 
 	print("Funzione freccia_colpita chiamata con danno:", danno)
-
 	emit_signal("vita_ridotta", danno)
+	
+
 
 func _on_minigioco_terminato():
 	get_tree().call_group("frecce", "queue_free")

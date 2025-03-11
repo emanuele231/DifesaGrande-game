@@ -2,7 +2,7 @@
 extends Node
 
 var current_state: Node = null
-@onready var animationStateMachine = get_parent().get_node("CanvasLayer/Sfondo/Sprite2D")
+@onready var animationStateMachine = get_parent().get_node("Sprite2D")
 
 func _ready():
 	# Imposta lo stato iniziale
