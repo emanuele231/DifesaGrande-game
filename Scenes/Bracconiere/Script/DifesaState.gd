@@ -11,16 +11,8 @@ extends State
 var minigioco_instance = null
 const MINIGIOCO_PATH = "res://Scenes/Bracconiere/minigiocoFrecce.tscn"
 
-var initial_window_size = null
-var initial_minigioco_scale = null
-var small_screen_x = 30
-var small_screen_y = 60
-var full_screen_x = 45
-var full_screen_y = 70
-
-func _ready():
-	initial_window_size = Vector2(get_window().size)
-	#get_window().size_changed.connect(_on_window_resized)
+var instance_x = 30
+var instance_y = 60
 
 func enter():
 	difesaUI.visible = true
@@ -39,9 +31,8 @@ func precarica_minigioco():
 	if minigioco_scene:
 		minigioco_instance = minigioco_scene.instantiate()
 		sfondoMinigioco.add_child(minigioco_instance)
-
-		# scale iniziale
-		#initial_minigioco_scale = minigioco_instance.scale
+		
+		minigioco_instance.position = Vector2(instance_x,instance_y)
 
 		#_on_window_resized()
 
@@ -59,21 +50,6 @@ func avvia_minigioco():
 	else:
 		push_error("Errore: Minigioco non precaricato!")
 
-func _on_window_resized():
-	if not minigioco_instance:
-		return
-	
-	print("window size",Vector2(get_window().size))
-	var current_window_size = Vector2(get_window().size)
-	
-	if current_window_size == Vector2(1280, 720): #soluzione provvisoria
-		minigioco_instance.position = Vector2(small_screen_x,small_screen_y)
-	else:
-		minigioco_instance.position = Vector2(full_screen_x,full_screen_y)
-		
-	var scale_factor = current_window_size / initial_window_size  
-
-	minigioco_instance.scale = initial_minigioco_scale * scale_factor
 
 func _on_vita_ridotta(danno):
 	PunteggioBracconiere.rimuovi_punti(danno)

@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://dvrb27w4hosbs"]
 
 [ext_resource type="Script" path="res://Scenes/Bracconiere/minigiocoFrecce.gd" id="1_4eulw"]
-[ext_resource type="Texture2D" uid="uid://cglk2ybk31ho7" path="res://Scenes/Bracconiere/bosco-difesa-grande.jpg" id="1_qigbw"]
+[ext_resource type="Texture2D" uid="uid://dirvqll5eaxxv" path="res://Scenes/menu/Sfondo minigioco frecce.png" id="2_3wb3g"]
 [ext_resource type="Script" path="res://Scenes/Bracconiere/movimentoAnimale.gd" id="2_fgu6k"]
 [ext_resource type="Texture2D" uid="uid://b1kaj07iq77lt" path="res://Scenes/Bracconiere/Cinghiale.png" id="2_vyyh1"]
 [ext_resource type="Script" path="res://Scenes/Bracconiere/spawnerFrecce.gd" id="4_faxeq"]
@@ -62,7 +62,7 @@ offset_right = 660.0
 offset_bottom = 600.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_qigbw")
+texture = ExtResource("2_3wb3g")
 expand_mode = 2
 
 [node name="Animale" type="CharacterBody2D" parent="."]
