@@ -17,7 +17,7 @@ extends State
 @onready var triste = get_parent().get_parent().get_node("UI/Emote/Triste")
 @onready var arrabbiato = get_parent().get_parent().get_node("UI/Emote/Arrabbiato")
 
-@onready var audioPlayer = get_parent().get_parent().get_node("Effetti")  # Nodo per riprodurre suoni
+@onready var audioPlayer = get_parent().get_parent().get_node("Effetti")
 
 var frasi_semplici = [
 	{"testo": "Cacciare è sbagliato!", "danno": 10, "gruppo": "semplici"},
@@ -46,7 +46,7 @@ func get_random_groups():
 
 func enter():
 	parlaUI.visible = true
-	if backButton.visible == false:
+	if not backButton.visible:
 		backButton.visible = true
 		
 	button1.visible = true
@@ -60,7 +60,6 @@ func enter():
 	# Determina l'ordine casuale dei gruppi per i tre bottoni
 	var gruppi_casuali = get_random_groups()
 
-	# Mappa i gruppi alle liste di frasi corrispondenti
 	var gruppi_mappa = {
 		"semplici": frasi_semplici,
 		"leggi": frasi_leggi,
@@ -72,12 +71,10 @@ func enter():
 	var frase2 = get_random_element(gruppi_mappa[gruppi_casuali[1]])
 	var frase3 = get_random_element(gruppi_mappa[gruppi_casuali[2]])
 
-	# Imposta i testi nei bottoni
 	label1.text = frase1["testo"]
 	label2.text = frase2["testo"]
 	label3.text = frase3["testo"]
 
-	# Connetti i bottoni alle funzioni con il danno e il gruppo
 	button1.pressed.connect(_on_frase_pressed.bind(frase1["danno"], frase1["gruppo"]))
 	button2.pressed.connect(_on_frase_pressed.bind(frase2["danno"], frase2["gruppo"]))
 	button3.pressed.connect(_on_frase_pressed.bind(frase3["danno"], frase3["gruppo"]))
@@ -102,34 +99,31 @@ func exit():
 
 func _on_frase_pressed(danno: int, gruppo: String):
 	PunteggioBracconiere.aggiungi_punti(danno)
-	
-		# Scegli il suono in base al gruppo della frase scelta
+
+	# Scegli il suono e l'emote in base al gruppo della frase scelta
 	var sound_path = ""
+	var emote = null
+
 	match gruppo:
 		"semplici":
-			await get_tree().create_timer(0.3).timeout  
-			neutro.visible = true
+			emote = neutro
 			sound_path = "res://Scenes/Bracconiere/Sound Effects/happy-pop-1-185286.mp3"
-			
 		"leggi":
-			await get_tree().create_timer(0.3).timeout  
-			triste.visible = true
+			emote = triste
 			sound_path = "res://Scenes/Bracconiere/Sound Effects/happy-pop-1-185286.mp3"
-			
 		"complete":
-			await get_tree().create_timer(0.3).timeout  
-			arrabbiato.visible = true
+			emote = arrabbiato
 			sound_path = "res://Scenes/Bracconiere/Sound Effects/happy-pop-1-185286.mp3"
-			
 
-	if sound_path != "":
+	if emote:
+		fade_in_emote(emote)  # Attiva la dissolvenza dell'emote scelta
+
+	if sound_path:
 		audioPlayer.stream = load(sound_path)
 		audioPlayer.play()
 	
-	await animate_bracconiere_bar(danno)  
-	await get_tree().create_timer(0.5).timeout  
-
-
+	await animate_bracconiere_bar(danno)
+	await get_tree().create_timer(0.5).timeout
 
 	if bracconiereBar.value <= 0:
 		get_parent().transition_to("PunteggioState")
@@ -148,3 +142,11 @@ func animate_bracconiere_bar(danno: int):
 		bracconiereBar.value -= 1
 		bracconiereBarLabel.text = str(bracconiereBar.value) + "%" 
 		await get_tree().create_timer(0.05).timeout
+
+# Funzione per applicare la dissolvenza (Tween) all'emote selezionata
+func fade_in_emote(emote: TextureRect):
+	emote.visible = true
+	emote.modulate.a = 0.0  # Inizia trasparente
+
+	var tween = create_tween()
+	tween.tween_property(emote, "modulate:a", 1.0, 0.5)  # Fade-in in 0.5s
