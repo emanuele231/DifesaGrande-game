@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dirvqll5eaxxv"
-path="res://.godot/imported/Sfondo minigioco frecce.png-516be271650c88d06d882b4849e43a7b.ctex"
+uid="uid://brkt1lewwayy1"
+path="res://.godot/imported/emote modifica1.png-fef5adf1378a3e1b81b466189a82f807.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/menu/Sfondo minigioco frecce.png"
-dest_files=["res://.godot/imported/Sfondo minigioco frecce.png-516be271650c88d06d882b4849e43a7b.ctex"]
+source_file="res://Scenes/Bracconiere/emote modifica1.png"
+dest_files=["res://.godot/imported/emote modifica1.png-fef5adf1378a3e1b81b466189a82f807.ctex"]
 
 [params]
 

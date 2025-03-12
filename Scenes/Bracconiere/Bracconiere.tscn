@@ -1,6 +1,6 @@
-[gd_scene load_steps=36 format=3 uid="uid://dt3nr74rtmta0"]
+[gd_scene load_steps=40 format=3 uid="uid://dt3nr74rtmta0"]
 
-[ext_resource type="Texture2D" uid="uid://db4v2ngq0rp72" path="res://Scenes/menu/Sfondo.png" id="1_d4ikm"]
+[ext_resource type="Texture2D" uid="uid://db4v2ngq0rp72" path="res://Scenes/Bracconiere/Sfondo.png" id="1_d4ikm"]
 [ext_resource type="Texture2D" uid="uid://qqktdshsew62" path="res://Scenes/Bracconiere/Bracconiere modificato idle2.png" id="2_cd0vm"]
 [ext_resource type="Texture2D" uid="uid://b27edy2sjif2l" path="res://Scenes/menu/GUI/Tiny Wonder UI Free/bars free modifica.png" id="3_5wev6"]
 [ext_resource type="Script" path="res://Scenes/Bracconiere/AnimationStateMachine.gd" id="3_jyap3"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://csqjsr1vy0aw6" path="res://Scenes/Bracconiere/bottone frase.png" id="8_8ooj0"]
 [ext_resource type="Script" path="res://Scenes/Bracconiere/PunteggioState.gd" id="8_cl11c"]
 [ext_resource type="Texture2D" uid="uid://chthickflak0n" path="res://Scenes/menu/GUI/Tiny Wonder UI Free/base free.png" id="8_yix80"]
+[ext_resource type="Texture2D" uid="uid://brkt1lewwayy1" path="res://Scenes/Bracconiere/emote modifica1.png" id="10_7b2fv"]
 [ext_resource type="Theme" uid="uid://brb76mu8vmajm" path="res://Scenes/livello_1/ThemesGUI/PauseMenuTheme.tres" id="10_m33li"]
 
 [sub_resource type="Animation" id="Animation_ur7k5"]
@@ -216,6 +217,18 @@ region = Rect2(0, 4, 48, 7)
 atlas = ExtResource("3_5wev6")
 region = Rect2(1, 37, 46, 5)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_yvv4a"]
+atlas = ExtResource("10_7b2fv")
+region = Rect2(32, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ooq5e"]
+atlas = ExtResource("10_7b2fv")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6wb1u"]
+atlas = ExtResource("10_7b2fv")
+region = Rect2(64, 80, 16, 16)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_en5b4"]
 atlas = ExtResource("3_5wev6")
 region = Rect2(1, 53, 46, 5)
@@ -282,9 +295,10 @@ offset_bottom = 40.0
 layout_mode = 1
 anchor_right = 32.05
 anchor_bottom = 18.2
-offset_top = -2.0
-offset_right = 17.9999
-offset_bottom = 4.0
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 9.99988
+offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
@@ -306,13 +320,13 @@ expand_mode = 1
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.03
-anchor_top = 0.431
-anchor_right = 0.416
+anchor_top = 0.457
+anchor_right = 0.405
 anchor_bottom = 0.844
-offset_left = 5.60046
-offset_top = 0.506462
-offset_right = -0.473633
-offset_bottom = -0.0407257
+offset_left = -0.39954
+offset_top = -5.28822
+offset_right = 7.66705
+offset_bottom = -0.040741
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("7_bkfag")
 theme_override_font_sizes/font_size = 24
@@ -407,7 +421,7 @@ offset_bottom = 18.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("7_bkfag")
-theme_override_font_sizes/font_size = 27
+theme_override_font_sizes/font_size = 20
 
 [node name="Button2" type="TextureButton" parent="UI/ParlaUI/Bottom/Frasi"]
 layout_mode = 2
@@ -430,7 +444,7 @@ offset_bottom = 18.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("7_bkfag")
-theme_override_font_sizes/font_size = 27
+theme_override_font_sizes/font_size = 20
 
 [node name="Button3" type="TextureButton" parent="UI/ParlaUI/Bottom/Frasi"]
 layout_mode = 2
@@ -453,7 +467,7 @@ offset_bottom = 18.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("7_bkfag")
-theme_override_font_sizes/font_size = 27
+theme_override_font_sizes/font_size = 20
 
 [node name="Indietro" type="VBoxContainer" parent="UI/ParlaUI/Bottom"]
 layout_mode = 1
@@ -575,6 +589,52 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("7_bkfag")
 theme_override_font_sizes/font_size = 30
 text = "100%"
+
+[node name="Emote" type="Control" parent="UI"]
+layout_mode = 1
+anchor_left = 17.6
+anchor_top = 6.0
+anchor_right = 19.6
+anchor_bottom = 7.4
+offset_top = -1.52588e-05
+offset_bottom = -1.00003
+
+[node name="Neutro" type="TextureRect" parent="UI/Emote"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.087
+anchor_top = 0.018
+anchor_right = 0.912
+anchor_bottom = 1.455
+offset_left = -0.0399995
+offset_top = 0.0100002
+offset_right = 0.0399933
+offset_bottom = -0.0249786
+texture = SubResource("AtlasTexture_yvv4a")
+flip_h = true
+
+[node name="Triste" type="TextureRect" parent="UI/Emote"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.1
+anchor_right = 0.9
+anchor_bottom = 1.455
+offset_bottom = -1.02498
+texture = SubResource("AtlasTexture_ooq5e")
+flip_h = true
+
+[node name="Arrabbiato" type="TextureRect" parent="UI/Emote"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.1
+anchor_right = 0.9
+anchor_bottom = 1.436
+offset_bottom = 0.0200195
+texture = SubResource("AtlasTexture_6wb1u")
+flip_h = true
 
 [node name="PlayerBar" type="TextureProgressBar" parent="UI"]
 layout_mode = 1
