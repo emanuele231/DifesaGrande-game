@@ -13,38 +13,27 @@ extends State
 @onready var button3 = get_parent().get_parent().get_node("UI/ParlaUI/Bottom/Frasi/Button3")
 @onready var label3 = get_parent().get_parent().get_node("UI/ParlaUI/Bottom/Frasi/Button3/Label3")
 
-@onready var audioPlayer = get_parent().get_parent().get_node("Effetti")  # Aggiunto per il suono
+@onready var neutro = get_parent().get_parent().get_node("UI/Emote/Neutro")
+@onready var triste = get_parent().get_parent().get_node("UI/Emote/Triste")
+@onready var arrabbiato = get_parent().get_parent().get_node("UI/Emote/Arrabbiato")
+
+@onready var audioPlayer = get_parent().get_parent().get_node("Effetti")  # Nodo per riprodurre suoni
 
 var frasi_semplici = [
-	{"testo": "Cacciare è sbagliato!", "danno": 10},
-	{"testo": "Gli animali meritano di vivere tanto quanto te!", "danno": 15},
-	{"testo": "La natura è più importante dei soldi!", "danno": 15},
-	{"testo": "Sei migliore di così.", "danno": 10},
-	{"testo": "Ci sono alternative alla caccia se vuoi divertirti!", "danno": 10},
-	{"testo": "Il bracconaggio può portare alla scomparsa di intere specie!", "danno": 15},
-	{"testo": "Gli habitat stanno scomparendo, ogni animale ucciso è una perdita enorme!", "danno": 15}
+	{"testo": "Cacciare è sbagliato!", "danno": 10, "gruppo": "semplici"},
+	{"testo": "Gli animali meritano di vivere tanto quanto te!", "danno": 15, "gruppo": "semplici"},
+	{"testo": "La natura è più importante dei soldi!", "danno": 15, "gruppo": "semplici"}
 ]
 
 var frasi_leggi = [
-	{"testo": "La caccia con metodi di uccisione di massa è vietata!", "danno": 20},
-	{"testo": "Uccidere specie protette è un reato, esistono leggi che le tutelano!", "danno": 20},
-	{"testo": "Distruggere i nidi è vietato! Stai minacciando la biodiversità.", "danno": 20},
-	{"testo": "Le Zone di Protezione Speciale non esistono per il tuo divertimento!", "danno": 20},
-	{"testo": "Il commercio di uccelli selvatici è illegale! Se ti piacciono gli uccelli, inizia a fare birdwatching.", "danno": 20},
-	{"testo": "Usare veleni e proiettili in piombo non solo è illegale ma inquina anche l'ambiente!", "danno": 20},
-	{"testo": "Le armi silenziate per la caccia sono illegali: uccidere senza farsi sentire non dimostra abilità!", "danno": 20}
+	{"testo": "La caccia con metodi di uccisione di massa è vietata!", "danno": 20, "gruppo": "leggi"},
+	{"testo": "Uccidere specie protette è un reato, esistono leggi che le tutelano!", "danno": 20, "gruppo": "leggi"}
 ]
 
 var frasi_complete = [
-	{"testo": "Il bracconaggio distrugge l'equilibrio naturale della fauna selvatica!", "danno": 25},
-	{"testo": "Gli habitat stanno scomparendo, ogni animale ucciso è una perdita enorme!", "danno": 25},
-	{"testo": "Ci sono dei periodi precisi in cui è consentito cacciare! Informati e rispettali.", "danno": 25},
-	{"testo": "Trappole e lacci sono crudeli e illegali. Lasciare un animale a soffrire per ore o giorni è crudele!", "danno": 25},
-	{"testo": "Usare richiami elettronici per attirare gli animali è poco leale verso la natura e un reato.", "danno": 25},
-	{"testo": "Sparare agli animali dalle auto o usare visori notturni è da codardi ed è severamente vietato!", "danno": 25},
-	{"testo": "L'uso della balestra per la caccia è vietato. Non siamo nel Medioevo, e rischi di colpire qualcuno.", "danno": 20}
+	{"testo": "Il bracconaggio distrugge l'equilibrio naturale della fauna selvatica!", "danno": 25, "gruppo": "complete"},
+	{"testo": "Gli habitat stanno scomparendo, ogni animale ucciso è una perdita enorme!", "danno": 25, "gruppo": "complete"}
 ]
-
 
 func get_random_element(array):
 	array.shuffle()
@@ -88,13 +77,16 @@ func enter():
 	label2.text = frase2["testo"]
 	label3.text = frase3["testo"]
 
-	# Connetti i bottoni alle funzioni con il danno corretto
-	button1.pressed.connect(_on_frase_pressed.bind(frase1["danno"]))
-	button2.pressed.connect(_on_frase_pressed.bind(frase2["danno"]))
-	button3.pressed.connect(_on_frase_pressed.bind(frase3["danno"]))
+	# Connetti i bottoni alle funzioni con il danno e il gruppo
+	button1.pressed.connect(_on_frase_pressed.bind(frase1["danno"], frase1["gruppo"]))
+	button2.pressed.connect(_on_frase_pressed.bind(frase2["danno"], frase2["gruppo"]))
+	button3.pressed.connect(_on_frase_pressed.bind(frase3["danno"], frase3["gruppo"]))
 
 func exit():
 	parlaUI.visible = false
+	neutro.visible = false
+	triste.visible = false
+	arrabbiato.visible = false
 
 	button1.pressed.disconnect(_on_frase_pressed)
 	button2.pressed.disconnect(_on_frase_pressed)
@@ -108,17 +100,38 @@ func exit():
 		backButton.pressed.disconnect(_on_back_pressed)
 	backButton.visible = false
 
-func _on_frase_pressed(danno: int):
+func _on_frase_pressed(danno: int, gruppo: String):
 	PunteggioBracconiere.aggiungi_punti(danno)
+	
+		# Scegli il suono in base al gruppo della frase scelta
+	var sound_path = ""
+	match gruppo:
+		"semplici":
+			await get_tree().create_timer(0.3).timeout  
+			neutro.visible = true
+			sound_path = "res://Scenes/Bracconiere/Sound Effects/happy-pop-1-185286.mp3"
+			
+		"leggi":
+			await get_tree().create_timer(0.3).timeout  
+			triste.visible = true
+			sound_path = "res://Scenes/Bracconiere/Sound Effects/happy-pop-1-185286.mp3"
+			
+		"complete":
+			await get_tree().create_timer(0.3).timeout  
+			arrabbiato.visible = true
+			sound_path = "res://Scenes/Bracconiere/Sound Effects/happy-pop-1-185286.mp3"
+			
+
+	if sound_path != "":
+		audioPlayer.stream = load(sound_path)
+		audioPlayer.play()
+	
 	await animate_bracconiere_bar(danno)  
 	await get_tree().create_timer(0.5).timeout  
 
+
+
 	if bracconiereBar.value <= 0:
-		
-		audioPlayer.stream = load("res://Scenes/Bracconiere/Sound Effects/cute-level-up-3-189853.mp3") 
-		audioPlayer.play()  # Riproduce il suono
-		playerBar.visible = false
-		bracconiereBar.visible = false
 		get_parent().transition_to("PunteggioState")
 	else:
 		get_parent().transition_to("DifesaState")
