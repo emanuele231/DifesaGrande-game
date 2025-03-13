@@ -110,10 +110,10 @@ func _on_frase_pressed(danno: int, gruppo: String):
 			sound_path = "res://Scenes/Bracconiere/Sound Effects/happy-pop-1-185286.mp3"
 		"leggi":
 			emote = triste
-			sound_path = "res://Scenes/Bracconiere/Sound Effects/happy-pop-1-185286.mp3"
+			sound_path = "res://Scenes/Bracconiere/Sound Effects/sad-tone.mp3"
 		"complete":
 			emote = arrabbiato
-			sound_path = "res://Scenes/Bracconiere/Sound Effects/happy-pop-1-185286.mp3"
+			sound_path = "res://Scenes/Bracconiere/Sound Effects/angry-effect.mp3"
 
 	if emote:
 		fade_in_emote(emote)  # Attiva la dissolvenza dell'emote scelta

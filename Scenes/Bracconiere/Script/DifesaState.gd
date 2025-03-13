@@ -33,7 +33,7 @@ func precarica_minigioco():
 		sfondoMinigioco.add_child(minigioco_instance)
 		
 		minigioco_instance.position = Vector2(instance_x,instance_y)
-
+		minigioco_instance.scale = minigioco_instance.scale * 1.55
 		#_on_window_resized()
 
 		minigioco_instance.visible = false 
