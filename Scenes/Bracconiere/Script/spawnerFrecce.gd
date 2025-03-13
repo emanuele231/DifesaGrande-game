@@ -3,7 +3,7 @@ extends Node2D
 @export var min_tempo_spawn : float = 0.5
 @export var max_tempo_spawn : float = 1.5
 @export var variazione_altezza : float = 40.0
-@export var percorso_scena_freccia : String = "res://Scenes/Bracconiere/Freccia.tscn"
+@export var percorso_scena_freccia : String = "res://Scenes/Bracconiere/Scene/Freccia.tscn"
 @export var animale : CharacterBody2D
 
 var timer : Timer

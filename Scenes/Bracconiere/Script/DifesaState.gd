@@ -9,7 +9,7 @@ extends State
 @onready var audioPlayer = get_parent().get_parent().get_node("Effetti")  # Aggiunto per il suono
 
 var minigioco_instance = null
-const MINIGIOCO_PATH = "res://Scenes/Bracconiere/minigiocoFrecce.tscn"
+const MINIGIOCO_PATH = "res://Scenes/Bracconiere/Scene/minigiocoFrecce.tscn"
 
 var instance_x = 30
 var instance_y = 60

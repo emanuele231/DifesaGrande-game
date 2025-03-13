@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qqktdshsew62"
-path="res://.godot/imported/Bracconiere modificato idle2.png-e4e2165e89641cedc4a35326849e045f.ctex"
+uid="uid://csqjsr1vy0aw6"
+path="res://.godot/imported/bottone frase.png-eec570299eea9bfaadf821f31a3d5f0e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Bracconiere/Bracconiere modificato idle2.png"
-dest_files=["res://.godot/imported/Bracconiere modificato idle2.png-e4e2165e89641cedc4a35326849e045f.ctex"]
+source_file="res://Scenes/Bracconiere/Asset/bottone frase.png"
+dest_files=["res://.godot/imported/bottone frase.png-eec570299eea9bfaadf821f31a3d5f0e.ctex"]
 
 [params]
 
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

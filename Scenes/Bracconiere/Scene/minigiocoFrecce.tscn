@@ -1,13 +1,13 @@
 [gd_scene load_steps=11 format=3 uid="uid://dvrb27w4hosbs"]
 
-[ext_resource type="Script" path="res://Scenes/Bracconiere/minigiocoFrecce.gd" id="1_4eulw"]
-[ext_resource type="Texture2D" uid="uid://dirvqll5eaxxv" path="res://Scenes/Bracconiere/Sfondo minigioco frecce.png" id="2_3wb3g"]
-[ext_resource type="Script" path="res://Scenes/Bracconiere/movimentoAnimale.gd" id="2_fgu6k"]
-[ext_resource type="Texture2D" uid="uid://b1kaj07iq77lt" path="res://Scenes/Bracconiere/Cinghiale.png" id="2_vyyh1"]
-[ext_resource type="Script" path="res://Scenes/Bracconiere/spawnerFrecce.gd" id="4_faxeq"]
+[ext_resource type="Script" path="res://Scenes/Bracconiere/Script/minigiocoFrecce.gd" id="1_u3jva"]
+[ext_resource type="Texture2D" uid="uid://dirvqll5eaxxv" path="res://Scenes/Bracconiere/Asset/Sfondo minigioco frecce.png" id="2_lh5qx"]
+[ext_resource type="Script" path="res://Scenes/Bracconiere/Script/movimentoAnimale.gd" id="3_u74so"]
+[ext_resource type="Texture2D" uid="uid://b1kaj07iq77lt" path="res://Scenes/Bracconiere/Asset/Cinghiale.png" id="4_r8y0e"]
+[ext_resource type="Script" path="res://Scenes/Bracconiere/Script/spawnerFrecce.gd" id="5_663nh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_785oy"]
-atlas = ExtResource("2_vyyh1")
+atlas = ExtResource("4_r8y0e")
 region = Rect2(13.3035, 0, 90.6078, 47.1299)
 margin = Rect2(6, 0, 0, 0)
 
@@ -52,7 +52,7 @@ _data = {
 }
 
 [node name="MinigiocoFrecce" type="Node2D"]
-script = ExtResource("1_4eulw")
+script = ExtResource("1_u3jva")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchors_preset = 15
@@ -62,12 +62,12 @@ offset_right = 660.0
 offset_bottom = 600.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_3wb3g")
+texture = ExtResource("2_lh5qx")
 expand_mode = 2
 
 [node name="Animale" type="CharacterBody2D" parent="."]
 position = Vector2(-44, -15)
-script = ExtResource("2_fgu6k")
+script = ExtResource("3_u74so")
 
 [node name="Sprite2D" type="Sprite2D" parent="Animale"]
 position = Vector2(530, 345)
@@ -87,7 +87,7 @@ libraries = {
 
 [node name="SpawnerFrecce" type="Node2D" parent="." node_paths=PackedStringArray("animale")]
 position = Vector2(-175, 267)
-script = ExtResource("4_faxeq")
+script = ExtResource("5_663nh")
 animale = NodePath("../Animale")
 
 [node name="Timer" type="Timer" parent="SpawnerFrecce"]

@@ -1,21 +1,21 @@
 [gd_scene load_steps=40 format=3 uid="uid://dt3nr74rtmta0"]
 
-[ext_resource type="Texture2D" uid="uid://db4v2ngq0rp72" path="res://Scenes/Bracconiere/Sfondo.png" id="1_d4ikm"]
-[ext_resource type="Texture2D" uid="uid://qqktdshsew62" path="res://Scenes/Bracconiere/Bracconiere modificato idle2.png" id="2_cd0vm"]
-[ext_resource type="Texture2D" uid="uid://b27edy2sjif2l" path="res://Scenes/menu/GUI/Tiny Wonder UI Free/bars free modifica.png" id="3_5wev6"]
-[ext_resource type="Script" path="res://Scenes/Bracconiere/AnimationStateMachine.gd" id="3_jyap3"]
-[ext_resource type="Script" path="res://Scenes/Bracconiere/Script/StateMachine.gd" id="4_nv2p2"]
-[ext_resource type="Script" path="res://Scenes/Bracconiere/Script/SelectState.gd" id="5_5ekkk"]
-[ext_resource type="Texture2D" uid="uid://2n6queddg0xa" path="res://Scenes/Rettangolo_dialoghi_modifica.png" id="6_fwiqk"]
-[ext_resource type="Theme" uid="uid://beyt1nfrpkx7f" path="res://Scenes/menu/Button_theme.tres" id="6_qa7xb"]
-[ext_resource type="Script" path="res://Scenes/Bracconiere/Script/ParlaState.gd" id="6_u7oi3"]
-[ext_resource type="FontFile" uid="uid://bu8074xritaxh" path="res://Scenes/menu/Fonts/Ravenwood-g5JR.ttf" id="7_bkfag"]
-[ext_resource type="Script" path="res://Scenes/Bracconiere/Script/DifesaState.gd" id="7_y06uv"]
-[ext_resource type="Texture2D" uid="uid://csqjsr1vy0aw6" path="res://Scenes/Bracconiere/bottone frase.png" id="8_8ooj0"]
-[ext_resource type="Script" path="res://Scenes/Bracconiere/PunteggioState.gd" id="8_cl11c"]
-[ext_resource type="Texture2D" uid="uid://chthickflak0n" path="res://Scenes/menu/GUI/Tiny Wonder UI Free/base free.png" id="8_yix80"]
-[ext_resource type="Texture2D" uid="uid://brkt1lewwayy1" path="res://Scenes/Bracconiere/emote modifica1.png" id="10_7b2fv"]
-[ext_resource type="Theme" uid="uid://brb76mu8vmajm" path="res://Scenes/livello_1/ThemesGUI/PauseMenuTheme.tres" id="10_m33li"]
+[ext_resource type="Texture2D" uid="uid://db4v2ngq0rp72" path="res://Scenes/Bracconiere/Asset/Sfondo.png" id="1_ypatd"]
+[ext_resource type="Texture2D" uid="uid://qqktdshsew62" path="res://Scenes/Bracconiere/Asset/Bracconiere modificato idle2.png" id="2_ijshl"]
+[ext_resource type="Script" path="res://Scenes/Bracconiere/Script/AnimationStateMachine.gd" id="3_8op20"]
+[ext_resource type="Texture2D" uid="uid://2n6queddg0xa" path="res://Scenes/Rettangolo_dialoghi_modifica.png" id="4_h0fxt"]
+[ext_resource type="FontFile" uid="uid://bu8074xritaxh" path="res://Scenes/menu/Fonts/Ravenwood-g5JR.ttf" id="5_n824a"]
+[ext_resource type="Theme" uid="uid://beyt1nfrpkx7f" path="res://Scenes/menu/Button_theme.tres" id="6_7kf2t"]
+[ext_resource type="Texture2D" uid="uid://csqjsr1vy0aw6" path="res://Scenes/Bracconiere/Asset/bottone frase.png" id="7_57tvv"]
+[ext_resource type="Texture2D" uid="uid://chthickflak0n" path="res://Scenes/menu/GUI/Tiny Wonder UI Free/base free.png" id="8_1k7k6"]
+[ext_resource type="Texture2D" uid="uid://b27edy2sjif2l" path="res://Scenes/menu/GUI/Tiny Wonder UI Free/bars free modifica.png" id="9_qhpy0"]
+[ext_resource type="Texture2D" uid="uid://brkt1lewwayy1" path="res://Scenes/Bracconiere/Asset/emote modifica1.png" id="10_134cf"]
+[ext_resource type="Theme" uid="uid://brb76mu8vmajm" path="res://Scenes/livello_1/ThemesGUI/PauseMenuTheme.tres" id="11_08bgf"]
+[ext_resource type="Script" path="res://Scenes/Bracconiere/Script/StateMachine.gd" id="12_2bj0j"]
+[ext_resource type="Script" path="res://Scenes/Bracconiere/Script/SelectState.gd" id="13_6bwxd"]
+[ext_resource type="Script" path="res://Scenes/Bracconiere/Script/ParlaState.gd" id="14_thm10"]
+[ext_resource type="Script" path="res://Scenes/Bracconiere/Script/DifesaState.gd" id="15_8txkt"]
+[ext_resource type="Script" path="res://Scenes/Bracconiere/Script/PunteggioState.gd" id="16_uaqpl"]
 
 [sub_resource type="Animation" id="Animation_ur7k5"]
 resource_name = "CamminaSX"
@@ -174,71 +174,71 @@ _data = {
 }
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_osxed"]
-atlas = ExtResource("8_8ooj0")
+atlas = ExtResource("7_57tvv")
 region = Rect2(16, 24, 121, 23)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qw2mj"]
-atlas = ExtResource("8_8ooj0")
+atlas = ExtResource("7_57tvv")
 region = Rect2(16, 64, 121, 30)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_maydg"]
-atlas = ExtResource("8_8ooj0")
+atlas = ExtResource("7_57tvv")
 region = Rect2(16, 24, 121, 23)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ic14c"]
-atlas = ExtResource("8_8ooj0")
+atlas = ExtResource("7_57tvv")
 region = Rect2(16, 64, 121, 30)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m8yko"]
-atlas = ExtResource("8_8ooj0")
+atlas = ExtResource("7_57tvv")
 region = Rect2(16, 24, 121, 23)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_15rss"]
-atlas = ExtResource("8_8ooj0")
+atlas = ExtResource("7_57tvv")
 region = Rect2(16, 64, 121, 30)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v3km1"]
-atlas = ExtResource("8_yix80")
+atlas = ExtResource("8_1k7k6")
 region = Rect2(9, 57, 30, 30)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nu4tv"]
-atlas = ExtResource("8_yix80")
+atlas = ExtResource("8_1k7k6")
 region = Rect2(9, 105, 30, 30)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ul0im"]
-atlas = ExtResource("3_5wev6")
+atlas = ExtResource("9_qhpy0")
 region = Rect2(1, 53, 46, 5)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mxuo1"]
-atlas = ExtResource("3_5wev6")
+atlas = ExtResource("9_qhpy0")
 region = Rect2(0, 4, 48, 7)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n0qtr"]
-atlas = ExtResource("3_5wev6")
+atlas = ExtResource("9_qhpy0")
 region = Rect2(1, 37, 46, 5)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yvv4a"]
-atlas = ExtResource("10_7b2fv")
+atlas = ExtResource("10_134cf")
 region = Rect2(32, 32, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ooq5e"]
-atlas = ExtResource("10_7b2fv")
+atlas = ExtResource("10_134cf")
 region = Rect2(32, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6wb1u"]
-atlas = ExtResource("10_7b2fv")
+atlas = ExtResource("10_134cf")
 region = Rect2(64, 80, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_en5b4"]
-atlas = ExtResource("3_5wev6")
+atlas = ExtResource("9_qhpy0")
 region = Rect2(1, 53, 46, 5)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xaepu"]
-atlas = ExtResource("3_5wev6")
+atlas = ExtResource("9_qhpy0")
 region = Rect2(0, 4, 48, 7)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6j2dx"]
-atlas = ExtResource("3_5wev6")
+atlas = ExtResource("9_qhpy0")
 region = Rect2(1, 37, 46, 5)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ouw0d"]
@@ -262,25 +262,26 @@ layout_mode = 1
 anchors_preset = -1
 anchor_left = 2.0
 anchor_top = 1.0
-anchor_right = 964.0
-anchor_bottom = 171.6
+anchor_right = 956.0
+anchor_bottom = 216.0
 offset_left = -5.0
 offset_top = -227.0
-offset_right = -9.00012
+offset_right = 6.99988
+offset_bottom = -0.00012207
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_d4ikm")
+texture = ExtResource("1_ypatd")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 1
 position = Vector2(524, 342)
 scale = Vector2(5, 5)
-texture = ExtResource("2_cd0vm")
+texture = ExtResource("2_ijshl")
 hframes = 13
 vframes = 21
 frame = 33
 region_rect = Rect2(0, 0, 832, 1360)
-script = ExtResource("3_jyap3")
+script = ExtResource("3_8op20")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
 libraries = {
@@ -315,7 +316,7 @@ anchor_bottom = 1.0
 offset_top = 0.199982
 offset_right = -0.185059
 offset_bottom = -3.0
-texture = ExtResource("6_fwiqk")
+texture = ExtResource("4_h0fxt")
 expand_mode = 1
 
 [node name="Istruzioni" type="Label" parent="UI/SelectUI/Bottom"]
@@ -330,7 +331,7 @@ offset_top = 1.88248
 offset_right = -0.601379
 offset_bottom = -0.0330963
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("7_bkfag")
+theme_override_fonts/font = ExtResource("5_n824a")
 theme_override_font_sizes/font_size = 30
 text = "Convinci il bracconiere a non minacciare
 la natura e aiuta gli animali se necessario!"
@@ -351,8 +352,8 @@ offset_bottom = -8.981
 layout_mode = 2
 size_flags_horizontal = 3
 tooltip_text = "Usa PARLA per convincere il bracconiere!"
-theme = ExtResource("6_qa7xb")
-theme_override_fonts/font = ExtResource("7_bkfag")
+theme = ExtResource("6_7kf2t")
+theme_override_fonts/font = ExtResource("5_n824a")
 theme_override_font_sizes/font_size = 70
 text = "PARLA"
 expand_icon = true
@@ -364,8 +365,8 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 tooltip_text = "Usa FUGA per tornare alla mappa"
-theme = ExtResource("6_qa7xb")
-theme_override_fonts/font = ExtResource("7_bkfag")
+theme = ExtResource("6_7kf2t")
+theme_override_fonts/font = ExtResource("5_n824a")
 theme_override_font_sizes/font_size = 70
 text = "FUGA"
 
@@ -390,7 +391,7 @@ anchor_bottom = 1.0
 offset_top = -0.262024
 offset_right = 0.535034
 offset_bottom = 1.0
-texture = ExtResource("6_fwiqk")
+texture = ExtResource("4_h0fxt")
 expand_mode = 1
 
 [node name="Frasi" type="VBoxContainer" parent="UI/ParlaUI/Bottom"]
@@ -425,7 +426,7 @@ offset_right = 0.5
 offset_bottom = 18.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("7_bkfag")
+theme_override_fonts/font = ExtResource("5_n824a")
 theme_override_font_sizes/font_size = 20
 
 [node name="Button2" type="TextureButton" parent="UI/ParlaUI/Bottom/Frasi"]
@@ -448,7 +449,7 @@ offset_right = 0.5
 offset_bottom = 18.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("7_bkfag")
+theme_override_fonts/font = ExtResource("5_n824a")
 theme_override_font_sizes/font_size = 20
 
 [node name="Button3" type="TextureButton" parent="UI/ParlaUI/Bottom/Frasi"]
@@ -471,7 +472,7 @@ offset_right = 0.5
 offset_bottom = 18.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("7_bkfag")
+theme_override_fonts/font = ExtResource("5_n824a")
 theme_override_font_sizes/font_size = 20
 
 [node name="Indietro" type="VBoxContainer" parent="UI/ParlaUI/Bottom"]
@@ -507,7 +508,7 @@ offset_right = 60.0
 offset_bottom = 18.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("7_bkfag")
+theme_override_fonts/font = ExtResource("5_n824a")
 theme_override_font_sizes/font_size = 27
 text = "INDIETRO"
 
@@ -534,7 +535,7 @@ anchor_bottom = 1.003
 offset_top = -0.209961
 offset_right = -9.99988
 offset_bottom = 0.0650635
-texture = ExtResource("6_fwiqk")
+texture = ExtResource("4_h0fxt")
 expand_mode = 1
 
 [node name="Istruzioni" type="TextEdit" parent="UI/DifesaUI/Bottom"]
@@ -562,7 +563,7 @@ offset_left = 0.524017
 offset_top = 0.255
 offset_right = -0.195923
 offset_bottom = 0.0950317
-texture = ExtResource("6_fwiqk")
+texture = ExtResource("4_h0fxt")
 
 [node name="ConvinzioneBracconiere" type="TextureProgressBar" parent="UI"]
 layout_mode = 1
@@ -598,7 +599,7 @@ offset_right = 0.112991
 offset_bottom = -0.0290031
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("7_bkfag")
+theme_override_fonts/font = ExtResource("5_n824a")
 theme_override_font_sizes/font_size = 30
 text = "100%"
 
@@ -690,7 +691,7 @@ offset_left = 0.160019
 offset_top = -0.00600052
 offset_right = 0.0400085
 offset_bottom = 0.00600052
-theme_override_fonts/font = ExtResource("7_bkfag")
+theme_override_fonts/font = ExtResource("5_n824a")
 theme_override_font_sizes/font_size = 20
 text = "100%"
 
@@ -705,7 +706,7 @@ offset_left = -0.364002
 offset_top = 9.27601
 offset_right = -0.105001
 offset_bottom = 4.99986
-theme = ExtResource("6_qa7xb")
+theme = ExtResource("6_7kf2t")
 theme_type_variation = &"HeaderLarge"
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "TU"
@@ -735,9 +736,9 @@ offset_right = -0.135986
 offset_bottom = -0.170044
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("10_m33li")
+theme = ExtResource("11_08bgf")
 theme_override_colors/font_color = Color(0.666667, 0.27451, 0.0509804, 1)
-theme_override_fonts/font = ExtResource("7_bkfag")
+theme_override_fonts/font = ExtResource("5_n824a")
 theme_override_font_sizes/font_size = 35
 theme_override_styles/normal = SubResource("StyleBoxFlat_ouw0d")
 text = "Totale punteggio: "
@@ -757,7 +758,7 @@ offset_bottom = 2.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.666667, 0.27451, 0.0509804, 1)
-theme_override_fonts/font = ExtResource("7_bkfag")
+theme_override_fonts/font = ExtResource("5_n824a")
 theme_override_font_sizes/font_size = 60
 text = "300"
 horizontal_alignment = 1
@@ -775,26 +776,26 @@ offset_left = 0.435974
 offset_top = 0.109985
 offset_right = -0.472046
 offset_bottom = -0.185059
-theme = ExtResource("10_m33li")
+theme = ExtResource("11_08bgf")
 theme_override_font_sizes/font_size = 25
 text = "TORNA ALLA MAPPA
 "
 icon_alignment = 1
 
 [node name="FiniteStateMachine" type="Node" parent="."]
-script = ExtResource("4_nv2p2")
+script = ExtResource("12_2bj0j")
 
 [node name="SelectState" type="Node" parent="FiniteStateMachine"]
-script = ExtResource("5_5ekkk")
+script = ExtResource("13_6bwxd")
 
 [node name="ParlaState" type="Node" parent="FiniteStateMachine"]
-script = ExtResource("6_u7oi3")
+script = ExtResource("14_thm10")
 
 [node name="DifesaState" type="Node" parent="FiniteStateMachine"]
-script = ExtResource("7_y06uv")
+script = ExtResource("15_8txkt")
 
 [node name="PunteggioState" type="Node" parent="FiniteStateMachine"]
-script = ExtResource("8_cl11c")
+script = ExtResource("16_uaqpl")
 
 [node name="Effetti" type="AudioStreamPlayer" parent="."]
 

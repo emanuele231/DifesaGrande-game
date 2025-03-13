@@ -53,7 +53,7 @@
 [ext_resource type="Texture2D" uid="uid://bw2k82fmu64wt" path="res://personaggi/assessore (2).png" id="49_stxq3"]
 [ext_resource type="Texture2D" uid="uid://dro28d2w14ssr" path="res://pixel-art-animals-rabbit/RabbitAnimations/RabbitSprites.png" id="52_b4cw7"]
 [ext_resource type="Script" path="res://Scenes/mappa_game/lepre_fugge.gd" id="53_38046"]
-[ext_resource type="Texture2D" uid="uid://qqktdshsew62" path="res://Scenes/Bracconiere/Bracconiere modificato idle2.png" id="54_5lt1r"]
+[ext_resource type="Texture2D" uid="uid://qqktdshsew62" path="res://Scenes/Bracconiere/Asset/Bracconiere modificato idle2.png" id="54_5lt1r"]
 [ext_resource type="Script" path="res://Scenes/mappa_game/Area2D_bracconiere.gd" id="55_4aewl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1vaym"]

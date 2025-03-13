@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cglk2ybk31ho7"
-path="res://.godot/imported/bosco-difesa-grande.jpg-c722ea6677e08c8a08ce65ff082d3b2d.ctex"
+uid="uid://b1kaj07iq77lt"
+path="res://.godot/imported/Cinghiale.png-2fc25cdf67c525f1e9dbd705164080ea.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Bracconiere/bosco-difesa-grande.jpg"
-dest_files=["res://.godot/imported/bosco-difesa-grande.jpg-c722ea6677e08c8a08ce65ff082d3b2d.ctex"]
+source_file="res://Scenes/Bracconiere/Asset/Cinghiale.png"
+dest_files=["res://.godot/imported/Cinghiale.png-2fc25cdf67c525f1e9dbd705164080ea.ctex"]
 
 [params]
 

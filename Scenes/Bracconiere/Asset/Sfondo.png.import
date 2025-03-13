@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://i02ud1708ew4"
-path="res://.godot/imported/Bow and Arrows.png-f116c094b78d12e6f69fe185801537de.ctex"
+uid="uid://db4v2ngq0rp72"
+path="res://.godot/imported/Sfondo.png-ca0100abc9e2c0cb4c9a5b67118d50b4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Bracconiere/Bow and Arrows.png"
-dest_files=["res://.godot/imported/Bow and Arrows.png-f116c094b78d12e6f69fe185801537de.ctex"]
+source_file="res://Scenes/Bracconiere/Asset/Sfondo.png"
+dest_files=["res://.godot/imported/Sfondo.png-ca0100abc9e2c0cb4c9a5b67118d50b4.ctex"]
 
 [params]
 
