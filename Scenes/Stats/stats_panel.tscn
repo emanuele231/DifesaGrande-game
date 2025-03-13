@@ -188,7 +188,6 @@ Ottimo Lavoro! Continua Così"
 horizontal_alignment = 1
 
 [node name="Bottoni" type="HBoxContainer" parent="Label"]
-visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 2.8
@@ -257,14 +256,10 @@ horizontal_alignment = 1
 [node name="VBoxContainer" type="VBoxContainer" parent="Label/AreaRecord"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.037
-anchor_top = 0.169
-anchor_right = 0.443
-anchor_bottom = 0.901
-offset_left = 7.176
-offset_top = 0.00798798
-offset_right = -0.136047
-offset_bottom = 0.231995
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="MinigiocoRifiuti" type="Label" parent="Label/AreaRecord/VBoxContainer"]
 layout_mode = 2
@@ -363,6 +358,7 @@ text = "100
 "
 
 [node name="AreaObiettivi" type="Control" parent="Label"]
+visible = false
 layout_mode = 1
 anchor_top = 0.394
 anchor_right = 1.005
@@ -389,16 +385,139 @@ theme_override_font_sizes/font_size = 50
 text = "Obiettivi:"
 horizontal_alignment = 1
 
-[node name="Sfondo" type="TextureRect" parent="Label/AreaObiettivi"]
+[node name="Lista" type="Control" parent="Label/AreaObiettivi"]
+visible = false
 layout_mode = 2
-anchor_left = 0.014
-anchor_top = 0.099
-anchor_right = 0.977
-anchor_bottom = 0.423
-offset_left = -0.528
-offset_top = 15.768
-offset_right = -15.7041
-offset_bottom = 23.736
+anchors_preset = 0
+offset_left = 8.0
+offset_top = 64.0
+offset_right = 8.0
+offset_bottom = 64.0
+
+[node name="Sfondo2" type="TextureRect" parent="Label/AreaObiettivi/Lista"]
+layout_mode = 2
+offset_top = 166.0
+offset_right = 1720.0
+offset_bottom = 342.0
+size_flags_vertical = 3
+texture = SubResource("AtlasTexture_552d6")
+
+[node name="Obiettivo1" type="Label" parent="Label/AreaObiettivi/Lista/Sfondo2"]
+layout_mode = 2
+anchor_left = 0.024
+anchor_top = 0.292
+anchor_right = 0.526
+anchor_bottom = 0.641
+offset_left = 2.872
+offset_top = 8.936
+offset_right = -3.47205
+offset_bottom = -0.0720062
+size_flags_horizontal = 0
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_bcohp")
+theme_override_font_sizes/font_size = 45
+text = "Completa ogni minigioco almeno 1 volta"
+
+[node name="medaglia" type="TextureRect" parent="Label/AreaObiettivi/Lista/Sfondo2/Obiettivo1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.724
+anchor_top = -0.569
+anchor_right = 1.897
+anchor_bottom = 1.483
+offset_left = -0.0167236
+offset_top = 10.5837
+offset_right = 0.316162
+offset_bottom = 0.0310669
+texture = SubResource("AtlasTexture_4skqt")
+
+[node name="Sfondo3" type="TextureRect" parent="Label/AreaObiettivi/Lista"]
+layout_mode = 2
+offset_top = 344.0
+offset_right = 1720.0
+offset_bottom = 520.0
+size_flags_vertical = 3
+texture = SubResource("AtlasTexture_552d6")
+
+[node name="Obiettivo1" type="Label" parent="Label/AreaObiettivi/Lista/Sfondo3"]
+layout_mode = 2
+anchor_left = 0.024
+anchor_top = 0.292
+anchor_right = 0.526
+anchor_bottom = 0.641
+offset_left = 2.872
+offset_top = 8.936
+offset_right = -3.47205
+offset_bottom = -0.0720062
+size_flags_horizontal = 0
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_bcohp")
+theme_override_font_sizes/font_size = 45
+text = "Completa ogni minigioco almeno 1 volta"
+
+[node name="medaglia" type="TextureRect" parent="Label/AreaObiettivi/Lista/Sfondo3/Obiettivo1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.724
+anchor_top = -0.569
+anchor_right = 1.897
+anchor_bottom = 1.483
+offset_left = -0.0167236
+offset_top = 10.5837
+offset_right = 0.316162
+offset_bottom = 0.0310669
+texture = SubResource("AtlasTexture_4skqt")
+
+[node name="Sfondo4" type="TextureRect" parent="Label/AreaObiettivi/Lista"]
+layout_mode = 2
+offset_top = 501.0
+offset_right = 1720.0
+offset_bottom = 677.0
+size_flags_vertical = 3
+texture = SubResource("AtlasTexture_552d6")
+
+[node name="Obiettivo1" type="Label" parent="Label/AreaObiettivi/Lista/Sfondo4"]
+layout_mode = 2
+anchor_left = 0.024
+anchor_top = 0.292
+anchor_right = 0.526
+anchor_bottom = 0.641
+offset_left = 2.872
+offset_top = 8.936
+offset_right = -3.47205
+offset_bottom = -0.0720062
+size_flags_horizontal = 0
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_bcohp")
+theme_override_font_sizes/font_size = 45
+text = "Completa ogni minigioco almeno 1 volta"
+
+[node name="medaglia" type="TextureRect" parent="Label/AreaObiettivi/Lista/Sfondo4/Obiettivo1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.724
+anchor_top = -0.569
+anchor_right = 1.897
+anchor_bottom = 1.483
+offset_left = -0.0167236
+offset_top = 10.5837
+offset_right = 0.316162
+offset_bottom = 0.0310669
+texture = SubResource("AtlasTexture_4skqt")
+
+[node name="Sfondo" type="TextureRect" parent="Label/AreaObiettivi"]
+visible = false
+layout_mode = 2
+anchor_top = 0.113
+anchor_right = 0.986
+anchor_bottom = 0.479
+offset_left = 8.0
+offset_top = -0.184006
+offset_right = -0.472046
+offset_bottom = -0.0720215
 size_flags_vertical = 3
 texture = SubResource("AtlasTexture_552d6")
 
@@ -422,25 +541,234 @@ text = "Completa ogni minigioco almeno 1 volta"
 [node name="medaglia" type="TextureRect" parent="Label/AreaObiettivi/Sfondo/Obiettivo1"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 1.744
-anchor_top = -0.569
-anchor_right = 1.879
-anchor_bottom = 1.224
-offset_left = 4.88794
-offset_top = 11.002
-offset_right = -7.56702
-offset_bottom = 7.008
+anchor_left = 1.724
+anchor_top = -0.623
+anchor_right = 1.899
+anchor_bottom = 1.672
+offset_left = -0.0167236
+offset_top = 0.0172348
+offset_right = 0.0793457
+offset_bottom = 4.09199
 texture = SubResource("AtlasTexture_4skqt")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Label/AreaObiettivi"]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.099
-anchor_right = 0.991
-anchor_bottom = 0.986
-offset_top = -0.232002
-offset_right = -0.232056
-offset_bottom = -0.0480347
+anchor_top = 0.113
+anchor_right = 0.982
+anchor_bottom = 0.944
+offset_left = 8.0
+offset_top = -0.184006
+offset_right = 15.536
+offset_bottom = -0.192017
+vertical_scroll_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Label/AreaObiettivi/ScrollContainer"]
 layout_mode = 2
+
+[node name="Obiettivo1" type="Label" parent="Label/AreaObiettivi/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_bcohp")
+theme_override_font_sizes/font_size = 45
+text = "
+Completa ogni minigioco almeno 1 volta"
+
+[node name="HSeparator" type="HSeparator" parent="Label/AreaObiettivi/ScrollContainer/VBoxContainer/Obiettivo1"]
+layout_mode = 2
+anchor_top = 0.286
+anchor_right = 2.055
+anchor_bottom = 2.353
+offset_top = 0.966
+offset_right = 8.18494
+offset_bottom = 2.99298
+
+[node name="medaglia" type="TextureRect" parent="Label/AreaObiettivi/ScrollContainer/VBoxContainer/Obiettivo1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.863
+anchor_top = 0.403
+anchor_right = 1.987
+anchor_bottom = 1.21
+offset_left = 3.12097
+offset_top = 0.0429955
+offset_right = -0.171143
+offset_bottom = 4.00999
+texture = SubResource("AtlasTexture_4skqt")
+
+[node name="Obiettivo2" type="Label" parent="Label/AreaObiettivi/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_bcohp")
+theme_override_font_sizes/font_size = 45
+text = "
+Completa 3 volte \"Raccogli i Rifiuti\""
+
+[node name="medaglia" type="TextureRect" parent="Label/AreaObiettivi/ScrollContainer/VBoxContainer/Obiettivo2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.995
+anchor_top = 0.403
+anchor_right = 2.129
+anchor_bottom = 1.185
+offset_left = 2.88989
+offset_top = 0.0429955
+offset_right = -1.36218
+offset_bottom = 6.98499
+texture = SubResource("AtlasTexture_4skqt")
+
+[node name="HSeparator" type="HSeparator" parent="Label/AreaObiettivi/ScrollContainer/VBoxContainer/Obiettivo2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.286
+anchor_right = 2.221
+anchor_bottom = 2.261
+offset_top = -0.0340004
+offset_right = 0.0618896
+offset_bottom = 12.941
+
+[node name="Obiettivo3" type="Label" parent="Label/AreaObiettivi/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_bcohp")
+theme_override_font_sizes/font_size = 45
+text = "
+Completa 3 volte \"Convinci il Bracconiere\""
+
+[node name="medaglia" type="TextureRect" parent="Label/AreaObiettivi/ScrollContainer/VBoxContainer/Obiettivo3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.688
+anchor_top = 0.403
+anchor_right = 1.797
+anchor_bottom = 1.227
+offset_left = 0.351929
+offset_top = 0.0429955
+offset_right = -0.0369873
+offset_bottom = 1.98698
+texture = SubResource("AtlasTexture_4skqt")
+
+[node name="HSeparator" type="HSeparator" parent="Label/AreaObiettivi/ScrollContainer/VBoxContainer/Obiettivo3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.286
+anchor_right = 2.055
+anchor_bottom = 2.353
+offset_top = 1.966
+offset_right = 8.18494
+offset_bottom = 3.99298
+
+[node name="Obiettivo4" type="Label" parent="Label/AreaObiettivi/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_bcohp")
+theme_override_font_sizes/font_size = 45
+text = "
+Completa 3 volte \"Acchiappa il Vandalo\""
+
+[node name="medaglia" type="TextureRect" parent="Label/AreaObiettivi/ScrollContainer/VBoxContainer/Obiettivo4"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.784
+anchor_top = 0.403
+anchor_right = 1.902
+anchor_bottom = 1.202
+offset_left = 2.91992
+offset_top = 0.0429955
+offset_right = 0.259888
+offset_bottom = 4.96199
+texture = SubResource("AtlasTexture_4skqt")
+
+[node name="HSeparator" type="HSeparator" parent="Label/AreaObiettivi/ScrollContainer/VBoxContainer/Obiettivo4/medaglia"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -15.71
+anchor_top = 0.07
+anchor_right = 1.65
+anchor_bottom = 2.33
+offset_left = 4.00012
+offset_top = -6.0
+offset_right = 3.99998
+offset_bottom = -1.52588e-05
+
+[node name="Obiettivo5" type="Label" parent="Label/AreaObiettivi/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_bcohp")
+theme_override_font_sizes/font_size = 45
+text = "
+Raggiungi 1 stella di grado di protezione del Bosco"
+
+[node name="medaglia" type="TextureRect" parent="Label/AreaObiettivi/ScrollContainer/VBoxContainer/Obiettivo5"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.443
+anchor_top = 0.403
+anchor_right = 1.531
+anchor_bottom = 1.244
+offset_left = -4.88306
+offset_top = 0.0429955
+offset_right = -0.0109863
+offset_bottom = -0.0360107
+texture = SubResource("AtlasTexture_4skqt")
+
+[node name="HSeparator" type="HSeparator" parent="Label/AreaObiettivi/ScrollContainer/VBoxContainer/Obiettivo5"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.286
+anchor_right = 2.055
+anchor_bottom = 2.353
+offset_top = -0.0340004
+offset_right = 8.18494
+offset_bottom = 1.99298
+
+[node name="Obiettivo6" type="Label" parent="Label/AreaObiettivi/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_bcohp")
+theme_override_font_sizes/font_size = 45
+text = "
+Raggiungi il punteggio massimo in \"Convinci il Bracconiere\""
+
+[node name="medaglia" type="TextureRect" parent="Label/AreaObiettivi/ScrollContainer/VBoxContainer/Obiettivo6"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.218
+anchor_top = 0.412
+anchor_right = 1.296
+anchor_bottom = 1.244
+offset_left = -0.386108
+offset_top = -1.028
+offset_right = 0.00793457
+offset_bottom = -0.0360107
+texture = SubResource("AtlasTexture_4skqt")
+
+[node name="HSeparator" type="HSeparator" parent="Label/AreaObiettivi/ScrollContainer/VBoxContainer/Obiettivo6"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.286
+anchor_right = 2.055
+anchor_bottom = 2.353
+offset_top = -0.0340004
+offset_right = 8.18494
+offset_bottom = 1.99298
+
+[node name="Spazio" type="Label" parent="Label/AreaObiettivi/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_bcohp")
+theme_override_font_sizes/font_size = 45
