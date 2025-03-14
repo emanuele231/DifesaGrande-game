@@ -188,6 +188,7 @@ Ottimo Lavoro! Continua Così"
 horizontal_alignment = 1
 
 [node name="Bottoni" type="HBoxContainer" parent="Label"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 2.8

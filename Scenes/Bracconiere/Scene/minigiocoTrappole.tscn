@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://bs8kostg7koqp"]
+
+[ext_resource type="Script" path="res://Scenes/Bracconiere/Script/minigiocoTrappole.gd" id="1_xk15e"]
+[ext_resource type="Texture2D" uid="uid://dirvqll5eaxxv" path="res://Scenes/Bracconiere/Asset/Sfondo minigioco frecce.png" id="2_23l5f"]
+[ext_resource type="Script" path="res://Scenes/Bracconiere/Script/spawnerTrappole.gd" id="3_771lb"]
+[ext_resource type="PackedScene" uid="uid://bosnim4okb7xo" path="res://Scenes/Bracconiere/Scene/Trappola.tscn" id="4_i58mt"]
+
+[node name="MinigiocoTrappole" type="Node2D"]
+script = ExtResource("1_xk15e")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 660.0
+offset_bottom = 600.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_23l5f")
+expand_mode = 2
+
+[node name="SpawnerTrappole" type="Node2D" parent="."]
+position = Vector2(-175, 267)
+script = ExtResource("3_771lb")
+scena_trappola = ExtResource("4_i58mt")
+
+[node name="Timer" type="Timer" parent="SpawnerTrappole"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SpawnerTrappole"]
+volume_db = -1.868
+
+[node name="TimerMinigioco" type="Timer" parent="."]
