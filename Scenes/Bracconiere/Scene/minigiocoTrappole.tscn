@@ -1,10 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://bs8kostg7koqp"]
+[gd_scene load_steps=8 format=3 uid="uid://bs8kostg7koqp"]
 
 [ext_resource type="Script" path="res://Scenes/Bracconiere/Script/minigiocoTrappole.gd" id="1_xk15e"]
 [ext_resource type="Texture2D" uid="uid://dirvqll5eaxxv" path="res://Scenes/Bracconiere/Asset/Sfondo minigioco frecce.png" id="2_23l5f"]
 [ext_resource type="Script" path="res://Scenes/Bracconiere/Script/spawnerTrappole.gd" id="3_771lb"]
 [ext_resource type="PackedScene" uid="uid://bosnim4okb7xo" path="res://Scenes/Bracconiere/Scene/Trappola.tscn" id="4_i58mt"]
 [ext_resource type="FontFile" uid="uid://bu8074xritaxh" path="res://Scenes/menu/Fonts/Ravenwood-g5JR.ttf" id="5_cn4va"]
+[ext_resource type="Theme" uid="uid://brb76mu8vmajm" path="res://Scenes/livello_1/ThemesGUI/PauseMenuTheme.tres" id="6_mjkrn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uibcn"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 3
+border_color = Color(0.682353, 0.321569, 0.0470588, 1)
 
 [node name="MinigiocoTrappole" type="Node2D"]
 script = ExtResource("1_xk15e")
@@ -40,3 +49,26 @@ offset_bottom = 38.0
 theme_override_fonts/font = ExtResource("5_cn4va")
 theme_override_font_sizes/font_size = 30
 text = "Turno:"
+
+[node name="Istruzioni" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 110.0
+offset_top = 100.0
+offset_right = 550.0
+offset_bottom = 500.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("6_mjkrn")
+theme_override_colors/font_color = Color(0.666667, 0.27451, 0.0509804, 1)
+theme_override_fonts/font = ExtResource("5_cn4va")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_uibcn")
+text = "Clicca sulle trappole
+piazzate dal bracconiere
+per farle sparire"
+horizontal_alignment = 1
+vertical_alignment = 1
