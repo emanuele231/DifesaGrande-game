@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var scena_target: String = "res://Scenes/Bracconiere/Bracconiere.tscn"
+@export var scena_target: String = "res://Scenes/Bracconiere/Scene/Bracconiere.tscn"
 var giocatore_dentro = false
 
 func _ready():

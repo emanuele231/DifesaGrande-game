@@ -15,7 +15,6 @@ func change_state(new_state: Node):
 	current_state.enter()  
 	animationStateMachine.play_animation(new_state.name)
 
-
 func transition_to(state_name: String):
 	var new_state = get_node(state_name)
 	if new_state:

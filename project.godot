@@ -24,7 +24,14 @@ SingletonOrganico="*res://Scenes/livello_1/singletonOrganico.gd"
 SingletonIndiff="*res://Scenes/livello_1/singletonIndiff.gd"
 PuntiSingleton="*res://Scenes/livello_1/punti_singleton.gd"
 SceneTransition="*res://Scenes/transition.tscn"
-PunteggioBracconiere="*res://Scenes/Bracconiere/punteggio_bracconiere.gd"
+PunteggioBracconiere="*res://Scenes/Bracconiere/Script/punteggio_bracconiere.gd"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/mode=3
+window/stretch/mode="viewport"
 
 [dotnet]
 

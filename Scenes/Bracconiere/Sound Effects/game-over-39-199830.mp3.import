@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://1rvtgn52t1yi"
+path="res://.godot/imported/game-over-39-199830.mp3-5dfd136de6e8edf9f29b3da7a16f5c48.mp3str"
+
+[deps]
+
+source_file="res://Scenes/Bracconiere/Sound Effects/game-over-39-199830.mp3"
+dest_files=["res://.godot/imported/game-over-39-199830.mp3-5dfd136de6e8edf9f29b3da7a16f5c48.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

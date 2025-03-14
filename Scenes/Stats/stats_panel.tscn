@@ -1,0 +1,775 @@
+[gd_scene load_steps=14 format=3 uid="uid://ehug37l74gth"]
+
+[ext_resource type="Theme" uid="uid://brb76mu8vmajm" path="res://Scenes/livello_1/ThemesGUI/PauseMenuTheme.tres" id="1_x1iuh"]
+[ext_resource type="FontFile" uid="uid://bu8074xritaxh" path="res://Scenes/menu/Fonts/Ravenwood-g5JR.ttf" id="2_bcohp"]
+[ext_resource type="Texture2D" uid="uid://bmm6ggmj6di5j" path="res://Scenes/Stats/Asset/YELLOW/yellow 00.png" id="3_7k6sn"]
+[ext_resource type="Texture2D" uid="uid://dwf0a71pclwfs" path="res://Scenes/Stats/Asset/YELLOW/yellow 01.png" id="4_yhbi2"]
+[ext_resource type="Texture2D" uid="uid://dw3k55n2oi6d8" path="res://Scenes/Stats/Asset/YELLOW/yellow 02.png" id="5_3q040"]
+[ext_resource type="Texture2D" uid="uid://e057gjhxwttw" path="res://Scenes/Stats/Asset/YELLOW/yellow 03.png" id="6_kr237"]
+[ext_resource type="Texture2D" uid="uid://1pbsmldcvyx6" path="res://Scenes/Stats/Asset/YELLOW/yellow 04.png" id="7_0ehqt"]
+[ext_resource type="Texture2D" uid="uid://cey8v44qbdd6h" path="res://Scenes/Stats/Asset/YELLOW/yellow 05.png" id="8_tkojx"]
+[ext_resource type="Texture2D" uid="uid://csqjsr1vy0aw6" path="res://Scenes/Bracconiere/Asset/bottone frase.png" id="9_5cjmw"]
+[ext_resource type="Texture2D" uid="uid://bthvkfdrg0233" path="res://Scenes/Stats/Asset/achievements.png" id="9_xjpdb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qtubc"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 3
+border_color = Color(0.682353, 0.321569, 0.0470588, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_552d6"]
+atlas = ExtResource("9_5cjmw")
+region = Rect2(16, 24, 121, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4skqt"]
+atlas = ExtResource("9_xjpdb")
+region = Rect2(120, 120, 48, 48)
+
+[node name="Node2D" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.042
+anchor_top = 0.062
+anchor_right = 0.958
+anchor_bottom = 0.926
+offset_left = -0.640007
+offset_top = 0.0399933
+offset_right = 0.639893
+offset_bottom = 12.9199
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_x1iuh")
+theme_override_colors/font_color = Color(0.666667, 0.27451, 0.0509804, 1)
+theme_override_fonts/font = ExtResource("2_bcohp")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_qtubc")
+text = "Grado di Protezione del Bosco"
+horizontal_alignment = 1
+
+[node name="AreaStelle" type="Control" parent="Label"]
+layout_mode = 1
+anchor_left = 0.005
+anchor_top = 0.005
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.8
+offset_top = -7.73
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Stelle" type="TextureRect" parent="Label/AreaStelle"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.173
+anchor_top = 0.041
+anchor_right = 0.827
+anchor_bottom = 0.336
+offset_left = 0.519989
+offset_top = -0.0320015
+offset_right = -0.52002
+offset_bottom = -0.872009
+texture = ExtResource("3_7k6sn")
+
+[node name="Stelle2" type="TextureRect" parent="Label/AreaStelle"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.173
+anchor_top = 0.041
+anchor_right = 0.827
+anchor_bottom = 0.336
+offset_left = 0.519989
+offset_top = -0.0320015
+offset_right = -0.52002
+offset_bottom = -0.872009
+texture = ExtResource("4_yhbi2")
+
+[node name="Stelle3" type="TextureRect" parent="Label/AreaStelle"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.173
+anchor_top = 0.041
+anchor_right = 0.827
+anchor_bottom = 0.336
+offset_left = 0.519989
+offset_top = -0.0320015
+offset_right = -0.52002
+offset_bottom = -0.872009
+texture = ExtResource("5_3q040")
+
+[node name="Stelle4" type="TextureRect" parent="Label/AreaStelle"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.173
+anchor_top = 0.041
+anchor_right = 0.827
+anchor_bottom = 0.336
+offset_left = 0.519989
+offset_top = -0.0320015
+offset_right = -0.52002
+offset_bottom = -0.872009
+texture = ExtResource("6_kr237")
+
+[node name="Stelle5" type="TextureRect" parent="Label/AreaStelle"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.173
+anchor_top = 0.041
+anchor_right = 0.827
+anchor_bottom = 0.336
+offset_left = 0.519989
+offset_top = -0.0320015
+offset_right = -0.52002
+offset_bottom = -0.872009
+texture = ExtResource("7_0ehqt")
+
+[node name="Stelle6" type="TextureRect" parent="Label/AreaStelle"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.173
+anchor_top = 0.041
+anchor_right = 0.827
+anchor_bottom = 0.336
+offset_left = 0.519989
+offset_top = -0.0320015
+offset_right = -0.52002
+offset_bottom = -0.872009
+texture = ExtResource("8_tkojx")
+
+[node name="FraseBase" type="Label" parent="Label/AreaStelle"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.034
+anchor_top = 0.303
+anchor_right = 0.966
+anchor_bottom = 0.378
+offset_left = 0.159996
+offset_top = 1.54401
+offset_right = -0.160034
+offset_bottom = 10.144
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_bcohp")
+theme_override_font_sizes/font_size = 40
+text = "Guardiano, il tuo compito è raggiungere il massimo grado di protezione del bosco! "
+horizontal_alignment = 1
+
+[node name="Frase5Stelle" type="Label" parent="Label/AreaStelle"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.034
+anchor_top = 0.303
+anchor_right = 0.966
+anchor_bottom = 0.412
+offset_left = 0.159996
+offset_top = -3.45599
+offset_right = -0.160034
+offset_bottom = -0.22403
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_bcohp")
+theme_override_font_sizes/font_size = 40
+text = "Complimenti guardiano! Hai raggiunto il livello massimo di protezione del bosco!
+Ottimo Lavoro! Continua Così"
+horizontal_alignment = 1
+
+[node name="Bottoni" type="HBoxContainer" parent="Label"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 2.8
+anchor_top = 11.125
+anchor_right = 45.0
+anchor_bottom = 23.6
+offset_left = -4856.0
+offset_top = -10130.3
+offset_right = -77512.0
+offset_bottom = -21411.6
+
+[node name="Record" type="Button" parent="Label/Bottoni"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 60
+text = "RECORD
+"
+
+[node name="Obiettivi" type="Button" parent="Label/Bottoni"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 60
+text = "OBIETTIVI"
+
+[node name="Button" type="Button" parent="Label"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.018
+anchor_top = 0.014
+anchor_right = 0.15
+anchor_bottom = 0.107
+offset_left = -15.68
+offset_top = -0.244
+offset_bottom = -0.222008
+theme_override_font_sizes/font_size = 50
+text = "INDIETRO"
+
+[node name="AreaRecord" type="Control" parent="Label"]
+visible = false
+layout_mode = 1
+anchor_top = 0.394
+anchor_right = 1.005
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 0.27597
+offset_right = -8.80005
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Titolo" type="Label" parent="Label/AreaRecord"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.324
+anchor_right = 0.689
+anchor_bottom = 0.197
+offset_left = -14.648
+offset_right = -14.1281
+offset_bottom = 0.103996
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_bcohp")
+theme_override_font_sizes/font_size = 50
+text = "Record:"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Label/AreaRecord"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MinigiocoRifiuti" type="Label" parent="Label/AreaRecord/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_bcohp")
+theme_override_font_sizes/font_size = 45
+text = "Raccolta rifiuti:"
+
+[node name="Punteggio" type="Label" parent="Label/AreaRecord/VBoxContainer/MinigiocoRifiuti"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.038
+anchor_top = 0.138
+anchor_right = 1.273
+anchor_bottom = 1.103
+offset_left = 0.247925
+offset_top = -0.00400066
+offset_right = 3.112
+offset_bottom = 2.026
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_bcohp")
+theme_override_font_sizes/font_size = 45
+text = "100
+"
+
+[node name="MinigiocoVandalo" type="Label" parent="Label/AreaRecord/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_bcohp")
+theme_override_font_sizes/font_size = 45
+text = "Caccia al vandalo:"
+
+[node name="Punteggio" type="Label" parent="Label/AreaRecord/VBoxContainer/MinigiocoVandalo"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.044
+anchor_top = 0.062
+anchor_right = 1.284
+anchor_bottom = 0.9
+offset_left = 0.14798
+offset_top = 0.04
+offset_right = -0.187012
+offset_bottom = 5.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_bcohp")
+theme_override_font_sizes/font_size = 45
+text = "100
+"
+
+[node name="MinigiocoBracconiere" type="Label" parent="Label/AreaRecord/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_bcohp")
+theme_override_font_sizes/font_size = 45
+text = "Convinci il bracconiere:"
+
+[node name="Punteggio" type="Label" parent="Label/AreaRecord/VBoxContainer/MinigiocoBracconiere"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.044
+anchor_top = 0.062
+anchor_right = 1.22
+anchor_bottom = 0.925
+offset_left = 0.35199
+offset_top = 0.04
+offset_right = -0.23999
+offset_bottom = 2.99999
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_bcohp")
+theme_override_font_sizes/font_size = 45
+text = "100
+"
+
+[node name="MinigiocoIncendio" type="Label" parent="Label/AreaRecord/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_bcohp")
+theme_override_font_sizes/font_size = 45
+text = "Spegni l'incendio:"
+
+[node name="Punteggio" type="Label" parent="Label/AreaRecord/VBoxContainer/MinigiocoIncendio"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.044
+anchor_top = 0.062
+anchor_right = 1.284
+anchor_bottom = 0.9
+offset_left = 0.14798
+offset_top = 0.04
+offset_right = -0.187012
+offset_bottom = 5.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_bcohp")
+theme_override_font_sizes/font_size = 45
+text = "100
+"
+
+[node name="AreaObiettivi" type="Control" parent="Label"]
+visible = false
+layout_mode = 1
+anchor_top = 0.394
+anchor_right = 1.005
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 0.27597
+offset_right = -8.80005
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Titolo" type="Label" parent="Label/AreaObiettivi"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.324
+anchor_right = 0.689
+anchor_bottom = 0.197
+offset_left = -14.648
+offset_right = -14.1281
+offset_bottom = 0.103996
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_bcohp")
+theme_override_font_sizes/font_size = 50
+text = "Obiettivi:"
+horizontal_alignment = 1
+
+[node name="Lista" type="Control" parent="Label/AreaObiettivi"]
+visible = false
+layout_mode = 2
+anchors_preset = 0
+offset_left = 8.0
+offset_top = 64.0
+offset_right = 8.0
+offset_bottom = 64.0
+
+[node name="Sfondo2" type="TextureRect" parent="Label/AreaObiettivi/Lista"]
+layout_mode = 2
+offset_top = 166.0
+offset_right = 1720.0
+offset_bottom = 342.0
+size_flags_vertical = 3
+texture = SubResource("AtlasTexture_552d6")
+
+[node name="Obiettivo1" type="Label" parent="Label/AreaObiettivi/Lista/Sfondo2"]
+layout_mode = 2
+anchor_left = 0.024
+anchor_top = 0.292
+anchor_right = 0.526
+anchor_bottom = 0.641
+offset_left = 2.872
+offset_top = 8.936
+offset_right = -3.47205
+offset_bottom = -0.0720062
+size_flags_horizontal = 0
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_bcohp")
+theme_override_font_sizes/font_size = 45
+text = "Completa ogni minigioco almeno 1 volta"
+
+[node name="medaglia" type="TextureRect" parent="Label/AreaObiettivi/Lista/Sfondo2/Obiettivo1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.724
+anchor_top = -0.569
+anchor_right = 1.897
+anchor_bottom = 1.483
+offset_left = -0.0167236
+offset_top = 10.5837
+offset_right = 0.316162
+offset_bottom = 0.0310669
+texture = SubResource("AtlasTexture_4skqt")
+
+[node name="Sfondo3" type="TextureRect" parent="Label/AreaObiettivi/Lista"]
+layout_mode = 2
+offset_top = 344.0
+offset_right = 1720.0
+offset_bottom = 520.0
+size_flags_vertical = 3
+texture = SubResource("AtlasTexture_552d6")
+
+[node name="Obiettivo1" type="Label" parent="Label/AreaObiettivi/Lista/Sfondo3"]
+layout_mode = 2
+anchor_left = 0.024
+anchor_top = 0.292
+anchor_right = 0.526
+anchor_bottom = 0.641
+offset_left = 2.872
+offset_top = 8.936
+offset_right = -3.47205
+offset_bottom = -0.0720062
+size_flags_horizontal = 0
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_bcohp")
+theme_override_font_sizes/font_size = 45
+text = "Completa ogni minigioco almeno 1 volta"
+
+[node name="medaglia" type="TextureRect" parent="Label/AreaObiettivi/Lista/Sfondo3/Obiettivo1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.724
+anchor_top = -0.569
+anchor_right = 1.897
+anchor_bottom = 1.483
+offset_left = -0.0167236
+offset_top = 10.5837
+offset_right = 0.316162
+offset_bottom = 0.0310669
+texture = SubResource("AtlasTexture_4skqt")
+
+[node name="Sfondo4" type="TextureRect" parent="Label/AreaObiettivi/Lista"]
+layout_mode = 2
+offset_top = 501.0
+offset_right = 1720.0
+offset_bottom = 677.0
+size_flags_vertical = 3
+texture = SubResource("AtlasTexture_552d6")
+
+[node name="Obiettivo1" type="Label" parent="Label/AreaObiettivi/Lista/Sfondo4"]
+layout_mode = 2
+anchor_left = 0.024
+anchor_top = 0.292
+anchor_right = 0.526
+anchor_bottom = 0.641
+offset_left = 2.872
+offset_top = 8.936
+offset_right = -3.47205
+offset_bottom = -0.0720062
+size_flags_horizontal = 0
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_bcohp")
+theme_override_font_sizes/font_size = 45
+text = "Completa ogni minigioco almeno 1 volta"
+
+[node name="medaglia" type="TextureRect" parent="Label/AreaObiettivi/Lista/Sfondo4/Obiettivo1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.724
+anchor_top = -0.569
+anchor_right = 1.897
+anchor_bottom = 1.483
+offset_left = -0.0167236
+offset_top = 10.5837
+offset_right = 0.316162
+offset_bottom = 0.0310669
+texture = SubResource("AtlasTexture_4skqt")
+
+[node name="Sfondo" type="TextureRect" parent="Label/AreaObiettivi"]
+visible = false
+layout_mode = 2
+anchor_top = 0.113
+anchor_right = 0.986
+anchor_bottom = 0.479
+offset_left = 8.0
+offset_top = -0.184006
+offset_right = -0.472046
+offset_bottom = -0.0720215
+size_flags_vertical = 3
+texture = SubResource("AtlasTexture_552d6")
+
+[node name="Obiettivo1" type="Label" parent="Label/AreaObiettivi/Sfondo"]
+layout_mode = 2
+anchor_left = 0.024
+anchor_top = 0.292
+anchor_right = 0.526
+anchor_bottom = 0.641
+offset_left = 2.872
+offset_top = 8.936
+offset_right = -3.47205
+offset_bottom = -0.0720062
+size_flags_horizontal = 0
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_bcohp")
+theme_override_font_sizes/font_size = 45
+text = "Completa ogni minigioco almeno 1 volta"
+
+[node name="medaglia" type="TextureRect" parent="Label/AreaObiettivi/Sfondo/Obiettivo1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.724
+anchor_top = -0.623
+anchor_right = 1.899
+anchor_bottom = 1.672
+offset_left = -0.0167236
+offset_top = 0.0172348
+offset_right = 0.0793457
+offset_bottom = 4.09199
+texture = SubResource("AtlasTexture_4skqt")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Label/AreaObiettivi"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.113
+anchor_right = 0.982
+anchor_bottom = 0.944
+offset_left = 8.0
+offset_top = -0.184006
+offset_right = 15.536
+offset_bottom = -0.192017
+vertical_scroll_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Label/AreaObiettivi/ScrollContainer"]
+layout_mode = 2
+
+[node name="Obiettivo1" type="Label" parent="Label/AreaObiettivi/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_bcohp")
+theme_override_font_sizes/font_size = 45
+text = "
+Completa ogni minigioco almeno 1 volta"
+
+[node name="HSeparator" type="HSeparator" parent="Label/AreaObiettivi/ScrollContainer/VBoxContainer/Obiettivo1"]
+layout_mode = 2
+anchor_top = 0.286
+anchor_right = 2.055
+anchor_bottom = 2.353
+offset_top = 0.966
+offset_right = 8.18494
+offset_bottom = 2.99298
+
+[node name="medaglia" type="TextureRect" parent="Label/AreaObiettivi/ScrollContainer/VBoxContainer/Obiettivo1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.863
+anchor_top = 0.403
+anchor_right = 1.987
+anchor_bottom = 1.21
+offset_left = 3.12097
+offset_top = 0.0429955
+offset_right = -0.171143
+offset_bottom = 4.00999
+texture = SubResource("AtlasTexture_4skqt")
+
+[node name="Obiettivo2" type="Label" parent="Label/AreaObiettivi/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_bcohp")
+theme_override_font_sizes/font_size = 45
+text = "
+Completa 3 volte \"Raccogli i Rifiuti\""
+
+[node name="medaglia" type="TextureRect" parent="Label/AreaObiettivi/ScrollContainer/VBoxContainer/Obiettivo2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.995
+anchor_top = 0.403
+anchor_right = 2.129
+anchor_bottom = 1.185
+offset_left = 2.88989
+offset_top = 0.0429955
+offset_right = -1.36218
+offset_bottom = 6.98499
+texture = SubResource("AtlasTexture_4skqt")
+
+[node name="HSeparator" type="HSeparator" parent="Label/AreaObiettivi/ScrollContainer/VBoxContainer/Obiettivo2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.286
+anchor_right = 2.221
+anchor_bottom = 2.261
+offset_top = -0.0340004
+offset_right = 0.0618896
+offset_bottom = 12.941
+
+[node name="Obiettivo3" type="Label" parent="Label/AreaObiettivi/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_bcohp")
+theme_override_font_sizes/font_size = 45
+text = "
+Completa 3 volte \"Convinci il Bracconiere\""
+
+[node name="medaglia" type="TextureRect" parent="Label/AreaObiettivi/ScrollContainer/VBoxContainer/Obiettivo3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.688
+anchor_top = 0.403
+anchor_right = 1.797
+anchor_bottom = 1.227
+offset_left = 0.351929
+offset_top = 0.0429955
+offset_right = -0.0369873
+offset_bottom = 1.98698
+texture = SubResource("AtlasTexture_4skqt")
+
+[node name="HSeparator" type="HSeparator" parent="Label/AreaObiettivi/ScrollContainer/VBoxContainer/Obiettivo3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.286
+anchor_right = 2.055
+anchor_bottom = 2.353
+offset_top = 1.966
+offset_right = 8.18494
+offset_bottom = 3.99298
+
+[node name="Obiettivo4" type="Label" parent="Label/AreaObiettivi/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_bcohp")
+theme_override_font_sizes/font_size = 45
+text = "
+Completa 3 volte \"Acchiappa il Vandalo\""
+
+[node name="medaglia" type="TextureRect" parent="Label/AreaObiettivi/ScrollContainer/VBoxContainer/Obiettivo4"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.784
+anchor_top = 0.403
+anchor_right = 1.902
+anchor_bottom = 1.202
+offset_left = 2.91992
+offset_top = 0.0429955
+offset_right = 0.259888
+offset_bottom = 4.96199
+texture = SubResource("AtlasTexture_4skqt")
+
+[node name="HSeparator" type="HSeparator" parent="Label/AreaObiettivi/ScrollContainer/VBoxContainer/Obiettivo4/medaglia"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -15.71
+anchor_top = 0.07
+anchor_right = 1.65
+anchor_bottom = 2.33
+offset_left = 4.00012
+offset_top = -6.0
+offset_right = 3.99998
+offset_bottom = -1.52588e-05
+
+[node name="Obiettivo5" type="Label" parent="Label/AreaObiettivi/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_bcohp")
+theme_override_font_sizes/font_size = 45
+text = "
+Raggiungi 1 stella di grado di protezione del Bosco"
+
+[node name="medaglia" type="TextureRect" parent="Label/AreaObiettivi/ScrollContainer/VBoxContainer/Obiettivo5"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.443
+anchor_top = 0.403
+anchor_right = 1.531
+anchor_bottom = 1.244
+offset_left = -4.88306
+offset_top = 0.0429955
+offset_right = -0.0109863
+offset_bottom = -0.0360107
+texture = SubResource("AtlasTexture_4skqt")
+
+[node name="HSeparator" type="HSeparator" parent="Label/AreaObiettivi/ScrollContainer/VBoxContainer/Obiettivo5"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.286
+anchor_right = 2.055
+anchor_bottom = 2.353
+offset_top = -0.0340004
+offset_right = 8.18494
+offset_bottom = 1.99298
+
+[node name="Obiettivo6" type="Label" parent="Label/AreaObiettivi/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_bcohp")
+theme_override_font_sizes/font_size = 45
+text = "
+Raggiungi il punteggio massimo in \"Convinci il Bracconiere\""
+
+[node name="medaglia" type="TextureRect" parent="Label/AreaObiettivi/ScrollContainer/VBoxContainer/Obiettivo6"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.218
+anchor_top = 0.412
+anchor_right = 1.296
+anchor_bottom = 1.244
+offset_left = -0.386108
+offset_top = -1.028
+offset_right = 0.00793457
+offset_bottom = -0.0360107
+texture = SubResource("AtlasTexture_4skqt")
+
+[node name="HSeparator" type="HSeparator" parent="Label/AreaObiettivi/ScrollContainer/VBoxContainer/Obiettivo6"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.286
+anchor_right = 2.055
+anchor_bottom = 2.353
+offset_top = -0.0340004
+offset_right = 8.18494
+offset_bottom = 1.99298
+
+[node name="Spazio" type="Label" parent="Label/AreaObiettivi/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_bcohp")
+theme_override_font_sizes/font_size = 45

@@ -53,7 +53,7 @@
 [ext_resource type="Texture2D" uid="uid://bw2k82fmu64wt" path="res://personaggi/assessore (2).png" id="49_stxq3"]
 [ext_resource type="Texture2D" uid="uid://dro28d2w14ssr" path="res://pixel-art-animals-rabbit/RabbitAnimations/RabbitSprites.png" id="52_b4cw7"]
 [ext_resource type="Script" path="res://Scenes/mappa_game/lepre_fugge.gd" id="53_38046"]
-[ext_resource type="Texture2D" uid="uid://qqktdshsew62" path="res://Scenes/Bracconiere/Bracconiere modificato idle2.png" id="54_5lt1r"]
+[ext_resource type="Texture2D" uid="uid://qqktdshsew62" path="res://Scenes/Bracconiere/Asset/Bracconiere modificato idle2.png" id="54_5lt1r"]
 [ext_resource type="Script" path="res://Scenes/mappa_game/Area2D_bracconiere.gd" id="55_4aewl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1vaym"]
@@ -7443,14 +7443,14 @@ texture = ExtResource("9_7lesg")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_3m41u")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tyas3"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_00yqh"]
 texture = ExtResource("47_ilajt")
 0:0/0 = 0
 1:0/0 = 0
 0:1/0 = 0
 1:1/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e403h"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_koltl"]
 texture = ExtResource("22_7wo5e")
 0:0/0 = 0
 1:0/0 = 0
@@ -7458,8 +7458,8 @@ texture = ExtResource("22_7wo5e")
 1:1/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_jh38w"]
-sources/0 = SubResource("TileSetAtlasSource_tyas3")
-sources/1 = SubResource("TileSetAtlasSource_e403h")
+sources/0 = SubResource("TileSetAtlasSource_00yqh")
+sources/1 = SubResource("TileSetAtlasSource_koltl")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yju2g"]
 texture = ExtResource("9_7lesg")
@@ -26751,7 +26751,7 @@ shape = SubResource("CircleShape2D_an6ix")
 debug_color = Color(0.968627, 0.0862745, 0.388235, 0.419608)
 
 [node name="Bracconiere" type="CharacterBody2D" parent="."]
-position = Vector2(-368.474, 177.804)
+position = Vector2(140.526, -229.196)
 
 [node name="Sprite2D" type="Sprite2D" parent="Bracconiere"]
 scale = Vector2(0.588, 0.588)

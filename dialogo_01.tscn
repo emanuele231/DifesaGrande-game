@@ -5,6 +5,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 1156.0
 offset_bottom = 652.0
+mouse_filter = 2
 
 [node name="Label" type="Label" parent="."]
 top_level = true

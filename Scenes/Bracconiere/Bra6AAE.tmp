@@ -1,0 +1,711 @@
+[gd_scene load_steps=37 format=3 uid="uid://dt3nr74rtmta0"]
+
+[ext_resource type="Texture2D" uid="uid://cglk2ybk31ho7" path="res://Scenes/Bracconiere/bosco-difesa-grande.jpg" id="1_2rr16"]
+[ext_resource type="Script" path="res://Scenes/Bracconiere/CombatScene.gd" id="1_mgdf0"]
+[ext_resource type="Texture2D" uid="uid://qqktdshsew62" path="res://Scenes/Bracconiere/Bracconiere modificato idle2.png" id="2_cd0vm"]
+[ext_resource type="Texture2D" uid="uid://b27edy2sjif2l" path="res://Scenes/menu/GUI/Tiny Wonder UI Free/bars free modifica.png" id="3_5wev6"]
+[ext_resource type="Script" path="res://Scenes/Bracconiere/AnimationStateMachine.gd" id="3_jyap3"]
+[ext_resource type="Script" path="res://Scenes/Bracconiere/Script/StateMachine.gd" id="4_nv2p2"]
+[ext_resource type="Script" path="res://Scenes/Bracconiere/Script/SelectState.gd" id="5_5ekkk"]
+[ext_resource type="Texture2D" uid="uid://2n6queddg0xa" path="res://Scenes/Rettangolo_dialoghi_modifica.png" id="6_fwiqk"]
+[ext_resource type="Theme" uid="uid://beyt1nfrpkx7f" path="res://Scenes/menu/Button_theme.tres" id="6_qa7xb"]
+[ext_resource type="Script" path="res://Scenes/Bracconiere/Script/ParlaState.gd" id="6_u7oi3"]
+[ext_resource type="FontFile" uid="uid://bu8074xritaxh" path="res://Scenes/menu/Fonts/Ravenwood-g5JR.ttf" id="7_bkfag"]
+[ext_resource type="Script" path="res://Scenes/Bracconiere/Script/DifesaState.gd" id="7_y06uv"]
+[ext_resource type="Texture2D" uid="uid://csqjsr1vy0aw6" path="res://Scenes/Bracconiere/bottone frase.png" id="8_8ooj0"]
+[ext_resource type="Script" path="res://Scenes/Bracconiere/PunteggioState.gd" id="8_cl11c"]
+[ext_resource type="Texture2D" uid="uid://chthickflak0n" path="res://Scenes/menu/GUI/Tiny Wonder UI Free/base free.png" id="8_yix80"]
+[ext_resource type="Theme" uid="uid://brb76mu8vmajm" path="res://Scenes/livello_1/ThemesGUI/PauseMenuTheme.tres" id="10_m33li"]
+
+[sub_resource type="Animation" id="Animation_ur7k5"]
+resource_name = "CamminaSX"
+length = 4.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.833333, 1.2, 1.5, 1.8, 2.1, 2.4, 2.7, 3, 3.3, 3.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 9), Vector2i(1, 9), Vector2i(2, 9), Vector2i(2, 9), Vector2i(4, 9), Vector2i(5, 9), Vector2i(6, 9), Vector2i(7, 9), Vector2i(8, 9), Vector2i(9, 9), Vector2i(1, 9), Vector2i(3, 9), Vector2i(0, 7)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6, 1.2, 1.8, 2.4, 3, 3.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(570, 342), Vector2(520, 342), Vector2(470, 342), Vector2(400, 342), Vector2(350, 342), Vector2(300, 342), Vector2(250, 342)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.6, 1.2, 1.8, 2.4, 3, 3.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-20, 0), Vector2(-40, 0), Vector2(-60, 0), Vector2(-80, 0), Vector2(-100, 0), Vector2(-100, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ri3mj"]
+resource_name = "Idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2i(7, 2), Vector2i(8, 2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_s63nj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(7, 2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(524, 342)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_fmfa2"]
+resource_name = "Spara"
+length = 1.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.5, 0.7, 1, 1.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(1, 7), Vector2i(2, 7), Vector2i(3, 7), Vector2i(4, 7), Vector2i(5, 7), Vector2i(5, 7), Vector2i(6, 7)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(250, 342)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-100, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fk7tn"]
+_data = {
+"CamminaSX": SubResource("Animation_ur7k5"),
+"Idle": SubResource("Animation_ri3mj"),
+"RESET": SubResource("Animation_s63nj"),
+"Spara": SubResource("Animation_fmfa2")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ul0im"]
+atlas = ExtResource("3_5wev6")
+region = Rect2(1, 53, 46, 5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mxuo1"]
+atlas = ExtResource("3_5wev6")
+region = Rect2(0, 4, 48, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n0qtr"]
+atlas = ExtResource("3_5wev6")
+region = Rect2(1, 37, 46, 5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_osxed"]
+atlas = ExtResource("8_8ooj0")
+region = Rect2(16, 24, 121, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qw2mj"]
+atlas = ExtResource("8_8ooj0")
+region = Rect2(16, 64, 121, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_maydg"]
+atlas = ExtResource("8_8ooj0")
+region = Rect2(16, 24, 121, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ic14c"]
+atlas = ExtResource("8_8ooj0")
+region = Rect2(16, 64, 121, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m8yko"]
+atlas = ExtResource("8_8ooj0")
+region = Rect2(16, 24, 121, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_15rss"]
+atlas = ExtResource("8_8ooj0")
+region = Rect2(16, 64, 121, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v3km1"]
+atlas = ExtResource("8_yix80")
+region = Rect2(9, 57, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nu4tv"]
+atlas = ExtResource("8_yix80")
+region = Rect2(9, 105, 30, 30)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ouw0d"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 3
+border_color = Color(0.682353, 0.321569, 0.0470588, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_en5b4"]
+atlas = ExtResource("3_5wev6")
+region = Rect2(1, 53, 46, 5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xaepu"]
+atlas = ExtResource("3_5wev6")
+region = Rect2(0, 4, 48, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6j2dx"]
+atlas = ExtResource("3_5wev6")
+region = Rect2(1, 37, 46, 5)
+
+[node name="CombatScene" type="Node2D"]
+script = ExtResource("1_mgdf0")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="Sfondo" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 2.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sfondo2" type="TextureRect" parent="CanvasLayer/Sfondo"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.003
+anchor_bottom = 0.985
+offset_left = 1.0
+offset_right = 0.353882
+offset_bottom = -0.125061
+texture = ExtResource("1_2rr16")
+expand_mode = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Sfondo"]
+z_index = 1
+position = Vector2(524, 342)
+scale = Vector2(4, 4)
+texture = ExtResource("2_cd0vm")
+hframes = 13
+vframes = 21
+frame = 33
+region_rect = Rect2(0, 0, 832, 1360)
+script = ExtResource("3_jyap3")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Sfondo/Sprite2D"]
+libraries = {
+"": SubResource("AnimationLibrary_fk7tn")
+}
+
+[node name="ConvinzioneBracconiere" type="TextureProgressBar" parent="CanvasLayer/Sfondo"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.359
+anchor_top = 0.28
+anchor_right = 0.646
+anchor_bottom = 0.332
+offset_left = -0.238037
+offset_top = -0.160004
+offset_right = -0.436035
+offset_bottom = -0.116013
+grow_horizontal = 2
+grow_vertical = 2
+tooltip_text = "Convinzione del bracconiere"
+value = 100.0
+nine_patch_stretch = true
+texture_under = SubResource("AtlasTexture_ul0im")
+texture_over = SubResource("AtlasTexture_mxuo1")
+texture_progress = SubResource("AtlasTexture_n0qtr")
+
+[node name="Label" type="Label" parent="CanvasLayer/Sfondo/ConvinzioneBracconiere"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.413
+anchor_top = 0.169
+anchor_right = 0.587
+anchor_bottom = 0.831
+offset_left = -0.113007
+offset_top = 0.0289993
+offset_right = 0.112991
+offset_bottom = -0.0290031
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("7_bkfag")
+theme_override_font_sizes/font_size = 30
+text = "100%"
+
+[node name="SelectUI" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchor_right = 1.011
+anchor_bottom = 1.003
+offset_left = 2.0
+offset_right = 2.328
+offset_bottom = 0.0559692
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Bottom" type="TextureRect" parent="CanvasLayer/SelectUI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.692
+anchor_right = 0.989
+anchor_bottom = 1.0
+offset_top = 0.199982
+offset_right = -0.185059
+offset_bottom = -3.0
+texture = ExtResource("6_fwiqk")
+expand_mode = 1
+
+[node name="Istruzioni" type="Label" parent="CanvasLayer/SelectUI/Bottom"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.03
+anchor_top = 0.431
+anchor_right = 0.378
+anchor_bottom = 0.848
+offset_left = 5.44
+offset_top = 0.0929947
+offset_right = 4.54398
+offset_bottom = -1.056
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_bkfag")
+theme_override_font_sizes/font_size = 24
+text = "Cerca di convincere il bracconiere"
+
+[node name="ActionButtons" type="HBoxContainer" parent="CanvasLayer/SelectUI/Bottom"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.425
+anchor_top = 0.178
+anchor_right = 0.95
+anchor_bottom = 0.873
+offset_left = 0.399933
+offset_top = -0.0660019
+offset_right = 1.59998
+offset_bottom = -8.981
+
+[node name="SpeakButton" type="Button" parent="CanvasLayer/SelectUI/Bottom/ActionButtons"]
+layout_mode = 2
+size_flags_horizontal = 3
+tooltip_text = "Usa PARLA per convincere il bracconiere!"
+theme = ExtResource("6_qa7xb")
+theme_override_fonts/font = ExtResource("7_bkfag")
+theme_override_font_sizes/font_size = 70
+text = "PARLA"
+expand_icon = true
+
+[node name="VSeparator" type="VSeparator" parent="CanvasLayer/SelectUI/Bottom/ActionButtons"]
+layout_mode = 2
+
+[node name="FugaButton" type="Button" parent="CanvasLayer/SelectUI/Bottom/ActionButtons"]
+layout_mode = 2
+size_flags_horizontal = 3
+tooltip_text = "Usa FUGA per tornare alla mappa"
+theme = ExtResource("6_qa7xb")
+theme_override_fonts/font = ExtResource("7_bkfag")
+theme_override_font_sizes/font_size = 70
+text = "FUGA"
+
+[node name="ParlaUI" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchor_right = 1.015
+anchor_bottom = 1.0
+offset_right = -0.280151
+offset_bottom = -2.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Bottom" type="TextureRect" parent="CanvasLayer/ParlaUI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.697
+anchor_right = 0.985
+anchor_bottom = 1.0
+offset_top = -0.262024
+offset_right = 0.535034
+offset_bottom = 1.0
+texture = ExtResource("6_fwiqk")
+expand_mode = 1
+
+[node name="Frasi" type="VBoxContainer" parent="CanvasLayer/ParlaUI/Bottom"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.006
+anchor_top = 0.025
+anchor_right = 0.825
+anchor_bottom = 0.959
+offset_left = 22.088
+offset_top = 20.075
+offset_right = 21.6
+offset_bottom = -17.923
+
+[node name="Button1" type="TextureButton" parent="CanvasLayer/ParlaUI/Bottom/Frasi"]
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = SubResource("AtlasTexture_osxed")
+texture_hover = SubResource("AtlasTexture_qw2mj")
+stretch_mode = 0
+
+[node name="Label1" type="Label" parent="CanvasLayer/ParlaUI/Bottom/Frasi/Button1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -0.5
+offset_top = -18.0
+offset_right = 0.5
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("7_bkfag")
+theme_override_font_sizes/font_size = 27
+
+[node name="Button2" type="TextureButton" parent="CanvasLayer/ParlaUI/Bottom/Frasi"]
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = SubResource("AtlasTexture_maydg")
+texture_hover = SubResource("AtlasTexture_ic14c")
+stretch_mode = 0
+
+[node name="Label2" type="Label" parent="CanvasLayer/ParlaUI/Bottom/Frasi/Button2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -0.5
+offset_top = -18.0
+offset_right = 0.5
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("7_bkfag")
+theme_override_font_sizes/font_size = 27
+
+[node name="Button3" type="TextureButton" parent="CanvasLayer/ParlaUI/Bottom/Frasi"]
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = SubResource("AtlasTexture_m8yko")
+texture_hover = SubResource("AtlasTexture_15rss")
+stretch_mode = 0
+
+[node name="Label3" type="Label" parent="CanvasLayer/ParlaUI/Bottom/Frasi/Button3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -0.5
+offset_top = -18.0
+offset_right = 0.5
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("7_bkfag")
+theme_override_font_sizes/font_size = 27
+
+[node name="Indietro" type="VBoxContainer" parent="CanvasLayer/ParlaUI/Bottom"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.849
+anchor_top = 0.127
+anchor_right = 0.977
+anchor_bottom = 0.873
+offset_left = -0.0480347
+offset_top = -0.019001
+offset_right = -0.504028
+offset_bottom = 0.0189972
+
+[node name="BackButton" type="TextureButton" parent="CanvasLayer/ParlaUI/Bottom/Indietro"]
+layout_mode = 2
+size_flags_vertical = 3
+tooltip_text = "Torna indietro"
+texture_normal = SubResource("AtlasTexture_v3km1")
+texture_hover = SubResource("AtlasTexture_nu4tv")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="CanvasLayer/ParlaUI/Bottom/Indietro/BackButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -18.0
+offset_right = 60.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("7_bkfag")
+theme_override_font_sizes/font_size = 27
+text = "INDIETRO"
+
+[node name="DifesaUI" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchor_right = 1.009
+anchor_bottom = 0.995
+offset_right = -0.368042
+offset_bottom = 0.239929
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Bottom" type="TextureRect" parent="CanvasLayer/DifesaUI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.698
+anchor_right = 1.0
+anchor_bottom = 1.003
+offset_top = -0.209961
+offset_right = -9.99988
+offset_bottom = 0.0650635
+texture = ExtResource("6_fwiqk")
+expand_mode = 1
+
+[node name="Istruzioni" type="TextEdit" parent="CanvasLayer/DifesaUI/Bottom"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.031
+anchor_top = 0.437
+anchor_right = 0.378
+anchor_bottom = 0.853
+offset_left = 0.287998
+offset_top = 0.910995
+offset_right = 0.544006
+offset_bottom = -0.0409698
+text = "Schiva le frecce usando i tasti freccia"
+editable = false
+
+[node name="SfondoMinigioco" type="TextureRect" parent="CanvasLayer/DifesaUI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.398
+anchor_top = -0.019
+anchor_right = 0.958
+anchor_bottom = 0.989
+offset_left = 0.524017
+offset_top = 0.255
+offset_right = -0.195923
+offset_bottom = 0.0950317
+texture = ExtResource("6_fwiqk")
+
+[node name="PunteggioUI" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchor_right = 1.003
+anchor_bottom = 1.0
+offset_right = 0.543945
+offset_bottom = -3.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="CanvasLayer/PunteggioUI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.039
+anchor_top = 0.07
+anchor_right = 0.956
+anchor_bottom = 0.946
+offset_left = -0.0839996
+offset_top = -0.150002
+offset_right = -0.135986
+offset_bottom = -0.170044
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("10_m33li")
+theme_override_colors/font_color = Color(0.666667, 0.27451, 0.0509804, 1)
+theme_override_fonts/font = ExtResource("7_bkfag")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_ouw0d")
+text = "Totale punteggio: "
+horizontal_alignment = 1
+
+[node name="punti" type="Label" parent="CanvasLayer/PunteggioUI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.363
+anchor_top = 0.326
+anchor_right = 0.617
+anchor_bottom = 0.5
+offset_left = 0.371979
+offset_top = -0.270004
+offset_right = -7.25208
+offset_bottom = 2.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.666667, 0.27451, 0.0509804, 1)
+theme_override_fonts/font = ExtResource("7_bkfag")
+theme_override_font_sizes/font_size = 60
+text = "300"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="CanvasLayer/PunteggioUI"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.369
+anchor_top = 0.682
+anchor_right = 0.612
+anchor_bottom = 0.853
+offset_left = 0.435974
+offset_top = 0.109985
+offset_right = -0.472046
+offset_bottom = -0.185059
+theme = ExtResource("10_m33li")
+theme_override_font_sizes/font_size = 25
+text = "TORNA ALLA MAPPA
+"
+icon_alignment = 1
+
+[node name="PlayerBar" type="TextureProgressBar" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.091
+anchor_top = 0.747
+anchor_right = 0.378
+anchor_bottom = 0.799
+offset_left = -1.48
+offset_top = 2.16003
+offset_right = -1.104
+offset_bottom = 2.46405
+size_flags_horizontal = 3
+size_flags_vertical = 3
+value = 100.0
+nine_patch_stretch = true
+texture_under = SubResource("AtlasTexture_en5b4")
+texture_over = SubResource("AtlasTexture_xaepu")
+texture_progress = SubResource("AtlasTexture_6j2dx")
+
+[node name="Label" type="Label" parent="CanvasLayer/PlayerBar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.417
+anchor_right = 0.538
+anchor_bottom = 0.929
+offset_left = 0.138992
+offset_top = 2.0
+offset_right = -0.154022
+offset_bottom = -1.012
+theme_override_fonts/font = ExtResource("7_bkfag")
+theme_override_font_sizes/font_size = 20
+text = "100%"
+
+[node name="Label2" type="Label" parent="CanvasLayer/PlayerBar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.156
+anchor_top = -0.214
+anchor_right = -0.045
+anchor_bottom = 1.0
+offset_left = -0.364002
+offset_top = 9.27601
+offset_right = -0.105001
+offset_bottom = 4.99986
+theme = ExtResource("6_qa7xb")
+theme_type_variation = &"HeaderLarge"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "TU"
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("4_nv2p2")
+
+[node name="SelectState" type="Node" parent="StateMachine"]
+script = ExtResource("5_5ekkk")
+
+[node name="ParlaState" type="Node" parent="StateMachine"]
+script = ExtResource("6_u7oi3")
+
+[node name="DifesaState" type="Node" parent="StateMachine"]
+script = ExtResource("7_y06uv")
+
+[node name="PunteggioState" type="Node" parent="StateMachine"]
+script = ExtResource("8_cl11c")
