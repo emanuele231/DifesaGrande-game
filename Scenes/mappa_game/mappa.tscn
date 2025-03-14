@@ -26768,7 +26768,6 @@ shape = SubResource("RectangleShape2D_dcwka")
 
 [node name="Area2D" type="Area2D" parent="Bracconiere"]
 script = ExtResource("55_4aewl")
-scena_target = "C:/Users/marti/Documents/GitHub/DifesaGrande-game/Scenes/Bracconiere/Bracconiere.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bracconiere/Area2D"]
 position = Vector2(18.9741, 21.1962)

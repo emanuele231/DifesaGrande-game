@@ -18,7 +18,6 @@ func enter():
 
 func exit():
 	mappaButton.pressed.disconnect(_on_mappa_pressed)
-	#get_parent().transition_to("FinalState")
 
 func _on_mappa_pressed():
 	print("Caricamento scena mappa...") 

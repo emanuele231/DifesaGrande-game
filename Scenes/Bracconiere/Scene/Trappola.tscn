@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://bosnim4okb7xo"]
 
 [ext_resource type="Script" path="res://Scenes/Bracconiere/Script/trappola.gd" id="1_5mi04"]
-[ext_resource type="Texture2D" uid="uid://cihr3js0qc4dl" path="res://Scenes/Bracconiere/Scene/Bear_Trap.png" id="2_wxwnv"]
+[ext_resource type="Texture2D" uid="uid://cihr3js0qc4dl" path="res://Scenes/Bracconiere/Asset/Traps/Bear_Trap.png" id="2_wxwnv"]
 
 [sub_resource type="Animation" id="Animation_ojo23"]
 length = 0.001
