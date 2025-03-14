@@ -15,6 +15,7 @@ var istruzioni_mostrate : bool = true  # Impedisce di iniziare il gioco finché 
 @onready var spawner = $SpawnerTrappole
 @onready var turnoLabel = $Turno
 @onready var istruzioniLabel = $Istruzioni  
+@onready var audioPlayer = get_node("SpawnerTrappole/AudioStreamPlayer")
 
 func _ready():
 	print("Minigioco trappole inizializzato")
@@ -26,7 +27,7 @@ func _ready():
 	timer_turno.one_shot = true
 	timer_turno.timeout.connect(_on_turno_scaduto)
 
-	# Mostra le istruzioni per 2 secondi, poi le nasconde e avvia il minigioco
+	# Mostra le istruzioni per 2 secondi, poi avvia il minigioco
 	var timer_istruzioni = Timer.new()
 	add_child(timer_istruzioni)
 	timer_istruzioni.wait_time = 2.0
@@ -40,13 +41,13 @@ func _nascondi_istruzioni():
 	inizia_turno()
 
 func inizia_turno():
-	if istruzioni_mostrate:
-		return  # Non iniziare se le istruzioni sono ancora visibili
 
 	if turno_corrente >= numero_turni:
 		fine_minigioco()
 		return
-	
+		
+	audioPlayer.stream = load("res://Scenes/Bracconiere/Sound Effects/happy-pop-1-185286.mp3")
+	audioPlayer.play()
 	turno_corrente += 1
 	turnoLabel.text = "Turno: " + str(turno_corrente) + "/" + str(numero_turni)
 	print("Turno:", turno_corrente)
@@ -70,6 +71,8 @@ func rimuovi_trappola():
 
 func _on_turno_scaduto():
 	if trappole_rimanenti > 0:
+		audioPlayer.stream = load("res://Scenes/Bracconiere/Sound Effects/classic-game-action-negative-19-224578.mp3")
+		audioPlayer.play()
 		emit_signal("vita_ridotta", danno_per_trappola * trappole_rimanenti)
 
 	# Rimuove le trappole rimaste prima del prossimo turno
