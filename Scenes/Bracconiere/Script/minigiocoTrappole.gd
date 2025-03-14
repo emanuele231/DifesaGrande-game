@@ -5,7 +5,7 @@ signal minigioco_terminato(successo)
 
 @export var durata_turno : float = 5.0
 @export var numero_turni : int = 3
-@export var danno_per_turno : int = 10
+@export var danno_per_trappola : int = 10
 
 var turno_corrente : int = 0
 var trappole_rimanenti : int = 0
@@ -52,8 +52,7 @@ func rimuovi_trappola():
 
 func _on_turno_scaduto():
 	if trappole_rimanenti > 0:
-		print("Turno fallito, il giocatore subisce danno:", danno_per_turno)
-		emit_signal("vita_ridotta", danno_per_turno)
+		emit_signal("vita_ridotta", danno_per_trappola * trappole_rimanenti)
 
 	# Rimuove le trappole rimaste prima del prossimo turno
 	spawner.rimuovi_tutte_trappole()

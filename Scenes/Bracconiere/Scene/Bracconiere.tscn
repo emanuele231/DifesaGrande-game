@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://dt3nr74rtmta0"]
+[gd_scene load_steps=41 format=3 uid="uid://dt3nr74rtmta0"]
 
 [ext_resource type="Texture2D" uid="uid://db4v2ngq0rp72" path="res://Scenes/Bracconiere/Asset/Sfondo.png" id="1_ypatd"]
 [ext_resource type="Texture2D" uid="uid://qqktdshsew62" path="res://Scenes/Bracconiere/Asset/Bracconiere modificato idle2.png" id="2_ijshl"]
@@ -165,10 +165,28 @@ tracks/2/keys = {
 "values": [Vector2(-100, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_lecki"]
+resource_name = "PiazzaTrappole"
+length = 1.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.233333, 0.5, 0.766667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(7, 15), Vector2i(8, 15), Vector2i(9, 15), Vector2i(11, 15)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fk7tn"]
 _data = {
 "CamminaSX": SubResource("Animation_ur7k5"),
 "Idle": SubResource("Animation_ri3mj"),
+"PiazzaTrappole": SubResource("Animation_lecki"),
 "RESET": SubResource("Animation_s63nj"),
 "Spara": SubResource("Animation_fmfa2")
 }
@@ -205,6 +223,14 @@ region = Rect2(9, 57, 30, 30)
 atlas = ExtResource("8_1k7k6")
 region = Rect2(9, 105, 30, 30)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ouw0d"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 3
+border_color = Color(0.682353, 0.321569, 0.0470588, 1)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_ul0im"]
 atlas = ExtResource("9_qhpy0")
 region = Rect2(1, 53, 46, 5)
@@ -240,14 +266,6 @@ region = Rect2(0, 4, 48, 7)
 [sub_resource type="AtlasTexture" id="AtlasTexture_6j2dx"]
 atlas = ExtResource("9_qhpy0")
 region = Rect2(1, 37, 46, 5)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ouw0d"]
-bg_color = Color(1, 1, 1, 1)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 3
-border_color = Color(0.682353, 0.321569, 0.0470588, 1)
 
 [node name="CombatScene" type="Node2D"]
 
@@ -293,6 +311,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 2
 
 [node name="SelectUI" type="Control" parent="UI"]
 visible = false
@@ -525,6 +544,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+mouse_filter = 2
 
 [node name="Bottom" type="TextureRect" parent="UI/DifesaUI"]
 layout_mode = 1
@@ -564,6 +584,76 @@ offset_top = 0.255
 offset_right = -0.195923
 offset_bottom = 0.0950317
 texture = ExtResource("4_h0fxt")
+
+[node name="PunteggioUI" type="Control" parent="UI"]
+visible = false
+layout_mode = 1
+anchor_right = 48.4
+anchor_bottom = 27.2
+offset_right = -16.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="UI/PunteggioUI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.039
+anchor_top = 0.07
+anchor_right = 0.956
+anchor_bottom = 0.946
+offset_left = -0.0839996
+offset_top = -0.150002
+offset_right = -0.135986
+offset_bottom = -0.170044
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("11_08bgf")
+theme_override_colors/font_color = Color(0.666667, 0.27451, 0.0509804, 1)
+theme_override_fonts/font = ExtResource("5_n824a")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_ouw0d")
+text = "Totale punteggio: "
+horizontal_alignment = 1
+
+[node name="punti" type="Label" parent="UI/PunteggioUI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.363
+anchor_top = 0.326
+anchor_right = 0.617
+anchor_bottom = 0.5
+offset_left = 0.371979
+offset_top = -0.270004
+offset_right = -7.25208
+offset_bottom = 2.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.666667, 0.27451, 0.0509804, 1)
+theme_override_fonts/font = ExtResource("5_n824a")
+theme_override_font_sizes/font_size = 60
+text = "300"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="UI/PunteggioUI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.369
+anchor_top = 0.682
+anchor_right = 0.612
+anchor_bottom = 0.853
+offset_left = 0.435974
+offset_top = 0.109985
+offset_right = -0.472046
+offset_bottom = -0.185059
+theme = ExtResource("11_08bgf")
+theme_override_font_sizes/font_size = 25
+text = "TORNA ALLA MAPPA
+"
+icon_alignment = 1
 
 [node name="ConvinzioneBracconiere" type="TextureProgressBar" parent="UI"]
 layout_mode = 1
@@ -710,76 +800,6 @@ theme = ExtResource("6_7kf2t")
 theme_type_variation = &"HeaderLarge"
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "TU"
-
-[node name="PunteggioUI" type="Control" parent="UI"]
-visible = false
-layout_mode = 1
-anchor_right = 48.4
-anchor_bottom = 27.2
-offset_right = -16.0
-offset_bottom = -8.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Label" type="Label" parent="UI/PunteggioUI"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.039
-anchor_top = 0.07
-anchor_right = 0.956
-anchor_bottom = 0.946
-offset_left = -0.0839996
-offset_top = -0.150002
-offset_right = -0.135986
-offset_bottom = -0.170044
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("11_08bgf")
-theme_override_colors/font_color = Color(0.666667, 0.27451, 0.0509804, 1)
-theme_override_fonts/font = ExtResource("5_n824a")
-theme_override_font_sizes/font_size = 35
-theme_override_styles/normal = SubResource("StyleBoxFlat_ouw0d")
-text = "Totale punteggio: "
-horizontal_alignment = 1
-
-[node name="punti" type="Label" parent="UI/PunteggioUI"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.363
-anchor_top = 0.326
-anchor_right = 0.617
-anchor_bottom = 0.5
-offset_left = 0.371979
-offset_top = -0.270004
-offset_right = -7.25208
-offset_bottom = 2.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.666667, 0.27451, 0.0509804, 1)
-theme_override_fonts/font = ExtResource("5_n824a")
-theme_override_font_sizes/font_size = 60
-text = "300"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Button" type="Button" parent="UI/PunteggioUI"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.369
-anchor_top = 0.682
-anchor_right = 0.612
-anchor_bottom = 0.853
-offset_left = 0.435974
-offset_top = 0.109985
-offset_right = -0.472046
-offset_bottom = -0.185059
-theme = ExtResource("11_08bgf")
-theme_override_font_sizes/font_size = 25
-text = "TORNA ALLA MAPPA
-"
-icon_alignment = 1
 
 [node name="FiniteStateMachine" type="Node" parent="."]
 script = ExtResource("12_2bj0j")

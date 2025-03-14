@@ -6,10 +6,11 @@ extends State
 @onready var sfondoMinigioco = get_parent().get_parent().get_node("UI/DifesaUI/SfondoMinigioco")
 @onready var animationPlayer = get_parent().get_parent().get_node("Sprite2D/AnimationPlayer")
 @onready var playerBarLabel = get_parent().get_parent().get_node("UI/PlayerBar/Label")
-@onready var audioPlayer = get_parent().get_parent().get_node("Effetti")  # Aggiunto per il suono
+@onready var audioPlayer = get_parent().get_parent().get_node("Effetti")
 
 var minigioco_instance = null
-const MINIGIOCO_PATH = "res://Scenes/Bracconiere/Scene/minigiocoFrecce.tscn"
+const MINIGIOCOFRECCE_PATH = "res://Scenes/Bracconiere/Scene/minigiocoFrecce.tscn"
+const MINIGIOCOTRAPPOLE_PATH = "res://Scenes/Bracconiere/Scene/minigiocoTrappole.tscn"
 
 var instance_x = 30
 var instance_y = 60
@@ -27,18 +28,30 @@ func enter():
 	avvia_minigioco()
 
 func precarica_minigioco():
-	var minigioco_scene = load(MINIGIOCO_PATH)
+
+	var minigioco_scene
+	var animazione_bracconiere
+	
+	if randi() % 2 == 0:
+		minigioco_scene = load(MINIGIOCOFRECCE_PATH)
+		animazione_bracconiere = "Spara"
+	else:
+		minigioco_scene = load(MINIGIOCOTRAPPOLE_PATH)
+		animazione_bracconiere = "PiazzaTrappole"
+
 	if minigioco_scene:
 		minigioco_instance = minigioco_scene.instantiate()
 		sfondoMinigioco.add_child(minigioco_instance)
 		
-		minigioco_instance.position = Vector2(instance_x,instance_y)
-		minigioco_instance.scale = minigioco_instance.scale * 1.55
-		#_on_window_resized()
+		minigioco_instance.position = Vector2(instance_x, instance_y)
+		minigioco_instance.scale *= 1.55
 
-		minigioco_instance.visible = false 
+		minigioco_instance.visible = false  
 		minigioco_instance.vita_ridotta.connect(_on_vita_ridotta)
 		minigioco_instance.minigioco_terminato.connect(_on_minigioco_terminato)
+
+		# Assegna l'animazione corrispondente
+		animationPlayer.play(animazione_bracconiere)
 	else:
 		push_error("Errore: impossibile caricare il minigioco!")
 		_on_minigioco_terminato(false)  
@@ -46,10 +59,8 @@ func precarica_minigioco():
 func avvia_minigioco():
 	if minigioco_instance:
 		minigioco_instance.visible = true  
-		animationPlayer.play("Spara")  
 	else:
 		push_error("Errore: Minigioco non precaricato!")
-
 
 func _on_vita_ridotta(danno):
 	PunteggioBracconiere.rimuovi_punti(danno)
@@ -60,8 +71,8 @@ func _on_vita_ridotta(danno):
 	await get_tree().create_timer(0.05).timeout
 	
 	if playerBar.value <= 0:
-		audioPlayer.stream = load("res://Scenes/Bracconiere/Sound Effects/game-over-39-199830.mp3")  # Carica il suono
-		audioPlayer.play()  # Riproduce il suono di game over
+		audioPlayer.stream = load("res://Scenes/Bracconiere/Sound Effects/game-over-39-199830.mp3")
+		audioPlayer.play()  
 		termina_minigioco()
 		playerBar.visible = false
 		bracconiereBar.visible = false
