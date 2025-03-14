@@ -138,7 +138,7 @@ func _on_frase_pressed(danno: int, gruppo: String):
 		audioPlayer.play()
 	
 	await animate_bracconiere_bar(danno)
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(0.7).timeout
 
 	if bracconiereBar.value <= 0:
 		sound_path = "res://Scenes/Bracconiere/Sound Effects/cute-level-up-3-189853.mp3"
