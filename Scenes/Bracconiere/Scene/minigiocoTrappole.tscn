@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bs8kostg7koqp"]
+[gd_scene load_steps=6 format=3 uid="uid://bs8kostg7koqp"]
 
 [ext_resource type="Script" path="res://Scenes/Bracconiere/Script/minigiocoTrappole.gd" id="1_xk15e"]
 [ext_resource type="Texture2D" uid="uid://dirvqll5eaxxv" path="res://Scenes/Bracconiere/Asset/Sfondo minigioco frecce.png" id="2_23l5f"]
 [ext_resource type="Script" path="res://Scenes/Bracconiere/Script/spawnerTrappole.gd" id="3_771lb"]
 [ext_resource type="PackedScene" uid="uid://bosnim4okb7xo" path="res://Scenes/Bracconiere/Scene/Trappola.tscn" id="4_i58mt"]
+[ext_resource type="FontFile" uid="uid://bu8074xritaxh" path="res://Scenes/menu/Fonts/Ravenwood-g5JR.ttf" id="5_cn4va"]
 
 [node name="MinigiocoTrappole" type="Node2D"]
 script = ExtResource("1_xk15e")
@@ -20,7 +21,6 @@ texture = ExtResource("2_23l5f")
 expand_mode = 2
 
 [node name="SpawnerTrappole" type="Node2D" parent="."]
-position = Vector2(-175, 267)
 script = ExtResource("3_771lb")
 scena_trappola = ExtResource("4_i58mt")
 
@@ -30,3 +30,13 @@ scena_trappola = ExtResource("4_i58mt")
 volume_db = -1.868
 
 [node name="TimerMinigioco" type="Timer" parent="."]
+
+[node name="Turno" type="Label" parent="."]
+anchors_preset = -1
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 136.0
+offset_bottom = 38.0
+theme_override_fonts/font = ExtResource("5_cn4va")
+theme_override_font_sizes/font_size = 30
+text = "Turno:"

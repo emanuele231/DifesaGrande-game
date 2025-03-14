@@ -4,9 +4,8 @@ extends Node2D
 
 var trappole_attive = []
 var pattern_trappole = [
-	[Vector2(100, 100), Vector2(200, 50), Vector2(300, 100), Vector2(250, 200), Vector2(150, 200)],  # Pentagono
-	[Vector2(150, 150), Vector2(300, 150), Vector2(300, 300), Vector2(150, 300)],  # Quadrato
-	[Vector2(100, 100), Vector2(250, 50), Vector2(400, 100), Vector2(350, 250), Vector2(150, 250), Vector2(50, 200)]  # Esagono
+	[Vector2(112, 112), Vector2(540, 112), Vector2(540,510), Vector2(112, 510), Vector2(322, 260)],  
+	[Vector2(330, 300), Vector2(112,300), Vector2(540, 112), Vector2(330,112), Vector2(540, 510)], 
 ]
 
 func genera_trappole():

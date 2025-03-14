@@ -12,6 +12,7 @@ var trappole_rimanenti : int = 0
 var timer_turno : Timer
 
 @onready var spawner = $SpawnerTrappole
+@onready var turnoLabel = $Turno
 
 func _ready():
 	print("Minigioco trappole inizializzato")
@@ -29,6 +30,7 @@ func inizia_turno():
 		return
 	
 	turno_corrente += 1
+	turnoLabel.text = "Turno: " + str(turno_corrente) + "/3"
 	print("Turno:", turno_corrente)
 
 	spawner.genera_trappole()
