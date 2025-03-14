@@ -26751,7 +26751,7 @@ shape = SubResource("CircleShape2D_an6ix")
 debug_color = Color(0.968627, 0.0862745, 0.388235, 0.419608)
 
 [node name="Bracconiere" type="CharacterBody2D" parent="."]
-position = Vector2(-368.474, 177.804)
+position = Vector2(140.526, -229.196)
 
 [node name="Sprite2D" type="Sprite2D" parent="Bracconiere"]
 scale = Vector2(0.588, 0.588)
