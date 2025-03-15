@@ -11,8 +11,6 @@ extends Control
 @onready var fraseBase = $FraseBase
 @onready var frase5Stelle = $Frase5Stelle
 
-# Varie costanti
-var vittorie_prima_stella = 10
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -20,8 +18,8 @@ func _ready() -> void:
 
 # Inizializza le stelle in base alle vittorie
 func init_stelle():
-	var totaleVittorie = SingletonStats.get_numero_vittorie(0) + SingletonStats.get_numero_vittorie(1) + SingletonStats.get_numero_vittorie(2) + SingletonStats.get_numero_vittorie(3)
-	if totaleVittorie >= vittorie_prima_stella:
+	
+	if SingletonStats.tutti_minigiochi_completati() == true:
 		stelleVuote.visible = false
 		unaStella.visible = true
 	# Continuare per le altre stelle e il cambio di frase alle 5 stelle

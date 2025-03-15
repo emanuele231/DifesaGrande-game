@@ -11,7 +11,11 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	verifica_obiettivo1()
-	pass
+	verifica_obiettivo2()
+	verifica_obiettivo3()
+	verifica_obiettivo4()
+	verifica_obiettivo5()
+	verifica_obiettivo6()
 
 #Completa ogni minigoco almeno una volta
 func verifica_obiettivo1() -> void:
@@ -39,9 +43,15 @@ func verifica_obiettivo4() -> void:
 		print("medaglia 4")
 		
 
-#Raggiungi il punteggio massimo nel minigioco del bracconiere
+#sblocca una stella di grado di protezione del bosco
 func verifica_obiettivo5() -> void:
-	if SingletonStats.get_punteggio(2) == 100:
+	if SingletonStats.tutti_minigiochi_completati() == true:
 		medaglia5.visible = true
 		print("medaglia 5")
+
+#Raggiungi il punteggio massimo nel minigioco del bracconiere
+func verifica_obiettivo6() -> void:
+	if SingletonStats.get_punteggio(2) == 100:
+		medaglia6.visible = true
+		print("medaglia 6")
 	
