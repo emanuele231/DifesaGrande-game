@@ -25,20 +25,20 @@ func verifica_obiettivo1() -> void:
 
 #Completa 3 volte minigioco rifiuti
 func verifica_obiettivo2() -> void:
-	if SingletonStats.get_numero_vittorie(0) > 3:
+	if SingletonStats.get_numero_vittorie(0) >= 3:
 		medaglia2.visible = true
 		print("medaglia 2")
 	
 #Completa 3 volte minigioco bracconiere
 func verifica_obiettivo3() -> void:
-	if SingletonStats.get_numero_vittorie(2) > 3:
+	if SingletonStats.get_numero_vittorie(2) >= 3:
 		medaglia3.visible = true
 		print("medaglia 3")
 		
 
 #Completa 3 volte minigioco vandalo
 func verifica_obiettivo4() -> void:
-	if SingletonStats.get_numero_vittorie(1) > 3:
+	if SingletonStats.get_numero_vittorie(1) >= 3:
 		medaglia4.visible = true
 		print("medaglia 4")
 		
