@@ -69,7 +69,7 @@ func punteggio_finale():
 		
 	# Per gli achievement
 	SingletonStats.set_punteggio(somma_punti,0)
-	
+	SingletonStats.set_vittoria(0)
 	
 
 

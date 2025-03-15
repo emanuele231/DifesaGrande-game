@@ -30,3 +30,4 @@ func update_timer():
 	$"../punteggio/punti".text = str(time_left)
 	#per gli achievement
 	SingletonStats.set_punteggio(time_left,1)
+	SingletonStats.set_vittoria(1)

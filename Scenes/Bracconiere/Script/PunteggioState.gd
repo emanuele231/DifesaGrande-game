@@ -14,6 +14,7 @@ func enter():
 	punteggio_label.text = str(PunteggioBracconiere.punteggio)
 	#per gli achievement
 	SingletonStats.set_punteggio(PunteggioBracconiere.punteggio,2)
+	SingletonStats.set_vittoria(2)
 	mappaButton.visible = true
 	if not mappaButton.pressed.is_connected(_on_mappa_pressed):
 		mappaButton.pressed.connect(_on_mappa_pressed)
