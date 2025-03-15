@@ -6,6 +6,7 @@ var current_state: Node = null
 
 func _ready():
 	# Imposta lo stato iniziale
+	PunteggioBracconiere.reset_punteggio()
 	change_state($SelectState)
 
 func change_state(new_state: Node):

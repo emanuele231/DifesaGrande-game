@@ -1,13 +1,13 @@
 [gd_scene load_steps=12 format=3 uid="uid://defgwmp6sk7tl"]
 
-[ext_resource type="Script" path="res://Scenes/menu.gd" id="1_rhonm"]
-[ext_resource type="Script" path="res://Scenes/menu/TextureRect.gd" id="2_hmbh3"]
-[ext_resource type="FontFile" uid="uid://c4klt508djmoq" path="res://burnstown-dam/burnstown dam.otf" id="3_t827k"]
+[ext_resource type="Script" path="res://Scenes/menu.gd" id="1_fgyd5"]
+[ext_resource type="Script" path="res://Scenes/menu/TextureRect.gd" id="2_j7e4f"]
+[ext_resource type="FontFile" uid="uid://c4klt508djmoq" path="res://burnstown-dam/burnstown dam.otf" id="3_yf4ws"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_rk0s6"]
 resource_local_to_scene = true
 line_spacing = 50.0
-font = ExtResource("3_t827k")
+font = ExtResource("3_yf4ws")
 font_size = 120
 font_color = Color(0.868778, 0.537436, 0.0782634, 1)
 outline_size = 15
@@ -37,7 +37,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_rhonm")
+script = ExtResource("1_fgyd5")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
@@ -46,7 +46,7 @@ offset_top = 1.0
 offset_right = 1153.0
 offset_bottom = 646.0
 expand_mode = 2
-script = ExtResource("2_hmbh3")
+script = ExtResource("2_j7e4f")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0
@@ -73,11 +73,11 @@ horizontal_alignment = 1
 layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+auto_translate_mode = 2
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 8
 size_flags_stretch_ratio = 0.0
-auto_translate = false
 localize_numeral_system = false
 
 [node name="Start" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]

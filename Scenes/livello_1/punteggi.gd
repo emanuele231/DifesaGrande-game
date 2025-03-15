@@ -67,6 +67,8 @@ func punteggio_finale():
 	
 	$"../pannello punteggio finale/punti".text = str(somma_punti)
 		
+	# Per gli achievement
+	SingletonStats.set_punteggio(somma_punti,0)
 	
 	
 

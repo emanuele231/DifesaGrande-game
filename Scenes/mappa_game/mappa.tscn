@@ -25886,7 +25886,6 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_o0ya8")
 theme_override_styles/normal = SubResource("StyleBoxTexture_05vj1")
 
 [node name="pausa" type="Control" parent="Player_prov/Sprite2D/Camera2D/CanvasLayer"]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -25914,6 +25913,18 @@ scale = Vector2(2, 2)
 theme = ExtResource("12_bprfo")
 theme_override_font_sizes/font_size = 22
 text = "RIPRENDI"
+
+[node name="protezione" type="Button" parent="Player_prov/Sprite2D/Camera2D/CanvasLayer/pausa"]
+layout_mode = 0
+offset_left = 774.0
+offset_top = 330.0
+offset_right = 962.0
+offset_bottom = 387.0
+scale = Vector2(2, 2)
+theme = ExtResource("12_bprfo")
+theme_override_font_sizes/font_size = 22
+text = "PROTEZIONE
+BOSCO"
 
 [node name="back" type="Button" parent="Player_prov/Sprite2D/Camera2D/CanvasLayer/pausa"]
 layout_mode = 1

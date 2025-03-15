@@ -25,6 +25,7 @@ SingletonIndiff="*res://Scenes/livello_1/singletonIndiff.gd"
 PuntiSingleton="*res://Scenes/livello_1/punti_singleton.gd"
 SceneTransition="*res://Scenes/transition.tscn"
 PunteggioBracconiere="*res://Scenes/Bracconiere/Script/punteggio_bracconiere.gd"
+SingletonStats="*res://Scenes/Stats/scripts/singletonStats.gd"
 
 [display]
 

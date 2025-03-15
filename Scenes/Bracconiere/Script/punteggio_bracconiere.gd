@@ -11,7 +11,7 @@ func aggiungi_punti(danno: int):
 func rimuovi_punti(danno: int):
 	punteggio -= danno
 	if punteggio < 0:
-		punteggio = 0
+		reset_punteggio()
 	print("Punteggio attuale:", punteggio)
 
 func reset_punteggio():
