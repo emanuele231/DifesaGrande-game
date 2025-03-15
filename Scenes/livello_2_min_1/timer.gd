@@ -29,4 +29,4 @@ func update_timer():
 	$Label.text = str(time_left)
 	$"../punteggio/punti".text = str(time_left)
 	#per gli achievement
-	SingletonStats.set_punteggio(1,time_left)
+	SingletonStats.set_punteggio(time_left,1)
