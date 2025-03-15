@@ -1,7 +1,9 @@
 extends Control
 
-@onready var back_to_menu = preload("res://Scenes/mappa_game/mappa.tscn") as PackedScene
-
-
 func _on_button_button_down():
-	get_tree().change_scene_to_packed(back_to_menu)
+	var back_to_menu = load("res://Scenes/mappa_game/mappa.tscn") as PackedScene
+	if back_to_menu:
+		SingletonStats.set_vittoria(1)
+		get_tree().change_scene_to_packed(back_to_menu)
+	else:
+		print("Errore: scena non caricata!")
