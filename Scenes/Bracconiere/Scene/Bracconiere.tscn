@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://dt3nr74rtmta0"]
+[gd_scene load_steps=42 format=3 uid="uid://dt3nr74rtmta0"]
 
 [ext_resource type="Texture2D" uid="uid://db4v2ngq0rp72" path="res://Scenes/Bracconiere/Asset/Sfondo.png" id="1_ypatd"]
 [ext_resource type="Texture2D" uid="uid://qqktdshsew62" path="res://Scenes/Bracconiere/Asset/Bracconiere modificato idle2.png" id="2_ijshl"]
@@ -16,6 +16,7 @@
 [ext_resource type="Script" path="res://Scenes/Bracconiere/Script/ParlaState.gd" id="14_thm10"]
 [ext_resource type="Script" path="res://Scenes/Bracconiere/Script/DifesaState.gd" id="15_8txkt"]
 [ext_resource type="Script" path="res://Scenes/Bracconiere/Script/PunteggioState.gd" id="16_uaqpl"]
+[ext_resource type="AudioStream" uid="uid://bgwmnxwpa1qsy" path="res://Scenes/livello_1/MinigameRaccoltaTheme.mp3" id="17_r1vpn"]
 
 [sub_resource type="Animation" id="Animation_ur7k5"]
 resource_name = "CamminaSX"
@@ -806,4 +807,5 @@ script = ExtResource("16_uaqpl")
 [node name="Effetti" type="AudioStreamPlayer" parent="."]
 
 [node name="Sottofondo" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_r1vpn")
 autoplay = true
