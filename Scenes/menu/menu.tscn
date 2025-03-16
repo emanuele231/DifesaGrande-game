@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bcet6ddrgr57d"]
+[gd_scene load_steps=17 format=3 uid="uid://bcet6ddrgr57d"]
 
 [ext_resource type="Script" path="res://Scenes/menu.gd" id="1_inog3"]
 [ext_resource type="Shader" path="res://Scenes/menu/scroll.gdshader" id="2_prxdt"]
@@ -7,6 +7,8 @@
 [ext_resource type="FontFile" uid="uid://bv6cm8cfu7lmm" path="res://Scenes/menu/Fonts/FORESTANA.ttf" id="4_4r65b"]
 [ext_resource type="Theme" uid="uid://beyt1nfrpkx7f" path="res://Scenes/menu/Button_theme.tres" id="4_i84m0"]
 [ext_resource type="AudioStream" uid="uid://dbotrckbbnej1" path="res://Scenes/mappa_game/Mappa Theme.wav" id="7_4u00g"]
+[ext_resource type="Theme" uid="uid://brb76mu8vmajm" path="res://Scenes/livello_1/ThemesGUI/PauseMenuTheme.tres" id="7_hb15n"]
+[ext_resource type="FontFile" uid="uid://bu8074xritaxh" path="res://Scenes/menu/Fonts/Ravenwood-g5JR.ttf" id="8_m7o7q"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8akud"]
 shader = ExtResource("2_prxdt")
@@ -29,6 +31,14 @@ shadow_offset = Vector2(3, 7)
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_265el"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fswab"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btrph"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 3
+border_color = Color(0.682353, 0.321569, 0.0470588, 1)
 
 [node name="menu" type="Node2D"]
 script = ExtResource("1_inog3")
@@ -102,15 +112,84 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_265el")
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_fswab")
 
-[node name="EsciButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="creditsButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("4_i84m0")
+text = "CREDITS"
+
+[node name="HSeparator5" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_fswab")
+
+[node name="HSeparator6" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_fswab")
+
+[node name="HSeparator7" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_fswab")
+
+[node name="HSeparator8" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_fswab")
+
+[node name="EsciButton2" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 texture_filter = 1
 layout_mode = 2
 theme = ExtResource("4_i84m0")
 text = "ESCI"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 24.0
+offset_top = 41.0
+offset_right = 1891.0
+offset_bottom = 940.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 1
+theme = ExtResource("7_hb15n")
+theme_override_colors/font_color = Color(0.666667, 0.27451, 0.0509804, 1)
+theme_override_fonts/font = ExtResource("8_m7o7q")
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxFlat_btrph")
+text = "CREDITS"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="Label"]
+layout_mode = 0
+offset_left = 67.0
+offset_top = 121.0
+offset_right = 1789.0
+offset_bottom = 740.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_m7o7q")
+theme_override_font_sizes/font_size = 65
+text = "Versione 250316
+
+Sviluppato da G.M. Mars Acucella , Andrea Barbaro,
+ Emanuele De Stena , Angela Mileti in collaborazione 
+con il comune di Gravina in Puglia.
+
+"
+
+[node name="Indietro" type="Button" parent="Label"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.421
+anchor_top = 0.836
+anchor_right = 0.561
+anchor_bottom = 0.93
+offset_left = -0.00708008
+offset_top = 0.435974
+offset_right = 0.736938
+offset_bottom = -0.441101
+theme_override_font_sizes/font_size = 50
+text = "INDIETRO"
 
 [node name="Menu theme" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_4u00g")
 autoplay = true
 
 [connection signal="button_down" from="MarginContainer/HBoxContainer/VBoxContainer/GiocaButton" to="." method="_on_start_button_down"]
-[connection signal="button_down" from="MarginContainer/HBoxContainer/VBoxContainer/EsciButton" to="." method="_on_esci_button_down"]
+[connection signal="button_down" from="MarginContainer/HBoxContainer/VBoxContainer/EsciButton2" to="." method="_on_esci_button_down"]
