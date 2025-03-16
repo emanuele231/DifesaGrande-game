@@ -1,6 +1,15 @@
 extends Node2D
 
 # Called when the node enters the scene tree for the first time.
+@onready var bottone_indietro = $Label/Indietro
+@onready var bottoneCredits = $MarginContainer/HBoxContainer/VBoxContainer/creditsButton
+@onready var labelCredits = $Label
+
+
+func _ready() -> void:
+	labelCredits.visible = false
+	bottone_indietro.pressed.connect(gestisci_indietro)
+	bottoneCredits.pressed.connect(gestisci_credits)
 
 func _input(event):
 	if event is InputEventJoypadButton: 
@@ -15,3 +24,10 @@ func _on_start_button_down():
 
 func _on_esci_button_down():
 	get_tree().quit()
+	
+func gestisci_indietro():
+	labelCredits.visible = false
+
+func gestisci_credits():
+	labelCredits.visible = true
+	
