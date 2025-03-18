@@ -1,0 +1,362 @@
+[gd_scene load_steps=23 format=3 uid="uid://b6rqisshlg1cx"]
+
+[ext_resource type="Shader" path="res://Scenes/Cutscene/draw_shader.gdshader" id="1_d0n57"]
+[ext_resource type="Texture2D" uid="uid://dh012sqve0w2c" path="res://Scenes/Cutscene/Artstyle_cutscene/cut_1.png" id="1_m7qd6"]
+[ext_resource type="Script" path="res://Scenes/Cutscene/draw_cutscene.gd" id="1_wr4yk"]
+[ext_resource type="Texture2D" uid="uid://trip1j56wkml" path="res://Scenes/Cutscene/Artstyle_cutscene/box cutscene long.png" id="2_exk3w"]
+[ext_resource type="Texture2D" uid="uid://1e0n50vjygrd" path="res://Scenes/Cutscene/Artstyle_cutscene/cut_2.png" id="2_lq7ox"]
+[ext_resource type="Texture2D" uid="uid://bfjwx6q5uacl2" path="res://Scenes/Cutscene/Artstyle_cutscene/fogliolinaa2_scaled_63x_pngcrushed.png" id="2_rm2su"]
+[ext_resource type="Texture2D" uid="uid://djkp40p6xrcal" path="res://Scenes/Cutscene/Artstyle_cutscene/cut_3.png" id="3_4qe08"]
+[ext_resource type="Script" path="res://Scenes/Cutscene/bordo_brillante.gd" id="3_h5ghf"]
+[ext_resource type="FontFile" uid="uid://bu8074xritaxh" path="res://Scenes/menu/Fonts/Ravenwood-g5JR.ttf" id="3_k1x5w"]
+[ext_resource type="Texture2D" uid="uid://cargyemb8stbl" path="res://Scenes/Cutscene/Artstyle_cutscene/freccia_normale_scaled_31x_pngcrushed.png" id="4_1tqs3"]
+[ext_resource type="Texture2D" uid="uid://ln5axflb6dql" path="res://Scenes/Cutscene/Artstyle_cutscene/cut_4.png" id="4_phue7"]
+[ext_resource type="Script" path="res://Scenes/Cutscene/animazione_freccia.gd" id="4_x3qou"]
+[ext_resource type="Texture2D" uid="uid://c6cfqa1rewjnn" path="res://Scenes/Cutscene/Artstyle_cutscene/cut_5.png" id="5_1mi8w"]
+[ext_resource type="Texture2D" uid="uid://c154apucm8sn5" path="res://Scenes/Cutscene/Artstyle_cutscene/cut_6.png" id="6_6mq57"]
+[ext_resource type="Texture2D" uid="uid://beatiel4ua4c4" path="res://Scenes/Cutscene/Artstyle_cutscene/cut_7.png" id="7_j0ydu"]
+[ext_resource type="Texture2D" uid="uid://b0ee2cewt2ufg" path="res://Scenes/Cutscene/Artstyle_cutscene/box_cutscene.png" id="10_4b5v1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1b5u7"]
+shader = ExtResource("1_d0n57")
+shader_parameter/brush_position = null
+shader_parameter/brush_size = null
+
+[sub_resource type="Shader" id="Shader_4kj6l"]
+code = "shader_type canvas_item;
+
+uniform sampler2D mask;
+uniform sampler2D original_texture;
+
+void fragment() {
+    vec4 mask_color = texture(mask, UV);
+    vec4 image_color = texture(original_texture, UV);
+    
+    // Effetto di pastello: rende la transizione più morbida
+    float alpha = smoothstep(0.0, 1.0, mask_color.r); 
+    COLOR = mix(vec4(1.0), image_color, alpha); // Bianco (maschera) → Immagine
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6e2ky"]
+shader = SubResource("Shader_4kj6l")
+
+[sub_resource type="Animation" id="Animation_lcl7r"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1363, 632)]
+}
+
+[sub_resource type="Animation" id="Animation_yfb52"]
+resource_name = "freccia_idle"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1363, 632), Vector2(1388, 628)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k5wac"]
+_data = {
+"RESET": SubResource("Animation_lcl7r"),
+"freccia_idle": SubResource("Animation_yfb52")
+}
+
+[node name="Cutscene" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1927.0
+offset_bottom = 1078.0
+script = ExtResource("1_wr4yk")
+
+[node name="Background" type="ColorRect" parent="Control"]
+offset_right = 1924.0
+offset_bottom = 1079.0
+rotation = -0.00260904
+color = Color(0.563458, 1, 0.676221, 1)
+
+[node name="TextureRects" type="Node2D" parent="Control"]
+position = Vector2(961, 586)
+
+[node name="BackgroundBox" type="Sprite2D" parent="Control/TextureRects"]
+position = Vector2(3.50001, -53.25)
+scale = Vector2(8.82031, 8.23828)
+texture = ExtResource("2_exk3w")
+
+[node name="TextureRect_1" type="TextureRect" parent="Control/TextureRects"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -465.0
+offset_top = -504.0
+offset_right = 473.0
+offset_bottom = 256.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+texture = ExtResource("1_m7qd6")
+
+[node name="ColorRect" type="ColorRect" parent="Control/TextureRects/TextureRect_1"]
+visible = false
+material = SubResource("ShaderMaterial_1b5u7")
+layout_mode = 0
+offset_right = 941.0
+offset_bottom = 691.0
+
+[node name="TextureButton" type="TextureButton" parent="Control/TextureRects/TextureRect_1"]
+offset_left = 337.5
+offset_top = 544.0
+offset_right = 546.5
+offset_bottom = 753.0
+rotation = 3.10041
+action_mode = 0
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="BordoPodolica" type="Polygon2D" parent="Control/TextureRects/TextureRect_1"]
+script = ExtResource("3_h5ghf")
+
+[node name="TextureRect_2" type="TextureRect" parent="Control/TextureRects"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -463.0
+offset_top = -544.0
+offset_right = 475.0
+offset_bottom = 215.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_lq7ox")
+
+[node name="ColorRect_2" type="ColorRect" parent="Control/TextureRects/TextureRect_2"]
+visible = false
+material = SubResource("ShaderMaterial_6e2ky")
+layout_mode = 0
+offset_left = -2.5
+offset_top = 1.0
+offset_right = 938.5
+offset_bottom = 692.0
+
+[node name="TextureRect_3" type="TextureRect" parent="Control/TextureRects"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -463.0
+offset_top = -544.0
+offset_right = 475.0
+offset_bottom = 215.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_4qe08")
+
+[node name="ColorRect_3" type="ColorRect" parent="Control/TextureRects/TextureRect_3"]
+visible = false
+material = SubResource("ShaderMaterial_6e2ky")
+layout_mode = 0
+offset_left = -2.5
+offset_top = 1.0
+offset_right = 938.5
+offset_bottom = 692.0
+
+[node name="TextureRect_4" type="TextureRect" parent="Control/TextureRects"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -463.0
+offset_top = -545.0
+offset_right = 475.0
+offset_bottom = 215.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_phue7")
+
+[node name="ColorRect_4" type="ColorRect" parent="Control/TextureRects/TextureRect_4"]
+visible = false
+material = SubResource("ShaderMaterial_6e2ky")
+layout_mode = 0
+offset_left = -2.5
+offset_top = 1.0
+offset_right = 938.5
+offset_bottom = 692.0
+
+[node name="TextureRect_5" type="TextureRect" parent="Control/TextureRects"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -463.0
+offset_top = -543.0
+offset_right = 475.0
+offset_bottom = 215.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_1mi8w")
+
+[node name="ColorRect_5" type="ColorRect" parent="Control/TextureRects/TextureRect_5"]
+visible = false
+material = SubResource("ShaderMaterial_6e2ky")
+layout_mode = 0
+offset_left = -2.5
+offset_top = 1.0
+offset_right = 938.5
+offset_bottom = 692.0
+
+[node name="TextureRect_6" type="TextureRect" parent="Control/TextureRects"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -463.0
+offset_top = -543.0
+offset_right = 475.0
+offset_bottom = 215.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_6mq57")
+
+[node name="ColorRect_6" type="ColorRect" parent="Control/TextureRects/TextureRect_6"]
+visible = false
+material = SubResource("ShaderMaterial_6e2ky")
+layout_mode = 0
+offset_left = -2.5
+offset_top = 1.0
+offset_right = 938.5
+offset_bottom = 692.0
+
+[node name="TextureRect_7" type="TextureRect" parent="Control/TextureRects"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -463.0
+offset_top = -544.0
+offset_right = 475.0
+offset_bottom = 215.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_j0ydu")
+
+[node name="ColorRect_7" type="ColorRect" parent="Control/TextureRects/TextureRect_7"]
+visible = false
+material = SubResource("ShaderMaterial_6e2ky")
+layout_mode = 0
+offset_left = -2.5
+offset_top = 1.0
+offset_right = 938.5
+offset_bottom = 692.0
+
+[node name="DialogueBox" type="Sprite2D" parent="Control/TextureRects"]
+position = Vector2(13.5, 335)
+scale = Vector2(13.3068, 7.88034)
+texture = ExtResource("10_4b5v1")
+
+[node name="CutsceneDialogue" type="Label" parent="Control/TextureRects/DialogueBox"]
+offset_left = -36.0
+offset_top = -11.0
+offset_right = 37.0
+offset_bottom = 12.0
+
+[node name="Foglioline" type="Node2D" parent="Control"]
+visible = false
+script = ExtResource("4_x3qou")
+
+[node name="Label" type="Label" parent="Control/Foglioline"]
+offset_left = 120.0
+offset_top = 234.0
+offset_right = 939.0
+offset_bottom = 549.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_k1x5w")
+theme_override_font_sizes/font_size = 80
+text = "CLICCA L'ELEMENTO EVIDENZIATO PER ANDARE AVANTI!"
+horizontal_alignment = 1
+autowrap_mode = 1
+
+[node name="Fogliolina5" type="Sprite2D" parent="Control/Foglioline"]
+modulate = Color(0.565061, 0.948102, 0.974273, 1)
+position = Vector2(1707, 227)
+rotation = 0.574682
+scale = Vector2(0.255778, 0.255778)
+texture = ExtResource("2_rm2su")
+
+[node name="Fogliolina6" type="Sprite2D" parent="Control/Foglioline"]
+modulate = Color(3.69644e-05, 0.97482, 0.949395, 1)
+position = Vector2(1255, 350)
+rotation = -0.165382
+scale = Vector2(0.360412, 0.360412)
+texture = ExtResource("2_rm2su")
+
+[node name="Fogliolina7" type="Sprite2D" parent="Control/Foglioline"]
+position = Vector2(1326, 858)
+rotation = -3.0597
+scale = Vector2(0.214573, 0.214573)
+texture = ExtResource("2_rm2su")
+flip_h = true
+
+[node name="BordoFoglia" type="Polygon2D" parent="Control/Foglioline"]
+modulate = Color(0.580392, 0.960784, 0.419608, 1)
+position = Vector2(4, 0)
+polygon = PackedVector2Array(1863, 800, 1741, 843, 1556, 848, 1445, 699, 1462, 565, 1522, 516, 1588, 474, 1702, 433, 1746, 511, 1710, 580, 1808, 636, 1854, 716, 1877, 795)
+script = ExtResource("3_h5ghf")
+
+[node name="TextureButton" type="TextureButton" parent="Control/Foglioline"]
+offset_left = 1889.0
+offset_top = 771.0
+offset_right = 2258.0
+offset_bottom = 1140.0
+rotation = 2.76514
+action_mode = 0
+texture_normal = ExtResource("2_rm2su")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control/Foglioline"]
+root_node = NodePath("Freccia")
+libraries = {
+"": SubResource("AnimationLibrary_k5wac")
+}
+
+[node name="Freccia" type="Sprite2D" parent="Control/Foglioline/AnimationPlayer"]
+visible = false
+position = Vector2(1363, 632)
+scale = Vector2(0.145665, 0.145665)
+texture = ExtResource("4_1tqs3")
+
+[connection signal="pressed" from="Control/TextureRects/TextureRect_1/TextureButton" to="Control" method="_on_texture_button2_pressed"]
+[connection signal="pressed" from="Control/Foglioline/TextureButton" to="Control" method="_on_texture_button1_pressed"]
