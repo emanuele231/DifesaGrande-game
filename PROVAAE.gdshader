@@ -9,7 +9,7 @@ void fragment() {
 
     // Calcola la distanza tra la posizione del pennello e il pixel corrente
     float dist = distance(UV, brush_position);
-    
+
     // Se la distanza è minore della dimensione del pennello, modifica la trasparenza
     if (dist < brush_size) {
         mask.a = 0.0;  // Rende trasparente l'area sotto il pennello

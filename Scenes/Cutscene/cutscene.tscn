@@ -1,21 +1,36 @@
-[gd_scene load_steps=23 format=3 uid="uid://b6rqisshlg1cx"]
+[gd_scene load_steps=26 format=3 uid="uid://b6rqisshlg1cx"]
 
-[ext_resource type="Shader" path="res://Scenes/Cutscene/draw_shader.gdshader" id="1_d0n57"]
+[ext_resource type="Shader" path="res://Scenes/Cutscene/Shader_cutscene/effetto_ottico.gdshader" id="1_d0n57"]
 [ext_resource type="Texture2D" uid="uid://dh012sqve0w2c" path="res://Scenes/Cutscene/Artstyle_cutscene/cut_1.png" id="1_m7qd6"]
-[ext_resource type="Script" path="res://Scenes/Cutscene/draw_cutscene.gd" id="1_wr4yk"]
+[ext_resource type="Script" path="res://Scenes/Cutscene/Script_cutscene/cutscene_main.gd" id="1_wr4yk"]
 [ext_resource type="Texture2D" uid="uid://trip1j56wkml" path="res://Scenes/Cutscene/Artstyle_cutscene/box cutscene long.png" id="2_exk3w"]
 [ext_resource type="Texture2D" uid="uid://1e0n50vjygrd" path="res://Scenes/Cutscene/Artstyle_cutscene/cut_2.png" id="2_lq7ox"]
+[ext_resource type="Texture2D" uid="uid://bu3q4psyn30ca" path="res://Scenes/Cutscene/Artstyle_cutscene/fogliolinaa2_scaled_4x_pngcrushed.png" id="2_n7ebn"]
 [ext_resource type="Texture2D" uid="uid://bfjwx6q5uacl2" path="res://Scenes/Cutscene/Artstyle_cutscene/fogliolinaa2_scaled_63x_pngcrushed.png" id="2_rm2su"]
 [ext_resource type="Texture2D" uid="uid://djkp40p6xrcal" path="res://Scenes/Cutscene/Artstyle_cutscene/cut_3.png" id="3_4qe08"]
-[ext_resource type="Script" path="res://Scenes/Cutscene/bordo_brillante.gd" id="3_h5ghf"]
+[ext_resource type="Script" path="res://Scenes/Cutscene/Script_cutscene/bordi.gd" id="3_h5ghf"]
 [ext_resource type="FontFile" uid="uid://bu8074xritaxh" path="res://Scenes/menu/Fonts/Ravenwood-g5JR.ttf" id="3_k1x5w"]
 [ext_resource type="Texture2D" uid="uid://cargyemb8stbl" path="res://Scenes/Cutscene/Artstyle_cutscene/freccia_normale_scaled_31x_pngcrushed.png" id="4_1tqs3"]
+[ext_resource type="Script" path="res://Scenes/Cutscene/Script_cutscene/dialogue_cutscene.gd" id="4_5ek8s"]
 [ext_resource type="Texture2D" uid="uid://ln5axflb6dql" path="res://Scenes/Cutscene/Artstyle_cutscene/cut_4.png" id="4_phue7"]
-[ext_resource type="Script" path="res://Scenes/Cutscene/animazione_freccia.gd" id="4_x3qou"]
+[ext_resource type="Script" path="res://Scenes/Cutscene/Script_cutscene/animazione_freccia.gd" id="4_x3qou"]
 [ext_resource type="Texture2D" uid="uid://c6cfqa1rewjnn" path="res://Scenes/Cutscene/Artstyle_cutscene/cut_5.png" id="5_1mi8w"]
 [ext_resource type="Texture2D" uid="uid://c154apucm8sn5" path="res://Scenes/Cutscene/Artstyle_cutscene/cut_6.png" id="6_6mq57"]
 [ext_resource type="Texture2D" uid="uid://beatiel4ua4c4" path="res://Scenes/Cutscene/Artstyle_cutscene/cut_7.png" id="7_j0ydu"]
 [ext_resource type="Texture2D" uid="uid://b0ee2cewt2ufg" path="res://Scenes/Cutscene/Artstyle_cutscene/box_cutscene.png" id="10_4b5v1"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_486s0"]
+particle_flag_disable_z = true
+angle_min = -160.4
+angle_max = 250.4
+gravity = Vector3(2, 90, 0)
+turbulence_enabled = true
+turbulence_noise_strength = 13.58
+turbulence_noise_scale = 7.562
+turbulence_influence_min = 0.0
+turbulence_influence_max = 0.132
+turbulence_initial_displacement_min = -100.0
+turbulence_initial_displacement_max = -100.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1b5u7"]
 shader = ExtResource("1_d0n57")
@@ -89,20 +104,36 @@ offset_bottom = 1078.0
 script = ExtResource("1_wr4yk")
 
 [node name="Background" type="ColorRect" parent="Control"]
+layout_mode = 0
 offset_right = 1924.0
 offset_bottom = 1079.0
 rotation = -0.00260904
 color = Color(0.563458, 1, 0.676221, 1)
 
-[node name="TextureRects" type="Node2D" parent="Control"]
-position = Vector2(961, 586)
+[node name="Foglie_cadenti" type="GPUParticles2D" parent="Control"]
+visible = false
+position = Vector2(1724, 159)
+scale = Vector2(0.725196, 1.01466)
+amount = 4
+process_material = SubResource("ParticleProcessMaterial_486s0")
+texture = ExtResource("2_n7ebn")
+lifetime = 11.13
+speed_scale = 1.5
 
-[node name="BackgroundBox" type="Sprite2D" parent="Control/TextureRects"]
-position = Vector2(3.50001, -53.25)
+[node name="CanvasLayerDialogue" type="CanvasLayer" parent="Control"]
+visible = false
+follow_viewport_enabled = true
+
+[node name="BackgroundBox" type="Sprite2D" parent="Control/CanvasLayerDialogue"]
+position = Vector2(964.5, 532.75)
 scale = Vector2(8.82031, 8.23828)
 texture = ExtResource("2_exk3w")
 
-[node name="TextureRect_1" type="TextureRect" parent="Control/TextureRects"]
+[node name="TextureRects" type="Node2D" parent="Control/CanvasLayerDialogue"]
+position = Vector2(961, 586)
+
+[node name="TextureRect_1" type="TextureRect" parent="Control/CanvasLayerDialogue/TextureRects"]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -117,27 +148,30 @@ grow_vertical = 2
 size_flags_horizontal = 4
 texture = ExtResource("1_m7qd6")
 
-[node name="ColorRect" type="ColorRect" parent="Control/TextureRects/TextureRect_1"]
-visible = false
+[node name="ColorRect" type="ColorRect" parent="Control/CanvasLayerDialogue/TextureRects/TextureRect_1"]
 material = SubResource("ShaderMaterial_1b5u7")
 layout_mode = 0
 offset_right = 941.0
-offset_bottom = 691.0
+offset_bottom = 759.0
 
-[node name="TextureButton" type="TextureButton" parent="Control/TextureRects/TextureRect_1"]
-offset_left = 337.5
-offset_top = 544.0
-offset_right = 546.5
-offset_bottom = 753.0
+[node name="TextureButton" type="TextureButton" parent="Control/CanvasLayerDialogue/TextureRects/TextureRect_1"]
+layout_mode = 0
+offset_left = 346.0
+offset_top = 590.0
+offset_right = 555.0
+offset_bottom = 799.0
 rotation = 3.10041
 action_mode = 0
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="BordoPodolica" type="Polygon2D" parent="Control/TextureRects/TextureRect_1"]
+[node name="BordoPodolica2" type="Polygon2D" parent="Control/CanvasLayerDialogue/TextureRects/TextureRect_1"]
+position = Vector2(322, 452)
+color = Color(1, 1, 1, 0.439216)
+polygon = PackedVector2Array(22, 24, 23, 101, -3, 126, -83, 142, -153, 135, -180, 94, -183, 82, -205, 62, -213, 42, -203, 1, -178, -30, -113, -42, -31, -28)
 script = ExtResource("3_h5ghf")
 
-[node name="TextureRect_2" type="TextureRect" parent="Control/TextureRects"]
+[node name="TextureRect_2" type="TextureRect" parent="Control/CanvasLayerDialogue/TextureRects"]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
@@ -145,23 +179,38 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -463.0
-offset_top = -544.0
+offset_top = -502.0
 offset_right = 475.0
-offset_bottom = 215.0
+offset_bottom = 257.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_lq7ox")
 
-[node name="ColorRect_2" type="ColorRect" parent="Control/TextureRects/TextureRect_2"]
-visible = false
+[node name="ColorRect_2" type="ColorRect" parent="Control/CanvasLayerDialogue/TextureRects/TextureRect_2"]
 material = SubResource("ShaderMaterial_6e2ky")
 layout_mode = 0
-offset_left = -2.5
+offset_left = -2.0
 offset_top = 1.0
-offset_right = 938.5
-offset_bottom = 692.0
+offset_right = 939.0
+offset_bottom = 780.0
 
-[node name="TextureRect_3" type="TextureRect" parent="Control/TextureRects"]
+[node name="TextureButton" type="TextureButton" parent="Control/CanvasLayerDialogue/TextureRects/TextureRect_2"]
+offset_left = 346.0
+offset_top = 590.0
+offset_right = 555.0
+offset_bottom = 799.0
+rotation = 3.10041
+action_mode = 0
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="BordoOrto" type="Polygon2D" parent="Control/CanvasLayerDialogue/TextureRects/TextureRect_2"]
+position = Vector2(521, 319)
+color = Color(1, 1, 1, 0.439216)
+polygon = PackedVector2Array(266, -19, 282, 67, 276, 127, 243, 188, 181, 254, 91, 288, -27, 309, -222, 289, -323, 229, -386, 126, -394, 46, -373, -37, -295, -131, -161, -173, -20, -178, 131, -147, 234, -80)
+script = ExtResource("3_h5ghf")
+
+[node name="TextureRect_3" type="TextureRect" parent="Control/CanvasLayerDialogue/TextureRects"]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
@@ -169,23 +218,38 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -463.0
-offset_top = -544.0
+offset_top = -504.0
 offset_right = 475.0
-offset_bottom = 215.0
+offset_bottom = 255.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_4qe08")
 
-[node name="ColorRect_3" type="ColorRect" parent="Control/TextureRects/TextureRect_3"]
-visible = false
+[node name="ColorRect_3" type="ColorRect" parent="Control/CanvasLayerDialogue/TextureRects/TextureRect_3"]
 material = SubResource("ShaderMaterial_6e2ky")
 layout_mode = 0
-offset_left = -2.5
+offset_left = -2.0
 offset_top = 1.0
-offset_right = 938.5
-offset_bottom = 692.0
+offset_right = 939.0
+offset_bottom = 778.0
 
-[node name="TextureRect_4" type="TextureRect" parent="Control/TextureRects"]
+[node name="TextureButton" type="TextureButton" parent="Control/CanvasLayerDialogue/TextureRects/TextureRect_3"]
+offset_left = 934.0
+offset_top = 357.0
+offset_right = 1562.0
+offset_bottom = 517.0
+rotation = 3.27858
+action_mode = 0
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="BordoFumo" type="Polygon2D" parent="Control/CanvasLayerDialogue/TextureRects/TextureRect_3"]
+position = Vector2(755, 250)
+color = Color(1, 1, 1, 0.439216)
+polygon = PackedVector2Array(134, -72, 166, -46, 183, -30, 187, 126, 147, 139, 92.4406, 133.443, 39, 128, -23, 121, -69, 92, -59, 49, -105, 44, -213, 34, -260, 8, -253, -22, -358, -20, -451, -26, -488, -60, -485, -97, -421, -109, -206, -98, -135, -108, -59, -109, -18, -93, 30, -78, 80.3843, -75.9423)
+script = ExtResource("3_h5ghf")
+
+[node name="TextureRect_4" type="TextureRect" parent="Control/CanvasLayerDialogue/TextureRects"]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
@@ -193,47 +257,77 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -463.0
-offset_top = -545.0
+offset_top = -505.0
 offset_right = 475.0
-offset_bottom = 215.0
+offset_bottom = 198.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_phue7")
 
-[node name="ColorRect_4" type="ColorRect" parent="Control/TextureRects/TextureRect_4"]
-visible = false
+[node name="ColorRect_4" type="ColorRect" parent="Control/CanvasLayerDialogue/TextureRects/TextureRect_4"]
 material = SubResource("ShaderMaterial_6e2ky")
 layout_mode = 0
-offset_left = -2.5
+offset_left = -2.0
 offset_top = 1.0
-offset_right = 938.5
-offset_bottom = 692.0
+offset_right = 939.0
+offset_bottom = 746.0
 
-[node name="TextureRect_5" type="TextureRect" parent="Control/TextureRects"]
+[node name="TextureButton" type="TextureButton" parent="Control/CanvasLayerDialogue/TextureRects/TextureRect_4"]
+offset_left = 866.0
+offset_top = 703.0
+offset_right = 1049.0
+offset_bottom = 825.0
+rotation = 3.42786
+action_mode = 0
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="BordoTelefono" type="Polygon2D" parent="Control/CanvasLayerDialogue/TextureRects/TextureRect_4"]
+position = Vector2(915, 610)
+color = Color(1, 1, 1, 0.439216)
+polygon = PackedVector2Array(12, -44, 13, -21, -21, 44, -40, 70, -64, 89, -270, 82, -212, -6, -177, -61, -137, -64, -90, -59, -31, -53)
+script = ExtResource("3_h5ghf")
+
+[node name="TextureRect_5" type="TextureRect" parent="Control/CanvasLayerDialogue/TextureRects"]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -463.0
-offset_top = -543.0
-offset_right = 475.0
-offset_bottom = 215.0
+offset_left = -464.0
+offset_top = -503.0
+offset_right = 474.0
+offset_bottom = 255.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("5_1mi8w")
 
-[node name="ColorRect_5" type="ColorRect" parent="Control/TextureRects/TextureRect_5"]
-visible = false
+[node name="ColorRect_5" type="ColorRect" parent="Control/CanvasLayerDialogue/TextureRects/TextureRect_5"]
 material = SubResource("ShaderMaterial_6e2ky")
 layout_mode = 0
-offset_left = -2.5
+offset_left = -2.0
 offset_top = 1.0
-offset_right = 938.5
-offset_bottom = 692.0
+offset_right = 939.0
+offset_bottom = 740.0
 
-[node name="TextureRect_6" type="TextureRect" parent="Control/TextureRects"]
+[node name="TextureButton" type="TextureButton" parent="Control/CanvasLayerDialogue/TextureRects/TextureRect_5"]
+offset_left = 867.0
+offset_top = 618.0
+offset_right = 1036.0
+offset_bottom = 811.0
+rotation = 3.10041
+action_mode = 0
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="BordoVigile" type="Polygon2D" parent="Control/CanvasLayerDialogue/TextureRects/TextureRect_5"]
+position = Vector2(899, 516)
+color = Color(1, 1, 1, 0.439216)
+polygon = PackedVector2Array(-46, 20, -55, 49, -47, 75, -81, 107, -129, 93, -168, 94, -198, 80, -199, 49, -179, 35, -172, 12, -184, -14, -192, -44, -175.271, -71.5362, -144, -82, -88, -85, -63, -60, -42, -25)
+script = ExtResource("3_h5ghf")
+
+[node name="TextureRect_6" type="TextureRect" parent="Control/CanvasLayerDialogue/TextureRects"]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
@@ -241,15 +335,14 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -463.0
-offset_top = -543.0
+offset_top = -502.0
 offset_right = 475.0
-offset_bottom = 215.0
+offset_bottom = 256.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("6_6mq57")
 
-[node name="ColorRect_6" type="ColorRect" parent="Control/TextureRects/TextureRect_6"]
-visible = false
+[node name="ColorRect_6" type="ColorRect" parent="Control/CanvasLayerDialogue/TextureRects/TextureRect_6"]
 material = SubResource("ShaderMaterial_6e2ky")
 layout_mode = 0
 offset_left = -2.5
@@ -257,7 +350,24 @@ offset_top = 1.0
 offset_right = 938.5
 offset_bottom = 692.0
 
-[node name="TextureRect_7" type="TextureRect" parent="Control/TextureRects"]
+[node name="TextureButton" type="TextureButton" parent="Control/CanvasLayerDialogue/TextureRects/TextureRect_6"]
+offset_left = 303.0
+offset_top = 602.0
+offset_right = 541.0
+offset_bottom = 907.0
+rotation = 3.10041
+action_mode = 0
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="BordoAssessore" type="Polygon2D" parent="Control/CanvasLayerDialogue/TextureRects/TextureRect_6"]
+position = Vector2(379.777, 439.734)
+scale = Vector2(1.82803, 1.79687)
+color = Color(1, 1, 1, 0.439216)
+polygon = PackedVector2Array(-67.1638, 26.3044, -50.2056, 42.4435, -47, 75, -78.1046, 98.6522, -124.056, 99.7652, -168, 94, -184.777, 72.4957, -180.401, 50.2348, -185.324, 31.8696, -172, 12, -184, -14, -192, -44, -175.271, -71.5362, -144, -82, -88, -85, -50.7526, -47.7131, -34.3415, -14.8783, -43.0941, 9.6087)
+script = ExtResource("3_h5ghf")
+
+[node name="TextureRect_7" type="TextureRect" parent="Control/CanvasLayerDialogue/TextureRects"]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
@@ -265,35 +375,73 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -463.0
-offset_top = -544.0
+offset_top = -504.0
 offset_right = 475.0
-offset_bottom = 215.0
+offset_bottom = 255.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("7_j0ydu")
 
-[node name="ColorRect_7" type="ColorRect" parent="Control/TextureRects/TextureRect_7"]
-visible = false
+[node name="ColorRect_7" type="ColorRect" parent="Control/CanvasLayerDialogue/TextureRects/TextureRect_7"]
 material = SubResource("ShaderMaterial_6e2ky")
 layout_mode = 0
-offset_left = -2.5
+offset_left = -2.0
 offset_top = 1.0
-offset_right = 938.5
-offset_bottom = 692.0
+offset_right = 939.0
+offset_bottom = 744.0
 
-[node name="DialogueBox" type="Sprite2D" parent="Control/TextureRects"]
-position = Vector2(13.5, 335)
+[node name="TextureButton" type="TextureButton" parent="Control/CanvasLayerDialogue/TextureRects/TextureRect_7"]
+offset_left = 746.0
+offset_top = 637.0
+offset_right = 1303.0
+offset_bottom = 1189.0
+rotation = 3.14192
+action_mode = 0
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="BordoRifugio" type="Polygon2D" parent="Control/CanvasLayerDialogue/TextureRects/TextureRect_7"]
+position = Vector2(755, 250)
+color = Color(1, 1, 1, 0.439216)
+polygon = PackedVector2Array(6, 72, 2, 134, -16, 212, -25, 355, -251, 375, -575, 381, -594, 170, -588, 14, -554, -75, -447, -122, -344, -178, -279, -196, -215, -185, -124, -162, -71, -142, -46, -124, -16, -71, 11, -5)
+script = ExtResource("3_h5ghf")
+
+[node name="DialogueBox" type="Sprite2D" parent="Control/CanvasLayerDialogue"]
+position = Vector2(974.5, 921)
 scale = Vector2(13.3068, 7.88034)
 texture = ExtResource("10_4b5v1")
+script = ExtResource("4_5ek8s")
 
-[node name="CutsceneDialogue" type="Label" parent="Control/TextureRects/DialogueBox"]
-offset_left = -36.0
-offset_top = -11.0
-offset_right = 37.0
-offset_bottom = 12.0
+[node name="CutsceneDialogue" type="RichTextLabel" parent="Control/CanvasLayerDialogue/DialogueBox"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -38.2887
+offset_top = -12.436
+offset_right = 647.711
+offset_bottom = 208.564
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.1, 0.1)
+theme_override_fonts/normal_font = ExtResource("3_k1x5w")
+theme_override_font_sizes/normal_font_size = 38
+bbcode_enabled = true
+text = "testo_cutscene "
+
+[node name="Indicazione" type="Label" parent="Control/CanvasLayerDialogue"]
+offset_left = 15.0
+offset_top = 253.0
+offset_right = 427.0
+offset_bottom = 531.0
+rotation = -0.0710935
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_k1x5w")
+theme_override_font_sizes/font_size = 40
+text = "Clicca e trascina nel riquadro bianco per trovare l'elemento luminoso e continuare la storia."
+horizontal_alignment = 1
+autowrap_mode = 3
 
 [node name="Foglioline" type="Node2D" parent="Control"]
-visible = false
 script = ExtResource("4_x3qou")
 
 [node name="Label" type="Label" parent="Control/Foglioline"]
@@ -358,5 +506,11 @@ position = Vector2(1363, 632)
 scale = Vector2(0.145665, 0.145665)
 texture = ExtResource("4_1tqs3")
 
-[connection signal="pressed" from="Control/TextureRects/TextureRect_1/TextureButton" to="Control" method="_on_texture_button2_pressed"]
+[connection signal="pressed" from="Control/CanvasLayerDialogue/TextureRects/TextureRect_1/TextureButton" to="Control" method="_on_texture_button2_pressed"]
+[connection signal="pressed" from="Control/CanvasLayerDialogue/TextureRects/TextureRect_2/TextureButton" to="Control" method="_on_texture_button3_pressed"]
+[connection signal="pressed" from="Control/CanvasLayerDialogue/TextureRects/TextureRect_3/TextureButton" to="Control" method="_on_texture_button4_pressed"]
+[connection signal="pressed" from="Control/CanvasLayerDialogue/TextureRects/TextureRect_4/TextureButton" to="Control" method="_on_texture_button5_pressed"]
+[connection signal="pressed" from="Control/CanvasLayerDialogue/TextureRects/TextureRect_5/TextureButton" to="Control" method="_on_texture_button6_pressed"]
+[connection signal="pressed" from="Control/CanvasLayerDialogue/TextureRects/TextureRect_6/TextureButton" to="Control" method="_on_texture_button7_pressed"]
+[connection signal="pressed" from="Control/CanvasLayerDialogue/TextureRects/TextureRect_7/TextureButton" to="Control" method="_on_texture_button8_pressed"]
 [connection signal="pressed" from="Control/Foglioline/TextureButton" to="Control" method="_on_texture_button1_pressed"]

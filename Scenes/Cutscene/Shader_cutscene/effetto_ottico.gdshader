@@ -13,5 +13,5 @@ void fragment() {
         mask.a = 0.0; // Rendi trasparente la zona dipinta
     }
     
-    COLOR = vec4(1.0, 1.0, 1.0, mask.a); // Mantiene il nero finché non viene "dipinto"
+    COLOR = vec4(1.0, 1.0, 1.0, mask.a); // Mantiene il bianco finché non viene "dipinto"
 }
