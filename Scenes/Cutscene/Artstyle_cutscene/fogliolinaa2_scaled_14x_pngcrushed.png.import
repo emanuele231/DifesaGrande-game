@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bu3q4psyn30ca"
-path="res://.godot/imported/fogliolinaa2_scaled_4x_pngcrushed.png-894855051752bf4c170924f5cfd524c8.ctex"
+uid="uid://jjn4ennwk78o"
+path="res://.godot/imported/fogliolinaa2_scaled_14x_pngcrushed.png-8ba18ec6c51b641acc081bb36d0ac486.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Cutscene/Artstyle_cutscene/fogliolinaa2_scaled_4x_pngcrushed.png"
-dest_files=["res://.godot/imported/fogliolinaa2_scaled_4x_pngcrushed.png-894855051752bf4c170924f5cfd524c8.ctex"]
+source_file="res://Scenes/Cutscene/Artstyle_cutscene/fogliolinaa2_scaled_14x_pngcrushed.png"
+dest_files=["res://.godot/imported/fogliolinaa2_scaled_14x_pngcrushed.png-8ba18ec6c51b641acc081bb36d0ac486.ctex"]
 
 [params]
 
