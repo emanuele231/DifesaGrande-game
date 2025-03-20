@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://oyjfjg2eiowd"
+path="res://.godot/imported/forest-ambience-freelicense.mp3-3e051e2d540cb0200e2d71c1e90af571.mp3str"
+
+[deps]
+
+source_file="res://Scenes/Cutscene/Sound Effects/forest-ambience-freelicense.mp3"
+dest_files=["res://.godot/imported/forest-ambience-freelicense.mp3-3e051e2d540cb0200e2d71c1e90af571.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
