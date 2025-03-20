@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://b6rqisshlg1cx"]
+[gd_scene load_steps=30 format=3 uid="uid://b6rqisshlg1cx"]
 
 [ext_resource type="Shader" path="res://Scenes/Cutscene/Shader_cutscene/effetto_ottico.gdshader" id="1_d0n57"]
 [ext_resource type="Texture2D" uid="uid://dh012sqve0w2c" path="res://Scenes/Cutscene/Artstyle_cutscene/cut_1.png" id="1_m7qd6"]
@@ -18,32 +18,12 @@
 [ext_resource type="Texture2D" uid="uid://c154apucm8sn5" path="res://Scenes/Cutscene/Artstyle_cutscene/cut_6.png" id="6_6mq57"]
 [ext_resource type="Texture2D" uid="uid://beatiel4ua4c4" path="res://Scenes/Cutscene/Artstyle_cutscene/cut_7.png" id="7_j0ydu"]
 [ext_resource type="Texture2D" uid="uid://b0ee2cewt2ufg" path="res://Scenes/Cutscene/Artstyle_cutscene/box_cutscene.png" id="10_4b5v1"]
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_486s0"]
-particle_flag_disable_z = true
-emission_shape = 3
-emission_box_extents = Vector3(300, 5, 1)
-angle_min = -430.4
-angle_max = 559.5
-gravity = Vector3(0, 0, 0)
-radial_accel_min = -58.15
-radial_accel_max = 36.96
-turbulence_enabled = true
-turbulence_noise_strength = 11.29
-turbulence_noise_scale = 9.444
-turbulence_noise_speed_random = 2.7
-turbulence_influence_min = 0.0
-turbulence_influence_max = 0.132
-turbulence_initial_displacement_min = -100.0
-turbulence_initial_displacement_max = -100.0
-
-[sub_resource type="Gradient" id="Gradient_0sm4v"]
-offsets = PackedFloat32Array(0.201807, 0.653614)
-colors = PackedColorArray(1, 1, 1, 1, 0.958999, 0.637201, 0.648955, 1)
-
-[sub_resource type="Gradient" id="Gradient_ha72d"]
-offsets = PackedFloat32Array(0.207831, 0.575301, 1)
-colors = PackedColorArray(0.706096, 0.927819, 0.831314, 1, 0.975825, 0.794949, 0.815342, 1, 1, 1, 1, 1)
+[ext_resource type="AudioStream" uid="uid://50ma7nysvlwf" path="res://Scenes/Cutscene/Sound Effects/sound-of-birds-freelicense.mp3" id="19_jjnxh"]
+[ext_resource type="AudioStream" uid="uid://eusvv34o8adq" path="res://Scenes/Cutscene/Sound Effects/TextureButtonPressed.wav" id="20_33v24"]
+[ext_resource type="AudioStream" uid="uid://cm1h3guv7hj70" path="res://Scenes/Cutscene/Sound Effects/Fire-sound-freelicense.mp3" id="21_47w0i"]
+[ext_resource type="AudioStream" uid="uid://bbw188s75pk6v" path="res://Scenes/Cutscene/Sound Effects/fireman-freelicense.mp3" id="22_h0gbf"]
+[ext_resource type="AudioStream" uid="uid://u7ithpxcxmt8" path="res://Scenes/Cutscene/Sound Effects/garden-sunny-day-freelicense.mp3" id="23_ymyo0"]
+[ext_resource type="AudioStream" uid="uid://oyjfjg2eiowd" path="res://Scenes/Cutscene/Sound Effects/forest-ambience-freelicense.mp3" id="24_uyegu"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1b5u7"]
 shader = ExtResource("1_d0n57")
@@ -109,24 +89,14 @@ offset_bottom = 1079.0
 rotation = -0.00260904
 color = Color(0.458026, 1, 0.616248, 1)
 
-[node name="Foglie_cadenti" type="GPUParticles2D" parent="Control"]
-visible = false
-position = Vector2(1724, 159)
-scale = Vector2(0.725196, 1.01466)
-amount = 5
-process_material = SubResource("ParticleProcessMaterial_486s0")
-texture = ExtResource("2_pud02")
-lifetime = 5.0
-speed_scale = 1.5
-
 [node name="CanvasLayerDialogue" type="CanvasLayer" parent="Control"]
 visible = false
 follow_viewport_enabled = true
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="Control/CanvasLayerDialogue"]
+[node name="SpawnerFoglie" type="CPUParticles2D" parent="Control/CanvasLayerDialogue"]
 position = Vector2(100, 52)
 scale = Vector2(0.725196, 1.01466)
-amount = 10
+amount = 14
 lifetime = 5.0
 texture = ExtResource("2_pud02")
 emission_shape = 4
@@ -144,8 +114,6 @@ orbit_velocity_max = 0.01
 linear_accel_min = 0.3
 linear_accel_max = 0.3
 scale_amount_min = 0.6
-color_ramp = SubResource("Gradient_0sm4v")
-color_initial_ramp = SubResource("Gradient_ha72d")
 
 [node name="BoxLaterale" type="Sprite2D" parent="Control/CanvasLayerDialogue"]
 position = Vector2(475.75, 427)
@@ -178,6 +146,7 @@ texture = ExtResource("1_m7qd6")
 
 [node name="ColorRect" type="ColorRect" parent="Control/CanvasLayerDialogue/TextureRects/TextureRect_1"]
 material = SubResource("ShaderMaterial_1b5u7")
+layout_mode = 0
 offset_right = 941.0
 offset_bottom = 759.0
 
@@ -217,11 +186,11 @@ texture = ExtResource("2_lq7ox")
 material = SubResource("ShaderMaterial_6e2ky")
 layout_mode = 0
 offset_left = -2.0
-offset_top = 1.0
 offset_right = 939.0
-offset_bottom = 780.0
+offset_bottom = 779.0
 
 [node name="TextureButton" type="TextureButton" parent="Control/CanvasLayerDialogue/TextureRects/TextureRect_2"]
+layout_mode = 0
 offset_left = 789.0
 offset_top = 607.0
 offset_right = 1434.0
@@ -256,11 +225,11 @@ texture = ExtResource("3_4qe08")
 material = SubResource("ShaderMaterial_6e2ky")
 layout_mode = 0
 offset_left = -2.0
-offset_top = 1.0
 offset_right = 939.0
-offset_bottom = 778.0
+offset_bottom = 777.0
 
 [node name="TextureButton" type="TextureButton" parent="Control/CanvasLayerDialogue/TextureRects/TextureRect_3"]
+layout_mode = 0
 offset_left = 934.0
 offset_top = 357.0
 offset_right = 1562.0
@@ -295,11 +264,11 @@ texture = ExtResource("4_phue7")
 material = SubResource("ShaderMaterial_6e2ky")
 layout_mode = 0
 offset_left = -2.0
-offset_top = 1.0
 offset_right = 939.0
-offset_bottom = 746.0
+offset_bottom = 745.0
 
 [node name="TextureButton" type="TextureButton" parent="Control/CanvasLayerDialogue/TextureRects/TextureRect_4"]
+layout_mode = 0
 offset_left = 866.0
 offset_top = 703.0
 offset_right = 1049.0
@@ -334,11 +303,11 @@ texture = ExtResource("5_1mi8w")
 material = SubResource("ShaderMaterial_6e2ky")
 layout_mode = 0
 offset_left = -2.0
-offset_top = 1.0
 offset_right = 939.0
-offset_bottom = 740.0
+offset_bottom = 739.0
 
 [node name="TextureButton" type="TextureButton" parent="Control/CanvasLayerDialogue/TextureRects/TextureRect_5"]
+layout_mode = 0
 offset_left = 867.0
 offset_top = 618.0
 offset_right = 1036.0
@@ -373,11 +342,11 @@ texture = ExtResource("6_6mq57")
 material = SubResource("ShaderMaterial_6e2ky")
 layout_mode = 0
 offset_left = -2.5
-offset_top = 1.0
 offset_right = 938.5
-offset_bottom = 692.0
+offset_bottom = 691.0
 
 [node name="TextureButton" type="TextureButton" parent="Control/CanvasLayerDialogue/TextureRects/TextureRect_6"]
+layout_mode = 0
 offset_left = 303.0
 offset_top = 602.0
 offset_right = 541.0
@@ -413,11 +382,11 @@ texture = ExtResource("7_j0ydu")
 material = SubResource("ShaderMaterial_6e2ky")
 layout_mode = 0
 offset_left = -2.0
-offset_top = 1.0
 offset_right = 939.0
-offset_bottom = 744.0
+offset_bottom = 743.0
 
 [node name="TextureButton" type="TextureButton" parent="Control/CanvasLayerDialogue/TextureRects/TextureRect_7"]
+layout_mode = 0
 offset_left = 746.0
 offset_top = 637.0
 offset_right = 1303.0
@@ -537,6 +506,35 @@ root_node = NodePath("../Freccia")
 libraries = {
 "": SubResource("AnimationLibrary_k5wac")
 }
+
+[node name="SoundEffects" type="Node" parent="Control"]
+
+[node name="CutsceneSound_1" type="AudioStreamPlayer" parent="Control/SoundEffects"]
+stream = ExtResource("19_jjnxh")
+autoplay = true
+parameters/looping = true
+
+[node name="TextureButtonSoundEff" type="AudioStreamPlayer2D" parent="Control/SoundEffects"]
+stream = ExtResource("20_33v24")
+volume_db = 11.265
+
+[node name="CutsceneSound_2" type="AudioStreamPlayer2D" parent="Control/SoundEffects"]
+stream = ExtResource("21_47w0i")
+parameters/looping = true
+
+[node name="CutsceneSound_3" type="AudioStreamPlayer2D" parent="Control/SoundEffects"]
+stream = ExtResource("22_h0gbf")
+parameters/looping = true
+
+[node name="CutsceneSound_4" type="AudioStreamPlayer2D" parent="Control/SoundEffects"]
+stream = ExtResource("23_ymyo0")
+volume_db = 24.0
+pitch_scale = 1.45
+parameters/looping = true
+
+[node name="CutsceneSound_5" type="AudioStreamPlayer2D" parent="Control/SoundEffects"]
+stream = ExtResource("24_uyegu")
+parameters/looping = true
 
 [connection signal="pressed" from="Control/CanvasLayerDialogue/TextureRects/TextureRect_1/TextureButton" to="Control" method="_on_texture_button2_pressed"]
 [connection signal="pressed" from="Control/CanvasLayerDialogue/TextureRects/TextureRect_2/TextureButton" to="Control" method="_on_texture_button3_pressed"]

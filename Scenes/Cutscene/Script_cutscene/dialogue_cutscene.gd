@@ -5,10 +5,9 @@ extends Sprite2D
 
 # Testo storia della cutscene 
 var story_dialogue = [
-	"[center]Ho sempre amato la natura. Mi piace sentire l'odore della terra sotto le mani, il calore del sole sul mio viso, il fruscio" +
-	" del vento tra gli alberi e il dolce canto degli uccellini.[/center]",
-	"[center]La vita era semplice per me: mi prendevo cura delle mie podoliche e del mio [u][color=#e3a807]orto[/color][/u], " +
-	"ascoltando il respiro della terra.\n" + 
+	"[center]La mia storia inizia.. nella natura. L'ho sempre amata. Mi piace osservare le [u][color=#e3a807]podoliche[/color][/u] che pascolano libere, sentire l'odore della terra, il calore del sole sul mio viso" +
+	" e il dolce canto degli uccellini.[/center]",
+	"[center]A quei tempi, passavo la vita prendendomi cura delle mie podoliche e del mio [u][color=#e3a807]orto[/color][/u]. " +
 	"C'era pero' un posto che non avevo mai esplorato.. il Bosco Difesa Grande.[/center]",
 	"[center]Un giorno, mentre accudivo le mie polodiche, vidi del fumo salire in cielo.\n" +
 	"Era un incendio, e le sue fiamme avanzavano rapidamente.[/center]",
