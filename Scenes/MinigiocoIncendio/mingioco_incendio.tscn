@@ -1,0 +1,64 @@
+[gd_scene load_steps=8 format=3 uid="uid://dx3u7wdttybbo"]
+
+[ext_resource type="Texture2D" uid="uid://caunat2fsyqnp" path="res://Scenes/MinigiocoIncendio/Artstyle/sfondo_incendio.png" id="1_d54rb"]
+[ext_resource type="Script" path="res://Scenes/MinigiocoIncendio/read_beats.gd" id="1_ut6oe"]
+[ext_resource type="Texture2D" uid="uid://2n6queddg0xa" path="res://Scenes/Rettangolo_dialoghi_modifica.png" id="1_vu2ij"]
+[ext_resource type="Texture2D" uid="uid://bpw6ccvg1ds2i" path="res://Scenes/MinigiocoIncendio/Artstyle/button_causa.png" id="3_xjv4q"]
+[ext_resource type="FontFile" uid="uid://bu8074xritaxh" path="res://Scenes/menu/Fonts/Ravenwood-g5JR.ttf" id="4_yvdyb"]
+[ext_resource type="AudioStream" uid="uid://cswaihsp8k7db" path="res://Scenes/MinigiocoIncendio/Sound Effects/chiptune-grooving-freelicense.mp3" id="5_tqub5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l6obs"]
+
+[node name="MinigiocoIncendio" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1921.0
+offset_bottom = 1079.0
+script = ExtResource("1_ut6oe")
+
+[node name="Background" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_top = -216.0
+offset_right = 1920.0
+offset_bottom = 1079.0
+texture = ExtResource("1_d54rb")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Control"]
+follow_viewport_enabled = true
+
+[node name="GUI" type="Node2D" parent="Control/CanvasLayer"]
+position = Vector2(775, 555)
+
+[node name="BoxIndicazione" type="Sprite2D" parent="Control/CanvasLayer/GUI"]
+position = Vector2(162.5, 337.125)
+scale = Vector2(14.7895, 8.81757)
+texture = ExtResource("1_vu2ij")
+
+[node name="Causa" type="Sprite2D" parent="Control/CanvasLayer/GUI"]
+position = Vector2(875.833, 291.348)
+rotation = -0.00481964
+scale = Vector2(13.7653, 13.8714)
+texture = ExtResource("3_xjv4q")
+
+[node name="LabelSmallBox" type="Label" parent="Control/CanvasLayer/GUI"]
+offset_left = 770.833
+offset_top = 156.348
+offset_right = 984.833
+offset_bottom = 233.348
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_yvdyb")
+theme_override_font_sizes/font_size = 60
+text = "CAUSA"
+horizontal_alignment = 1
+autowrap_mode = 1
+
+[node name="SoundEffects" type="Node" parent="Control"]
+
+[node name="ThemeMinigioco" type="AudioStreamPlayer2D" parent="Control/SoundEffects"]
+stream = ExtResource("5_tqub5")
+autoplay = true
+
+[node name="Fire" type="AnimatedSprite2D" parent="Control"]
+sprite_frames = SubResource("SpriteFrames_l6obs")
