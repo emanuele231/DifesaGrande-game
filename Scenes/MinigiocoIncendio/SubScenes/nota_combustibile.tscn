@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4pwxey1pvhip"]
+
+[ext_resource type="Texture2D" uid="uid://ntjx7r5jkbph" path="res://Scenes/MinigiocoIncendio/Artstyle/legname.png" id="1_8men6"]
+[ext_resource type="Script" path="res://Scenes/MinigiocoIncendio/Script_minigioco_incendio/notes_falling.gd" id="1_oedlt"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_jkhpo"]
+
+[node name="NotaCombustibile" type="Node2D"]
+script = ExtResource("1_oedlt")
+
+[node name="Nota" type="Sprite2D" parent="."]
+position = Vector2(40, 40)
+rotation = -0.300389
+scale = Vector2(5, 5)
+texture = ExtResource("1_8men6")
+
+[node name="Key" type="Sprite2D" parent="Nota"]
+position = Vector2(8.1152, 0.83878)
+rotation = -0.0287279
+scale = Vector2(0.665982, 0.669963)
+texture = SubResource("ImageTexture_jkhpo")
+region_rect = Rect2(112, 32, 16, 16)

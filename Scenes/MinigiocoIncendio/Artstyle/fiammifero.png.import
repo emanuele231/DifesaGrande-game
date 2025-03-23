@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ntjx7r5jkbph"
-path="res://.godot/imported/legname.png-a40412ca121d3a755f895ba3aa115ecc.ctex"
+uid="uid://dsdm3q3336kcn"
+path="res://.godot/imported/fiammifero.png-ba11229c9fceb6c7c0c0831cd3894169.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/MinigiocoIncendio/Artstyle/legname.png"
-dest_files=["res://.godot/imported/legname.png-a40412ca121d3a755f895ba3aa115ecc.ctex"]
+source_file="res://Scenes/MinigiocoIncendio/Artstyle/fiammifero.png"
+dest_files=["res://.godot/imported/fiammifero.png-ba11229c9fceb6c7c0c0831cd3894169.ctex"]
 
 [params]
 

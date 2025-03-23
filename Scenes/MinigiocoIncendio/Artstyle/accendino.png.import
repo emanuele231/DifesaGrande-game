@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ntjx7r5jkbph"
-path="res://.godot/imported/legname.png-a40412ca121d3a755f895ba3aa115ecc.ctex"
+uid="uid://cacd7oja7qcoj"
+path="res://.godot/imported/accendino.png-ef6c56dafa2c1b17b0a793bbf4ef579a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/MinigiocoIncendio/Artstyle/legname.png"
-dest_files=["res://.godot/imported/legname.png-a40412ca121d3a755f895ba3aa115ecc.ctex"]
+source_file="res://Scenes/MinigiocoIncendio/Artstyle/accendino.png"
+dest_files=["res://.godot/imported/accendino.png-ef6c56dafa2c1b17b0a793bbf4ef579a.ctex"]
 
 [params]
 

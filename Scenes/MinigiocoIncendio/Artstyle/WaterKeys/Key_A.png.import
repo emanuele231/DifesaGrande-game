@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c05atg4qb26p8"
-path="res://.godot/imported/Keyboard Letters and Symbols.png-8d3a4af9e339d83187bad74c9e4046c4.ctex"
+uid="uid://cpwwi81wuvkam"
+path="res://.godot/imported/Key_A.png-bf63dc1ad8549db1cc91d26ada190a8e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/MinigiocoIncendio/Artstyle/Keyboard Letters and Symbols.png"
-dest_files=["res://.godot/imported/Keyboard Letters and Symbols.png-8d3a4af9e339d83187bad74c9e4046c4.ctex"]
+source_file="res://Scenes/MinigiocoIncendio/Artstyle/WaterKeys/Key_A.png"
+dest_files=["res://.godot/imported/Key_A.png-bf63dc1ad8549db1cc91d26ada190a8e.ctex"]
 
 [params]
 

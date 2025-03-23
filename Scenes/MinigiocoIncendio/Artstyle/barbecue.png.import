@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ntjx7r5jkbph"
-path="res://.godot/imported/legname.png-a40412ca121d3a755f895ba3aa115ecc.ctex"
+uid="uid://c0a3na4sinwvt"
+path="res://.godot/imported/barbecue.png-adcb6565c0c82d0a308bca6ef64716d5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/MinigiocoIncendio/Artstyle/legname.png"
-dest_files=["res://.godot/imported/legname.png-a40412ca121d3a755f895ba3aa115ecc.ctex"]
+source_file="res://Scenes/MinigiocoIncendio/Artstyle/barbecue.png"
+dest_files=["res://.godot/imported/barbecue.png-adcb6565c0c82d0a308bca6ef64716d5.ctex"]
 
 [params]
 

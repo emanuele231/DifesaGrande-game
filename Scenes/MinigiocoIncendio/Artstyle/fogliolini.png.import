@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ntjx7r5jkbph"
-path="res://.godot/imported/legname.png-a40412ca121d3a755f895ba3aa115ecc.ctex"
+uid="uid://dyw5cfr4wkev1"
+path="res://.godot/imported/fogliolini.png-dfa33c37180d72f8423164898c5648da.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/MinigiocoIncendio/Artstyle/legname.png"
-dest_files=["res://.godot/imported/legname.png-a40412ca121d3a755f895ba3aa115ecc.ctex"]
+source_file="res://Scenes/MinigiocoIncendio/Artstyle/fogliolini.png"
+dest_files=["res://.godot/imported/fogliolini.png-dfa33c37180d72f8423164898c5648da.ctex"]
 
 [params]
 

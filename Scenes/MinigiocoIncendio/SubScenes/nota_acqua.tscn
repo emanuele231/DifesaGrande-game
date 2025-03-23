@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bmyaanatuoh44"]
+
+[ext_resource type="Script" path="res://Scenes/MinigiocoIncendio/Script_minigioco_incendio/notes_falling.gd" id="1_agmtu"]
+[ext_resource type="Texture2D" uid="uid://bgatmp7810a1a" path="res://Scenes/MinigiocoIncendio/Artstyle/goccia_acqua.png" id="1_kv1oq"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_41way"]
+
+[node name="NotaAcqua" type="Node2D"]
+script = ExtResource("1_agmtu")
+
+[node name="Nota" type="Sprite2D" parent="."]
+position = Vector2(76.3074, 65.4348)
+rotation = -0.102462
+scale = Vector2(8.89374, 8.89374)
+texture = ExtResource("1_kv1oq")
+
+[node name="Key" type="Sprite2D" parent="Nota"]
+position = Vector2(4.35573, 0.172651)
+scale = Vector2(0.450791, 0.463808)
+texture = SubResource("ImageTexture_41way")
+region_rect = Rect2(0, 32, 16, 16)

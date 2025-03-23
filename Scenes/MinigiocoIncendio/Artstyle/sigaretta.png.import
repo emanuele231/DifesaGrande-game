@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ntjx7r5jkbph"
-path="res://.godot/imported/legname.png-a40412ca121d3a755f895ba3aa115ecc.ctex"
+uid="uid://d3wjl8rxu4ek"
+path="res://.godot/imported/sigaretta.png-c444914c37d3c748e6c6bac0f977d415.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/MinigiocoIncendio/Artstyle/legname.png"
-dest_files=["res://.godot/imported/legname.png-a40412ca121d3a755f895ba3aa115ecc.ctex"]
+source_file="res://Scenes/MinigiocoIncendio/Artstyle/sigaretta.png"
+dest_files=["res://.godot/imported/sigaretta.png-c444914c37d3c748e6c6bac0f977d415.ctex"]
 
 [params]
 
