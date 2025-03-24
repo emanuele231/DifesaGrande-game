@@ -10,9 +10,12 @@ enum NoteType {WATER, FUEL}  # Tipo di nota (acqua o combustibile)
 var note_type
 var assigned_key
 
+@onready var nodi_da_nasc: Array = [$CanvasLayer/GUIPost]
+
 # Lista dei tasti assegnati per le note
-const WATER_KEYS = [KEY_A, KEY_S, KEY_D, KEY_F]
-const FUEL_KEYS = [KEY_H, KEY_J, KEY_K, KEY_L]
+const KEYS = [KEY_A, KEY_S, KEY_D, KEY_F, KEY_H, KEY_J, KEY_K, KEY_L]
+
+# Variabili per contare gli errori
 
 func _ready():
 	spawn_time = get_meta("spawn_time")  # Ottieni il tempo di spawn passato dal nodo principale
@@ -22,6 +25,19 @@ func _ready():
 	# Calcola la velocita' di discesa delle note in base al BPM e al tipo di fuoco
 	speed = calculate_speed(bpm, fire_type) 
 	set_process(true)  # Inizia a processare il movimento
+
+	# Funzione per l'impostazione del threshold di errori in base al tipo di fuoco
+	set_error_limit()
+
+	# Collega il segnale per la collisione della nota con il fuoco
+	$Nota/Collision.connect("area_entered", Callable(self, "_on_area_entered"))
+
+
+# Funzione che processa le note. Le fa spostare in basso e controlla se l'utente preme il tasto giusto.
+func _process(delta):
+	
+	# Muovi la nota verso il basso (velocita' dipendente dal BPM)
+	position.y += speed * delta
 
 # Funzione che in base al tipo di fuoco calcola la velocita' di discesa delle note
 func calculate_speed(bpm, fire_type):
@@ -45,25 +61,47 @@ func calculate_speed(bpm, fire_type):
 	var beat_interval = 60 / bpm  
 	return base_speed * speed_multiplier * beat_interval
 
-# Funzione che processa le note. Le fa spostare in basso e controlla se l'utente preme il tasto giusto.
-func _process(delta):
-	
-	# Muovi la nota verso il basso (velocita' dipendente dal BPM)
-	position.y += speed * delta
+# Funzione chiamata quando la nota entra in collisione con il fuoco
+func _on_area_entered(area):
+	if area.is_in_group("fire"):
+
+		if note_type == "WATER":
+			print("Nota di acqua persa!")
+			update_error_count()
+			remove_note()
+			queue_free()
+		elif note_type == "FUEL":
+			remove_note()
+			queue_free()
+		
 
 # Funzione per inizializzare la nota con un tipo e un tasto assegnato
 func initialize_note(type):
 	note_type = type
 	assigned_key = get_assigned_key()
+
+	if assigned_key == null:
+		print("Tutti i tasti sono gia' assegnati!")
+		queue_free()  # Se non ci sono tasti disponibili, rimuovi la nota
+		return
+	
+	VariabiliGlobali.active_notes[assigned_key] = self # Aggiunge questa nota alla lista delle note attive
 	update_assigned_key_sprite() # Aggiorna lo sprite del tasto assegnato
 
 # Funzione per ottenere un tasto casuale in base al tipo di nota
 func get_assigned_key():
-	if note_type == "WATER":
-		return WATER_KEYS[randi() % WATER_KEYS.size()]
-	elif note_type == "FUEL":
-		return FUEL_KEYS[randi() % FUEL_KEYS.size()]
-	return ""
+	var available_keys = []
+	
+	# Trova i tasti che NON sono attualmente in uso
+	for key in KEYS:
+		if not VariabiliGlobali.active_notes.has(key):
+			available_keys.append(key)
+
+	# Se ci sono tasti disponibili, scegli un tasto casuale
+	if available_keys.size() > 0:
+		return available_keys[randi() % available_keys.size()]
+	else:
+		return null  # Se non ci sono tasti disponibili, restituisce null
 
 # Funzione per aggiornare lo sprite del tasto assegnato
 func update_assigned_key_sprite():
@@ -80,27 +118,56 @@ func update_assigned_key_sprite():
 		KEY_L: "L"
 	}.get(assigned_key, "")
 
-	if note_type == "WATER":
-		$Nota/Key.texture = load("res://Scenes/MinigiocoIncendio/Artstyle/WaterKeys/Key_" + key_sprite + ".png")
-	elif note_type == "FUEL":
-		$Nota/Key.texture = load("res://Scenes/MinigiocoIncendio/Artstyle/FuelKeys/Key_" + key_sprite + ".png")
+	$Nota/Key.texture = load("res://Scenes/MinigiocoIncendio/Artstyle/Keys/Key_" + key_sprite + ".png")
 
 # Funzione per la gestione dell'input dell'utente
 func _input(event):
 	if event is InputEventKey and event.pressed:
 		var key_pressed = OS.get_keycode_string(event.keycode)
 		
-		# Controlla se il tasto premuto è quello della nota attuale
+		# Controlla se il tasto premuto e' quello della nota attuale
 		if key_pressed == OS.get_keycode_string(assigned_key):
 			if note_type == "WATER":
 				# CORRETTO: il giocatore ha premuto una nota acqua
-				queue_free()  # Rimuove la nota
+				queue_free()  # Libera la risorsa
+				remove_note()  # Rimuove la nota dalla lista delle note attive
 				print("Bravo! Hai spento il fuoco con", key_pressed)
 			elif note_type == "FUEL":
 				# ERRORE: il giocatore ha premuto una nota combustibile
 				print("Errore! Hai alimentato il fuoco con", key_pressed)
-				queue_free()  # Rimuove la nota
-				emit_signal("note_missed")  # Segnala che il giocatore ha sbagliato
+				update_error_count()
+				queue_free()  # Libera la risorsa
+				remove_note()  # Rimuove la nota dalla lista delle note attive
+				# emit_signal("note_missed")  # Segnala che il giocatore ha sbagliato -> da implementare
 		else:
 			# Se ha premuto un tasto non assegnato, non succede nulla
 			pass
+
+func set_error_limit():
+	match fire_type:
+		"small": VariabiliGlobali.error_limit = 5
+		"medium": VariabiliGlobali.error_limit = 3
+		"large": VariabiliGlobali.error_limit = 2
+		_: VariabiliGlobali.error_limit = 3 # Default
+
+func update_error_count():
+	VariabiliGlobali.error_count += 1
+	print("Errore! Errori totali: ", VariabiliGlobali.error_count)
+	if VariabiliGlobali.error_count >= VariabiliGlobali.error_limit:
+	# Mostrare a schermo il punteggio finale, non vengono scoperte le cause, ecc.
+		print("SEI MORTO")
+		get_tree().paused = true
+		toggle_visibility(nodi_da_nasc)
+
+# Cambia la visibilita' ai nodi in un certo array di nodi
+func toggle_visibility(nodes_array: Array):
+	
+	# Itera sull'array di nodi e cambia la visibilita
+	for node in nodes_array:
+		if node: 
+			node.visible = !node.visible # Inverte la visibilita del nodo
+
+# Funzione per rimuovere una nota dalla lista delle note attive
+func remove_note():
+	if assigned_key in VariabiliGlobali.active_notes:
+		VariabiliGlobali.active_notes.erase(assigned_key)

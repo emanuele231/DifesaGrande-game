@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7ceuerksphor"
-path="res://.godot/imported/Key_K.png-f2c9cac1bec2b97c49c37ee73c8a8338.ctex"
+uid="uid://b5unatoso2a1t"
+path="res://.godot/imported/Key_F.png-eda0aac9f2486e754c0e038b062ff786.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/MinigiocoIncendio/Artstyle/FuelKeys/Key_K.png"
-dest_files=["res://.godot/imported/Key_K.png-f2c9cac1bec2b97c49c37ee73c8a8338.ctex"]
+source_file="res://Scenes/MinigiocoIncendio/Artstyle/Keys/Key_F.png"
+dest_files=["res://.godot/imported/Key_F.png-eda0aac9f2486e754c0e038b062ff786.ctex"]
 
 [params]
 

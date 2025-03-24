@@ -1,8 +1,8 @@
 extends Control
 
 # Variabili per le scene che vengono istanziate
-const NOTA_ACQUA = preload("res://Scenes/MinigiocoIncendio/SubScenes/nota_acqua.tscn")
-const NOTA_COMBUSTIBILE = preload("res://Scenes/MinigiocoIncendio/SubScenes/nota_combustibile.tscn")
+const nota_acqua_scena = preload("res://Scenes/MinigiocoIncendio/SubScenes/nota_acqua.tscn")
+const nota_comb_scena = preload("res://Scenes/MinigiocoIncendio/SubScenes/nota_combustibile.tscn")
 var fire_scene = preload("res://Scenes/MinigiocoIncendio/SubScenes/Fuoco.tscn")
 
 # Variabili per la gestione dei beat
@@ -13,16 +13,18 @@ var pending_notes = [] # Lista di note in attesa di essere spawnate
 var bpm = 120 # Valore di default BPM
 var fire_type = "small"
 var first_play = true
-var start_time = 0 # Tempo di inizio del minigioco
+var game_started = false
+var start_time = 0 # Tempo di inizio del minigioco -> da impostare dopo che il giocatore preme "ok"
 var spawn_interval = 0.0 # Intervallo tra lo spawn delle note
 var last_spawn_time = 0.0 # Ultimo tempo di spawn
+
+@onready var nodi_da_nasc: Array = [$CanvasLayer/GUIPre, $CanvasLayer/GUIMinigioco]
+@onready var minigame_audio = $SoundEffects/ThemeMinigioco
 
 # Funzione _ready, in cui si carica il file dei beat e si inizia il minigioco
 func _ready():
 	load_beat_times("res://Scenes/MinigiocoIncendio/beats.txt") # Carica i tempi del beat
-	start_time = Time.get_ticks_msec() / 1000 # Ottiene il tempo attuale in secondi
-	pending_notes = beat_times.duplicate() # Copia la lista dei tempi dei beat
-	start_minigame()
+	#pending_notes = beat_times.duplicate() # Copia la lista dei tempi dei beat
 
 # VECCHIA FUNZIONE PROCESS con algoritmo di beat tracking Funzione _process, si gestisce lo spawning delle note al tempo corretto
 #func _process(delta):
@@ -32,14 +34,30 @@ func _ready():
 #		var spawn_time = pending_notes.pop_front() # Rimuove il primo elemento della lista
 #		create_note_at_time(spawn_time) # Crea la nota al tempo specificato
 
-# Funzione _process, gestisce lo spawning delle note in base al tipo di fuoco
+# Funzione _process, gestisce lo spawning delle note in base al tipo di fuoco.
+# Per ogni tipo di fuoco, puo' spawnare un numero di note da 1 a max_notes.
 func _process(delta):
+
+	if not game_started:
+		return  # Se il gioco non è iniziato, non fare nulla
+		
 	var current_time = Time.get_ticks_msec() / 1000 - start_time # Tempo attuale in secondi
 
 	if current_time - last_spawn_time >= spawn_interval: # Se il tempo trascorso dall'ultimo spawn e' maggiore o uguale all'intervallo di spawn
 		last_spawn_time = current_time
-		create_note_at_time(current_time) # Crea la nota al tempo specificato
 
+		# Decido quante note spawnare in base al tipo di fuoco
+		var max_notes = 0
+		match fire_type:
+			"small": max_notes = 3
+			"medium": max_notes = 4
+			"large": max_notes = 5
+			_: max_notes = 2
+
+		var num_notes = randi_range(1, max_notes) # Numero casuale di note da spawnare (da 1 a max_notes)
+
+		for i in range(num_notes): # Crea le note in base alla difficolta'
+			create_note_at_time(current_time, num_notes, i)
 
 # Funzione per la lettura e salvataggio dei beat all'interno della lista
 func load_beat_times(path):
@@ -56,10 +74,33 @@ func load_beat_times(path):
 	else:
 		print("Errore!!")
 
+
+# Cambia la visibilita' ai nodi in un certo array di nodi
+func toggle_visibility(nodes_array: Array):
+	
+	# Itera sull'array di nodi e cambia la visibilita
+	for node in nodes_array:
+		if node: 
+			node.visible = !node.visible # Inverte la visibilita del nodo
+
+# Quando il TextureButton in GUIPre e' premuto, inizia il minigioco e lo scorrere del tempo
+func _on_texture_button_pressed():
+	toggle_visibility(nodi_da_nasc)
+	start_time = Time.get_ticks_msec() / 1000 # Ottiene il tempo attuale in secondi
+	game_started = true
+	start_minigame()
+	minigame_audio.play()
+
 # Funzione per la gestione del minigioco.
 func start_minigame():
 	var fire = fire_scene.instantiate()
-	fire.position = Vector2(960, 400)
+	
+	var screen_size = get_viewport_rect().size
+	var fire_sprite = fire.get_node("Fuoco")
+	var fire_size= fire_sprite.get_sprite_frames().get_frame_texture(fire_sprite.animation, 0).get_size()
+	fire.position.x = (screen_size.x - fire_size.x) / 2
+	fire.position.y= 400 
+
 	add_child(fire)  # Il fuoco viene aggiunto alla scena
 
 	# Se il giocatore gioca al minigioco per la prima volta, il fuoco e' piccolo.
@@ -75,32 +116,35 @@ func start_minigame():
 			1: fire_type = "medium"
 			2: fire_type = "large"
 	
-	set_spawn_interval(fire_type) # Imposta l'intervallo di tempo di spawn in base al tipo di fuoco
+	set_spawn_interval(fire_type) # Imposta l'intervallo di tempo di spawn delle notein base al tipo di fuoco
 
 # Funzione per impostare l'intervallo di tempo di spawn in base al tipo di fuoco
 func set_spawn_interval(fire_type):
 	match fire_type:
-		"small": spawn_interval = 3.0 # Tempo di spawn per il fuoco piccolo
-		"medium": spawn_interval = 2.0 # Tempo di spawn per il fuoco medio
-		"large": spawn_interval = 1.0 # Tempo di spawn per il fuoco grande
-		_: spawn_interval = 1.0 # Default
+		"small": spawn_interval = randf_range(2.5, 4.0)# Tempo di spawn per il fuoco piccolo
+		"medium": spawn_interval = randf_range(2.0, 3.0) # Tempo di spawn per il fuoco medio
+		"large": spawn_interval = randf_range(1.5, 2.0) # Tempo di spawn per il fuoco grande
+		_: spawn_interval = randf_range(1.0, 2.0) # Default
 
-# Funzione che spawna la scena "Note" (spawna le note) in una certa posizione iniziale
-func create_note_at_time(time):
+# Funzione che spawna la scena "Note" (spawna le note) in una certa posizione iniziale.
+func create_note_at_time(time, num_notes, index):
 	var note_scene
-
-	# Decide casualmente se la nota sarà acqua o combustibile - eventualmente implementare un sistema di probabilità
+	var note_positions = [] # Lista per memorizzare le posizioni delle note
+	# Decide casualmente se la nota sara' acqua o combustibile - eventualmente implementare un sistema di probabilita'
 	var note_type = randi() % 2  # 0 = Acqua, 1 = Combustibile
-
+	
 	if note_type == 0:
-		note_scene = NOTA_ACQUA.instantiate()
+		note_scene = nota_acqua_scena.instantiate()
 		note_scene.initialize_note("WATER")  # Inizializza la nota con il tipo scelto - da tenere d'occhio
 	else:
-		note_scene = NOTA_COMBUSTIBILE.instantiate()
+		note_scene = nota_comb_scena.instantiate()
 		note_scene.initialize_note("FUEL") 
-	
 
-	note_scene.position = Vector2(640, -50)
+	var spawn_position_x = lerp(500, 1700, float(index) / float(num_notes - 1)) # Posizione x della nota
+	var spawn_position_y = -50 # Posizione fissa sull'asse Y, o eventualmente casuale
+
+	var spawn_position = Vector2(spawn_position_x, spawn_position_y)
+	note_scene.position = spawn_position
 
 	note_scene.set_meta("spawn_time", time)
 	note_scene.set_meta("fire_type", fire_type) # Passa il tipo di fuoco alla nota

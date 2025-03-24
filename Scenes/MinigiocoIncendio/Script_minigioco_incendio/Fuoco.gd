@@ -10,8 +10,8 @@ var fire_sprite: AnimatedSprite2D
 # Scaling dei diversi tipi di fuoco
 var fire_scales = {
 	FireType.SMALL: Vector2(15, 15),
-	FireType.MEDIUM: Vector2(7, 7),
-	FireType.LARGE: Vector2(9, 9)
+	FireType.MEDIUM: Vector2(18, 18),
+	FireType.LARGE: Vector2(19, 19)
 }
 
 # Called when the node enters the scene tree for the first time.

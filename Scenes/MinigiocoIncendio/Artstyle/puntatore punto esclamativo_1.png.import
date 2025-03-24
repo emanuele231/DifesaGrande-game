@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjqbvfegi730t"
-path="res://.godot/imported/Key_H.png-ee0f8ae2066d86b98dd075942398ce2f.ctex"
+uid="uid://be1g0ififbua5"
+path="res://.godot/imported/puntatore punto esclamativo_1.png-54786516161054d1ebf438643d08347b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/MinigiocoIncendio/Artstyle/FuelKeys/Key_H.png"
-dest_files=["res://.godot/imported/Key_H.png-ee0f8ae2066d86b98dd075942398ce2f.ctex"]
+source_file="res://Scenes/MinigiocoIncendio/Artstyle/puntatore punto esclamativo_1.png"
+dest_files=["res://.godot/imported/puntatore punto esclamativo_1.png-54786516161054d1ebf438643d08347b.ctex"]
 
 [params]
 

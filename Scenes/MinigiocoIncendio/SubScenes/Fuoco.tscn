@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cbqposl5it6ww"]
+[gd_scene load_steps=10 format=3 uid="uid://cbqposl5it6ww"]
 
 [ext_resource type="Script" path="res://Scenes/MinigiocoIncendio/Script_minigioco_incendio/Fuoco.gd" id="1_fftaw"]
 [ext_resource type="Texture2D" uid="uid://c203mv8nnqu45" path="res://Scenes/MinigiocoIncendio/Artstyle/fiamme.png" id="1_lit2i"]
@@ -46,6 +46,9 @@ animations = [{
 "speed": 3.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yx1qy"]
+size = Vector2(187, 152)
+
 [node name="GestioneFuoco" type="Node2D"]
 script = ExtResource("1_fftaw")
 
@@ -55,3 +58,12 @@ scale = Vector2(5.625, 5.625)
 sprite_frames = SubResource("SpriteFrames_43x7f")
 animation = &"idle_fire"
 frame_progress = 0.419671
+
+[node name="Collision" type="Area2D" parent="Fuoco" groups=["fire"]]
+position = Vector2(1.24445, 9.06667)
+scale = Vector2(0.177778, 0.177778)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fuoco/Collision"]
+position = Vector2(-4.50002, -54)
+shape = SubResource("RectangleShape2D_yx1qy")
+debug_color = Color(0.647059, 0.219608, 0.313726, 0.631373)

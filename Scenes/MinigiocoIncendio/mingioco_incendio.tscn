@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dx3u7wdttybbo"]
+[gd_scene load_steps=11 format=3 uid="uid://dx3u7wdttybbo"]
 
 [ext_resource type="Texture2D" uid="uid://caunat2fsyqnp" path="res://Scenes/MinigiocoIncendio/Artstyle/sfondo_incendio.png" id="1_d54rb"]
 [ext_resource type="Script" path="res://Scenes/MinigiocoIncendio/Script_minigioco_incendio/read_beats.gd" id="1_ut6oe"]
@@ -6,14 +6,22 @@
 [ext_resource type="Texture2D" uid="uid://bpw6ccvg1ds2i" path="res://Scenes/MinigiocoIncendio/Artstyle/button_causa.png" id="3_xjv4q"]
 [ext_resource type="FontFile" uid="uid://bu8074xritaxh" path="res://Scenes/menu/Fonts/Ravenwood-g5JR.ttf" id="4_yvdyb"]
 [ext_resource type="AudioStream" uid="uid://cswaihsp8k7db" path="res://Scenes/MinigiocoIncendio/Sound Effects/chiptune-grooving-freelicense.mp3" id="5_tqub5"]
+[ext_resource type="Texture2D" uid="uid://be1g0ififbua5" path="res://Scenes/MinigiocoIncendio/Artstyle/puntatore punto esclamativo_1.png" id="6_0n8d4"]
+[ext_resource type="AudioStream" uid="uid://cm1h3guv7hj70" path="res://Scenes/Cutscene/Sound Effects/Fire-sound-freelicense.mp3" id="7_oxef7"]
+[ext_resource type="Theme" uid="uid://brb76mu8vmajm" path="res://Scenes/livello_1/ThemesGUI/PauseMenuTheme.tres" id="7_wwchd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y62f4"]
+size = Vector2(10800, 989.999)
 
 [node name="MinigiocoIncendio" type="Node2D"]
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 1921.0
-offset_bottom = 1079.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_ut6oe")
 
 [node name="Background" type="TextureRect" parent="Control"]
@@ -26,21 +34,125 @@ texture = ExtResource("1_d54rb")
 [node name="CanvasLayer" type="CanvasLayer" parent="Control"]
 follow_viewport_enabled = true
 
-[node name="GUI" type="Node2D" parent="Control/CanvasLayer"]
+[node name="GUIPre" type="Node2D" parent="Control/CanvasLayer"]
+
+[node name="BoxIndicazione" type="Sprite2D" parent="Control/CanvasLayer/GUIPre"]
+position = Vector2(976.447, 388)
+scale = Vector2(17.1695, 18.8108)
+texture = ExtResource("1_vu2ij")
+
+[node name="Istruzioni" type="Label" parent="Control/CanvasLayer/GUIPre"]
+anchors_preset = -1
+anchor_left = 0.062
+anchor_top = 0.457
+anchor_right = 0.379
+anchor_bottom = 0.762
+offset_left = 288.0
+offset_top = 120.0
+offset_right = 1615.0
+offset_bottom = 597.0
+theme_override_fonts/font = ExtResource("4_yvdyb")
+theme_override_font_sizes/font_size = 60
+text = "Oh no!
+È scoppiato un incendio!
+
+Dovrai spegnerlo al tempo della musica!
+... bla bla bla bla
+Sei pronto?"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="TextureButton" type="TextureButton" parent="Control/CanvasLayer/GUIPre"]
+offset_left = 896.0
+offset_top = 760.0
+offset_right = 921.0
+offset_bottom = 783.0
+scale = Vector2(7.28, 7.28)
+action_mode = 0
+texture_normal = ExtResource("3_xjv4q")
+
+[node name="LabelBox" type="Control" parent="Control/CanvasLayer/GUIPre"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LabelSmallBox" type="Label" parent="Control/CanvasLayer/GUIPre/LabelBox"]
+layout_mode = 0
+offset_left = 928.0
+offset_top = 792.0
+offset_right = 979.0
+offset_bottom = 831.0
+scale = Vector2(2.36477, 2.56477)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_yvdyb")
+theme_override_font_sizes/font_size = 30
+text = "SÌ!"
+horizontal_alignment = 1
+autowrap_mode = 1
+
+[node name="GUIMinigioco" type="Node2D" parent="Control/CanvasLayer"]
+visible = false
 position = Vector2(775, 555)
 
-[node name="BoxIndicazione" type="Sprite2D" parent="Control/CanvasLayer/GUI"]
+[node name="Collision" type="Area2D" parent="Control/CanvasLayer/GUIMinigioco" groups=["fire"]]
+position = Vector2(1.24445, 9.06665)
+scale = Vector2(0.177778, 0.177778)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Control/CanvasLayer/GUIMinigioco/Collision"]
+position = Vector2(1033.62, 1237.12)
+shape = SubResource("RectangleShape2D_y62f4")
+debug_color = Color(0.647059, 0.219608, 0.313726, 0.631373)
+
+[node name="BoxIndicazione" type="Sprite2D" parent="Control/CanvasLayer/GUIMinigioco"]
 position = Vector2(162.5, 337.125)
 scale = Vector2(14.7895, 8.81757)
 texture = ExtResource("1_vu2ij")
 
-[node name="Causa" type="Sprite2D" parent="Control/CanvasLayer/GUI"]
+[node name="ErroriCounter" type="RichTextLabel" parent="Control/CanvasLayer/GUIMinigioco/BoxIndicazione"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -44.4572
+offset_top = 6.79042
+offset_right = 130.543
+offset_bottom = 52.7904
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.1, 0.1)
+theme_override_fonts/normal_font = ExtResource("4_yvdyb")
+theme_override_font_sizes/normal_font_size = 38
+bbcode_enabled = true
+text = "Errori counter"
+
+[node name="InGameText" type="RichTextLabel" parent="Control/CanvasLayer/GUIMinigioco/BoxIndicazione"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -44.0
+offset_top = -12.0
+offset_right = 711.0
+offset_bottom = 34.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.1, 0.1)
+theme_override_fonts/normal_font = ExtResource("4_yvdyb")
+theme_override_font_sizes/normal_font_size = 38
+bbcode_enabled = true
+text = "testo_ingame"
+
+[node name="Causa" type="Sprite2D" parent="Control/CanvasLayer/GUIMinigioco"]
 position = Vector2(875.833, 291.348)
 rotation = -0.00481964
 scale = Vector2(13.7653, 13.8714)
 texture = ExtResource("3_xjv4q")
 
-[node name="LabelSmallBox" type="Label" parent="Control/CanvasLayer/GUI"]
+[node name="Sprite2D" type="Sprite2D" parent="Control/CanvasLayer/GUIMinigioco/Causa"]
+position = Vector2(0.371981, 0.697604)
+scale = Vector2(0.655757, 0.613552)
+texture = ExtResource("6_0n8d4")
+
+[node name="LabelCausa" type="Label" parent="Control/CanvasLayer/GUIMinigioco"]
 offset_left = 770.833
 offset_top = 156.348
 offset_right = 984.833
@@ -52,8 +164,76 @@ text = "CAUSA"
 horizontal_alignment = 1
 autowrap_mode = 1
 
+[node name="GUIPost" type="Node2D" parent="Control/CanvasLayer"]
+visible = false
+
+[node name="BoxIndicazione" type="Sprite2D" parent="Control/CanvasLayer/GUIPost"]
+position = Vector2(976.447, 472)
+scale = Vector2(17.1695, 23.3513)
+texture = ExtResource("1_vu2ij")
+
+[node name="Istruzioni_win" type="Label" parent="Control/CanvasLayer/GUIPost"]
+visible = false
+anchors_preset = -1
+anchor_left = 0.062
+anchor_top = 0.457
+anchor_right = 0.379
+anchor_bottom = 0.762
+offset_left = 288.0
+offset_top = 120.0
+offset_right = 1615.0
+offset_bottom = 597.0
+theme_override_fonts/font = ExtResource("4_yvdyb")
+theme_override_font_sizes/font_size = 60
+text = "Complimenti! Hai spento l'incendio!
+
+Punteggio: "
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Istruzioni_lose" type="Label" parent="Control/CanvasLayer/GUIPost"]
+visible = false
+anchors_preset = -1
+anchor_left = 0.062
+anchor_top = 0.457
+anchor_right = 0.379
+anchor_bottom = 0.762
+offset_left = 288.0
+offset_top = 120.0
+offset_right = 1615.0
+offset_bottom = 597.0
+theme_override_fonts/font = ExtResource("4_yvdyb")
+theme_override_font_sizes/font_size = 60
+text = "Mi dispiace, guardiano...
+
+Non sei riuscito a spegnere l'incendio! "
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Button" type="Button" parent="Control/CanvasLayer/GUIPost"]
+anchors_preset = -1
+anchor_left = 0.369
+anchor_top = 0.682
+anchor_right = 0.612
+anchor_bottom = 0.853
+offset_left = 824.0
+offset_top = 632.0
+offset_right = 1144.0
+offset_bottom = 776.0
+theme = ExtResource("7_wwchd")
+theme_override_font_sizes/font_size = 27
+text = "TORNA ALLA MAPPA
+"
+icon_alignment = 1
+
 [node name="SoundEffects" type="Node" parent="Control"]
 
 [node name="ThemeMinigioco" type="AudioStreamPlayer2D" parent="Control/SoundEffects"]
 stream = ExtResource("5_tqub5")
+
+[node name="FireSound" type="AudioStreamPlayer2D" parent="Control/SoundEffects"]
+stream = ExtResource("7_oxef7")
 autoplay = true
+parameters/looping = true
+
+[connection signal="pressed" from="Control/CanvasLayer/GUIPre/TextureButton" to="Control" method="_on_texture_button_pressed"]
