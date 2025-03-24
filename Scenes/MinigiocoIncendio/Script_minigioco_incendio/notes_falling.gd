@@ -96,11 +96,14 @@ func get_assigned_key():
 	for key in KEYS:
 		if not VariabiliGlobali.active_notes.has(key):
 			available_keys.append(key)
+		
+	print("Tasti disponibili: ", available_keys)
 
 	# Se ci sono tasti disponibili, scegli un tasto casuale
 	if available_keys.size() > 0:
 		return available_keys[randi() % available_keys.size()]
 	else:
+		print("Nessun tasto disponibile!")
 		return null  # Se non ci sono tasti disponibili, restituisce null
 
 # Funzione per aggiornare lo sprite del tasto assegnato
@@ -129,15 +132,15 @@ func _input(event):
 		if key_pressed == OS.get_keycode_string(assigned_key):
 			if note_type == "WATER":
 				# CORRETTO: il giocatore ha premuto una nota acqua
-				queue_free()  # Libera la risorsa
 				remove_note()  # Rimuove la nota dalla lista delle note attive
+				queue_free()  # Libera la risorsa
 				print("Bravo! Hai spento il fuoco con", key_pressed)
 			elif note_type == "FUEL":
 				# ERRORE: il giocatore ha premuto una nota combustibile
 				print("Errore! Hai alimentato il fuoco con", key_pressed)
 				update_error_count()
-				queue_free()  # Libera la risorsa
 				remove_note()  # Rimuove la nota dalla lista delle note attive
+				queue_free()  # Libera la risorsa
 				# emit_signal("note_missed")  # Segnala che il giocatore ha sbagliato -> da implementare
 		else:
 			# Se ha premuto un tasto non assegnato, non succede nulla
@@ -171,3 +174,5 @@ func toggle_visibility(nodes_array: Array):
 func remove_note():
 	if assigned_key in VariabiliGlobali.active_notes:
 		VariabiliGlobali.active_notes.erase(assigned_key)
+	else:
+		print("Errore! La nota non e' presente nella lista delle note attive: ", assigned_key)

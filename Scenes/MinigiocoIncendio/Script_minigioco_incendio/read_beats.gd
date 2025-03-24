@@ -40,7 +40,7 @@ func _process(delta):
 
 	if not game_started:
 		return  # Se il gioco non è iniziato, non fare nulla
-		
+
 	var current_time = Time.get_ticks_msec() / 1000 - start_time # Tempo attuale in secondi
 
 	if current_time - last_spawn_time >= spawn_interval: # Se il tempo trascorso dall'ultimo spawn e' maggiore o uguale all'intervallo di spawn
@@ -129,14 +129,13 @@ func set_spawn_interval(fire_type):
 # Funzione che spawna la scena "Note" (spawna le note) in una certa posizione iniziale.
 func create_note_at_time(time, num_notes, index):
 	var note_scene
-	var note_positions = [] # Lista per memorizzare le posizioni delle note
-	# Decide casualmente se la nota sara' acqua o combustibile - eventualmente implementare un sistema di probabilita'
-	var note_type = randi() % 2  # 0 = Acqua, 1 = Combustibile
+	# Utilizza l'algoritmo di sampling per decidere il tipo di nota da spawnare
+	var note_type = get_note_type_based_on_fire(fire_type)
 	
-	if note_type == 0:
+	if note_type == "WATER":
 		note_scene = nota_acqua_scena.instantiate()
 		note_scene.initialize_note("WATER")  # Inizializza la nota con il tipo scelto - da tenere d'occhio
-	else:
+	elif note_type == "FUEL":
 		note_scene = nota_comb_scena.instantiate()
 		note_scene.initialize_note("FUEL") 
 
@@ -152,6 +151,16 @@ func create_note_at_time(time, num_notes, index):
 	#print("Nota creata al tempo:", time, "Secondi attuali:", Time.get_ticks_msec() / 1000 - start_time)
 	add_child(note_scene)
 
-func note_missed():
-	print("Nota mancata!")
-	# Comportamento per l'errore: decrementa numero possibilita' in base al tipo di fuoco
+# Funzione che decide il tipo di nota da spawnare in base al tipo di fuoco - Algoritmo di sampling con distribuzione discreta
+# (Random weighted choice tra acqua e combustibile)
+func get_note_type_based_on_fire(fire_type):
+	var random_value = randf_range(0.0, 1.0) # Valore casuale tra 0 e 1
+	match fire_type:
+		"small":
+			return "WATER" if random_value < 0.7 else "FUEL" # 70% di probabilita' di acqua, 30% di combustibile
+		"medium":
+			return "WATER" if random_value < 0.5 else "FUEL" # 50% di probabilita' di acqua, 50% di combustibile
+		"large":
+			return "WATER" if random_value < 0.4 else "FUEL" # 40% di probabilita' di acqua, 60% di combustibile
+		_:
+			return "WATER" if random_value < 0.5 else "FUEL" # Default
