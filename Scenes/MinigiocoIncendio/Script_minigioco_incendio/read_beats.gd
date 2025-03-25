@@ -18,30 +18,43 @@ var start_time = 0 # Tempo di inizio del minigioco -> da impostare dopo che il g
 var spawn_interval = 0.0 # Intervallo tra lo spawn delle note
 var last_spawn_time = 0.0 # Ultimo tempo di spawn
 
-@onready var nodi_da_nasc: Array = [$CanvasLayer/GUIPre, $CanvasLayer/GUIMinigioco]
+@onready var nodi_da_nasc_1: Array = [$CanvasLayer/GUIPre, $CanvasLayer/GUIMinigioco]
+@onready var nodi_da_nasc_2: Array = [$CanvasLayer/GUIMinigioco/Causa/NomeCausa, $CanvasLayer/GUIMinigioco/Causa/Sprite2D, $CanvasLayer/GUIMinigioco/Causa/QuestionMark]
+@onready var nodi_da_nasc_3: Array = [$CanvasLayer/GUIMinigioco, $CanvasLayer/GUIPost]
 @onready var minigame_audio = $SoundEffects/ThemeMinigioco
+@onready var minigame_fire= $SoundEffects/FireEffect
+@onready var sound_fire = $SoundEffects/FireEffect
+@onready var sound_water = $SoundEffects/WaterEffect
+
+# Variabili per le cause dell'incendio in base al tipo
+var fire_causes = {
+	"small": [{"image": "res:://Scenes/MinigiocoIncendio/Artstyle/Cause/fiammifero.png", "probability": 0.7},
+	{"image": "res:://Scenes/MinigiocoIncendio/Artstyle/Cause/fogliolini.png", "probability": 0.3}],
+	"medium":
+	[{"image": "res:://Scenes/MinigiocoIncendio/Artstyle/Cause/sigaretta.png", "probability": 0.4},
+	{"image": "res:://Scenes/MinigiocoIncendio/Artstyle/Cause/stoppie.png", "probability": 0.2},
+	{"image": "res:://Scenes/MinigiocoIncendio/Artstyle/Cause/barbecue.png", "probability": 0.4}],
+	"large":[{"image": "res:://Scenes/MinigiocoIncendio/Artstyle/Cause/accendino.png", "probability": 0.5},
+	{"image": "res:://Scenes/MinigiocoIncendio/Artstyle/Cause/sigaretta.png", "probability": 0.5}]
+}
 
 # Funzione _ready, in cui si carica il file dei beat e si inizia il minigioco
 func _ready():
 	load_beat_times("res://Scenes/MinigiocoIncendio/beats.txt") # Carica i tempi del beat
-	#pending_notes = beat_times.duplicate() # Copia la lista dei tempi dei beat
-
-# VECCHIA FUNZIONE PROCESS con algoritmo di beat tracking Funzione _process, si gestisce lo spawning delle note al tempo corretto
-#func _process(delta):
-#	var current_time = Time.get_ticks_msec() / 1000 - start_time # Tempo attuale in secondi
-#
-#	if pending_notes.size() > 0 and current_time >= pending_notes[0]: # Se ci sono note in attesa e il tempo corrente e' maggiore o uguale al tempo della prima nota
-#		var spawn_time = pending_notes.pop_front() # Rimuove il primo elemento della lista
-#		create_note_at_time(spawn_time) # Crea la nota al tempo specificato
 
 # Funzione _process, gestisce lo spawning delle note in base al tipo di fuoco.
 # Per ogni tipo di fuoco, puo' spawnare un numero di note da 1 a max_notes.
 func _process(delta):
 
 	if not game_started:
-		return  # Se il gioco non è iniziato, non fare nulla
+		return  # Se il gioco non e' iniziato, non fa nulla
 
 	var current_time = Time.get_ticks_msec() / 1000 - start_time # Tempo attuale in secondi
+
+	#
+	if not minigame_audio.playing and game_started:
+		end_minigame()
+		return
 
 	if current_time - last_spawn_time >= spawn_interval: # Se il tempo trascorso dall'ultimo spawn e' maggiore o uguale all'intervallo di spawn
 		last_spawn_time = current_time
@@ -49,10 +62,10 @@ func _process(delta):
 		# Decido quante note spawnare in base al tipo di fuoco
 		var max_notes = 0
 		match fire_type:
-			"small": max_notes = 3
-			"medium": max_notes = 4
-			"large": max_notes = 5
-			_: max_notes = 2
+			"small": max_notes = 4
+			"medium": max_notes = 5
+			"large": max_notes = 6
+			_: max_notes = 4
 
 		var num_notes = randi_range(1, max_notes) # Numero casuale di note da spawnare (da 1 a max_notes)
 
@@ -85,7 +98,7 @@ func toggle_visibility(nodes_array: Array):
 
 # Quando il TextureButton in GUIPre e' premuto, inizia il minigioco e lo scorrere del tempo
 func _on_texture_button_pressed():
-	toggle_visibility(nodi_da_nasc)
+	toggle_visibility(nodi_da_nasc_1)
 	start_time = Time.get_ticks_msec() / 1000 # Ottiene il tempo attuale in secondi
 	game_started = true
 	start_minigame()
@@ -99,14 +112,14 @@ func start_minigame():
 	var fire_sprite = fire.get_node("Fuoco")
 	var fire_size= fire_sprite.get_sprite_frames().get_frame_texture(fire_sprite.animation, 0).get_size()
 	fire.position.x = (screen_size.x - fire_size.x) / 2
-	fire.position.y= 400 
+	fire.position.y= 550
 
 	add_child(fire)  # Il fuoco viene aggiunto alla scena
 
 	# Se il giocatore gioca al minigioco per la prima volta, il fuoco e' piccolo.
 	if first_play:
-		fire.set_fire_type(fire.FireType.SMALL)
-		fire_type = "small"
+		fire.set_fire_type(fire.FireType.MEDIUM)
+		fire_type = "medium"
 		first_play = false
 	else:
 		var random_fire = randi_range(0, 2) # Randomizza il tipo di fuoco
@@ -139,7 +152,7 @@ func create_note_at_time(time, num_notes, index):
 		note_scene = nota_comb_scena.instantiate()
 		note_scene.initialize_note("FUEL") 
 
-	var spawn_position_x = lerp(500, 1700, float(index) / float(num_notes - 1)) # Posizione x della nota
+	var spawn_position_x = lerp(128, 1700, float(index) / float(num_notes - 1)) # Posizione x della nota
 	var spawn_position_y = -50 # Posizione fissa sull'asse Y, o eventualmente casuale
 
 	var spawn_position = Vector2(spawn_position_x, spawn_position_y)
@@ -164,3 +177,54 @@ func get_note_type_based_on_fire(fire_type):
 			return "WATER" if random_value < 0.4 else "FUEL" # 40% di probabilita' di acqua, 60% di combustibile
 		_:
 			return "WATER" if random_value < 0.5 else "FUEL" # Default
+
+# Funzione che permette di finire il minigioco
+func end_minigame():
+	game_started = false # Blocca la generazione di nuove note
+
+	# Trova e rimuove tutte le note esistenti nella scena
+	for note in get_children():
+		if note is Node2D and (note.name.begins_with("NotaAcqua") or note.name.begins_with("NotaCombustibile")):
+			note.queue_free()
+
+	minigame_fire.stop() # Non sta funzionando?? ma perche' madonna
+	toggle_visibility(nodi_da_nasc_2)
+	# Mostra la schermata di fine minigioco con le cause dell'incendio
+	show_fire_cause()
+	await get_tree().create_timer(10.0).timeout
+	toggle_visibility(nodi_da_nasc_3)
+
+# Funzione che estrae un evento casuale con la probabilita' specificata
+func pick_fire_cause(fire_type):
+	var causes = fire_causes[fire_type]
+	var random_value = randf() 
+	var cumulative_prob = 0.0
+
+	for cause in causes:
+		cumulative_prob += cause["probability"]
+		if random_value <= cumulative_prob:
+			return cause
+
+# Funzione che mostra la schermata con le cause
+func show_fire_cause():
+	var chosen_cause = pick_fire_cause(fire_type)
+
+	print(chosen_cause["image"])
+
+	var image_path = chosen_cause["image"]
+	if ResourceLoader.exists(image_path):
+		var texture = load(image_path)
+
+		var sprite_cause = [
+			$CanvasLayer/GUIMinigioco/Causa/CausaScoperta,
+			$CanvasLayer/GUIMinigioco/Causa/Sprite2D,
+			$CanvasLayer/GUIPost/Causa
+		]
+	
+		for sprite in sprite_cause:
+			sprite.texture = texture
+			sprite.queue_redraw()
+	
+	# Mostra il testo associato
+	#var text_node = $CanvasLayer/GUIPost/CausaText
+	# Il testo voglio gestirlo separatamente perche' e' piu' lungo

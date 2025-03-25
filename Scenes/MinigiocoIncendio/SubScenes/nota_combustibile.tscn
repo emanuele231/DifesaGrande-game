@@ -1,47 +1,33 @@
-[gd_scene load_steps=8 format=3 uid="uid://c4pwxey1pvhip"]
+[gd_scene load_steps=5 format=3 uid="uid://c4pwxey1pvhip"]
 
 [ext_resource type="Texture2D" uid="uid://ntjx7r5jkbph" path="res://Scenes/MinigiocoIncendio/Artstyle/legname.png" id="1_8men6"]
 [ext_resource type="Script" path="res://Scenes/MinigiocoIncendio/Script_minigioco_incendio/notes_falling.gd" id="1_oedlt"]
 [ext_resource type="AudioStream" uid="uid://blm7n3vxjy5rk" path="res://Scenes/MinigiocoIncendio/Sound Effects/fire-burn-freelicense.mp3" id="3_4vywx"]
-[ext_resource type="AudioStream" uid="uid://bt0lrk4rsyjvh" path="res://Scenes/MinigiocoIncendio/Sound Effects/soft-plop-freelicense.mp3" id="4_n77dd"]
-
-[sub_resource type="ImageTexture" id="ImageTexture_jkhpo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u5v22"]
 size = Vector2(12, 16)
 
-[sub_resource type="AudioStream" id="AudioStream_bvtep"]
-
 [node name="NotaCombustibile" type="Node2D"]
 script = ExtResource("1_oedlt")
 
-[node name="Nota" type="Sprite2D" parent="."]
-position = Vector2(40, 40)
+[node name="Nota" type="TextureButton" parent="."]
+offset_left = 1.0
+offset_right = 17.0
+offset_bottom = 16.0
 scale = Vector2(5, 5)
-texture = ExtResource("1_8men6")
-
-[node name="Key" type="Sprite2D" parent="Nota"]
-position = Vector2(8.1152, 0.83878)
-rotation = -0.0287279
-scale = Vector2(0.665982, 0.669963)
-texture = SubResource("ImageTexture_jkhpo")
-region_rect = Rect2(112, 32, 16, 16)
+action_mode = 0
+texture_normal = ExtResource("1_8men6")
 
 [node name="Collision" type="Area2D" parent="Nota"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Nota/Collision"]
-position = Vector2(-1.43051e-06, 0)
+position = Vector2(8, 8)
 shape = SubResource("RectangleShape2D_u5v22")
 
 [node name="SoundEffects" type="Node" parent="."]
 
 [node name="SoundFire" type="AudioStreamPlayer2D" parent="SoundEffects"]
-visible = false
+unique_name_in_owner = true
 stream = ExtResource("3_4vywx")
 
-[node name="SoundWater" type="AudioStreamPlayer2D" parent="SoundEffects"]
-visible = false
-stream = ExtResource("4_n77dd")
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = SubResource("AudioStream_bvtep")
+[connection signal="pressed" from="Nota" to="." method="_on_fuel_note_pressed"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cacd7oja7qcoj"
-path="res://.godot/imported/accendino.png-ef6c56dafa2c1b17b0a793bbf4ef579a.ctex"
+uid="uid://d3wjl8rxu4ek"
+path="res://.godot/imported/sigaretta.png-5385135a4ea22a9a508b5322262f0ec6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/MinigiocoIncendio/Artstyle/accendino.png"
-dest_files=["res://.godot/imported/accendino.png-ef6c56dafa2c1b17b0a793bbf4ef579a.ctex"]
+source_file="res://Scenes/MinigiocoIncendio/Artstyle/Cause/sigaretta.png"
+dest_files=["res://.godot/imported/sigaretta.png-5385135a4ea22a9a508b5322262f0ec6.ctex"]
 
 [params]
 
