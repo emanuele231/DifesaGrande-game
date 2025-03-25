@@ -13,8 +13,8 @@ var pending_notes = [] # Lista di note in attesa di essere spawnate
 # Variabili per la gestione del minigioco
 var bpm = 120 # Valore di default BPM
 var fire_type = "small"
-var first_play = true
 var game_started = false
+var game_lost = false
 var start_time = 0 # Tempo di inizio del minigioco -> da impostare dopo che il giocatore preme "ok"
 var spawn_interval = 0.0 # Intervallo tra lo spawn delle note
 var last_spawn_time = 0.0 # Ultimo tempo di spawn
@@ -39,7 +39,7 @@ var last_spawn_time = 0.0 # Ultimo tempo di spawn
 @onready var sound_gameover = $SoundEffects/GameOverEffect
 @onready var sound_win = $SoundEffects/VictoryEffect
 
-# Variabili per le cause dell'incendio in base al tipo
+# Variabili per le cause dell'incendio in base al tipo. 
 var fire_causes = {
 	"small": [
 		{
@@ -59,7 +59,7 @@ var fire_causes = {
 		{
 			"image": "res://Scenes/MinigiocoIncendio/Artstyle/Cause/sigaretta.png",
 			"probability": 0.4,
-			"text": "MOZZICONE DI SIGARETTA",
+			"text": "MOZZICONE",
 			"desc": "[center]A quanto pare, l'incendio è stato causato da un mozzicone di sigaretta ancora acceso. Anche un piccolo gesto, come gettare un mozzicone per terra, può avere conseguenze devastanti sulla natura. I fumatori dovrebbero sempre spegnere completamente le sigarette e smaltirle negli appositi contenitori. È un incendio di tipo colposo![/center]"
 		},
 		{
@@ -85,12 +85,11 @@ var fire_causes = {
 		{
 			"image": "res://Scenes/MinigiocoIncendio/Artstyle/Cause/sigaretta.png",
 			"probability": 0.5,
-			"text": "MOZZICONE DI SIGARETTA",
+			"text": "MOZZICONE",
 			"desc": "[center]A quanto pare, l'incendio è stato causato da un mozzicone di sigaretta ancora acceso. Anche un piccolo gesto, come gettare un mozzicone per terra, può avere conseguenze devastanti sulla natura. I fumatori dovrebbero sempre spegnere completamente le sigarette e smaltirle negli appositi contenitori. È un incendio di tipo colposo![/center]"
 		}
 	]
 }
-
 
 
 # Funzione _ready, in cui si carica il file dei beat e si inizia il minigioco
@@ -106,9 +105,16 @@ func _process(delta):
 
 	var current_time = Time.get_ticks_msec() / 1000 - start_time # Tempo attuale in secondi
 
-	#
-	if not minigame_audio.playing and game_started:
+	# Se la musica del minigioco e' finita, finisce il minigioco
+	if not minigame_audio.playing and game_started and not game_lost:
 		end_minigame()
+		return
+
+	# Calcola la durata rimanente della traccia
+	var remaining_time = minigame_audio.stream.get_length() - current_time
+
+	# Se mancano meno di 5 secondi alla fine della traccia, interrompi lo spawning
+	if remaining_time <= 5:
 		return
 
 	if current_time - last_spawn_time >= spawn_interval: # Se il tempo trascorso dall'ultimo spawn e' maggiore o uguale all'intervallo di spawn
@@ -173,10 +179,10 @@ func start_minigame():
 	add_child(fire)  # Il fuoco viene aggiunto alla scena
 
 	# Se il giocatore gioca al minigioco per la prima volta, il fuoco e' piccolo.
-	if first_play:
+	if VariabiliGlobali.first_minigameincendio_play:
 		fire.set_fire_type(fire.FireType.SMALL)
 		fire_type = "small"
-		first_play = false
+		VariabiliGlobali.first_minigameincendio_play = false
 	else:
 		var random_fire = randi_range(0, 2) # Randomizza il tipo di fuoco
 		fire.set_fire_type(random_fire)
@@ -296,18 +302,25 @@ func show_fire_cause():
 
 
 func _on_mappa_pressed():
-	print("Caricamento scena mappa...") 
+	print("Caricamento scena mappa...")
+	VariabiliGlobali.game_over_called = false
+	get_tree().paused = false
 	get_tree().change_scene_to_packed(scena_mappa)
 
 # Funzione che mostra il game over quando il giocatore perde
 func game_over():
 	print("Game over!")
+	game_lost = true
+	get_tree().paused = true
+
+	print("Stampo i nodi figli",get_children())
 
 	# Trova e rimuove tutte le note esistenti nella scena
 	for note in get_children():
 		if note is Node2D and (note.name.begins_with("NotaAcqua") or note.name.begins_with("NotaCombustibile")):
 			note.queue_free()
 
+	# Prova	
 	minigame_audio.stop()
 	await get_tree().create_timer(1.0).timeout
 	# Musica di game over
@@ -315,7 +328,6 @@ func game_over():
 	minigame_fire.stop()
 	toggle_visibility(nodi_da_nasc_3)
 	toggle_visibility(nodi_da_nasc_5)
-	#emit_signal("game_over")
 
 
 # Funzioni per il play dei sound effects delle note

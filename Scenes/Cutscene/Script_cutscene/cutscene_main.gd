@@ -144,6 +144,7 @@ func _on_texture_button7_pressed():
 func _on_texture_button8_pressed():
 	toggle_visibility(nodi_da_nasc_8)
 	main_node._on_next_pressed()
+	SceneTransition.change_scene("res://Scenes/mappa_game/mappa.tscn")
 	
 	# Qui si dovra' cambiare scena e andare nella personalizzazione del personaggio.
 

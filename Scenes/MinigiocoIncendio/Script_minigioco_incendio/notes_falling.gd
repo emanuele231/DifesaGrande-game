@@ -108,7 +108,6 @@ func update_error_count():
 	if VariabiliGlobali.error_count >= VariabiliGlobali.error_limit:
 	# Mostrare a schermo il punteggio finale, non vengono scoperte le cause, ecc.
 		print("SEI MORTO")
-		#get_tree().paused = true
 
 		# Trova il nodo principale e chiama il game over
 		# Debug: Controlla la scena corrente
@@ -116,7 +115,10 @@ func update_error_count():
 
 		var main_game = get_tree().current_scene.get_node("Control")
 		if main_game:
-			main_game.game_over()
+			
+			if VariabiliGlobali.game_over_called == false:
+				main_game.game_over()
+				VariabiliGlobali.game_over_called = true
 		else:
 			print("Errore: Nodo MainGame non trovato!")
 

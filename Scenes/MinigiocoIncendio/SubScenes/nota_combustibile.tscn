@@ -8,6 +8,7 @@
 size = Vector2(12, 16)
 
 [node name="NotaCombustibile" type="Node2D"]
+process_mode = 1
 script = ExtResource("1_oedlt")
 
 [node name="Nota" type="TextureButton" parent="."]

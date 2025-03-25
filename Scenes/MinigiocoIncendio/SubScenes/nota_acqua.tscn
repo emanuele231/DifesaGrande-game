@@ -8,6 +8,7 @@
 size = Vector2(6.18412, 8.20802)
 
 [node name="NotaAcqua" type="Node2D"]
+process_mode = 1
 script = ExtResource("1_agmtu")
 
 [node name="Nota" type="TextureButton" parent="."]

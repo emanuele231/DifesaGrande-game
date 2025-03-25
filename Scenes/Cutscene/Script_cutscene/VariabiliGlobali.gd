@@ -7,5 +7,7 @@ var click_count = 0  # Variabile click counter per la cutscene iniziale
 var error_count = 0  # Variabile per contare gli errori
 var error_limit = 5  # Numero massimo di errori
 var active_notes = {} # Dizionario per tenere traccia delle note attive con i tasti associati
+var first_minigameincendio_play = true
+var game_over_called = false
 
 # Cattura dei nodi AudioStreamPlayer2D per la gestione dei sound effects
