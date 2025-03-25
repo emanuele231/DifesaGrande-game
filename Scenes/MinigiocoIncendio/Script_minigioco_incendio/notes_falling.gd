@@ -58,6 +58,12 @@ func _on_area_entered(area):
 		elif note_type == "FUEL":
 			queue_free()
 		
+		var main_game = get_tree().current_scene.get_node("Control")
+		if main_game:
+			main_game.play_sound_fuel()
+		else:
+			print("Errore: Nodo MainGame non trovato!")
+			
 
 # Funzione per inizializzare la nota con un tipo e un tasto assegnato
 func initialize_note(type):
@@ -67,25 +73,25 @@ func initialize_note(type):
 func _on_water_note_pressed():
 
 	print("Nota di acqua premuta!")
-	#if has_node("SoundEffects/SoundWater"):
-		#var sound_node= get_node("SoundEffects/SoundWater")
-		#sound_node.play()
-		#print("Dovrei suonare ma non suono")
-	#else:
-	#	print("Sound node non trovato!")
-
+	var main_game = get_tree().current_scene.get_node("Control")
+	if main_game:
+		main_game.play_sound_water()
+	else:
+		print("Errore: Nodo MainGame non trovato!")
+	
 	queue_free()
 
 func _on_fuel_note_pressed():
 	
 	print("Nota di combustibile premuta!")
 	update_error_count()
-	#if has_node("SoundEffects/SoundFire"):
-		#var sound_node= get_node("SoundEffects/SoundFire")
-		#sound_node.play()
-		#print("Dovrei suonare ma non suono")
-	#else:
-	#	print("Sound node non trovato!")
+
+	var main_game = get_tree().current_scene.get_node("Control")
+	if main_game:
+		main_game.play_sound_fuel()
+	else:
+		print("Errore: Nodo MainGame non trovato!")
+
 	queue_free()
 
 func set_error_limit():
@@ -98,11 +104,21 @@ func set_error_limit():
 func update_error_count():
 	VariabiliGlobali.error_count += 1
 	print("Errore! Errori totali: ", VariabiliGlobali.error_count)
+
 	if VariabiliGlobali.error_count >= VariabiliGlobali.error_limit:
 	# Mostrare a schermo il punteggio finale, non vengono scoperte le cause, ecc.
 		print("SEI MORTO")
-		get_tree().paused = true
-		emit_signal("game_over")
+		#get_tree().paused = true
+
+		# Trova il nodo principale e chiama il game over
+		# Debug: Controlla la scena corrente
+		print("Scena corrente: ", get_tree().current_scene.name)
+
+		var main_game = get_tree().current_scene.get_node("Control")
+		if main_game:
+			main_game.game_over()
+		else:
+			print("Errore: Nodo MainGame non trovato!")
 
 # Cambia la visibilita' ai nodi in un certo array di nodi
 func toggle_visibility(node):

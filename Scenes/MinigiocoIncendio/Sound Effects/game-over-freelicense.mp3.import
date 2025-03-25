@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cae5faj6ax8jf"
+path="res://.godot/imported/game-over-freelicense.mp3-3f7eeb458f14c28d22755631faf85d8e.mp3str"
+
+[deps]
+
+source_file="res://Scenes/MinigiocoIncendio/Sound Effects/game-over-freelicense.mp3"
+dest_files=["res://.godot/imported/game-over-freelicense.mp3-3f7eeb458f14c28d22755631faf85d8e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

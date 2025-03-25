@@ -3,6 +3,7 @@ extends Control
 # Variabili per le scene che vengono istanziate
 const nota_acqua_scena = preload("res://Scenes/MinigiocoIncendio/SubScenes/nota_acqua.tscn")
 const nota_comb_scena = preload("res://Scenes/MinigiocoIncendio/SubScenes/nota_combustibile.tscn")
+var scena_mappa = preload("res://Scenes/mappa_game/mappa.tscn") 
 var fire_scene = preload("res://Scenes/MinigiocoIncendio/SubScenes/Fuoco.tscn")
 
 # Variabili per la gestione dei beat
@@ -18,25 +19,79 @@ var start_time = 0 # Tempo di inizio del minigioco -> da impostare dopo che il g
 var spawn_interval = 0.0 # Intervallo tra lo spawn delle note
 var last_spawn_time = 0.0 # Ultimo tempo di spawn
 
+# Nodi per la modifica della visibilita'
 @onready var nodi_da_nasc_1: Array = [$CanvasLayer/GUIPre, $CanvasLayer/GUIMinigioco]
-@onready var nodi_da_nasc_2: Array = [$CanvasLayer/GUIMinigioco/Causa/NomeCausa, $CanvasLayer/GUIMinigioco/Causa/Sprite2D, $CanvasLayer/GUIMinigioco/Causa/QuestionMark]
+@onready var nodi_da_nasc_2: Array = [$CanvasLayer/GUIMinigioco/Causa/CausaScopertaBox, $CanvasLayer/GUIMinigioco/Causa/QuestionMark]
 @onready var nodi_da_nasc_3: Array = [$CanvasLayer/GUIMinigioco, $CanvasLayer/GUIPost]
+@onready var nodi_da_nasc_4: Array = [$CanvasLayer/GUIPost/Istruzioni_win, $CanvasLayer/GUIPost/Causa, $CanvasLayer/GUIPost/NomeCausa, $CanvasLayer/GUIPost/DescrizioneCausa, $CanvasLayer/GUIPost/BackgroundDesc]
+@onready var nodi_da_nasc_5: Array = [$CanvasLayer/GUIPost/Istruzioni_lose, $CanvasLayer/GUIPost/CausaNonScopertaLabel]
+
+# Button mappa
+@onready var mappa_Button = $CanvasLayer/GUIPost/ButtonTorna
+
+# Themes
 @onready var minigame_audio = $SoundEffects/ThemeMinigioco
-@onready var minigame_fire= $SoundEffects/FireEffect
+@onready var minigame_fire= $SoundEffects/FireSound
+
+# Sound effects
 @onready var sound_fire = $SoundEffects/FireEffect
 @onready var sound_water = $SoundEffects/WaterEffect
+@onready var sound_gameover = $SoundEffects/GameOverEffect
+@onready var sound_win = $SoundEffects/VictoryEffect
 
 # Variabili per le cause dell'incendio in base al tipo
 var fire_causes = {
-	"small": [{"image": "res:://Scenes/MinigiocoIncendio/Artstyle/Cause/fiammifero.png", "probability": 0.7},
-	{"image": "res:://Scenes/MinigiocoIncendio/Artstyle/Cause/fogliolini.png", "probability": 0.3}],
-	"medium":
-	[{"image": "res:://Scenes/MinigiocoIncendio/Artstyle/Cause/sigaretta.png", "probability": 0.4},
-	{"image": "res:://Scenes/MinigiocoIncendio/Artstyle/Cause/stoppie.png", "probability": 0.2},
-	{"image": "res:://Scenes/MinigiocoIncendio/Artstyle/Cause/barbecue.png", "probability": 0.4}],
-	"large":[{"image": "res:://Scenes/MinigiocoIncendio/Artstyle/Cause/accendino.png", "probability": 0.5},
-	{"image": "res:://Scenes/MinigiocoIncendio/Artstyle/Cause/sigaretta.png", "probability": 0.5}]
+	"small": [
+		{
+			"image": "res://Scenes/MinigiocoIncendio/Artstyle/Cause/fiammifero.png",
+			"probability": 0.7,
+			"text": "FIAMMIFERO",
+			"desc": "[center]L'incendio è stato innescato da un fiammifero, intenzionalmente. Qualcuno ha arrecato volutamente danno alla natura.. che vergogna![/center]"
+		},
+		{
+			"image": "res://Scenes/MinigiocoIncendio/Artstyle/Cause/fogliolini.png",
+			"probability": 0.3,
+			"text":"FOGLIAME",
+			"desc": "[center]L'incendio è stato innescato dall'autocombustione di foglie secche, fenomeno che può verificarsi quando ci sono temperature alte e scarsa umidità. Anche se naturali, eventi di questo tipo possono essere prevenuti con una buona pulizia e manutenzione delle aree verdi![/center]"
+		}
+	],
+	"medium":[
+		{
+			"image": "res://Scenes/MinigiocoIncendio/Artstyle/Cause/sigaretta.png",
+			"probability": 0.4,
+			"text": "MOZZICONE DI SIGARETTA",
+			"desc": "[center]A quanto pare, l'incendio è stato causato da un mozzicone di sigaretta ancora acceso. Anche un piccolo gesto, come gettare un mozzicone per terra, può avere conseguenze devastanti sulla natura. I fumatori dovrebbero sempre spegnere completamente le sigarette e smaltirle negli appositi contenitori. È un incendio di tipo colposo![/center]"
+		},
+		{
+			"image": "res://Scenes/MinigiocoIncendio/Artstyle/Cause/stoppie.png",
+			"probability": 0.2,
+			"text": "STOPPIE",
+			"desc": "[center]L'incendio è stato causato dalla bruciatura di stoppie agricole, una pratica pericolosa che può facilmente sfuggire al controllo, come in questo caso. Bruciare resti agricoli, oltre ad essere rischioso, è anche dannoso per l'ambiente perché inquina l'aria e secca il suolo. È essenziale adottare metodi alternativi più sostenibili per la gestione dei rifiuti agricoli.[/center]"
+		},
+		{
+			"image": "res://Scenes/MinigiocoIncendio/Artstyle/Cause/barbecue.png",
+			"probability": 0.4,
+			"text": "BARBECUE",
+			"desc": "[center]L'incendio è stato causato dai resti di un barbecue lasciati incustoditi. Anche se può sembrare innocuo, accendere un fuoco in un'area boschiva è estremamente pericoloso, soprattutto in condizioni di vento e siccità. Incendi colposi come questo possono essere evitati con comportamenti più responsabili.[/center]"
+		}
+	],
+	"large":[
+		{
+			"image": "res://Scenes/MinigiocoIncendio/Artstyle/Cause/accendino.png",
+			"probability": 0.5, 
+			"text": "ACCENDINO",
+			"desc": "[center]L'incendio è stato provocato intenzionalmente con un accendino. Si tratta quindi di un incendio doloso, un atto grave e irresponsabile, che mette a rischio non solo il bosco, la sua fauna e la sua flora, ma anche la sicurezza delle persone. Incendiare volontariamente un'area verde è un crimine ambientale![/center]"
+		},
+		{
+			"image": "res://Scenes/MinigiocoIncendio/Artstyle/Cause/sigaretta.png",
+			"probability": 0.5,
+			"text": "MOZZICONE DI SIGARETTA",
+			"desc": "[center]A quanto pare, l'incendio è stato causato da un mozzicone di sigaretta ancora acceso. Anche un piccolo gesto, come gettare un mozzicone per terra, può avere conseguenze devastanti sulla natura. I fumatori dovrebbero sempre spegnere completamente le sigarette e smaltirle negli appositi contenitori. È un incendio di tipo colposo![/center]"
+		}
+	]
 }
+
+
 
 # Funzione _ready, in cui si carica il file dei beat e si inizia il minigioco
 func _ready():
@@ -111,15 +166,16 @@ func start_minigame():
 	var screen_size = get_viewport_rect().size
 	var fire_sprite = fire.get_node("Fuoco")
 	var fire_size= fire_sprite.get_sprite_frames().get_frame_texture(fire_sprite.animation, 0).get_size()
-	fire.position.x = (screen_size.x - fire_size.x) / 2
-	fire.position.y= 550
+	#fire.position.x = (screen_size.x - fire_size.x) / 2
+	fire.position.x = 900
+	fire.position.y= 500
 
 	add_child(fire)  # Il fuoco viene aggiunto alla scena
 
 	# Se il giocatore gioca al minigioco per la prima volta, il fuoco e' piccolo.
 	if first_play:
-		fire.set_fire_type(fire.FireType.MEDIUM)
-		fire_type = "medium"
+		fire.set_fire_type(fire.FireType.SMALL)
+		fire_type = "small"
 		first_play = false
 	else:
 		var random_fire = randi_range(0, 2) # Randomizza il tipo di fuoco
@@ -182,17 +238,20 @@ func get_note_type_based_on_fire(fire_type):
 func end_minigame():
 	game_started = false # Blocca la generazione di nuove note
 
+	minigame_fire.stop()
+	sound_win.play()
+	await get_tree().create_timer(10.0).timeout
 	# Trova e rimuove tutte le note esistenti nella scena
 	for note in get_children():
 		if note is Node2D and (note.name.begins_with("NotaAcqua") or note.name.begins_with("NotaCombustibile")):
 			note.queue_free()
 
-	minigame_fire.stop() # Non sta funzionando?? ma perche' madonna
 	toggle_visibility(nodi_da_nasc_2)
 	# Mostra la schermata di fine minigioco con le cause dell'incendio
 	show_fire_cause()
 	await get_tree().create_timer(10.0).timeout
 	toggle_visibility(nodi_da_nasc_3)
+	toggle_visibility(nodi_da_nasc_4)
 
 # Funzione che estrae un evento casuale con la probabilita' specificata
 func pick_fire_cause(fire_type):
@@ -217,7 +276,7 @@ func show_fire_cause():
 
 		var sprite_cause = [
 			$CanvasLayer/GUIMinigioco/Causa/CausaScoperta,
-			$CanvasLayer/GUIMinigioco/Causa/Sprite2D,
+			$CanvasLayer/GUIMinigioco/Causa/CausaScopertaBox/Sprite2D,
 			$CanvasLayer/GUIPost/Causa
 		]
 	
@@ -225,6 +284,43 @@ func show_fire_cause():
 			sprite.texture = texture
 			sprite.queue_redraw()
 	
-	# Mostra il testo associato
-	#var text_node = $CanvasLayer/GUIPost/CausaText
-	# Il testo voglio gestirlo separatamente perche' e' piu' lungo
+	# Mostra il nome della causa
+	var text_node = $CanvasLayer/GUIMinigioco/Causa/CausaScopertaBox/NomeCausa
+	text_node.text = chosen_cause["text"]
+	text_node = $CanvasLayer/GUIPost/NomeCausa
+	text_node.text = chosen_cause["text"]
+
+	# Mostra la descrizione della causa - da implementare bene la logica?
+	var text_desc = $CanvasLayer/GUIPost/DescrizioneCausa
+	text_desc.text = chosen_cause["desc"]
+
+
+func _on_mappa_pressed():
+	print("Caricamento scena mappa...") 
+	get_tree().change_scene_to_packed(scena_mappa)
+
+# Funzione che mostra il game over quando il giocatore perde
+func game_over():
+	print("Game over!")
+
+	# Trova e rimuove tutte le note esistenti nella scena
+	for note in get_children():
+		if note is Node2D and (note.name.begins_with("NotaAcqua") or note.name.begins_with("NotaCombustibile")):
+			note.queue_free()
+
+	minigame_audio.stop()
+	await get_tree().create_timer(1.0).timeout
+	# Musica di game over
+	sound_gameover.play()
+	minigame_fire.stop()
+	toggle_visibility(nodi_da_nasc_3)
+	toggle_visibility(nodi_da_nasc_5)
+	#emit_signal("game_over")
+
+
+# Funzioni per il play dei sound effects delle note
+func play_sound_fuel():
+	sound_fire.play()
+
+func play_sound_water():
+	sound_water.play()
