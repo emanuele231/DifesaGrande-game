@@ -5,20 +5,20 @@ extends Sprite2D
 
 # Testo storia della cutscene 
 var story_dialogue = [
-	"[center]La mia storia inizia.. nella natura. L'ho sempre amata. Mi piace osservare le [u][color=#e3a807]podoliche[/color][/u] che pascolano libere, sentire l'odore della terra, il calore del sole sul mio viso" +
+	"[center]La mia storia inizia.. nella natura. L'ho sempre amata. Mi piace osservare le [u][color=#ffce52]podoliche[/color][/u] che pascolano libere, sentire l'odore della terra, il calore del sole sul mio viso" +
 	" e il dolce canto degli uccellini.[/center]",
-	"[center]A quei tempi, passavo la vita prendendomi cura delle mie podoliche e del mio [u][color=#e3a807]orto[/color][/u]. " +
+	"[center]A quei tempi, passavo la vita prendendomi cura delle mie podoliche e del mio [u][color=#ffce52]orto[/color][/u]. " +
 	"C'era pero' un posto che non avevo mai esplorato.. il Bosco Difesa Grande.[/center]",
-	"[center]Un giorno, mentre accudivo le mie polodiche, vidi del fumo salire in cielo.\n" +
+	"[center]Un giorno, mentre accudivo le mie polodiche, vidi del [u][color=#ffce52]fumo[/color][/u] salire in cielo.\n" +
 	"Era un incendio, e le sue fiamme avanzavano rapidamente.[/center]",
-	"[center]Avevo molta paura, ma non potevo perdere tempo.\n\n[font_size=50]Dovevo [u][color=#e3a807]chiamare[/color][/u] i soccorsi![/font_size][/center]",
-	"[center]Per fortuna, i [u][color=#e3a807]vigili del fuoco[/color][/u] arrivarono in tempo e, con tanto coraggio, ci salvarono dalle fiamme." +
+	"[center]Avevo molta paura, ma non potevo perdere tempo.\n\n[font_size=50]Dovevo [u][color=#ffce52]chiamare[/color][/u] i soccorsi![/font_size][/center]",
+	"[center]Per fortuna, i [u][color=#ffce52]vigili del fuoco[/color][/u] arrivarono in tempo e, con tanto coraggio, ci salvarono dalle fiamme." +
 	" Io e le mie podoliche eravamo al sicuro, ma la mia casa non c'era piu'.[/center]",
-	"[center]Qualche giorno dopo, il Sindaco e l'Assessore di Gravina mi chiamarono." + 
+	"[center]Qualche giorno dopo, il Sindaco e l'[u][color=#ffce52]Assessore di Gravina[/color][/u] mi chiamarono." + 
 	" Erano dispiaciuti per la mia situazione, e mi dissero che l'incendio proveniva dal Bosco Difesa Grande. " +
-	"Volevano che sapessi una cosa: il [u][color=#e3a807]Bosco Difesa Grande[/color][/u] non poteva permettersi un altro disastro simile." + 
+	"Volevano che sapessi una cosa: il Bosco Difesa Grande non poteva permettersi un altro disastro simile." + 
 	" Avevano bisogno di qualcuno che lo proteggesse.[/center]",
-	"[center]Mi offrirono una [u][color=#e3a807]casa[/color][/u] all'interno del Bosco " + 
+	"[center]Mi offrirono una [u][color=#ffce52]casa[/color][/u] all'interno del Bosco " + 
 	"dove poter vivere con le mie podoliche, e un compito: proteggere il Bosco dalle minacce![/center]"
 ]
 

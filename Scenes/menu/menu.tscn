@@ -165,7 +165,7 @@ offset_bottom = 740.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("8_m7o7q")
 theme_override_font_sizes/font_size = 65
-text = "Versione 250316
+text = "Versione 250326
 
 Sviluppato da G.M. Mars Acucella , Andrea Barbaro,
  Emanuele De Stena , Angela Mileti in collaborazione 

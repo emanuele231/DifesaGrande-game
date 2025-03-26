@@ -45,13 +45,13 @@ var fire_causes = {
 		{
 			"image": "res://Scenes/MinigiocoIncendio/Artstyle/Cause/fiammifero.png",
 			"probability": 0.7,
-			"text": "FIAMMIFERO",
+			"text": "[center][color=brown]FIAMMIFERO[/color][/center]",
 			"desc": "[center]L'incendio è stato innescato da un fiammifero, intenzionalmente. Qualcuno ha arrecato volutamente danno alla natura.. che vergogna![/center]"
 		},
 		{
 			"image": "res://Scenes/MinigiocoIncendio/Artstyle/Cause/fogliolini.png",
 			"probability": 0.3,
-			"text":"FOGLIAME",
+			"text":"[center][color=brown]FOGLIAME[/color][/center]",
 			"desc": "[center]L'incendio è stato innescato dall'autocombustione di foglie secche, fenomeno che può verificarsi quando ci sono temperature alte e scarsa umidità. Anche se naturali, eventi di questo tipo possono essere prevenuti con una buona pulizia e manutenzione delle aree verdi![/center]"
 		}
 	],
@@ -59,19 +59,19 @@ var fire_causes = {
 		{
 			"image": "res://Scenes/MinigiocoIncendio/Artstyle/Cause/sigaretta.png",
 			"probability": 0.4,
-			"text": "MOZZICONE",
+			"text": "[center][color=brown]MOZZICONE[/color][/center]",
 			"desc": "[center]A quanto pare, l'incendio è stato causato da un mozzicone di sigaretta ancora acceso. Anche un piccolo gesto, come gettare un mozzicone per terra, può avere conseguenze devastanti sulla natura. I fumatori dovrebbero sempre spegnere completamente le sigarette e smaltirle negli appositi contenitori. È un incendio di tipo colposo![/center]"
 		},
 		{
 			"image": "res://Scenes/MinigiocoIncendio/Artstyle/Cause/stoppie.png",
 			"probability": 0.2,
-			"text": "STOPPIE",
+			"text": "[center][color=brown]STOPPIE[/color][/center]",
 			"desc": "[center]L'incendio è stato causato dalla bruciatura di stoppie agricole, una pratica pericolosa che può facilmente sfuggire al controllo, come in questo caso. Bruciare resti agricoli, oltre ad essere rischioso, è anche dannoso per l'ambiente perché inquina l'aria e secca il suolo. È essenziale adottare metodi alternativi più sostenibili per la gestione dei rifiuti agricoli.[/center]"
 		},
 		{
 			"image": "res://Scenes/MinigiocoIncendio/Artstyle/Cause/barbecue.png",
 			"probability": 0.4,
-			"text": "BARBECUE",
+			"text": "[center][color=brown]BARBECUE[/color][/center]",
 			"desc": "[center]L'incendio è stato causato dai resti di un barbecue lasciati incustoditi. Anche se può sembrare innocuo, accendere un fuoco in un'area boschiva è estremamente pericoloso, soprattutto in condizioni di vento e siccità. Incendi colposi come questo possono essere evitati con comportamenti più responsabili.[/center]"
 		}
 	],
@@ -79,18 +79,28 @@ var fire_causes = {
 		{
 			"image": "res://Scenes/MinigiocoIncendio/Artstyle/Cause/accendino.png",
 			"probability": 0.5, 
-			"text": "ACCENDINO",
+			"text": "[center][color=brown]ACCENDINO[/color][/center]",
 			"desc": "[center]L'incendio è stato provocato intenzionalmente con un accendino. Si tratta quindi di un incendio doloso, un atto grave e irresponsabile, che mette a rischio non solo il bosco, la sua fauna e la sua flora, ma anche la sicurezza delle persone. Incendiare volontariamente un'area verde è un crimine ambientale![/center]"
 		},
 		{
 			"image": "res://Scenes/MinigiocoIncendio/Artstyle/Cause/sigaretta.png",
 			"probability": 0.5,
-			"text": "MOZZICONE",
+			"text": "[center][color=brown]MOZZICONE[/color][/center]",
 			"desc": "[center]A quanto pare, l'incendio è stato causato da un mozzicone di sigaretta ancora acceso. Anche un piccolo gesto, come gettare un mozzicone per terra, può avere conseguenze devastanti sulla natura. I fumatori dovrebbero sempre spegnere completamente le sigarette e smaltirle negli appositi contenitori. È un incendio di tipo colposo![/center]"
 		}
 	]
 }
 
+# Array di testi per i messaggi da visualizzare in-game
+var messages = [
+	"[center][color=brown]Ottimo![/color][/center]",
+	"[center][color=brown]Continua così![/color][/center]",
+	"[center][color=brown]Errore![/color][/center]",
+	"[center][color=brown]Fai attenzione![/color][/center]",
+	"[center][color=brown]Concentrati![/color][/center]",
+	"[center][color=brown]Game Over! Troppi errori.[/color][/center]",
+	"[center][color=brown]Hai spento l'incendio e salvato il bosco![/color][/center]"
+]
 
 # Funzione _ready, in cui si carica il file dei beat e si inizia il minigioco
 func _ready():
@@ -167,6 +177,7 @@ func _on_texture_button_pressed():
 
 # Funzione per la gestione del minigioco.
 func start_minigame():
+	VariabiliGlobali.score = 0
 	var fire = fire_scene.instantiate()
 	
 	var screen_size = get_viewport_rect().size
@@ -234,9 +245,9 @@ func get_note_type_based_on_fire(fire_type):
 		"small":
 			return "WATER" if random_value < 0.7 else "FUEL" # 70% di probabilita' di acqua, 30% di combustibile
 		"medium":
-			return "WATER" if random_value < 0.5 else "FUEL" # 50% di probabilita' di acqua, 50% di combustibile
+			return "WATER" if random_value < 0.6 else "FUEL" # 60% di probabilita' di acqua, 40% di combustibile
 		"large":
-			return "WATER" if random_value < 0.4 else "FUEL" # 40% di probabilita' di acqua, 60% di combustibile
+			return "WATER" if random_value < 0.7 else "FUEL" # 70% di probabilita' di acqua, 30% di combustibile
 		_:
 			return "WATER" if random_value < 0.5 else "FUEL" # Default
 
@@ -245,19 +256,23 @@ func end_minigame():
 	game_started = false # Blocca la generazione di nuove note
 
 	minigame_fire.stop()
+	set_ingame_label()
 	sound_win.play()
-	await get_tree().create_timer(10.0).timeout
 	# Trova e rimuove tutte le note esistenti nella scena
 	for note in get_children():
 		if note is Node2D and (note.name.begins_with("NotaAcqua") or note.name.begins_with("NotaCombustibile")):
 			note.queue_free()
 
-	toggle_visibility(nodi_da_nasc_2)
-	# Mostra la schermata di fine minigioco con le cause dell'incendio
-	show_fire_cause()
 	await get_tree().create_timer(10.0).timeout
+
+	toggle_visibility(nodi_da_nasc_2)
+	show_fire_cause()
+	await get_tree().create_timer(8.0).timeout
+	# Mostra la schermata di fine minigioco con le cause dell'incendio
 	toggle_visibility(nodi_da_nasc_3)
 	toggle_visibility(nodi_da_nasc_4)
+	get_tree().paused = true
+	set_score_label()
 
 # Funzione che estrae un evento casuale con la probabilita' specificata
 func pick_fire_cause(fire_type):
@@ -296,14 +311,18 @@ func show_fire_cause():
 	text_node = $CanvasLayer/GUIPost/NomeCausa
 	text_node.text = chosen_cause["text"]
 
-	# Mostra la descrizione della causa - da implementare bene la logica?
+	# Mostra la descrizione della causa
 	var text_desc = $CanvasLayer/GUIPost/DescrizioneCausa
 	text_desc.text = chosen_cause["desc"]
 
 
 func _on_mappa_pressed():
 	print("Caricamento scena mappa...")
+	# Reset variabili globali
 	VariabiliGlobali.game_over_called = false
+
+	reset_global_variables()
+
 	get_tree().paused = false
 	get_tree().change_scene_to_packed(scena_mappa)
 
@@ -311,6 +330,7 @@ func _on_mappa_pressed():
 func game_over():
 	print("Game over!")
 	game_lost = true
+	reset_global_variables()
 	get_tree().paused = true
 
 	print("Stampo i nodi figli",get_children())
@@ -319,10 +339,8 @@ func game_over():
 	for note in get_children():
 		if note is Node2D and (note.name.begins_with("NotaAcqua") or note.name.begins_with("NotaCombustibile")):
 			note.queue_free()
-
-	# Prova	
 	minigame_audio.stop()
-	await get_tree().create_timer(1.0).timeout
+	await get_tree().create_timer(4.0).timeout
 	# Musica di game over
 	sound_gameover.play()
 	minigame_fire.stop()
@@ -336,3 +354,45 @@ func play_sound_fuel():
 
 func play_sound_water():
 	sound_water.play()
+
+
+# Funzioni per l'aggiornamento dei label a schermo (errori e punteggio?)
+
+func set_error_label():
+	var error_label = $CanvasLayer/GUIMinigioco/ErroriCounter
+	error_label.text = "[center][color=brown]Errori: %d[/color][/center]" % VariabiliGlobali.error_count
+
+func set_combo_label():
+	var combo_label = $CanvasLayer/GUIMinigioco/ComboCounter
+	combo_label.text = "[center][color=brown]Combo: \nx%d[/color][/center]" % VariabiliGlobali.combo
+
+func set_ingame_label():
+	var ingame_label = $CanvasLayer/GUIMinigioco/InGameText
+
+	# Se non fa un errore, mostra messaggi positivi [1] e [2]
+	if VariabiliGlobali.acqua_pressed:
+		var positive_messages = [messages[0], messages[1]]
+		ingame_label.text = positive_messages[randi() % positive_messages.size()]
+	else: # Altrimenti, mostra messaggi negativi [3], [4] e [5]
+		var error_messages = [messages[2], messages[3], messages[4]]
+		ingame_label.text = error_messages[randi() % error_messages.size()]
+	
+	# Se il minigioco è terminato e il giocatore ha perso, mostra il messaggio di sconfitta
+	if VariabiliGlobali.error_count >= VariabiliGlobali.error_limit:
+		print("GAME OVER! - PROVA LABEL INGAME")
+		ingame_label.text = messages[5]
+
+	# Se il minigioco è terminato e il giocatore ha vinto, mostra il messaggio di vittoria
+	if game_lost == false and not minigame_audio.playing:
+		ingame_label.text = messages[6]
+
+func set_score_label():
+	var score_label = $CanvasLayer/GUIPost/Punteggio
+	score_label.text = "[center][color=brown]Punteggio: \n%d[/color][/center]" % VariabiliGlobali.score
+
+# Funzione per il reset delle variabili globali relative al punteggio, agli errori e alle combo
+func reset_global_variables():
+
+	VariabiliGlobali.score = 0
+	VariabiliGlobali.error_count = 0
+	VariabiliGlobali.combo = 0
