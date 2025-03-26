@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://c4pwxey1pvhip"]
+
+[ext_resource type="Texture2D" uid="uid://ntjx7r5jkbph" path="res://Scenes/MinigiocoIncendio/Artstyle/legname.png" id="1_8men6"]
+[ext_resource type="Script" path="res://Scenes/MinigiocoIncendio/Script_minigioco_incendio/notes_falling.gd" id="1_oedlt"]
+[ext_resource type="AudioStream" uid="uid://blm7n3vxjy5rk" path="res://Scenes/MinigiocoIncendio/Sound Effects/fire-burn-freelicense.mp3" id="3_4vywx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u5v22"]
+size = Vector2(12, 16)
+
+[node name="NotaCombustibile" type="Node2D"]
+process_mode = 1
+script = ExtResource("1_oedlt")
+
+[node name="Nota" type="TextureButton" parent="."]
+offset_left = 1.0
+offset_right = 17.0
+offset_bottom = 16.0
+scale = Vector2(5, 5)
+action_mode = 0
+texture_normal = ExtResource("1_8men6")
+
+[node name="Collision" type="Area2D" parent="Nota"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Nota/Collision"]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_u5v22")
+
+[node name="SoundEffects" type="Node" parent="."]
+
+[node name="SoundFire" type="AudioStreamPlayer2D" parent="SoundEffects"]
+unique_name_in_owner = true
+stream = ExtResource("3_4vywx")
+
+[connection signal="pressed" from="Nota" to="." method="_on_fuel_note_pressed"]

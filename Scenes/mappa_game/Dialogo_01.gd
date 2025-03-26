@@ -1,14 +1,14 @@
 extends Control
 
 var dialog_sequence := [
-	"Ciao! Sono Marienza, l'assessore del comune di Gravina",
+	"Ciao! Sono Marienza, l'assessore del comune di Gravina.",
 	"Ti do il benvenuto nel bosco Difesa Grande!",
 	"Da qui la tua vita potrà ricominciare..",
-	"..ed il tuo lavoro ci sarà di grande aiuto",
-	"Per iniziare ti consiglio di guardarti attorno",
-	"una volta che ti sarai ambientato potrai svolgere il tuo primo compito",
+	"..ed il tuo lavoro ci sarà di grande aiuto.",
+	"Per iniziare ti consiglio di guardarti attorno,",
+	"e una volta che ti sarai ambientato potrai svolgere il tuo primo compito.",
 	"Utilizza la frecce direzionali per muoverti",
-	"e recati al punto segnalato con '!' per iniziare il minigioco",
+	"e cerca l'incendio per andare a spegnerlo!", # frase momentanea, per la sperimentazione della tesi - Angela Mileti
 	"In bocca al lupo guardiano!"
 ]  
 

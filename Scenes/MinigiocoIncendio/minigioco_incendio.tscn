@@ -1,0 +1,404 @@
+[gd_scene load_steps=20 format=3 uid="uid://dx3u7wdttybbo"]
+
+[ext_resource type="Script" path="res://Scenes/MinigiocoIncendio/Script_minigioco_incendio/read_beats.gd" id="1_t0pdd"]
+[ext_resource type="Texture2D" uid="uid://caunat2fsyqnp" path="res://Scenes/MinigiocoIncendio/Artstyle/sfondo_incendio.png" id="2_dqjls"]
+[ext_resource type="Texture2D" uid="uid://2n6queddg0xa" path="res://Scenes/Rettangolo_dialoghi_modifica.png" id="3_bboyy"]
+[ext_resource type="FontFile" uid="uid://bu8074xritaxh" path="res://Scenes/menu/Fonts/Ravenwood-g5JR.ttf" id="4_xxsuj"]
+[ext_resource type="Texture2D" uid="uid://bpw6ccvg1ds2i" path="res://Scenes/MinigiocoIncendio/Artstyle/button_causa.png" id="5_y778a"]
+[ext_resource type="Texture2D" uid="uid://1wm5rqi1umgp" path="res://Scenes/MinigiocoIncendio/Artstyle/legno pieno long.png" id="6_1gahb"]
+[ext_resource type="Texture2D" uid="uid://be1g0ififbua5" path="res://Scenes/MinigiocoIncendio/Artstyle/puntatore punto esclamativo_1.png" id="7_pglug"]
+[ext_resource type="Theme" uid="uid://brb76mu8vmajm" path="res://Scenes/livello_1/ThemesGUI/PauseMenuTheme.tres" id="8_64d11"]
+[ext_resource type="Texture2D" uid="uid://nhbfcn1pc1yo" path="res://Scenes/MinigiocoIncendio/Artstyle/long_scrollbar.png" id="10_73avh"]
+[ext_resource type="AudioStream" uid="uid://cswaihsp8k7db" path="res://Scenes/MinigiocoIncendio/Sound Effects/chiptune-grooving-freelicense.mp3" id="11_dhd7p"]
+[ext_resource type="AudioStream" uid="uid://cm1h3guv7hj70" path="res://Scenes/Cutscene/Sound Effects/Fire-sound-freelicense.mp3" id="12_00ia2"]
+[ext_resource type="AudioStream" uid="uid://blm7n3vxjy5rk" path="res://Scenes/MinigiocoIncendio/Sound Effects/fire-burn-freelicense.mp3" id="13_sxp6p"]
+[ext_resource type="AudioStream" uid="uid://bt0lrk4rsyjvh" path="res://Scenes/MinigiocoIncendio/Sound Effects/soft-plop-freelicense.mp3" id="14_2gbli"]
+[ext_resource type="AudioStream" uid="uid://cae5faj6ax8jf" path="res://Scenes/MinigiocoIncendio/Sound Effects/game-over-freelicense.mp3" id="15_02glx"]
+[ext_resource type="AudioStream" uid="uid://cp874tkbpypca" path="res://Scenes/MinigiocoIncendio/Sound Effects/crowd-cheering-freelicense.mp3" id="16_fyp6o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y62f4"]
+size = Vector2(10800, 989.999)
+
+[sub_resource type="ImageTexture" id="ImageTexture_m010s"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_tidth"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_ro06p"]
+
+[node name="MinigiocoIncendio" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_t0pdd")
+
+[node name="Background" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_top = -216.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_dqjls")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Control"]
+follow_viewport_enabled = true
+
+[node name="GUIPre" type="Node2D" parent="Control/CanvasLayer"]
+
+[node name="BoxIndicazione" type="Sprite2D" parent="Control/CanvasLayer/GUIPre"]
+position = Vector2(960, 388)
+scale = Vector2(17.1695, 18.8108)
+texture = ExtResource("3_bboyy")
+
+[node name="Istruzioni" type="RichTextLabel" parent="Control/CanvasLayer/GUIPre"]
+anchors_preset = -1
+anchor_left = 0.062
+anchor_top = 0.457
+anchor_right = 0.379
+anchor_bottom = 0.762
+offset_left = 288.0
+offset_top = 120.0
+offset_right = 1615.0
+offset_bottom = 663.0
+theme_override_fonts/normal_font = ExtResource("4_xxsuj")
+theme_override_font_sizes/normal_font_size = 60
+bbcode_enabled = true
+text = "[center]Oh no! È scoppiato un incendio!
+
+Per spegnerlo, clicca con il [color=brown]TASTO SINISTRO[/color] del mouse le goccioline d'acqua prima che tocchino il fuoco! Non alimentare il fuoco cliccando sulla legna!
+Sei pronto, Guardiano?[/center]"
+
+[node name="TextureButton" type="TextureButton" parent="Control/CanvasLayer/GUIPre"]
+offset_left = 872.0
+offset_top = 760.0
+offset_right = 897.0
+offset_bottom = 783.0
+scale = Vector2(7.28, 7.28)
+action_mode = 0
+texture_normal = ExtResource("5_y778a")
+
+[node name="LabelBox" type="Control" parent="Control/CanvasLayer/GUIPre"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LabelSmallBox" type="Label" parent="Control/CanvasLayer/GUIPre/LabelBox"]
+layout_mode = 0
+offset_left = 904.0
+offset_top = 792.0
+offset_right = 955.0
+offset_bottom = 831.0
+scale = Vector2(2.36477, 2.56477)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_xxsuj")
+theme_override_font_sizes/font_size = 30
+text = "SÌ!"
+horizontal_alignment = 1
+autowrap_mode = 1
+
+[node name="GUIMinigioco" type="Node2D" parent="Control/CanvasLayer"]
+visible = false
+position = Vector2(775, 555)
+
+[node name="BoxErroriCounter" type="Sprite2D" parent="Control/CanvasLayer/GUIMinigioco"]
+position = Vector2(-590, 362.85)
+rotation = -0.00481964
+scale = Vector2(11.9003, 11.992)
+texture = ExtResource("5_y778a")
+
+[node name="ErroriCounter" type="RichTextLabel" parent="Control/CanvasLayer/GUIMinigioco"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -719.0
+offset_top = 285.0
+offset_right = -455.0
+offset_bottom = 381.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("4_xxsuj")
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "[center][color=brown]Errori: 0[/color][/center]"
+scroll_active = false
+
+[node name="ComboCounter" type="RichTextLabel" parent="Control/CanvasLayer/GUIMinigioco"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -719.0
+offset_top = 349.0
+offset_right = -455.0
+offset_bottom = 445.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("4_xxsuj")
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "[center][color=brown]Combo: 
+x[/color][/center]"
+scroll_active = false
+
+[node name="BoxContainerText" type="Sprite2D" parent="Control/CanvasLayer/GUIMinigioco"]
+position = Vector2(197.831, 393.188)
+scale = Vector2(10.3404, 5.41556)
+texture = ExtResource("3_bboyy")
+
+[node name="InGameText" type="RichTextLabel" parent="Control/CanvasLayer/GUIMinigioco"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -271.0
+offset_top = 333.0
+offset_right = 665.0
+offset_bottom = 469.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("4_xxsuj")
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "[center][color=brown]Clicca con il tasto SX le gocce![/color][/center]"
+
+[node name="Collision" type="Area2D" parent="Control/CanvasLayer/GUIMinigioco" groups=["fire"]]
+position = Vector2(1.24445, 117)
+scale = Vector2(0.177778, 0.177778)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Control/CanvasLayer/GUIMinigioco/Collision"]
+position = Vector2(1033.62, 1237.12)
+shape = SubResource("RectangleShape2D_y62f4")
+debug_color = Color(0.647059, 0.219608, 0.313726, 0.0313726)
+
+[node name="Causa" type="Sprite2D" parent="Control/CanvasLayer/GUIMinigioco"]
+position = Vector2(966.25, 362.85)
+rotation = -0.00481964
+scale = Vector2(11.9003, 11.992)
+texture = ExtResource("5_y778a")
+
+[node name="CausaScopertaBox" type="Node2D" parent="Control/CanvasLayer/GUIMinigioco/Causa"]
+visible = false
+position = Vector2(-9.82432, -5.87175)
+
+[node name="BoxContainer" type="Sprite2D" parent="Control/CanvasLayer/GUIMinigioco/Causa/CausaScopertaBox"]
+position = Vector2(-54.9796, -33.8465)
+scale = Vector2(0.850462, 0.911731)
+texture = ExtResource("6_1gahb")
+
+[node name="Sprite2D" type="Sprite2D" parent="Control/CanvasLayer/GUIMinigioco/Causa/CausaScopertaBox"]
+position = Vector2(-55.1423, -41.7604)
+scale = Vector2(1.11283, 1.11283)
+texture = SubResource("ImageTexture_m010s")
+
+[node name="NomeCausa" type="RichTextLabel" parent="Control/CanvasLayer/GUIMinigioco/Causa/CausaScopertaBox"]
+offset_left = -77.0
+offset_top = -19.0
+offset_right = 263.0
+offset_bottom = 43.0
+scale = Vector2(0.129189, 0.129189)
+theme_override_fonts/normal_font = ExtResource("4_xxsuj")
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "[center][color=brown]NOME CAUSA[/color][/center]"
+
+[node name="QuestionMark" type="Sprite2D" parent="Control/CanvasLayer/GUIMinigioco/Causa"]
+position = Vector2(0.368008, 1.51529)
+scale = Vector2(0.655757, 0.613552)
+texture = ExtResource("7_pglug")
+
+[node name="CausaScoperta" type="Sprite2D" parent="Control/CanvasLayer/GUIMinigioco/Causa"]
+position = Vector2(0.584244, 1.85207)
+scale = Vector2(0.376964, 0.376964)
+texture = SubResource("ImageTexture_tidth")
+
+[node name="LabelCausa" type="Label" parent="Control/CanvasLayer/GUIMinigioco"]
+offset_left = 864.0
+offset_top = 245.0
+offset_right = 1078.0
+offset_bottom = 322.0
+theme_override_colors/font_color = Color(0.608852, 0.149197, 0.17246, 1)
+theme_override_fonts/font = ExtResource("4_xxsuj")
+theme_override_font_sizes/font_size = 60
+text = "CAUSA"
+horizontal_alignment = 1
+autowrap_mode = 1
+
+[node name="GUIPost" type="Node2D" parent="Control/CanvasLayer"]
+process_mode = 3
+visible = false
+
+[node name="BoxIndicazione" type="Sprite2D" parent="Control/CanvasLayer/GUIPost"]
+position = Vector2(960, 540)
+scale = Vector2(17.1695, 23.3513)
+texture = ExtResource("3_bboyy")
+
+[node name="Istruzioni_lose" type="Label" parent="Control/CanvasLayer/GUIPost"]
+visible = false
+anchors_preset = -1
+anchor_left = 0.062
+anchor_top = 0.457
+anchor_right = 0.379
+anchor_bottom = 0.762
+offset_left = 224.0
+offset_top = 184.0
+offset_right = 864.0
+offset_bottom = 501.0
+theme_override_fonts/font = ExtResource("4_xxsuj")
+theme_override_font_sizes/font_size = 60
+text = "Mi dispiace.. Non hai spento l'incendio!"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Istruzioni_win" type="Label" parent="Control/CanvasLayer/GUIPost"]
+visible = false
+anchors_preset = -1
+anchor_left = 0.062
+anchor_top = 0.457
+anchor_right = 0.379
+anchor_bottom = 0.762
+offset_left = 192.0
+offset_top = 184.0
+offset_right = 920.0
+offset_bottom = 392.0
+theme_override_fonts/font = ExtResource("4_xxsuj")
+theme_override_font_sizes/font_size = 60
+text = "Complimenti! Hai spento l'incendio!"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Punteggio" type="RichTextLabel" parent="Control/CanvasLayer/GUIPost"]
+offset_left = 328.0
+offset_top = 384.0
+offset_right = 784.0
+offset_bottom = 552.0
+theme_override_fonts/normal_font = ExtResource("4_xxsuj")
+theme_override_font_sizes/normal_font_size = 60
+bbcode_enabled = true
+text = "[center][color=brown]Punteggio: 
+0[/color][/center]"
+
+[node name="ButtonTorna" type="Button" parent="Control/CanvasLayer/GUIPost"]
+process_mode = 3
+anchors_preset = -1
+anchor_left = 0.369
+anchor_top = 0.682
+anchor_right = 0.612
+anchor_bottom = 0.853
+offset_left = 368.0
+offset_top = 632.0
+offset_right = 759.0
+offset_bottom = 808.0
+theme = ExtResource("8_64d11")
+theme_override_font_sizes/font_size = 32
+action_mode = 0
+text = "TORNA ALLA MAPPA
+"
+icon_alignment = 1
+
+[node name="CausaLabel" type="RichTextLabel" parent="Control/CanvasLayer/GUIPost"]
+anchors_preset = -1
+anchor_left = 0.062
+anchor_top = 0.457
+anchor_right = 0.379
+anchor_bottom = 0.762
+offset_left = 1064.0
+offset_top = 192.0
+offset_right = 1664.0
+offset_bottom = 280.0
+theme_override_fonts/normal_font = ExtResource("4_xxsuj")
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "[center][color=brown]Causa dell'incendio:[/color][/center]"
+
+[node name="CausaNonScopertaLabel" type="Label" parent="Control/CanvasLayer/GUIPost"]
+visible = false
+anchors_preset = -1
+anchor_left = 0.062
+anchor_top = 0.457
+anchor_right = 0.379
+anchor_bottom = 0.762
+offset_left = 1072.0
+offset_top = 344.0
+offset_right = 1672.0
+offset_bottom = 432.0
+theme_override_fonts/font = ExtResource("4_xxsuj")
+theme_override_font_sizes/font_size = 50
+text = "???"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Causa" type="Sprite2D" parent="Control/CanvasLayer/GUIPost"]
+process_mode = 3
+visible = false
+position = Vector2(1360, 397)
+scale = Vector2(7.99999, 7.99999)
+texture = SubResource("ImageTexture_ro06p")
+
+[node name="NomeCausa" type="RichTextLabel" parent="Control/CanvasLayer/GUIPost"]
+visible = false
+offset_left = 1056.0
+offset_top = 528.0
+offset_right = 1688.0
+offset_bottom = 593.0
+theme_override_fonts/normal_font = ExtResource("4_xxsuj")
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "[center][color=brown]NOME CAUSA[/color][/center]"
+
+[node name="BackgroundDesc" type="Sprite2D" parent="Control/CanvasLayer/GUIPost"]
+process_mode = 3
+visible = false
+position = Vector2(1368, 736)
+scale = Vector2(7.07368, 7.35135)
+texture = ExtResource("3_bboyy")
+
+[node name="DescrizioneCausa" type="RichTextLabel" parent="Control/CanvasLayer/GUIPost"]
+process_mode = 3
+visible = false
+offset_left = 1064.0
+offset_top = 632.0
+offset_right = 1680.0
+offset_bottom = 840.0
+theme_override_fonts/normal_font = ExtResource("4_xxsuj")
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "[center]Descrizione causa[/center]"
+
+[node name="ScrollBar" type="Sprite2D" parent="Control/CanvasLayer/GUIPost"]
+position = Vector2(960, 528)
+scale = Vector2(8.375, 12.0938)
+texture = ExtResource("10_73avh")
+region_rect = Rect2(64, 0, 16, 48)
+
+[node name="SoundEffects" type="Node" parent="Control"]
+
+[node name="ThemeMinigioco" type="AudioStreamPlayer2D" parent="Control/SoundEffects"]
+stream = ExtResource("11_dhd7p")
+
+[node name="FireSound" type="AudioStreamPlayer2D" parent="Control/SoundEffects"]
+process_mode = 3
+stream = ExtResource("12_00ia2")
+volume_db = -5.0
+autoplay = true
+parameters/looping = true
+
+[node name="FireEffect" type="AudioStreamPlayer2D" parent="Control/SoundEffects"]
+stream = ExtResource("13_sxp6p")
+volume_db = 3.0
+
+[node name="WaterEffect" type="AudioStreamPlayer2D" parent="Control/SoundEffects"]
+stream = ExtResource("14_2gbli")
+volume_db = 3.0
+
+[node name="GameOverEffect" type="AudioStreamPlayer2D" parent="Control/SoundEffects"]
+process_mode = 3
+stream = ExtResource("15_02glx")
+
+[node name="VictoryEffect" type="AudioStreamPlayer2D" parent="Control/SoundEffects"]
+stream = ExtResource("16_fyp6o")
+volume_db = 2.0
+
+[connection signal="pressed" from="Control/CanvasLayer/GUIPre/TextureButton" to="Control" method="_on_texture_button_pressed"]
+[connection signal="pressed" from="Control/CanvasLayer/GUIPost/ButtonTorna" to="Control" method="_on_mappa_pressed"]

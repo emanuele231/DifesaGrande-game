@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://bmyaanatuoh44"]
+
+[ext_resource type="Script" path="res://Scenes/MinigiocoIncendio/Script_minigioco_incendio/notes_falling.gd" id="1_agmtu"]
+[ext_resource type="Texture2D" uid="uid://bgatmp7810a1a" path="res://Scenes/MinigiocoIncendio/Artstyle/goccia_acqua.png" id="1_kv1oq"]
+[ext_resource type="AudioStream" uid="uid://bt0lrk4rsyjvh" path="res://Scenes/MinigiocoIncendio/Sound Effects/soft-plop-freelicense.mp3" id="3_gnkux"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_elkcc"]
+size = Vector2(6.18412, 8.20802)
+
+[node name="NotaAcqua" type="Node2D"]
+process_mode = 1
+script = ExtResource("1_agmtu")
+
+[node name="Nota" type="TextureButton" parent="."]
+offset_right = 16.0
+offset_bottom = 16.0
+scale = Vector2(8.89374, 8.89374)
+action_mode = 0
+texture_normal = ExtResource("1_kv1oq")
+
+[node name="Collision" type="Area2D" parent="Nota"]
+position = Vector2(8.09558, 7.98314)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Nota/Collision"]
+position = Vector2(0.0562191, 0.168657)
+shape = SubResource("RectangleShape2D_elkcc")
+
+[node name="SoundEffects" type="Node" parent="."]
+
+[node name="SoundWater" type="AudioStreamPlayer2D" parent="SoundEffects"]
+unique_name_in_owner = true
+stream = ExtResource("3_gnkux")
+
+[connection signal="pressed" from="Nota" to="." method="_on_water_note_pressed"]

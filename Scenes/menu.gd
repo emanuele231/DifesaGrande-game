@@ -20,7 +20,7 @@ func _input(event):
 
 
 func _on_start_button_down():
-	SceneTransition.change_scene("res://Scenes/mappa_game/mappa.tscn")
+	SceneTransition.change_scene("res://Scenes/Cutscene/cutscene.tscn") # Porta il giocatore alla cutscene
 
 func _on_esci_button_down():
 	get_tree().quit()

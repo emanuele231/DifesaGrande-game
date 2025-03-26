@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cp874tkbpypca"
+path="res://.godot/imported/crowd-cheering-freelicense.mp3-fc19c4cc5f0f0d06dc2f3d2eea20fab9.mp3str"
+
+[deps]
+
+source_file="res://Scenes/MinigiocoIncendio/Sound Effects/crowd-cheering-freelicense.mp3"
+dest_files=["res://.godot/imported/crowd-cheering-freelicense.mp3-fc19c4cc5f0f0d06dc2f3d2eea20fab9.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

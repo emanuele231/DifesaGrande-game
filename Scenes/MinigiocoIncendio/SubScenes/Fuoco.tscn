@@ -1,0 +1,69 @@
+[gd_scene load_steps=10 format=3 uid="uid://cbqposl5it6ww"]
+
+[ext_resource type="Script" path="res://Scenes/MinigiocoIncendio/Script_minigioco_incendio/Fuoco.gd" id="1_fftaw"]
+[ext_resource type="Texture2D" uid="uid://c203mv8nnqu45" path="res://Scenes/MinigiocoIncendio/Artstyle/fiamme.png" id="1_lit2i"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pgadk"]
+atlas = ExtResource("1_lit2i")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uun4g"]
+atlas = ExtResource("1_lit2i")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4gjn5"]
+atlas = ExtResource("1_lit2i")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p6kyh"]
+atlas = ExtResource("1_lit2i")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2hjpp"]
+atlas = ExtResource("1_lit2i")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_43x7f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pgadk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uun4g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4gjn5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p6kyh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2hjpp")
+}],
+"loop": true,
+"name": &"idle_fire",
+"speed": 3.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yx1qy"]
+size = Vector2(187, 152)
+
+[node name="GestioneFuoco" type="Node2D"]
+script = ExtResource("1_fftaw")
+
+[node name="Fuoco" type="AnimatedSprite2D" parent="."]
+position = Vector2(90, 90)
+scale = Vector2(5.625, 5.625)
+sprite_frames = SubResource("SpriteFrames_43x7f")
+animation = &"idle_fire"
+frame_progress = 0.419671
+
+[node name="Collision" type="Area2D" parent="Fuoco" groups=["fire"]]
+position = Vector2(1.24445, 9.06667)
+scale = Vector2(0.177778, 0.177778)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fuoco/Collision"]
+position = Vector2(-4.50002, -54)
+shape = SubResource("RectangleShape2D_yx1qy")
+debug_color = Color(0.647059, 0.219608, 0.313726, 0.631373)

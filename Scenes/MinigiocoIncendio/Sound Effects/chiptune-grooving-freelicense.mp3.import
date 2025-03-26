@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cswaihsp8k7db"
+path="res://.godot/imported/chiptune-grooving-freelicense.mp3-5dc8902dcad3b1a4f357b9e4629d874e.mp3str"
+
+[deps]
+
+source_file="res://Scenes/MinigiocoIncendio/Sound Effects/chiptune-grooving-freelicense.mp3"
+dest_files=["res://.godot/imported/chiptune-grooving-freelicense.mp3-5dc8902dcad3b1a4f357b9e4629d874e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
